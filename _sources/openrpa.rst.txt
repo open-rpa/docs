@@ -1726,13 +1726,13 @@ First, it is needed to configure the ``FileWatcher Detector``.
 
 To do that, the user must first click the ``Settings`` bar inside OpenRPA's ribbon.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_settings.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_click_settings.png
    :align: center
    :scale: 50%
    
 Then, click the ``Detectors`` button inside the ribbon.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_detectors.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_click_detectors.png
    :align: center
    :scale: 50%
    
@@ -1741,7 +1741,7 @@ After that, all the user needs is to click the desired detector inside the Detec
 For this example, the ``Detector`` which will be used is the ``FileWatcherDetectorPlugin``. Set the Detector's ``Name`` - in our case ``Windows Automation`` as well as the ``Path`` which it will listen to - ``C:\Users\viere\Documents\workflow_example_files\windows_automation\input_files``, **no quotes**.
 Then set the ``File Filter`` to ``*.pdf`` - the ``*`` is a wildcard for the filename, that is, any filename will do.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_detector_configured.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_detector_configured.png
    :align: center
    :scale: 50%
 
@@ -1757,19 +1757,19 @@ Now the user will configure, in Node-RED, a ``Detector`` node which will be the 
 
 Create a new flow inside Node-RED. Our flow is being named ``Windows Automation - Workflow Example``.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_create_new_node_red_flow.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_create_new_node_red_flow.png
    :align: center
    :scale: 50%
    
 Now drag a ``detector`` node to the workspace.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_drag_detector_node.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_drag_detector_node.png
    :align: center
    :scale: 50%
    
 Double-click the ``detector`` node to set its properties. Select the ``Detector`` in the dropdown field which will appear - in our case, ``Windows Automation``. Additionally, you may also give a name to this node such as ``Filepath Detector``, we recommend doing so to keep flows organized.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_detector_node_properties.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_set_detector_node_properties.png
    :align: center
    :scale: 50%
    
@@ -1778,7 +1778,7 @@ Double-click the ``detector`` node to set its properties. Select the ``Detector`
 
 When the ``FileWatcher Detector`` fires, some information will be passed in the ``NodeRED Message``, such as the ``filepath`` - that is, the name of the file that has been created.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_debug_detector.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_set_debug_detector.png
    :align: center
    :scale: 50%
 
@@ -1793,27 +1793,27 @@ Here lies the logic behind passing the variables to and executing the OpenRPA wo
 Drag a ``robot`` node to the workspace. This node enables us to invoke the ``Windows Automation`` workflow.
 
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_connect_function_node_to_robot.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_connect_function_node_to_robot.png
    :align: center
    :scale: 50%
 
 Once again, it is recommended to properly name the nodes, ``Invoke Windows Automation Workflow``.
 Double-click and assign the ``Robot (or agent)`` whom shall will execute the workflow, and obviously, the name of the ``Workflow`` that should be executed (this example, ``Windows Automation``). You may leave the field ``Local Queue`` blank.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_robot_node_properties.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_set_robot_node_properties.png
    :align: center
    :scale: 50%
    
 Now, the user must deploy the flow created by clicking the red Deploy button at the top-left side of the screen.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_deploy_button.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_click_deploy_button.png
    :align: center
    :scale: 50%
    
 After that, the user should define, inside the OpenRPA workflow, a new argument by clicking ``Create Argument``.
 As you may have seen in the ``debug`` node, the parameter being passed is called ``filepath`` and therefore the ``argument`` should be the exact same. As the ``argument`` is an input, set its ``Direction`` to ``In``.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_define_pathFile_argument.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_define_pathFile_argument.png
    :align: center
    :scale: 50%
    
@@ -1833,7 +1833,7 @@ First drag a ``Invoke Formula`` snippet to the main sequence.
 
 Now click ``Open designer`` to open the ``Form Designer``.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_open_designer_button.png 
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_click_open_designer_button.png 
    :align: center
    :scale: 50%
 
@@ -1863,7 +1863,7 @@ Clear all example code and add the code snippet below to the designer code edito
       <action name='submit' content='START SKYPE AUTOMATION' icon='check' validates='true' ClosesDialog='true' />
    </form>
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_openrpa_forms_filled_designer.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_openrpa_forms_filled_designer.png
    :align: center
    :scale: 50%
 
@@ -1873,7 +1873,7 @@ By pressing the **Build form** button the user is able to build and see a previe
 
 After that, the user can press the **Create variables** button so all variables defined inside the ``Form Designer`` will be automatically created. Easy-peasy, isn't it?
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_openrpa_forms_create_variables.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_openrpa_forms_create_variables.png
    :align: center
    :scale: 50%
 
@@ -1895,48 +1895,48 @@ The first step is to open the **Skype** application.
 
 Now, with the **Skype** application open, the user will start the Recorder inside OpenRPA by clicking in the button inside OpenRPA's ribbon and execute the task as if done manually.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_click_recorder.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_skype_app_click_recorder.png
    :align: center
    :scale: 50%
 
 Now, with the Recorder started, the user must click the ``Search`` tab, containing the placeholder ``People, groups & messages``.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_click_search_tab.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_skype_app_click_search_tab.png
    :align: center
 
 An input field will appear inside the ``Search`` tab containing the placeholder ``Search Skype``. Click that input field, an ``InsertText`` input field will appear. The user should enter an existing contact which will be used as a dummy to assign the proper ``Selector`` further in this section. After waiting for **Skype**'s own autocomplete feature to find the user, the user shall click the desired contact.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_search_tab_input_field.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_skype_app_search_tab_input_field.png
    :align: center
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_search_tab_input_field_filled.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_skype_app_search_tab_input_field_filled.png
    :align: center
 
 After clicking the desired contact, the ``Messages`` tab open will open for that specific contact.
 
 The user must now click the ``Add File`` button in the lower right section.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_click_add_file_button.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_skype_app_click_add_file_button.png
    :align: center
 
 Now a file dialog appears, where the user can select the desired file, and an input dialog from OpenRPA titled ``InsertText`` where you can again insert dummy text. The ``Selector`` will act upon this dialog to choose the file which will be sent, as is seen in the next section. Then click the ``Open`` button.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_select_file.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_skype_app_select_file.png
    :align: center
 
 Now click the input field with the ``Type a message`` placeholder, another input dialog with the ``InsertText`` title will appear, you can again enter any dummy text.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_type_a_message.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_click_type_a_message.png
    :align: center
 
 Then, the user shall click the blue **Send** button.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_send_button.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_click_send_button.png
    :align: center
 
 Finally, click the **X** button inside the ``Search`` tab to close the search dialogue and exit the Recorder by pressing the ``ESC`` button.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_close_search_tab.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_skype_app_close_search_tab.png
    :align: center
 
 **Configure Selectors**
@@ -1947,7 +1947,7 @@ First, configure the first ``Selector`` for the first element to be clicked insi
 
 Click the **Open Selector** button inside the **GetElement** activity that was generated for that specific field.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_people_groups_messages_selector.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_skype_app_people_groups_messages_selector.png
    :align: center
 
 In this image, the user notices a **Type Text** activity, which corresponds to the dummy username that was typed. The user can remove that activity from the workspace, since it'll be replaced with another activity in the following steps.
@@ -1956,39 +1956,39 @@ The user will notice that upon clicking the **Highlight** button inside the new 
 
 To do that, the user can first double-click the element ``Pane Skype`` ->  ``Document Skype XXXXXXXXXX`` -> ``Button Search for people, groups & messages`` and right-click this last element and click the **Select Element** button that appears. Below follows a picture of this element highlighted.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_people_groups_messages_selector_element_highlighted.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_skype_app_people_groups_messages_selector_element_highlighted.png
    :align: center
 
 Now, the user is going to change the ``filename`` attribute in the first selector, where there may be ``"%ProgramFiles%\\WindowsApps\\Microsoft.SkypeApp_15.61.100.0_x86__XXXXX\\Skype\\Skype.exe"``, the user wants to crop the version of skype and the hash which follows it - specified here as ``{XXXXX}``. To do that, simply change it to ``"%ProgramFiles%\\WindowsApps\\Microsoft.SkypeApp_*"``¹. 
 
 Now the user must also deselect the fourth selector. All the changes made so far are shown in the image below.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_people_groups_messages_selector_finished.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_skype_app_people_groups_messages_selector_finished.png
    :align: center
 
 After that, simply the **Ok** button in the lower-left side of the screen. It is recommended that the user check once more whether the proper ``Selector`` was configured by clicking the **Highlight** button inside the activity.
 
 Now the user must do the same steps specified above inside the **GetElement** activity responsible for capturing the ``Search`` tab input. Select the element inside ``Pane Skype`` -> ``Document Skype XXXXXXXXX`` -> ``Edit Search Skype``. It is important to remark that the ``Search`` tab must be visible inside the **Skype** application before opening the selector so OpenRPA can recognize it as an element inside the window.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_search_tab_selector_finished.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_skype_app_search_tab_selector_finished.png
    :align: center
 
 The user must also change the right-hand value of the **Assign** activity, inside the current **GetElement** activity, to the variable which is going to hold the ``username`` of the desired contact. In our case, that variable is ``usernameSkype``, as previously defined in the **Forms** section. 
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_search_tab_assign_properties_tab.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_skype_app_search_tab_assign_properties_tab.png
    :align: center
 
 Now the user will add a **Delay** activity to the workflow. Set the **Delay**'s ``Duration`` property to ``00:00:05``, which means this delay will last for 5 seconds. This is needed specifically because of the autocomplete function built-in in the **Skype** application. It is a hard-coded constraint in which the robot must wait for the autocomplete function to complete before proceeding to the next steps. 
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_delay.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_skype_app_delay.png
    :align: center
 
 Then, the user must repeat the steps specified above inside the **GetElement** activity responsible for capturing the ``Contact`` button.  Select the element inside ``Pane Skype`` -> ``Document Skype XXXXXXXXX`` -> ``Group PEOPLE`` -> ``Button {Contact Name}, {Status}, {Chatted Last}, {Skype Name}`` - namely, in our case, ``Paulo Veras``, ``Away``, ``Chatted 23 minutes ago``, ``Skype Name``.  It is important to remark that the ``Contact`` button must be visible inside the **Skype** application before opening the selector so OpenRPA can recognize it as an element inside the window. Below is the ``Selector`` properly set up and an image of the button highlighted.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_desired_contact_selector_finished.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_desired_contact_selector_finished.png
    :align: center
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_desired_contact_selector_highlighted.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_desired_contact_selector_highlighted.png
    :align: center
 
 Now add a **post wait** by using the ``Post Wait`` properties inside the **Click Element** activity which is contained inside the **GetElement** activity responsible for capturing the ``Contact`` button.  This value should be set to ``00:00:02``. The **post wait** is used so, after clicking the desired contact button which appears in the left pane of the **Skype** window, the application itself will wait for the ``Messages`` tab to load. Since we have added the **post wait**, the **Delay** activity is not needed.
@@ -1997,7 +1997,7 @@ The user must now repeat the steps specified for selecting the proper ``Selector
 
 Now set the proper value for the ``filepath`` for the file which will be sent through the **Skype** app. Assign the proper value inside the respective **Assign** activity which corresponds to the input field where the ``filepath`` is going to be set. If you haven't created the ``argument`` yet, now is the time to do it - remember it must have its ``Direction`` set as ``In``. Below it is shown how to set this argument properly.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_filepath_inside_getelement.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_set_filepath_inside_getelement.png
    :align: center
 
 Finally, check whether the configs are correct for the element inside the ``Selector`` corresponding to ``Pane Skype`` -> ``Document Skype XXXXXXXXX`` -> ``Edit Type a message`` and alter item.value to item.SendKeys inside the **Assign** activity included in the **GetElement** activity. 
@@ -2021,10 +2021,10 @@ Workflow Finished
 -----------------
 Here lie the images showing the output of the workflow both in the **Skype** application and in Node-RED.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_workflow_finished.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_workflow_finished.png
    :align: center
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_workflow_finished_nodered.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_workflow_finished_nodered.png
    :align: center
 
 Image Search / OCR
@@ -2110,7 +2110,7 @@ The invoices which will be used to demonstrate this example can be found here `I
 
 .. @TODO@: Link to BPA's own repository or simply embed file inside Sphinx.
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_invoice_example.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_invoice_example.png
    :align: center
 
 
@@ -2140,7 +2140,7 @@ In our case, the fields which are going to be assigned to the second input field
 
 It is advisable to rename the ``DisplayName`` for each activity to something meaningful and that helps you keep track of what each part of the workflow does! Considering that, rename this activity to "Create Empty DataTable".
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_create_empty_data_table.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_create_empty_data_table.png
    :align: center
 
 .. note::
@@ -2155,7 +2155,7 @@ The first activity will loop a directory and will return all filenames contained
 
 First drag the **Assign** activity to assign the absolute path of the directory you want to loop through to a variable - ie. ``path``.
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_assign_path.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_assign_path.png
    :align: center
 
 Drag the **ForEachWithBodyFactory<>** activity to the main sequence.
@@ -2168,7 +2168,7 @@ In the left-hand side of the activity insert ``System.IO.Path.GetFiles(path)``.
 
 The variable ``filePath`` now contains the ``String`` to each respective invoice full filepath.
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_for_each_with_body_factory.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_for_each_with_body_factory.png
    :align: center
 
 **Read Individual Cells**
@@ -2189,12 +2189,12 @@ Simply click in the ``Result`` input field inside the **Properties tab** and typ
 
 Now repeat the procedure above for the remaining variables.
 
- .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_read_individual_cell.png
+ .. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_read_individual_cell.png
     :align: center
 
 Remember that it is needed to change the variables ``Scope`` to the outermost sequence to be able to capture all the values gathered in here and save them into a ``DataTable`` later on.
 
- .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_change_scope.png
+ .. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_change_scope.png
     :align: center
 
 .. note:: 
@@ -2212,7 +2212,7 @@ Inside this sequence, drag a **CreateDataTable** activity and create a table nam
 
 The headers for this ``DataTable`` shall be ``{"itemName", "quantity", "rate", "subTotal"}``.
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_read_items_processing_logic_create_data_table.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_read_items_processing_logic_create_data_table.png
    :align: center
 
 For the assignments, we will be using columns 0, 3, 5, 7, if you take a look at the invoice template, these are the indexes for the columns 
@@ -2224,7 +2224,7 @@ First enter the filepath of the file from which the activity will read from insi
 
 Enter the cells you want to capture in the ``Cells`` field inside the **Properties box**. In our case, those are ``"A14:H18"``. 
  
- .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_range_cells.png
+ .. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_range_cells.png
     :align: center
 
 The indexes ``0``, ``3``, ``5`` and ``7`` refer to the indexed objects inside the current ``row``, ie. the columns.
@@ -2233,12 +2233,12 @@ Enter the name for the ``DataTable`` you want to save it to inside the ``DataTab
 
 In the **Properties box**, you may find the property ``IgnoreEmptyRows``, set this value to ``True``. Since our table does not contain a header, set the ``Use Header Row`` property to ``False`` - this will ensure the activity reads the first row of the data (row 14).
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_items_processing_read_range.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_items_processing_read_range.png
    :align: center
 
 And by looping the ``DataTable`` with a **ForEach DataRow** activity, the **Add DataRow** activity is used to loop through each item information to our 'itemsDataTable'
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_items_processing_for_each_and_add_data_row.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_items_processing_for_each_and_add_data_row.png
    :align: center
 
 Now comes the logic for calculating the subtotal value and adding this value to the total value which will be described in the final ``Excel sheet``.
@@ -2255,7 +2255,7 @@ Finally, declare a new variable ``dueBalance`` with type ``System.Decimal``. Usi
 
 It is useful to remark that the user must change the variables ``Scope`` to the outermost sequence to be able to capture all the values gathered in here and save them into a ``DataTable`` later on.
 
- .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_items_logic_assign_variables.png
+ .. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_items_logic_assign_variables.png
     :align: center
 
 .. note::
@@ -2271,7 +2271,7 @@ In the first input field, insert ``invoicesDataTable``.
 
 In the second input field, insert ``{invoiceNumber, companyName, shippingAddress, shippingTelephoneNumber, dueDate, quantity, total}``.
 
- .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_add_invoices_data_table.png
+ .. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_add_invoices_data_table.png
     :align: center
 
 **Write Excel from DataTable**
@@ -2286,17 +2286,17 @@ Assign the ``DataTable`` from which the data gathered will be saved into the ``E
 
 Enter the theme which will be used to stylize the ``Excel file`` in the ``Theme`` property inside the **Properties box**.
 
- .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_write_excel.png
+ .. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_write_excel.png
     :align: center
 
 **Workflow Finished**
 ---------------------
 Here's a preview of how the workflow will look like after completing it.
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_workflow_finished_1.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_workflow_finished_1.png
    :align: center
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_workflow_finished_2.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_workflow_finished_2.png
    :align: center
    
 MongoDB Entities Manipulation

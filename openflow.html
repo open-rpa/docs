@@ -1,196 +1,238 @@
-
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <title>2. OpenFlow &mdash; BPA Docs 1.0.2 documentation</title>
-  
 
-  
-  
-  
-  
 
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-    
 
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/styles.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. OpenRPA" href="openrpa.html" />
-    <link rel="prev" title="1. Introduction to RPA" href="rpa.html" /> 
+
+
+
+
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
+
+
+  <script type="text/javascript" id="documentation_options" data-url_root="./"
+    src="static/documentation_options.js"></script>
+  <script src="static/jquery.js"></script>
+  <script src="static/underscore.js"></script>
+  <script src="static/doctools.js"></script>
+  <script src="static/language_data.js"></script>
+
+  <script type="text/javascript" src="static/js/theme.js"></script>
+
+
+
+
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/styles.css" type="text/css" />
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="3. OpenRPA" href="openrpa.html" />
+  <link rel="prev" title="1. Introduction to RPA" href="rpa.html" />
 </head>
 
 <body class="wy-body-for-nav">
 
-   
+
   <div class="wy-grid-for-nav">
-    
+
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
+        <div class="wy-side-nav-search">
 
-          
-            <a href="index.html" class="icon icon-home"> BPA Docs
-          
 
-          
+
+          <a href="index.html" class="icon icon-home"> BPA Docs
+
+
+
           </a>
 
-          
-            
-            
-          
 
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
 
-          
+
+
+
+
+          <div role="search">
+            <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+              <input type="text" name="q" placeholder="Search docs" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
+
+
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="rpa.html">1. <strong>Introduction to RPA</strong></a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. <strong>OpenFlow</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-is-openflow">2.1. <strong>What is OpenFlow?</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-first-run">2.2. <strong>Installing, First Run</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#quickstart-running-openflow-using-npm">2.2.1. Quickstart Running OpenFlow using NPM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#developer-setup">2.2.2. Developer Setup</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#accessing-for-the-first-time">2.3. <strong>Accessing for the first time</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-a-new-user">2.4. <strong>Creating a new user</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#roles">2.5. <strong>Roles</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#what-are-roles">2.5.1. What are Roles?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rparole-pool">2.5.2. RPARole (Pool)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#but-what-is-a-consumer">2.5.2.1. But what is a consumer?</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#granting-permissions-admin-nodered-user">2.5.3. Granting permissions (admin, nodered, user)</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#workflows-tab-node-red">2.6. <strong>Workflows Tab (Node-RED)</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#what-is-it">2.6.1. What is it?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#invoking">2.6.2. Invoking</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#rpa-workflows-tab-openrpa">2.7. <strong>RPA Workflows Tab (OpenRPA)</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">2.7.1. What is it?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">2.7.2. Invoking</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#forms">2.8. <strong>Forms</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#creating-a-form">2.8.1. Creating a Form</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configuring-the-form">2.8.2. Configuring the Form</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#basic-forms">2.8.3. Basic Forms</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#text-field">2.8.3.1. Text Field</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#text-area">2.8.3.2. Text Area</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#number">2.8.3.3. Number</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#password">2.8.3.4. Password</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#checkbox">2.8.3.5. Checkbox</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#select-boxes">2.8.3.6. Select Boxes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#select">2.8.3.7. Select</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#radio">2.8.3.8. Radio</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#button">2.8.3.9. Button</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#advanced-forms">2.8.4. Advanced Forms</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#email">2.8.4.1. Email</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#url">2.8.4.2. URL</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#phone-number">2.8.4.3. Phone Number</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tags">2.8.4.4. Tags</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#address">2.8.4.5. Address</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#date-time">2.8.4.6. Date / Time</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#day">2.8.4.7. Day</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#time">2.8.4.8. Time</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#currency">2.8.4.9. Currency</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#survey">2.8.4.10. Survey</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#signature">2.8.4.11. Signature</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#layout-forms">2.8.5. Layout Forms</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#html-element">2.8.5.1. HTML Element</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#content">2.8.5.2. Content</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#columns">2.8.5.3. Columns</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#field-set">2.8.5.4. Field Set</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#panel">2.8.5.5. Panel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#table">2.8.5.6. Table</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tabs">2.8.5.7. Tabs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#well">2.8.5.8. Well</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#entities-mongodb">2.9. <strong>Entities - MongoDB</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#what-are-entities">2.9.1. What are entities?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#usages">2.9.2. Usages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#collections">2.9.3. Collections</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="openrpa.html">3. <strong>OpenRPA</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="node_red.html">4. <strong>Node-RED</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">5. <strong>Appendix A</strong></a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="license.html">1. License</a></li>
-</ul>
 
-            
-          
+
+
+
+
+
+          <ul class="current">
+            <li class="toctree-l1"><a class="reference internal" href="rpa.html">1. <strong>Introduction to
+                  RPA</strong></a></li>
+            <li class="toctree-l1 current"><a class="current reference internal" href="#">2.
+                <strong>OpenFlow</strong></a>
+              <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#what-is-openflow">2.1. <strong>What is
+                      OpenFlow?</strong></a></li>
+                <li class="toctree-l2"><a class="reference internal" href="#installing-first-run">2.2.
+                    <strong>Installing, First Run</strong></a>
+                  <ul>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="#quickstart-running-openflow-using-npm">2.2.1. Quickstart Running OpenFlow using NPM</a>
+                    </li>
+                    <li class="toctree-l3"><a class="reference internal" href="#developer-setup">2.2.2. Developer
+                        Setup</a></li>
+                  </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#accessing-for-the-first-time">2.3.
+                    <strong>Accessing for the first time</strong></a></li>
+                <li class="toctree-l2"><a class="reference internal" href="#creating-a-new-user">2.4. <strong>Creating a
+                      new user</strong></a></li>
+                <li class="toctree-l2"><a class="reference internal" href="#roles">2.5. <strong>Roles</strong></a>
+                  <ul>
+                    <li class="toctree-l3"><a class="reference internal" href="#what-are-roles">2.5.1. What are
+                        Roles?</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="#rparole-pool">2.5.2. RPARole (Pool)</a>
+                      <ul>
+                        <li class="toctree-l4"><a class="reference internal" href="#but-what-is-a-consumer">2.5.2.1. But
+                            what is a consumer?</a></li>
+                      </ul>
+                    </li>
+                    <li class="toctree-l3"><a class="reference internal"
+                        href="#granting-permissions-admin-nodered-user">2.5.3. Granting permissions (admin, nodered,
+                        user)</a></li>
+                  </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#workflows-tab-node-red">2.6.
+                    <strong>Workflows Tab (Node-RED)</strong></a>
+                  <ul>
+                    <li class="toctree-l3"><a class="reference internal" href="#what-is-it">2.6.1. What is it?</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="#invoking">2.6.2. Invoking</a></li>
+                  </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#rpa-workflows-tab-openrpa">2.7. <strong>RPA
+                      Workflows Tab (OpenRPA)</strong></a>
+                  <ul>
+                    <li class="toctree-l3"><a class="reference internal" href="#id2">2.7.1. What is it?</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="#id3">2.7.2. Invoking</a></li>
+                  </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#forms">2.8. <strong>Forms</strong></a>
+                  <ul>
+                    <li class="toctree-l3"><a class="reference internal" href="#creating-a-form">2.8.1. Creating a
+                        Form</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="#configuring-the-form">2.8.2. Configuring
+                        the Form</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="#basic-forms">2.8.3. Basic Forms</a>
+                      <ul>
+                        <li class="toctree-l4"><a class="reference internal" href="#text-field">2.8.3.1. Text Field</a>
+                        </li>
+                        <li class="toctree-l4"><a class="reference internal" href="#text-area">2.8.3.2. Text Area</a>
+                        </li>
+                        <li class="toctree-l4"><a class="reference internal" href="#number">2.8.3.3. Number</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#password">2.8.3.4. Password</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#checkbox">2.8.3.5. Checkbox</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#select-boxes">2.8.3.6. Select
+                            Boxes</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#select">2.8.3.7. Select</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#radio">2.8.3.8. Radio</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#button">2.8.3.9. Button</a></li>
+                      </ul>
+                    </li>
+                    <li class="toctree-l3"><a class="reference internal" href="#advanced-forms">2.8.4. Advanced
+                        Forms</a>
+                      <ul>
+                        <li class="toctree-l4"><a class="reference internal" href="#email">2.8.4.1. Email</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#url">2.8.4.2. URL</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#phone-number">2.8.4.3. Phone
+                            Number</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#tags">2.8.4.4. Tags</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#address">2.8.4.5. Address</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#date-time">2.8.4.6. Date / Time</a>
+                        </li>
+                        <li class="toctree-l4"><a class="reference internal" href="#day">2.8.4.7. Day</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#time">2.8.4.8. Time</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#currency">2.8.4.9. Currency</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#survey">2.8.4.10. Survey</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#signature">2.8.4.11. Signature</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="toctree-l3"><a class="reference internal" href="#layout-forms">2.8.5. Layout Forms</a>
+                      <ul>
+                        <li class="toctree-l4"><a class="reference internal" href="#html-element">2.8.5.1. HTML
+                            Element</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#content">2.8.5.2. Content</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#columns">2.8.5.3. Columns</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#field-set">2.8.5.4. Field Set</a>
+                        </li>
+                        <li class="toctree-l4"><a class="reference internal" href="#panel">2.8.5.5. Panel</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#table">2.8.5.6. Table</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#tabs">2.8.5.7. Tabs</a></li>
+                        <li class="toctree-l4"><a class="reference internal" href="#well">2.8.5.8. Well</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#entities-mongodb">2.9. <strong>Entities -
+                      MongoDB</strong></a>
+                  <ul>
+                    <li class="toctree-l3"><a class="reference internal" href="#what-are-entities">2.9.1. What are
+                        entities?</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="#usages">2.9.2. Usages</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="#collections">2.9.3. Collections</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="toctree-l1"><a class="reference internal" href="openrpa.html">3. <strong>OpenRPA</strong></a>
+            </li>
+            <li class="toctree-l1"><a class="reference internal" href="node_red.html">4. <strong>Node-RED</strong></a>
+            </li>
+            <li class="toctree-l1"><a class="reference internal" href="appendix_a.html">5. <strong>Appendix
+                  A</strong></a></li>
+          </ul>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="license.html">1. License</a></li>
+          </ul>
+
+
+
         </div>
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-      
+
       <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">BPA Docs</a>
-        
+
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">BPA Docs</a>
+
       </nav>
 
 
       <div class="wy-nav-content">
-        
+
         <div class="rst-content">
-        
-          
 
 
 
@@ -206,97 +248,176 @@
 
 
 
-<div role="navigation" aria-label="breadcrumbs navigation">
 
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li><span class="section-number">2. </span><strong>OpenFlow</strong></li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-        
-      </li>
-    
-  </ul>
 
-  
-  <hr/>
-</div>
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+            <ul class="wy-breadcrumbs">
+
+              <li><a href="index.html">Docs</a> &raquo;</li>
+
+              <li><span class="section-number">2. </span><strong>OpenFlow</strong></li>
+
+
+              <li class="wy-breadcrumbs-aside">
+
+
+
+              </li>
+
+            </ul>
+
+
+            <hr />
+          </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <div class="section" id="openflow">
-<h1><span class="section-number">2. </span><strong>OpenFlow</strong><a class="headerlink" href="#openflow" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-is-openflow">
-<h2><span class="section-number">2.1. </span><strong>What is OpenFlow?</strong><a class="headerlink" href="#what-is-openflow" title="Permalink to this headline">¶</a></h2>
-<p>OpenFlow is an application, which enables the user to manage, invoke and configure your robots through workflow entries. It also serves as a central cloud repository from where it is available to save your robots and gather them from the OpenRPA GUI and provides an easy way to integrate many workflows with forms and other kinds of input and processing.</p>
-</div>
-<div class="section" id="installing-first-run">
-<h2><span class="section-number">2.2. </span><strong>Installing, First Run</strong><a class="headerlink" href="#installing-first-run" title="Permalink to this headline">¶</a></h2>
-<p>The following guide’s purpose is to help the user install an instance of OpenFlow <strong>locally</strong>. If you already have an URL provided in which to use OpenFlow, please refer to the next section.</p>
-<p>The user must make sure he already has <a class="reference external" href="https://nodejs.org/en/">NodeJS</a> (<code class="docutils literal notranslate"><span class="pre">https://nodejs.org/en/</span></code>) - preferably using <a class="reference external" href="https://github.com/nvm-sh/nvm">nvm</a> (<code class="docutils literal notranslate"><span class="pre">https://github.com/nvm-sh/nvm</span></code>), <a class="reference external" href="https://www.mongodb.com/try/download/community">MongoDB Community Server</a> (<code class="docutils literal notranslate"><span class="pre">https://www.mongodb.com/try/download/community</span></code>) and <a class="reference external" href="https://www.rabbitmq.com/download.html">RabbitMQ</a> (<code class="docutils literal notranslate"><span class="pre">https://www.rabbitmq.com/download.html</span></code>).</p>
-<div class="section" id="quickstart-running-openflow-using-npm">
-<h3><span class="section-number">2.2.1. </span>Quickstart Running OpenFlow using NPM<a class="headerlink" href="#quickstart-running-openflow-using-npm" title="Permalink to this headline">¶</a></h3>
-<p>In this section lies a brief and concise description of how to install OpenFlow through NPM.</p>
-<p>Then, the user must run the following command from a command prompt with escalated privileges in Windows 10.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="p">-</span><span class="n">-global</span> <span class="n">windows-built-tools</span>
-</pre></div>
-</div>
-<p>If using any GNU/Linux distro which uses the <code class="docutils literal notranslate"><span class="pre">APT</span></code> package manager, the following command replaces the one above.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt-get</span> <span class="n">install</span> <span class="n">gcc</span> <span class="n">g</span><span class="p">++</span> <span class="n">make</span>
-</pre></div>
-</div>
-<p>Then, the user must install the <code class="docutils literal notranslate"><span class="pre">openiap</span></code> package.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">i</span> <span class="n">openiap</span> <span class="n">-g</span>
-</pre></div>
-</div>
-<p>Then he shall create a template configuration file.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">openflow-cli</span> <span class="p">-</span><span class="n">-init</span>
-</pre></div>
-</div>
-<p>Now the user can install the service.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">openflow-cli</span> <span class="p">-</span><span class="n">-install</span> <span class="n">openflow</span>
-</pre></div>
-</div>
-<p>All the user has to do now to access OpenFlow is visit the <a class="reference external" href="http://localhost.openrpa.dk">OpenFlow page</a> (<code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk</span></code>).</p>
-</div>
-<div class="section" id="developer-setup">
-<h3><span class="section-number">2.2.2. </span>Developer Setup<a class="headerlink" href="#developer-setup" title="Permalink to this headline">¶</a></h3>
-<p>If you have interest in creating a develeoper setup in order to develop some extra features yourself or to debug, in this section you will find a brief and concise description of how to install OpenFlow by cloning the <a class="reference external" href="https://github.com/open-rpa/openflow">OpenFlow’s GitHub Repository</a> (<code class="docutils literal notranslate"><span class="pre">https://github.com/open-rpa/openflow</span></code>) and run it from <strong>Visual Studio Code</strong></p>
-<p>Obviously, <a class="reference external" href="https://code.visualstudio.com/download">Visual Studio Code</a> (<code class="docutils literal notranslate"><span class="pre">https://code.visualstudio.com/download</span></code>) is required.</p>
-<p>First, the user must clone the repository into a folder.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/open-rpa/openflow
-</pre></div>
-</div>
-<p>Then, the user must initialize a command prompt and move to the desired directory.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd </span><span class="n">openflow</span>
-</pre></div>
-</div>
-<p>Now the user must install <code class="docutils literal notranslate"><span class="pre">gulpy</span></code> and <code class="docutils literal notranslate"><span class="pre">typescript</span></code> globally.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">i</span> <span class="n">gulp</span> <span class="n">typescript</span> <span class="n">browserify</span> <span class="n">tsify</span> <span class="n">-gather</span>
-</pre></div>
-</div>
-<p>And also install packages for OpenFlow API/Web.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">i</span>
-</pre></div>
-</div>
-<p>The user must now install the packages for Node-RED by using the following command.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd </span><span class="n">openflow_node_red_configure_form</span>
+            <div itemprop="articleBody">
+
+              <div class="section" id="openflow">
+                <h1><span class="section-number">2. </span><strong>OpenFlow</strong><a class="headerlink"
+                    href="#openflow" title="Permalink to this headline">¶</a></h1>
+                <div class="section" id="what-is-openflow">
+                  <h2><span class="section-number">2.1. </span><strong>What is OpenFlow?</strong><a class="headerlink"
+                      href="#what-is-openflow" title="Permalink to this headline">¶</a></h2>
+                  <p>OpenFlow is an application, which enables the user to manage, invoke and configure your robots
+                    through workflow entries. It also serves as a central cloud repository from where it is available to
+                    save your robots and gather them from the OpenRPA GUI and provides an easy way to integrate many
+                    workflows with forms and other kinds of input and processing.</p>
+                </div>
+                <div class="section" id="installing-first-run">
+                  <h2><span class="section-number">2.2. </span><strong>Installing, First Run</strong><a
+                      class="headerlink" href="#installing-first-run" title="Permalink to this headline">¶</a></h2>
+                  <p>The following guide’s purpose is to help the user install an instance of OpenFlow
+                    <strong>locally</strong>. If you already have an URL provided in which to use OpenFlow, please refer
+                    to the next section.</p>
+                  <p>The user must make sure he already has <a class="reference external"
+                      href="https://nodejs.org/en/">NodeJS</a> (<code
+                      class="docutils literal notranslate"><span class="pre">https://nodejs.org/en/</span></code>) -
+                    preferably using <a class="reference external" href="https://github.com/nvm-sh/nvm">nvm</a> (<code
+                      class="docutils literal notranslate"><span class="pre">https://github.com/nvm-sh/nvm</span></code>),
+                    <a class="reference external" href="https://www.mongodb.com/try/download/community">MongoDB
+                      Community Server</a> (<code
+                      class="docutils literal notranslate"><span class="pre">https://www.mongodb.com/try/download/community</span></code>)
+                    and <a class="reference external" href="https://www.rabbitmq.com/download.html">RabbitMQ</a> (<code
+                      class="docutils literal notranslate"><span class="pre">https://www.rabbitmq.com/download.html</span></code>).
+                  </p>
+                  <div class="section" id="quickstart-running-openflow-using-npm">
+                    <h3><span class="section-number">2.2.1. </span>Quickstart Running OpenFlow using NPM<a
+                        class="headerlink" href="#quickstart-running-openflow-using-npm"
+                        title="Permalink to this headline">¶</a></h3>
+                    <p>In this section lies a brief and concise description of how to install OpenFlow through NPM.</p>
+                    <p>Then, the user must run the following command from a command prompt with escalated privileges in
+                      Windows 10.</p>
+                    <div class="highlight-powershell notranslate">
+                      <div class="highlight">
+                        <pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="p">-</span><span class="n">-global</span> <span class="n">windows-built-tools</span>
+</pre>
+                      </div>
+                    </div>
+                    <p>If using any GNU/Linux distro which uses the <code
+                        class="docutils literal notranslate"><span class="pre">APT</span></code> package manager, the
+                      following command replaces the one above.</p>
+                    <div class="highlight-powershell notranslate">
+                      <div class="highlight">
+                        <pre><span></span><span class="n">sudo</span> <span class="n">apt-get</span> <span class="n">install</span> <span class="n">gcc</span> <span class="n">g</span><span class="p">++</span> <span class="n">make</span>
+</pre>
+                      </div>
+                    </div>
+                    <p>Then, the user must install the <code
+                        class="docutils literal notranslate"><span class="pre">openiap</span></code> package.</p>
+                    <div class="highlight-powershell notranslate">
+                      <div class="highlight">
+                        <pre><span></span><span class="n">npm</span> <span class="n">i</span> <span class="n">openiap</span> <span class="n">-g</span>
+</pre>
+                      </div>
+                    </div>
+                    <p>Then he shall create a template configuration file.</p>
+                    <div class="highlight-powershell notranslate">
+                      <div class="highlight">
+                        <pre><span></span><span class="n">openflow-cli</span> <span class="p">-</span><span class="n">-init</span>
+</pre>
+                      </div>
+                    </div>
+                    <p>Now the user can install the service.</p>
+                    <div class="highlight-powershell notranslate">
+                      <div class="highlight">
+                        <pre><span></span><span class="n">openflow-cli</span> <span class="p">-</span><span class="n">-install</span> <span class="n">openflow</span>
+</pre>
+                      </div>
+                    </div>
+                    <p>All the user has to do now to access OpenFlow is visit the <a class="reference external"
+                        href="http://localhost.openrpa.dk">OpenFlow page</a> (<code
+                        class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk</span></code>).
+                    </p>
+                  </div>
+                  <div class="section" id="developer-setup">
+                    <h3><span class="section-number">2.2.2. </span>Developer Setup<a class="headerlink"
+                        href="#developer-setup" title="Permalink to this headline">¶</a></h3>
+                    <p>If you have interest in creating a develeoper setup in order to develop some extra features
+                      yourself or to debug, in this section you will find a brief and concise description of how to
+                      install OpenFlow by cloning the <a class="reference external"
+                        href="https://github.com/open-rpa/openflow">OpenFlow’s GitHub Repository</a> (<code
+                        class="docutils literal notranslate"><span class="pre">https://github.com/open-rpa/openflow</span></code>)
+                      and run it from <strong>Visual Studio Code</strong></p>
+                    <p>Obviously, <a class="reference external" href="https://code.visualstudio.com/download">Visual
+                        Studio Code</a> (<code
+                        class="docutils literal notranslate"><span class="pre">https://code.visualstudio.com/download</span></code>)
+                      is required.</p>
+                    <p>First, the user must clone the repository into a folder.</p>
+                    <div class="highlight-powershell notranslate">
+                      <div class="highlight">
+                        <pre><span></span>git clone https://github.com/open-rpa/openflow
+</pre>
+                      </div>
+                    </div>
+                    <p>Then, the user must initialize a command prompt and move to the desired directory.</p>
+                    <div class="highlight-powershell notranslate">
+                      <div class="highlight">
+                        <pre><span></span><span class="nb">cd </span><span class="n">openflow</span>
+</pre>
+                      </div>
+                    </div>
+                    <p>Now the user must install <code
+                        class="docutils literal notranslate"><span class="pre">gulpy</span></code> and <code
+                        class="docutils literal notranslate"><span class="pre">typescript</span></code> globally.</p>
+                    <div class="highlight-powershell notranslate">
+                      <div class="highlight">
+                        <pre><span></span><span class="n">npm</span> <span class="n">i</span> <span class="n">gulp</span> <span class="n">typescript</span> <span class="n">browserify</span> <span class="n">tsify</span> <span class="n">-gather</span>
+</pre>
+                      </div>
+                    </div>
+                    <p>And also install packages for OpenFlow API/Web.</p>
+                    <div class="highlight-powershell notranslate">
+                      <div class="highlight">
+                        <pre><span></span><span class="n">npm</span> <span class="n">i</span>
+</pre>
+                      </div>
+                    </div>
+                    <p>The user must now install the packages for Node-RED by using the following command.</p>
+                    <div class="highlight-powershell notranslate">
+                      <div class="highlight">
+                        <pre><span></span><span class="nb">cd </span><span class="n">openflow_node_red_configure_form</span>
 <span class="n">npm</span> <span class="n">i</span>
 <span class="nb">cd </span><span class="p">..</span>
-</pre></div>
-</div>
-<p>Now the user will open the working folder in VS Code.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">code</span> <span class="n">OpenFlow</span><span class="p">.</span><span class="n">code-workspace</span>
-</pre></div>
-</div>
-<p>And create a folder at the top level of the OpenFlow folder called <code class="docutils literal notranslate"><span class="pre">config</span></code> and inside it a file called <code class="docutils literal notranslate"><span class="pre">.env</span></code> - be careful since the name of the file has a dot starting it!</p>
-<p>Lastly, he shall add the following content to the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file:</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>nodered_id=nodered1
+</pre>
+                      </div>
+                    </div>
+                    <p>Now the user will open the working folder in VS Code.</p>
+                    <div class="highlight-powershell notranslate">
+                      <div class="highlight">
+                        <pre><span></span><span class="n">code</span> <span class="n">OpenFlow</span><span class="p">.</span><span class="n">code-workspace</span>
+</pre>
+                      </div>
+                    </div>
+                    <p>And create a folder at the top level of the OpenFlow folder called <code
+                        class="docutils literal notranslate"><span class="pre">config</span></code> and inside it a file
+                      called <code class="docutils literal notranslate"><span class="pre">.env</span></code> - be
+                      careful since the name of the file has a dot starting it!</p>
+                    <p>Lastly, he shall add the following content to the <code
+                        class="docutils literal notranslate"><span class="pre">.env</span></code> file:</p>
+                    <div class="highlight-powershell notranslate">
+                      <div class="highlight">
+                        <pre><span></span>nodered_id=nodered1
 nodered_sa=nodered1
 port=80
 nodered_port=1880
@@ -379,396 +500,656 @@ aes_secret=7TXsxf7cn9EkUqm5h4MEWGjzkxkNCk2K
 auto_create_users=true
 auto_create_domains=
 skip_history_collections=audit,jslog
-</pre></div>
-</div>
-<p>And if the user is using <strong>Windows 10</strong>, he must allow Powershell Scripts to run by changing the Execution Policy using the following command in a Powershell Prompt with escalated privileges.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="p">-</span><span class="n">-Force</span>
-</pre></div>
-</div>
-<p>Finally, the user can run <code class="docutils literal notranslate"><span class="pre">OpenFlow</span></code> by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+D</span></code>, selecting <code class="docutils literal notranslate"><span class="pre">OpenFlow</span></code> in the dropdown box and clicking the <strong>Play</strong> button.</p>
-<p>The user can now access OpenFlow by using a browser and navigating to the <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk</span></code> URL.</p>
-<p>To properly install and configure Node-RED, please refer to the <strong>Installing &amp; First Run</strong> section in the Node-RED chapter.</p>
-</div>
-</div>
-<div class="section" id="accessing-for-the-first-time">
-<h2><span class="section-number">2.3. </span><strong>Accessing for the first time</strong><a class="headerlink" href="#accessing-for-the-first-time" title="Permalink to this headline">¶</a></h2>
-<p>To access OpenFlow webpage, simply go to the URL as specified by your working enviroment (contact your IT responsible, if needed). If you are running a local version, by default the URL should be <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk</span></code>.
-If you do not have access to an OpenFlow of you own and you are not running a local version, we encourage you to do some experimentation using our own demo enviroment, which can be found at <code class="docutils literal notranslate"><span class="pre">https://app.openiap.io</span></code>.</p>
-<p>After accessing the page, users may be prompted to authenticate themselves. After signing in, the user is redirected to the home page of OpenFlow.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you are accessing OpenFlow demo enviroment (<code class="docutils literal notranslate"><span class="pre">https://app.openiap.io</span></code>), when prompted for credentials, you may type any username/password combination and your user will be then created automatically with the same credentials. Please keep note of your username/password!</p>
-</div>
-<div class="figure align-center" id="id5">
-<a class="reference internal image-reference" href="_images/openflow_sign_in_page.png"><img alt="_images/openflow_sign_in_page.png" src="_images/openflow_sign_in_page.png" style="width: 250.0px; height: 222.0px;" /></a>
-<p class="caption"><span class="caption-text"><strong>Authentication page.</strong></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-center" id="id6">
-<a class="reference internal image-reference" href="_images/openflow_index_page.png"><img alt="_images/openflow_index_page.png" src="_images/openflow_index_page.png" style="width: 478.09999999999997px; height: 219.45px;" /></a>
-<p class="caption"><span class="caption-text"><strong>OpenFlow’s home page.</strong></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="creating-a-new-user">
-<h2><span class="section-number">2.4. </span><strong>Creating a new user</strong><a class="headerlink" href="#creating-a-new-user" title="Permalink to this headline">¶</a></h2>
-<p>To create a new user first click the Admin dropdown and the Users option.</p>
-<div class="figure align-center" id="id7">
-<a class="reference internal image-reference" href="_images/openflow_dropdown_index_page.png"><img alt="_images/openflow_dropdown_index_page.png" src="_images/openflow_dropdown_index_page.png" style="width: 386.0px; height: 230.5px;" /></a>
-<p class="caption"><span class="caption-text"><strong>Admin dropdown.</strong></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
-</div>
-<p>Now click the navy blue <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">user</span></code> button.</p>
-<div class="figure align-center" id="id8">
-<a class="reference internal image-reference" href="_images/openflow_users_page.png"><img alt="_images/openflow_users_page.png" src="_images/openflow_users_page.png" style="width: 479.84999999999997px; height: 219.79999999999998px;" /></a>
-<p class="caption"><span class="caption-text"><strong>Users page.</strong></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
-</div>
-<p>Now it is needed to fill the given forms and click save.</p>
-<div class="figure align-center" id="id9">
-<a class="reference internal image-reference" href="_images/openflow_userdetail_page.png"><img alt="_images/openflow_userdetail_page.png" src="_images/openflow_userdetail_page.png" style="width: 479.75px; height: 215.75px;" /></a>
-<p class="caption"><span class="caption-text"><strong>User creation page.</strong></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="roles">
-<h2><span class="section-number">2.5. </span><strong>Roles</strong><a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h2>
-<p>Here we explain <strong>Roles</strong> in OpenFlow and how they interfere with OpenRPA and Node-RED access privileges.</p>
-<div class="section" id="what-are-roles">
-<h3><span class="section-number">2.5.1. </span>What are Roles?<a class="headerlink" href="#what-are-roles" title="Permalink to this headline">¶</a></h3>
-<p>In OpenFlow, <strong>Roles</strong> are an unit or collection of privileges and permissions that can be assigned to one or more users. These <strong>Roles</strong> serve various purposes, such as granting access to workflows inside <strong>OpenRPA</strong> or granting access to flows inside <strong>Node-RED</strong>, which in turn may or may not activate workflows inside OpenRPA.</p>
-</div>
-<div class="section" id="rparole-pool">
-<h3><span class="section-number">2.5.2. </span>RPARole (Pool)<a class="headerlink" href="#rparole-pool" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>RPARole</strong> is a parameter set in the Role editting page of a role which creates a pool of consumers.</p>
-<p>If set, this parameter will act upon a robot such that each robot logged in with a <strong>Role</strong> containing this parameter set will be assigned as a consumer on the <code class="docutils literal notranslate"><span class="pre">id</span></code> of that given <strong>Role</strong>. Think of it as creating a <a class="reference external" href="https://cs.stackexchange.com/q/86372">pool</a> (<code class="docutils literal notranslate"><span class="pre">https://cs.stackexchange.com/q/86372</span></code>) of consumers, where each consumer is assigned upon logging in.</p>
-<div class="section" id="but-what-is-a-consumer">
-<h4><span class="section-number">2.5.2.1. </span>But what is a consumer?<a class="headerlink" href="#but-what-is-a-consumer" title="Permalink to this headline">¶</a></h4>
-<blockquote>
-<div><p><em>The term “consumer” means different things in different contexts. In general in messaging a consumer is an application (or application instance) that consumes messages. The same application can also publish messages and thus be a publisher at the same time.In this sense a consumer is a subscription for message delivery that has to be registered before deliveries begin and can be cancelled by the application</em>.</p>
-<p><em>RabbitMQ is a messaging broker. It accepts messages from publishers, routes them and, if there were queues to route to, stores them for consumption or immediately delivers to consumers, if any. Consumers consume from queues. In order to consume messages there has to be a queue. When a new consumer is added, assuming there are already messages ready in the queue, deliveries will start immediately. The target queue can be empty at the time of consumer registration. In that case first deliveries will happen when new messages are enqueued</em>.¹</p>
-</div></blockquote>
-<p>¹ - <a class="reference external" href="https://www.rabbitmq.com/consumers.html">Consumers</a> (<code class="docutils literal notranslate"><span class="pre">https://www.rabbitmq.com/consumers.html</span></code>)</p>
-</div>
-</div>
-<div class="section" id="granting-permissions-admin-nodered-user">
-<h3><span class="section-number">2.5.3. </span>Granting permissions (admin, nodered, user)<a class="headerlink" href="#granting-permissions-admin-nodered-user" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
-</div>
-</div>
-<div class="section" id="workflows-tab-node-red">
-<h2><span class="section-number">2.6. </span><strong>Workflows Tab (Node-RED)</strong><a class="headerlink" href="#workflows-tab-node-red" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="what-is-it">
-<h3><span class="section-number">2.6.1. </span>What is it?<a class="headerlink" href="#what-is-it" title="Permalink to this headline">¶</a></h3>
-<p>Workflows in Node-RED are mainly called ‘Flows’. These flows are made to connect different services, applications and logic functions. When grouped together they can be used to process data and output the results to a given service or file.</p>
-<p>At the  <a class="reference external" href="http://localhost.openrpa.dk/#/Workflows">Workflows page</a> (eg. <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk/#/Workflows</span></code>) in OpenFlow, it is possible to remotely invoke these flows.</p>
-<div class="figure align-center" id="id10">
-<img alt="_images/openflow_node_red_subflow.png" src="_images/openflow_node_red_subflow.png" />
-<p class="caption"><span class="caption-text"><strong>Node-RED subflow example.</strong></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="invoking">
-<h3><span class="section-number">2.6.2. </span>Invoking<a class="headerlink" href="#invoking" title="Permalink to this headline">¶</a></h3>
-<p>Workflows can be started through all three applications: OpenRPA, OpenFlow and Node-RED. Invoking a workflow does not change it’s content, it merely executes it remotely. Think of it as a read-only procedure.</p>
-<ul>
-<li><p><strong>Deploying a Workflow to Node-RED</strong></p>
-<blockquote>
-<div><p>Upon accessing Node-RED, flow tabs are shown containing all the flows available for deployment. To execute a Node-RED flow, simply click the starting node inside a Node-RED subflow. Everytime a change is made to a Node-RED flow or subflow it is required to deploy it again so the changes are applied.</p>
-<p>If it is desired to invoke a workflow through OpenFlow according to the settings set on the Node-RED application, a few more steps are required.</p>
-<ol class="arabic simple">
-<li><p>Enter the Node-RED page and select the desired flow tab where you want to create the subflow containing the invoke call to OpenFlow.</p></li>
-<li><p>Create a subflow with a <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code> node as its starting point.</p></li>
-<li><p>Click twice the <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code> node corresponding to the workflow you want to create.</p></li>
-<li><p>Name it by setting up the <code class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">name</span></code> input field.</p></li>
-<li><p>If desired, route it to send a form back to the user by using <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Out</span></code>  (more about Forms below).</p></li>
-<li><p>Check one or both of the checkboxes: RPA - to enable this node to be invoked from OpenRPA - and WEB - to enable invoking from OpenFlow.</p></li>
-<li><p>Deploy the current flow.</p></li>
-</ol>
-<p>It is important to remark that when a <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code> node is deployed, it will create a corresponding role inside OpenFlow named “nodered$&lt;<code class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">name</span></code>&gt;”, and only users that are members of this role can invoke this workflow. On the following next steps, if you can’t see your workflow when attempting to remotely invoke it, double check and see if your user is a member of that role!</p>
-</div></blockquote>
-</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The user must have the <code class="docutils literal notranslate"><span class="pre">nodered</span> <span class="pre">users</span></code> role enabled in order to able to invoke Node-RED flows from within OpenFlow.</p>
-</div>
-<div class="figure align-center" id="id11">
-<img alt="_images/openflow_setting_nodered_workflow.png" src="_images/openflow_setting_nodered_workflow.png" />
-<p class="caption"><span class="caption-text"><strong>Enabling Node-RED invoking from OpenFlow.</strong></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</div>
-<ul>
-<li><p><strong>Invoking a Node-RED workflow in OpenFlow</strong></p>
-<p>After the steps above are complete, go to the <a class="reference external" href="http://localhost.openrpa.dk/#/Workflows">Workflows page</a> (eg. <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk/#/Workflows</span></code>) and directly invoke the desired workflow. A form page will then open to choose the input parameters, if any.</p>
-<p>The forms are either automatically generated by OpenRPA, according to the variables preset - more on that on OpenRPA’s Variables section - or manually generated by the user on the <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">Forms page</a> (eg. <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk/#/Forms</span></code>).</p>
-<p>Upon clicking submit on a form, the parameters are sent to the robot for processing and execution of the given workflow.</p>
-</li>
-</ul>
-<div class="figure align-default" id="id12">
-<img alt="_images/openflow_workflows_page.png" src="_images/openflow_workflows_page.png" />
-<p class="caption"><span class="caption-text"><strong>Workflows page.</strong></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="id13">
-<img alt="_images/openflow_form_example.png" src="_images/openflow_form_example.png" />
-<p class="caption"><span class="caption-text"><strong>Form example.</strong></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-</div>
-<div class="section" id="rpa-workflows-tab-openrpa">
-<h2><span class="section-number">2.7. </span><strong>RPA Workflows Tab (OpenRPA)</strong><a class="headerlink" href="#rpa-workflows-tab-openrpa" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3><span class="section-number">2.7.1. </span>What is it?<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>Workflows in OpenRPA and OpenFlow are the same thing, an algorithm or a sequence of steps that execute a meaningful task. The difference is that when you invoke a workflow in OpenFlow, it creates an instance of that workflow. By accessing the Workflows tab, you may invoke workflows remotely, meaning, the stack in OpenFlow will send a message to the available agent to process and execute the given workflow.</p>
-<p>From OpenFlow you can create forms, grant permissions to a given workflow and most importantly invoke it.</p>
-<p>OpenFlow automatically manages the workflow repository. When properly connected, by saving a workflow inside OpenRPA, it will also automatically appear inside the Workflows webpage.</p>
-<p>To download a workflow, simply go to the RPA Workflows link and click download. After dowloading the .XAML file, you may share it with others or import it into your OpenRPA client.</p>
-</div>
-<div class="section" id="id3">
-<h3><span class="section-number">2.7.2. </span>Invoking<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p><strong>Methods for Invoking</strong></p>
-<blockquote>
-<div><p>Here we discuss the methods for invoking a workflow using OpenFlow.</p>
-</div></blockquote>
-</li>
-<li><p><strong>Invoking through OpenFlow’s RPA Workflows Page</strong></p>
-<blockquote>
-<div><p>To invoke a workflow through OpenFlow, simply go to <a class="reference external" href="http://localhost.openrpa.dk/#/RPAWorkflows">RPA Workflows page</a> (eg. <a class="reference external" href="http://localhost.openrpa.dk/#/Workflows">http://localhost.openrpa.dk/#/Workflows</a>) and click Invoke, another page for the specific workflow will be opened where all the forms needed to be filled are going to be presented. Simply fill them and click Invoke again. The input data is then sent to the chosen robot/agent and it will start processing the workflow.</p>
-<p>Data processing is bi-directional: input parameters are sent to a robot/agent and the workflow output will also be returned. That means that you can make many workflows calling different applications. Think of it as a message, messages are sent, read and replied to. Nothing prevents that message from being sent, read or replied to multiple times.</p>
-</div></blockquote>
-</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For the user to invoke a workflow using OpenFlow, the user must have the proper permissions. See more at OpenRPA’s chapter Granting permissions to users/roles.</p>
-</div>
-<div class="figure align-center" id="id14">
-<img alt="_images/openflow_rpa_workflows.png" src="_images/openflow_rpa_workflows.png" />
-<p class="caption"><span class="caption-text"><strong>RPA Workflows page.</strong></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-</div>
-<div class="section" id="forms">
-<h2><span class="section-number">2.8. </span><strong>Forms</strong><a class="headerlink" href="#forms" title="Permalink to this headline">¶</a></h2>
-<p>Forms are an user-friendly way of passing input to a workflow by creating dynamic OpenFlow’s webpages. There are two ways of generating a form, one of them is through OpenFlow’s automatically generated forms which are created upon saving a Workflow into its repository and the other one is manually creating a form and connecting it to a Node-RED workflow.</p>
-<div class="section" id="creating-a-form">
-<h3><span class="section-number">2.8.1. </span>Creating a Form<a class="headerlink" href="#creating-a-form" title="Permalink to this headline">¶</a></h3>
-<p>Creating a form is rather easy and simple. Go to the Forms page, where all forms are listed, available under the Admin dropdown or on the <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">Forms page</a> (eg. <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">http://localhost.openrpa.dk/#/Forms</a>) and click the Navy blue <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">form</span></code> button.</p>
-<div class="figure align-center" id="id15">
-<img alt="_images/openflow_forms_page.png" src="_images/openflow_forms_page.png" />
-<p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms page.</strong></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
-</div>
-<p>Now at the Forms edit page, there are many basic from which you can choose. For synthetic purposes, we are only going to discuss the most used one here: Text Field Component.</p>
-<p>Drag the Form from the Basic category into the Form workspace. Immediately after, a window containing all the parameters to configure the form will appear.</p>
-<div class="figure align-center" id="id16">
-<img alt="_images/openflow_forms_creation_page.png" src="_images/openflow_forms_creation_page.png" />
-<p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms creation page.</strong></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-center" id="id17">
-<img alt="_images/openflow_form_starter_config_page.png" src="_images/openflow_form_starter_config_page.png" />
-<p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms starter configuration tab.</strong></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="configuring-the-form">
-<h3><span class="section-number">2.8.2. </span>Configuring the Form<a class="headerlink" href="#configuring-the-form" title="Permalink to this headline">¶</a></h3>
-<p>Below are the steps needed to properly configure a form, in our case TextField Form.</p>
-<ul>
-<li><p><strong>Changing Form Label</strong></p>
-<blockquote>
-<div><p>To change the Form’s label, ie. the title which will appear for the end-user, simply click the Display tab and change the input form titled <strong>Label</strong>, the changes are shown real-time.</p>
-</div></blockquote>
-</li>
-</ul>
-<div class="figure align-center" id="id18">
-<img alt="_images/openflow_form_label_config_page.png" src="_images/openflow_form_label_config_page.png" />
-<p class="caption"><span class="caption-text"><strong>OpenFlow’s Form Display configuration tab.</strong></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
-</div>
-<ul>
-<li><p><strong>Assigning Input Variable</strong></p>
-<blockquote>
-<div><p>To assign the input form to a variable configured inside the OpenRPA workflow you’ve mapped to OpenFlow, simply go to the API tab and insert the name of the variable inside <strong>Property Name</strong> and press save. Now the next time this workflow is called, a new parameter will appear.</p>
-</div></blockquote>
-</li>
-</ul>
-<div class="figure align-center" id="id19">
-<img alt="_images/openflow_text_field_api_config.png" src="_images/openflow_text_field_api_config.png" />
-<p class="caption"><span class="caption-text"><strong>OpenFlow’s Form API configuration tab.</strong></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
-</div>
-<ul>
-<li><p><strong>Assigning Form to Node-RED Workflow</strong></p>
-<blockquote>
-<div><p>Now it is required that you assign a Form to a Node-RED workflow. To do that, go to Node-RED and click twice on the <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Out</span></code> node you want to assign the form to. The <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">workflow</span> <span class="pre">out</span> <span class="pre">node</span></code> tab appears and you must select the form you’ve just created in the <code class="docutils literal notranslate"><span class="pre">Userform</span></code> dropdown.</p>
-</div></blockquote>
-</li>
-</ul>
-<div class="figure align-default" id="id20">
-<img alt="_images/openflow_node_red_configure_form.png" src="_images/openflow_node_red_configure_form.png" />
-<p class="caption"><span class="caption-text"><strong>Assigning Form to Node-RED workflow.</strong></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="basic-forms">
-<h3><span class="section-number">2.8.3. </span>Basic Forms<a class="headerlink" href="#basic-forms" title="Permalink to this headline">¶</a></h3>
-<p>The Basic forms contain the most basic forms of inputs.</p>
-<div class="section" id="text-field">
-<h4><span class="section-number">2.8.3.1. </span>Text Field<a class="headerlink" href="#text-field" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="text-area">
-<h4><span class="section-number">2.8.3.2. </span>Text Area<a class="headerlink" href="#text-area" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="number">
-<h4><span class="section-number">2.8.3.3. </span>Number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="password">
-<h4><span class="section-number">2.8.3.4. </span>Password<a class="headerlink" href="#password" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="checkbox">
-<h4><span class="section-number">2.8.3.5. </span>Checkbox<a class="headerlink" href="#checkbox" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="select-boxes">
-<h4><span class="section-number">2.8.3.6. </span>Select Boxes<a class="headerlink" href="#select-boxes" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="select">
-<h4><span class="section-number">2.8.3.7. </span>Select<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="radio">
-<h4><span class="section-number">2.8.3.8. </span>Radio<a class="headerlink" href="#radio" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="button">
-<h4><span class="section-number">2.8.3.9. </span>Button<a class="headerlink" href="#button" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-</div>
-<div class="section" id="advanced-forms">
-<h3><span class="section-number">2.8.4. </span>Advanced Forms<a class="headerlink" href="#advanced-forms" title="Permalink to this headline">¶</a></h3>
-<p>The Advanced forms contain the most advanced forms of inputs.</p>
-<div class="section" id="email">
-<h4><span class="section-number">2.8.4.1. </span>Email<a class="headerlink" href="#email" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="url">
-<h4><span class="section-number">2.8.4.2. </span>URL<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="phone-number">
-<h4><span class="section-number">2.8.4.3. </span>Phone Number<a class="headerlink" href="#phone-number" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="tags">
-<h4><span class="section-number">2.8.4.4. </span>Tags<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="address">
-<h4><span class="section-number">2.8.4.5. </span>Address<a class="headerlink" href="#address" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="date-time">
-<h4><span class="section-number">2.8.4.6. </span>Date / Time<a class="headerlink" href="#date-time" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="day">
-<h4><span class="section-number">2.8.4.7. </span>Day<a class="headerlink" href="#day" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="time">
-<h4><span class="section-number">2.8.4.8. </span>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="currency">
-<h4><span class="section-number">2.8.4.9. </span>Currency<a class="headerlink" href="#currency" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="survey">
-<h4><span class="section-number">2.8.4.10. </span>Survey<a class="headerlink" href="#survey" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="signature">
-<h4><span class="section-number">2.8.4.11. </span>Signature<a class="headerlink" href="#signature" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-</div>
-<div class="section" id="layout-forms">
-<h3><span class="section-number">2.8.5. </span>Layout Forms<a class="headerlink" href="#layout-forms" title="Permalink to this headline">¶</a></h3>
-<p>The Layout forms contain view-related forms of input.</p>
-<div class="section" id="html-element">
-<h4><span class="section-number">2.8.5.1. </span>HTML Element<a class="headerlink" href="#html-element" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="content">
-<h4><span class="section-number">2.8.5.2. </span>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="columns">
-<h4><span class="section-number">2.8.5.3. </span>Columns<a class="headerlink" href="#columns" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="field-set">
-<h4><span class="section-number">2.8.5.4. </span>Field Set<a class="headerlink" href="#field-set" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="panel">
-<h4><span class="section-number">2.8.5.5. </span>Panel<a class="headerlink" href="#panel" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="table">
-<h4><span class="section-number">2.8.5.6. </span>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="tabs">
-<h4><span class="section-number">2.8.5.7. </span>Tabs<a class="headerlink" href="#tabs" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="well">
-<h4><span class="section-number">2.8.5.8. </span>Well<a class="headerlink" href="#well" title="Permalink to this headline">¶</a></h4>
-<p>Coming soon - Work in progress</p>
-</div>
-</div>
-</div>
-<div class="section" id="entities-mongodb">
-<h2><span class="section-number">2.9. </span><strong>Entities - MongoDB</strong><a class="headerlink" href="#entities-mongodb" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="what-are-entities">
-<h3><span class="section-number">2.9.1. </span>What are entities?<a class="headerlink" href="#what-are-entities" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="usages">
-<h3><span class="section-number">2.9.2. </span>Usages<a class="headerlink" href="#usages" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
-</div>
-<div class="section" id="collections">
-<h3><span class="section-number">2.9.3. </span>Collections<a class="headerlink" href="#collections" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
-</div>
-</div>
-</div>
+</pre>
+                      </div>
+                    </div>
+                    <p>And if the user is using <strong>Windows 10</strong>, he must allow Powershell Scripts to run by
+                      changing the Execution Policy using the following command in a Powershell Prompt with escalated
+                      privileges.</p>
+                    <div class="highlight-powershell notranslate">
+                      <div class="highlight">
+                        <pre><span></span><span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="p">-</span><span class="n">-Force</span>
+</pre>
+                      </div>
+                    </div>
+                    <p>Finally, the user can run <code
+                        class="docutils literal notranslate"><span class="pre">OpenFlow</span></code> by pressing <code
+                        class="docutils literal notranslate"><span class="pre">Ctrl+Shift+D</span></code>, selecting
+                      <code class="docutils literal notranslate"><span class="pre">OpenFlow</span></code> in the
+                      dropdown box and clicking the <strong>Play</strong> button.</p>
+                    <p>The user can now access OpenFlow by using a browser and navigating to the <code
+                        class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk</span></code>
+                      URL.</p>
+                    <p>To properly install and configure Node-RED, please refer to the <strong>Installing &amp; First
+                        Run</strong> section in the Node-RED chapter.</p>
+                  </div>
+                </div>
+                <div class="section" id="accessing-for-the-first-time">
+                  <h2><span class="section-number">2.3. </span><strong>Accessing for the first time</strong><a
+                      class="headerlink" href="#accessing-for-the-first-time" title="Permalink to this headline">¶</a>
+                  </h2>
+                  <p>To access OpenFlow webpage, simply go to the URL as specified by your working enviroment (contact
+                    your IT responsible, if needed). If you are running a local version, by default the URL should be
+                    <code
+                      class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk</span></code>.
+                    If you do not have access to an OpenFlow of you own and you are not running a local version, we
+                    encourage you to do some experimentation using our own demo enviroment, which can be found at <code
+                      class="docutils literal notranslate"><span class="pre">https://app.openiap.io</span></code>.</p>
+                  <p>After accessing the page, users may be prompted to authenticate themselves. After signing in, the
+                    user is redirected to the home page of OpenFlow.</p>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>If you are accessing OpenFlow demo enviroment (<code
+                        class="docutils literal notranslate"><span class="pre">https://app.openiap.io</span></code>),
+                      when prompted for credentials, you may type any username/password combination and your user will
+                      be then created automatically with the same credentials. Please keep note of your
+                      username/password!</p>
+                  </div>
+                  <div class="figure align-center" id="id5">
+                    <a class="reference internal image-reference" href="images/openflow_sign_in_page.png"><img
+                        alt="images/openflow_sign_in_page.png" src="images/openflow_sign_in_page.png"
+                        style="width: 250.0px; height: 222.0px;" /></a>
+                    <p class="caption"><span class="caption-text"><strong>Authentication page.</strong></span><a
+                        class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+                  </div>
+                  <div class="figure align-center" id="id6">
+                    <a class="reference internal image-reference" href="images/openflow_index_page.png"><img
+                        alt="images/openflow_index_page.png" src="images/openflow_index_page.png"
+                        style="width: 478.09999999999997px; height: 219.45px;" /></a>
+                    <p class="caption"><span class="caption-text"><strong>OpenFlow’s home page.</strong></span><a
+                        class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+                  </div>
+                </div>
+                <div class="section" id="creating-a-new-user">
+                  <h2><span class="section-number">2.4. </span><strong>Creating a new user</strong><a class="headerlink"
+                      href="#creating-a-new-user" title="Permalink to this headline">¶</a></h2>
+                  <p>To create a new user first click the Admin dropdown and the Users option.</p>
+                  <div class="figure align-center" id="id7">
+                    <a class="reference internal image-reference" href="images/openflow_dropdown_index_page.png"><img
+                        alt="images/openflow_dropdown_index_page.png" src="images/openflow_dropdown_index_page.png"
+                        style="width: 386.0px; height: 230.5px;" /></a>
+                    <p class="caption"><span class="caption-text"><strong>Admin dropdown.</strong></span><a
+                        class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+                  </div>
+                  <p>Now click the navy blue <code
+                      class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">user</span></code>
+                    button.</p>
+                  <div class="figure align-center" id="id8">
+                    <a class="reference internal image-reference" href="images/openflow_users_page.png"><img
+                        alt="images/openflow_users_page.png" src="images/openflow_users_page.png"
+                        style="width: 479.84999999999997px; height: 219.79999999999998px;" /></a>
+                    <p class="caption"><span class="caption-text"><strong>Users page.</strong></span><a
+                        class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+                  </div>
+                  <p>Now it is needed to fill the given forms and click save.</p>
+                  <div class="figure align-center" id="id9">
+                    <a class="reference internal image-reference" href="images/openflow_userdetail_page.png"><img
+                        alt="images/openflow_userdetail_page.png" src="images/openflow_userdetail_page.png"
+                        style="width: 479.75px; height: 215.75px;" /></a>
+                    <p class="caption"><span class="caption-text"><strong>User creation page.</strong></span><a
+                        class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+                  </div>
+                </div>
+                <div class="section" id="roles">
+                  <h2><span class="section-number">2.5. </span><strong>Roles</strong><a class="headerlink" href="#roles"
+                      title="Permalink to this headline">¶</a></h2>
+                  <p>Here we explain <strong>Roles</strong> in OpenFlow and how they interfere with OpenRPA and Node-RED
+                    access privileges.</p>
+                  <div class="section" id="what-are-roles">
+                    <h3><span class="section-number">2.5.1. </span>What are Roles?<a class="headerlink"
+                        href="#what-are-roles" title="Permalink to this headline">¶</a></h3>
+                    <p>In OpenFlow, <strong>Roles</strong> are an unit or collection of privileges and permissions that
+                      can be assigned to one or more users. These <strong>Roles</strong> serve various purposes, such as
+                      granting access to workflows inside <strong>OpenRPA</strong> or granting access to flows inside
+                      <strong>Node-RED</strong>, which in turn may or may not activate workflows inside OpenRPA.</p>
+                  </div>
+                  <div class="section" id="rparole-pool">
+                    <h3><span class="section-number">2.5.2. </span>RPARole (Pool)<a class="headerlink"
+                        href="#rparole-pool" title="Permalink to this headline">¶</a></h3>
+                    <p>The <strong>RPARole</strong> is a parameter set in the Role editting page of a role which creates
+                      a pool of consumers.</p>
+                    <p>If set, this parameter will act upon a robot such that each robot logged in with a
+                      <strong>Role</strong> containing this parameter set will be assigned as a consumer on the <code
+                        class="docutils literal notranslate"><span class="pre">id</span></code> of that given
+                      <strong>Role</strong>. Think of it as creating a <a class="reference external"
+                        href="https://cs.stackexchange.com/q/86372">pool</a> (<code
+                        class="docutils literal notranslate"><span class="pre">https://cs.stackexchange.com/q/86372</span></code>)
+                      of consumers, where each consumer is assigned upon logging in.</p>
+                    <div class="section" id="but-what-is-a-consumer">
+                      <h4><span class="section-number">2.5.2.1. </span>But what is a consumer?<a class="headerlink"
+                          href="#but-what-is-a-consumer" title="Permalink to this headline">¶</a></h4>
+                      <blockquote>
+                        <div>
+                          <p><em>The term “consumer” means different things in different contexts. In general in
+                              messaging a consumer is an application (or application instance) that consumes messages.
+                              The same application can also publish messages and thus be a publisher at the same time.In
+                              this sense a consumer is a subscription for message delivery that has to be registered
+                              before deliveries begin and can be cancelled by the application</em>.</p>
+                          <p><em>RabbitMQ is a messaging broker. It accepts messages from publishers, routes them and,
+                              if there were queues to route to, stores them for consumption or immediately delivers to
+                              consumers, if any. Consumers consume from queues. In order to consume messages there has
+                              to be a queue. When a new consumer is added, assuming there are already messages ready in
+                              the queue, deliveries will start immediately. The target queue can be empty at the time of
+                              consumer registration. In that case first deliveries will happen when new messages are
+                              enqueued</em>.¹</p>
+                        </div>
+                      </blockquote>
+                      <p>¹ - <a class="reference external" href="https://www.rabbitmq.com/consumers.html">Consumers</a>
+                        (<code
+                          class="docutils literal notranslate"><span class="pre">https://www.rabbitmq.com/consumers.html</span></code>)
+                      </p>
+                    </div>
+                  </div>
+                  <div class="section" id="granting-permissions-admin-nodered-user">
+                    <h3><span class="section-number">2.5.3. </span>Granting permissions (admin, nodered, user)<a
+                        class="headerlink" href="#granting-permissions-admin-nodered-user"
+                        title="Permalink to this headline">¶</a></h3>
+                    <p>Coming soon - Work in progress</p>
+                  </div>
+                </div>
+                <div class="section" id="workflows-tab-node-red">
+                  <h2><span class="section-number">2.6. </span><strong>Workflows Tab (Node-RED)</strong><a
+                      class="headerlink" href="#workflows-tab-node-red" title="Permalink to this headline">¶</a></h2>
+                  <div class="section" id="what-is-it">
+                    <h3><span class="section-number">2.6.1. </span>What is it?<a class="headerlink" href="#what-is-it"
+                        title="Permalink to this headline">¶</a></h3>
+                    <p>Workflows in Node-RED are mainly called ‘Flows’. These flows are made to connect different
+                      services, applications and logic functions. When grouped together they can be used to process data
+                      and output the results to a given service or file.</p>
+                    <p>At the <a class="reference external" href="http://localhost.openrpa.dk/#/Workflows">Workflows
+                        page</a> (eg. <code
+                        class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk/#/Workflows</span></code>)
+                      in OpenFlow, it is possible to remotely invoke these flows.</p>
+                    <div class="figure align-center" id="id10">
+                      <img alt="images/openflow_node_red_subflow.png" src="images/openflow_node_red_subflow.png" />
+                      <p class="caption"><span class="caption-text"><strong>Node-RED subflow example.</strong></span><a
+                          class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+                    </div>
+                  </div>
+                  <div class="section" id="invoking">
+                    <h3><span class="section-number">2.6.2. </span>Invoking<a class="headerlink" href="#invoking"
+                        title="Permalink to this headline">¶</a></h3>
+                    <p>Workflows can be started through all three applications: OpenRPA, OpenFlow and Node-RED. Invoking
+                      a workflow does not change it’s content, it merely executes it remotely. Think of it as a
+                      read-only procedure.</p>
+                    <ul>
+                      <li>
+                        <p><strong>Deploying a Workflow to Node-RED</strong></p>
+                        <blockquote>
+                          <div>
+                            <p>Upon accessing Node-RED, flow tabs are shown containing all the flows available for
+                              deployment. To execute a Node-RED flow, simply click the starting node inside a Node-RED
+                              subflow. Everytime a change is made to a Node-RED flow or subflow it is required to deploy
+                              it again so the changes are applied.</p>
+                            <p>If it is desired to invoke a workflow through OpenFlow according to the settings set on
+                              the Node-RED application, a few more steps are required.</p>
+                            <ol class="arabic simple">
+                              <li>
+                                <p>Enter the Node-RED page and select the desired flow tab where you want to create the
+                                  subflow containing the invoke call to OpenFlow.</p>
+                              </li>
+                              <li>
+                                <p>Create a subflow with a <code
+                                    class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code>
+                                  node as its starting point.</p>
+                              </li>
+                              <li>
+                                <p>Click twice the <code
+                                    class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code>
+                                  node corresponding to the workflow you want to create.</p>
+                              </li>
+                              <li>
+                                <p>Name it by setting up the <code
+                                    class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">name</span></code>
+                                  input field.</p>
+                              </li>
+                              <li>
+                                <p>If desired, route it to send a form back to the user by using <code
+                                    class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Out</span></code>
+                                  (more about Forms below).</p>
+                              </li>
+                              <li>
+                                <p>Check one or both of the checkboxes: RPA - to enable this node to be invoked from
+                                  OpenRPA - and WEB - to enable invoking from OpenFlow.</p>
+                              </li>
+                              <li>
+                                <p>Deploy the current flow.</p>
+                              </li>
+                            </ol>
+                            <p>It is important to remark that when a <code
+                                class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code>
+                              node is deployed, it will create a corresponding role inside OpenFlow named
+                              “nodered$&lt;<code
+                                class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">name</span></code>&gt;”,
+                              and only users that are members of this role can invoke this workflow. On the following
+                              next steps, if you can’t see your workflow when attempting to remotely invoke it, double
+                              check and see if your user is a member of that role!</p>
+                          </div>
+                        </blockquote>
+                      </li>
+                    </ul>
+                    <div class="admonition note">
+                      <p class="admonition-title">Note</p>
+                      <p>The user must have the <code
+                          class="docutils literal notranslate"><span class="pre">nodered</span> <span class="pre">users</span></code>
+                        role enabled in order to able to invoke Node-RED flows from within OpenFlow.</p>
+                    </div>
+                    <div class="figure align-center" id="id11">
+                      <img alt="images/openflow_setting_nodered_workflow.png"
+                        src="images/openflow_setting_nodered_workflow.png" />
+                      <p class="caption"><span class="caption-text"><strong>Enabling Node-RED invoking from
+                            OpenFlow.</strong></span><a class="headerlink" href="#id11"
+                          title="Permalink to this image">¶</a></p>
+                    </div>
+                    <ul>
+                      <li>
+                        <p><strong>Invoking a Node-RED workflow in OpenFlow</strong></p>
+                        <p>After the steps above are complete, go to the <a class="reference external"
+                            href="http://localhost.openrpa.dk/#/Workflows">Workflows page</a> (eg. <code
+                            class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk/#/Workflows</span></code>)
+                          and directly invoke the desired workflow. A form page will then open to choose the input
+                          parameters, if any.</p>
+                        <p>The forms are either automatically generated by OpenRPA, according to the variables preset -
+                          more on that on OpenRPA’s Variables section - or manually generated by the user on the <a
+                            class="reference external" href="http://localhost.openrpa.dk/#/Forms">Forms page</a> (eg.
+                          <code
+                            class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk/#/Forms</span></code>).
+                        </p>
+                        <p>Upon clicking submit on a form, the parameters are sent to the robot for processing and
+                          execution of the given workflow.</p>
+                      </li>
+                    </ul>
+                    <div class="figure align-default" id="id12">
+                      <img alt="images/openflow_workflows_page.png" src="images/openflow_workflows_page.png" />
+                      <p class="caption"><span class="caption-text"><strong>Workflows page.</strong></span><a
+                          class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+                    </div>
+                    <div class="figure align-default" id="id13">
+                      <img alt="images/openflow_form_example.png" src="images/openflow_form_example.png" />
+                      <p class="caption"><span class="caption-text"><strong>Form example.</strong></span><a
+                          class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="section" id="rpa-workflows-tab-openrpa">
+                  <h2><span class="section-number">2.7. </span><strong>RPA Workflows Tab (OpenRPA)</strong><a
+                      class="headerlink" href="#rpa-workflows-tab-openrpa" title="Permalink to this headline">¶</a></h2>
+                  <div class="section" id="id2">
+                    <h3><span class="section-number">2.7.1. </span>What is it?<a class="headerlink" href="#id2"
+                        title="Permalink to this headline">¶</a></h3>
+                    <p>Workflows in OpenRPA and OpenFlow are the same thing, an algorithm or a sequence of steps that
+                      execute a meaningful task. The difference is that when you invoke a workflow in OpenFlow, it
+                      creates an instance of that workflow. By accessing the Workflows tab, you may invoke workflows
+                      remotely, meaning, the stack in OpenFlow will send a message to the available agent to process and
+                      execute the given workflow.</p>
+                    <p>From OpenFlow you can create forms, grant permissions to a given workflow and most importantly
+                      invoke it.</p>
+                    <p>OpenFlow automatically manages the workflow repository. When properly connected, by saving a
+                      workflow inside OpenRPA, it will also automatically appear inside the Workflows webpage.</p>
+                    <p>To download a workflow, simply go to the RPA Workflows link and click download. After dowloading
+                      the .XAML file, you may share it with others or import it into your OpenRPA client.</p>
+                  </div>
+                  <div class="section" id="id3">
+                    <h3><span class="section-number">2.7.2. </span>Invoking<a class="headerlink" href="#id3"
+                        title="Permalink to this headline">¶</a></h3>
+                    <ul>
+                      <li>
+                        <p><strong>Methods for Invoking</strong></p>
+                        <blockquote>
+                          <div>
+                            <p>Here we discuss the methods for invoking a workflow using OpenFlow.</p>
+                          </div>
+                        </blockquote>
+                      </li>
+                      <li>
+                        <p><strong>Invoking through OpenFlow’s RPA Workflows Page</strong></p>
+                        <blockquote>
+                          <div>
+                            <p>To invoke a workflow through OpenFlow, simply go to <a class="reference external"
+                                href="http://localhost.openrpa.dk/#/RPAWorkflows">RPA Workflows page</a> (eg. <a
+                                class="reference external"
+                                href="http://localhost.openrpa.dk/#/Workflows">http://localhost.openrpa.dk/#/Workflows</a>)
+                              and click Invoke, another page for the specific workflow will be opened where all the
+                              forms needed to be filled are going to be presented. Simply fill them and click Invoke
+                              again. The input data is then sent to the chosen robot/agent and it will start processing
+                              the workflow.</p>
+                            <p>Data processing is bi-directional: input parameters are sent to a robot/agent and the
+                              workflow output will also be returned. That means that you can make many workflows calling
+                              different applications. Think of it as a message, messages are sent, read and replied to.
+                              Nothing prevents that message from being sent, read or replied to multiple times.</p>
+                          </div>
+                        </blockquote>
+                      </li>
+                    </ul>
+                    <div class="admonition note">
+                      <p class="admonition-title">Note</p>
+                      <p>For the user to invoke a workflow using OpenFlow, the user must have the proper permissions.
+                        See more at OpenRPA’s chapter Granting permissions to users/roles.</p>
+                    </div>
+                    <div class="figure align-center" id="id14">
+                      <img alt="images/openflow_rpa_workflows.png" src="images/openflow_rpa_workflows.png" />
+                      <p class="caption"><span class="caption-text"><strong>RPA Workflows page.</strong></span><a
+                          class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="section" id="forms">
+                  <h2><span class="section-number">2.8. </span><strong>Forms</strong><a class="headerlink" href="#forms"
+                      title="Permalink to this headline">¶</a></h2>
+                  <p>Forms are an user-friendly way of passing input to a workflow by creating dynamic OpenFlow’s
+                    webpages. There are two ways of generating a form, one of them is through OpenFlow’s automatically
+                    generated forms which are created upon saving a Workflow into its repository and the other one is
+                    manually creating a form and connecting it to a Node-RED workflow.</p>
+                  <div class="section" id="creating-a-form">
+                    <h3><span class="section-number">2.8.1. </span>Creating a Form<a class="headerlink"
+                        href="#creating-a-form" title="Permalink to this headline">¶</a></h3>
+                    <p>Creating a form is rather easy and simple. Go to the Forms page, where all forms are listed,
+                      available under the Admin dropdown or on the <a class="reference external"
+                        href="http://localhost.openrpa.dk/#/Forms">Forms page</a> (eg. <a class="reference external"
+                        href="http://localhost.openrpa.dk/#/Forms">http://localhost.openrpa.dk/#/Forms</a>) and click
+                      the Navy blue <code
+                        class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">form</span></code>
+                      button.</p>
+                    <div class="figure align-center" id="id15">
+                      <img alt="images/openflow_forms_page.png" src="images/openflow_forms_page.png" />
+                      <p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms page.</strong></span><a
+                          class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+                    </div>
+                    <p>Now at the Forms edit page, there are many basic from which you can choose. For synthetic
+                      purposes, we are only going to discuss the most used one here: Text Field Component.</p>
+                    <p>Drag the Form from the Basic category into the Form workspace. Immediately after, a window
+                      containing all the parameters to configure the form will appear.</p>
+                    <div class="figure align-center" id="id16">
+                      <img alt="images/openflow_forms_creation_page.png"
+                        src="images/openflow_forms_creation_page.png" />
+                      <p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms creation
+                            page.</strong></span><a class="headerlink" href="#id16"
+                          title="Permalink to this image">¶</a></p>
+                    </div>
+                    <div class="figure align-center" id="id17">
+                      <img alt="images/openflow_form_starter_config_page.png"
+                        src="images/openflow_form_starter_config_page.png" />
+                      <p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms starter configuration
+                            tab.</strong></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="section" id="configuring-the-form">
+                    <h3><span class="section-number">2.8.2. </span>Configuring the Form<a class="headerlink"
+                        href="#configuring-the-form" title="Permalink to this headline">¶</a></h3>
+                    <p>Below are the steps needed to properly configure a form, in our case TextField Form.</p>
+                    <ul>
+                      <li>
+                        <p><strong>Changing Form Label</strong></p>
+                        <blockquote>
+                          <div>
+                            <p>To change the Form’s label, ie. the title which will appear for the end-user, simply
+                              click the Display tab and change the input form titled <strong>Label</strong>, the changes
+                              are shown real-time.</p>
+                          </div>
+                        </blockquote>
+                      </li>
+                    </ul>
+                    <div class="figure align-center" id="id18">
+                      <img alt="images/openflow_form_label_config_page.png"
+                        src="images/openflow_form_label_config_page.png" />
+                      <p class="caption"><span class="caption-text"><strong>OpenFlow’s Form Display configuration
+                            tab.</strong></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a>
+                      </p>
+                    </div>
+                    <ul>
+                      <li>
+                        <p><strong>Assigning Input Variable</strong></p>
+                        <blockquote>
+                          <div>
+                            <p>To assign the input form to a variable configured inside the OpenRPA workflow you’ve
+                              mapped to OpenFlow, simply go to the API tab and insert the name of the variable inside
+                              <strong>Property Name</strong> and press save. Now the next time this workflow is called,
+                              a new parameter will appear.</p>
+                          </div>
+                        </blockquote>
+                      </li>
+                    </ul>
+                    <div class="figure align-center" id="id19">
+                      <img alt="images/openflow_text_field_api_config.png"
+                        src="images/openflow_text_field_api_config.png" />
+                      <p class="caption"><span class="caption-text"><strong>OpenFlow’s Form API configuration
+                            tab.</strong></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a>
+                      </p>
+                    </div>
+                    <ul>
+                      <li>
+                        <p><strong>Assigning Form to Node-RED Workflow</strong></p>
+                        <blockquote>
+                          <div>
+                            <p>Now it is required that you assign a Form to a Node-RED workflow. To do that, go to
+                              Node-RED and click twice on the <code
+                                class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Out</span></code>
+                              node you want to assign the form to. The <code
+                                class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">workflow</span> <span class="pre">out</span> <span class="pre">node</span></code>
+                              tab appears and you must select the form you’ve just created in the <code
+                                class="docutils literal notranslate"><span class="pre">Userform</span></code> dropdown.
+                            </p>
+                          </div>
+                        </blockquote>
+                      </li>
+                    </ul>
+                    <div class="figure align-default" id="id20">
+                      <img alt="images/openflow_node_red_configure_form.png"
+                        src="images/openflow_node_red_configure_form.png" />
+                      <p class="caption"><span class="caption-text"><strong>Assigning Form to Node-RED
+                            workflow.</strong></span><a class="headerlink" href="#id20"
+                          title="Permalink to this image">¶</a></p>
+                    </div>
+                  </div>
+                  <div class="section" id="basic-forms">
+                    <h3><span class="section-number">2.8.3. </span>Basic Forms<a class="headerlink" href="#basic-forms"
+                        title="Permalink to this headline">¶</a></h3>
+                    <p>The Basic forms contain the most basic forms of inputs.</p>
+                    <div class="section" id="text-field">
+                      <h4><span class="section-number">2.8.3.1. </span>Text Field<a class="headerlink"
+                          href="#text-field" title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="text-area">
+                      <h4><span class="section-number">2.8.3.2. </span>Text Area<a class="headerlink" href="#text-area"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="number">
+                      <h4><span class="section-number">2.8.3.3. </span>Number<a class="headerlink" href="#number"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="password">
+                      <h4><span class="section-number">2.8.3.4. </span>Password<a class="headerlink" href="#password"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="checkbox">
+                      <h4><span class="section-number">2.8.3.5. </span>Checkbox<a class="headerlink" href="#checkbox"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="select-boxes">
+                      <h4><span class="section-number">2.8.3.6. </span>Select Boxes<a class="headerlink"
+                          href="#select-boxes" title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="select">
+                      <h4><span class="section-number">2.8.3.7. </span>Select<a class="headerlink" href="#select"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="radio">
+                      <h4><span class="section-number">2.8.3.8. </span>Radio<a class="headerlink" href="#radio"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="button">
+                      <h4><span class="section-number">2.8.3.9. </span>Button<a class="headerlink" href="#button"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                  </div>
+                  <div class="section" id="advanced-forms">
+                    <h3><span class="section-number">2.8.4. </span>Advanced Forms<a class="headerlink"
+                        href="#advanced-forms" title="Permalink to this headline">¶</a></h3>
+                    <p>The Advanced forms contain the most advanced forms of inputs.</p>
+                    <div class="section" id="email">
+                      <h4><span class="section-number">2.8.4.1. </span>Email<a class="headerlink" href="#email"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="url">
+                      <h4><span class="section-number">2.8.4.2. </span>URL<a class="headerlink" href="#url"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="phone-number">
+                      <h4><span class="section-number">2.8.4.3. </span>Phone Number<a class="headerlink"
+                          href="#phone-number" title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="tags">
+                      <h4><span class="section-number">2.8.4.4. </span>Tags<a class="headerlink" href="#tags"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="address">
+                      <h4><span class="section-number">2.8.4.5. </span>Address<a class="headerlink" href="#address"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="date-time">
+                      <h4><span class="section-number">2.8.4.6. </span>Date / Time<a class="headerlink"
+                          href="#date-time" title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="day">
+                      <h4><span class="section-number">2.8.4.7. </span>Day<a class="headerlink" href="#day"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="time">
+                      <h4><span class="section-number">2.8.4.8. </span>Time<a class="headerlink" href="#time"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="currency">
+                      <h4><span class="section-number">2.8.4.9. </span>Currency<a class="headerlink" href="#currency"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="survey">
+                      <h4><span class="section-number">2.8.4.10. </span>Survey<a class="headerlink" href="#survey"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="signature">
+                      <h4><span class="section-number">2.8.4.11. </span>Signature<a class="headerlink" href="#signature"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                  </div>
+                  <div class="section" id="layout-forms">
+                    <h3><span class="section-number">2.8.5. </span>Layout Forms<a class="headerlink"
+                        href="#layout-forms" title="Permalink to this headline">¶</a></h3>
+                    <p>The Layout forms contain view-related forms of input.</p>
+                    <div class="section" id="html-element">
+                      <h4><span class="section-number">2.8.5.1. </span>HTML Element<a class="headerlink"
+                          href="#html-element" title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="content">
+                      <h4><span class="section-number">2.8.5.2. </span>Content<a class="headerlink" href="#content"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="columns">
+                      <h4><span class="section-number">2.8.5.3. </span>Columns<a class="headerlink" href="#columns"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="field-set">
+                      <h4><span class="section-number">2.8.5.4. </span>Field Set<a class="headerlink" href="#field-set"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="panel">
+                      <h4><span class="section-number">2.8.5.5. </span>Panel<a class="headerlink" href="#panel"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="table">
+                      <h4><span class="section-number">2.8.5.6. </span>Table<a class="headerlink" href="#table"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="tabs">
+                      <h4><span class="section-number">2.8.5.7. </span>Tabs<a class="headerlink" href="#tabs"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                    <div class="section" id="well">
+                      <h4><span class="section-number">2.8.5.8. </span>Well<a class="headerlink" href="#well"
+                          title="Permalink to this headline">¶</a></h4>
+                      <p>Coming soon - Work in progress</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="section" id="entities-mongodb">
+                  <h2><span class="section-number">2.9. </span><strong>Entities - MongoDB</strong><a class="headerlink"
+                      href="#entities-mongodb" title="Permalink to this headline">¶</a></h2>
+                  <div class="section" id="what-are-entities">
+                    <h3><span class="section-number">2.9.1. </span>What are entities?<a class="headerlink"
+                        href="#what-are-entities" title="Permalink to this headline">¶</a></h3>
+                    <p>Coming soon - Work in progress</p>
+                  </div>
+                  <div class="section" id="usages">
+                    <h3><span class="section-number">2.9.2. </span>Usages<a class="headerlink" href="#usages"
+                        title="Permalink to this headline">¶</a></h3>
+                    <p>Coming soon - Work in progress</p>
+                  </div>
+                  <div class="section" id="collections">
+                    <h3><span class="section-number">2.9.3. </span>Collections<a class="headerlink" href="#collections"
+                        title="Permalink to this headline">¶</a></h3>
+                    <p>Coming soon - Work in progress</p>
+                  </div>
+                </div>
+              </div>
 
 
-           </div>
-           
+            </div>
+
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="openrpa.html" class="btn btn-neutral float-right" title="3. OpenRPA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="rpa.html" class="btn btn-neutral float-left" title="1. Introduction to RPA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
 
-  <hr/>
+            <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
 
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
+              <a href="openrpa.html" class="btn btn-neutral float-right" title="3. OpenRPA" accesskey="n"
+                rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
 
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-</footer>
+              <a href="rpa.html" class="btn btn-neutral float-left" title="1. Introduction to RPA" accesskey="p"
+                rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+
+            </div>
+
+
+            <hr />
+
+            <div role="contentinfo">
+              <p>
+                &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
+
+              </p>
+            </div>
+            Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a
+              href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a
+              href="https://readthedocs.org">Read the Docs</a>.
+
+          </footer>
 
         </div>
       </div>
@@ -776,19 +1157,20 @@ If you do not have access to an OpenFlow of you own and you are not running a lo
     </section>
 
   </div>
-  
+
 
 
   <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+    });
   </script>
 
-  
-  
-    
-   
+
+
+
+
 
 </body>
+
 </html>
