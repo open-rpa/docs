@@ -1,9 +1,9 @@
-.. BPA Docs documentation master file, created by
+.. OpenIAP Docs documentation master file, created by
    sphinx-quickstart on Fri May  8 00:29:26 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-BPA Docs - Integrated Framework Documentation
+OpenIAP Docs - Integrated Framework Documentation
 =============================================
 
 
