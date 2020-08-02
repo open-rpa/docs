@@ -1,0 +1,51 @@
+===============
+ **Appendix A** 
+===============
+
+This appendix deals with questions concerning programming concepts often needed to understand OpenRPA.
+
+*****************
+ **Introduction**
+*****************
+
+What is hardware?
+=================
+By using the term **hardware**, we mean the physical parts that constitute a computer - the motherboard, CPU, GPU, etc. That is, the ``hard`` part of a computer, which is touchable and immediately visible in the physical realm.
+
+What is software?
+=================
+From **software**, when we refer to it generally, ie. ``lato sensu``, we mean the concept of the abstract parts which constitute a computer - the programs which comprise all the computable abstractions performable by a computer. When we refer to it specifically, ie. ``stricto sensu``, we refer to one of these programs. **OpenRPA, OpenFlow and Node-RED** are software themselves.
+
+What is a programming language?
+===============================
+A programming language is a set of commands, instructions, and other syntax used to create a software program. Languages that programmers use to write code are called "high-level languages." This code can be compiled into a "low-level language," which is recognized directly by computer hardware.¹ **OpenRPA** itself is developed and maintained in a programming language called **C# - read "see sharp"**.
+
+¹ - `TechTerms - Programming Language Definition <https://techterms.com/definition/programming_language>`_ (``https://techterms.com/definition/programming_language``).
+
+From now on, every concept treated in this appendix will refer strictly to their content with regards to C#. These concepts may not apply to other programming languages, which are not concerned in this manual.
+
+***************
+  **Variables**
+***************
+
+What is a variable?
+===================
+A variable is simply a value with a mutable state, this means the user can change it before, during or after the execution of a workflow inside OpenRPA. A variable must also, obligatorily, have a type assigned to itself.
+
+How do I declare a variable inside OpenRPA?
+===========================================
+Refer to section :ref:`Using the Designer` or section :ref:`Variables, Arguments`.
+
+What types can a variable assume?
+=================================
+Virtually, any of the types compiled inside the OpenRPA application. If you want to take a peek into it, simply declare a variable and click ``Browse for types`` inside it.
+
+**********
+ **Types**
+**********
+
+Now that we have properly defined hardware, software, and programming language, we can delve further into types.
+
+What is a type?
+===============
+A type is the representation of a variable that a computer acts upon, or, putting it in layman terms, what the computer "sees".

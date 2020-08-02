@@ -1,0 +1,2815 @@
+==============
+ **OpenRPA** 
+==============
+
+*********************
+ **What is OpenRPA?** 
+*********************
+
+**OpenRPA** is where the actual automation happens, inside it you create workflows and invoke them, run all the activities needed to complete your task and deploy them with the assistance of **OpenFlow** and **Node-RED**. The framework also offers integration with other tools that are essential such as a message broker and repository management tools. **OpenRPA** also includes other features within itself, such as Image detection/OCR, Browser Navigation, and many others.
+
+***************************
+ **Installing, First Run** 
+***************************
+In this section, the user is provided with a thorough explanation of how to install OpenRPA.
+
+.. note::
+
+   Although not recommended unless you are creating a developer setup, you may also always run OpenRPA directly from the source code by using Visual Studio 2019.
+
+Installing OpenRPA through Windows .msi
+============================================
+To install OpenRPA, you first need to download the installer executable provided `here <https://github.com/open-rpa/openrpa/releases/latest/download/OpenRPA.msi>`_ (``https://github.com/open-rpa/openrpa/releases/latest/download/OpenRPA.msi``).
+
+
+Installing Universally or User-Only
+-----------------------------------
+.. figure:: images/openrpa_installation_installation_scope.png
+   :align: center
+
+   **OpenRPA's installation scope.**
+
+The installer first prompts the user whether **OpenRPA** should be installed only for the specific single user or universally (all users). **It is recommended to install it universally (requires administrator previleges)**, as it have no downsides, so unless something (or someone) prohibits you from installing it for all users, always do it so.
+Installing **OpenRPA** single-user prevents other regular users from the machine from using **OpenRPA**, however, both **OpenFlow** and **NodeRED** accesses are not limited nor related to this, as they are accessed by simply using a browser.
+After selecting the desired option, click Next.
+
+Installing OpenRPA Plugins
+============================================
+During OpenRPA installation, you may specify which plugins should be installed.
+
+For production, it is extremely recommended to install only the plugins that will be used. The reasoning is: some plugins such as **NM**, **SAP** and **Java** (as well as others) use machine resources in order to run and just by having them installed and enable, they might significantly impact CPU usage, specially when running OpenRPA on low-spec machines (such as cloud-hosted ones, as they are commonly low-spec in order to save costs). Be aware that CPU usage is further amplified when using HD Robots service, as for each instance of HD Robot user each plugin will takes its toll.
+
+For development (and experimentation), it is obviously encouraged to run as many plugins as you can afford and are willing to try, our solution has already a wide range of plugins and users can themselves develop plugins as well.
+
+.. figure:: images/openrpa_installation_installation_libraries.png
+   :align: center
+
+   **OpenRPA's installation libraries.**
+
+After selecting the plugins you desire to install, click ``Next`` once again and ``Install`` so the installation can be concluded.
+
+If everything goes well the installation finishes and the window on **Fig. 3** appears.
+
+.. figure:: images/openrpa_installation_finished.png
+   :align: center
+
+   **OpenRPA finished installation.**
+
+
+************************
+ **Configuring OpenRPA**
+************************
+
+**OpenRPA** settings are saved locally in the file named ``settings.json`` and it is **always**¹ located in your ``Documents\OpenRPA`` folder (or full path ``C:\Users\{YOUR_USER}\Documents\OpenRPA``). This file contains all configuration parameters for **OpenRPA**, including some which are not available to be configurable through the GUI.
+
+**OpenRPA** GUI layout settings, however, are saved in another file: ``layout.config``. Deleting ``layout.config`` bears no trouble, you will only lose your layout preferences (panel sizes, order, location, etc).
+
+Editing either file (``settings.json`` / ``layout.config``) while OpenRPA is running will have no effect and, when the application is closed, any value changed will be lost/overwritten. Hence, if you desire to edit any setting, first always make sure that **OpenRPA** is not running.
+
+Further on this section, you will find documentation for all the parameters from ``settings.json`` and their possible values.
+
+*¹ - Currently it not possible to specify the directory where **OpenRPA** local temporary files (workflows, settings) will be saved.*
+
+.. image:: images/openrpa_settings_json.png
+   :align: center
+   
+Parameters
+==========
+
+wsurl (OpenRPA online/offline[local])
+-------------------------------------
+This parameter dictates to which **OpenFlow** enviroment **OpenRPA** should connect.
+
+The expected value is a valid websocket URL.
+
+Default value is OpenIAP demo enviroment: ``wss://app.openiap.io/``.
+
+If the value is set as blank ``""`` (empty string), **OpenRPA** will run locally, that is, without being connected to an **OpenFlow** (and consequently, **NodeRED**) and will no longer benefit from the cloud features of the OON stack, such as MongoDB or Workflows remote invoking (as well as and many others features!).
+
+Examples of valid websockets URL:
+
+.. code-block:: json-object
+
+   "wsurl": "wss://app.openiap.io/",
+   "wsurl": "ws://localhost.openrpa.dk",
+   "wsurl": "",
+
+Notice that ``wss`` indicates that the websocket URL is secured, whereas URLs starting with ``ws`` are not (same principles as ``http`` vs ``https`` for webpages), therefore use the respective protocol that matches with your **OpenFlow** enviroment.
+
+.. note::
+   If you were once connected to an **OpenFlow** websocket, but then changed this parameter to blank and is now running **OpenRPA** locally, you will still have access to the workflows (and detectors) that are cached since last access to the repository. Although, be careful! If you make changes to any workflow, project or detector, the next time you reconnect to the enviroment **you will NOT** commit your changes to the cloud repository and your changes will be overwritten (by latest version available on the cloud repository) and lost, unless you export them.
+
+.. note::
+   You are **always** welcome to use ``wss://app.openiap.io/`` demo enviroment for experimentation purposes. **Running production processes in this demo enviroment is NOT recommended**.
+
+username / jwt / password / entropy
+-----------------------------------
+These four parameters work somewhat together and are used by **OpenRPA** to keep track of the last logged user plus allows automatically log ins, provided that the saved ``jwt`` is still valid.
+
+Default value for ``username`` is empty string ``""``.
+
+Default values for ``jwt`` and ``password`` are ``null``.
+
+Default value for ``entropy`` is a randomly generated key created by your Windows (example ``"JungBLhauG+JvQipkQPIp9sLwJw="``).
+
+After an user logs in to **OpenRPA**, the application will automatically generate a JSON Web Token ``jwt`` from the combination of ``username`` and ``password`` ¹, with a given secret ``entropy``. After the user logs out (or the application is closed), this ``jwt`` is then saved and from there the same user may log in back without the need of typing the credentials again.
+
+¹ - ``username`` and ``password`` that were typed in the login screen, not from the ``settings.json`` file.
+
+..
+   Thiago Note 31/July/2020: Commented out this part because even tho it should be working this way ( as per training session ), for some reason it isn't.
+   Tested on OpenRPA 1.0.138.0
+
+   Additionally, you have the option to provide raw (non-encrypted) credentials through the parameters ``username`` and ``password`` ...
+
+   .. code-block:: json-object
+      "username": "wss://app.openiap.io/",
+      "password": "ws://localhost.openrpa.dk",
+
+   And then, when **OpenRPA** runs the next time, if the credentials are valid and login is possible, the application will automatically create the ``jwt`` the same way as above. Notice that after the ``jwt`` has been created, **OpenRPA** will always delete the value from the parameter ``password``, so raw credentials are never stored.
+
+If for any reason the log in is not possible (``password`` has been changed, user no longer exists, ``jwt`` is invalid), **OpenRPA** will erase the values from both ``username`` and ``password`` and will prompt the user with the login screen.
+
+cancelkey
+---------
+This parameter refers to which key button is responsible to stop the Recorder when the user wants to cease recording.
+
+Default value is ``{ESCAPE}``.
+
+isagent
+-------
+This parameter changes **OpenRPA** GUI and should be used when it is desirable to hide workflows logic or if you want to prevent users from making changes to workflows.
+Expected values are either ``true`` or ``false``.
+
+Default value is ``false``.
+
+If this parameter is set to ``true``, **OpenRPA** client will no longer show the UI elements that allow users to view or edit workflows, but invoking workflows is still possible (both manually/locally or remotely).
+
+.. figure:: images/subchap_running_workflows/openrpa_running_workflows_running_as_agent.png
+   :align: center
+   :scale: 50%
+
+showloadingscreen
+-----------------
+This parameter defines whether **OpenRPA** loadscreen should show up or not (the splashscreen with the gears in grey scale when you initialize the application).
+
+Default value is ``true``.
+
+There are no pro/cons performance-wise in disabling the loadscreen, but sometimes it might be desirable to turn it off, especially when the robot is running on someone's computer who is not aware (and does not need to be) of the robot.
+
+culture
+-------
+Coming soon - Work in progress
+
+ocrlanguage
+-----------
+Coming soon - Work in progress
+
+openworkflows
+-------------
+Coming soon - Work in progress
+
+mainwindow_position
+-------------------
+Coming soon - Work in progress
+
+designerlayout
+--------------
+Coming soon - Work in progress
+
+properties
+----------
+Coming soon - Work in progress
+
+record_overlay
+--------------
+Coming soon - Work in progress
+
+querypagesize
+-------------
+Coming soon - Work in progress
+
+lastupdatecheck / updatecheckinterval / doupdatecheck
+-----------------------------------------------------
+Coming soon - Work in progress
+
+autoupdateupdater
+-----------------
+Coming soon - Work in progress
+
+log (12 parameters)
+-------------------
+Coming soon - Work in progress
+
+use_sendkeys
+------------
+Coming soon - Work in progress
+
+use_virtual_click
+-----------------
+Coming soon - Work in progress
+
+use_animate_mouse
+-----------------
+Coming soon - Work in progress
+
+use_postwait
+------------
+Coming soon - Work in progress
+
+minimize
+--------
+Coming soon - Work in progress
+
+recording_add_to_designer
+-------------------------
+Coming soon - Work in progress
+
+reloadinterval
+--------------
+Coming soon - Work in progress
+
+move_animation_run_time / move_animation_steps
+----------------------------------------------
+Coming soon - Work in progress
+
+remote_allow_multiple_running / remote_allow_multiple_running_max
+-----------------------------------------------------------------
+Coming soon - Work in progress
+
+cef_useragent
+-------------
+Coming soon - Work in progress
+
+show_getting_started
+--------------------
+Coming soon - Work in progress
+
+notify_on_workflow_remote_start / notify_on_workflow_end / notify_on_workflow_remote_end
+----------------------------------------------------------------------------------------
+Coming soon - Work in progress
+
+log_busy_warning
+----------------
+Coming soon - Work in progress
+
+**********************************************
+**Creating a new project, Running a workflow** 
+**********************************************
+
+Create New Project
+==================
+To create a new project on OpenRPA simply click on **New > New Project** at the Ribbon. It will then open an empty workflow named **New Workflow**.
+
+.. figure:: images/openrpa_new_project.png
+   :align: center
+   :scale: 50%
+
+Granting permissions to users/roles
+===================================
+To set the permissions for the current workflow or project, whichever is selected, simply click in the Permissions button at the Ribbon. It opens the **Permissions Window** with the names of all current users for the workflow. There are 4 types of permission available which will be discussed next.
+
+
+Read
+----
+Users have access to execute and view the content of the workflow.
+
+Update
+------
+Users have access to update and view the content of the workflow.
+
+Delete
+------
+Users have access to delete the workflow or group of workflows from the workspace.
+
+Invoke
+------
+Users have access to invoke the content of the workflow.
+
+To set these permissions simply click in the user you want to grant or revoke permissions and click the desired button. If the user is available at the OpenFlow repository but not in the current workflow, simply click the new button and type their username, a dropdown will come up with suggestions for the name of the user you are looking for. Select the user and click OK.
+
+.. figure:: images/openrpa_permissions_window.png
+   :align: center
+
+New Workflow
+============
+Immediately after clicking **New Project** inside the **New** ribbon, a new empty workflow appears on the screen with a single sequence containing the caption *Drop activity here*. This is where you are going to add activities to build and implement the BPM process you have in mind. 
+
+If you are running **OpenRPA** online (that is, connected to a websocket/**OpenFlow**), your workflows are automatically inside OpenFlow's repository and will be automatically be synced after each save. The OON stack takes care of workflow deployment, storage and readily makes the most recent version immediately available¹ to everyone (that have permission) in the same **OpenFlow**.
+
+*¹ - After a save occurs, **OpenFlow** is immediately updated but other users may need to wait until their synchronization happens before your changes are reflected to them (they can also force an update by manually refreshing / reopening **OpenRPA**).*
+
+.. figure:: images/openrpa_empty_workflow.png
+   :align: center
+
+Using the Designer
+==================
+Below are instructions on how to use OpenRPA's **Designer** to accomplish a few common tasks inside OpenRPA.
+
+Dragging an Activity
+--------------------
+To drag an activity into OpenRPA, simply click the activity inside the **Toolbox** keep the left button of the mouse pressed and drag it into the workspace.
+
+.. figure:: images/subchap_using_the_designer/openrpa_using_the_designer_drag_an_activity.png
+   :align: center
+   :scale: 50%
+
+Then, the activity will appear inside the sequence.
+
+.. figure:: images/subchap_using_the_designer/openrpa_using_the_designer_activity_inside_sequence.png
+   :align: center
+   :scale: 50%
+
+This shows how easy it is to drag it to the main sequence! Try it yourself! Drag another activity into the main sequence.
+
+If, on the other hand, you'd like to drag it into a nested sequence simply repeat the procedure but instead of simply dragging it into the workspace, drag it into the block inside the desired sequence.
+
+.. figure:: images/subchap_using_the_designer/openrpa_using_the_designer_drag_an_activity_into_inner_sequence_drag.png
+   :align: center
+   :scale: 50%
+
+Organizing the Workflow
+------------------------
+Organizing the workflow in OpenRPA is easily done through changing activities' display names and organizing sequences by nesting them.
+
+**Changing an Activity's Display Name**
+
+To change an activity's display name, the user can either click the name of the activity or change its property ``DisplayName`` inside the **Properties box**, as seen in the image below.
+
+.. figure:: images/subchap_using_the_designer/openrpa_using_the_designer_display_name_changing_displayname.png
+   :align: center
+   :scale: 50%
+
+**Nesting Sequences**
+
+Nesting a sequence inside the main sequence is easy. Simply drag a **Sequence** activity inside the main sequence.
+
+.. figure:: images/subchap_using_the_designer/openrpa_using_the_designer_nesting_sequence_drag_into.png
+   :align: center
+   :scale: 50%
+
+After that, a new sequence will appear with its default display name set as ``Sequence``.
+
+.. figure:: images/subchap_using_the_designer/openrpa_using_the_designer_nesting_sequence_dragged.png
+   :align: center
+   :scale: 50%
+
+To do the same into already nested sequences or activities containing pseudosequences, simply drag the **Sequence** activity into the desired block.
+
+Creating and Deleting Variables & Arguments
+-------------------------------------------
+
+**Creating a Variable**
+
+To create a variable automatically, the user must have the text caret inside an input field inside some activity or a property belonging to any. Afterwards, he can simply press ``Ctrl+K`` to create that variable. Remember that after creating that variable, the user must assign a value to its alias through the ``Variables`` section inside the **Variables, Arguments & Imports box** or through the **Assign** activity. In our case, this variable is assigned to the value "This is variable one".
+
+To create a variable manually, the user can simply click the ``Create Variable`` placeholder inside the ``Variables`` section in the **Variables, Arguments & Imports box**, type the variable's name and if needed, assign a ``Variable type`` to it - else just leave it as ``String`` - then assign its ``Default value``. The user can change its ``Scope`` as well, which is discussed in the **Variables, Arguments** sections next in this chapter.
+
+.. figure:: images/subchap_using_the_designer/openrpa_using_the_designer_creating_variables_and_arguments_create_variable.png
+   :align: center
+   :scale: 50%
+
+It is useful to remind the user that a variable must always have a specific type. Refer to **Appendix A** for more information on types.
+
+.. note::
+   Press ``Ctrl+K`` to automatically create the variable when entering it upon an input field or create it manually by clicking the **Variables box** under the bottom part of the screen. Use the right-hand side to enter the value which will be assigned to the variable.
+
+**Deleting a Variable**
+
+To delete a variable, simply click with the right button mouse in its row inside the ``Variables`` section of the **Variables, Arguments & Imports box** and click ``Delete``.
+
+.. figure:: images/subchap_using_the_designer/openrpa_using_the_designer_creating_variables_and_arguments_delete_variable.png
+   :align: center
+   :scale: 50%
+
+**Creating an Argument**
+
+The process for creating an argument is similar, yet there is no way to create an argument automatically. The user must always create it inside the ``Arguments`` section in the **Variables, Arguments & Imports box** and obligatorily set its ``Direction``, which will be discussed in the **Variables, Arguments** section next in this very same chapter.
+
+In order to create an argument, simply click the placeholder ``Create Argument`` inside the ``Arguments`` section of the **Variables, Arguments & Imports box** type the argument's name and assign a type to it, if needed - else just leave it as ``String``.
+
+.. figurs:: images/subchap_using_the_designer/openrpa_using_the_designer_creating_variables_and_arguments_create_argument.png
+   :align: center
+   :scale: 50%
+
+**Deleting an Argument**
+
+To delete an argument, simply click with the right button mouse in its row inside the ``Arguments`` section of the **Variables, Arguments & Imports box** and click ``Delete``.
+
+.. figure:: images/subchap_using_the_designer/openrpa_using_the_designer_creating_variables_and_arguments_delete_argument.png
+   :align: center
+   :scale: 50%   
+
+Output & Debug
+--------------
+The ``Output`` section inside the **Output bar** is used to output every information pertaining to the execution of workflows inside OpenRPA. This information includes debugging output, ie. error messages, output from the **WriteLine** activity - more on this below - and messages indicating that the workflow has executed successfully. Please refer to the **Designer** section to see a thorough explanation of the Output bar.
+
+**Debugging Error Messages**
+
+OpenRPA's error messages are very similar to any C# **trace output**, an example follows below.
+
+.. code-block:: csharp
+
+   [13:00:08.797][Output] Using the Designer failed in 00:03.325
+   # OpenRPA.Interfaces.ElementNotFoundException: Failed locating 1 item(s)
+      at OpenRPA.Windows.GetElement.Execute(NativeActivityContext context)
+      at System.Activities.NativeActivity.InternalExecute(ActivityInstance instance, ActivityExecutor executor, BookmarkManager bookmarkManager)
+      at System.Activities.Runtime.ActivityExecutor.ExecuteActivityWorkItem.ExecuteBody(ActivityExecutor executor, BookmarkManager bookmarkManager, Location resultLocation)
+
+This is the most common error in OpenRPA, it occurs when an element is selected with any **Get Element** activities but it ends up not existing upon running the workflow - either because its existence has timed out or because the user has willingly closed it.
+
+The **first block** inside the square brackets (``[13:00:08.797]``) is the ``Timestamp`` of the debug error message. It denotes the exact time when it occurred.
+
+The **second block** inside the square brackets (``[Output]``) denotes the type of message - in our case, obviously, it is an output message.
+
+The **third block** is the content of the debug error message. It contains the name of the workflow which failed (``Using the Designer``), followed by its relative execution time (``00:;03.325``) - ie. the time that has elapsed from its start to the failure - and the error which occurred - in our case ``OpenRPA.Interfaces.ElementNotFoundException``.
+
+It is recommended that when reporting for bugs the user denotes the type of error which occurred - in our case ``ElementNotFoundException`` - for the purposes of making it easier for people to understand and thus be able to quickly help you solving your error!
+
+**Writing Output to the Console with WriteLine**
+
+The user can also write expressions to the ``Output`` console by using the **WriteLine** activity. Any object of type ``String`` can be used inside an expression which is going to be outputted to the console. Everything else will need to be casted into the type ``String``, more on that in **Appendix A**. Expressions need to be prefixed suffixed with ``"`` to indicate they are strings.
+
+.. figure:: images/subchap_using_the_designer/openrpa_using_the_designer_output_logic_using_writeline.png
+   :align: center
+   :scale: 50%
+
+The user can also write any expressions involving variables, just remember to concatenate them using the ``+`` operator.
+
+.. figure:: images/subchap_using_the_designer/openrpa_using_the_designer_output_logic_using_writeline_with_variable.png
+   :align: center
+   :scale: 50%
+
+Running the Workflow
+====================
+Running a workflow using the **Designer** is very easy! Simply click the **Play** button inside OpenRPA's ribbon, as shown below, or press **F5**. The workflow will run and its output can be seen in the ``Output`` section of the **Output bar**.
+
+.. figure:: images/subchap_running_workflows/openrpa_running_workflows_run_from_designer.png
+   :align: center
+   :scale: 50%
+
+**************
+ **Interface**
+**************
+
+Activities/Toolbox
+==================
+The toolbox is where all the possible activities in OpenRPA are contained. Imagine it as a box of building tools where all the instruments you'd normally use are, such as a screwdriver or a driller. The toolbox is essentially where you'd reach out for getting the tools for, take it as an example, fixing a faucet.
+
+The activities in OpenRPA are separated by categories which clearly represent what they are used for. These categories are properly discussed in the next section.
+
+Designer
+========
+The designer is where the main process of desigining and implementing a task happens inside OpenRPA. It is where you drag and drop activities and add and nest sequences to fulfill your implementation choices, as well as set properties and variables pertaining to your workflow business process. It contains five components: Toolbox & Snippets sidebar, Workspace, Properties box, Output bar and Connection bar.
+
+.. figure:: images/openrpa_sections.png
+   :align: center
+
+   **OpenRPA Designer components.**
+
+Toolbox & Snippets sidebar
+--------------------------
+This is the place where all activities lie as well as some code snippets which teach the user to make use of the tool for various purposes.
+
+To use an activity, simply drag it into the ``Workspace`` sequence you want to add it to.
+
+For more information on these activities, such as a detailed explanation of each one, refer to the **Toolbox Detailed** section.
+
+.. figure:: images/openrpa_designer_toolbox.png
+   :align: center
+   :scale: 50%
+
+   **OpenRPA's Toolbox.**
+
+Workspace
+---------
+The workspace is where the user organizes all the activities pertaining to the task which will be fulfilled by the workflow. It is also where the user will set all variables, arguments and import namespaces for further use.
+
+Once the user drags activities into the sequence, upon pressing the **Play** button inside the ribbon or the ``F5`` key, they will be executed in a cascading manner - each one after the previous one. And if there are any errors - untreated by **TryCatch** or **Throw** activities - the workflow execution will stop and the error message will appear in the Output box, which will be discussed in the **Output bar** section.
+
+Each **Sequence** activity has its own scope as well, which will be discussed in the **Variables** section, further below.
+
+.. figure:: images/openrpa_designer_workspace.png
+   :align: center
+   :scale: 50%
+
+   **OpenRPA's Workspace.**
+
+The user can also organize their workflow by nesting **Sequence** activities, as shown in the picture below.
+
+.. figure:: images/openrpa_designer_workspace_nesting_sequences.png
+   :align: center
+   :scale: 50%
+
+   **Nesting sequences inside OpenRPA.**
+
+As well as nesting, the user can use the **Comment Out** activity to ignore everything inside it. In the picture below, all activities inside the **Comment Out** activity won't be executed.
+
+.. figure:: images/openrpa_designer_workspace_comment_out.png
+   :align: center
+   :scale: 50%
+
+   **Commenting activities out inside OpenRPA.**
+
+Properties Box
+--------------
+Every activity in OpenRPA has its own property box, containing parameters passed that change the workings of the given activity. Inside the property box there are also contained sections which are pretty much selfexplanatory and refer to the given parameters they cause changes upon, such as **Input**, **Output** or **Misc**.
+
+.. figure:: images/openrpa_property_box.png
+   :align: center
+   :scale: 50%
+
+   **Properties box.**
+
+The only property common to all activities is ``Displayname``, which changes the name of the activity inside the workspace. It is shown below.
+
+.. figure:: images/openrpa_designer_property_box_displayname.png
+   :align: center
+   :scale: 50%
+
+   **Displayname Property.**
+
+
+Output bar
+----------
+The output bar contains three sections: ``Logging``, ``Output`` and ``Workflow Instances``.
+
+**Logging**
+
+The ``Logging`` section shows the output from workflows as well as any instance of any error or exception which occurred inside OpenRPA.
+
+.. figure:: images/chap_interface/openrpa_logging_section.png
+   :align: center
+   :scale: 50%
+
+**Output**
+
+The ``Output`` section contains only output generated by any workflows that were executed.
+
+.. figure:: images/chap_interface/openrpa_output_section.png
+   :align: center
+   :scale: 50%
+
+**Workflow Instances**
+
+The ``Workflow Instances`` section contains all workflow instances pertaning to the queues to which the currently logged user is listening. It is useful as a catalog of recent workflows results and to see which workflows are queued, idle or in progress.
+
+.. figure:: images/chap_interface/openrpa_workflow_instances_section.png
+   :align: center
+   :scale: 50%
+
+Connection bar
+--------------
+The connection bar contains information related to the connection status related to the **OpenFlow** webservice set in the :ref:`Configuring OpenRPA` section as well as the status of both ``NM`` and ``SAP`` plugins.
+
+.. figure:: images/chap_interface/openrpa_connection_bar.png
+   :align: center
+   :scale: 50%
+
+Variables, Arguments
+====================
+.. figure:: images/openrpa_variables_arguments_box.png
+   :align: center
+
+   **Variables, Arguments & Imports box.**
+
+**Variables**
+-------------
+Variables, as their very name states - are changeable values assigned to aliases inside the execution of a sequence. These aliases can be used in mathematical or computational expressions. For example, if you want to save a variable named "price" to assign the price of a product along a sequence. You can use the assign activity and an expression to assign it's value.
+
+Upon inserting an activity with an input box, if you mention a non-existent variable and want to easily create it you can press ``Ctrl+K`` and a dropdown will appear with many types of variable to be selected.
+
+Variables in OpenRPA are statically typed and their type can be selected from the **variable type** field inside the argument box.
+
+Variable use case: Saving the result of a computation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A use case of a variable is demonstrated next. In this example, it is desired to save the result of a computation into a variable.
+
+First, drag an **Assign** activity to the main sequence.
+
+Then, type a name for the variable and press ``Ctrl+K`` to create it automatically. In this case, the chosen name is ``resultOfComputation``.
+
+Afterwards, assign the result of the computation (``2*6``)[right-hand side] to the variable [left-hand side].
+
+The user now may notice that a warning now appears in the right-hand side of the activity. That is because the expression evaluates to an ``Int32`` type, the variable ``resultOfComputation`` is ``string`` and Microsoft Workflow Foundation is strongly typed. if the user has no experience with programming a thorough explanation is given on **Appendix A**. For now, just select the type of the variable as ``Int32`` in the ``Variable type`` parameter inside the **Variables, Arguments & Imports box**, as seen in the picture below.
+
+.. figure:: images/subchap_variables_arguments/openrpa_variables_arguments_variable_use_case_change_variable_type.png
+   :align: center
+   :scale: 50%
+
+**Scope**
+---------
+It refers to the reach of the objects contained within a sequence. If you have some knowledge of programming and scope, you can skip this part.
+First, let's think of it as sets. In this example, we are going to use variables since arguments function as if they were globally scoped. 
+
+Per the code block below, one may observe that sequence **B** has access to only variables x, - but since **B** is inside the scope of **A**, it makes sequence **B** to have access to all variables {n, p, x, y}. In simple words, sequences can be used to organize variable scopes and to group activities, just like a developer would normally do in a programming language using functions to avoid monolithic code. 
+
+.. literalinclude:: scope_example.c
+
+**Arguments**
+-------------
+Arguments are simply variables that can be passed to other sequences, external services or workflows and have global scope. They act exactly as variable, except for that single characteristic. If you pass an argument to a sequence created within another sequence, the argument is still valid within the outer sequence. If you pass a variable, that does not happen.
+
+It is important to notice that both variables and arguments can have a **default value**, which are assigned to both if a value isn't necessarily assigned during the execution of the sequence. It is also required for arguments with the **isRequired** property checked to have an 'In' value, ie. already passed or having a default.
+
+Similarly to Variables, Arguments in OpenRPA are statically typed and their type can be selected from the **variable type** field inside the argument box.
+
+**Output (In - In/Out - Out)**   
+Output refers to the way a variable or argument is handled during run-time. They are classified below.
+
+- **In**
+
+   In this case the argument is received from external service and is only given an input value that can't be returned after the execution of the workflow
+
+- **In/Out**
+
+   In this case the argument can both be given an input value and be changed and outputted after the execution of the workflow
+
+- **Out**
+
+   In this case the argument returns a value to an external service, and it can't be changed after the execution of the workflow
+
+- **Properties**
+
+   This turns the argument into a ``Property``, which means it has the same features of an **In/Out** argument but can also have a default value
+
+**Imports**
+-----------
+Imports tab shows all the modules used referenced in the selected sequence.
+
+Toolbox Detailed
+================
+
+OpenRPA
+-------
+
+.. py:module:: OpenRPA
+      :noindex:
+
+Here belong the activities located inside the OpenRPA toolbox.
+
+.. py:class:: Click Element
+
+
+ Clicks a given position inside an application. You must first select the application with the **Get Element** activity, which will be discussed later.
+
+   **Properties Parameters**
+
+   ``Animate Mouse`` - If set to ``True``, the cursor will appear changing it's position throughout execution.
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Double Click`` - If set to ``True``, the cursor clicks twice inside the window. 
+
+   ``Element`` - The application selected with the **Get Element** activity.
+
+   ``Key Modifiers`` - If set, the corresponding keys act as if pressed during execution.
+
+   ``Mouse Button`` - Set to ``1`` if the Left Mouse button is to be clicked, ``2`` if it is the Right Mouse button.
+
+   ``Post Wait`` - How much time OpenRPA should wait for this activity to finish after completing its execution.
+
+   ``Virtual Click`` - Try to do a **Virtual Click** instead of actually clicking the mouse.
+
+   ``X Offset`` - The horizontal offset inside the window to be clicked. Units are in pixels. It also allows for negative values.
+
+   ``Y Offset`` - The vertical offset inside the window to be clicked. Units are in pixels. It also allows for negative values. 
+
+.. figure:: images/openrpa_click_element.png
+   :align: center
+
+   **OpenRPA Click Element.**
+
+.. py:class:: Close Application
+
+   Close a given application selected with the **Get Element** activity.
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Force``- If set to ``True``, kills the application.
+
+   ``Selector`` - Contains all the data pertaining to the application selected.
+
+   ``Timeout`` - Time until the activity ceases if not successfully able to close the application.
+
+.. figure:: images/openrpa_close_application.png
+   :align: center
+
+   **OpenRPA Close Application.**
+
+.. py:class:: Comment Out
+
+   Every activity put inside this one, which resembles a sequence, is ignored by the execution of the workflow. This activity is useful for remarking something out of the sequence.
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+.. figure::images/openrpa_comment_out.png
+   :align: center
+
+   **OpenRPA Comment Out.**
+
+.. py:class:: Copy Cliboard
+
+   Coming soon - Work in progress
+
+.. py:class:: Detector Activity
+
+   **Detector** is the main ``Event Listener`` inside OpenRPA - refer to `Event listener <https://www.computerhope.com/jargon/e/event-listener.htm>`_ (https://www.computerhope.com/jargon/e/event-listener.htm) if you don't know what that means. Simply put, it is an activity that waits for something to happen either before the Workflow continues processing and executing its functions.
+
+   There are currently five types of different event listeners. Here only one is going to be discussed: ``KeyboardSequence``.
+
+
+.. py:class:: Foreach DataRow
+
+   Iterates through a DataRow inside an Excel Data Table or Data View.² All the activities inside this one will be looped over each row.
+
+   **Properties Parameters**
+
+   ``Data Table`` - The data table used to gather the data.
+
+   ``Data View`` - The data view used to gather the data.
+   
+   ``Displayname`` - Title of the activity inside the sequence.
+
+.. figure:: images/openrpa_foreach_datarow.png
+   :align: center
+
+   **OpenRPA Foreach DataRow.**
+
+² - `What is the difference between DataView and DataTable? <https://stackoverflow.com/questions/7382932/what-is-the-difference-between-dataview-and-datatable>`_ (``https://stackoverflow.com/questions/7382932/what-is-the-difference-between-dataview-and-datatable``)
+
+.. py:class:: Highlight Element
+
+  Coming soon - Work in progress
+
+.. py:class:: Insert Clipboard
+
+  Coming soon - Work in progress
+
+.. py:class:: Invoke OpenFlow
+
+   Allos the user to invoke Workflows which have been configured with OpenFlow/Node-RED, ie. available at the `Workflows page <http://localhost.openrpa.dk/#/Workflows>`_ (eg. ``http://localhost.openrpa.dk/#/Workflows``).
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Wait until Completed`` - If set to ``True``, OpenRPA waits until the Workflow invoke call is finished - either success or error. If successful, the message containing the data (as designed in the flow at Node-RED) is returned to the OpenRPA robot. 
+
+   If set to ``False``, however, OpenRPA no longer has access to the returned message - communication now is one-way - and therefore all logic that would otherwise depend on it must then be redesigned. Think of it as a try/catch exception block that does not return any exception message. ³
+   
+   ``Workflow`` - The workflow which is to be invoked.
+
+.. note ::
+   The workflow is invoked by the user currently logged in OpenRPA/OpenFlow. It means that the user must have access to the desired workflow which is to be invoked, otherwise it won't even be displayed in the workflows dropdown.
+
+.. figure:: images/openrpa_invoke_openflow.png
+   :align: center
+
+   **OpenRPA Invoke OpenFlow.**
+
+.. py:class:: Invoke OpenRPA
+
+   Allows the user to invoke RPA Workflows saved in OpenFlow's repository, those available at the `RPA Workflows page <http://localhost.openrpa.dk/#/RPAWorkflows>`_ (eg. ``http://localhost.openrpa.dk/#/RPAWorkflows``).
+
+   The **Map Variables** button allows the currently set variables and arguments to be passed to the workflow invoke call. In order to do that, after choosing your workflow from the dropdown, create the arguments in the **Variables, Arguments & Imports box** and click the **Map Variables** button in the activity.
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Wait until Completed`` - If set to ``True``, OpenRPA waits until the Workflow invoke call is finished - either success or error. If successful, the message containing the data (as designed in the flow at Node-RED) is returned to the OpenRPA robot. 
+
+   If set to ``False``, however, OpenRPA no longer has access to the returned message - communication now is one-way - and therefore all logic that would otherwise depend on it must then be redesigned. Think of it as a try/catch exception block that does not return any exception message. 
+   
+   ``Workflow`` - The workflow which is to be invoked.
+
+.. figure:: images/openrpa_invoke_openrpa.png
+   :align: center
+
+   **OpenRPA Invoke OpenRPA.**
+
+.. py:class:: Invoke Remote OpenRPA
+
+   Allows to remotely invoke RPA Workflows, saved in OpenFlow's repository, to be executed at other OpenRPA clients. 
+
+   The **Map Variables** button allows the currently set variables and arguments to be passed to the workflow invoke call. In order to do that, after choosing your workflow from the dropdown, create the arguments in the **Variables, Arguments & Imports box** and click the **Map Variables** button in the activity.
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Target`` - OpenFlow's hash string identifying the target which will be activated to execute the workflow.
+
+   ``Wait until Completed`` 
+
+   If set to ``True``, OpenRPA waits until the Workflow invoke call is finished - either success or error. If successful, the message containing the data (as designed in the flow at Node-RED) is returned to the OpenRPA robot. 
+
+   If set to ``False``, however, OpenRPA no longer has access to the returned message - communication now is one-way - and therefore all logic that would otherwise depend on it must then be redesigned. Think of it as a try/catch exception block that does not return any exception message. 
+   
+  
+   ``Workflow`` - OpenFlow's hash string identifying the workflow which will be executed.
+
+.. figure:: images/openrpa_invoke_remote_openrpa.png
+   :align: center
+
+   **OpenRPA Invoke Remote OpenRPA.**
+
+.. py:class:: Move Mouse
+   
+   Moves the cursor to a given position inside an application. The application must be selected by using the **Get Element** activity.
+
+   **Properties Parameters**
+
+   ``Animate Mouse`` - If set to ``True``, the cursor will appear changing its position throughout execution. Good for showing what is happening in a presentation.
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Element`` - The application selected with the **Get Element** activity.
+
+   ``Post Wait`` - How long OpenRPA should wait for this activity to finish after completing its execution.
+
+   ``Virtual Click`` - If set to true, does a **Virtual Click** instead. Virtual clicking allows clicks on not focused and even hidden applications, but sometimes there might be limitations based on the application. As a rule of thumb, always try to first automate using Virtual Clicks and if it does not work then set it to ``False`` for futrher debugging/testing.
+
+   ``X Offset`` - The horizontal offset inside the window which the cursor will be moved to. Units are in pixels. It also allows for negative values.
+
+   ``Y Offset`` - The vertical offset inside the window which the cursor will be moved to. Units are in pixels. It also allows for negative values.
+
+.. note::
+
+   This activity requires a Mouse IO. If it fails to find one, it will return an error. If it fails to find one, it will return "Could not send keyboard input. Error Code: 5". This may happen if OpenRPA Client was launched from inside a Windows Remote Desktop and the session was disconnected. To avoid this, please use HDRobots extension, do not disconnect/close the RDP session or make the session perssistent by using other techniques (ie: running a VNC server)
+
+.. figure:: images/openrpa_move_mouse.png
+   :align: center
+
+   **OpenRPA Move Mouse.**
+
+.. py:class:: Open Application
+   
+   Searches for an application, based on the selector obtained from the **Select Element** button, and starts that application. This activity also works similarly to Get Element, where you can drop other activities that will be executed inside it. 
+
+   Clicking **Highlight** will red-highlight the first element that matches the criteria on the selector. Useful for checking if the selector is properly set up. 
+
+   The image shows an example containing a **Show Balloon Tip** activity.
+
+   **Properties Parameters**
+   
+   ``Animate Move`` - Visibly move the window of the application which will be opened, instead of instantly moving it.
+
+   ``Check Running`` - Check if application is already running, add explanation from OpenRPA's properties.
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Height`` - If set, moves the application to this vertical offset.
+
+   ``Result`` - Save the result of the execution to a variable. By default it saves the application element itself.
+
+   ``Selector`` - Contains all the data used to identify application.
+
+   ``Timeout`` - Time until the activity ceases if not successfully able to open the application.
+
+   ``Width`` - If set, moves the application to this horizontal offset.
+
+.. figure:: images/openrpa_open_application.png
+   :align: center
+
+   **OpenRPA Open Application.**
+
+.. py:class:: Show Balloon Tip
+
+   Shows a message similar to the **Show Notification** activity, near the system tray.
+
+   **Properties Parameters**
+
+   ``Duration`` - How long the message appears.
+
+   ``Message`` - Message which is shown.
+
+   ``Title`` - Title of the balloon tip.
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``NotificationType`` - Different notification types: information, error or warning.
+
+.. note::
+   
+   Refrain from using too many UI elements (such as this activity or Show Notification). UI elements are run single-threaded, which means that each time they are executed, they briefly stop workflow execution.
+
+.. figure:: images/openrpa_show_balloon_tip.png
+   :align: center
+
+   **OpenRPA Show Balloon Tip.**
+
+.. py:class:: Type Text
+   
+   Sends key strokes from the text contained inside **Hint** to the window currently focused. Instead of memorizing every key stroke, it is recommended to use the Recorder as it will map every key stroke automatically.¹ 
+
+   The key stroke syntax should be "{{Modifier1, Key1} {Modifier2, Key2} {...} {ModifierN, KeyN}}", reminding the user that Modifiers, which would be auxiliary keys - such as ``Ctrl``, ``Alt``, ``Shift`` - are not obligatory.
+
+   The user can also send **variables** or **hardcoded text**, such as sending "{{Modifier1, Key1} SOME TEXT " + desired_variable + "{Enter}".
+
+   **Properties Parameters**
+
+   ``Click Delay`` - Delay between each keystroke.
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Text`` - Displayname inside the workflow designer.
+
+.. note::
+
+   This activity requires a Keyboard IO. If it fails to find one, it will return "Could not send keyboard input. Error Code: 5". This may happen if OpenRPA Client was launched from inside a Windows Remote Desktop Session and the session was disconnected. In order to avoid this, please use HDRobots extension, do not disconnect/close the RDP session or persist the session using other techniques (ie. running VNC).
+
+.. figure:: images/openrpa_type_text.png
+   :align: center
+
+   **OpenRPA Type Text.**
+   
+*¹ - `Overview of TypeText Activity <https://openrpa.openrpa.dk/pages/typetext-syntax>`_ (``https://openrpa.openrpa.dk/pages/typetext-syntax``)*
+
+OpenRPA.AviRecorder
+-------------------
+Coming soon - Work in progress
+
+OpenRPA.Database
+----------------
+Coming soon - Work in progress
+
+OpenRPA.Forms
+-------------
+Coming soon - Work in progress
+
+OpenRPA.IE
+----------
+.. py:module:: OpenRPA.IE
+      :noindex:
+
+
+Here belong the activities located inside the OpenRPA.IE toolbox.
+
+.. py:class:: Get Element
+
+ This activity is similar to OpenRPA.Get Element. It selects an element - or elements - filtered with the IE selector. 
+
+ Clicking **Highlight** will red-highlight the first element that matches the criteria on the selector. Useful for checking if the selector is properly set up.
+
+ **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Elements`` - the selected IE elements.
+   
+   ``From`` - Allows search only within an element found within any of the IEElement's instances.
+
+   ``LoopAction`` - ?
+
+   ``MaxResults`` - Maximum elements to be found.
+
+   ``MinResults`` - Number of minimum results. If this value is higher than 0 and this activity fails to find an element, it throws an exception (``ElementNotFound``). If you want to check whether an elements exists or not, set this value to 0 and test for 'item.Length() == 0' inside the sequence. 
+
+   ``Selector`` - Contains all the data to identify the IE application.
+
+   ``Timeout`` - Time until the activity ceases if not successfully able to find an element.
+
+   ``Wait for ready`` - If true, waits until the page is fully loaded.
+
+.. note::
+   
+   The user can also use **XPath Selector** to select elements inside the page. XPath Selectors use the following syntax:
+
+   - * - Matches any element node
+   - @* - Matches any attribute node
+   - node() - Matches any node of any kind
+
+   So, for example, if the user wanted to select all the child element nodes of a **bookstore** node, he'd use ``/bookstore/*``. To select all elements in a document, he'd use ``//*``. Now if he'd like to select all **title** elements which have **at least one** attribute of any kind, he'd use ``//title[@*]``. To concatenate XPath expressions, the user can use the ``| operator``. So, if he'd like to select all **title AND price** elements of all book elements, he'd use the expression ``//book/title | //book/price``.¹
+
+*¹ - `XPath Syntax <https://www.w3schools.com/xml/xpath_syntax.asp>`_ (``https://www.w3schools.com/xml/xpath_syntax.asp``).*
+
+.. note::
+
+   As well as the **XPath Selector**, the user can also use the **CSS Selector**. CSS Selectors use the following syntax:
+
+   - **.{CLASS}** - Matches all elements with that class.
+   - **#{CLASS}** - Matches all elements with that id.
+   - ** * ** - Matches all elements.
+   - **{ELEMENT}** - Matches all <p> elements.
+
+   The syntax is pretty similar to that of XPath Selectors. For more on CSS Selectors, refer to `CSS Selectors <https://www.w3schools.com/cssref/css_Selectors.asp>`_ (``https://www.w3schools.com/cssref/css_Selectors.asp``).
+
+
+.. figure:: images/openrpa_ie_get_element.png
+   :align: center
+
+   **OpenRPA.IE Get Element.**
+
+.. py:class:: Open URL
+
+ Opens an URL in the currently selected InternetExplorer.Application instance. If there is none, it will automatically start a new Internet Explorer instance.
+
+  **Properties Parameters**
+
+  ``Browser`` - Which instance from the currently selected IE Elements will be used to open the desired URL.
+
+  ``DisplayName`` - Title of the activity inside the sequence.
+
+  ``NewTab`` - If set to ``True``, it opens the desired URL in a new tab.
+
+  ``Url`` - The URL which the browser will navigate to.
+
+.. figure:: images/openrpa_ie_get_element.png
+   :align: center
+
+   **OpenRPA.IE Open URL.**
+
+OpenRPA.Image
+-------------
+.. py:module:: OpenRPA.Image
+      :noindex:
+
+
+Here belong the activities located inside the OpenRPA.Image toolbox.
+
+.. note::
+   
+   Activities that use OCR to recognize text inside images must first have the language which OCR will use first on the **Settings tab**.
+
+.. py:class:: Get Color
+
+ Gets color at the specified coordinates inside an element provided by Image.GetElement.
+
+ **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Element`` - Element from which the colors will be acquired.
+
+   ``Result`` - Variable to which to save the color.
+    
+   ``X Offset`` - The horizontal offset inside the element from which to capture the color. Units are in pixels. It also allows for negative values.
+
+   ``Y Offset`` - The vertical offset inside the element from which to capture the color. Units are in pixels. It also allows for negative values.
+
+.. figure:: images/openrpa_get_color.png
+   :align: center
+
+   **OpenRPA.Image Get Color.**
+
+.. py:class:: Get Element
+ 
+   Locates an image in screen or in a specific application window and creates an element from it. Use the **Select Image** button to select the are you want to capture or use the recorder.
+
+   The Recorder at first tries to create elements from controls in Windows Applications, Java Apps or Web elements, but as a last resort it will then make use of Image.GetElement to create elements by capturing the smallest unique images inside the are you drag while recording.
+
+   Clicking the **Highlight** button will red-highlight the first element that matches the criteria on the selector. It is useful for checking if the selector is properly set up.
+
+   **Properties Parameters**
+
+   ``CompareGray`` - If set to ``True``, compare the image in grayscale to find the desired element. This parameter also saves performance.
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Elements`` - Element from which the image will be gathered.
+   
+   ``From`` - Allows search only within an element found within any of the ImageElement's instances.
+   
+   ``Limit`` - Limit the number of elements.
+   
+   ``LoopAction`` - Loop the activity until something is found.
+   
+   ``MaxResults`` - Number of maximum results.
+   
+   ``MinResults`` - Number of minimum results. If this value is higher than 0 and this activity fails to find an element, it throws an exception (``ElementNotFound``). If you want to check whether an image exists or not, set this value to 0 and test for 'item.Length() == 0' inside the sequence. 
+   
+   ``Processname`` - Limits the element's process to a specific processname.
+   
+   ``Threshold`` - Threshold used to find a matching image.
+   
+   ``Timeout`` - Time until the activity ceases if not successfully able to find an element.
+
+.. figure:: images/openrpa_get_element.png
+   :align: center
+
+   **OpenRPA.Image Get Element.**
+
+.. py:class:: Get Image
+
+ Gets an image from the screen relative to another image or element found with Image.GetElement. 
+
+ You must first use the **Image.Get Element** activity to select the image which this activity will act upon, then use the **Select Image** button to specify the relative area within the screen you want to capture. That is, the selection **Get Image** does is relative to another image selected with the **Image.Get Element** activity.
+
+ Clicking **Highlight** will green-highlight image selected relative to the other one, which will appear blue-highlighted. This is useful for checking if the selector is properly set up.
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Element`` - Element from which the image will be gathered.
+
+   ``Height`` - Height of the image to be captured.
+   
+   ``OffsetX`` - The horizontal offset inside the element from which to capture the image. Units are in pixels. It also allows for negative values.
+   
+   ``OffsetY`` - The vertical offset inside the picture from which to capture the image. Units are in pixels. It also allows for negative values.
+   
+   ``Result`` - Variable to which the image element will be saved.
+   
+   ``Width`` - Width of the image to be captured.
+
+.. figure:: images/openrpa_get_image.png
+   :align: center
+
+   **OpenRPA.Image Get Image.**
+
+.. py:class:: Get Text
+ 
+ Gets text from an image using OCR, can be limited to a specific word or sentence. It can also be used to split or limit text gathered from other image-related activities.
+
+ The ``Limit to`` or ``WordLimit`` parameter is used to limit the output of the OCR processing. It is useful if you want to limit the output of ``Get Text`` to a given set of words.
+
+ **Properties Parameters**
+ 
+   ``CaseSensitive`` - Differentiate between lowercase and uppercase letters.
+
+   ``Displayname`` - Title of the activity inside the sequence.
+ 
+   ``Element`` - Element from which the image will be gathered.
+
+   ``Result`` - Variable to which the text will be saved.
+
+   ``WordLimit`` - Max. numbers of words to gather.
+
+.. figure:: images/openrpa_get_text.png
+   :align: center
+
+   **OpenRPA.Image Get Text.**
+
+.. py:class:: Load From File
+
+ Loads an image from a file and returns it as an ImageElement. 
+
+ It also uses OCR Image Recognition automatically to capture the text inside the screenshot, and saves it inside the result's ``ImageElement.value`` attribute. The extensions allowed are: ``gif, jpg, jpeg`` and ``png``, that is, only image extensions.
+
+ **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Filename`` - Filename of the file that will be used to acquire the image from.
+
+   ``Result`` - Variable to which to save the ImageElement.
+
+ .. note::
+
+   Note: OCR Image Recognition is done automatically upon the image and you may access the resulting text by accessing ``ImageElement.value`` property.
+   
+.. figure:: images/openrpa_load_from_file.png
+   :align: center
+
+   **OpenRPA.Image Load From File.**
+
+
+.. py:class:: Take Screenshot
+ 
+ Takes a screenshot of the entire screen or of a specific element found by using Image.GetElement and returns it as an ImageElement.
+
+ **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+ 
+   ``Element`` - Name of the element from which the screenshot will be captured.
+
+   ``Height`` - Height of the screenshot.
+
+   ``Result`` - Variable to which to save the screenshot.
+
+   ``Width`` - Width of the screenshot.
+
+   ``X`` - The horizontal offset inside the picture from which to capture the screenshot.
+
+   ``Y`` - The vertical offset inside the picture from which to capture the image.
+
+ .. note::
+
+   Note: OCR Image Recognition is done automatically upon the image and you may access the resulting text by accessing ``ImageElement.value`` property.
+
+.. figure:: images/openrpa_take_screenshot.png
+   :align: center
+
+   **OpenRPA.Image Take Screenshot.**
+
+OpenRPA.Windows
+---------------
+.. py:module:: OpenRPA.Windows
+      :noindex:
+
+
+Here belong the activities located inside the OpenRPA.Windows toolbox.
+
+.. py:class:: Get Element
+ 
+ It selects an element - or elements by using the **Open Selector** button or automatically through recording. 
+
+ You can use the **Highlight** button to highlight the selected area inside the screen. Clicking the **Highlight** button will red-highlight the first element that matches the criteria on the selector. It is useful for checking if the selector is properly set up.
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Elements`` - Element from which the image will be gathered.
+   
+   ``From`` - Allows search only within an element found within any of the Element's instances.
+   
+   ``MaxResults`` - Number of maximum results.
+   
+   ``MinResults`` - Number of minimum results. If this value is higher than 0 and this activity fails to find an element, it throws an exception (``ElementNotFound``). If you want to check whether an element exists or not, set this value to 0 and test for 'item.Length() == 0' inside the sequence. 
+
+   ``Selector`` - Contains all the data pertaining to the application selected.
+   
+   ``Timeout`` - Time until the activity ceases if not successfully able to find an element.
+
+.. figure:: images/openrpa_windows_get_element.png
+   :align: center
+
+   **OpenRPA.Windows Get Element.
+
+System.Activities
+-----------------
+.. py:module:: OpenRPA.SystemActivities
+      :noindex:
+
+
+Here belong the activities located inside the OpenRPA.System.Activities toolbox.
+
+.. py:class:: Delay Activity
+ 
+ Creates a delay from an instance of an object from the ``TimeSpan`` class. You can simply type a length of time in the ``HH:MM:SS``.
+
+ **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Duration`` - The argument specifying the length of the delay. Can be a simple 00:00:00.00 {hh:min:ss.mili} or an object from the TimeSpan class.
+
+   .. note::
+
+      A **TimeSpan** value represents a time interval and can be expressed as a particular number of days, hours, minutes, seconds, and milliseconds. Because it represents a general interval without reference to a particular start or end point, it cannot be expressed in terms of years and months, both of which have a variable number of days.¹
+
+*¹ - `TimeSpan Struct <https://docs.microsoft.com/en-us/dotnet/api/system.timespan?view=netcore-3.1>`_ (``https://docs.microsoft.com/en-us/dotnet/api/system.timespan?view=netcore-3.1``)*
+
+.. figure:: images/openrpa_delay.png
+   :align: center
+
+   **System.Activities Delay.**
+
+
+.. py:class:: Do While
+
+ Creates a loop that executes other activities dropped in it for at least once and repeatedly until **looping condition** no longer evaluates to ``True``.
+
+ **Properties Parameters**
+
+   ``Condition`` - This is a VB Expression that represents the **looping condition**.
+ 
+   ``Displayname`` - Title of the activity inside the sequence.
+
+.. figure:: images/openrpa_do_while.png
+   :align: center
+
+   **System.Activities Do While.**
+
+
+.. py:class:: If Activity
+ 
+ It is similar to conditionals in programming, if the **clause condition** is ``True``, then it executes the activities in the ``Then`` block. Else, if it is ``False`` it executes the ``Else`` block.
+
+ **Properties Parameters**
+
+   ``Condition`` - This is a VB Expression that represents the **clause condition**.
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+.. figure:: images/openrpa_if.png
+   :align: center
+
+   **System.Activities If.**
+
+
+.. py:class:: Sequence Activity
+
+ This activity is used to nest sequences upon the main sequence. You can drop activities inside it just as you would do inside the main sequence. It is helpful to organize your code/workflow because you can expand or collapse them.
+
+ **Properties Parameters**
+
+ ``Displayname`` - Title of the activity inside the sequence.
+
+ .. figure:: images/openrpa_sequence.png
+    :align: center
+
+    **System.Activities Sequence.**
+
+.. py:class:: Throw Activity
+ 
+ Provides a method to terminate the execution of the workflow in a certain case and end it, displaying an error message. For people used to programming, that would be known as throwing an exception. Upon entering the exception in the ``Exception`` field, type ``new`` to exhibit all the available ones.
+
+ **Properties Parameters**
+
+ ``Displayname`` - Title of the activity inside the sequence.
+
+ ``Exception`` - The exception which will appear on the error message.
+
+ .. figure:: images/openrpa_throw.png
+    :align: center
+
+    **System.Activities Throw.**
+
+.. py:class:: TryCatch Activity
+
+ Tries to execute a sequence of activities within the ``Try`` block, if any of them causes an error, the error is catched and then the activities inside the ``Catches`` block are executed. At the end of execution, the ``Finally`` block is executed.
+
+ **Properties Parameters**
+
+ ``Displayname`` - Title of the activity inside the main outer sequence.
+
+.. figure:: images/openrpa_try_catch.png
+   :align: center
+
+   **System.Activities TryCatch.**
+
+.. py:class:: While Activity
+
+ Creates a loop that executes other activities dropped in it while the **condition** is fulfilled - ie. ``False``. Once it is fulfilled, ie. ``True``, the loop ceases and moves to the next activity. Differently from the **Do While** activity, it obligatorily checks whether the condition is ``True`` before entering the sequence.
+
+ **Properties Parameters**
+
+   ``Condition`` - This is a VB Expression that represents the **condition**.
+ 
+   ``Displayname`` - Title of the activity inside the sequence.
+
+.. figure:: images/openrpa_while.png
+   :align: center
+
+   **System.Activities While.**
+
+.. py:class:: WriteLine Activity
+ 
+ Writes output to the console according to the ``Text`` string.
+
+ **Properties Parameters**
+
+ ``Displayname`` - Title of the activity inside the sequence.
+
+ ``Text`` - The string which will be printed on the console.
+
+ ``TextWriter`` - **Optional** - The writer used to write the character stream.
+
+ .. note::
+
+   The TextWriter class is an abstract class. Therefore, you do not instantiate it in your code. The StreamWriter class derives from TextWriter and provides implementations of the members for writing to a stream. The following example shows how to write two lines that consist of string values to a text file by using the WriteLineAsync(String) method.¹
+
+*¹ - `TextWriter Class <https://docs.microsoft.com/en-us/dotnet/api/system.io.textwriter?view=netcore-3.1>`_ (``https://docs.microsoft.com/en-us/dotnet/api/system.io.textwriter?view=netcore-3.1``)*
+
+.. figure:: images/openrpa_write_line.png
+   :align: center
+
+   **System.Activities Write Line.**
+
+*************
+ **Recorder**
+*************
+Coming soon - Work in progress
+
+*************
+ **Selector**
+*************
+Coming soon - Work in progress
+
+Returning multiple elements
+===========================
+Coming soon - Work in progress
+
+Custom CSS
+==========
+Coming soon - Work in progress
+
+**************
+ **Detectors**
+**************
+**Detector** is the main ``Event Listener`` inside OpenRPA - refer to `Event listener <https://www.computerhope.com/jargon/e/event-listener.htm>`_ (https://www.computerhope.com/jargon/e/event-listener.htm) if you don't know what that means. Simply put, it is an activity that waits for something to happen either before the Workflow continues processing and executing its functions.
+
+To set a **Detector**, you must first define it inside the Detector's settings (``Settings inside the main Ribbon -> Detectors -> Add Detector``).
+
+There are also different parameters which can be set for each type of detector which are going to be further discussed.
+
+**Screenshots on How to set up Detectors**
+
+After that, you go back to your sequence, define a **Detector activity** inside it and select the Detector you want to use as your ``Event Listener``. The ``Detector`` will automatically start the process for which it is defined, if it is inside a ``State Machine`` or continue it's process, if inside a ``Flowchart`` or ``Sequence``.
+
+FileWatcher
+===========
+The ``FileWatcher`` detector checks for file changes inside a given path. 
+
+You can set a ``Name`` for the detector.
+
+``Path`` refers to the absolute path the folder in which the files are located.
+
+``File filter`` is set to filter any files with a specific given filename.
+
+KeyboardDetector
+================
+The ``KeyboardSequence`` detector listens for a specific - or sequence of - key strokes. 
+
+You can set a ``Name`` for the detector.
+
+``Process restriction`` refers to the process upon which this won't be listened to if their interface is the main screen.
+
+``Keys`` are the keys which enable the Detector. To set them, use the button ``Set keys``.
+
+****************************************
+ **Running Workflows from Command Line**
+****************************************
+Coming soon - Work in progress
+
+************
+ **Plugins**
+************
+
+Chrome, Firefox
+===============
+Coming soon - Work in progress
+
+AVI Recorder
+============
+Coming soon - Work in progress
+
+**********************
+ **Workflow Examples**
+**********************
+
+Web Automation
+==============
+
+In this example, the `RPA Input Forms Challenge <http://www.rpachallenge.com/>`_ (``http://www.rpachallenge.com/``) will be solved. 
+
+As recommended, the Recorder will be used to facilitate the designing process.
+
+The steps are listed below. 
+
+1. Download the ``Excel file``.
+2. Read the ``Excel file``.
+3. Map Start button.
+4. Loop the DataSet rows.
+5. Find the respective handle for each WebElement input field.
+6. Fill all the required fields inside the webpage.
+7. Map Submit button.
+
+**Download the Excel file**
+---------------------------
+To download the ``Excel file``, use the **DownloadFile** activity, found inside the ``OpenRPA.Utilities`` toolbox.
+
+Drag the activity to the main sequence inside the Designer.
+
+Click the ``...`` button in it to select the path of file to which the archive will be saved or assign the ``LocalPath`` parameter inside the Properties tab of the activity.
+
+Paste the URL from the archive which you want to fetch. It is useful to remind that, since the URL will be acquired by OpenRPA as a ``string``, it must be contained within ``"`` quotes.
+
+.. figure:: images/openrpa_rpa_challenge_downloadfile.png
+   :align: center
+
+**Read the Excel file**
+-----------------------
+The ReadExcel activity will read from an ``Excel file`` and save it into a variable.
+
+All the steps here are visibly explained at the **How to read from an ``Excel file``**.
+
+**How to read from an Excel file**
+
+Drag the **ReadExcel** activity, found inside the ``OpenRPA.Utilities`` toolbox, to the main sequence. 
+
+Select the ``Excel file`` which will be read by clicking the ``...`` button and find the filepath in explorer where the sheet you want to read from is found.
+
+Then, by clicking the ``...`` button, the user will be prompted by an explorer window and there select the ``Excel file`` that should be used.
+
+The **ReadExcel** activity will read this ``Excel file`` and save it into a variable.
+
+As this variable does not exist yet, it must first be created. A reminder that variable must be obligatorily set with the type **System.Data.DataSet**. Simply click in the ``DataSet`` input field inside the **Properties tab**, type the name of the variable you want to use and press ``Ctrl+K``.
+
+Now the user may either create the variable inside the **Variables, Arguments & Imports box** or follow the note below.
+
+.. note:: 
+
+   While creating a new variable in the **Properties box**, after typing the variable name and with the caret still inside the input field, by pressing ``Ctrl+K`` OpenRPA will automatically create this new variable with the correct type required for the activity.
+
+.. note::
+
+   A ``DataSet object`` corresponds to the whole sheet. Each ``DataTable`` (eg. ``Sheet1``) accordingly corresponds to each sheet inside that ``Excel file``. The ``DataSet`` class is the object temporarily - the in-memory cache - created to store all the data consumed from this ``Excel file``. For more on the ``DataSet`` class, refer to the link to Microsoft's Documentation on the `DataSet Class <https://docs.microsoft.com/en-us/dotnet/api/system.data.dataset?view=netcore-3.1>`_ (``https://docs.microsoft.com/en-us/dotnet/api/system.data.dataset?view=netcore-3.1``).
+
+.. note::
+
+   A ``DataTable object`` corresponds to one table of in-memory data contained in a ``DataSet object`` from the class equally named. When you read an ``Excel file``, it is automatically assigned to a ``DataSet`` class and all the ``Sheets`` are saved into ``DataTable`` classes - numbered from 0 to the quantity of sheets inside the ``Excel file``. Here it is reminded that ``DataTable`` objects are case sensitive.
+
+
+**Map the Start button**
+------------------------
+The challenge starts by clicking the **Start button**. 
+
+To map the process of starting the challenge, simply click the white triangle corresponding to the space below the **Read Excel** activity, start the Recorder and click the **Start** button inside the browser, as shown in the steps below.  
+
+In order to cease recording, simply press the ``ESC`` button.
+
+It is reminded here that ending the recording is obligatory, else it will record all activities you execute endlessly.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_start_button.png
+   :align: center
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_start_button_click.png
+   :align: center
+
+After successfully mapping the **Start** button, your workflow should look like the last image on the next page.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_start_button_final.png
+   :align: center
+
+
+**Loop the DataSet rows**
+-------------------------
+Now it is time to populate the input forms inside the page with the data we've gathered from the ``Excel file``.
+
+Drag the **Foreach DataRow** activity, found inside the ``OpenRPA`` toolbox. Then inside the **Foreach DataRow** activity, drag a **Sequence** activity, from the ``System.Activites`` toolbox.
+
+As stated before, each sheet inside the ``DataSet`` assigned from the **Read Excel** activity is saved in-memory as a collection inside the ``Tables`` attributes.
+
+Each sheet inside the ``Tables`` attribute is acquired accordingly to the sheets inside the ``Excel file``, these sheets are numbered starting from 0. As an example, if you were to add a row to a ``DataTable`` inside that ``Excel file``, you'd first assign it to a ``DataTable class`` object and use the activity to add that row to the table.
+
+You can either acquire each row by assigning a single variable to the one you want to capture, numbered starting from 0, or you can use the **Foreach DataRow** to automatically loop through each row accordingly. Since in our case the ``DataSet`` is assigned to the ``ds`` variable, that is the one which will be used to retrieve the ``Table`` from. Since there is only one sheet, the ``ds.Tables(0)`` is used to assign the ``Table`` from where the **Foreach DataRow** will retrieve the values.
+
+After assigning the ``DataTable`` where the rows are going to be retrieved from, it is noted here that the columns are mapped to attributes inside the variable assigned to the left-hand side of the **Foreach DataRow** activity - in our case ``row`` to return or set the value of a ``DataColumn``.
+
+The **Foreach DataRow** loop basically iterates through every value in the row (``First Name``, ``Last Name``, ``Company Name``, ...) and assign it to the ``XPath`` selector item inside the webpage where each field belongs. This causes the value inside the `RPA Input Forms Challenge <http://www.rpachallenge.com/>`_ (``http://www.rpachallenge.com/``) page to be populated.
+
+.. note::   
+   
+   A ``DataRow object`` refers to each row mapped from the ``DataTable``. By using the ``DataRow`` object and its properties and methods the user is able to retrieve and evaluate; insert, delete and update the values inside the ``DataTable``. The ``DataRowCollection`` also represents the actual ``DataRow`` objects inside the ``DataTable``. Each column mapped from it can be retrieved by using its index as an attribute of the ``DataRow`` class object, if you'd like to retrieve the 1st column inside the row, you'd use ``row(0)``. For more on the ``DataRow`` class, refer to the link to Microsoft's Documentation on the `DataRow Class <https://docs.microsoft.com/en-us/dotnet/api/system.data.datarow?view=netcore-3.1>`_ (``https://docs.microsoft.com/en-us/dotnet/api/system.data.datarow?view=netcore-3.1``).
+
+.. list-table::
+   
+   * - .. figure:: images/openrpa_workflow_example_rpa_challenge_loop_through_each_assign_row.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_excel.png
+
+
+**Find the respective handle for each WebElement input field**
+--------------------------------------------------------------
+By using the Recorder and clicking on each input field found in the `RPA Input Forms Challenge <http://www.rpachallenge.com/>`_ (``http://www.rpachallenge.com/``) page, it is possible to easily find the best handles to each WebElement being clicked. 
+
+As this workflows deals with WebElements manipulation, usually the best handles are Element.ID, Element.Name, Element.ClassName and so on. In our case, the ``ng-reflect-name`` attribute is used along with the ``XPath`` selector to provide a means of capturing a given element.
+
+Once you start recording, click a single input field inside the `RPA Input Forms Challenge <http://www.rpachallenge.com/>`_ (``http://www.rpachallenge.com/``) page. As usual, we recommend capturing the first field - that is - ``First Name`` and then proceeding to the others.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_web_element.png
+   :align: center
+
+After clicking an input field, a prompt window will appear with the title ``InsertText``, simply press ``Enter``.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_web_element_capture_input_field.png
+   :align: center
+
+In order to cease recording of the current input field, simply press the ``ESC`` button.
+
+It is reminded here that ending the recording is obligatory, else it will record all activities you execute endlessly.
+
+Then, a new ``OpenRPA.NM.GetElement`` activity will appear inside the **Foreach DataRow** sequence.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_web_element_sequence_after_capture.png
+   :align: center
+
+It is desirable that the user change the name of each activity to the corresponding input field. As shown in the image below.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_finished_2.png
+
+.. note::
+   To change the name, or  ``DisplayName`` - as set inside the activity's parameters, the user can either click twice in the name of the activity, type the desired name and press ``RETURN`` or set the parameter ``DisplayName`` inside the **Properties box**.
+
+.. It is advisable to check whether the Recorder generated the ``OpenRPA.NM.GetElement`` activity is capturing the correct input field from the ``XPath`` selector - ie. using the ``ng-reflect-name`` attribute. The steps below explain how to do such thing.
+
+.. First the label which the **XPath Selector** will use must be found, use the **Inspect Element** feature available among browsers. To do that, press ``F12``, click the ``Mouse`` button on the top-left part of the developer panel and select the element you want to capture - in our case ``First Name``.
+
+.. .. figure:: images/openrpa_workflow_example_rpa_challenge_map_web_element_get_element_from_source_code.png
+   :align: center
+
+.. Click the **Open Selector** button to verify that the label selected by the **XPath Selector** matches the label of the ``ng-reflect-name`` attribute of the input field inside the `RPA Input Forms Challenge <http://www.rpachallenge.com/>`_ (``http://www.rpachallenge.com/``) page. in our case, the **XPath Selector** should be ``"xpath": "//input[@ng-reflect-name=\"labelFirstName\"]"``.
+
+.. .. figure:: images/openrpa_workflow_example_rpa_challenge_map_web_element_sequence_open_selector.png
+   :align: center
+
+.. .. figure:: images/openrpa_workflow_example_rpa_challenge_map_web_element_select_xpath.png
+   :align: center
+
+
+.. note::
+   When a WebElement is clicked at using the Recorder and OpenRPA determines that the WebElement is capable of receving input values, automatically a prompt will appear where the user can type string texts and then the Recorder will generate the activities as if it were wanted to fill these WebElements with the respective string texts provided. For now, the user may ignore these and fill the prompt with any text, these assigned values will be replaced so they get their values from the DataTable ``ds``. The WebElements are automatically assigned to the ``item`` variable.
+
+
+.. list-table::
+   
+   * - .. figure:: images/openrpa_workflow_example_rpa_challenge_assign_webelement.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_highlight_webelement_handle.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_recorder_insert_text.png
+  
+
+**Fill all the required fields inside the webpage.**
+----------------------------------------------------
+Now that the handles are mapped, assign the values of the rows, columns that were obtained in the Excel sheet.
+
+The first input field is ``First Name``, and the assignment can be done by using the **Assign** activity found in the ``RPA.Utilies`` toolbox.
+
+In the left hand side, use the ``item.Value`` to access the property of the ``WebElement`` and in the righthand side use the desired input value - in the specific case of the ``First Name`` column, ``row(0).ToString``.
+
+``FirstName`` is located in the first column, hence ``index = 0``.
+
+.. list-table::
+   
+   * - .. figure:: images/openrpa_workflow_example_rpa_assign_handle_activity.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_assign_handle_value.png
+
+
+.. note::
+
+   The **Assign** activity is used to reference a value to a variable. To do that, enter in the left-hand side of the activity the name, or alias, of the variable which you want to map a value to. If desired, you can press ``Ctrl+K`` to automatically create the variable or create it manually. Use the right-hand side to enter the value which will be assigned to the variable.
+
+.. note::
+   
+   The value of the respective column inside the row is a ``DataCell`` object, an object temporarily - the in-memory cache - created to store the column value inside the respective row. Furthermore, as the Excel value may be an object of non-string type, it's better to be safe and always cast it to a string. Since the need to cast - ie. change its type - to a ``String`` before assigning it to the ``item.Value``, given that the DOM object returned by the ``Selector`` is of type ``String`` as well. This is done by using the ``ToString`` method.
+
+**Map Submit button**
+---------------------
+Each entry - corresponding to each row - must be entered after being filled by clicking the **Submit** button. 
+
+To map the process of entering each input - ie. clicking the **Submit button** -, simply click the white triangle corresponding to the space below the last **Assign** activity, start the Recorder and click the **Submit** button inside the browser, as shown in the steps below.  
+
+In order to cease recording, simply press the ``ESC`` button. 
+
+It is reminded here that ending the recording is obligatory, else it will record all activities you execute endlessly.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_submit_button.png
+   :align: center
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_submit_button_click.png
+   :align: center
+
+After successfully mapping the **Start** button, your workflow should look like the image below.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_submit_button_final.png
+   :align: center
+
+
+**Workflow Finished**
+---------------------
+The finished workflow should look like the sequence below.
+
+.. list-table::
+   
+   * - .. figure:: images/openrpa_workflow_example_rpa_challenge_finished_1.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_finished_2.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_finished_3.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_finished_4.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_finished_5.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_finished_6.png
+
+**Finished RPA Challenge workflow.**
+
+Windows Automation
+==================
+In this example, **Skype** will be used to exemplify how easy it is to automate Windows applications.
+Our goal is to ask the user for a contact info and then the robot will proceed to Skype and send a ``.PDF file`` to the specified recipient.
+Hence, the **OpenRPA** major features being exposed here are: Detector, Form, Selector and the Recorder. 
+
+This example is divided in 3 steps:
+The first steps refers to ``Detector``, which will be used to check if a new file is created in an specific folder.
+The second step refers to ``Form``, used to prompt the User about the recipient's contact info (``Email``, ``Name`` and ``Username``)
+The final step is ``Windows Automation (Skype app)/Using Selector``, where the user will record the procedure of sending a message and a file to the their Skype's contact.
+
+If your main interest lies on **Windows UI automation**, you may skip directly to the Windows Automation step.
+
+#. Detector
+    * Create Detector in OpenRPA
+    * Configure Detector node in Node-RED
+    * Message Manipulation in Node-RED
+    * Passing a variable from Node-RED to OpenRPA
+#. Form.
+    * OpenRPA Forms   
+#. Windows Automation (Skype app)/Using Selector
+    * Record task
+    * Configure Selectors
+
+Detector
+--------
+
+Detectors are synonyms to event-listeners. Alas, they wait for some specific condition to happen and then fire a message to ``Node-RED`` or even to ``OpenRPA`` itself.
+
+In this section, the user will learn how to create a ``FileWatcher Detector``, which will listen to file changes in a specific directory and will fire an event when a new file is created. For this example, the robot should be firing each time a new ``PDF/.pdf file`` is created.
+
+**Create Detector in OpenRPA**
+
+First, it is needed to configure the ``FileWatcher Detector``.
+
+To do that, the user must first click the ``Settings`` bar inside OpenRPA's ribbon.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_settings.png
+   :align: center
+   :scale: 50%
+   
+Then, click the ``Detectors`` button inside the ribbon.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_detectors.png
+   :align: center
+   :scale: 50%
+   
+After that, all the user needs is to click the desired detector inside the Detectors ribbon.
+
+For this example, the ``Detector`` which will be used is the ``FileWatcherDetectorPlugin``. Set the Detector's ``Name`` - in our case ``Windows Automation`` as well as the ``Path`` which it will listen to - ``C:\Users\viere\Documents\workflow_example_files\windows_automation\input_files``, **no quotes**.
+Then set the ``File Filter`` to ``*.pdf`` - the ``*`` is a wildcard for the filename, that is, any filename will do.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_detector_configured.png
+   :align: center
+   :scale: 50%
+
+.. note::
+   If you can not find a ``Detector``, please make sure it has been installed. In case of doubts, simply run the installer ``.msi`` again and make sure to include it during the installation.
+
+.. note::
+   `Wildcards <https://ryanstutorials.net/linuxtutorial/wildcards.php>`_ (``https://ryanstutorials.net/linuxtutorial/wildcards.php``) are a set of building blocks that allow you to create a pattern defining a set of files or directories. As you would remember, whenever we refer to a file or directory on the command line we are actually referring to a string path. Whenever we refer to a path we may also use wildcards in that path to turn it into a set of files or directories..
+
+**Configure Detector node in Node-RED**
+
+Now the user will configure, in Node-RED, a ``Detector`` node which will be the starting point for ``NodeRED Messages`` when the ``Detector`` is triggered.
+
+Create a new flow inside Node-RED. Our flow is being named ``Windows Automation - Workflow Example``.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_create_new_node_red_flow.png
+   :align: center
+   :scale: 50%
+   
+Now drag a ``detector`` node to the workspace.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_drag_detector_node.png
+   :align: center
+   :scale: 50%
+   
+Double-click the ``detector`` node to set its properties. Select the ``Detector`` in the dropdown field which will appear - in our case, ``Windows Automation``. Additionally, you may also give a name to this node such as ``Filepath Detector``, we recommend doing so to keep flows organized.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_detector_node_properties.png
+   :align: center
+   :scale: 50%
+   
+
+**Message Manipulation in Node-RED**
+
+When the ``FileWatcher Detector`` fires, some information will be passed in the ``NodeRED Message``, such as the ``filepath`` - that is, the name of the file that has been created.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_debug_detector.png
+   :align: center
+   :scale: 50%
+
+It is desired to capture this data and then pass it back to the robot as ``arguments`` for when workflows are invoked.
+Remember that ``arguments`` should be passed to the **Robot** through ``msg.payload`` object.
+As our OpenRPA Workflow does not require any other ``argument``, we can plug in the ``FileWatcher Detector`` node directly to the ``robot`` node.
+
+**Invoking OpenRPA Workflows**
+
+Here lies the logic behind passing the variables to and executing the OpenRPA workflow which will be invoked upon the ``Detector``'s positive signaling.
+
+Drag a ``robot`` node to the workspace. This node enables us to invoke the ``Windows Automation`` workflow.
+
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_connect_function_node_to_robot.png
+   :align: center
+   :scale: 50%
+
+Once again, it is recommended to properly name the nodes, ``Invoke Windows Automation Workflow``.
+Double-click and assign the ``Robot (or agent)`` whom shall will execute the workflow, and obviously, the name of the ``Workflow`` that should be executed (this example, ``Windows Automation``). You may leave the field ``Local Queue`` blank.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_robot_node_properties.png
+   :align: center
+   :scale: 50%
+   
+Now, the user must deploy the flow created by clicking the red Deploy button at the top-left side of the screen.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_deploy_button.png
+   :align: center
+   :scale: 50%
+   
+After that, the user should define, inside the OpenRPA workflow, a new argument by clicking ``Create Argument``.
+As you may have seen in the ``debug`` node, the parameter being passed is called ``filepath`` and therefore the ``argument`` should be the exact same. As the ``argument`` is an input, set its ``Direction`` to ``In``.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_define_pathFile_argument.png
+   :align: center
+   :scale: 50%
+   
+
+.. note::
+   If the user wants to avoid using Node-RED completely, an infinite **While loop** activity (condition: true=true) with a **Try Block** is suggested along with the **Detector** activity containing the detector defined previously. The user may also use the **Assign** activity to assign a fixed ``filepath`` for the file which will be sent to the **Skype** contact. By using the loop, every time an iteration finishes, the robot is always back to the start waiting on the ``Detector`` to fire once more and in case anything extraordinary happens, the **Try Block** assures that the **Workflow** will keep running.
+
+Form
+----
+In this section, the user will learn how to create a ``Form`` to capture the ``Email``, ``Skype contact`` and ``Contact name`` which will be used to pass the attachment and template message using the **Skype** application.
+
+**OpenRPA Forms**
+
+Here the user creates a dynamic WPF Form to gather the values mentioned above from the client.
+
+First drag a ``Invoke Formula`` snippet to the main sequence.
+
+Now click ``Open designer`` to open the ``Form Designer``.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_open_designer_button.png 
+   :align: center
+   :scale: 50%
+
+Clear all example code and add the code snippet below to the designer code editor.
+
+.. code-block:: html
+
+   <form>
+      <title>Skype Automation Form</title>
+      <heading>Invoice Details</heading>
+      <input type='string' name='email' 
+            label='Email'
+            tooltip='Enter the email address here.'
+            icon='pencil'>
+         <validate must='NotBeEmpty' message='Email is mandatory' />
+      </input>
+      <input type='string' name='usernameSkype'
+            label='Skype contact' icon='pencil'
+            tooltip='Enter the Skype contact to which the file will be sent here.'>
+         <validate must='NotBeEmpty' message='Skype contact is mandatory' />
+      </input>
+      <input type='string' name='name'
+            label='Contact name' icon='pencil'
+            tooltip='Enter the contact name to which the file will be sent here.'>
+         <validate must='NotBeEmpty' message='Contact name is mandatory' />
+      </input>
+      <action name='submit' content='START SKYPE AUTOMATION' icon='check' validates='true' ClosesDialog='true' />
+   </form>
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_openrpa_forms_filled_designer.png
+   :align: center
+   :scale: 50%
+
+If you’re used to HTML or any other markup language you might understand what’s happening behind the scenes here. If you don’t, do not worry and refer to the **OpenRPA Forms** section.
+
+By pressing the **Build form** button the user is able to build and see a preview of the WPF form in the left‑side panel of the ``Form Designer``.
+
+After that, the user can press the **Create variables** button so all variables defined inside the ``Form Designer`` will be automatically created. Easy-peasy, isn't it?
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_openrpa_forms_create_variables.png
+   :align: center
+   :scale: 50%
+
+.. note::
+   If the user wants to avoid using ``OpenRPA Forms``, he can simply use the **Assign** activity to assign values to the variables ``email``, ``usernameSkype`` and ``name``, which will be used further to send the attachment and template message to the desired client.
+
+.. note::
+   The ``Form Designer`` is the place where the user can create his desired WPF forms to gather input from the client. At the right-side of it, a preview of the input form is shown. At the left-side of it, the user enters the code used to design the input form. After adding code to the ``Form Designer``, always press the **Build form** button to save changes and visualize the preview.
+
+Windows Automation (Skype app) / Using Selectors
+------------------------------------------------
+Now comes the greatest part of our journey so far in this workflow example. The built-in Recorder will be used to record the task that an user would normally do to effectively achieve the task described in this section's introduction.
+
+**Record task**
+
+Here the user will record the task usually done, namely search for a contact inside the **Skype** application, select - or click - that contact and send a message containing the attachment.
+
+The first step is to open the **Skype** application.
+
+Now, with the **Skype** application open, the user will start the Recorder inside OpenRPA by clicking in the button inside OpenRPA's ribbon and execute the task as if done manually.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_click_recorder.png
+   :align: center
+   :scale: 50%
+
+Now, with the Recorder started, the user must click the ``Search`` tab, containing the placeholder ``People, groups & messages``.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_click_search_tab.png
+   :align: center
+
+An input field will appear inside the ``Search`` tab containing the placeholder ``Search Skype``. Click that input field, an ``InsertText`` input field will appear. The user should enter an existing contact which will be used as a dummy to assign the proper ``Selector`` further in this section. After waiting for **Skype**'s own autocomplete feature to find the user, the user shall click the desired contact.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_search_tab_input_field.png
+   :align: center
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_search_tab_input_field_filled.png
+   :align: center
+
+After clicking the desired contact, the ``Messages`` tab open will open for that specific contact.
+
+The user must now click the ``Add File`` button in the lower right section.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_click_add_file_button.png
+   :align: center
+
+Now a file dialog appears, where the user can select the desired file, and an input dialog from OpenRPA titled ``InsertText`` where you can again insert dummy text. The ``Selector`` will act upon this dialog to choose the file which will be sent, as is seen in the next section. Then click the ``Open`` button.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_select_file.png
+   :align: center
+
+Now click the input field with the ``Type a message`` placeholder, another input dialog with the ``InsertText`` title will appear, you can again enter any dummy text.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_type_a_message.png
+   :align: center
+
+Then, the user shall click the blue **Send** button.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_send_button.png
+   :align: center
+
+Finally, click the **X** button inside the ``Search`` tab to close the search dialogue and exit the Recorder by pressing the ``ESC`` button.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_close_search_tab.png
+   :align: center
+
+**Configure Selectors**
+
+Now the ``Selector`` for the many **GetElement** activities that appeared inside OpenRPA's designer is configured.
+
+First, configure the first ``Selector`` for the first element to be clicked inside the **Skype** application pane. That is, the one with the ``People, groups & messages`` placeholder. In our case, we changed its ``DisplayName`` from ``Search for people, groups & messages`` to ``Search Contact GetElement``, to ease the viewing process by a 3rd-party which may be interested in the workflow.
+
+Click the **Open Selector** button inside the **GetElement** activity that was generated for that specific field.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_people_groups_messages_selector.png
+   :align: center
+
+In this image, the user notices a **Type Text** activity, which corresponds to the dummy username that was typed. The user can remove that activity from the workspace, since it'll be replaced with another activity in the following steps.
+
+The user will notice that upon clicking the **Highlight** button inside the new window and with the **Skype** application window open, no elements inside the screen will be highlighted. Then, we must select the given element manually.
+
+To do that, the user can first double-click the element ``Pane Skype`` ->  ``Document Skype XXXXXXXXXX`` -> ``Button Search for people, groups & messages`` and right-click this last element and click the **Select Element** button that appears. Below follows a picture of this element highlighted.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_people_groups_messages_selector_element_highlighted.png
+   :align: center
+
+Now, the user is going to change the ``filename`` attribute in the first selector, where there may be ``"%ProgramFiles%\\WindowsApps\\Microsoft.SkypeApp_15.61.100.0_x86__XXXXX\\Skype\\Skype.exe"``, the user wants to crop the version of skype and the hash which follows it - specified here as ``{XXXXX}``. To do that, simply change it to ``"%ProgramFiles%\\WindowsApps\\Microsoft.SkypeApp_*"``¹. 
+
+Now the user must also deselect the fourth selector. All the changes made so far are shown in the image below.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_people_groups_messages_selector_finished.png
+   :align: center
+
+After that, simply the **Ok** button in the lower-left side of the screen. It is recommended that the user check once more whether the proper ``Selector`` was configured by clicking the **Highlight** button inside the activity.
+
+Now the user must do the same steps specified above inside the **GetElement** activity responsible for capturing the ``Search`` tab input. Select the element inside ``Pane Skype`` -> ``Document Skype XXXXXXXXX`` -> ``Edit Search Skype``. It is important to remark that the ``Search`` tab must be visible inside the **Skype** application before opening the selector so OpenRPA can recognize it as an element inside the window.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_search_tab_selector_finished.png
+   :align: center
+
+The user must also change the right-hand value of the **Assign** activity, inside the current **GetElement** activity, to the variable which is going to hold the ``username`` of the desired contact. In our case, that variable is ``usernameSkype``, as previously defined in the **Forms** section. 
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_search_tab_assign_properties_tab.png
+   :align: center
+
+Now the user will add a **Delay** activity to the workflow. Set the **Delay**'s ``Duration`` property to ``00:00:05``, which means this delay will last for 5 seconds. This is needed specifically because of the autocomplete function built-in in the **Skype** application. It is a hard-coded constraint in which the robot must wait for the autocomplete function to complete before proceeding to the next steps. 
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_skype_app_delay.png
+   :align: center
+
+Then, the user must repeat the steps specified above inside the **GetElement** activity responsible for capturing the ``Contact`` button.  Select the element inside ``Pane Skype`` -> ``Document Skype XXXXXXXXX`` -> ``Group PEOPLE`` -> ``Button {Contact Name}, {Status}, {Chatted Last}, {Skype Name}`` - namely, in our case, ``Paulo Veras``, ``Away``, ``Chatted 23 minutes ago``, ``Skype Name``.  It is important to remark that the ``Contact`` button must be visible inside the **Skype** application before opening the selector so OpenRPA can recognize it as an element inside the window. Below is the ``Selector`` properly set up and an image of the button highlighted.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_desired_contact_selector_finished.png
+   :align: center
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_desired_contact_selector_highlighted.png
+   :align: center
+
+Now add a **post wait** by using the ``Post Wait`` properties inside the **Click Element** activity which is contained inside the **GetElement** activity responsible for capturing the ``Contact`` button.  This value should be set to ``00:00:02``. The **post wait** is used so, after clicking the desired contact button which appears in the left pane of the **Skype** window, the application itself will wait for the ``Messages`` tab to load. Since we have added the **post wait**, the **Delay** activity is not needed.
+
+The user must now repeat the steps specified for selecting the proper ``Selector`` for the remaining activities and assure that the elements inside the screen are highlighted when properly configured. Remember, you may have to open a window... in the case of the **Add file** button to properly select the elements.
+
+Now set the proper value for the ``filepath`` for the file which will be sent through the **Skype** app. Assign the proper value inside the respective **Assign** activity which corresponds to the input field where the ``filepath`` is going to be set. If you haven't created the ``argument`` yet, now is the time to do it - remember it must have its ``Direction`` set as ``In``. Below it is shown how to set this argument properly.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_filepath_inside_getelement.png
+   :align: center
+
+Finally, check whether the configs are correct for the element inside the ``Selector`` corresponding to ``Pane Skype`` -> ``Document Skype XXXXXXXXX`` -> ``Edit Type a message`` and alter item.value to item.SendKeys inside the **Assign** activity included in the **GetElement** activity. 
+
+If the user refrains from doing so, OpenRPA will attempt to directly set the value of the Skype's edit field to the contents of the variable templateMessage. The problem is: Skype does not like that! The Skype app assumes that the user would type a letter at a time instead of changing the edit field value directly, otherwise the UI gets messed up with the placeholder "Type a message " ending on top of the actual text message.
+
+The correct way to mimic an user typing a letter at a time is to use item.SendKeys method.
+
+If the ``Detector`` is set properly, the user can now test the workflow example by inserting a ``.PDF`` file inside the directory previously defined. Else, he can follow the note below.
+
+.. note::
+   If the user hasn't set the ``filepath`` argument to be acquired from the ``FileWatcherDetectorPlugin``, as seen in the 1st step in this workflow example, he must set its value manually by using an **Assign** activity.
+
+.. note::
+   To change the name, or  ``DisplayName`` - as set inside the activity's parameters, the user can either click twice in the name of the activity, type the desired name and press ``RETURN`` or set the parameter ``DisplayName`` inside the **Properties box**.
+
+.. note::
+   ¹ - `Wildcards <https://ryanstutorials.net/linuxtutorial/wildcards.php>`_ (``https://ryanstutorials.net/linuxtutorial/wildcards.php``) are a set of building blocks that allow you to create a pattern defining a set of files or directories. As you would remember, whenever we refer to a file or directory on the command line we are actually referring to a path. Whenever we refer to a path we may also use wildcards in that path to turn it into a set of files or directories..
+
+Workflow Finished
+-----------------
+Here lie the images showing the output of the workflow both in the **Skype** application and in Node-RED.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_workflow_finished.png
+   :align: center
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_workflow_finished_nodered.png
+   :align: center
+
+Image Search / OCR
+==================
+In this example, the user can practice OCR on a image loaded from a file and then check the results against a validation standard.
+
+To reduce the scope of the activity, this workflow example's only purpose is to check whether the detected document is a driver's license or not.
+
+The validation procedure is as follows: if the text "DRIVER" is located within tzhe image, OpenRPA will assume this document is indeed a driver's license
+
+.. note::
+   As well known, OCR is **not** guaranteed to work 100% of the time, as text readability and image quality both play a crucial role in its success rate.
+
+Load Image from File
+--------------------
+Drag the **Load From File** activity to the main sequence. 
+
+Click the ``...`` button to select the image to be loaded.
+
+Open the **Properties tab** and assign a variable to the ``Result`` parameter which will carry the ``ImageElement`` created by the activity.
+
+It is useful to remind the user that everything captured from an activity that returns any kind of ``Element`` is automatically mapped to the ``item`` Element.
+
+.. note:: 
+
+   While creating a new variable in the **Properties box**, after typing the variable name and with the caret still inside the input field, by pressing ``Ctrl+K`` OpenRPA will automatically create this new variable with the correct type required for the activity.
+
+.. figure:: images/openrpa_workflow_example_image_search_ocr_load_from_file.png
+   :align: center
+
+Get Text
+--------
+Drag **Get Text** activity to the sequence inside the **Load From File** activity.
+
+.. figure:: images/openrpa_workflow_example_image_search_ocr_get_text.png
+   :align: center
+
+Evaluation
+----------
+Drag an **If** activity to the sequence inside the **Get Text** activity. Here the user will implement the whole validation logic.
+
+Inside the ``Condition`` input field, insert ``item.Value.Contains("DRIVER")``. Here it is checked whether any of the text acquired using the **Get Text** activity - ie. inside ``item.Value`` - contains the word ``DRIVER``.
+
+Drag an **Assign** activity to the ``Then`` sequence inside the **If** activity.  Assign the variable ``containsDriverLicense`` to ``True``. This means that if the workflow finds any instances of the values that contains ``DRIVER`` it will automatically change the value of the variable ``containsDriverLicense`` to ``True``. Else, it will keep executing, since there is nothing contained inside the ``Else`` sequence.
+
+.. note::
+
+   The **Assign** activity is used to reference a value to a variable. To do that, enter in the left-hand side of the activity the name, or alias, of the variable which you want to map a value to. If desired, you can press ``Ctrl+K`` to automatically create the variable or create it manually. Use the right-hand side to enter the value which will be assigned to the variable.
+
+.. figure:: images/openrpa_workflow_example_image_search_ocr_if_clause.png
+   :align: center
+
+**Show Notification**
+---------------------
+Now drag a **Show Notification** activity to the end of the main sequence. This will be the way of showing to the user whether the validation has been successful or not.
+
+Inside the ``Message`` input field, in the activity´s dialogue or in the **Properties box**, insert the text ``"Is the document a Driver's License? " + containsDriverLicense.ToString``. 
+
+Here we cast the value of ``containsDriverLicense``, which is a ``bool``, to a ``string`` so it can be printed in the **Show Notification** activity.
+
+.. figure:: images/openrpa_workflow_example_image_search_ocr_show_notif.png
+   :align: center
+
+Workflow Finished
+-----------------
+Here's a preview of how the workflow will look like after running it - the Output window is obviously detached for exhibiting the data.
+
+.. list-table::
+   
+   * - .. figure:: images/openrpa_workflow_example_image_search_ocr_finished_1.png
+
+     - .. figure:: images/openrpa_workflow_example_image_search_ocr_finished_2.png
+
+     - .. figure:: images/openrpa_workflow_example_image_search_ocr_finished_3.png
+
+     - .. figure:: images/openrpa_workflow_example_image_search_ocr_finished_output.png
+
+Excel Read
+==========
+In this example, the user will read a couple of invoices contained in ``Excel files (.xlsx)``, capture the data inside them and generate a new ``Excel file`` with the merged data.
+
+The invoices which will be used to demonstrate this example can be found here `Invoices <https://drive.google.com/file/d/1WkBjsWhA5Dm_fp5zg_kdlBh9oe2vKnTO/view?usp=sharing>`_ (``https://drive.google.com/file/d/1WkBjsWhA5Dm_fp5zg_kdlBh9oe2vKnTO/view?usp=sharing``).
+
+.. @TODO@: Link to BPA's own repository or simply embed file inside Sphinx.
+
+.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_invoice_example.png
+   :align: center
+
+
+Unpack the ``.rar`` file at the desired directory and save the folder path somewhere, it shall be used later on.
+
+The following steps are followed to accomplish this workflow example.
+
+#. Create an Empty DataTable.
+#. For each Invoice.
+    * Read Individual Cells
+    * Read Table Cells ("items")
+    * Add this iteration's invoice to DataTable
+#. Write Excel from DataTable
+
+**Create an Empty DataTable.**
+------------------------------
+All the Excel data that will be read from the invoices will be saved into a ``DataTable``.
+
+Drag the **CreateDataTable** activity to the end of the main sequence.
+
+In the first input field, assign the ``DataTable`` name as ``invoicesDataTable``.
+
+.. note:: 
+   While creating a new variable in the **Properties box**, after typing the variable name and with the caret still inside the input field, by pressing ``Ctrl+K`` OpenRPA will automatically create this new variable with the correct type required for the activity.
+
+In our case, the fields which are going to be assigned to the second input field are headers. Therefore our second input field should contain ``{"Invoice Number", "Company Name", "Shipping Address", "Shipping Tel. Number", "Due Date", "Qty. of Items", "Due Balance"}`` as its content.
+
+It is advisable to rename the ``DisplayName`` for each activity to something meaningful and that helps you keep track of what each part of the workflow does! Considering that, rename this activity to "Create Empty DataTable".
+
+.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_create_empty_data_table.png
+   :align: center
+
+.. note::
+   In OpenRPA, a ``DataTable`` corresponds to a 2-dimensional non-serializable object used to hold values. Think of it as a matrix with ``i`` rows and ``j`` columns. The ``i`` rows are accessible by using the ``.Rows(n)`` attribute, where ``n`` is the number of the row - starting from 0 - which you want to access. The ``j`` columns are accessible by using the ``.Item(n)`` attribute, where ``n`` is the number of the column - starting from 0 - which you want to access. It is useful to remind here that the user must have accessed the ``Rows`` attribute, therefore, if the user wanted to access the 2nd column on the 3rd row of the datatable he would use ``.Rows(2).Item(1)`` attribute.
+
+.. note::
+   In the .NET API, a ``DataTable object`` corresponds to one table of in-memory data contained in a ``DataSet object`` from the class equally named. When you read an ``Excel file``, it is automatically assigned to a ``DataSet`` class and all the ``Sheets`` are saved into ``DataTable`` classes - numbered from 0 to the quantity of sheets inside the ``Excel file``. Here it is reminded that ``DataTable`` objects are case sensitive.
+
+**For each Invoice**
+--------------------
+The first activity will loop a directory and will return all filenames contained in it.
+
+First drag the **Assign** activity to assign the absolute path of the directory you want to loop through to a variable - ie. ``path``.
+
+.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_assign_path.png
+   :align: center
+
+Drag the **ForEachWithBodyFactory<>** activity to the main sequence.
+
+Set the proper ``TypeArgument`` parameter inside the **Properties box** to ``String``. This is done because the directory which will be iterated through contain filepaths, which are returned as values of ``String`` type.  
+
+In the right-hand side of the activity change the ``item`` variable assigned to ``filePath``.
+
+In the left-hand side of the activity insert ``System.IO.Path.GetFiles(path)``.
+
+The variable ``filePath`` now contains the ``String`` to each respective invoice full filepath.
+
+.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_for_each_with_body_factory.png
+   :align: center
+
+**Read Individual Cells**
+
+Here the robot will read individual cells pertaining to fields that contain only a single value - these fields are static (the number of rows is fixed - one).
+
+As these steps are quite repetitive, we will be reproducing only the steps pertaining to the ``invoiceNumber`` variable. If you want to practice further, we strongly recommend doing the same to the other variables as well, namely ``companyName``, ``shippingAddress``, ``shippingTelephoneNumber`` and ``dueDate``.
+
+Use the Recorder to select the cell or drag the **ReadCell** activity, found inside the ``OpenRPA.Utilities`` toolbox, to the sequence inside the **ForEachWithBodyFactory<>** activity.
+
+If the Recorder wasn't used, the user must follow a few more steps in order to use this activity. First, assign the ``Filename`` parameter inside the **Properties box** to the ``filePath`` variable to select the ``Excel file`` which will be read. Enter the cell which will be captured into the ``Cell`` parameter. In our case, it is ``"H3"``, which corresponds to the invoice number.
+
+The **ReadCell activity** will read from an ``Excel file`` and save the cell into a ``String`` variable by default. The user can change the type of the data captured by changing the ``ArgumentType`` parameter inside the **Properties tab**.
+
+Since this variable does not exist yet, we must first create it. A reminder that variable must be obligatorily set with the type **System.Data.String**. 
+
+Simply click in the ``Result`` input field inside the **Properties tab** and type the name of the variable you want to use. In this case, it is ``invoiceNumber``.
+
+Now repeat the procedure above for the remaining variables.
+
+ .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_read_individual_cell.png
+    :align: center
+
+Remember that it is needed to change the variables ``Scope`` to the outermost sequence to be able to capture all the values gathered in here and save them into a ``DataTable`` later on.
+
+ .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_change_scope.png
+    :align: center
+
+.. note:: 
+   While creating a new variable in the **Properties box**, after typing the variable name and with the caret still inside the input field, by pressing ``'K`` OpenRPA will automatically create this new variable with the correct type required for the activity.
+
+**Read Table Cells ("items")**
+
+Here the robot will read a 'table' inside the invoice and differently to reading individual cells, tables are usually dynamic (the number of rows may vary) or. This is done in a programmatic manner that allows the developer the option to read a specific range of cells which would be simply too huge as to permit him to manually add the **ReadCell** activity for each variable.
+
+This 'table' will be stored in a new ``DataTable`` called 'itemsDataTable' and some logic will be applied as well, such as removing empty columns, summing and counting values.
+
+Drag a **Sequence** activity and name it ``Items Processing Logic``.
+
+Inside this sequence, drag a **CreateDataTable** activity and create a table named ``itemsDataTable``. 
+
+The headers for this ``DataTable`` shall be ``{"itemName", "quantity", "rate", "subTotal"}``.
+
+.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_read_items_processing_logic_create_data_table.png
+   :align: center
+
+For the assignments, we will be using columns 0, 3, 5, 7, if you take a look at the invoice template, these are the indexes for the columns 
+that contain data.
+
+Now, by using the ``Read Range`` activity, we will get the table contents into a ``DataTable``. 
+
+First enter the filepath of the file from which the activity will read from inside the ``Filename`` input field.
+
+Enter the cells you want to capture in the ``Cells`` field inside the **Properties box**. In our case, those are ``"A14:H18"``. 
+ 
+ .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_range_cells.png
+    :align: center
+
+The indexes ``0``, ``3``, ``5`` and ``7`` refer to the indexed objects inside the current ``row``, ie. the columns.
+
+Enter the name for the ``DataTable`` you want to save it to inside the ``DataTable`` field inside the **Properties box**. In our case this ``DataTable`` is ``items``.
+
+In the **Properties box**, you may find the property ``IgnoreEmptyRows``, set this value to ``True``. Since our table does not contain a header, set the ``Use Header Row`` property to ``False`` - this will ensure the activity reads the first row of the data (row 14).
+
+.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_items_processing_read_range.png
+   :align: center
+
+And by looping the ``DataTable`` with a **ForEach DataRow** activity, the **Add DataRow** activity is used to loop through each item information to our 'itemsDataTable'
+
+.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_items_processing_for_each_and_add_data_row.png
+   :align: center
+
+Now comes the logic for calculating the subtotal value and adding this value to the total value which will be described in the final ``Excel sheet``.
+
+Declare a new variable ``quantity`` with type ``System.Decimal``. Using the **Assign** activity, assign its value to ``quantity + Convert.ToDecimal(row(3).ToString)`` - this will cause the variable to increment its value for each item iteration.
+
+Declare a new variable ``currentQuantity`` with type ``System.Decimal``. Using the **Assign** activity, assign its value to ``Convert.ToDecimal(row(3).ToString)``
+
+Do the step above for the variable ``currentRate`` as well, using ``row(5)`` as its base-value.
+
+Declare a new variable ``subTotal`` with type ``System.Decimal``. Using the **Assign** activity, assign its value to ``currentQuantity*currentRate``.
+
+Finally, declare a new variable ``dueBalance`` with type ``System.Decimal``. Using the **Assign** activity, assign its value to ``dueBalance + currentQuantity*currentRate``.
+
+It is useful to remark that the user must change the variables ``Scope`` to the outermost sequence to be able to capture all the values gathered in here and save them into a ``DataTable`` later on.
+
+ .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_items_logic_assign_variables.png
+    :align: center
+
+.. note::
+   In the **Read Range** activity, the ``:`` colon symbol is used to delimit the area you want to capture, the cell to the left-hand side of it is the starting cell and the cell to the right-hand side of it is the ending cell.
+
+**Add this iteration's invoice to DataTable**
+---------------------------------------------
+Now that we've gathered all the important data from this iteration's invoice, we want to add these info to the ``DataTable`` we created on step 1.
+
+Drag the **AddDataRow** activity to the end of the sequence inside the **ForEachWithBodyFactory<>** activity.
+
+In the first input field, insert ``invoicesDataTable``.
+
+In the second input field, insert ``{invoiceNumber, companyName, shippingAddress, shippingTelephoneNumber, dueDate, quantity, total}``.
+
+ .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_add_invoices_data_table.png
+    :align: center
+
+**Write Excel from DataTable**
+------------------------------
+This is the last part of the workflow. Here the user will finally write the ``Excel file`` containing all the data gathered.
+
+Drag a **WriteExcel** activity into the end of the main sequence.
+
+Click the ``...`` button to select the filename to which the ``Excel file`` will be saved to. Enter the filename inside the ``File name`` input field on the explorer window which will appear. Then press ``Save`` to finally assign it.
+
+Assign the ``DataTable`` from which the data gathered will be saved into the ``Excel file`` by entering its name inside the ``DataTable`` property inside the **Properties box**.
+
+Enter the theme which will be used to stylize the ``Excel file`` in the ``Theme`` property inside the **Properties box**.
+
+ .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_write_excel.png
+    :align: center
+
+**Workflow Finished**
+---------------------
+Here's a preview of how the workflow will look like after completing it.
+
+.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_workflow_finished_1.png
+   :align: center
+
+.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_workflow_finished_2.png
+   :align: center
+   
+MongoDB Entities Manipulation
+===========================
+Coming soon - Work in progress
+
+File Manipulation
+=================
+Coming soon - Work in progress
+
+Remove
+------
+Coming soon - Work in progress
+
+Save
+----
+Coming soon - Work in progress
+
+Move
+----
+Coming soon - Work in progress
+
+Delete
+------
+Coming soon - Work in progress
+
+SOAP Service
+============
+Coming soon - Work in progress
+
+REST Service (integration with Node-RED)
+=======================================
+In this example, the user will create a workflow that connects to the `Chuck Norris Jokes API <https://api.chucknorris.io/>`_ (``https://api.chucknorris.io/``) and captures a joke.
+
+The user will also create a dialog box using `Forge.Forms dynamic WPF forms <https://github.com/WPF-Forge/Forge.Forms>`_ (``https://github.com/WPF-Forge/Forge.Forms``) where a category for the joke can be selected.
+
+A simple validation method is also used to check whether the message is a Chuck Norris joke or not.
+
+The steps are listed below. 
+
+#. Configure Variable Passing To/From in Node-RED
+#. Message Manipulation in Node‑RED
+#. OpenRPA Forms
+#. Invoke Workflow through OpenRPA
+#. Create Joke Failed Workflow
+#. Evaluate Chuck Norris Joke
+#. Invoke Joke Failed Workflow
+#. Setting Evaluation Failure case in Node-RED
+#. Output logic
+#. Workflow Finished
+
+Configure Variable Passing To/From in Node-RED
+----------------------------------------------
+Here lies the logic behind receiving data from the robot, querying the Chuck Norris API and then returning the values back to the robot.
+
+**Workflow Logic**
+
+Drag a ``Workflow In`` node to the workspace.
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_in_drag.png
+   :align: center
+   :scale: 50  %
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_in_workspace.png
+   :align: center
+   :scale: 50  %
+
+Set the ``Queue name`` to define the queue which the OpenFlow workflow will be assigned to in ``Workflow In``'s properties. The queue name is completely arbitrary, the user can choose for any name he wishes to. In our case, it is set as ``chuckapi``.
+
+.. note::
+   To access any node's properties inside the Node-RED workspace, simply double click the given node. The **Properties box** for the node, containing each input fields required by itself will then appear.
+
+Check the ``RPA`` checkbox to allow this flow's workflow to be invoked from OpenRPA agents.
+
+Set the name for the workflow in the ``Name`` input field. Again, it is named arbitrarily. In our case, it is set as ``ChuckAPI``.
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_in_double_click.png
+   :align: center
+   :scale: 50  %
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_in_set_properties.png
+   :align: center
+   :scale: 50  %
+
+Drag a ``HTTP Request`` node to the workspace.
+
+.. figure:: images/openrpa_workflow_example_rest_http_request_drag.png
+   :align: center
+   :scale: 50  %
+
+Connect the ``Workflow In`` node to the ``HTTP Request`` node.
+
+.. figure:: images/openrpa_workflow_example_rest_http_request_nodes_connect.png
+   :align: center
+   :scale: 50  %
+
+.. figure:: images/openrpa_workflow_example_rest_http_request_nodes_connected.png
+   :align: center
+   :scale: 50  %
+
+.. note::
+   To easily connect a node simply press the ``Ctrl`` key while clicking in the grey rectangles = called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the ``Ctrl`` key.
+
+Set the ``Method`` for the request as ``GET``.
+
+Set the desired ``URL`` for the API which the request will be sent to. In our case, ``https://api.chucknorris.io/jokes/random?category={{category}}``. 
+
+The variable inside the `Mustache <https://mustache.github.io/mustache.5.html>`_ (https://mustache.github.io/mustache.5.html), ie. ``category`` is arbitrarily named as well.
+
+This variable will be used by OpenRPA to pass the value of the choice captured from the user. The user may name it as per his own option.
+
+Set the desired ``Return`` type which will be returned. In our case, it's ``parsed JSON object``.
+
+.. figure:: images/openrpa_workflow_example_rest_http_request_set_properties.png
+   :align: center
+   :scale: 50  %
+
+Drag a ``Workflow Out`` node to the workspace.
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_out_drag.png
+   :align: center
+   :scale: 50  %
+
+Connect the ``HTTP Request`` node to the ``Workflow Out`` node.
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_out_nodes_connect.png 
+   :align: center
+   :scale: 50 %
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_out_nodes_connected.png
+   :align: center
+   :scale: 50 %
+
+.. note::
+   To easily connect a node simply press the ``Ctrl`` key while clicking in the grey rectangles - called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the ``Ctrl`` key.
+
+Deploy your flow by clicking the red Deploy button at the top-left side of the screen.
+
+.. figure:: images/openrpa_workflow_example_rest_chuck_api_deploy.png 
+   :align: center
+   :scale: 50 %
+
+Message Manipulation in Node-RED
+---------------------------------
+Now we want to send a parameter from OpenRPA to Node-RED so that our workflow is not so static.
+
+This parameter contains a ``category`` to which the ``Chuck Norris API``'s joke will relate.
+
+Changing parameters from a variable gathered through a workflow inside Node-RED is easily done through the ``Function`` node and its properties.
+
+Robots ``In/Out`` arguments always are passed to the ``msg.payload`` attribute (in Node-RED) and it is easily to manipulate these by using the ``Function`` node.
+
+.. figure:: images/openrpa_workflow_example_rest_function_node.png 
+   :align: center
+
+Simply drag a ``Function`` node to the workflow, between the **ChuckAPI** ``Workflow In`` node and ``HTTP Request`` node.
+
+.. note::
+   To automatically add a node and bind it to the sequence, drag it while pressing the ``Shift`` key. This way, the node is automatically entered in-between the sequence already established before it was dragged.
+
+.. figure:: images/openrpa_workflow_example_rest_parameter_passing_function_drag.png 
+   :align: center
+   :scale: 50%
+
+.. figure:: images/openrpa_workflow_example_rest_parameter_passing_function_workspace.png 
+   :align: center
+   :scale: 50%
+   
+In our example, the parameters needed are ``msg.category`` - which will be gathered as ``msg.payload.category`` from the ``category`` argument passed by the OpenRPA workflow.
+
+.. figure:: images/openrpa_workflow_example_rest_parameter_passing_function_double_click.png 
+   :align: center
+   :scale: 50%
+
+In the ``Function`` node's properties, set ``msg.category = msg.payload.category``. 
+
+This is used so we can set the ``category`` parameter to the ``HTTP Request`` node, captured from the OpenRPA workflow which the user will build next.
+
+.. figure:: images/openrpa_workflow_example_rest_parameter_passing_function_set_properties.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   In this example, the user could use the ``Change`` node to set the ``msg.category`` attribute to ``msg.payload.category`` as well, or simply pass ``msg.payload.category`` directly to the HTTP Request, which will be discussed further on.
+ 
+OpenRPA Forms
+-------------
+Now the user creates a dynamic WPF form to gather the ``category`` value from the client.
+
+First drag a ``Invoke Formula`` snippet to the main sequence.
+ 
+Now click ``Open designer`` to open the ``Form Designer``.
+
+.. figure:: images/openrpa_workflow_example_rest_openrpa_forms_click_open_designer_button.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   The ``Form Designer`` is the place where the user can create his desired WPF forms to gather input from the client. At the right-side of it, a preview of the input form is shown. At the left-side of it, the user enters the code used to design the input form. After adding code to the ``Form Designer``, always press the **Build form** button to save changes and visualize the preview.
+
+Clear all example code and add the code snippet below to the designer code editor. Then press the **Build form** button to update the form.
+
+.. figure:: images/openrpa_workflow_example_rest_openrpa_forms_empty_designer.png 
+   :align: center
+   :scale: 50%
+
+.. code-block:: html
+
+   <form-designer>
+    <title>Choose Chuck Norris API Category</title>
+    <heading>
+   Please enter the desired category number inside the input field. The returned joke will be related to the selected category.
+   </heading>
+   <select name="category" label="Choose the desired category">
+      <option name="animal" />
+      <option name="career" />
+      <option name="celebrity" />
+      <option name="dev" />
+      <option name="explicit" />
+      <option name="fashion" />
+      <option name="food" />
+      <option name="history" />
+      <option name="money" />
+      <option name="movie" />
+      <option name="music" />
+      <option name="political" />
+      <option name="region" />
+      <option name="science" />
+      <option name="sport" />
+      <option name="travel" />
+   </select> 
+   <action name="submit" content='SUBMIT' icon='check' validates='true' ClosesDialog='true' ></action>
+   </form-designer>
+
+.. figure:: images/openrpa_workflow_example_rest_openrpa_forms_filled_designer.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   After adding the code snippet, all the variables used in the WPF form can be automatically created by pressing the **Create variables** button. 
+
+In our case, the workflow is unable to use a ``Variable``. Since the value will be consumed by Node-RED, it must obligatorily be set as an ``Argument`` with **Direction** set as ``In/Out`` or ``Out`` and type ``String``.
+
+.. figure:: images/openrpa_workflow_example_rest_openrpa_forms_arguments_box.png 
+   :align: center
+   :scale: 50%
+
+Now, to guarantee that the value gathered from the WPF form has the correct type, the user will cast it to a ``String`` using the **Assign** activity.
+
+Invoke Workflow through OpenRPA
+--------------------------------
+Now its time to finally invoke the workflow through OpenRPA and devise the processing logic.
+
+Since the flow is already deployed, it is needed that the user synchronize the workflows with the OpenFlow repository.
+
+To do the aforementioned task, click the **Reload** button inside OpenRPA's ribbon. This will refresh all workflows contained inside the OpenFlow repository to OpenRPA.
+
+.. figure:: images/openrpa_workflow_example_rest_invoke_openflow_click_reload_button.png 
+   :align: center
+   :scale: 50%
+
+Drag an **Invoke OpenFlow** activity to the main sequence inside OpenRPA's Designer.
+
+
+Select the **RPA Workflow** which you want to invoke. In our case ``ChuckAPI``.
+
+.. figure:: images/openrpa_workflow_example_rest_invoke_openflow_drag_activity.png 
+   :align: center
+   :scale: 50%
+
+.. figure:: images/openrpa_workflow_example_rest_invoke_openflow_chuck_api_selected.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   Note: When Node-RED finishes executing the flow, whatever is set in the msg.payload will return back to the robot. Variables are automatically mapped between the two applications: if msg.payload.person exists in NodeRED, whatever returns in there will automatically go in the variable named "person" inside OpenRPA. 
+
+Create Joke Failed Workflow
+---------------------------
+Now that the ChuckAPI process is set, the user can proceed to set a workflow which will be executed in case any failures occur upon execution of the usual process.
+
+Create a new workflow, in our case the name ``REST Workflow Example - Joke Failed`` is used to specify the workflow.
+
+.. figure:: images/openrpa_workflow_example_rest_create_joke_failed_empty_workflow.png 
+   :align: center
+   :scale: 50%
+
+Drag a **WriteLine** activity to the main sequence.
+
+.. figure:: images/openrpa_workflow_example_rest_create_joke_failed_drag_write_line.png 
+   :align: center
+   :scale: 50%
+
+Now it is needed to create the default variable - inside the **Variables, Arguments & Imports box** - from which the entry containing the ``Chuck Norris API`` joke content is returned. This variable alias is ``value``, as it can be seen in `Chuck Norris API Random Joke <https://api.chucknorris.io/jokes/random>`_ (``https://api.chucknorris.io/jokes/random``).
+
+
+Set the output value, in the ``Text`` input field or through the **Properties box** to a new variable of alias ``value``.
+
+.. figure:: images/openrpa_workflow_example_rest_create_joke_failed_set_text_value.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   Press ``Ctrl+K`` to automatically create the variable when entering it upon an input field or create it manually by clicking the **Variables box** under the bottom part of the screen. Use the right-hand side to enter the value which will be assigned to the variable.
+
+This workflow is merely used as an example of the almost endless possibilities within OpenRPA. The user could read the ``ChuckAPI`` joke into a ``.csv`` or ``.xslx`` file, invoke one or many more workflows to deal with the data, pass it into ``MongoDB Entities`` - as stated before, there are almost no limits to what the user can accomplish in terms of automation.
+
+Evaluate Chuck Norris Joke
+--------------------------
+Here we set the evaluation process for checkign whether the joke captured from the ``Chuck Norris API`` is a joke or not.
+
+The validation standard used here is to check whether the content of the ``value`` entry in the ``JSON Dictionary`` returned contains the string "Chuck Norris" or not. 
+
+First the user needs to create the default variable - inside the **Variables, Arguments & Imports box** - from which the entry containing the ``Chuck Norris API`` joke content is returned. This variable alias is ``value``, as it can be seen in `Chuck Norris API Random Joke <https://api.chucknorris.io/jokes/random>`_ (``https://api.chucknorris.io/jokes/random``).
+
+In ``REST Workflow Example`` workflow, drag an **If** activity to the Designer.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_drag_if.png 
+   :align: center
+   :scale: 50%
+
+Enter ``value.Contains("Chuck Norris")`` inside the ``Condition`` input field, which is shown in the activity itself or inside the **Properties box**.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_set_evaluation_condition.png 
+   :align: center
+   :scale: 50%
+   
+Setting Evaluation Failed process in Node-RED
+---------------------------------------------
+The user must now set the proper flow which will be further executed in case of failure of evaluation of the ``ChuckAPI`` process.
+
+**Workflow Logic**
+
+Drag a ``Workflow In`` node to the workspace.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_drag.png 
+   :align: center
+   :scale: 50%
+
+Set the ``Queue name`` to define the queue which the OpenFlow workflow will be assigned to in ``Workflow In``'s properties. 
+
+The queue name is completely arbitrary, the user can choose for any name he wishes to. In our case, it is set as ``jokefailed``.
+
+.. note::
+   To access any node's properties inside the Node-RED workspace, simply double click the given node. The **Properties box** for the node, containing each input fields required by itself will then appear.
+
+Check the ``RPA`` checkbox to allow this flow's workflow to be invoked from OpenRPA agents.
+
+Set the name for the workflow in the ``Name`` input field. Again, it is named arbitrarily. In our case, it is set as ``Joke Failed``.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_double_click.png 
+   :align: center
+   :scale: 50%
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_set_properties.png 
+   :align: center
+   :scale: 50%
+
+Drag a ``RPA Workflow`` or ``Robot`` node to the workspace. This node enables us to invoke the ``REST Workflow - Joke Failed`` workflow upon failure on evaluation.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_drag.png 
+   :align: center
+   :scale: 50%
+
+Set the ``Robot`` which will invoke the workflow and the ``Workflow`` which will be invoked, inside ``robot`` node's properties. As well as ``Local queue name`` and ``Name`` for the node.
+
+``Local queue name`` is arbitrary, it is used to set the queue which will be used for queueing the robot instances.
+
+``Name`` parameter is used only for displaying purposes inside Node-RED. 
+
+In our case, ``Local queue name`` is set as ``jokefailed`` and ``Name`` is set as ``Invoke Joke Failed Workflow``.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_set_properties.png 
+   :align: center
+   :scale: 50%
+
+Connect the ``Workflow In`` node to the ``Robot`` node.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connect_node.png 
+   :align: center
+   :scale: 50%
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connected_node.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   To easily connect a node simply press the ``Ctrl`` key while clicking in the grey rectangles - called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the ``Ctrl`` key.
+
+Drag an ``Email Out`` node - the one with the letter icon to the right-most side of the activity - to the workspace. This node will be responsible to sending the ``msg.payload`` object JSON stringified to the selected email when an error occurs upon evaluation.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_drag.png 
+   :align: center
+   :scale: 50%
+
+Connect the top-most port in the ``Invoke Joke Failed Workflow`` node to the port outside the ``email`` node.
+
+.. note::
+   To easily connect a node simply press the ``Ctrl`` key while clicking in the grey rectangles - called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the ``Ctrl`` key.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connect_node.png 
+   :align: center
+   :scale: 50%
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connected_node.png 
+   :align: center
+   :scale: 50%
+
+Set the properties for the ``email`` node.
+
+``To`` refers to the the e-mail address from the receiver. 
+
+``Userid`` is the  UserId from the account which will send the e-mail. (ie. e-mail without domain - if the e-mail is ``admin@openrpa.dk``, then your UserId is ``admin``)
+
+``Password`` - the password for the email account from the sender.
+
+In our case, a dummy e-mail is set - as ``admin@gmail.com``, which will be used to send and receive the message. It is noted here that the user must change the e-mail or else the workflow obviously won't work.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_set_properties.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   If the user is using Gmail's SMTP Server, it is needed that the settings for allowing **Less secure app access** are correct. Else, the user will receive an error message upon execution of the workflow. To do that, refer to `Less secure app access <https://myaccount.google.com/lesssecureapps>`_ (``https://myaccount.google.com/lesssecureapps``) and make sure that the ``Allow less secure apps`` settings is set to ``ON``.
+
+Drag a ``Workflow Out`` node to the workspace.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_drag.png 
+   :align: center
+   :scale: 50%
+
+Connect the ``Workflow Out`` node to the ``email`` - now ``admin@gmail.com`` - node.
+
+.. note::
+   To easily connect a node simply press the ``Ctrl`` key while clicking in the grey rectangles - called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the ``Ctrl`` key.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connect.png 
+   :align: center
+   :scale: 50%
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connected.png 
+   :align: center
+   :scale: 50%   
+
+Deploy your flow by clicking the red Deploy button at the top-left side of the screen.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_deploy.png 
+   :align: center
+   :scale: 50%   
+
+.. note::
+   Upon any change inside a Node-RED flow, the user must deploy the given flow so the changes are propagated throughout robots currently using that given flow.
+
+Invoke Joke Failed Workflow
+---------------------------
+Now it is needed for the workflow to invoke the ``REST Workflow Example - Joke Failed`` in case the ``ChuckAPI`` process is not properly evaluated.
+
+To do that, drag an ``Invoke OpenFlow`` activity to the ``Else`` sequence, inside the **If** activity.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_drag.png 
+   :align: center
+   :scale: 50%   
+
+Now select ``Joke Failed`` as the workflow to be invoked.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_select.png 
+   :align: center
+   :scale: 50%   
+
+This way the ``REST Workflow Example - Joke Failed`` activity will be automatically invoked upon any failure in the evaluation process.
+
+Output logic
+------------
+Drag a **Show Balloon Tip** activity to the ``Then`` sequence, inside the **If** activity.
+
+.. figure:: images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_drag.png 
+   :align: center
+   :scale: 50%   
+
+Insert the ``Title`` for the **Balloon Tip** which will appear.
+
+Insert the ``Message`` which will appear to the user. In our case, it is the variable ``value``.
+
+.. note::
+   Press ``Ctrl+K`` to automatically create the variable when entering it upon an input field or create it manually by clicking the **Variables box** under the bottom part of the screen. Use the right-hand side to enter the value which will be assigned to the variable.
+
+.. figure:: images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_set.png 
+   :align: center
+   :scale: 50%   
+
+Workflow Finished
+-----------------
+A snippet is shown below containing both the output and the end of the workflow. As well as the whole workflow there after.
+
+.. figure:: images/openrpa_workflow_example_rest_output.png 
+   :align: center
+
+.. list-table::
+   
+   * - .. figure:: images/openrpa_workflow_example_rest_1st_workflow_finished_1.png
+
+     - .. figure:: images/openrpa_workflow_example_rest_1st_workflow_finished_2.png
+
+     - .. figure:: images/openrpa_workflow_example_rest_2nd_workflow_finished_1.png
+
+.. figure:: images/openrpa_workflow_example_rest_node-red_flow.png 
+   :align: center
+   :scale: 50%   
+
+Reading and Parsing PDF Files
+=============================
+Coming soon - Work in progress
+
+Using DataTables
+================
+Coming soon - Work in progress
