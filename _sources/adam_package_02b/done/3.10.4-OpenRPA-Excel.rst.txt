@@ -6,7 +6,7 @@ The invoices which will be used to demonstrate this example can be found here `I
 
 .. @TODO@: Link to BPA's own repository or simply embed file inside Sphinx.
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_invoice_example.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_invoice_example.png
    :align: center
 
 
@@ -36,7 +36,7 @@ In our case, the fields which are going to be assigned to the second input field
 
 It is advisable to rename the ``DisplayName`` for each activity to something meaningful and that helps you keep track of what each part of the workflow does! Considering that, rename this activity to "Create Empty DataTable".
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_create_empty_data_table.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_create_empty_data_table.png
    :align: center
 
 .. note::
@@ -51,7 +51,7 @@ The first activity will loop a directory and will return all filenames contained
 
 First drag the **Assign** activity to assign the absolute path of the directory you want to loop through to a variable - ie. ``path``.
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_assign_path.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_assign_path.png
    :align: center
 
 Drag the **ForEachWithBodyFactory<>** activity to the main sequence.
@@ -64,7 +64,7 @@ In the left-hand side of the activity insert ``System.IO.Path.GetFiles(path)``.
 
 The variable ``filePath`` now contains the ``String`` to each respective invoice full filepath.
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_for_each_with_body_factory.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_for_each_with_body_factory.png
    :align: center
 
 **Read Individual Cells**
@@ -85,12 +85,12 @@ Simply click in the ``Result`` input field inside the **Properties tab** and typ
 
 Now repeat the procedure above for the remaining variables.
 
- .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_read_individual_cell.png
+ .. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_read_individual_cell.png
     :align: center
 
 Remember that it is needed to change the variables ``Scope`` to the outermost sequence to be able to capture all the values gathered in here and save them into a ``DataTable`` later on.
 
- .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_change_scope.png
+ .. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_change_scope.png
     :align: center
 
 .. note:: 
@@ -108,7 +108,7 @@ Inside this sequence, drag a **CreateDataTable** activity and create a table nam
 
 The headers for this ``DataTable`` shall be ``{"itemName", "quantity", "rate", "subTotal"}``.
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_read_items_processing_logic_create_data_table.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_read_items_processing_logic_create_data_table.png
    :align: center
 
 For the assignments, we will be using columns 0, 3, 5, 7, if you take a look at the invoice template, these are the indexes for the columns 
@@ -120,7 +120,7 @@ First enter the filepath of the file from which the activity will read from insi
 
 Enter the cells you want to capture in the ``Cells`` field inside the **Properties box**. In our case, those are ``"A14:H18"``. 
  
- .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_range_cells.png
+ .. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_range_cells.png
     :align: center
 
 The indexes ``0``, ``3``, ``5`` and ``7`` refer to the indexed objects inside the current ``row``, ie. the columns.
@@ -129,12 +129,12 @@ Enter the name for the ``DataTable`` you want to save it to inside the ``DataTab
 
 In the **Properties box**, you may find the property ``IgnoreEmptyRows``, set this value to ``True``. Since our table does not contain a header, set the ``Use Header Row`` property to ``False`` - this will ensure the activity reads the first row of the data (row 14).
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_items_processing_read_range.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_items_processing_read_range.png
    :align: center
 
 And by looping the ``DataTable`` with a **ForEach DataRow** activity, the **Add DataRow** activity is used to loop through each item information to our 'itemsDataTable'
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_items_processing_for_each_and_add_data_row.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_items_processing_for_each_and_add_data_row.png
    :align: center
 
 Now comes the logic for calculating the subtotal value and adding this value to the total value which will be described in the final ``Excel sheet``.
@@ -151,7 +151,7 @@ Finally, declare a new variable ``dueBalance`` with type ``System.Decimal``. Usi
 
 It is useful to remark that the user must change the variables ``Scope`` to the outermost sequence to be able to capture all the values gathered in here and save them into a ``DataTable`` later on.
 
- .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_items_logic_assign_variables.png
+ .. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_items_logic_assign_variables.png
     :align: center
 
 .. note::
@@ -167,7 +167,7 @@ In the first input field, insert ``invoicesDataTable``.
 
 In the second input field, insert ``{invoiceNumber, companyName, shippingAddress, shippingTelephoneNumber, dueDate, quantity, total}``.
 
- .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_add_invoices_data_table.png
+ .. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_add_invoices_data_table.png
     :align: center
 
 **Write Excel from DataTable**
@@ -182,15 +182,15 @@ Assign the ``DataTable`` from which the data gathered will be saved into the ``E
 
 Enter the theme which will be used to stylize the ``Excel file`` in the ``Theme`` property inside the **Properties box**.
 
- .. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_write_excel.png
+ .. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_write_excel.png
     :align: center
 
 **Workflow Finished**
 ---------------------
 Here's a preview of how the workflow will look like after completing it.
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_workflow_finished_1.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_workflow_finished_1.png
    :align: center
 
-.. figure:: images/read_excel_images/openrpa_workflow_example_read_excel_workflow_finished_2.png
+.. figure:: images/read_excelimages/openrpa_workflow_example_read_excel_workflow_finished_2.png
    :align: center

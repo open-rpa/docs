@@ -1,118 +1,124 @@
-
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <title>REST Service (integration with Node-RED) &mdash; BPA/OpenIAP Docs 1.0.2 documentation</title>
-  
 
-  
-  
-  
-  
 
-  
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-    
 
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/styles.css" type="text/css" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+
+
+
+
+  <script type="text/javascript" src="../../static/js/modernizr.min.js"></script>
+
+
+  <script type="text/javascript" id="documentation_options" data-url_root="../../"
+    src="../../static/documentation_options.js"></script>
+  <script src="../../static/jquery.js"></script>
+  <script src="../../static/underscore.js"></script>
+  <script src="../../static/doctools.js"></script>
+  <script src="../../static/language_data.js"></script>
+
+  <script type="text/javascript" src="../../static/js/theme.js"></script>
+
+
+
+
+  <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../static/styles.css" type="text/css" />
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" />
 </head>
 
 <body class="wy-body-for-nav">
 
-   
+
   <div class="wy-grid-for-nav">
-    
+
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
+        <div class="wy-side-nav-search">
 
-          
-            <a href="../../index.html" class="icon icon-home"> BPA/OpenIAP Docs
-          
 
-          
+
+          <a href="../../index.html" class="icon icon-home"> BPA/OpenIAP Docs
+
+
+
           </a>
 
-          
-            
-            
-          
 
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
 
-          
+
+
+
+
+          <div role="search">
+            <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+              <input type="text" name="q" placeholder="Search docs" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
+
+
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../rpa.html">1. <strong>Introduction to RPA</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../openflow.html">2. <strong>OpenFlow</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../openrpa.html">3. <strong>OpenRPA</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../node_red.html">4. <strong>Node-RED</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix_a.html">5. <strong>Appendix A</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix_b.html">6. <strong>Appendix B</strong></a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">1. License</a></li>
-</ul>
 
-            
-          
+
+
+
+
+
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../../rpa.html">1. <strong>Introduction to
+                  RPA</strong></a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../openflow.html">2.
+                <strong>OpenFlow</strong></a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../openrpa.html">3.
+                <strong>OpenRPA</strong></a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../node_red.html">4.
+                <strong>Node-RED</strong></a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../appendix_a.html">5. <strong>Appendix
+                  A</strong></a></li>
+            <li class="toctree-l1"><a class="reference internal" href="../../appendix_b.html">6. <strong>Appendix
+                  B</strong></a></li>
+          </ul>
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="../../license.html">1. License</a></li>
+          </ul>
+
+
+
         </div>
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-      
+
       <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">BPA/OpenIAP Docs</a>
-        
+
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">BPA/OpenIAP Docs</a>
+
       </nav>
 
 
       <div class="wy-nav-content">
-        
+
         <div class="rst-content">
-        
-          
 
 
 
@@ -128,165 +134,353 @@
 
 
 
-<div role="navigation" aria-label="breadcrumbs navigation">
 
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
-      <li>REST Service (integration with Node-RED)</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-        
-      </li>
-    
-  </ul>
 
-  
-  <hr/>
-</div>
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+            <ul class="wy-breadcrumbs">
+
+              <li><a href="../../index.html">Docs</a> &raquo;</li>
+
+              <li>REST Service (integration with Node-RED)</li>
+
+
+              <li class="wy-breadcrumbs-aside">
+
+
+
+              </li>
+
+            </ul>
+
+
+            <hr />
+          </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <div class="section" id="rest-service-integration-with-node-red">
-<h1>REST Service (integration with Node-RED)<a class="headerlink" href="#rest-service-integration-with-node-red" title="Permalink to this headline">¶</a></h1>
-<p>In this example, the user will create a workflow that connects to the <a class="reference external" href="https://api.chucknorris.io/">Chuck Norris Jokes API</a> (<code class="docutils literal notranslate"><span class="pre">https://api.chucknorris.io/</span></code>) and captures a joke.</p>
-<p>The user will also create a dialog box using <a class="reference external" href="https://github.com/WPF-Forge/Forge.Forms">Forge.Forms dynamic WPF forms</a> (<code class="docutils literal notranslate"><span class="pre">https://github.com/WPF-Forge/Forge.Forms</span></code>) where a category for the joke can be selected.</p>
-<p>A simple validation method is also used to check whether the message is a Chuck Norris joke or not.</p>
-<p>The steps are listed below.</p>
-<ol class="arabic simple">
-<li><p>Configure Variable Passing To/From in Node-RED</p></li>
-<li><p>Message Manipulation in Node‑RED</p></li>
-<li><p>OpenRPA Forms</p></li>
-<li><p>Invoke Workflow through OpenRPA</p></li>
-<li><p>Create Joke Failed Workflow</p></li>
-<li><p>Evaluate Chuck Norris Joke</p></li>
-<li><p>Invoke Joke Failed Workflow</p></li>
-<li><p>Setting Evaluation Failure case in Node-RED</p></li>
-<li><p>Output logic</p></li>
-<li><p>Workflow Finished</p></li>
-</ol>
-<div class="section" id="configure-variable-passing-to-from-in-node-red">
-<h2>Configure Variable Passing To/From in Node-RED<a class="headerlink" href="#configure-variable-passing-to-from-in-node-red" title="Permalink to this headline">¶</a></h2>
-<p>Here lies the logic behind receiving data from the robot, querying the Chuck Norris API and then returning the values back to the robot.</p>
-<p><strong>Workflow Logic</strong></p>
-<p>Drag a <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code> node to the workspace.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_drag.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_drag.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_drag.png" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_workspace.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_workspace.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_workspace.png" /></a>
-</div>
-<p>Set the <code class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">name</span></code> to define the queue which the OpenFlow workflow will be assigned to in <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code>’s properties. The queue name is completely arbitrary, the user can choose for any name they wishes to. In our case, it is set as <code class="docutils literal notranslate"><span class="pre">chuckapi</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To access any node’s properties inside the Node-RED workspace, simply double click the given node. The <strong>Properties box</strong> for the node, containing each input fields required by itself will then appear.</p>
-</div>
-<p>Check the <code class="docutils literal notranslate"><span class="pre">RPA</span></code> checkbox to allow this flow’s workflow to be invoked from OpenRPA agents.</p>
-<p>Set the name for the workflow in the <code class="docutils literal notranslate"><span class="pre">Name</span></code> input field. In our case, it is set as <code class="docutils literal notranslate"><span class="pre">ChuckAPI</span></code>.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_double_click.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_double_click.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_double_click.png" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_set_properties.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_set_properties.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_set_properties.png" /></a>
-</div>
-<p>Drag a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Request</span></code> node to the workspace.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_drag.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_drag.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_drag.png" /></a>
-</div>
-<p>Connect the <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code> node to the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Request</span></code> node.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_nodes_connect.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_nodes_connect.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_nodes_connect.png" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_nodes_connected.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_nodes_connected.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_nodes_connected.png" /></a>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To easily connect a node simply press the <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key while clicking in the grey rectangles = called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key.</p>
-</div>
-<p>Set the <code class="docutils literal notranslate"><span class="pre">Method</span></code> for the request as <code class="docutils literal notranslate"><span class="pre">GET</span></code>.</p>
-<p>Set the desired <code class="docutils literal notranslate"><span class="pre">URL</span></code> for the API which the request will be sent to. In our case, <code class="docutils literal notranslate"><span class="pre">https://api.chucknorris.io/jokes/random?category={{category}}</span></code>.</p>
-<p>The variable inside the <a class="reference external" href="https://mustache.github.io/mustache.5.html">Mustache</a> (<a class="reference external" href="https://mustache.github.io/mustache.5.html">https://mustache.github.io/mustache.5.html</a>), ie. <code class="docutils literal notranslate"><span class="pre">category</span></code> is arbitrarily named as well.</p>
-<p>This variable will be used by OpenRPA to pass the value of the choice captured from the user. The user may name it as per his own option.</p>
-<p>Set the desired <code class="docutils literal notranslate"><span class="pre">Return</span></code> type which will be returned. In our case, it’s <code class="docutils literal notranslate"><span class="pre">parsed</span> <span class="pre">JSON</span> <span class="pre">object</span></code>.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_set_properties.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_set_properties.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_set_properties.png" /></a>
-</div>
-<p>Drag a <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Out</span></code> node to the workspace.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_drag.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_drag.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_drag.png" /></a>
-</div>
-<p>Connect the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Request</span></code> node to the <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Out</span></code> node.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_nodes_connect.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_nodes_connect.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_nodes_connect.png" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_nodes_connected.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_nodes_connected.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_nodes_connected.png" /></a>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To easily connect a node simply press the <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key while clicking in the grey rectangles - called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key.</p>
-</div>
-<p>Deploy your flow by clicking the red Deploy button at the top-left side of the screen.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_chuck_api_deploy.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_chuck_api_deploy.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_chuck_api_deploy.png" /></a>
-</div>
-</div>
-<div class="section" id="message-manipulation-in-node-red">
-<h2>Message Manipulation in Node-RED<a class="headerlink" href="#message-manipulation-in-node-red" title="Permalink to this headline">¶</a></h2>
-<p>Now we want to send a parameter from OpenRPA to Node-RED so that our workflow is not so static.</p>
-<p>This parameter contains a <code class="docutils literal notranslate"><span class="pre">category</span></code> to which the <code class="docutils literal notranslate"><span class="pre">Chuck</span> <span class="pre">Norris</span> <span class="pre">API</span></code>’s joke will relate.</p>
-<p>Changing parameters from a variable gathered through a workflow inside Node-RED is easily done through the <code class="docutils literal notranslate"><span class="pre">Function</span></code> node and its properties.</p>
-<p>Robots <code class="docutils literal notranslate"><span class="pre">In/Out</span></code> arguments always are passed to the <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> attribute (in Node-RED) and it is easily to manipulate these by using the <code class="docutils literal notranslate"><span class="pre">Function</span></code> node.</p>
-<div class="figure align-center">
-<img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_function_node.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_function_node.png" />
-</div>
-<p>Simply drag a <code class="docutils literal notranslate"><span class="pre">Function</span></code> node to the workflow, between the <strong>ChuckAPI</strong> <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code> node and <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Request</span></code> node.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To automatically add a node and bind it to the sequence, drag it while pressing the <code class="docutils literal notranslate"><span class="pre">Shift</span></code> key. This way, the node is automatically entered in-between the sequence already established before it was dragged.</p>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_drag.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_drag.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_drag.png" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_workspace.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_workspace.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_workspace.png" /></a>
-</div>
-<p>In our example, the parameters needed are <code class="docutils literal notranslate"><span class="pre">msg.category</span></code> - which will be gathered as <code class="docutils literal notranslate"><span class="pre">msg.payload.category</span></code> from the <code class="docutils literal notranslate"><span class="pre">category</span></code> argument passed by the OpenRPA workflow.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_double_click.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_double_click.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_double_click.png" /></a>
-</div>
-<p>In the <code class="docutils literal notranslate"><span class="pre">Function</span></code> node’s properties, set <code class="docutils literal notranslate"><span class="pre">msg.category</span> <span class="pre">=</span> <span class="pre">msg.payload.category</span></code>.</p>
-<p>This is used so we can set the <code class="docutils literal notranslate"><span class="pre">category</span></code> parameter to the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Request</span></code> node, captured from the OpenRPA workflow which the user will build next.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_set_properties.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_set_properties.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_set_properties.png" /></a>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In this example, the user could use the <code class="docutils literal notranslate"><span class="pre">Change</span></code> node to set the <code class="docutils literal notranslate"><span class="pre">msg.category</span></code> attribute to <code class="docutils literal notranslate"><span class="pre">msg.payload.category</span></code> as well, or simply pass <code class="docutils literal notranslate"><span class="pre">msg.payload.category</span></code> directly to the HTTP Request, which will be discussed further on.</p>
-</div>
-</div>
-<div class="section" id="openrpa-forms">
-<h2>OpenRPA Forms<a class="headerlink" href="#openrpa-forms" title="Permalink to this headline">¶</a></h2>
-<p>Now the user creates a dynamic WPF form to gather the <code class="docutils literal notranslate"><span class="pre">category</span></code> value from the client.</p>
-<p>First drag a <code class="docutils literal notranslate"><span class="pre">Invoke</span> <span class="pre">Formula</span></code> snippet to the main sequence.</p>
-<p>Now click <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">designer</span></code> to open the <code class="docutils literal notranslate"><span class="pre">Form</span> <span class="pre">Designer</span></code>.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_click_open_designer_button.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_click_open_designer_button.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_click_open_designer_button.png" /></a>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">Form</span> <span class="pre">Designer</span></code> is the place where the user can create his desired WPF forms to gather input from the client. At the right-side of it, a preview of the input form is shown. At the left-side of it, the user enters the code used to design the input form. After adding code to the <code class="docutils literal notranslate"><span class="pre">Form</span> <span class="pre">Designer</span></code>, always press the <strong>Build form</strong> button to save changes and visualize the preview.</p>
-</div>
-<p>Clear all example code and add the code snippet below to the designer code editor. Then press the <strong>Build form</strong> button to update the form.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_empty_designer.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_empty_designer.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_empty_designer.png" /></a>
-</div>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form-designer</span><span class="p">&gt;</span>
+            <div itemprop="articleBody">
+
+              <div class="section" id="rest-service-integration-with-node-red">
+                <h1>REST Service (integration with Node-RED)<a class="headerlink"
+                    href="#rest-service-integration-with-node-red" title="Permalink to this headline">¶</a></h1>
+                <p>In this example, the user will create a workflow that connects to the <a class="reference external"
+                    href="https://api.chucknorris.io/">Chuck Norris Jokes API</a> (<code
+                    class="docutils literal notranslate"><span class="pre">https://api.chucknorris.io/</span></code>)
+                  and captures a joke.</p>
+                <p>The user will also create a dialog box using <a class="reference external"
+                    href="https://github.com/WPF-Forge/Forge.Forms">Forge.Forms dynamic WPF forms</a> (<code
+                    class="docutils literal notranslate"><span class="pre">https://github.com/WPF-Forge/Forge.Forms</span></code>)
+                  where a category for the joke can be selected.</p>
+                <p>A simple validation method is also used to check whether the message is a Chuck Norris joke or not.
+                </p>
+                <p>The steps are listed below.</p>
+                <ol class="arabic simple">
+                  <li>
+                    <p>Configure Variable Passing To/From in Node-RED</p>
+                  </li>
+                  <li>
+                    <p>Message Manipulation in Node‑RED</p>
+                  </li>
+                  <li>
+                    <p>OpenRPA Forms</p>
+                  </li>
+                  <li>
+                    <p>Invoke Workflow through OpenRPA</p>
+                  </li>
+                  <li>
+                    <p>Create Joke Failed Workflow</p>
+                  </li>
+                  <li>
+                    <p>Evaluate Chuck Norris Joke</p>
+                  </li>
+                  <li>
+                    <p>Invoke Joke Failed Workflow</p>
+                  </li>
+                  <li>
+                    <p>Setting Evaluation Failure case in Node-RED</p>
+                  </li>
+                  <li>
+                    <p>Output logic</p>
+                  </li>
+                  <li>
+                    <p>Workflow Finished</p>
+                  </li>
+                </ol>
+                <div class="section" id="configure-variable-passing-to-from-in-node-red">
+                  <h2>Configure Variable Passing To/From in Node-RED<a class="headerlink"
+                      href="#configure-variable-passing-to-from-in-node-red" title="Permalink to this headline">¶</a>
+                  </h2>
+                  <p>Here lies the logic behind receiving data from the robot, querying the Chuck Norris API and then
+                    returning the values back to the robot.</p>
+                  <p><strong>Workflow Logic</strong></p>
+                  <p>Drag a <code
+                      class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code>
+                    node to the workspace.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_drag.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_drag.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_drag.png" /></a>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_workspace.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_workspace.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_workspace.png" /></a>
+                  </div>
+                  <p>Set the <code
+                      class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">name</span></code>
+                    to define the queue which the OpenFlow workflow will be assigned to in <code
+                      class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code>’s
+                    properties. The queue name is completely arbitrary, the user can choose for any name they wishes to.
+                    In our case, it is set as <code
+                      class="docutils literal notranslate"><span class="pre">chuckapi</span></code>.</p>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>To access any node’s properties inside the Node-RED workspace, simply double click the given
+                      node. The <strong>Properties box</strong> for the node, containing each input fields required by
+                      itself will then appear.</p>
+                  </div>
+                  <p>Check the <code class="docutils literal notranslate"><span class="pre">RPA</span></code> checkbox
+                    to allow this flow’s workflow to be invoked from OpenRPA agents.</p>
+                  <p>Set the name for the workflow in the <code
+                      class="docutils literal notranslate"><span class="pre">Name</span></code> input field. In our
+                    case, it is set as <code
+                      class="docutils literal notranslate"><span class="pre">ChuckAPI</span></code>.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_double_click.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_double_click.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_double_click.png" /></a>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_set_properties.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_set_properties.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_in_set_properties.png" /></a>
+                  </div>
+                  <p>Drag a <code
+                      class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Request</span></code>
+                    node to the workspace.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_drag.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_drag.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_drag.png" /></a>
+                  </div>
+                  <p>Connect the <code
+                      class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code>
+                    node to the <code
+                      class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Request</span></code>
+                    node.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_nodes_connect.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_nodes_connect.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_nodes_connect.png" /></a>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_nodes_connected.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_nodes_connected.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_nodes_connected.png" /></a>
+                  </div>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>To easily connect a node simply press the <code
+                        class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key while clicking in
+                      the grey rectangles = called ports - in the outer part of each node. The user can also click and
+                      hold to connect the nodes but the author finds it more feasible simply using the <code
+                        class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key.</p>
+                  </div>
+                  <p>Set the <code class="docutils literal notranslate"><span class="pre">Method</span></code> for the
+                    request as <code class="docutils literal notranslate"><span class="pre">GET</span></code>.</p>
+                  <p>Set the desired <code class="docutils literal notranslate"><span class="pre">URL</span></code> for
+                    the API which the request will be sent to. In our case, <code
+                      class="docutils literal notranslate"><span class="pre">https://api.chucknorris.io/jokes/random?category={{category}}</span></code>.
+                  </p>
+                  <p>The variable inside the <a class="reference external"
+                      href="https://mustache.github.io/mustache.5.html">Mustache</a> (<a class="reference external"
+                      href="https://mustache.github.io/mustache.5.html">https://mustache.github.io/mustache.5.html</a>),
+                    ie. <code class="docutils literal notranslate"><span class="pre">category</span></code> is
+                    arbitrarily named as well.</p>
+                  <p>This variable will be used by OpenRPA to pass the value of the choice captured from the user. The
+                    user may name it as per his own option.</p>
+                  <p>Set the desired <code class="docutils literal notranslate"><span class="pre">Return</span></code>
+                    type which will be returned. In our case, it’s <code
+                      class="docutils literal notranslate"><span class="pre">parsed</span> <span class="pre">JSON</span> <span class="pre">object</span></code>.
+                  </p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_set_properties.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_set_properties.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_http_request_set_properties.png" /></a>
+                  </div>
+                  <p>Drag a <code
+                      class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Out</span></code>
+                    node to the workspace.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_drag.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_drag.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_drag.png" /></a>
+                  </div>
+                  <p>Connect the <code
+                      class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Request</span></code>
+                    node to the <code
+                      class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Out</span></code>
+                    node.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_nodes_connect.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_nodes_connect.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_nodes_connect.png" /></a>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_nodes_connected.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_nodes_connected.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_workflow_out_nodes_connected.png" /></a>
+                  </div>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>To easily connect a node simply press the <code
+                        class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key while clicking in
+                      the grey rectangles - called ports - in the outer part of each node. The user can also click and
+                      hold to connect the nodes but the author finds it more feasible simply using the <code
+                        class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key.</p>
+                  </div>
+                  <p>Deploy your flow by clicking the red Deploy button at the top-left side of the screen.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_chuck_api_deploy.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_chuck_api_deploy.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_chuck_api_deploy.png" /></a>
+                  </div>
+                </div>
+                <div class="section" id="message-manipulation-in-node-red">
+                  <h2>Message Manipulation in Node-RED<a class="headerlink" href="#message-manipulation-in-node-red"
+                      title="Permalink to this headline">¶</a></h2>
+                  <p>Now we want to send a parameter from OpenRPA to Node-RED so that our workflow is not so static.</p>
+                  <p>This parameter contains a <code
+                      class="docutils literal notranslate"><span class="pre">category</span></code> to which the <code
+                      class="docutils literal notranslate"><span class="pre">Chuck</span> <span class="pre">Norris</span> <span class="pre">API</span></code>’s
+                    joke will relate.</p>
+                  <p>Changing parameters from a variable gathered through a workflow inside Node-RED is easily done
+                    through the <code class="docutils literal notranslate"><span class="pre">Function</span></code> node
+                    and its properties.</p>
+                  <p>Robots <code class="docutils literal notranslate"><span class="pre">In/Out</span></code> arguments
+                    always are passed to the <code
+                      class="docutils literal notranslate"><span class="pre">msg.payload</span></code> attribute (in
+                    Node-RED) and it is easily to manipulate these by using the <code
+                      class="docutils literal notranslate"><span class="pre">Function</span></code> node.</p>
+                  <div class="figure align-center">
+                    <img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_function_node.png"
+                      src="adam_package_02b\done\images/openrpa_workflow_example_rest_function_node.png" />
+                  </div>
+                  <p>Simply drag a <code class="docutils literal notranslate"><span class="pre">Function</span></code>
+                    node to the workflow, between the <strong>ChuckAPI</strong> <code
+                      class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code>
+                    node and <code
+                      class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Request</span></code>
+                    node.</p>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>To automatically add a node and bind it to the sequence, drag it while pressing the <code
+                        class="docutils literal notranslate"><span class="pre">Shift</span></code> key. This way, the
+                      node is automatically entered in-between the sequence already established before it was dragged.
+                    </p>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_drag.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_drag.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_drag.png" /></a>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_workspace.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_workspace.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_workspace.png" /></a>
+                  </div>
+                  <p>In our example, the parameters needed are <code
+                      class="docutils literal notranslate"><span class="pre">msg.category</span></code> - which will be
+                    gathered as <code
+                      class="docutils literal notranslate"><span class="pre">msg.payload.category</span></code> from the
+                    <code class="docutils literal notranslate"><span class="pre">category</span></code> argument passed
+                    by the OpenRPA workflow.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_double_click.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_double_click.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_double_click.png" /></a>
+                  </div>
+                  <p>In the <code class="docutils literal notranslate"><span class="pre">Function</span></code> node’s
+                    properties, set <code
+                      class="docutils literal notranslate"><span class="pre">msg.category</span> <span class="pre">=</span> <span class="pre">msg.payload.category</span></code>.
+                  </p>
+                  <p>This is used so we can set the <code
+                      class="docutils literal notranslate"><span class="pre">category</span></code> parameter to the
+                    <code
+                      class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Request</span></code>
+                    node, captured from the OpenRPA workflow which the user will build next.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_set_properties.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_set_properties.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_parameter_passing_function_set_properties.png" /></a>
+                  </div>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>In this example, the user could use the <code
+                        class="docutils literal notranslate"><span class="pre">Change</span></code> node to set the
+                      <code class="docutils literal notranslate"><span class="pre">msg.category</span></code> attribute
+                      to <code class="docutils literal notranslate"><span class="pre">msg.payload.category</span></code>
+                      as well, or simply pass <code
+                        class="docutils literal notranslate"><span class="pre">msg.payload.category</span></code>
+                      directly to the HTTP Request, which will be discussed further on.</p>
+                  </div>
+                </div>
+                <div class="section" id="openrpa-forms">
+                  <h2>OpenRPA Forms<a class="headerlink" href="#openrpa-forms" title="Permalink to this headline">¶</a>
+                  </h2>
+                  <p>Now the user creates a dynamic WPF form to gather the <code
+                      class="docutils literal notranslate"><span class="pre">category</span></code> value from the
+                    client.</p>
+                  <p>First drag a <code
+                      class="docutils literal notranslate"><span class="pre">Invoke</span> <span class="pre">Formula</span></code>
+                    snippet to the main sequence.</p>
+                  <p>Now click <code
+                      class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">designer</span></code>
+                    to open the <code
+                      class="docutils literal notranslate"><span class="pre">Form</span> <span class="pre">Designer</span></code>.
+                  </p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_click_open_designer_button.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_click_open_designer_button.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_click_open_designer_button.png" /></a>
+                  </div>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>The <code
+                        class="docutils literal notranslate"><span class="pre">Form</span> <span class="pre">Designer</span></code>
+                      is the place where the user can create his desired WPF forms to gather input from the client. At
+                      the right-side of it, a preview of the input form is shown. At the left-side of it, the user
+                      enters the code used to design the input form. After adding code to the <code
+                        class="docutils literal notranslate"><span class="pre">Form</span> <span class="pre">Designer</span></code>,
+                      always press the <strong>Build form</strong> button to save changes and visualize the preview.</p>
+                  </div>
+                  <p>Clear all example code and add the code snippet below to the designer code editor. Then press the
+                    <strong>Build form</strong> button to update the form.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_empty_designer.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_empty_designer.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_empty_designer.png" /></a>
+                  </div>
+                  <div class="highlight-html notranslate">
+                    <div class="highlight">
+                      <pre><span></span><span class="p">&lt;</span><span class="nt">form-designer</span><span class="p">&gt;</span>
  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Choose Chuck Norris API Category<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
  <span class="p">&lt;</span><span class="nt">heading</span><span class="p">&gt;</span>
 Please enter the desired category number inside the input field. The returned joke will be related to the selected category.
@@ -311,257 +505,533 @@ Please enter the desired category number inside the input field. The returned jo
 <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">action</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#39;SUBMIT&#39;</span> <span class="na">icon</span><span class="o">=</span><span class="s">&#39;check&#39;</span> <span class="na">validates</span><span class="o">=</span><span class="s">&#39;true&#39;</span> <span class="na">ClosesDialog</span><span class="o">=</span><span class="s">&#39;true&#39;</span> <span class="p">&gt;&lt;/</span><span class="nt">action</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">form-designer</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_filled_designer.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_filled_designer.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_filled_designer.png" /></a>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>After adding the code snippet, all the variables used in the WPF form can be automatically created by pressing the <strong>Create variables</strong> button.</p>
-</div>
-<p>In our case, the workflow is unable to use a <code class="docutils literal notranslate"><span class="pre">Variable</span></code>. Since the value will be consumed by Node-RED, it must obligatorily be set as an <code class="docutils literal notranslate"><span class="pre">Argument</span></code> with <strong>Direction</strong> set as <code class="docutils literal notranslate"><span class="pre">In/Out</span></code> or <code class="docutils literal notranslate"><span class="pre">Out</span></code> and type <code class="docutils literal notranslate"><span class="pre">String</span></code>.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_arguments_box.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_arguments_box.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_arguments_box.png" /></a>
-</div>
-<p>Now, to guarantee that the value gathered from the WPF form has the correct type, the user will cast it to a <code class="docutils literal notranslate"><span class="pre">String</span></code> using the <strong>Assign</strong> activity.</p>
-</div>
-<div class="section" id="invoke-workflow-through-openrpa">
-<h2>Invoke Workflow through OpenRPA<a class="headerlink" href="#invoke-workflow-through-openrpa" title="Permalink to this headline">¶</a></h2>
-<p>Now its time to finally invoke the workflow through OpenRPA and devise the processing logic.</p>
-<p>Since the flow is already deployed, it is needed that the user synchronize the workflows with the OpenFlow repository.</p>
-<p>To do the aforementioned task, click the <strong>Reload</strong> button inside OpenRPA’s ribbon. This will refresh all workflows contained inside the OpenFlow repository to OpenRPA.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_click_reload_button.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_click_reload_button.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_click_reload_button.png" /></a>
-</div>
-<p>Drag an <strong>Invoke OpenFlow</strong> activity to the main sequence inside OpenRPA’s Designer.</p>
-<p>Select the <strong>RPA Workflow</strong> which you want to invoke. In our case <code class="docutils literal notranslate"><span class="pre">ChuckAPI</span></code>.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_drag_activity.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_drag_activity.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_drag_activity.png" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_chuck_api_selected.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_chuck_api_selected.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_chuck_api_selected.png" /></a>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Note: When Node-RED finishes executing the flow, whatever is set in the msg.payload will return back to the robot. Variables are automatically mapped between the two applications: if msg.payload.person exists in NodeRED, whatever returns in there will automatically go in the variable named “person” inside OpenRPA.</p>
-</div>
-</div>
-<div class="section" id="create-joke-failed-workflow">
-<h2>Create Joke Failed Workflow<a class="headerlink" href="#create-joke-failed-workflow" title="Permalink to this headline">¶</a></h2>
-<p>Now that the ChuckAPI process is set, the user can proceed to set a workflow which will be executed in case any failures occur upon execution of the usual process.</p>
-<p>Create a new workflow, in our case the name <code class="docutils literal notranslate"><span class="pre">REST</span> <span class="pre">Workflow</span> <span class="pre">Example</span> <span class="pre">-</span> <span class="pre">Joke</span> <span class="pre">Failed</span></code> is used to specify the workflow.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_empty_workflow.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_empty_workflow.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_empty_workflow.png" /></a>
-</div>
-<p>Drag a <strong>WriteLine</strong> activity to the main sequence.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_drag_write_line.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_drag_write_line.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_drag_write_line.png" /></a>
-</div>
-<p>Now it is needed to create the default variable - inside the <strong>Variables, Arguments &amp; Imports box</strong> - from which the entry containing the <code class="docutils literal notranslate"><span class="pre">Chuck</span> <span class="pre">Norris</span> <span class="pre">API</span></code> joke content is returned. This variable alias is <code class="docutils literal notranslate"><span class="pre">value</span></code>, as it can be seen in <a class="reference external" href="https://api.chucknorris.io/jokes/random">Chuck Norris API Random Joke</a> (<code class="docutils literal notranslate"><span class="pre">https://api.chucknorris.io/jokes/random</span></code>).</p>
-<p>Set the output value, in the <code class="docutils literal notranslate"><span class="pre">Text</span></code> input field or through the <strong>Properties box</strong> to a new variable of alias <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_set_text_value.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_set_text_value.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_set_text_value.png" /></a>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+K</span></code> to automatically create the variable when entering it upon an input field or create it manually by clicking the <strong>Variables box</strong> under the bottom part of the screen. Use the right-hand side to enter the value which will be assigned to the variable.</p>
-</div>
-<p>This workflow is merely used as an example of the almost endless possibilities within OpenRPA. The user could read the <code class="docutils literal notranslate"><span class="pre">ChuckAPI</span></code> joke into a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> or <code class="docutils literal notranslate"><span class="pre">.xslx</span></code> file, invoke one or many more workflows to deal with the data, pass it into <code class="docutils literal notranslate"><span class="pre">MongoDB</span> <span class="pre">Entities</span></code> - as stated before, there are almost no limits to what the user can accomplish in terms of automation.</p>
-</div>
-<div class="section" id="evaluate-chuck-norris-joke">
-<h2>Evaluate Chuck Norris Joke<a class="headerlink" href="#evaluate-chuck-norris-joke" title="Permalink to this headline">¶</a></h2>
-<p>Here we set the evaluation process for checkign whether the joke captured from the <code class="docutils literal notranslate"><span class="pre">Chuck</span> <span class="pre">Norris</span> <span class="pre">API</span></code> is a joke or not.</p>
-<p>The validation standard used here is to check whether the content of the <code class="docutils literal notranslate"><span class="pre">value</span></code> entry in the <code class="docutils literal notranslate"><span class="pre">JSON</span> <span class="pre">Dictionary</span></code> returned contains the string “Chuck Norris” or not.</p>
-<p>First the user needs to create the default variable - inside the <strong>Variables, Arguments &amp; Imports box</strong> - from which the entry containing the <code class="docutils literal notranslate"><span class="pre">Chuck</span> <span class="pre">Norris</span> <span class="pre">API</span></code> joke content is returned. This variable alias is <code class="docutils literal notranslate"><span class="pre">value</span></code>, as it can be seen in <a class="reference external" href="https://api.chucknorris.io/jokes/random">Chuck Norris API Random Joke</a> (<code class="docutils literal notranslate"><span class="pre">https://api.chucknorris.io/jokes/random</span></code>).</p>
-<p>In <code class="docutils literal notranslate"><span class="pre">REST</span> <span class="pre">Workflow</span> <span class="pre">Example</span></code> workflow, drag an <strong>If</strong> activity to the Designer.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_drag_if.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_drag_if.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_drag_if.png" /></a>
-</div>
-<p>Enter <code class="docutils literal notranslate"><span class="pre">value.Contains(&quot;Chuck</span> <span class="pre">Norris&quot;)</span></code> inside the <code class="docutils literal notranslate"><span class="pre">Condition</span></code> input field, which is shown in the activity itself or inside the <strong>Properties box</strong>.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_set_evaluation_condition.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_set_evaluation_condition.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_set_evaluation_condition.png" /></a>
-</div>
-</div>
-<div class="section" id="setting-evaluation-failed-process-in-node-red">
-<h2>Setting Evaluation Failed process in Node-RED<a class="headerlink" href="#setting-evaluation-failed-process-in-node-red" title="Permalink to this headline">¶</a></h2>
-<p>The user must now set the proper flow which will be further executed in case of failure of evaluation of the <code class="docutils literal notranslate"><span class="pre">ChuckAPI</span></code> process.</p>
-<p><strong>Workflow Logic</strong></p>
-<p>Drag a <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code> node to the workspace.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_drag.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_drag.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_drag.png" /></a>
-</div>
-<p>Set the <code class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">name</span></code> to define the queue which the OpenFlow workflow will be assigned to in <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code>’s properties.</p>
-<p>The queue name is completely arbitrary, the user can choose for any name they wishes to. In our case, it is set as <code class="docutils literal notranslate"><span class="pre">jokefailed</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To access any node’s properties inside the Node-RED workspace, simply double click the given node. The <strong>Properties box</strong> for the node, containing each input fields required by itself will then appear.</p>
-</div>
-<p>Check the <code class="docutils literal notranslate"><span class="pre">RPA</span></code> checkbox to allow this flow’s workflow to be invoked from OpenRPA agents.</p>
-<p>Set the name for the workflow in the <code class="docutils literal notranslate"><span class="pre">Name</span></code> input field. Again, it is named arbitrarily. In our case, it is set as <code class="docutils literal notranslate"><span class="pre">Joke</span> <span class="pre">Failed</span></code>.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_double_click.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_double_click.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_double_click.png" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_set_properties.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_set_properties.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_set_properties.png" /></a>
-</div>
-<p>Drag a <code class="docutils literal notranslate"><span class="pre">RPA</span> <span class="pre">Workflow</span></code> or <code class="docutils literal notranslate"><span class="pre">Robot</span></code> node to the workspace. This node enables us to invoke the <code class="docutils literal notranslate"><span class="pre">REST</span> <span class="pre">Workflow</span> <span class="pre">-</span> <span class="pre">Joke</span> <span class="pre">Failed</span></code> workflow upon failure on evaluation.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_drag.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_drag.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_drag.png" /></a>
-</div>
-<p>Set the <code class="docutils literal notranslate"><span class="pre">Robot</span></code> which will invoke the workflow and the <code class="docutils literal notranslate"><span class="pre">Workflow</span></code> which will be invoked, inside <code class="docutils literal notranslate"><span class="pre">robot</span></code> node’s properties. As well as <code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">queue</span> <span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">Name</span></code> for the node.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">queue</span> <span class="pre">name</span></code> is arbitrary, it is used to set the queue which will be used for queueing the robot instances.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Name</span></code> parameter is used only for displaying purposes inside Node-RED.</p>
-<p>In our case, <code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">queue</span> <span class="pre">name</span></code> is set as <code class="docutils literal notranslate"><span class="pre">jokefailed</span></code> and <code class="docutils literal notranslate"><span class="pre">Name</span></code> is set as <code class="docutils literal notranslate"><span class="pre">Invoke</span> <span class="pre">Joke</span> <span class="pre">Failed</span> <span class="pre">Workflow</span></code>.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_set_properties.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_set_properties.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_set_properties.png" /></a>
-</div>
-<p>Connect the <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code> node to the <code class="docutils literal notranslate"><span class="pre">Robot</span></code> node.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connect_node.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connect_node.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connect_node.png" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connected_node.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connected_node.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connected_node.png" /></a>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To easily connect a node simply press the <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key while clicking in the grey rectangles - called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key.</p>
-</div>
-<p>Drag an <code class="docutils literal notranslate"><span class="pre">Email</span> <span class="pre">Out</span></code> node - the one with the letter icon to the right-most side of the activity - to the workspace. This node will be responsible to sending the <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> object JSON stringified to the selected email when an error occurs upon evaluation.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_drag.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_drag.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_drag.png" /></a>
-</div>
-<p>Connect the top-most port in the <code class="docutils literal notranslate"><span class="pre">Invoke</span> <span class="pre">Joke</span> <span class="pre">Failed</span> <span class="pre">Workflow</span></code> node to the port outside the <code class="docutils literal notranslate"><span class="pre">email</span></code> node.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To easily connect a node simply press the <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key while clicking in the grey rectangles - called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key.</p>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connect_node.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connect_node.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connect_node.png" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connected_node.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connected_node.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connected_node.png" /></a>
-</div>
-<p>Set the properties for the <code class="docutils literal notranslate"><span class="pre">email</span></code> node.</p>
-<p><code class="docutils literal notranslate"><span class="pre">To</span></code> refers to the the e-mail address from the receiver.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Userid</span></code> is the  UserId from the account which will send the e-mail. (ie. e-mail without domain - if the e-mail is <code class="docutils literal notranslate"><span class="pre">admin&#64;openrpa.dk</span></code>, then your UserId is <code class="docutils literal notranslate"><span class="pre">admin</span></code>)</p>
-<p><code class="docutils literal notranslate"><span class="pre">Password</span></code> - the password for the email account from the sender.</p>
-<p>In our case, a dummy e-mail is set - as <code class="docutils literal notranslate"><span class="pre">admin&#64;gmail.com</span></code>, which will be used to send and receive the message. It is noted here that the user must change the e-mail or else the workflow obviously won’t work.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_set_properties.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_set_properties.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_set_properties.png" /></a>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If the user is using Gmail’s SMTP Server, it is needed that the settings for allowing <strong>Less secure app access</strong> are correct. Else, the user will receive an error message upon execution of the workflow. To do that, refer to <a class="reference external" href="https://myaccount.google.com/lesssecureapps">Less secure app access</a> (<code class="docutils literal notranslate"><span class="pre">https://myaccount.google.com/lesssecureapps</span></code>) and make sure that the <code class="docutils literal notranslate"><span class="pre">Allow</span> <span class="pre">less</span> <span class="pre">secure</span> <span class="pre">apps</span></code> settings is set to <code class="docutils literal notranslate"><span class="pre">ON</span></code>.</p>
-</div>
-<p>Drag a <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Out</span></code> node to the workspace.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_drag.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_drag.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_drag.png" /></a>
-</div>
-<p>Connect the <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Out</span></code> node to the <code class="docutils literal notranslate"><span class="pre">email</span></code> - now <code class="docutils literal notranslate"><span class="pre">admin&#64;gmail.com</span></code> - node.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To easily connect a node simply press the <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key while clicking in the grey rectangles - called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key.</p>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connect.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connect.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connect.png" /></a>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connected.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connected.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connected.png" /></a>
-</div>
-<p>Deploy your flow by clicking the red Deploy button at the top-left side of the screen.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_deploy.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_deploy.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_deploy.png" /></a>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Upon any change inside a Node-RED flow, the user must deploy the given flow so the changes are propagated throughout robots currently using that given flow.</p>
-</div>
-</div>
-<div class="section" id="invoke-joke-failed-workflow">
-<h2>Invoke Joke Failed Workflow<a class="headerlink" href="#invoke-joke-failed-workflow" title="Permalink to this headline">¶</a></h2>
-<p>Now it is needed for the workflow to invoke the <code class="docutils literal notranslate"><span class="pre">REST</span> <span class="pre">Workflow</span> <span class="pre">Example</span> <span class="pre">-</span> <span class="pre">Joke</span> <span class="pre">Failed</span></code> in case the <code class="docutils literal notranslate"><span class="pre">ChuckAPI</span></code> process is not properly evaluated.</p>
-<p>To do that, drag an <code class="docutils literal notranslate"><span class="pre">Invoke</span> <span class="pre">OpenFlow</span></code> activity to the <code class="docutils literal notranslate"><span class="pre">Else</span></code> sequence, inside the <strong>If</strong> activity.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_drag.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_drag.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_drag.png" /></a>
-</div>
-<p>Now select <code class="docutils literal notranslate"><span class="pre">Joke</span> <span class="pre">Failed</span></code> as the workflow to be invoked.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_select.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_select.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_select.png" /></a>
-</div>
-<p>This way the <code class="docutils literal notranslate"><span class="pre">REST</span> <span class="pre">Workflow</span> <span class="pre">Example</span> <span class="pre">-</span> <span class="pre">Joke</span> <span class="pre">Failed</span></code> activity will be automatically invoked upon any failure in the evaluation process.</p>
-</div>
-<div class="section" id="output-logic">
-<h2>Output logic<a class="headerlink" href="#output-logic" title="Permalink to this headline">¶</a></h2>
-<p>Drag a <strong>Show Balloon Tip</strong> activity to the <code class="docutils literal notranslate"><span class="pre">Then</span></code> sequence, inside the <strong>If</strong> activity.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_drag.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_drag.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_drag.png" /></a>
-</div>
-<p>Insert the <code class="docutils literal notranslate"><span class="pre">Title</span></code> for the <strong>Balloon Tip</strong> which will appear.</p>
-<p>Insert the <code class="docutils literal notranslate"><span class="pre">Message</span></code> which will appear to the user. In our case, it is the variable <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+K</span></code> to automatically create the variable when entering it upon an input field or create it manually by clicking the <strong>Variables box</strong> under the bottom part of the screen. Use the right-hand side to enter the value which will be assigned to the variable.</p>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_set.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_set.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_set.png" /></a>
-</div>
-</div>
-<div class="section" id="workflow-finished">
-<h2>Workflow Finished<a class="headerlink" href="#workflow-finished" title="Permalink to this headline">¶</a></h2>
-<p>A snippet is shown below containing both the output and the end of the workflow. As well as the whole workflow there after.</p>
-<div class="figure align-center">
-<img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_output.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_output.png" />
-</div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><div class="figure align-default">
-<img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_1st_workflow_finished_1.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_1st_workflow_finished_1.png" />
-</div>
-</td>
-<td><div class="figure align-default">
-<img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_1st_workflow_finished_2.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_1st_workflow_finished_2.png" />
-</div>
-</td>
-<td><div class="figure align-default">
-<img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_2nd_workflow_finished_1.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_2nd_workflow_finished_1.png" />
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="adam_package_02b\done\images/openrpa_workflow_example_rest_node-red_flow.png"><img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_node-red_flow.png" src="adam_package_02b\done\images/openrpa_workflow_example_rest_node-red_flow.png" /></a>
-</div>
-</div>
-</div>
+</pre>
+                    </div>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_filled_designer.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_filled_designer.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_filled_designer.png" /></a>
+                  </div>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>After adding the code snippet, all the variables used in the WPF form can be automatically
+                      created by pressing the <strong>Create variables</strong> button.</p>
+                  </div>
+                  <p>In our case, the workflow is unable to use a <code
+                      class="docutils literal notranslate"><span class="pre">Variable</span></code>. Since the value
+                    will be consumed by Node-RED, it must obligatorily be set as an <code
+                      class="docutils literal notranslate"><span class="pre">Argument</span></code> with
+                    <strong>Direction</strong> set as <code
+                      class="docutils literal notranslate"><span class="pre">In/Out</span></code> or <code
+                      class="docutils literal notranslate"><span class="pre">Out</span></code> and type <code
+                      class="docutils literal notranslate"><span class="pre">String</span></code>.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_arguments_box.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_arguments_box.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_openrpa_forms_arguments_box.png" /></a>
+                  </div>
+                  <p>Now, to guarantee that the value gathered from the WPF form has the correct type, the user will
+                    cast it to a <code class="docutils literal notranslate"><span class="pre">String</span></code> using
+                    the <strong>Assign</strong> activity.</p>
+                </div>
+                <div class="section" id="invoke-workflow-through-openrpa">
+                  <h2>Invoke Workflow through OpenRPA<a class="headerlink" href="#invoke-workflow-through-openrpa"
+                      title="Permalink to this headline">¶</a></h2>
+                  <p>Now its time to finally invoke the workflow through OpenRPA and devise the processing logic.</p>
+                  <p>Since the flow is already deployed, it is needed that the user synchronize the workflows with the
+                    OpenFlow repository.</p>
+                  <p>To do the aforementioned task, click the <strong>Reload</strong> button inside OpenRPA’s ribbon.
+                    This will refresh all workflows contained inside the OpenFlow repository to OpenRPA.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_click_reload_button.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_click_reload_button.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_click_reload_button.png" /></a>
+                  </div>
+                  <p>Drag an <strong>Invoke OpenFlow</strong> activity to the main sequence inside OpenRPA’s Designer.
+                  </p>
+                  <p>Select the <strong>RPA Workflow</strong> which you want to invoke. In our case <code
+                      class="docutils literal notranslate"><span class="pre">ChuckAPI</span></code>.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_drag_activity.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_drag_activity.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_drag_activity.png" /></a>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_chuck_api_selected.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_chuck_api_selected.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_invoke_openflow_chuck_api_selected.png" /></a>
+                  </div>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>Note: When Node-RED finishes executing the flow, whatever is set in the msg.payload will return
+                      back to the robot. Variables are automatically mapped between the two applications: if
+                      msg.payload.person exists in NodeRED, whatever returns in there will automatically go in the
+                      variable named “person” inside OpenRPA.</p>
+                  </div>
+                </div>
+                <div class="section" id="create-joke-failed-workflow">
+                  <h2>Create Joke Failed Workflow<a class="headerlink" href="#create-joke-failed-workflow"
+                      title="Permalink to this headline">¶</a></h2>
+                  <p>Now that the ChuckAPI process is set, the user can proceed to set a workflow which will be executed
+                    in case any failures occur upon execution of the usual process.</p>
+                  <p>Create a new workflow, in our case the name <code
+                      class="docutils literal notranslate"><span class="pre">REST</span> <span class="pre">Workflow</span> <span class="pre">Example</span> <span class="pre">-</span> <span class="pre">Joke</span> <span class="pre">Failed</span></code>
+                    is used to specify the workflow.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_empty_workflow.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_empty_workflow.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_empty_workflow.png" /></a>
+                  </div>
+                  <p>Drag a <strong>WriteLine</strong> activity to the main sequence.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_drag_write_line.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_drag_write_line.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_drag_write_line.png" /></a>
+                  </div>
+                  <p>Now it is needed to create the default variable - inside the <strong>Variables, Arguments &amp;
+                      Imports box</strong> - from which the entry containing the <code
+                      class="docutils literal notranslate"><span class="pre">Chuck</span> <span class="pre">Norris</span> <span class="pre">API</span></code>
+                    joke content is returned. This variable alias is <code
+                      class="docutils literal notranslate"><span class="pre">value</span></code>, as it can be seen in
+                    <a class="reference external" href="https://api.chucknorris.io/jokes/random">Chuck Norris API Random
+                      Joke</a> (<code
+                      class="docutils literal notranslate"><span class="pre">https://api.chucknorris.io/jokes/random</span></code>).
+                  </p>
+                  <p>Set the output value, in the <code
+                      class="docutils literal notranslate"><span class="pre">Text</span></code> input field or through
+                    the <strong>Properties box</strong> to a new variable of alias <code
+                      class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_set_text_value.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_set_text_value.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_create_joke_failed_set_text_value.png" /></a>
+                  </div>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+K</span></code> to
+                      automatically create the variable when entering it upon an input field or create it manually by
+                      clicking the <strong>Variables box</strong> under the bottom part of the screen. Use the
+                      right-hand side to enter the value which will be assigned to the variable.</p>
+                  </div>
+                  <p>This workflow is merely used as an example of the almost endless possibilities within OpenRPA. The
+                    user could read the <code
+                      class="docutils literal notranslate"><span class="pre">ChuckAPI</span></code> joke into a <code
+                      class="docutils literal notranslate"><span class="pre">.csv</span></code> or <code
+                      class="docutils literal notranslate"><span class="pre">.xslx</span></code> file, invoke one or
+                    many more workflows to deal with the data, pass it into <code
+                      class="docutils literal notranslate"><span class="pre">MongoDB</span> <span class="pre">Entities</span></code>
+                    - as stated before, there are almost no limits to what the user can accomplish in terms of
+                    automation.</p>
+                </div>
+                <div class="section" id="evaluate-chuck-norris-joke">
+                  <h2>Evaluate Chuck Norris Joke<a class="headerlink" href="#evaluate-chuck-norris-joke"
+                      title="Permalink to this headline">¶</a></h2>
+                  <p>Here we set the evaluation process for checkign whether the joke captured from the <code
+                      class="docutils literal notranslate"><span class="pre">Chuck</span> <span class="pre">Norris</span> <span class="pre">API</span></code>
+                    is a joke or not.</p>
+                  <p>The validation standard used here is to check whether the content of the <code
+                      class="docutils literal notranslate"><span class="pre">value</span></code> entry in the <code
+                      class="docutils literal notranslate"><span class="pre">JSON</span> <span class="pre">Dictionary</span></code>
+                    returned contains the string “Chuck Norris” or not.</p>
+                  <p>First the user needs to create the default variable - inside the <strong>Variables, Arguments &amp;
+                      Imports box</strong> - from which the entry containing the <code
+                      class="docutils literal notranslate"><span class="pre">Chuck</span> <span class="pre">Norris</span> <span class="pre">API</span></code>
+                    joke content is returned. This variable alias is <code
+                      class="docutils literal notranslate"><span class="pre">value</span></code>, as it can be seen in
+                    <a class="reference external" href="https://api.chucknorris.io/jokes/random">Chuck Norris API Random
+                      Joke</a> (<code
+                      class="docutils literal notranslate"><span class="pre">https://api.chucknorris.io/jokes/random</span></code>).
+                  </p>
+                  <p>In <code
+                      class="docutils literal notranslate"><span class="pre">REST</span> <span class="pre">Workflow</span> <span class="pre">Example</span></code>
+                    workflow, drag an <strong>If</strong> activity to the Designer.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_drag_if.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_drag_if.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_drag_if.png" /></a>
+                  </div>
+                  <p>Enter <code
+                      class="docutils literal notranslate"><span class="pre">value.Contains(&quot;Chuck</span> <span class="pre">Norris&quot;)</span></code>
+                    inside the <code class="docutils literal notranslate"><span class="pre">Condition</span></code>
+                    input field, which is shown in the activity itself or inside the <strong>Properties box</strong>.
+                  </p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_set_evaluation_condition.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_set_evaluation_condition.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_set_evaluation_condition.png" /></a>
+                  </div>
+                </div>
+                <div class="section" id="setting-evaluation-failed-process-in-node-red">
+                  <h2>Setting Evaluation Failed process in Node-RED<a class="headerlink"
+                      href="#setting-evaluation-failed-process-in-node-red" title="Permalink to this headline">¶</a>
+                  </h2>
+                  <p>The user must now set the proper flow which will be further executed in case of failure of
+                    evaluation of the <code
+                      class="docutils literal notranslate"><span class="pre">ChuckAPI</span></code> process.</p>
+                  <p><strong>Workflow Logic</strong></p>
+                  <p>Drag a <code
+                      class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code>
+                    node to the workspace.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_drag.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_drag.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_drag.png" /></a>
+                  </div>
+                  <p>Set the <code
+                      class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">name</span></code>
+                    to define the queue which the OpenFlow workflow will be assigned to in <code
+                      class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code>’s
+                    properties.</p>
+                  <p>The queue name is completely arbitrary, the user can choose for any name they wishes to. In our
+                    case, it is set as <code
+                      class="docutils literal notranslate"><span class="pre">jokefailed</span></code>.</p>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>To access any node’s properties inside the Node-RED workspace, simply double click the given
+                      node. The <strong>Properties box</strong> for the node, containing each input fields required by
+                      itself will then appear.</p>
+                  </div>
+                  <p>Check the <code class="docutils literal notranslate"><span class="pre">RPA</span></code> checkbox
+                    to allow this flow’s workflow to be invoked from OpenRPA agents.</p>
+                  <p>Set the name for the workflow in the <code
+                      class="docutils literal notranslate"><span class="pre">Name</span></code> input field. Again, it
+                    is named arbitrarily. In our case, it is set as <code
+                      class="docutils literal notranslate"><span class="pre">Joke</span> <span class="pre">Failed</span></code>.
+                  </p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_double_click.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_double_click.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_double_click.png" /></a>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_set_properties.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_set_properties.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_set_properties.png" /></a>
+                  </div>
+                  <p>Drag a <code
+                      class="docutils literal notranslate"><span class="pre">RPA</span> <span class="pre">Workflow</span></code>
+                    or <code class="docutils literal notranslate"><span class="pre">Robot</span></code> node to the
+                    workspace. This node enables us to invoke the <code
+                      class="docutils literal notranslate"><span class="pre">REST</span> <span class="pre">Workflow</span> <span class="pre">-</span> <span class="pre">Joke</span> <span class="pre">Failed</span></code>
+                    workflow upon failure on evaluation.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_drag.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_drag.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_drag.png" /></a>
+                  </div>
+                  <p>Set the <code class="docutils literal notranslate"><span class="pre">Robot</span></code> which will
+                    invoke the workflow and the <code
+                      class="docutils literal notranslate"><span class="pre">Workflow</span></code> which will be
+                    invoked, inside <code class="docutils literal notranslate"><span class="pre">robot</span></code>
+                    node’s properties. As well as <code
+                      class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">queue</span> <span class="pre">name</span></code>
+                    and <code class="docutils literal notranslate"><span class="pre">Name</span></code> for the node.
+                  </p>
+                  <p><code
+                      class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">queue</span> <span class="pre">name</span></code>
+                    is arbitrary, it is used to set the queue which will be used for queueing the robot instances.</p>
+                  <p><code class="docutils literal notranslate"><span class="pre">Name</span></code> parameter is used
+                    only for displaying purposes inside Node-RED.</p>
+                  <p>In our case, <code
+                      class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">queue</span> <span class="pre">name</span></code>
+                    is set as <code class="docutils literal notranslate"><span class="pre">jokefailed</span></code> and
+                    <code class="docutils literal notranslate"><span class="pre">Name</span></code> is set as <code
+                      class="docutils literal notranslate"><span class="pre">Invoke</span> <span class="pre">Joke</span> <span class="pre">Failed</span> <span class="pre">Workflow</span></code>.
+                  </p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_set_properties.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_set_properties.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_set_properties.png" /></a>
+                  </div>
+                  <p>Connect the <code
+                      class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code>
+                    node to the <code class="docutils literal notranslate"><span class="pre">Robot</span></code> node.
+                  </p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connect_node.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connect_node.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connect_node.png" /></a>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connected_node.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connected_node.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connected_node.png" /></a>
+                  </div>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>To easily connect a node simply press the <code
+                        class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key while clicking in
+                      the grey rectangles - called ports - in the outer part of each node. The user can also click and
+                      hold to connect the nodes but the author finds it more feasible simply using the <code
+                        class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key.</p>
+                  </div>
+                  <p>Drag an <code
+                      class="docutils literal notranslate"><span class="pre">Email</span> <span class="pre">Out</span></code>
+                    node - the one with the letter icon to the right-most side of the activity - to the workspace. This
+                    node will be responsible to sending the <code
+                      class="docutils literal notranslate"><span class="pre">msg.payload</span></code> object JSON
+                    stringified to the selected email when an error occurs upon evaluation.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_drag.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_drag.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_drag.png" /></a>
+                  </div>
+                  <p>Connect the top-most port in the <code
+                      class="docutils literal notranslate"><span class="pre">Invoke</span> <span class="pre">Joke</span> <span class="pre">Failed</span> <span class="pre">Workflow</span></code>
+                    node to the port outside the <code
+                      class="docutils literal notranslate"><span class="pre">email</span></code> node.</p>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>To easily connect a node simply press the <code
+                        class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key while clicking in
+                      the grey rectangles - called ports - in the outer part of each node. The user can also click and
+                      hold to connect the nodes but the author finds it more feasible simply using the <code
+                        class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key.</p>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connect_node.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connect_node.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connect_node.png" /></a>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connected_node.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connected_node.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connected_node.png" /></a>
+                  </div>
+                  <p>Set the properties for the <code
+                      class="docutils literal notranslate"><span class="pre">email</span></code> node.</p>
+                  <p><code class="docutils literal notranslate"><span class="pre">To</span></code> refers to the the
+                    e-mail address from the receiver.</p>
+                  <p><code class="docutils literal notranslate"><span class="pre">Userid</span></code> is the UserId
+                    from the account which will send the e-mail. (ie. e-mail without domain - if the e-mail is <code
+                      class="docutils literal notranslate"><span class="pre">admin&#64;openrpa.dk</span></code>, then
+                    your UserId is <code class="docutils literal notranslate"><span class="pre">admin</span></code>)</p>
+                  <p><code class="docutils literal notranslate"><span class="pre">Password</span></code> - the password
+                    for the email account from the sender.</p>
+                  <p>In our case, a dummy e-mail is set - as <code
+                      class="docutils literal notranslate"><span class="pre">admin&#64;gmail.com</span></code>, which
+                    will be used to send and receive the message. It is noted here that the user must change the e-mail
+                    or else the workflow obviously won’t work.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_set_properties.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_set_properties.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_set_properties.png" /></a>
+                  </div>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>If the user is using Gmail’s SMTP Server, it is needed that the settings for allowing
+                      <strong>Less secure app access</strong> are correct. Else, the user will receive an error message
+                      upon execution of the workflow. To do that, refer to <a class="reference external"
+                        href="https://myaccount.google.com/lesssecureapps">Less secure app access</a> (<code
+                        class="docutils literal notranslate"><span class="pre">https://myaccount.google.com/lesssecureapps</span></code>)
+                      and make sure that the <code
+                        class="docutils literal notranslate"><span class="pre">Allow</span> <span class="pre">less</span> <span class="pre">secure</span> <span class="pre">apps</span></code>
+                      settings is set to <code class="docutils literal notranslate"><span class="pre">ON</span></code>.
+                    </p>
+                  </div>
+                  <p>Drag a <code
+                      class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Out</span></code>
+                    node to the workspace.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_drag.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_drag.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_drag.png" /></a>
+                  </div>
+                  <p>Connect the <code
+                      class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Out</span></code>
+                    node to the <code class="docutils literal notranslate"><span class="pre">email</span></code> - now
+                    <code class="docutils literal notranslate"><span class="pre">admin&#64;gmail.com</span></code> -
+                    node.</p>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>To easily connect a node simply press the <code
+                        class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key while clicking in
+                      the grey rectangles - called ports - in the outer part of each node. The user can also click and
+                      hold to connect the nodes but the author finds it more feasible simply using the <code
+                        class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key.</p>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connect.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connect.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connect.png" /></a>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connected.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connected.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connected.png" /></a>
+                  </div>
+                  <p>Deploy your flow by clicking the red Deploy button at the top-left side of the screen.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_deploy.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_deploy.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_deploy.png" /></a>
+                  </div>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>Upon any change inside a Node-RED flow, the user must deploy the given flow so the changes are
+                      propagated throughout robots currently using that given flow.</p>
+                  </div>
+                </div>
+                <div class="section" id="invoke-joke-failed-workflow">
+                  <h2>Invoke Joke Failed Workflow<a class="headerlink" href="#invoke-joke-failed-workflow"
+                      title="Permalink to this headline">¶</a></h2>
+                  <p>Now it is needed for the workflow to invoke the <code
+                      class="docutils literal notranslate"><span class="pre">REST</span> <span class="pre">Workflow</span> <span class="pre">Example</span> <span class="pre">-</span> <span class="pre">Joke</span> <span class="pre">Failed</span></code>
+                    in case the <code class="docutils literal notranslate"><span class="pre">ChuckAPI</span></code>
+                    process is not properly evaluated.</p>
+                  <p>To do that, drag an <code
+                      class="docutils literal notranslate"><span class="pre">Invoke</span> <span class="pre">OpenFlow</span></code>
+                    activity to the <code class="docutils literal notranslate"><span class="pre">Else</span></code>
+                    sequence, inside the <strong>If</strong> activity.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_drag.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_drag.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_drag.png" /></a>
+                  </div>
+                  <p>Now select <code
+                      class="docutils literal notranslate"><span class="pre">Joke</span> <span class="pre">Failed</span></code>
+                    as the workflow to be invoked.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_select.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_select.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_select.png" /></a>
+                  </div>
+                  <p>This way the <code
+                      class="docutils literal notranslate"><span class="pre">REST</span> <span class="pre">Workflow</span> <span class="pre">Example</span> <span class="pre">-</span> <span class="pre">Joke</span> <span class="pre">Failed</span></code>
+                    activity will be automatically invoked upon any failure in the evaluation process.</p>
+                </div>
+                <div class="section" id="output-logic">
+                  <h2>Output logic<a class="headerlink" href="#output-logic" title="Permalink to this headline">¶</a>
+                  </h2>
+                  <p>Drag a <strong>Show Balloon Tip</strong> activity to the <code
+                      class="docutils literal notranslate"><span class="pre">Then</span></code> sequence, inside the
+                    <strong>If</strong> activity.</p>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_drag.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_drag.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_drag.png" /></a>
+                  </div>
+                  <p>Insert the <code class="docutils literal notranslate"><span class="pre">Title</span></code> for the
+                    <strong>Balloon Tip</strong> which will appear.</p>
+                  <p>Insert the <code class="docutils literal notranslate"><span class="pre">Message</span></code> which
+                    will appear to the user. In our case, it is the variable <code
+                      class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+K</span></code> to
+                      automatically create the variable when entering it upon an input field or create it manually by
+                      clicking the <strong>Variables box</strong> under the bottom part of the screen. Use the
+                      right-hand side to enter the value which will be assigned to the variable.</p>
+                  </div>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_set.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_set.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_set.png" /></a>
+                  </div>
+                </div>
+                <div class="section" id="workflow-finished">
+                  <h2>Workflow Finished<a class="headerlink" href="#workflow-finished"
+                      title="Permalink to this headline">¶</a></h2>
+                  <p>A snippet is shown below containing both the output and the end of the workflow. As well as the
+                    whole workflow there after.</p>
+                  <div class="figure align-center">
+                    <img alt="adam_package_02b\done\images/openrpa_workflow_example_rest_output.png"
+                      src="adam_package_02b\done\images/openrpa_workflow_example_rest_output.png" />
+                  </div>
+                  <table class="docutils align-default">
+                    <colgroup>
+                      <col style="width: 33%" />
+                      <col style="width: 33%" />
+                      <col style="width: 33%" />
+                    </colgroup>
+                    <tbody>
+                      <tr class="row-odd">
+                        <td>
+                          <div class="figure align-default">
+                            <img
+                              alt="adam_package_02b\done\images/openrpa_workflow_example_rest_1st_workflow_finished_1.png"
+                              src="adam_package_02b\done\images/openrpa_workflow_example_rest_1st_workflow_finished_1.png" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="figure align-default">
+                            <img
+                              alt="adam_package_02b\done\images/openrpa_workflow_example_rest_1st_workflow_finished_2.png"
+                              src="adam_package_02b\done\images/openrpa_workflow_example_rest_1st_workflow_finished_2.png" />
+                          </div>
+                        </td>
+                        <td>
+                          <div class="figure align-default">
+                            <img
+                              alt="adam_package_02b\done\images/openrpa_workflow_example_rest_2nd_workflow_finished_1.png"
+                              src="adam_package_02b\done\images/openrpa_workflow_example_rest_2nd_workflow_finished_1.png" />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="figure align-center">
+                    <a class="reference internal image-reference"
+                      href="adam_package_02b\done\images/openrpa_workflow_example_rest_node-red_flow.png"><img
+                        alt="adam_package_02b\done\images/openrpa_workflow_example_rest_node-red_flow.png"
+                        src="adam_package_02b\done\images/openrpa_workflow_example_rest_node-red_flow.png" /></a>
+                  </div>
+                </div>
+              </div>
 
 
-           </div>
-           
+            </div>
+
           </div>
           <footer>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-    <p>Powered by <a href="https://bpatechnologies.com/">BPA Technologies</a></p>
-     
 
 
-</footer>
+            <hr />
+
+            <div role="contentinfo">
+              <p>
+                &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
+
+              </p>
+            </div>
+            Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a
+              href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a
+              href="https://readthedocs.org">Read the Docs</a>.
+            <p>Powered by <a href="https://bpatechnologies.com/">BPA Technologies</a></p>
+
+
+
+          </footer>
 
         </div>
       </div>
@@ -569,21 +1039,22 @@ Please enter the desired category number inside the input field. The returned jo
     </section>
 
   </div>
-  
+
 
 
   <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+    });
   </script>
 
-  
-  
-    
-  
-        <h4>>Powered by BPA Technologies - bpatechnologies.com</h4>
+
+
+
+
+  <h4>>Powered by BPA Technologies - bpatechnologies.com</h4>
 
 
 </body>
+
 </html>

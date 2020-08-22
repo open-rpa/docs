@@ -280,13 +280,13 @@ First, it is needed to configure the ``FileWatcher Detector``.
 
 To do that, the user must first click the ``Settings`` bar inside OpenRPA's ribbon.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_settings.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_click_settings.png
    :align: center
    :scale: 50%
    
 Then, click the ``Detectors`` button inside the ribbon.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_detectors.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_click_detectors.png
    :align: center
    :scale: 50%
    
@@ -295,7 +295,7 @@ After that, all the user needs is to click the desired detector inside the Detec
 For this example, the ``Detector`` which will be used is the ``FileWatcherDetectorPlugin``. Set the Detector's ``Name`` - in our case ``Windows Automation`` as well as the ``Path`` which it will listen to - ``C:\Users\viere\Documents\workflow_example_files\windows_automation\input_files``, **no quotes**.
 Then set the ``File Filter`` to ``*.pdf`` - the ``*`` is a wildcard for the filename, that is, any filename will do.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_detector_configured.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_detector_configured.png
    :align: center
    :scale: 50%
 
@@ -311,19 +311,19 @@ Now the user will configure, in Node-RED, a ``Detector`` node which will be the 
 
 Create a new flow inside Node-RED. Our flow is being named ``Windows Automation - Workflow Example``.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_create_new_node_red_flow.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_create_new_node_red_flow.png
    :align: center
    :scale: 50%
    
 Now drag a ``detector`` node to the workspace.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_drag_detector_node.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_drag_detector_node.png
    :align: center
    :scale: 50%
    
 Double-click the ``detector`` node to set its properties. Select the ``Detector`` in the dropdown field which will appear - in our case, ``Windows Automation``. Additionally, you may also give a name to this node such as ``Filepath Detector``, we recommend doing so to keep flows organized.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_detector_node_properties.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_set_detector_node_properties.png
    :align: center
    :scale: 50%
    
@@ -332,7 +332,7 @@ Double-click the ``detector`` node to set its properties. Select the ``Detector`
 
 When the ``FileWatcher Detector`` fires, some information will be passed in the ``NodeRED Message``, such as the ``filepath`` - that is, the name of the file that has been created.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_debug_detector.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_set_debug_detector.png
    :align: center
    :scale: 50%
 
@@ -347,27 +347,27 @@ Here lies the logic behind passing the variables to and executing the OpenRPA wo
 Drag a ``robot`` node to the workspace. This node enables us to invoke the ``Windows Automation`` workflow.
 
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_connect_function_node_to_robot.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_connect_function_node_to_robot.png
    :align: center
    :scale: 50%
 
 Once again, it is recommended to properly name the nodes, ``Invoke Windows Automation Workflow``.
 Double-click and assign the ``Robot (or agent)`` whom shall will execute the workflow, and obviously, the name of the ``Workflow`` that should be executed (this example, ``Windows Automation``). You may leave the field ``Local Queue`` blank.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_robot_node_properties.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_set_robot_node_properties.png
    :align: center
    :scale: 50%
    
 Now, the user must deploy the flow created by clicking the red Deploy button at the top-left side of the screen.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_deploy_button.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_click_deploy_button.png
    :align: center
    :scale: 50%
    
 After that, the user should define, inside the OpenRPA workflow, a new argument by clicking ``Create Argument``.
 As you may have seen in the ``debug`` node, the parameter being passed is called ``filepath`` and therefore the ``argument`` should be the exact same. As the ``argument`` is an input, set its ``Direction`` to ``In``.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_define_pathFile_argument.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_define_pathFile_argument.png
    :align: center
    :scale: 50%
    
@@ -387,7 +387,7 @@ First drag a ``Invoke Formula`` snippet to the main sequence.
 
 Now click ``Open designer`` to open the ``Form Designer``.
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_open_designer_button.png 
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_click_open_designer_button.png 
    :align: center
    :scale: 50%
 
@@ -417,7 +417,7 @@ Clear all example code and add the code snippet below to the designer code edito
       <action name='submit' content='START SKYPE AUTOMATION' icon='check' validates='true' ClosesDialog='true' />
    </form>
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_openrpa_forms_filled_designer.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_openrpa_forms_filled_designer.png
    :align: center
    :scale: 50%
 
@@ -427,7 +427,7 @@ By pressing the **Build form** button the user is able to build and see a previe
 
 After that, the user can press the **Create variables** button so all variables defined inside the ``Form Designer`` will be automatically created. Easy-peasy, isn't it?
 
-.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_openrpa_forms_create_variables.png
+.. figure:: images/windows_automationimages/openrpa_workflow_examples_windows_automation_openrpa_forms_create_variables.png
    :align: center
    :scale: 50%
 
