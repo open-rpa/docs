@@ -1,0 +1,50 @@
+===============
+ **Appendix B** 
+===============
+
+This appendix deals with technical subjects regarding the OON stack.
+
+
+
+************
+ **OpenRPA**
+************
+
+Activities
+==========
+
+Click Element
+-------------
+
+Virtual Click
+^^^^^^^^^^^^^
+
+A virtual click is different from a physical click in that it simulates a mouse event by using ``User32.dll``. There are several reasons to do this but the main ones are: it consumes less resources and provides a faster way of clicking an element. For more on the ``mouse_event`` function, please refer to `this link<https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-mouse_event>`_ (``https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-mouse_event``).
+
+
+Data Types
+==========
+
+DataView
+--------
+As per the `DataView Class page <https://docs.microsoft.com/en-us/dotnet/api/system.data.dataview?view=netcore-3.1>`_  (``https://docs.microsoft.com/en-us/dotnet/api/system.data.dataview?view=netcore-3.1``), a ``DataView`` represents a databindable, customized view of a ``DataTable`` for sorting, filtering, searching, editing and navigation. It also does not store data, but instead represents a connected view of its corresponding ``DataTable``. Changes made to the ``DataView``'s data will affect the ``DataTAble``. Changes to the ``DataTable``'s data will affect all ``DataViews`` associated with it.
+
+Filtering through a DataTable using DataView
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To filter through data inside a ``DataTable`` using a ``DataView``, first assign a variable of type ``System.Data.DataView`` to the ``DefaultView`` attribute of the ``DataTable`` you want to filter through. 
+
+After that, assign to the ``RowFilter`` attribute of the ``DataView`` variable the filter you want to apply. In our case, we're using the ``"ID > 2``" to filter through all ``Int32`` values larger than 2 inside our ``DataTable``.
+
+Then, just to make sure the ``DataView`` has actually filtered, we use a ``Foreach DataRow`` activity to output every row inside the ``DataView``. An example is shown below, with ``view`` as the ``DataView`` variable and ``dt`` as the ``DataTable`` variable.
+
+.. figure:: images/appendix_b/appendix_b_dataview_snippet.png
+   :align: center
+   :scale: 50%
+
+Nested GetElements
+==================
+.. Will contain info on how to select nested elements as shown in 1:59:05 - Video 2 of OpenRPA
+
+Image Handling
+==============
+.. Will contain info on how to select multiple fields upon selection with GetImage - 2:06:30 Video 2 - and also selection from text fields - 2:14:30 Video 2 -  with GetText

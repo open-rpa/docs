@@ -1,200 +1,165 @@
+
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
-
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
   <title>4. Node-RED &mdash; BPA/OpenIAP Docs 1.0.2 documentation</title>
+  
 
+  
+  
+  
+  
 
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
+    
 
-
-
-
-
-  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
-
-
-  <script type="text/javascript" id="documentation_options" data-url_root="./"
-    src="static/documentation_options.js"></script>
-  <script src="static/jquery.js"></script>
-  <script src="static/underscore.js"></script>
-  <script src="static/doctools.js"></script>
-  <script src="static/language_data.js"></script>
-
-  <script type="text/javascript" src="static/js/theme.js"></script>
-
-
-
-
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="static/styles.css" type="text/css" />
-  <link rel="index" title="Index" href="genindex.html" />
-  <link rel="search" title="Search" href="search.html" />
-  <link rel="next" title="5. Appendix A" href="appendix_a.html" />
-  <link rel="prev" title="3. OpenRPA" href="openrpa.html" />
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Appendix A" href="appendix_a.html" />
+    <link rel="prev" title="3. OpenRPA" href="openrpa.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
-
+   
   <div class="wy-grid-for-nav">
-
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
+          
 
+          
+            <a href="index.html" class="icon icon-home"> BPA/OpenIAP Docs
+          
 
-
-          <a href="index.html" class="icon icon-home"> BPA/OpenIAP Docs
-
-
-
+          
           </a>
 
+          
+            
+            
+          
 
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
 
-
-
-
-
-          <div role="search">
-            <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-              <input type="text" name="q" placeholder="Search docs" />
-              <input type="hidden" name="check_keywords" value="yes" />
-              <input type="hidden" name="area" value="default" />
-            </form>
-          </div>
-
-
+          
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="rpa.html">1. <strong>Introduction to RPA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="openflow.html">2. <strong>OpenFlow</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="openrpa.html">3. <strong>OpenRPA</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. <strong>Node-RED</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-node-red">4.1. <strong>What is Node-RED?</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">4.1.1. What is Node-RED?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-mqtt">4.1.1.1. What is MQTT?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-for-the-first-time">4.2. <strong>Accessing for the first time</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-red-editor">4.3. <strong>Node-RED Editor</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#header">4.3.1. Header</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#deploy-button">4.3.1.1. Deploy Button</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main-menu">4.3.1.2. Main Menu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-menu">4.3.1.3. User Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#palette">4.3.2. Palette</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workspace">4.3.3. Workspace</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#view-tools">4.3.3.1. View Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#customising-the-view">4.3.3.2. Customising the view</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sidebar">4.3.4. Sidebar</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#flow-subflows-nodes-and-messages">4.4. <strong>Flow, Subflows, Nodes and Messages</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#openflow-openrpa-nodes">4.5. <strong>OpenFlow/OpenRPA Nodes</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rpa-detector">4.5.1. RPA Detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rpa-workflow">4.5.2. RPA Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smtpserver-in">4.5.3. SMTPServer In</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workflow-in">4.5.4. Workflow In</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workflow-out">4.5.5. Workflow Out</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#flow-examples">4.6. <strong>Flow Examples</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dummy-integration-openrpa-openflow-nodered">4.6.1. Dummy Integration OpenRPA-OpenFlow-NodeRED</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-openflow-forms">4.6.2. Using OpenFlow Forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ai-image-recognition">4.6.3. AI Image Recognition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#email-receive-send">4.6.4. Email Receive, Send</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-http-endpoint">4.6.5. Creating a HTTP endpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#excel-read">4.6.6. Excel Read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mongodb-entities">4.6.7. MongoDB Entities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">5. <strong>Appendix A</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b.html">6. <strong>Appendix B</strong></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">1. License</a></li>
+</ul>
 
-
-
-
-
-
-          <ul class="current">
-            <li class="toctree-l1"><a class="reference internal" href="rpa.html">1. <strong>Introduction to
-                  RPA</strong></a></li>
-            <li class="toctree-l1"><a class="reference internal" href="openflow.html">2. <strong>OpenFlow</strong></a>
-            </li>
-            <li class="toctree-l1"><a class="reference internal" href="openrpa.html">3. <strong>OpenRPA</strong></a>
-            </li>
-            <li class="toctree-l1 current"><a class="current reference internal" href="#">4.
-                <strong>Node-RED</strong></a>
-              <ul>
-                <li class="toctree-l2"><a class="reference internal" href="#what-is-node-red">4.1. <strong>What is
-                      Node-RED?</strong></a>
-                  <ul>
-                    <li class="toctree-l3"><a class="reference internal" href="#id1">4.1.1. What is Node-RED?</a>
-                      <ul>
-                        <li class="toctree-l4"><a class="reference internal" href="#what-is-mqtt">4.1.1.1. What is
-                            MQTT?</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#accessing-for-the-first-time">4.2.
-                    <strong>Accessing for the first time</strong></a></li>
-                <li class="toctree-l2"><a class="reference internal" href="#node-red-editor">4.3. <strong>Node-RED
-                      Editor</strong></a>
-                  <ul>
-                    <li class="toctree-l3"><a class="reference internal" href="#header">4.3.1. Header</a>
-                      <ul>
-                        <li class="toctree-l4"><a class="reference internal" href="#deploy-button">4.3.1.1. Deploy
-                            Button</a></li>
-                        <li class="toctree-l4"><a class="reference internal" href="#main-menu">4.3.1.2. Main Menu</a>
-                        </li>
-                        <li class="toctree-l4"><a class="reference internal" href="#user-menu">4.3.1.3. User Menu</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="toctree-l3"><a class="reference internal" href="#palette">4.3.2. Palette</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#workspace">4.3.3. Workspace</a>
-                      <ul>
-                        <li class="toctree-l4"><a class="reference internal" href="#view-tools">4.3.3.1. View Tools</a>
-                        </li>
-                        <li class="toctree-l4"><a class="reference internal" href="#customising-the-view">4.3.3.2.
-                            Customising the view</a></li>
-                      </ul>
-                    </li>
-                    <li class="toctree-l3"><a class="reference internal" href="#sidebar">4.3.4. Sidebar</a></li>
-                  </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#flow-subflows-nodes-and-messages">4.4.
-                    <strong>Flow, Subflows, Nodes and Messages</strong></a></li>
-                <li class="toctree-l2"><a class="reference internal" href="#openflow-openrpa-nodes">4.5.
-                    <strong>OpenFlow/OpenRPA Nodes</strong></a>
-                  <ul>
-                    <li class="toctree-l3"><a class="reference internal" href="#rpa-detector">4.5.1. RPA Detector</a>
-                    </li>
-                    <li class="toctree-l3"><a class="reference internal" href="#rpa-workflow">4.5.2. RPA Workflow</a>
-                    </li>
-                    <li class="toctree-l3"><a class="reference internal" href="#smtpserver-in">4.5.3. SMTPServer In</a>
-                    </li>
-                    <li class="toctree-l3"><a class="reference internal" href="#workflow-in">4.5.4. Workflow In</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#workflow-out">4.5.5. Workflow Out</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#flow-examples">4.6. <strong>Flow
-                      Examples</strong></a>
-                  <ul>
-                    <li class="toctree-l3"><a class="reference internal"
-                        href="#dummy-integration-openrpa-openflow-nodered">4.6.1. Dummy Integration
-                        OpenRPA-OpenFlow-NodeRED</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#using-openflow-forms">4.6.2. Using
-                        OpenFlow Forms</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#ai-image-recognition">4.6.3. AI Image
-                        Recognition</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#email-receive-send">4.6.4. Email
-                        Receive, Send</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#creating-a-http-endpoint">4.6.5.
-                        Creating a HTTP endpoint</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#excel-read">4.6.6. Excel Read</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#mongodb-entities">4.6.7. MongoDB
-                        Entities</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li class="toctree-l1"><a class="reference internal" href="appendix_a.html">5. <strong>Appendix
-                  A</strong></a></li>
-          </ul>
-          <ul>
-            <li class="toctree-l1"><a class="reference internal" href="license.html">1. License</a></li>
-          </ul>
-
-
-
+            
+          
         </div>
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-
+      
       <nav class="wy-nav-top" aria-label="top navigation">
-
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">BPA/OpenIAP Docs</a>
-
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BPA/OpenIAP Docs</a>
+        
       </nav>
 
 
       <div class="wy-nav-content">
-
+        
         <div class="rst-content">
+        
+          
 
 
 
@@ -210,359 +175,257 @@
 
 
 
+<div role="navigation" aria-label="breadcrumbs navigation">
 
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><span class="section-number">4. </span><strong>Node-RED</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
 
-          <div role="navigation" aria-label="breadcrumbs navigation">
-
-            <ul class="wy-breadcrumbs">
-
-              <li><a href="index.html">Docs</a> &raquo;</li>
-
-              <li><span class="section-number">4. </span><strong>Node-RED</strong></li>
-
-
-              <li class="wy-breadcrumbs-aside">
-
-
-
-              </li>
-
-            </ul>
-
-
-            <hr />
-          </div>
+  
+  <hr/>
+</div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div itemprop="articleBody">
-
-              <div class="section" id="node-red">
-                <h1><span class="section-number">4. </span><strong>Node-RED</strong><a class="headerlink"
-                    href="#node-red" title="Permalink to this headline">¶</a></h1>
-                <div class="section" id="what-is-node-red">
-                  <h2><span class="section-number">4.1. </span><strong>What is Node-RED?</strong><a class="headerlink"
-                      href="#what-is-node-red" title="Permalink to this headline">¶</a></h2>
-                  <div class="section" id="id1">
-                    <h3><span class="section-number">4.1.1. </span>What is Node-RED?<a class="headerlink" href="#id1"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p><strong>Node-RED</strong> is a programming tool used for linking all our tools together
-                      (<strong>OpenRPA</strong> and <strong>OpenFlow</strong>) as well as hardware devices, APIs and
-                      even online services in a new and interesting way. Think of it as a “backend” process flow
-                      designer &amp; integrator. The communication between <strong>Node-RED</strong> and <strong>OON
-                        stack</strong> is done through MQTT protocol (powered by RabbitMQ).</p>
-                    <p>It provides an in-browser editor where you can connect flows using any nodes available. Each node
-                      represents a step that when wired together forms a meaningful task. It also follows a common
-                      pattern: input, processing and output. It is important to note that <strong>Node-RED</strong>
-                      functions like a middleware to an information processing system. It simply connects the inputs to
-                      the workflows and allows them to process it.</p>
-                    <div class="section" id="what-is-mqtt">
-                      <h4><span class="section-number">4.1.1.1. </span>What is MQTT?<a class="headerlink"
-                          href="#what-is-mqtt" title="Permalink to this headline">¶</a></h4>
-                      <p>MQTT stands for Message Queuing Telemetry Transport. It is a publish/subscribe, extremely
-                        simple and lightweight messaging protocol, designed for constrained devices with low-bandwidth,
-                        high-latency or unreliable networks. The design principle is to minimise network bandwidth and
-                        device resource requirements while attempting to ensure reliability and assurance of delivery.
-                        These principles in turn make the protocol ideal for the emerging “machine-to-machine” (M2M) or
-                        “Internet of Things” world of connected devices, and for mobile applications where bandwidth and
-                        battery power are limited.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="section" id="accessing-for-the-first-time">
-                  <h2><span class="section-number">4.2. </span><strong>Accessing for the first time</strong><a
-                      class="headerlink" href="#accessing-for-the-first-time" title="Permalink to this headline">¶</a>
-                  </h2>
-                  <p>To access Node-RED, simply use a browser and go to your <strong>Node-RED</strong> environment URL.
-                    If running local, default is <a class="reference external"
-                      href="http://localhost.openrpa.dk:1880">http://localhost.openrpa.dk:1880</a> and OpenIAP demo is
-                    <a class="reference external" href="https://demo.app.openiap.io">https://demo.app.openiap.io</a>.
-                  </p>
-                  <p>Once there, a button is shown with the text <code
-                      class="docutils literal notranslate"><span class="pre">Sign</span> <span class="pre">in</span> <span class="pre">with</span> <span class="pre">SAML</span></code>.
-                    When you click the button, Node-RED attempts to gather your currently (or cached) logged in
-                    <strong>OpenFlow</strong> authentication data and then logs in, to <strong>Node-RED</strong>, with
-                    the same user.</p>
-                  <div class="figure align-center" id="id4">
-                    <img alt="images/nodered_sign_in_page.png" src="images/nodered_sign_in_page.png" />
-                    <p class="caption"><span class="caption-text">Node-RED Sign In page.</span><a class="headerlink"
-                        href="#id4" title="Permalink to this image">¶</a></p>
-                  </div>
-                </div>
-                <div class="section" id="node-red-editor">
-                  <h2><span class="section-number">4.3. </span><strong>Node-RED Editor</strong><a class="headerlink"
-                      href="#node-red-editor" title="Permalink to this headline">¶</a></h2>
-                  <p>The editor window is where all the work gets done. It contains four components: header, palette,
-                    workspace and sidebar.</p>
-                  <div class="figure align-center" id="id5">
-                    <img alt="images/nodered_editor_default_components.png"
-                      src="images/nodered_editor_default_components.png" />
-                    <p class="caption"><span class="caption-text">Node-RED Components.</span><a class="headerlink"
-                        href="#id5" title="Permalink to this image">¶</a></p>
-                  </div>
-                  <div class="section" id="header">
-                    <h3><span class="section-number">4.3.1. </span>Header<a class="headerlink" href="#header"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p>The header contains the deploy button, main menu, and, if user authentication is activated, the
-                      user menu.</p>
-                    <div class="section" id="deploy-button">
-                      <h4><span class="section-number">4.3.1.1. </span>Deploy Button<a class="headerlink"
-                          href="#deploy-button" title="Permalink to this headline">¶</a></h4>
-                      <p>The deploy button is used to deploy flows once you have finished creating or editing them. It
-                        is important to remark that you must always deploy a flow after editing it so the changes are
-                        applied.</p>
-                    </div>
-                    <div class="section" id="main-menu">
-                      <h4><span class="section-number">4.3.1.2. </span>Main Menu<a class="headerlink" href="#main-menu"
-                          title="Permalink to this headline">¶</a></h4>
-                      <p>The main menu contains many actions, such as hiding components, importing or exporting flows,
-                        searching for flows, actions (like add, rename and delete) flows and subflows, manage palettes,
-                        settings, keyboard shortcuts and a link to Node-RED’s webpage.</p>
-                    </div>
-                    <div class="section" id="user-menu">
-                      <h4><span class="section-number">4.3.1.3. </span>User Menu<a class="headerlink" href="#user-menu"
-                          title="Permalink to this headline">¶</a></h4>
-                      <p>The user menu, if the user is authenticated, shows your username and the option to logout.</p>
-                    </div>
-                  </div>
-                  <div class="section" id="palette">
-                    <h3><span class="section-number">4.3.2. </span>Palette<a class="headerlink" href="#palette"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p>The palette contains all of the nodes that are installed and available to use. These nodes are
-                      organized into a number of categories, which can be expanded or collapsed by clicking its header.
-                    </p>
-                    <p>The entire palette can be hidden by clicking the toggle button that is shown when the mouse is
-                      over it or by pressing <strong>Ctrl+p</strong>.¹</p>
-                    <p>¹ - <a class="reference external"
-                        href="https://nodered.org/docs/user-guide/editor/palette/">Palette</a> (<a
-                        class="reference external"
-                        href="https://nodered.org/docs/user-guide/editor/palette/">https://nodered.org/docs/user-guide/editor/palette/</a>)
-                    </p>
-                    <div class="figure align-default" id="id6">
-                      <a class="reference internal image-reference" href="images/nodered_editor_palette.png"><img
-                          alt="images/nodered_editor_palette.png" src="images/nodered_editor_palette.png"
-                          style="width: 180.0px; height: 760.0px;" /></a>
-                      <p class="caption"><span class="caption-text">Node-RED Editor Palette.</span><a class="headerlink"
-                          href="#id6" title="Permalink to this image">¶</a></p>
-                    </div>
-                  </div>
-                  <div class="section" id="workspace">
-                    <h3><span class="section-number">4.3.3. </span>Workspace<a class="headerlink" href="#workspace"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p>The main workspace is where flows are developed by dragging nodes from the palette and wiring
-                      them together.</p>
-                    <p>The workspace has a row of tabs along the top; one for each flow and any subflows that have been
-                      opened. ²</p>
-                    <div class="figure align-center" id="id7">
-                      <img alt="images/nodered_editor_workspace.png" src="images/nodered_editor_workspace.png" />
-                      <p class="caption"><span class="caption-text">Node-RED Editor Workspace.</span><a
-                          class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
-                    </div>
-                    <div class="section" id="view-tools">
-                      <h4><span class="section-number">4.3.3.1. </span>View Tools<a class="headerlink"
-                          href="#view-tools" title="Permalink to this headline">¶</a></h4>
-                      <p>The footer of the workspace contains buttons to zoom in and out as well as to reset the default
-                        zoom level. It also contains a toggle button for the view navigator.</p>
-                      <p>To zoom in, either click the <strong>+</strong> button inside the view navigator or press
-                        <strong>Ctrl+=</strong>.</p>
-                      <p>To zoom out, either click the <strong>-</strong> button inside the view navigator or press
-                        <strong>Ctrl+-</strong>.</p>
-                      <p>To reset the zoom, either click the <strong>O</strong> button inside the view navigator or
-                        press <strong>Ctrl+0</strong>.</p>
-                      <p>The view navigator provides a scaled down view of the entire workspace, highlighting the area
-                        currently visible. That area can be dragged around the navigator to quickly jump to other parts
-                        of the workspace. It is also useful for finding nodes that have been <strong>lost</strong> to
-                        the further edges of the workspace.</p>
-                      <div class="figure align-center" id="id8">
-                        <img alt="images/node_red_workspace_navigator_active.png"
-                          src="images/node_red_workspace_navigator_active.png" />
-                        <p class="caption"><span class="caption-text">Node-RED Editor Workspace Navigator
-                            Active.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
-                      </div>
-                    </div>
-                    <div class="section" id="customising-the-view">
-                      <h4><span class="section-number">4.3.3.2. </span>Customising the view<a class="headerlink"
-                          href="#customising-the-view" title="Permalink to this headline">¶</a></h4>
-                      <p>The workspace view can be customised via the <strong>View</strong> tab of the User Settings
-                        dialog.</p>
-                      <p>To activate the User Settings dialog, press <strong>Ctrl+,</strong>.</p>
-                      <div class="figure align-center" id="id9">
-                        <img alt="images/nodered_editor_user_settings_dialog.png"
-                          src="images/nodered_editor_user_settings_dialog.png" />
-                        <p class="caption"><span class="caption-text">Node-RED Editor User Settings Dialog.</span><a
-                            class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
-                      </div>
-                      <p>² - <a class="reference external"
-                          href="https://nodered.org/docs/user-guide/editor/workspace/">Workspace</a> (<a
-                          class="reference external"
-                          href="https://nodered.org/docs/user-guide/editor/workspace/">https://nodered.org/docs/user-guide/editor/workspace/</a>)
-                      </p>
-                    </div>
-                  </div>
-                  <div class="section" id="sidebar">
-                    <h3><span class="section-number">4.3.4. </span>Sidebar<a class="headerlink" href="#sidebar"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p>The sidebar contains panels that provide a number of useful tools within the editor.³</p>
-                    <ul>
-                      <li>
-                        <p><strong>Information</strong></p>
-                        <blockquote>
-                          <div>
-                            <p>View information about nodes and their help info</p>
-                          </div>
-                        </blockquote>
-                      </li>
-                      <li>
-                        <p><strong>Debug</strong></p>
-                        <blockquote>
-                          <div>
-                            <p>View messages passed into debug nodes</p>
-                          </div>
-                        </blockquote>
-                      </li>
-                      <li>
-                        <p><strong>Configuration Nodes</strong></p>
-                        <blockquote>
-                          <div>
-                            <p>Manage configuration nodes</p>
-                          </div>
-                        </blockquote>
-                      </li>
-                      <li>
-                        <p><strong>Context Data</strong></p>
-                        <blockquote>
-                          <div>
-                            <p>View the contents of the context variables</p>
-                          </div>
-                        </blockquote>
-                      </li>
-                    </ul>
-                    <div class="figure align-center" id="id10">
-                      <img alt="images/nodered_editor_sidebar.png" src="images/nodered_editor_sidebar.png" />
-                      <p class="caption"><span class="caption-text">Node-RED Editor Sidebar.</span><a class="headerlink"
-                          href="#id10" title="Permalink to this image">¶</a></p>
-                    </div>
-                    <p>Some nodes contribute their own sidebar panels, such as <a class="reference external"
-                        href="https://flows.nodered.org/node/node-red-dashboard/">node-red-dashboard</a> (<a
-                        class="reference external"
-                        href="https://flows.nodered.org/node/node-red-dashboard">https://flows.nodered.org/node/node-red-dashboard</a>).
-                    </p>
-                    <p>The panels are opened by clicking their icon in the header of the sidebar, or by selecting them
-                      in the drop-down list shown.</p>
-                    <p>The sidebar can be resized by dragging tis edge across the workspace.</p>
-                    <p>If the edge is dragged close to the right-hand edge, the sidebar will be hidden. It can be shown
-                      again by selecting the <strong>Show sidebar</strong> option in the View menu, or using the
-                      <strong>Ctrl+Space</strong> shortcut.</p>
-                  </div>
-                </div>
-                <div class="section" id="flow-subflows-nodes-and-messages">
-                  <h2><span class="section-number">4.4. </span><strong>Flow, Subflows, Nodes and Messages</strong><a
-                      class="headerlink" href="#flow-subflows-nodes-and-messages"
-                      title="Permalink to this headline">¶</a></h2>
-                  <p>Coming soon - Work in progress</p>
-                </div>
-                <div class="section" id="openflow-openrpa-nodes">
-                  <h2><span class="section-number">4.5. </span><strong>OpenFlow/OpenRPA Nodes</strong><a
-                      class="headerlink" href="#openflow-openrpa-nodes" title="Permalink to this headline">¶</a></h2>
-                  <p>Coming soon - Work in progress</p>
-                  <div class="section" id="rpa-detector">
-                    <h3><span class="section-number">4.5.1. </span>RPA Detector<a class="headerlink"
-                        href="#rpa-detector" title="Permalink to this headline">¶</a></h3>
-                    <p>Coming soon - Work in progress</p>
-                  </div>
-                  <div class="section" id="rpa-workflow">
-                    <h3><span class="section-number">4.5.2. </span>RPA Workflow<a class="headerlink"
-                        href="#rpa-workflow" title="Permalink to this headline">¶</a></h3>
-                    <p>Coming soon - Work in progress</p>
-                  </div>
-                  <div class="section" id="smtpserver-in">
-                    <h3><span class="section-number">4.5.3. </span>SMTPServer In<a class="headerlink"
-                        href="#smtpserver-in" title="Permalink to this headline">¶</a></h3>
-                    <p>Coming soon - Work in progress</p>
-                  </div>
-                  <div class="section" id="workflow-in">
-                    <h3><span class="section-number">4.5.4. </span>Workflow In<a class="headerlink" href="#workflow-in"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p>Coming soon - Work in progress</p>
-                  </div>
-                  <div class="section" id="workflow-out">
-                    <h3><span class="section-number">4.5.5. </span>Workflow Out<a class="headerlink"
-                        href="#workflow-out" title="Permalink to this headline">¶</a></h3>
-                    <p>Coming soon - Work in progress</p>
-                  </div>
-                </div>
-                <div class="section" id="flow-examples">
-                  <h2><span class="section-number">4.6. </span><strong>Flow Examples</strong><a class="headerlink"
-                      href="#flow-examples" title="Permalink to this headline">¶</a></h2>
-                  <p>Coming soon - Work in progress</p>
-                  <div class="section" id="dummy-integration-openrpa-openflow-nodered">
-                    <h3><span class="section-number">4.6.1. </span>Dummy Integration OpenRPA-OpenFlow-NodeRED<a
-                        class="headerlink" href="#dummy-integration-openrpa-openflow-nodered"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p>Coming soon - Work in progress</p>
-                  </div>
-                  <div class="section" id="using-openflow-forms">
-                    <h3><span class="section-number">4.6.2. </span>Using OpenFlow Forms<a class="headerlink"
-                        href="#using-openflow-forms" title="Permalink to this headline">¶</a></h3>
-                    <p>Coming soon - Work in progress</p>
-                  </div>
-                  <div class="section" id="ai-image-recognition">
-                    <h3><span class="section-number">4.6.3. </span>AI Image Recognition<a class="headerlink"
-                        href="#ai-image-recognition" title="Permalink to this headline">¶</a></h3>
-                    <p>Coming soon - Work in progress</p>
-                  </div>
-                  <div class="section" id="email-receive-send">
-                    <h3><span class="section-number">4.6.4. </span>Email Receive, Send<a class="headerlink"
-                        href="#email-receive-send" title="Permalink to this headline">¶</a></h3>
-                    <p>Coming soon - Work in progress</p>
-                  </div>
-                  <div class="section" id="creating-a-http-endpoint">
-                    <h3><span class="section-number">4.6.5. </span>Creating a HTTP endpoint<a class="headerlink"
-                        href="#creating-a-http-endpoint" title="Permalink to this headline">¶</a></h3>
-                    <p>Coming soon - Work in progress</p>
-                  </div>
-                  <div class="section" id="excel-read">
-                    <h3><span class="section-number">4.6.6. </span>Excel Read<a class="headerlink" href="#excel-read"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p>Coming soon - Work in progress</p>
-                  </div>
-                  <div class="section" id="mongodb-entities">
-                    <h3><span class="section-number">4.6.7. </span>MongoDB Entities<a class="headerlink"
-                        href="#mongodb-entities" title="Permalink to this headline">¶</a></h3>
-                    <p>Coming soon - Work in progress</p>
-                  </div>
-                </div>
-              </div>
+           <div itemprop="articleBody">
+            
+  <div class="section" id="node-red">
+<h1><span class="section-number">4. </span><strong>Node-RED</strong><a class="headerlink" href="#node-red" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-node-red">
+<h2><span class="section-number">4.1. </span><strong>What is Node-RED?</strong><a class="headerlink" href="#what-is-node-red" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3><span class="section-number">4.1.1. </span>What is Node-RED?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><strong>Node-RED</strong> is a programming tool used for linking all our tools together (<strong>OpenRPA</strong> and <strong>OpenFlow</strong>) as well as hardware devices, APIs and even online services in a new and interesting way. Think of it as a “backend” process flow designer &amp; integrator. The communication between <strong>Node-RED</strong> and <strong>OON stack</strong> is done through MQTT protocol (powered by RabbitMQ).</p>
+<p>It provides an in-browser editor where you can connect flows using any nodes available. Each node represents a step that when wired together forms a meaningful task. It also follows a common pattern: input, processing and output. It is important to note that <strong>Node-RED</strong> functions like a middleware to an information processing system. It simply connects the inputs to the workflows and allows them to process it.</p>
+<div class="section" id="what-is-mqtt">
+<h4><span class="section-number">4.1.1.1. </span>What is MQTT?<a class="headerlink" href="#what-is-mqtt" title="Permalink to this headline">¶</a></h4>
+<p>MQTT stands for Message Queuing Telemetry Transport. It is a publish/subscribe, extremely simple and lightweight messaging protocol, designed for constrained devices with low-bandwidth, high-latency or unreliable networks. The design principle is to minimise network bandwidth and device resource requirements while attempting to ensure reliability and assurance of delivery. These principles in turn make the protocol ideal for the emerging “machine-to-machine” (M2M) or “Internet of Things” world of connected devices, and for mobile applications where bandwidth and battery power are limited.</p>
+</div>
+</div>
+</div>
+<div class="section" id="accessing-for-the-first-time">
+<h2><span class="section-number">4.2. </span><strong>Accessing for the first time</strong><a class="headerlink" href="#accessing-for-the-first-time" title="Permalink to this headline">¶</a></h2>
+<p>To access Node-RED, simply use a browser and go to your <strong>Node-RED</strong> environment URL. If running local, default is <a class="reference external" href="http://localhost.openrpa.dk:1880">http://localhost.openrpa.dk:1880</a>. If you do now own an <strong>OpenFlow</strong>/<strong>Node-RED</strong> of your own, feel free to create a free (and temporary) <strong>Node-RED</strong> demo using OpenIAP platform.</p>
+<p>Go to <strong>OpenIAP</strong> demo enviroment, which can be found at <a class="reference external" href="https://app.openiap.io">https://app.openiap.io</a>.
+Access it using your <strong>OpenFlow</strong> credentials. If this is your very fist login any credentials will do, as you user will be then created with the same credentials you have provided. Please take notes of your user an password!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your <strong>NodeRED</strong> free demo enviroment URL is created based off your <strong>OpenFlow</strong> username, hence please do not create an username with improper characters for a URL (such as _, #, &#64;, $, etc), otherwise it will not work.</p>
+</div>
+<p>Once there, look for the NodeRED tab on the upper menu and click it. Then, proceed by clicking the button <code class="docutils literal notranslate"><span class="pre">Created</span> <span class="pre">NodeRED</span></code>.</p>
+<div class="figure align-center">
+<img alt="_images/nodered_create_nodered_instance.png" src="_images/nodered_create_nodered_instance.png" />
+</div>
+<p>If everything goes right, a similar output as from the next image will be shown. Your demo enviroment is ready to use and is accessible at <code class="docutils literal notranslate"><span class="pre">https://{YOUR-OPENFLOW-USERNAME}.app.openiap.io/</span></code>. In the image example next, the username was <code class="docutils literal notranslate"><span class="pre">doc-johnny</span></code>.</p>
+<div class="figure align-center">
+<img alt="_images/nodered_create_nodered_instance_success.png" src="_images/nodered_create_nodered_instance_success.png" />
+</div>
+<p>Access the desired <strong>Node-RED</strong> URL. Once there, a button is shown with the text <code class="docutils literal notranslate"><span class="pre">Sign</span> <span class="pre">in</span> <span class="pre">with</span> <span class="pre">SAML</span></code>. When you click the button, Node-RED attempts to gather your currently (or cached) logged in <strong>OpenFlow</strong> authentication data and then logs in, to <strong>Node-RED</strong>, with the same user.</p>
+<div class="figure align-center" id="id4">
+<img alt="_images/nodered_sign_in_page.png" src="_images/nodered_sign_in_page.png" />
+<p class="caption"><span class="caption-text">Node-RED Sign In page.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="node-red-editor">
+<h2><span class="section-number">4.3. </span><strong>Node-RED Editor</strong><a class="headerlink" href="#node-red-editor" title="Permalink to this headline">¶</a></h2>
+<p>The editor window is where all the work gets done. It contains four components: header, palette, workspace and sidebar.</p>
+<div class="figure align-center" id="id5">
+<img alt="_images/nodered_editor_default_components.png" src="_images/nodered_editor_default_components.png" />
+<p class="caption"><span class="caption-text">Node-RED Components.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="header">
+<h3><span class="section-number">4.3.1. </span>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h3>
+<p>The header contains the deploy button, main menu, and, if user authentication is activated, the user menu.</p>
+<div class="section" id="deploy-button">
+<h4><span class="section-number">4.3.1.1. </span>Deploy Button<a class="headerlink" href="#deploy-button" title="Permalink to this headline">¶</a></h4>
+<p>The deploy button is used to deploy flows once you have finished creating or editing them. It is important to remark that you must always deploy a flow after editing it so the changes are applied.</p>
+</div>
+<div class="section" id="main-menu">
+<h4><span class="section-number">4.3.1.2. </span>Main Menu<a class="headerlink" href="#main-menu" title="Permalink to this headline">¶</a></h4>
+<p>The main menu contains many actions, such as hiding components, importing or exporting flows, searching for flows, actions (like add, rename and delete) flows and subflows, manage palettes, settings, keyboard shortcuts and a link to Node-RED’s webpage.</p>
+</div>
+<div class="section" id="user-menu">
+<h4><span class="section-number">4.3.1.3. </span>User Menu<a class="headerlink" href="#user-menu" title="Permalink to this headline">¶</a></h4>
+<p>The user menu, if the user is authenticated, shows your username and the option to logout.</p>
+</div>
+</div>
+<div class="section" id="palette">
+<h3><span class="section-number">4.3.2. </span>Palette<a class="headerlink" href="#palette" title="Permalink to this headline">¶</a></h3>
+<p>The palette contains all of the nodes that are installed and available to use. These nodes are organized into a number of categories, which can be expanded or collapsed by clicking its header.</p>
+<p>The entire palette can be hidden by clicking the toggle button that is shown when the mouse is over it or by pressing <strong>Ctrl+p</strong>.¹</p>
+<p>¹ - <a class="reference external" href="https://nodered.org/docs/user-guide/editor/palette/">Palette</a> (<a class="reference external" href="https://nodered.org/docs/user-guide/editor/palette/">https://nodered.org/docs/user-guide/editor/palette/</a>)</p>
+<div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="_images/nodered_editor_palette.png"><img alt="_images/nodered_editor_palette.png" src="_images/nodered_editor_palette.png" style="width: 180.0px; height: 760.0px;" /></a>
+<p class="caption"><span class="caption-text">Node-RED Editor Palette.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="workspace">
+<h3><span class="section-number">4.3.3. </span>Workspace<a class="headerlink" href="#workspace" title="Permalink to this headline">¶</a></h3>
+<p>The main workspace is where flows are developed by dragging nodes from the palette and wiring them together.</p>
+<p>The workspace has a row of tabs along the top; one for each flow and any subflows that have been opened. ²</p>
+<div class="figure align-center" id="id7">
+<img alt="_images/nodered_editor_workspace.png" src="_images/nodered_editor_workspace.png" />
+<p class="caption"><span class="caption-text">Node-RED Editor Workspace.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="view-tools">
+<h4><span class="section-number">4.3.3.1. </span>View Tools<a class="headerlink" href="#view-tools" title="Permalink to this headline">¶</a></h4>
+<p>The footer of the workspace contains buttons to zoom in and out as well as to reset the default zoom level. It also contains a toggle button for the view navigator.</p>
+<p>To zoom in, either click the <strong>+</strong> button inside the view navigator or press <strong>Ctrl+=</strong>.</p>
+<p>To zoom out, either click the <strong>-</strong> button inside the view navigator or press <strong>Ctrl+-</strong>.</p>
+<p>To reset the zoom, either click the <strong>O</strong> button inside the view navigator or press <strong>Ctrl+0</strong>.</p>
+<p>The view navigator provides a scaled down view of the entire workspace, highlighting the area currently visible. That area can be dragged around the navigator to quickly jump to other parts of the workspace. It is also useful for finding nodes that have been <strong>lost</strong> to the further edges of the workspace.</p>
+<div class="figure align-center" id="id8">
+<img alt="_images/node_red_workspace_navigator_active.png" src="_images/node_red_workspace_navigator_active.png" />
+<p class="caption"><span class="caption-text">Node-RED Editor Workspace Navigator Active.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="customising-the-view">
+<h4><span class="section-number">4.3.3.2. </span>Customising the view<a class="headerlink" href="#customising-the-view" title="Permalink to this headline">¶</a></h4>
+<p>The workspace view can be customised via the <strong>View</strong> tab of the User Settings dialog.</p>
+<p>To activate the User Settings dialog, press <strong>Ctrl+,</strong>.</p>
+<div class="figure align-center" id="id9">
+<img alt="_images/nodered_editor_user_settings_dialog.png" src="_images/nodered_editor_user_settings_dialog.png" />
+<p class="caption"><span class="caption-text">Node-RED Editor User Settings Dialog.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>² - <a class="reference external" href="https://nodered.org/docs/user-guide/editor/workspace/">Workspace</a> (<a class="reference external" href="https://nodered.org/docs/user-guide/editor/workspace/">https://nodered.org/docs/user-guide/editor/workspace/</a>)</p>
+</div>
+</div>
+<div class="section" id="sidebar">
+<h3><span class="section-number">4.3.4. </span>Sidebar<a class="headerlink" href="#sidebar" title="Permalink to this headline">¶</a></h3>
+<p>The sidebar contains panels that provide a number of useful tools within the editor.³</p>
+<ul>
+<li><p><strong>Information</strong></p>
+<blockquote>
+<div><p>View information about nodes and their help info</p>
+</div></blockquote>
+</li>
+<li><p><strong>Debug</strong></p>
+<blockquote>
+<div><p>View messages passed into debug nodes</p>
+</div></blockquote>
+</li>
+<li><p><strong>Configuration Nodes</strong></p>
+<blockquote>
+<div><p>Manage configuration nodes</p>
+</div></blockquote>
+</li>
+<li><p><strong>Context Data</strong></p>
+<blockquote>
+<div><p>View the contents of the context variables</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="figure align-center" id="id10">
+<img alt="_images/nodered_editor_sidebar.png" src="_images/nodered_editor_sidebar.png" />
+<p class="caption"><span class="caption-text">Node-RED Editor Sidebar.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>Some nodes contribute their own sidebar panels, such as <a class="reference external" href="https://flows.nodered.org/node/node-red-dashboard/">node-red-dashboard</a> (<a class="reference external" href="https://flows.nodered.org/node/node-red-dashboard">https://flows.nodered.org/node/node-red-dashboard</a>).</p>
+<p>The panels are opened by clicking their icon in the header of the sidebar, or by selecting them in the drop-down list shown.</p>
+<p>The sidebar can be resized by dragging tis edge across the workspace.</p>
+<p>If the edge is dragged close to the right-hand edge, the sidebar will be hidden. It can be shown again by selecting the <strong>Show sidebar</strong> option in the View menu, or using the <strong>Ctrl+Space</strong> shortcut.</p>
+</div>
+</div>
+<div class="section" id="flow-subflows-nodes-and-messages">
+<h2><span class="section-number">4.4. </span><strong>Flow, Subflows, Nodes and Messages</strong><a class="headerlink" href="#flow-subflows-nodes-and-messages" title="Permalink to this headline">¶</a></h2>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="openflow-openrpa-nodes">
+<h2><span class="section-number">4.5. </span><strong>OpenFlow/OpenRPA Nodes</strong><a class="headerlink" href="#openflow-openrpa-nodes" title="Permalink to this headline">¶</a></h2>
+<p>Coming soon - Work in progress</p>
+<div class="section" id="rpa-detector">
+<h3><span class="section-number">4.5.1. </span>RPA Detector<a class="headerlink" href="#rpa-detector" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="rpa-workflow">
+<h3><span class="section-number">4.5.2. </span>RPA Workflow<a class="headerlink" href="#rpa-workflow" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="smtpserver-in">
+<h3><span class="section-number">4.5.3. </span>SMTPServer In<a class="headerlink" href="#smtpserver-in" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="workflow-in">
+<h3><span class="section-number">4.5.4. </span>Workflow In<a class="headerlink" href="#workflow-in" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="workflow-out">
+<h3><span class="section-number">4.5.5. </span>Workflow Out<a class="headerlink" href="#workflow-out" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+</div>
+<div class="section" id="flow-examples">
+<h2><span class="section-number">4.6. </span><strong>Flow Examples</strong><a class="headerlink" href="#flow-examples" title="Permalink to this headline">¶</a></h2>
+<p>Coming soon - Work in progress</p>
+<div class="section" id="dummy-integration-openrpa-openflow-nodered">
+<h3><span class="section-number">4.6.1. </span>Dummy Integration OpenRPA-OpenFlow-NodeRED<a class="headerlink" href="#dummy-integration-openrpa-openflow-nodered" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="using-openflow-forms">
+<h3><span class="section-number">4.6.2. </span>Using OpenFlow Forms<a class="headerlink" href="#using-openflow-forms" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="ai-image-recognition">
+<h3><span class="section-number">4.6.3. </span>AI Image Recognition<a class="headerlink" href="#ai-image-recognition" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="email-receive-send">
+<h3><span class="section-number">4.6.4. </span>Email Receive, Send<a class="headerlink" href="#email-receive-send" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="creating-a-http-endpoint">
+<h3><span class="section-number">4.6.5. </span>Creating a HTTP endpoint<a class="headerlink" href="#creating-a-http-endpoint" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="excel-read">
+<h3><span class="section-number">4.6.6. </span>Excel Read<a class="headerlink" href="#excel-read" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="mongodb-entities">
+<h3><span class="section-number">4.6.7. </span>MongoDB Entities<a class="headerlink" href="#mongodb-entities" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+</div>
+</div>
 
 
-            </div>
-
+           </div>
+           
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appendix_a.html" class="btn btn-neutral float-right" title="5. Appendix A" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="openrpa.html" class="btn btn-neutral float-left" title="3. OpenRPA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
-            <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+  <hr/>
 
-              <a href="appendix_a.html" class="btn btn-neutral float-right" title="5. Appendix A" accesskey="n"
-                rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p>Powered by <a href="https://bpatechnologies.com/">BPA Technologies</a></p>
+     
 
 
-              <a href="openrpa.html" class="btn btn-neutral float-left" title="3. OpenRPA" accesskey="p"
-                rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-
-            </div>
-
-
-            <hr />
-
-            <div role="contentinfo">
-              <p>
-                &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
-
-              </p>
-            </div>
-            Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a
-              href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a
-              href="https://readthedocs.org">Read the Docs</a>.
-
-          </footer>
+</footer>
 
         </div>
       </div>
@@ -570,20 +433,21 @@
     </section>
 
   </div>
-
+  
 
 
   <script type="text/javascript">
-    jQuery(function () {
-      SphinxRtdTheme.Navigation.enable(true);
-    });
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
   </script>
 
-
-
-
+  
+  
+    
+  
+        <h4>>Powered by BPA Technologies - bpatechnologies.com</h4>
 
 
 </body>
-
 </html>

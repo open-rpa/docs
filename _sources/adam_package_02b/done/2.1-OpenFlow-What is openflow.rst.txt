@@ -1,0 +1,17 @@
+.. 2.
+=============
+ **OpenFlow** 
+=============
+
+.. 2.1.
+**********************
+ **What is OpenFlow?** 
+**********************
+
+**OpenFlow** is the heart of the *OON* stack, orchestrating all the activities between the applications. Here lies some of its major features:
+
+* Managing, invoking and configuring your robots and workflows;
+* Managing users and their permissions levels;
+* Creating forms whenever a human must participate in a process and viewing all currently assigned or idle workflows pending to the user;
+* Managing MongoDB collections and entries;
+* A central cloud repository, allowing its content (workflows, forms, files in MongoDB, ...) to be available to the robots, users and other applications with ease. 

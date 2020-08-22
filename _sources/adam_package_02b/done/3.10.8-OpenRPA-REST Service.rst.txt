@@ -1,0 +1,478 @@
+REST Service (integration with Node-RED)
+=======================================
+In this example, the user will create a workflow that connects to the `Chuck Norris Jokes API <https://api.chucknorris.io/>`_ (``https://api.chucknorris.io/``) and captures a joke.
+
+The user will also create a dialog box using `Forge.Forms dynamic WPF forms <https://github.com/WPF-Forge/Forge.Forms>`_ (``https://github.com/WPF-Forge/Forge.Forms``) where a category for the joke can be selected.
+
+A simple validation method is also used to check whether the message is a Chuck Norris joke or not.
+
+The steps are listed below. 
+
+#. Configure Variable Passing To/From in Node-RED
+#. Message Manipulation in Node‑RED
+#. OpenRPA Forms
+#. Invoke Workflow through OpenRPA
+#. Create Joke Failed Workflow
+#. Evaluate Chuck Norris Joke
+#. Invoke Joke Failed Workflow
+#. Setting Evaluation Failure case in Node-RED
+#. Output logic
+#. Workflow Finished
+
+Configure Variable Passing To/From in Node-RED
+----------------------------------------------
+Here lies the logic behind receiving data from the robot, querying the Chuck Norris API and then returning the values back to the robot.
+
+**Workflow Logic**
+
+Drag a ``Workflow In`` node to the workspace.
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_in_drag.png
+   :align: center
+   :scale: 50  %
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_in_workspace.png
+   :align: center
+   :scale: 50  %
+
+Set the ``Queue name`` to define the queue which the OpenFlow workflow will be assigned to in ``Workflow In``'s properties. The queue name is completely arbitrary, the user can choose for any name they wishes to. In our case, it is set as ``chuckapi``.
+
+.. note::
+   To access any node's properties inside the Node-RED workspace, simply double click the given node. The **Properties box** for the node, containing each input fields required by itself will then appear.
+
+Check the ``RPA`` checkbox to allow this flow's workflow to be invoked from OpenRPA agents.
+
+Set the name for the workflow in the ``Name`` input field. In our case, it is set as ``ChuckAPI``.
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_in_double_click.png
+   :align: center
+   :scale: 50  %
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_in_set_properties.png
+   :align: center
+   :scale: 50  %
+
+Drag a ``HTTP Request`` node to the workspace.
+
+.. figure:: images/openrpa_workflow_example_rest_http_request_drag.png
+   :align: center
+   :scale: 50  %
+
+Connect the ``Workflow In`` node to the ``HTTP Request`` node.
+
+.. figure:: images/openrpa_workflow_example_rest_http_request_nodes_connect.png
+   :align: center
+   :scale: 50  %
+
+.. figure:: images/openrpa_workflow_example_rest_http_request_nodes_connected.png
+   :align: center
+   :scale: 50  %
+
+.. note::
+   To easily connect a node simply press the ``Ctrl`` key while clicking in the grey rectangles = called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the ``Ctrl`` key.
+
+Set the ``Method`` for the request as ``GET``.
+
+Set the desired ``URL`` for the API which the request will be sent to. In our case, ``https://api.chucknorris.io/jokes/random?category={{category}}``. 
+
+The variable inside the `Mustache <https://mustache.github.io/mustache.5.html>`_ (https://mustache.github.io/mustache.5.html), ie. ``category`` is arbitrarily named as well.
+
+This variable will be used by OpenRPA to pass the value of the choice captured from the user. The user may name it as per his own option.
+
+Set the desired ``Return`` type which will be returned. In our case, it's ``parsed JSON object``.
+
+.. figure:: images/openrpa_workflow_example_rest_http_request_set_properties.png
+   :align: center
+   :scale: 50  %
+
+Drag a ``Workflow Out`` node to the workspace.
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_out_drag.png
+   :align: center
+   :scale: 50  %
+
+Connect the ``HTTP Request`` node to the ``Workflow Out`` node.
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_out_nodes_connect.png 
+   :align: center
+   :scale: 50 %
+
+.. figure:: images/openrpa_workflow_example_rest_workflow_out_nodes_connected.png
+   :align: center
+   :scale: 50 %
+
+.. note::
+   To easily connect a node simply press the ``Ctrl`` key while clicking in the grey rectangles - called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the ``Ctrl`` key.
+
+Deploy your flow by clicking the red Deploy button at the top-left side of the screen.
+
+.. figure:: images/openrpa_workflow_example_rest_chuck_api_deploy.png 
+   :align: center
+   :scale: 50 %
+
+Message Manipulation in Node-RED
+---------------------------------
+Now we want to send a parameter from OpenRPA to Node-RED so that our workflow is not so static.
+
+This parameter contains a ``category`` to which the ``Chuck Norris API``'s joke will relate.
+
+Changing parameters from a variable gathered through a workflow inside Node-RED is easily done through the ``Function`` node and its properties.
+
+Robots ``In/Out`` arguments always are passed to the ``msg.payload`` attribute (in Node-RED) and it is easily to manipulate these by using the ``Function`` node.
+
+.. figure:: images/openrpa_workflow_example_rest_function_node.png 
+   :align: center
+
+Simply drag a ``Function`` node to the workflow, between the **ChuckAPI** ``Workflow In`` node and ``HTTP Request`` node.
+
+.. note::
+   To automatically add a node and bind it to the sequence, drag it while pressing the ``Shift`` key. This way, the node is automatically entered in-between the sequence already established before it was dragged.
+
+.. figure:: images/openrpa_workflow_example_rest_parameter_passing_function_drag.png 
+   :align: center
+   :scale: 50%
+
+.. figure:: images/openrpa_workflow_example_rest_parameter_passing_function_workspace.png 
+   :align: center
+   :scale: 50%
+   
+In our example, the parameters needed are ``msg.category`` - which will be gathered as ``msg.payload.category`` from the ``category`` argument passed by the OpenRPA workflow.
+
+.. figure:: images/openrpa_workflow_example_rest_parameter_passing_function_double_click.png 
+   :align: center
+   :scale: 50%
+
+In the ``Function`` node's properties, set ``msg.category = msg.payload.category``. 
+
+This is used so we can set the ``category`` parameter to the ``HTTP Request`` node, captured from the OpenRPA workflow which the user will build next.
+
+.. figure:: images/openrpa_workflow_example_rest_parameter_passing_function_set_properties.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   In this example, the user could use the ``Change`` node to set the ``msg.category`` attribute to ``msg.payload.category`` as well, or simply pass ``msg.payload.category`` directly to the HTTP Request, which will be discussed further on.
+ 
+OpenRPA Forms
+-------------
+Now the user creates a dynamic WPF form to gather the ``category`` value from the client.
+
+First drag a ``Invoke Formula`` snippet to the main sequence.
+ 
+Now click ``Open designer`` to open the ``Form Designer``.
+
+.. figure:: images/openrpa_workflow_example_rest_openrpa_forms_click_open_designer_button.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   The ``Form Designer`` is the place where the user can create his desired WPF forms to gather input from the client. At the right-side of it, a preview of the input form is shown. At the left-side of it, the user enters the code used to design the input form. After adding code to the ``Form Designer``, always press the **Build form** button to save changes and visualize the preview.
+
+Clear all example code and add the code snippet below to the designer code editor. Then press the **Build form** button to update the form.
+
+.. figure:: images/openrpa_workflow_example_rest_openrpa_forms_empty_designer.png 
+   :align: center
+   :scale: 50%
+
+.. code-block:: html
+
+   <form-designer>
+    <title>Choose Chuck Norris API Category</title>
+    <heading>
+   Please enter the desired category number inside the input field. The returned joke will be related to the selected category.
+   </heading>
+   <select name="category" label="Choose the desired category">
+      <option name="animal" />
+      <option name="career" />
+      <option name="celebrity" />
+      <option name="dev" />
+      <option name="explicit" />
+      <option name="fashion" />
+      <option name="food" />
+      <option name="history" />
+      <option name="money" />
+      <option name="movie" />
+      <option name="music" />
+      <option name="political" />
+      <option name="region" />
+      <option name="science" />
+      <option name="sport" />
+      <option name="travel" />
+   </select> 
+   <action name="submit" content='SUBMIT' icon='check' validates='true' ClosesDialog='true' ></action>
+   </form-designer>
+
+.. figure:: images/openrpa_workflow_example_rest_openrpa_forms_filled_designer.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   After adding the code snippet, all the variables used in the WPF form can be automatically created by pressing the **Create variables** button. 
+
+In our case, the workflow is unable to use a ``Variable``. Since the value will be consumed by Node-RED, it must obligatorily be set as an ``Argument`` with **Direction** set as ``In/Out`` or ``Out`` and type ``String``.
+
+.. figure:: images/openrpa_workflow_example_rest_openrpa_forms_arguments_box.png 
+   :align: center
+   :scale: 50%
+
+Now, to guarantee that the value gathered from the WPF form has the correct type, the user will cast it to a ``String`` using the **Assign** activity.
+
+Invoke Workflow through OpenRPA
+--------------------------------
+Now its time to finally invoke the workflow through OpenRPA and devise the processing logic.
+
+Since the flow is already deployed, it is needed that the user synchronize the workflows with the OpenFlow repository.
+
+To do the aforementioned task, click the **Reload** button inside OpenRPA's ribbon. This will refresh all workflows contained inside the OpenFlow repository to OpenRPA.
+
+.. figure:: images/openrpa_workflow_example_rest_invoke_openflow_click_reload_button.png 
+   :align: center
+   :scale: 50%
+
+Drag an **Invoke OpenFlow** activity to the main sequence inside OpenRPA's Designer.
+
+
+Select the **RPA Workflow** which you want to invoke. In our case ``ChuckAPI``.
+
+.. figure:: images/openrpa_workflow_example_rest_invoke_openflow_drag_activity.png 
+   :align: center
+   :scale: 50%
+
+.. figure:: images/openrpa_workflow_example_rest_invoke_openflow_chuck_api_selected.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   Note: When Node-RED finishes executing the flow, whatever is set in the msg.payload will return back to the robot. Variables are automatically mapped between the two applications: if msg.payload.person exists in NodeRED, whatever returns in there will automatically go in the variable named "person" inside OpenRPA. 
+
+Create Joke Failed Workflow
+---------------------------
+Now that the ChuckAPI process is set, the user can proceed to set a workflow which will be executed in case any failures occur upon execution of the usual process.
+
+Create a new workflow, in our case the name ``REST Workflow Example - Joke Failed`` is used to specify the workflow.
+
+.. figure:: images/openrpa_workflow_example_rest_create_joke_failed_empty_workflow.png 
+   :align: center
+   :scale: 50%
+
+Drag a **WriteLine** activity to the main sequence.
+
+.. figure:: images/openrpa_workflow_example_rest_create_joke_failed_drag_write_line.png 
+   :align: center
+   :scale: 50%
+
+Now it is needed to create the default variable - inside the **Variables, Arguments & Imports box** - from which the entry containing the ``Chuck Norris API`` joke content is returned. This variable alias is ``value``, as it can be seen in `Chuck Norris API Random Joke <https://api.chucknorris.io/jokes/random>`_ (``https://api.chucknorris.io/jokes/random``).
+
+
+Set the output value, in the ``Text`` input field or through the **Properties box** to a new variable of alias ``value``.
+
+.. figure:: images/openrpa_workflow_example_rest_create_joke_failed_set_text_value.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   Press ``Ctrl+K`` to automatically create the variable when entering it upon an input field or create it manually by clicking the **Variables box** under the bottom part of the screen. Use the right-hand side to enter the value which will be assigned to the variable.
+
+This workflow is merely used as an example of the almost endless possibilities within OpenRPA. The user could read the ``ChuckAPI`` joke into a ``.csv`` or ``.xslx`` file, invoke one or many more workflows to deal with the data, pass it into ``MongoDB Entities`` - as stated before, there are almost no limits to what the user can accomplish in terms of automation.
+
+Evaluate Chuck Norris Joke
+--------------------------
+Here we set the evaluation process for checkign whether the joke captured from the ``Chuck Norris API`` is a joke or not.
+
+The validation standard used here is to check whether the content of the ``value`` entry in the ``JSON Dictionary`` returned contains the string "Chuck Norris" or not. 
+
+First the user needs to create the default variable - inside the **Variables, Arguments & Imports box** - from which the entry containing the ``Chuck Norris API`` joke content is returned. This variable alias is ``value``, as it can be seen in `Chuck Norris API Random Joke <https://api.chucknorris.io/jokes/random>`_ (``https://api.chucknorris.io/jokes/random``).
+
+In ``REST Workflow Example`` workflow, drag an **If** activity to the Designer.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_drag_if.png 
+   :align: center
+   :scale: 50%
+
+Enter ``value.Contains("Chuck Norris")`` inside the ``Condition`` input field, which is shown in the activity itself or inside the **Properties box**.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_chuck_norris_joke_set_evaluation_condition.png 
+   :align: center
+   :scale: 50%
+   
+Setting Evaluation Failed process in Node-RED
+---------------------------------------------
+The user must now set the proper flow which will be further executed in case of failure of evaluation of the ``ChuckAPI`` process.
+
+**Workflow Logic**
+
+Drag a ``Workflow In`` node to the workspace.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_drag.png 
+   :align: center
+   :scale: 50%
+
+Set the ``Queue name`` to define the queue which the OpenFlow workflow will be assigned to in ``Workflow In``'s properties. 
+
+The queue name is completely arbitrary, the user can choose for any name they wishes to. In our case, it is set as ``jokefailed``.
+
+.. note::
+   To access any node's properties inside the Node-RED workspace, simply double click the given node. The **Properties box** for the node, containing each input fields required by itself will then appear.
+
+Check the ``RPA`` checkbox to allow this flow's workflow to be invoked from OpenRPA agents.
+
+Set the name for the workflow in the ``Name`` input field. Again, it is named arbitrarily. In our case, it is set as ``Joke Failed``.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_double_click.png 
+   :align: center
+   :scale: 50%
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_in_set_properties.png 
+   :align: center
+   :scale: 50%
+
+Drag a ``RPA Workflow`` or ``Robot`` node to the workspace. This node enables us to invoke the ``REST Workflow - Joke Failed`` workflow upon failure on evaluation.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_drag.png 
+   :align: center
+   :scale: 50%
+
+Set the ``Robot`` which will invoke the workflow and the ``Workflow`` which will be invoked, inside ``robot`` node's properties. As well as ``Local queue name`` and ``Name`` for the node.
+
+``Local queue name`` is arbitrary, it is used to set the queue which will be used for queueing the robot instances.
+
+``Name`` parameter is used only for displaying purposes inside Node-RED. 
+
+In our case, ``Local queue name`` is set as ``jokefailed`` and ``Name`` is set as ``Invoke Joke Failed Workflow``.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_set_properties.png 
+   :align: center
+   :scale: 50%
+
+Connect the ``Workflow In`` node to the ``Robot`` node.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connect_node.png 
+   :align: center
+   :scale: 50%
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_robot_connected_node.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   To easily connect a node simply press the ``Ctrl`` key while clicking in the grey rectangles - called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the ``Ctrl`` key.
+
+Drag an ``Email Out`` node - the one with the letter icon to the right-most side of the activity - to the workspace. This node will be responsible to sending the ``msg.payload`` object JSON stringified to the selected email when an error occurs upon evaluation.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_drag.png 
+   :align: center
+   :scale: 50%
+
+Connect the top-most port in the ``Invoke Joke Failed Workflow`` node to the port outside the ``email`` node.
+
+.. note::
+   To easily connect a node simply press the ``Ctrl`` key while clicking in the grey rectangles - called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the ``Ctrl`` key.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connect_node.png 
+   :align: center
+   :scale: 50%
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_connected_node.png 
+   :align: center
+   :scale: 50%
+
+Set the properties for the ``email`` node.
+
+``To`` refers to the the e-mail address from the receiver. 
+
+``Userid`` is the  UserId from the account which will send the e-mail. (ie. e-mail without domain - if the e-mail is ``admin@openrpa.dk``, then your UserId is ``admin``)
+
+``Password`` - the password for the email account from the sender.
+
+In our case, a dummy e-mail is set - as ``admin@gmail.com``, which will be used to send and receive the message. It is noted here that the user must change the e-mail or else the workflow obviously won't work.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_email_set_properties.png 
+   :align: center
+   :scale: 50%
+
+.. note::
+   If the user is using Gmail's SMTP Server, it is needed that the settings for allowing **Less secure app access** are correct. Else, the user will receive an error message upon execution of the workflow. To do that, refer to `Less secure app access <https://myaccount.google.com/lesssecureapps>`_ (``https://myaccount.google.com/lesssecureapps``) and make sure that the ``Allow less secure apps`` settings is set to ``ON``.
+
+Drag a ``Workflow Out`` node to the workspace.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_drag.png 
+   :align: center
+   :scale: 50%
+
+Connect the ``Workflow Out`` node to the ``email`` - now ``admin@gmail.com`` - node.
+
+.. note::
+   To easily connect a node simply press the ``Ctrl`` key while clicking in the grey rectangles - called ports - in the outer part of each node. The user can also click and hold to connect the nodes but the author finds it more feasible simply using the ``Ctrl`` key.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connect.png 
+   :align: center
+   :scale: 50%
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_workflow_out_connected.png 
+   :align: center
+   :scale: 50%   
+
+Deploy your flow by clicking the red Deploy button at the top-left side of the screen.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_setting_evaluation_failed_deploy.png 
+   :align: center
+   :scale: 50%   
+
+.. note::
+   Upon any change inside a Node-RED flow, the user must deploy the given flow so the changes are propagated throughout robots currently using that given flow.
+
+Invoke Joke Failed Workflow
+---------------------------
+Now it is needed for the workflow to invoke the ``REST Workflow Example - Joke Failed`` in case the ``ChuckAPI`` process is not properly evaluated.
+
+To do that, drag an ``Invoke OpenFlow`` activity to the ``Else`` sequence, inside the **If** activity.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_drag.png 
+   :align: center
+   :scale: 50%   
+
+Now select ``Joke Failed`` as the workflow to be invoked.
+
+.. figure:: images/openrpa_workflow_example_rest_evaluate_invoke_joke_failed_select.png 
+   :align: center
+   :scale: 50%   
+
+This way the ``REST Workflow Example - Joke Failed`` activity will be automatically invoked upon any failure in the evaluation process.
+
+Output logic
+------------
+Drag a **Show Balloon Tip** activity to the ``Then`` sequence, inside the **If** activity.
+
+.. figure:: images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_drag.png 
+   :align: center
+   :scale: 50%   
+
+Insert the ``Title`` for the **Balloon Tip** which will appear.
+
+Insert the ``Message`` which will appear to the user. In our case, it is the variable ``value``.
+
+.. note::
+   Press ``Ctrl+K`` to automatically create the variable when entering it upon an input field or create it manually by clicking the **Variables box** under the bottom part of the screen. Use the right-hand side to enter the value which will be assigned to the variable.
+
+.. figure:: images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_set.png 
+   :align: center
+   :scale: 50%   
+
+Workflow Finished
+-----------------
+A snippet is shown below containing both the output and the end of the workflow. As well as the whole workflow there after.
+
+.. figure:: images/openrpa_workflow_example_rest_output.png 
+   :align: center
+
+.. list-table::
+   
+   * - .. figure:: images/openrpa_workflow_example_rest_1st_workflow_finished_1.png
+
+     - .. figure:: images/openrpa_workflow_example_rest_1st_workflow_finished_2.png
+
+     - .. figure:: images/openrpa_workflow_example_rest_2nd_workflow_finished_1.png
+
+.. figure:: images/openrpa_workflow_example_rest_node-red_flow.png 
+   :align: center
+   :scale: 50%   

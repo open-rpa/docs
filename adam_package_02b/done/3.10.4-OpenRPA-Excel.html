@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Excel Read &mdash; BPA/OpenIAP Docs 1.0.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/styles.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BPA/OpenIAP Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rpa.html">1. <strong>Introduction to RPA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openflow.html">2. <strong>OpenFlow</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openrpa.html">3. <strong>OpenRPA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../node_red.html">4. <strong>Node-RED</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix_a.html">5. <strong>Appendix A</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix_b.html">6. <strong>Appendix B</strong></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">1. License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BPA/OpenIAP Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Excel Read</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="excel-read">
+<h1>Excel Read<a class="headerlink" href="#excel-read" title="Permalink to this headline">¶</a></h1>
+<p>In this example, the user will read a couple of invoices contained in <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">files</span> <span class="pre">(.xlsx)</span></code>, capture the data inside them and generate a new <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">file</span></code> with the merged data.</p>
+<p>The invoices which will be used to demonstrate this example can be found here <a class="reference external" href="https://drive.google.com/file/d/1WkBjsWhA5Dm_fp5zg_kdlBh9oe2vKnTO/view?usp=sharing">Invoices</a> (<code class="docutils literal notranslate"><span class="pre">https://drive.google.com/file/d/1WkBjsWhA5Dm_fp5zg_kdlBh9oe2vKnTO/view?usp=sharing</span></code>).</p>
+<div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_invoice_example.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_invoice_example.png" />
+</div>
+<p>Unpack the <code class="docutils literal notranslate"><span class="pre">.rar</span></code> file at the desired directory and save the folder path somewhere, it shall be used later on.</p>
+<p>The following steps are followed to accomplish this workflow example.</p>
+<ol class="arabic simple">
+<li><p>Create an Empty DataTable.</p></li>
+<li><dl class="simple">
+<dt>For each Invoice.</dt><dd><ul class="simple">
+<li><p>Read Individual Cells</p></li>
+<li><p>Read Table Cells (“items”)</p></li>
+<li><p>Add this iteration’s invoice to DataTable</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Write Excel from DataTable</p></li>
+</ol>
+<div class="section" id="create-an-empty-datatable">
+<h2><strong>Create an Empty DataTable.</strong><a class="headerlink" href="#create-an-empty-datatable" title="Permalink to this headline">¶</a></h2>
+<p>All the Excel data that will be read from the invoices will be saved into a <code class="docutils literal notranslate"><span class="pre">DataTable</span></code>.</p>
+<p>Drag the <strong>CreateDataTable</strong> activity to the end of the main sequence.</p>
+<p>In the first input field, assign the <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> name as <code class="docutils literal notranslate"><span class="pre">invoicesDataTable</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>OpenRPA is able to automatically create a new variable with the correct type required for the Activity/property. While creating a new variable in the <strong>Properties box</strong>, after typing the variable name and with the caret still inside the input field, by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+K</span></code>.</p>
+</div>
+<p>In our case, the fields which are going to be assigned to the second input field are headers. Therefore our second input field should contain <code class="docutils literal notranslate"><span class="pre">{&quot;Invoice</span> <span class="pre">Number&quot;,</span> <span class="pre">&quot;Company</span> <span class="pre">Name&quot;,</span> <span class="pre">&quot;Shipping</span> <span class="pre">Address&quot;,</span> <span class="pre">&quot;Shipping</span> <span class="pre">Tel.</span> <span class="pre">Number&quot;,</span> <span class="pre">&quot;Due</span> <span class="pre">Date&quot;,</span> <span class="pre">&quot;Qty.</span> <span class="pre">of</span> <span class="pre">Items&quot;,</span> <span class="pre">&quot;Due</span> <span class="pre">Balance&quot;}</span></code> as its content.</p>
+<p>It is advisable to rename the <code class="docutils literal notranslate"><span class="pre">DisplayName</span></code> for each activity to something meaningful and that helps you keep track of what each part of the workflow does! Considering that, rename this activity to “Create Empty DataTable”.</p>
+<div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_create_empty_data_table.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_create_empty_data_table.png" />
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In OpenRPA, a <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> corresponds to a 2-dimensional non-serializable object used to hold values. Think of it as a matrix with <code class="docutils literal notranslate"><span class="pre">i</span></code> rows and <code class="docutils literal notranslate"><span class="pre">j</span></code> columns. The <code class="docutils literal notranslate"><span class="pre">i</span></code> rows are accessible by using the <code class="docutils literal notranslate"><span class="pre">.Rows(n)</span></code> attribute, where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of the row - starting from 0 - which you want to access. The <code class="docutils literal notranslate"><span class="pre">j</span></code> columns are accessible by using the <code class="docutils literal notranslate"><span class="pre">.Item(n)</span></code> attribute, where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of the column - starting from 0 - which you want to access. It is useful to remind here that the user must have accessed the <code class="docutils literal notranslate"><span class="pre">Rows</span></code> attribute, therefore, if the user wanted to access the 2nd column on the 3rd row of the datatable they would use <code class="docutils literal notranslate"><span class="pre">.Rows(2).Item(1)</span></code> attribute.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the .NET API, a <code class="docutils literal notranslate"><span class="pre">DataTable</span> <span class="pre">object</span></code> corresponds to one table of in-memory data contained in a <code class="docutils literal notranslate"><span class="pre">DataSet</span> <span class="pre">object</span></code> from the class equally named. When you read an <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">file</span></code>, it is automatically assigned to a <code class="docutils literal notranslate"><span class="pre">DataSet</span></code> class and all the <code class="docutils literal notranslate"><span class="pre">Sheets</span></code> are saved into <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> classes - numbered from 0 to the quantity of sheets inside the <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">file</span></code>. Here it is reminded that <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> objects are case sensitive.</p>
+</div>
+</div>
+<div class="section" id="for-each-invoice">
+<h2><strong>For each Invoice</strong><a class="headerlink" href="#for-each-invoice" title="Permalink to this headline">¶</a></h2>
+<p>The first activity will loop a directory and will return all filenames contained in it.</p>
+<p>First drag the <strong>Assign</strong> activity to assign the absolute path of the directory you want to loop through to a variable - ie. <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p>
+<div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_assign_path.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_assign_path.png" />
+</div>
+<p>Drag the <strong>ForEachWithBodyFactory&lt;&gt;</strong> activity to the main sequence.</p>
+<p>Set the proper <code class="docutils literal notranslate"><span class="pre">TypeArgument</span></code> parameter inside the <strong>Properties box</strong> to <code class="docutils literal notranslate"><span class="pre">String</span></code>. This is done because the directory which will be iterated through contain filepaths, which are returned as values of <code class="docutils literal notranslate"><span class="pre">String</span></code> type.</p>
+<p>In the right-hand side of the activity change the <code class="docutils literal notranslate"><span class="pre">item</span></code> variable assigned to <code class="docutils literal notranslate"><span class="pre">filePath</span></code>.</p>
+<p>In the left-hand side of the activity insert <code class="docutils literal notranslate"><span class="pre">System.IO.Path.GetFiles(path)</span></code>.</p>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">filePath</span></code> now contains the <code class="docutils literal notranslate"><span class="pre">String</span></code> to each respective invoice full filepath.</p>
+<div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_for_each_with_body_factory.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_for_each_with_body_factory.png" />
+</div>
+<p><strong>Read Individual Cells</strong></p>
+<p>Here the robot will read individual cells pertaining to fields that contain only a single value - these fields are static (the number of rows is fixed - one).</p>
+<p>As these steps are quite repetitive, we will be reproducing only the steps pertaining to the <code class="docutils literal notranslate"><span class="pre">invoiceNumber</span></code> variable. If you want to practice further, we strongly recommend doing the same to the other variables as well, namely <code class="docutils literal notranslate"><span class="pre">companyName</span></code>, <code class="docutils literal notranslate"><span class="pre">shippingAddress</span></code>, <code class="docutils literal notranslate"><span class="pre">shippingTelephoneNumber</span></code> and <code class="docutils literal notranslate"><span class="pre">dueDate</span></code>.</p>
+<p>Use the Recorder to select the cell or drag the <strong>ReadCell</strong> activity, found inside the <code class="docutils literal notranslate"><span class="pre">OpenRPA.Utilities</span></code> toolbox, to the sequence inside the <strong>ForEachWithBodyFactory&lt;&gt;</strong> activity.</p>
+<p>If the Recorder wasn’t used, the user must follow a few more steps in order to use this activity. First, assign the <code class="docutils literal notranslate"><span class="pre">Filename</span></code> parameter inside the <strong>Properties box</strong> to the <code class="docutils literal notranslate"><span class="pre">filePath</span></code> variable to select the <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">file</span></code> which will be read. Enter the cell which will be captured into the <code class="docutils literal notranslate"><span class="pre">Cell</span></code> parameter. In our case, it is <code class="docutils literal notranslate"><span class="pre">&quot;H3&quot;</span></code>, which corresponds to the invoice number.</p>
+<p>The <strong>ReadCell activity</strong> will read from an <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">file</span></code> and save the cell into a <code class="docutils literal notranslate"><span class="pre">String</span></code> variable by default. The user can change the type of the data captured by changing the <code class="docutils literal notranslate"><span class="pre">ArgumentType</span></code> parameter inside the <strong>Properties tab</strong>.</p>
+<p>Since this variable does not exist yet, we must first create it. A reminder that variable must be obligatorily set with the type <strong>System.Data.String</strong>.</p>
+<p>Simply click in the <code class="docutils literal notranslate"><span class="pre">Result</span></code> input field inside the <strong>Properties tab</strong> and type the name of the variable you want to use. In this case, it is <code class="docutils literal notranslate"><span class="pre">invoiceNumber</span></code>.</p>
+<p>Now repeat the procedure above for the remaining variables.</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_read_individual_cell.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_read_individual_cell.png" />
+</div>
+</div></blockquote>
+<p>Remember that it is needed to change the variables <code class="docutils literal notranslate"><span class="pre">Scope</span></code> to the outermost sequence to be able to capture all the values gathered in here and save them into a <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> later on.</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_change_scope.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_change_scope.png" />
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While creating a new variable in the <strong>Properties box</strong>, after typing the variable name and with the caret still inside the input field, by pressing <code class="docutils literal notranslate"><span class="pre">'K</span></code> OpenRPA will automatically create this new variable with the correct type required for the activity.</p>
+</div>
+<p><strong>Read Table Cells (“items”)</strong></p>
+<p>Here the robot will read a ‘table’ inside the invoice and differently to reading individual cells, tables are usually dynamic (the number of rows may vary) or. This is done in a programmatic manner that allows the developer the option to read a specific range of cells which would be simply too huge as to permit him to manually add the <strong>ReadCell</strong> activity for each variable.</p>
+<p>This ‘table’ will be stored in a new <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> called ‘itemsDataTable’ and some logic will be applied as well, such as removing empty columns, summing and counting values.</p>
+<p>Drag a <strong>Sequence</strong> activity and name it <code class="docutils literal notranslate"><span class="pre">Items</span> <span class="pre">Processing</span> <span class="pre">Logic</span></code>.</p>
+<p>Inside this sequence, drag a <strong>CreateDataTable</strong> activity and create a table named <code class="docutils literal notranslate"><span class="pre">itemsDataTable</span></code>.</p>
+<p>The headers for this <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> shall be <code class="docutils literal notranslate"><span class="pre">{&quot;itemName&quot;,</span> <span class="pre">&quot;quantity&quot;,</span> <span class="pre">&quot;rate&quot;,</span> <span class="pre">&quot;subTotal&quot;}</span></code>.</p>
+<div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_read_items_processing_logic_create_data_table.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_read_items_processing_logic_create_data_table.png" />
+</div>
+<p>For the assignments, we will be using columns 0, 3, 5, 7, if you take a look at the invoice template, these are the indexes for the columns
+that contain data.</p>
+<p>Now, by using the <code class="docutils literal notranslate"><span class="pre">Read</span> <span class="pre">Range</span></code> activity, we will get the table contents into a <code class="docutils literal notranslate"><span class="pre">DataTable</span></code>.</p>
+<p>First enter the filepath of the file from which the activity will read from inside the <code class="docutils literal notranslate"><span class="pre">Filename</span></code> input field.</p>
+<p>Enter the cells you want to capture in the <code class="docutils literal notranslate"><span class="pre">Cells</span></code> field inside the <strong>Properties box</strong>. In our case, those are <code class="docutils literal notranslate"><span class="pre">&quot;A14:H18&quot;</span></code>.</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_range_cells.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_range_cells.png" />
+</div>
+</div></blockquote>
+<p>The indexes <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">7</span></code> refer to the indexed objects inside the current <code class="docutils literal notranslate"><span class="pre">row</span></code>, ie. the columns.</p>
+<p>Enter the name for the <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> you want to save it to inside the <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> field inside the <strong>Properties box</strong>. In our case this <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> is <code class="docutils literal notranslate"><span class="pre">items</span></code>.</p>
+<p>In the <strong>Properties box</strong>, you may find the property <code class="docutils literal notranslate"><span class="pre">IgnoreEmptyRows</span></code>, set this value to <code class="docutils literal notranslate"><span class="pre">True</span></code>. Since our table does not contain a header, set the <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">Header</span> <span class="pre">Row</span></code> property to <code class="docutils literal notranslate"><span class="pre">False</span></code> - this will ensure the activity reads the first row of the data (row 14).</p>
+<div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_items_processing_read_range.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_items_processing_read_range.png" />
+</div>
+<p>And by looping the <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> with a <strong>ForEach DataRow</strong> activity, the <strong>Add DataRow</strong> activity is used to loop through each item information to our ‘itemsDataTable’</p>
+<div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_items_processing_for_each_and_add_data_row.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_items_processing_for_each_and_add_data_row.png" />
+</div>
+<p>Now comes the logic for calculating the subtotal value and adding this value to the total value which will be described in the final <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">sheet</span></code>.</p>
+<p>Declare a new variable <code class="docutils literal notranslate"><span class="pre">quantity</span></code> with type <code class="docutils literal notranslate"><span class="pre">System.Decimal</span></code>. Using the <strong>Assign</strong> activity, assign its value to <code class="docutils literal notranslate"><span class="pre">quantity</span> <span class="pre">+</span> <span class="pre">Convert.ToDecimal(row(3).ToString)</span></code> - this will cause the variable to increment its value for each item iteration.</p>
+<p>Declare a new variable <code class="docutils literal notranslate"><span class="pre">currentQuantity</span></code> with type <code class="docutils literal notranslate"><span class="pre">System.Decimal</span></code>. Using the <strong>Assign</strong> activity, assign its value to <code class="docutils literal notranslate"><span class="pre">Convert.ToDecimal(row(3).ToString)</span></code></p>
+<p>Do the step above for the variable <code class="docutils literal notranslate"><span class="pre">currentRate</span></code> as well, using <code class="docutils literal notranslate"><span class="pre">row(5)</span></code> as its base-value.</p>
+<p>Declare a new variable <code class="docutils literal notranslate"><span class="pre">subTotal</span></code> with type <code class="docutils literal notranslate"><span class="pre">System.Decimal</span></code>. Using the <strong>Assign</strong> activity, assign its value to <code class="docutils literal notranslate"><span class="pre">currentQuantity*currentRate</span></code>.</p>
+<p>Finally, declare a new variable <code class="docutils literal notranslate"><span class="pre">dueBalance</span></code> with type <code class="docutils literal notranslate"><span class="pre">System.Decimal</span></code>. Using the <strong>Assign</strong> activity, assign its value to <code class="docutils literal notranslate"><span class="pre">dueBalance</span> <span class="pre">+</span> <span class="pre">currentQuantity*currentRate</span></code>.</p>
+<p>It is useful to remark that the user must change the variables <code class="docutils literal notranslate"><span class="pre">Scope</span></code> to the outermost sequence to be able to capture all the values gathered in here and save them into a <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> later on.</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_items_logic_assign_variables.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_items_logic_assign_variables.png" />
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the <strong>Read Range</strong> activity, the <code class="docutils literal notranslate"><span class="pre">:</span></code> colon symbol is used to delimit the area you want to capture, the cell to the left-hand side of it is the starting cell and the cell to the right-hand side of it is the ending cell.</p>
+</div>
+</div>
+<div class="section" id="add-this-iteration-s-invoice-to-datatable">
+<h2><strong>Add this iteration’s invoice to DataTable</strong><a class="headerlink" href="#add-this-iteration-s-invoice-to-datatable" title="Permalink to this headline">¶</a></h2>
+<p>Now that we’ve gathered all the important data from this iteration’s invoice, we want to add these info to the <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> we created on step 1.</p>
+<p>Drag the <strong>AddDataRow</strong> activity to the end of the sequence inside the <strong>ForEachWithBodyFactory&lt;&gt;</strong> activity.</p>
+<p>In the first input field, insert <code class="docutils literal notranslate"><span class="pre">invoicesDataTable</span></code>.</p>
+<p>In the second input field, insert <code class="docutils literal notranslate"><span class="pre">{invoiceNumber,</span> <span class="pre">companyName,</span> <span class="pre">shippingAddress,</span> <span class="pre">shippingTelephoneNumber,</span> <span class="pre">dueDate,</span> <span class="pre">quantity,</span> <span class="pre">total}</span></code>.</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_add_invoices_data_table.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_add_invoices_data_table.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="write-excel-from-datatable">
+<h2><strong>Write Excel from DataTable</strong><a class="headerlink" href="#write-excel-from-datatable" title="Permalink to this headline">¶</a></h2>
+<p>This is the last part of the workflow. Here the user will finally write the <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">file</span></code> containing all the data gathered.</p>
+<p>Drag a <strong>WriteExcel</strong> activity into the end of the main sequence.</p>
+<p>Click the <code class="docutils literal notranslate"><span class="pre">...</span></code> button to select the filename to which the <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">file</span></code> will be saved to. Enter the filename inside the <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">name</span></code> input field on the explorer window which will appear. Then press <code class="docutils literal notranslate"><span class="pre">Save</span></code> to finally assign it.</p>
+<p>Assign the <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> from which the data gathered will be saved into the <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">file</span></code> by entering its name inside the <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> property inside the <strong>Properties box</strong>.</p>
+<p>Enter the theme which will be used to stylize the <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">file</span></code> in the <code class="docutils literal notranslate"><span class="pre">Theme</span></code> property inside the <strong>Properties box</strong>.</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_write_excel.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_write_excel.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="workflow-finished">
+<h2><strong>Workflow Finished</strong><a class="headerlink" href="#workflow-finished" title="Permalink to this headline">¶</a></h2>
+<p>Here’s a preview of how the workflow will look like after completing it.</p>
+<div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_workflow_finished_1.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_workflow_finished_1.png" />
+</div>
+<div class="figure align-center">
+<img alt="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_workflow_finished_2.png" src="adam_package_02b\done\images/read_excel_images/openrpa_workflow_example_read_excel_workflow_finished_2.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p>Powered by <a href="https://bpatechnologies.com/">BPA Technologies</a></p>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+        <h4>>Powered by BPA Technologies - bpatechnologies.com</h4>
+
+
+</body>
+</html>

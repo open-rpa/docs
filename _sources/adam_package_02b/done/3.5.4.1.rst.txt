@@ -1,0 +1,320 @@
+.. 3.5.4.1.1
+.. py:class:: Click Element
+
+
+ Click on an Element found with **GetElement**.
+
+   **Properties Parameters**
+
+   ``Animate Mouse`` - If set to ``True``, the cursor will appear changing it's position throughout execution. It only works on Physical Clicks!
+
+   ``Displayname`` - Title of the Activity inside the Sequence.
+
+   ``Double Click`` - If set to ``True``, the cursor clicks twice inside the window. 
+
+   ``Element`` - The application selected with the **Get Element** activity.
+
+   ``Key Modifiers`` - If set, the corresponding keys act as if pressed during execution.
+
+   ``Mouse Button`` - Set to ``1`` if the Left Mouse button is to be clicked;``2`` if it is the Middle Mouse button; ``3`` for the Right Mouse button.
+
+   ``Post Wait`` - Time **OpenRPA** should wait for this activity to finish after completing its execution.
+
+   ``Virtual Click`` - Set by default as ``True``. **OpenRPA** tries to do a **Virtual Click** instead of actually clicking the mouse. Visit **Appendix B** - :ref:`Virtual Clicking` for more information.
+
+   ``X Offset`` - The horizontal offset inside the window to be clicked. Units are in pixels. It also allows for negative values. Only works on Physical Click!
+
+   ``Y Offset`` - The vertical offset inside the window to be clicked. Units are in pixels. It also allows for negative values. Only works on Physical Click! 
+
+.. figure:: images/openrpa_click_element.png
+   :align: center
+
+
+   **OpenRPA Click Element.**
+
+.. 3.5.4.1.2
+.. py:class:: Close Application
+
+   Closes a given application selected with the **Get Element** activity.
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Force``- If set to ``True``, it kills the application.
+
+   ``Selector`` - Contains all the data belonging to the application selected.
+
+   ``Timeout`` - Time until the Activity ceases if not successfully able to close the application.
+
+.. figure:: images/openrpa_close_application.png
+   :align: center
+
+   **OpenRPA Close Application.**
+
+.. 3.5.4.1.3
+.. py:class:: Comment Out
+
+   Every Activity inside **Comment Out** is ignored by the execution of the workflow. This Activity is useful for remarking something out of the sequence.
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+.. figure::images/openrpa_comment_out.png
+   :align: center
+
+   **OpenRPA Comment Out.**
+
+.. 3.5.4.1.4
+.. py:class:: Copy Cliboard
+
+   Coming soon - Work in progress
+
+.. 3.5.4.1.5
+.. py:class:: Detector
+
+   **Detector** turns workflow into idle mode, waiting on selected **Detector** to trigger.
+
+   It is worthy reminding the user that **Detectors** can also be used to trigger **StateMachines** inside **OpenRPA**.
+
+   An example of how to set a **Detector** is found at :ref:`Windows Automation` section.
+
+   **Properties Parameters**
+
+   ``Detector`` - ID of the **Detector** which will be used to trigger the condition.
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+.. 3.5.4.1.6
+.. py:class:: Foreach DataRow
+
+   **Foreach DataRow** enumerates through each row inside a ``DataTable``.
+
+   This Activity iterates through a ``DataTable`` or ``DataView``.² All the Activities inside **Foreach DataRow** will be looped over each row. Examples of using **Foreach DataRow** Activity are shown both at :ref:`Web Automation` and :ref:`Excel Read` workflow examples. 
+
+   **Properties Parameters**
+
+   ``DataTable`` - The data table used to gather the data.
+
+   ``DataView`` - The data view used to gather the data. For more information on how to use a ``DataView``, please refer to Appendix B's :ref:`DataView`. 
+   
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+.. figure:: images/openrpa_foreach_datarow.png
+   :align: center
+
+   **OpenRPA Foreach DataRow.**
+
+² - `What is the difference between DataView and DataTable? <https://stackoverflow.com/questions/7382932/what-is-the-difference-between-dataview-and-datatable>`_ (``https://stackoverflow.com/questions/7382932/what-is-the-difference-between-dataview-and-datatable``)
+
+.. 3.5.4.1.7
+.. py:class:: Highlight Element
+
+  Coming soon - Work in progress
+
+.. 3.5.4.1.8
+.. py:class:: Insert Clipboard
+
+  Coming soon - Work in progress
+
+.. 3.5.4.1.9
+.. py:class:: Invoke OpenFlow
+
+   **Invoke OpenFlow** allows the user to invoke ``Workflows`` which have been configured with **OpenFlow**/**Node-RED**, i.e., available at the `Workflows page <http://localhost.openrpa.dk/#/Workflows>`_ (e.g. ``http://localhost.openrpa.dk/#/Workflows``).
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+   ``Wait until Completed`` - If set to ``True``, **OpenRPA** waits until the ``Workflow`` invoke call is finished - either success or error. If successful, the message containing the data (as designed in the flow at **Node-RED**) is returned to the **OpenRPA** robot. 
+
+   If set to ``False``, however, **OpenRPA** will no longer have access to the returned message - communication will be one-way. Therefore, all logic that would otherwise depend on it must then be redesigned. Think of it as a try/catch exception block that does not return any exception message. ³
+   
+   ``Workflow`` - The ``Workflow`` which is to be invoked.
+
+.. note ::
+   The ``Workflow`` is invoked by the user currently logged in **OpenRPA**/**OpenFlow**. It means that the user must have access to the desired ``Workflow`` which is to be invoked, otherwise it won't even be displayed in the ``Workflows`` dropdown.
+
+.. figure:: images/openrpa_invoke_openflow.png
+   :align: center
+
+   **OpenRPA Invoke OpenFlow.**
+
+.. 3.5.4.1.10
+.. py:class:: Invoke OpenRPA
+
+   **Invoke OpenRPA** allows the user to invoke **OpenRPA** ``Workflows`` saved in **OpenFlow**'s repository - those available at the `RPA Workflows page <http://localhost.openrpa.dk/#/RPAWorkflows>`_ (eg. ``http://localhost.openrpa.dk/#/RPAWorkflows``).
+
+   The **Map Variables** button allows the currently set variables and arguments to be passed to the ``Workflow`` invoke call. In order to do that, after choosing your ``Workflow`` from the dropdown, create the arguments in the **Variables, Arguments & Imports box** and click the **Map Variables** button in the activity.
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+   ``Wait until Completed`` - If set to ``True``, **OpenRPA** waits until the **Workflow** invoke call is finished - either success or error. If successful, the message containing the data (as designed in the flow at **Node-RED**) is returned to the **OpenRPA** robot. 
+
+   If set to ``False``, however, **OpenRPA** no longer has access to the returned message - communication now is one-way - and therefore all logic that would otherwise depend on it must then be redesigned. Think of it as a try/catch exception block that does not return any exception message. 
+   
+   ``Workflow`` - The ``Workflow`` which is to be invoked.
+
+.. figure:: images/openrpa_invoke_openrpa.png
+   :align: center
+
+   **OpenRPA Invoke OpenRPA.**
+
+.. 3.5.4.1.11
+.. py:class:: Invoke Remote OpenRPA
+
+   Allows to remotely invoke RPA Workflows, saved in OpenFlow's repository, to be executed at other OpenRPA clients. 
+
+   The **Map Variables** button allows the currently set variables and arguments to be passed to the workflow invoke call. In order to do that, after choosing your workflow from the dropdown, create the arguments in the **Variables, Arguments & Imports box** and click the **Map Variables** button in the activity.
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the activity inside the sequence.
+
+   ``Target`` - OpenFlow's hash string identifying the target which will be activated to execute the workflow.
+
+   ``Wait until Completed`` 
+
+   If set to ``True``, OpenRPA waits until the Workflow invoke call is finished - either success or error. If successful, the message containing the data (as designed in the flow at Node-RED) is returned to the OpenRPA robot. 
+
+   If set to ``False``, however, OpenRPA no longer has access to the returned message - communication now is one-way - and therefore all logic that would otherwise depend on it must then be redesigned. Think of it as a try/catch exception block that does not return any exception message. 
+   
+  
+   ``Workflow`` - **OpenFlow**'s hash string identifying the workflow which will be executed.
+
+.. figure:: images/openrpa_invoke_remote_openrpa.png
+   :align: center
+
+   **OpenRPA Invoke Remote OpenRPA.**
+
+.. 3.5.4.1.12
+.. py:class:: Move Mouse
+   
+   Move mouse cursor to a location relative to an element found with **GetElement** (or desktop if no element is supplied).
+   
+   This Activity has two modes of usage.
+   
+   The first mode of usage is **Selector**-less. In this mode, the Activity will use the absolute values of the screen to find the ``X`` and ``Y`` offset values. As an example, if the ``user`` has a ``1366x768`` display, the activity will move the mouse according to that resolution inside the screen. To use this mode, all the ``user`` needs to do is deleting any value inside the ``Element`` property of the activity  - its default value is ``item`` - and define the ``X`` and ``Y`` offset values. 
+
+   The second mode of usage is **Selector**-bound. In this mode, after selecting a **Windows element**, the activity will use the relative values of the part of the screen which the element occupies to find the ``X`` and ``Y`` offset values. To use this mode, all the user needs to do is drag the **Move Mouse** activity into the element selected and define the ``X`` and ``Y`` offset values.
+
+      The application must be selected by using the **Get Element** Activity.
+
+   **Properties Parameters**
+
+   ``Animate Mouse`` - If set to ``True``, the cursor will appear changing its position throughout execution. Good for showing what is happening in a presentation.
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+   ``Element`` - The application selected with the **Get Element** Activity.
+
+   ``Post Wait`` - How long **OpenRPA** should wait for this Activity to finish after completing its execution.
+
+   ``X Offset`` - The horizontal offset inside the window which the cursor will be moved to. Units are in pixels. It also allows for negative values.
+
+   ``Y Offset`` - The vertical offset inside the window which the cursor will be moved to. Units are in pixels. It also allows for negative values.
+
+.. note::
+
+   This activity requires a Mouse IO. If it fails to find one, it will return the error: ``Could not send mouse input. Error Code: 5``. This may happen if **OpenRPA** Client was launched from inside a Windows Remote Desktop and the session was disconnected. To avoid this, please use HDRobots extension, do not disconnect/close the RDP session or make the session persistent by using other techniques (i.e.: running a VNC server).
+
+.. figure:: images/openrpa_move_mouse.png
+   :align: center
+
+   **OpenRPA Move Mouse.**
+
+.. 3.5.4.1.13
+.. py:class:: Open Application
+   
+   **Open Application** searches for **Windows element** based on a ``Selector``, and focus on in. If the Application was not found, it will start it. 
+
+   Clicking **Highlight** will red-highlight the first element that matches the criteria on the ``Selector``. Useful for checking if the ``Selector`` is properly set up. 
+
+   This Activity also supports working with ``Selector`` inside itself. All you need to do is drag a ``GetElement``, or according activity, inside its sequence.
+
+   This activity can also be used to work with browsers and other applications such as Java, SAP etc.
+   **Properties Parameters**
+   
+   ``Animate Move`` - Visibly move the window of the application which will be opened, instead of instantly moving it. Useful for presentations.
+
+   ``Check Running`` - Check if application is already running using the ``Selector``. If set to ``False´`, it will launch a new application no matter what.
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+   ``Height`` - If set, the application is opened with this given height. Units are in pixels.
+
+   ``Result`` - Save the result of the execution to a variable. By default, it saves the application Element itself.
+
+   ``Selector`` - Contains all the data used to identify application.
+
+   ``Timeout`` - Time to check for whether the application was found. Essentially a timeout for the ``Check Running`` parameter.
+
+   ``Width`` - If set, the application is opened with this given height. Units are in pixels.
+
+   ``X`` - If set, moves the application to this horizontal offset. Units are in pixels. It also allows for negative values.
+
+   ``Y`` - If set, moves the application to this vertical offset. Units are in pixels. It also allows for negative values.
+
+.. figure:: images/openrpa_open_application.png
+   :align: center
+
+   **OpenRPA Open Application.**
+
+.. 3.5.4.1.14
+.. py:class:: Show Balloon Tip
+
+   **Show Balloon Tip** shows a message similar to the **Show Notification** activity near the system tray. It differs from **Show Notification** only in that it also contains a title and allows for other types of notifications such as Error or Warning.
+
+   **Properties Parameters**
+
+   ``Duration`` - How long the message will appear.
+
+   ``Message`` - Message which will be shown. Needs to be included inside quotes.
+
+   ``Title`` - Title of the balloon tip.
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+   ``NotificationType`` - Different notification types: Information, Error or Warning.
+
+.. note::
+   
+   Refrain from using too many Activities that change UI elements (such as Show Balloon Tip, WriteLine or Show Notification). These activities run single-threaded, which means that each time they are executed, they briefly stop Workflow execution.
+
+.. figure:: images/openrpa_show_balloon_tip.png
+   :align: center
+
+   **OpenRPA Show Balloon Tip.**
+
+.. 3.5.4.1.15
+.. py:class:: Type Text
+   
+   The user is strongly discouraged from using this Activity. It is preferable to select an element with the **GetElement** activity and use the **Assign** property to assign a string value to it.
+
+   **Type Text** sends key strokes from the text contained inside **Hint** to the window currently focused. Instead of memorizing every key stroke, it is recommended to use the **Recorder** as it will map every key stroke automatically.¹ 
+
+   The key stroke syntax should be "{{Modifier1, Key1} {Modifier2, Key2} {...} {ModifierN, KeyN}}".Keep in mind that **Modifiers**, which would be auxiliary keys - such as ``Ctrl``, ``Alt``, ``Shift`` - are not obligatory.
+
+   The user can also send **variables** or **hardcoded text**, such as sending "{{Modifier1, Key1} SOME TEXT " + desired_variable + "{Enter}".
+
+   **Properties Parameters**
+
+   ``Click Delay`` - Delay between each keystroke.
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+   ``Text`` - Displayname inside the ``Workflow`` designer.
+
+.. note::
+
+   This activity requires a Keyboard IO. If it fails to find one, it will return "Could not send keyboard input. Error Code: 5". This may happen if **OpenRPA** Client was launched from inside a Windows Remote Desktop Session and the session was disconnected. In order to avoid this, please use HDRobots extension. Do not disconnect/close the RDP session or persist the session using other techniques (e.g. running VNC).
+
+.. figure:: images/openrpa_type_text.png
+   :align: center
+
+   **OpenRPA Type Text.**
+   
+*¹ - `Overview of TypeText Activity <https://openrpa.openrpa.dk/pages/typetext-syntax>`_ (``https://openrpa.openrpa.dk/pages/typetext-syntax``)*

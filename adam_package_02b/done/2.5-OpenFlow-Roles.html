@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Roles &mdash; BPA/OpenIAP Docs 1.0.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/styles.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BPA/OpenIAP Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rpa.html">1. <strong>Introduction to RPA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openflow.html">2. <strong>OpenFlow</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openrpa.html">3. <strong>OpenRPA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../node_red.html">4. <strong>Node-RED</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix_a.html">5. <strong>Appendix A</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix_b.html">6. <strong>Appendix B</strong></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">1. License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BPA/OpenIAP Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li><strong>Roles</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="roles">
+<h1><strong>Roles</strong><a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h1>
+<p>Here is explained what <strong>Roles</strong> in OpenFlow are and how they interfere with <strong>OpenRPA</strong> and <strong>Node-RED</strong> access privileges.</p>
+<div class="section" id="what-are-roles">
+<h2>What are Roles?<a class="headerlink" href="#what-are-roles" title="Permalink to this headline">¶</a></h2>
+<p>In <strong>OpenFlow</strong>, Roles are an unit or collection of privileges and permissions that can be assigned to one or more users or to a group of users. These Roles serve various purposes, such as granting access to projects/workflows inside <strong>OpenRPA</strong> or granting access to specific flows inside <strong>Node-RED</strong>.</p>
+<p>Remember that both human users and robots are called <code class="docutils literal notranslate"><span class="pre">users</span></code> in <strong>OpenFlow</strong> and Roles work the same way for both.</p>
+</div>
+<div class="section" id="rparole-pool">
+<h2>RPARole (Pool)<a class="headerlink" href="#rparole-pool" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes it may desired to create a Pool of <code class="docutils literal notranslate"><span class="pre">users</span></code>, e.g. “Buyers”, so that many <code class="docutils literal notranslate"><span class="pre">users</span></code> (buyer_John, buyer_Maria, buyer_robot1, …) can be inserted in this Pool. By doing so, it will become easier to manage previleges and accesses when compared to manually adjusting each <code class="docutils literal notranslate"><span class="pre">user</span></code>’s Roles.</p>
+<p>RPARole also allows workflows or Node-RED flows to assign a task to the “Buyers” Pool instead of a specific <code class="docutils literal notranslate"><span class="pre">user</span></code>. This way, when a workflow can be assigned to any <code class="docutils literal notranslate"><span class="pre">user</span></code> from a Pool, the framework will automatically assign the task to the first available listening <code class="docutils literal notranslate"><span class="pre">user</span></code>.</p>
+<p>Therefore, <strong>RPARole</strong> is a parameter set in the Role editting page of a role which enables a Role to become a Pool of users instead.</p>
+<p>If set, all <code class="docutils literal notranslate"><span class="pre">users</span></code> added to the Role start listening to the Role-Queue <code class="docutils literal notranslate"><span class="pre">id</span></code>, i.e., <code class="docutils literal notranslate"><span class="pre">users</span></code> now become consumers to the Queue belonging to this Role. When an <code class="docutils literal notranslate"><span class="pre">user</span></code> logs in, they listen natively to their own User-Queue <code class="docutils literal notranslate"><span class="pre">id</span></code>; Additionaly, for each Role with the parameter RPARole that this user is memberof, the user will also start listening to Role-Queue <code class="docutils literal notranslate"><span class="pre">id</span></code>. See more at <a class="reference external" href="https://cs.stackexchange.com/q/86372">pool</a> (<code class="docutils literal notranslate"><span class="pre">https://cs.stackexchange.com/q/86372</span></code>).</p>
+<div class="section" id="but-what-is-a-consumer">
+<h3>But what is a consumer?<a class="headerlink" href="#but-what-is-a-consumer" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><em>The term “consumer” means different things in different contexts. In general in messaging a consumer is an application (or application instance) that consumes messages. The same application can also publish messages and thus be a publisher at the same time. In this sense a consumer is a subscription for message delivery that has to be registered before deliveries begin and can be cancelled by the application</em>.</p>
+<p><em>RabbitMQ is a messaging broker. It accepts messages from publishers, routes them and, if there were queues to route to, stores them for consumption or immediately delivers to consumers, if any. Consumers consume from queues. In order to consume messages there has to be a queue. When a new consumer is added, assuming there are already messages ready in the queue, deliveries will start immediately. The target queue can be empty at the time of consumer registration. In that case first deliveries will happen when new messages are enqueued</em>.¹</p>
+</div></blockquote>
+<p>¹ - <a class="reference external" href="https://www.rabbitmq.com/consumers.html">Consumers</a> (<code class="docutils literal notranslate"><span class="pre">https://www.rabbitmq.com/consumers.html</span></code>)</p>
+</div>
+</div>
+<div class="section" id="granting-permissions-admin-nodered-user">
+<h2>Granting permissions (admin, nodered, user)<a class="headerlink" href="#granting-permissions-admin-nodered-user" title="Permalink to this headline">¶</a></h2>
+<p>Changing permissions in <strong>OpenFlow</strong> is very easy.</p>
+<p>In order to change roles, the user must be an <code class="docutils literal notranslate"><span class="pre">Admin</span></code>, i.e., be assigned to the <code class="docutils literal notranslate"><span class="pre">admins</span></code> role.</p>
+<p>Then, the user must click the <code class="docutils literal notranslate"><span class="pre">Admin</span></code> dropdown inside <strong>OpenFlow</strong>’s webpage.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="adam_package_02b\done\images/chap_openflow_roles/openflow_roles_click_roles_dropdown.png"><img alt="adam_package_02b\done\images/chap_openflow_roles/openflow_roles_click_roles_dropdown.png" src="adam_package_02b\done\images/chap_openflow_roles/openflow_roles_click_roles_dropdown.png" /></a>
+</div>
+<p>All you need to do now is go to the <strong>Roles</strong> page inside OpenFlow’s page and click the <code class="docutils literal notranslate"><span class="pre">Pencil/Edit</span></code> icon corresponding to the Role which you want to add users to. As an example, we’re going to change the <code class="docutils literal notranslate"><span class="pre">personal</span> <span class="pre">nodered</span> <span class="pre">users</span></code> Role.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="adam_package_02b\done\images/chap_openflow_roles/openflow_roles_edit_personal_nodered_users_role.png"><img alt="adam_package_02b\done\images/chap_openflow_roles/openflow_roles_edit_personal_nodered_users_role.png" src="adam_package_02b\done\images/chap_openflow_roles/openflow_roles_edit_personal_nodered_users_role.png" /></a>
+</div>
+<p>After clicking the <code class="docutils literal notranslate"><span class="pre">Pencil/Edit</span></code> icon, the user is redirected to the <strong>Role</strong> page, which contains the <code class="docutils literal notranslate"><span class="pre">Name</span></code> of the role, the <code class="docutils literal notranslate"><span class="pre">rparole</span></code> checkbox, the <code class="docutils literal notranslate"><span class="pre">add</span></code> input field and the <code class="docutils literal notranslate"><span class="pre">member</span></code> list, as seen below. To add a new <code class="docutils literal notranslate"><span class="pre">user</span></code>/<code class="docutils literal notranslate"><span class="pre">Role</span></code> to that Role, simply insert the name of this <code class="docutils literal notranslate"><span class="pre">user</span></code>/<code class="docutils literal notranslate"><span class="pre">Role</span></code> in the <code class="docutils literal notranslate"><span class="pre">add</span></code> input field. A dropdown list will then appear and the user chooses which <code class="docutils literal notranslate"><span class="pre">user</span></code>/<code class="docutils literal notranslate"><span class="pre">Role</span></code> it is desired to be added to the Role.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="adam_package_02b\done\images/chap_openflow_roles/openflow_roles_add_user.png"><img alt="adam_package_02b\done\images/chap_openflow_roles/openflow_roles_add_user.png" src="adam_package_02b\done\images/chap_openflow_roles/openflow_roles_add_user.png" /></a>
+</div>
+<p>After selecting the desired values, the <strong>add</strong> button will become clickable. After clicking it, the recently selected <code class="docutils literal notranslate"><span class="pre">user/Role</span></code> will be added to the <code class="docutils literal notranslate"><span class="pre">member</span></code> list. Remember to <strong>Save</strong> the changes, otherwise they will not take place.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="adam_package_02b\done\images/chap_openflow_roles/openflow_roles_click_save_button.png"><img alt="adam_package_02b\done\images/chap_openflow_roles/openflow_roles_click_save_button.png" src="adam_package_02b\done\images/chap_openflow_roles/openflow_roles_click_save_button.png" /></a>
+</div>
+<div class="section" id="node-red-permissions">
+<h3>Node-RED permissions<a class="headerlink" href="#node-red-permissions" title="Permalink to this headline">¶</a></h3>
+<p>Everytime a <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code> node is set with a <code class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">name</span></code> and the flow to which it belongs to is deployed inside <strong>Node-RED</strong>, a new Role is created inside the <strong>Roles</strong> page with the prefix of the subdomain for the <strong>Node-RED</strong> (default: “nodered1”), the middle part is the name of the queue (as defined inside the node properties) and the suffix is “users”. E.g.: “nodered1google-vision-apiusers”.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When logged in as a non-<code class="docutils literal notranslate"><span class="pre">Admin</span></code> user, to have access and invoke that workflow inside the <strong>Workflows</strong> page, the user must be added to that Role!</p>
+</div>
+</div>
+<div class="section" id="list-of-main-roles-inside-openflow">
+<h3>List of Main Roles inside OpenFlow<a class="headerlink" href="#list-of-main-roles-inside-openflow" title="Permalink to this headline">¶</a></h3>
+<p>Here are the main Roles inside <strong>OpenFlow</strong> and their permissions.</p>
+<ul class="simple">
+<li><p><strong>filestore users</strong> - members of this Role can see all files uploaded to <strong>OpenFlow</strong>.</p></li>
+<li><p><strong>filestore admins</strong> - members of this Role have full control (delete, update, …) on all files uploaded to OpenFlow.</p></li>
+<li><p><strong>robot users</strong> - currently unused, supposed to represent all robots.</p></li>
+<li><p><strong>robot admins</strong> - currently unused, members from this role have full control (delete, update, …) on all objects related to robots.</p></li>
+<li><p><strong>personal nodered users</strong> - members of this Role can create new <strong>Node-RED</strong> instances, if <strong>OpenFlow</strong> is running on Kubernetes.</p></li>
+<li><p><strong>nodered users</strong> - members from this Role have read-only access to all Node-RED instances.</p></li>
+<li><p><strong>nodered admins</strong> - members from this Role have full access to all Node-RED instances.</p></li>
+<li><p><strong>nodered api users</strong> - members from this Role can call APIs exposed from all Node-RED instances, when <code class="docutils literal notranslate"><span class="pre">api_allow_anonymous</span></code> is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
+<li><p><strong>users</strong> - All users are members of this Role.</p></li>
+<li><p><strong>admins</strong> - Members from this role have access to everything inside the system. At the moment, <code class="docutils literal notranslate"><span class="pre">admins</span></code> can do everything the <code class="docutils literal notranslate"><span class="pre">root</span></code> user is able to do.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p>Powered by <a href="https://bpatechnologies.com/">BPA Technologies</a></p>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+        <h4>>Powered by BPA Technologies - bpatechnologies.com</h4>
+
+
+</body>
+</html>

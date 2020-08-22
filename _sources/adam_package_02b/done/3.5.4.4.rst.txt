@@ -1,0 +1,21 @@
+.. 3.5.2.4.2
+.. py:class:: Show Notification
+
+   Shows a notification in the lower right corner of the screen for a limited amount of time.
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+   ``Message`` - Message which will be shown.
+
+   ``NotificationType`` - Different notification types: Information, Error or Warning.
+
+.. note::
+   
+   Refrain from using too many Activities that change UI elements (such as Show Balloon Tip, WriteLine or Show Notification). These activities run single-threaded, which means that each time they are executed, they briefly stop Workflow execution.
+
+.. figure:: images/openrpa_show_notification.png
+   :align: center
+
+   **OpenRPA.Forms Show Notification.**

@@ -1,0 +1,27 @@
+.. 2.4.
+************************
+ **Creating a new user**
+************************
+To create a new user, first click the Admin dropdown and the Users option.
+
+.. figure:: images/openflow_dropdown_index_page.png
+   :scale: 50%
+   :align: center
+
+   **Admin dropdown.**
+
+Now click the navy blue ``Add user`` button.
+
+.. figure:: images/openflow_users_page.png
+   :scale: 35%
+   :align: center
+
+   **Users page.**
+
+Now, fill the ``name``, ``username`` and ``password`` and click **Save**. Notice that the recently created ``user`` does not have any Roles assigned to them and more info about Roles is available in the next section.
+
+.. figure:: images/openflow_userdetail_page.png
+   :scale: 25%
+   :align: center
+
+   **User creation page.**

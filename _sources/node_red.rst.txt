@@ -17,13 +17,34 @@ What is MQTT?
 -------------
 MQTT stands for Message Queuing Telemetry Transport. It is a publish/subscribe, extremely simple and lightweight messaging protocol, designed for constrained devices with low-bandwidth, high-latency or unreliable networks. The design principle is to minimise network bandwidth and device resource requirements while attempting to ensure reliability and assurance of delivery. These principles in turn make the protocol ideal for the emerging “machine-to-machine” (M2M) or “Internet of Things” world of connected devices, and for mobile applications where bandwidth and battery power are limited.
 
-
+.. 4.2.
 *********************************
  **Accessing for the first time**
 *********************************
-To access Node-RED, simply use a browser and go to your **Node-RED** environment URL. If running local, default is http://localhost.openrpa.dk:1880 and OpenIAP demo is https://demo.app.openiap.io.
+To access Node-RED, simply use a browser and go to your **Node-RED** environment URL. If running local, default is http://localhost.openrpa.dk:1880. If you do now own an **OpenFlow**/**Node-RED** of your own, feel free to create a free (and temporary) **Node-RED** demo using OpenIAP platform.
 
-Once there, a button is shown with the text ``Sign in with SAML``. When you click the button, Node-RED attempts to gather your currently (or cached) logged in **OpenFlow** authentication data and then logs in, to **Node-RED**, with the same user.
+Creating a demo Node-RED instance using OpenIAP platform
+--------------------------------------------------------
+Go to **OpenIAP** demo enviroment, which can be found at https://app.openiap.io.
+Access it using your **OpenFlow** credentials. If this is your very fist login any credentials will do, as you user will be then created with the same credentials you have provided. Please take notes of your user an password!
+
+.. note::
+    Your **NodeRED** free demo enviroment URL is created based off your **OpenFlow** username, hence please do not create an username with improper characters for a URL (such as _, #, @, $, etc), otherwise it will not work.
+
+Once there, look for the NodeRED tab on the upper menu and click it. Then, proceed by clicking the button ``Created NodeRED``.
+
+.. figure:: images/nodered_create_nodered_instance.png
+   :align: center
+
+If everything goes right, a similar output as from the next image will be shown. Your demo enviroment is ready to use and is accessible at ``https://{YOUR-OPENFLOW-USERNAME}.app.openiap.io/``. In the image example next, the username was ``doc-johnny``.
+
+.. figure:: images/nodered_create_nodered_instance_success.png
+   :align: center
+
+
+Logging in to Node-RED
+----------------------
+Access the desired **Node-RED** URL. Once there, a button is shown with the text ``Sign in with SAML``. When you click the button, Node-RED attempts to gather your currently (or cached) logged in **OpenFlow** authentication data and then logs in, to **Node-RED**, with the same user.
 
 .. figure:: images/nodered_sign_in_page.png
    :align: center

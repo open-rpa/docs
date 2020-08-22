@@ -2,7 +2,7 @@
  **Appendix A** 
 ===============
 
-This appendix deals with questions concerning programming concepts often needed to understand OpenRPA.
+This appendix deals with questions concerning programming concepts often needed to understand the OON stack.
 
 *****************
  **Introduction**
@@ -46,6 +46,36 @@ Virtually, any of the types compiled inside the OpenRPA application. If you want
 
 Now that we have properly defined hardware, software, and programming language, we can delve further into types.
 
+Binary representation
+=====================
+
+Bit
+^^^
+
+A **bit** is the basic unit used to represent memory inside a computer. A bit may store the values 0 or 1. It is also the smallest possible unit. 
+
+At the very end, a bit is represented by using a continuous physical measure - the voltage - and any operation in a computer can be represented in the `digital logic level <https://www.electronics-tutorials.ws/logic/logic_1.html>`_ by using `Boolean algebra <https://www.electronics-tutorials.ws/logic/logic_1.html>`_.
+
+The greatest part is: you do not need to understand all of that to use a computer! That occurs because those layers of abstraction are hidden from the end-user. Yet, to understand types we'll need to use concepts such as the binary number system, which will be discussed further.
+
+The decimal number system
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Understanding the decimal number system is very easy, since it is the system we normally use everywhere in our daily life. The decimal number system works by taking every unit ``a`` and multiplying it by the ``i-th`` index times ``10``. Therefore, a hypothetical number ABC could be represented as seen in the image below. Another example is provided, showing the representation of 356 in the decimal system.
+
+.. figure:: images/appendix_a/decimal_representation.png
+   :align: center
+   :scale: 25%
+
+The binary number system
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On the other hand, the binary number system represents numbers using 2 as its base.
+
 What is a type?
 ===============
-A type is the representation of a variable that a computer acts upon, or, putting it in layman terms, what the computer "sees".
+A type is the representation of a variable that a computer acts upon, or, putting it in layman terms, what the computer "sees". If we're thinking in terms of binary digits - ie. bits, the following types can be explained by their representation in binary digits.
+
+Int32
+-----
+

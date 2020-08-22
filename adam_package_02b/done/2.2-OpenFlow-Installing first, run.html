@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing, First Run &mdash; BPA/OpenIAP Docs 1.0.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/styles.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> BPA/OpenIAP Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rpa.html">1. <strong>Introduction to RPA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openflow.html">2. <strong>OpenFlow</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openrpa.html">3. <strong>OpenRPA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../node_red.html">4. <strong>Node-RED</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix_a.html">5. <strong>Appendix A</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix_b.html">6. <strong>Appendix B</strong></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">1. License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">BPA/OpenIAP Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li><strong>Installing, First Run</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installing-first-run">
+<h1><strong>Installing, First Run</strong><a class="headerlink" href="#installing-first-run" title="Permalink to this headline">¶</a></h1>
+<p>This section’s purpose is to help the user install an <strong>OpenFlow</strong> instance <strong>locally</strong>. If you already have an <strong>OpenFlow</strong> URL provided, you may skip this step.</p>
+<p>In order to proceed with the local installation, the following are required:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nodejs.org/en/">NodeJS</a> (<code class="docutils literal notranslate"><span class="pre">https://nodejs.org/en/</span></code>) - preferably using <a class="reference external" href="https://github.com/nvm-sh/nvm">nvm</a> (<code class="docutils literal notranslate"><span class="pre">https://github.com/nvm-sh/nvm</span></code>)</p></li>
+<li><p><a class="reference external" href="https://www.mongodb.com/try/download/community">MongoDB Community Server</a> (<code class="docutils literal notranslate"><span class="pre">https://www.mongodb.com/try/download/community</span></code>)</p></li>
+<li><p><a class="reference external" href="https://www.rabbitmq.com/download.html">RabbitMQ</a> (<code class="docutils literal notranslate"><span class="pre">https://www.rabbitmq.com/download.html</span></code>).</p></li>
+</ul>
+<div class="section" id="quickstart-running-openflow-using-npm">
+<h2>Quickstart Running OpenFlow using NPM<a class="headerlink" href="#quickstart-running-openflow-using-npm" title="Permalink to this headline">¶</a></h2>
+<p>In this section lies a brief and concise description of how to install <strong>OpenFlow</strong> through NPM.</p>
+<p>Then, the user must run the following command from a command prompt with escalated privileges (“Run as administrator”) in Windows 10.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="p">-</span><span class="n">-global</span> <span class="n">windows-built-tools</span>
+</pre></div>
+</div>
+<p>If using any GNU/Linux distro which uses the <code class="docutils literal notranslate"><span class="pre">APT</span></code> package manager, the following command replaces the one above.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt-get</span> <span class="n">install</span> <span class="n">gcc</span> <span class="n">g</span><span class="p">++</span> <span class="n">make</span>
+</pre></div>
+</div>
+<p>Then, the user must install the <code class="docutils literal notranslate"><span class="pre">openiap</span></code> package.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">i</span> <span class="n">openiap</span> <span class="n">-g</span>
+</pre></div>
+</div>
+<p>Then, the user shall create a template configuration file.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">openflow-cli</span> <span class="p">-</span><span class="n">-init</span>
+</pre></div>
+</div>
+<p>Now the user can install the service.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">openflow-cli</span> <span class="p">-</span><span class="n">-install</span> <span class="n">openflow</span>
+</pre></div>
+</div>
+<p>In order to access <strong>OpenFlow</strong>, all that is left to do is access the <a class="reference external" href="http://localhost.openrpa.dk">OpenFlow page</a> (<code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk</span></code>).</p>
+</div>
+<div class="section" id="developer-setup">
+<h2>Developer Setup<a class="headerlink" href="#developer-setup" title="Permalink to this headline">¶</a></h2>
+<p>If you have interest in creating a developer setup in order to develop some extra features yourself or to debug, in this section you will find a brief and concise description of how to install <strong>OpenFlow</strong> by cloning <a class="reference external" href="https://github.com/open-rpa/openflow">OpenFlow’s GitHub Repository</a> (<code class="docutils literal notranslate"><span class="pre">https://github.com/open-rpa/openflow</span></code>) and running it in <strong>Visual Studio Code</strong>.</p>
+<p>Obviously, <a class="reference external" href="https://code.visualstudio.com/download">Visual Studio Code</a> (<code class="docutils literal notranslate"><span class="pre">https://code.visualstudio.com/download</span></code>) is required.</p>
+<p>First, the user must clone the repository.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/open-rpa/openflow
+</pre></div>
+</div>
+<p>Then, the user must initialize a command prompt and redirect it to the directory.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd </span><span class="n">openflow</span>
+</pre></div>
+</div>
+<p>Now the user must install <code class="docutils literal notranslate"><span class="pre">gulp</span></code> and <code class="docutils literal notranslate"><span class="pre">typescript</span></code> globally.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">i</span> <span class="n">gulp</span> <span class="n">typescript</span> <span class="n">browserify</span> <span class="n">tsify</span> <span class="n">-gather</span>
+</pre></div>
+</div>
+<p>And also install the packages mentioned in <code class="docutils literal notranslate"><span class="pre">packages.json</span></code> for the project.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">i</span>
+</pre></div>
+</div>
+<p>Now the user must do the same for the packages required by <strong>Node-RED</strong>.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd </span><span class="n">openflow_node_red_configure_form</span>
+<span class="n">npm</span> <span class="n">i</span>
+<span class="nb">cd </span><span class="p">..</span>
+</pre></div>
+</div>
+<p>Now the user will open the working folder in VS Code.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">code</span> <span class="n">OpenFlow</span><span class="p">.</span><span class="n">code-workspace</span>
+</pre></div>
+</div>
+<p>And create a folder called <code class="docutils literal notranslate"><span class="pre">config</span></code> at the top level of the <strong>OpenFlow</strong> folder. Inside it create a file called <code class="docutils literal notranslate"><span class="pre">.env</span></code> - be careful, notice that the file’s name starts with a dot!</p>
+<p>Lastly, the user shall add the following content to the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>nodered_id=nodered1
+nodered_sa=nodered1
+port=80
+nodered_port=1880
+nodered_domain_schema=$nodered_id$.localhost.openrpa.dk
+tls_crt=
+tls_key=
+tls_ca=
+
+signing_crt=LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURqRENDQW5TZ0F3SUJBZ0lKQUp5N0tI
+MTE1dkQ4TUEwR0NTcUdTSWIzRFFFQkN3VUFNRnN4Q3pBSkJnTlYKQkFZVEFrUkxNUk13RVFZRFZRUUlEQXBUY
+jIxbExWTjBZWFJsTVNFd0h3WURWUVFLREJoSmJuUmxjbTVsZENCWAphV1JuYVhSeklGQjBlU0JNZEdReEZEQV
+NCZ05WQkFNTUMzTnBaMjVwYm1kalpYSjBNQjRYRFRFNU1EUXdOekUwCk5ETXpORm9YRFRJNU1EUXdOREUwTkR
+Nek5Gb3dXekVMTUFrR0ExVUVCaE1DUkVzeEV6QVJCZ05WQkFnTUNsTnYKYldVdFUzUmhkR1V4SVRBZkJnTlZC
+QW9NR0VsdWRHVnlibVYwSUZkcFpHZHBkSE1nVUhSNUlFeDBaREVVTUJJRwpBMVVFQXd3TGMybG5ibWx1WjJObG
+NuUXdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCCkFRQy9JSkdEaGxLTU9SWkoycXQ
+wSWpjSDZOWUFtZDVxQzQ4dkNJRE54QWZCbmQxQnN4WlVjWkl5dkFlT28yNDcKM3I0eTYwNDgxRHVUS2JaMTBTN
+jRqRU05aW1XTXB1TFlJRnVyQ3BWNzVEWWhxMS85Q0FJVHJqNjlmVDluSkptcwpjM2lxTnJ1Tlg1bDlISXdadWt
+QM1ZNRkJRNWZVd3N1ZnE0YW1NbnVnZmtyUEVzSngxK3VJb0NYU3pyblZvcnZpClZ0ZFh4a3M4N0l1S0ZnMDJIZ
+1RQSzdwc0FXYTBRY3g2ck04bkV5TUhwNUdlR1Rvb1NNbkcyZ1RGNWZOSVFNdTMKVEVoc2p3SWRTYmRwck1Gb1V
+ZV05Bc2FueTJOQk0wREhZRUdjQlZhZ0xWNUhFUW5ySUM3NEhtNjYxdG9HaU5VSAoveW04U3VndTgwWVFiVGxPc
+TFWNnNkaVRBZ01CQUFHalV6QlJNQjBHQTFVZERnUVdCQlMrYWc1NGtITllKZ29pCm9yRnlia293THR5R3ZqQWZ
+CZ05WSFNNRUdEQVdnQlMrYWc1NGtITllKZ29pb3JGeWJrb3dMdHlHdmpBUEJnTlYKSFJNQkFmOEVCVEFEQVFIL
+01BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQTZpZHBYdzdSR2pzcUpNanI2c1YvaQpXeXFsL2xkSy9sa1NCdnN
+BSENieDdQYi9rVUd2NHJNbndYMnBHdTR0YkFnSDc4eStmS3dzazllYkxDeTA4Y1k0Ckt5czhzbUpLenhWN0R6U
+3RVR1NvZmZMaFliVVVMK3UyNU5vVXc0TG1WQU5FU0NaMTZ3aTdPQUdJMkJnNFR6TXoKdnlIUHRaaE9wTXBNV2lz
+M2ZnRXFzV3QxS2VLcXo0Z2M5RnJtZDZPNlQzVVAxWTRBR3VEWnNScnpiU2RQS2JxbApxekprT2tQcGtHOGo3ZjF
+WNkk1ZlkzblZaSWk2YW1TcTM1RTJkQzVMY0dIQXRtT1lWL0c4TEQ3OUFnTVpFUU5vCkF2R2RnV1gvbXBFVkFjM
+mRFQkJlcUN6WjF1aVhWUjdERld2ZDFKTEpsdVRyTm9jMUROc0xNKzNEZFFiQ2JnYVcKLS0tLS1FTkQgQ0VSVElG
+SUNBVEUtLS0tLQo=
+singing_key=LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZB
+QVNDQktjd2dnU2pBZ0VBQW9JQkFRQy9JSkdEaGxLTU9SWkoKMnF0MElqY0g2TllBbWQ1cUM0OHZDSUROeEFmQm
+5kMUJzeFpVY1pJeXZBZU9vMjQ3M3I0eTYwNDgxRHVUS2JaMQowUzY0akVNOWltV01wdUxZSUZ1ckNwVjc1RF
+locTEvOUNBSVRyajY5ZlQ5bkpKbXNjM2lxTnJ1Tlg1bDlISXdaCnVrUDNWTUZCUTVmVXdzdWZxNGFtTW51Z2
+ZrclBFc0p4MSt1SW9DWFN6cm5Wb3J2aVZ0ZFh4a3M4N0l1S0ZnMDIKSGdUUEs3cHNBV2EwUWN4NnJNOG5FeU
+1IcDVHZUdUb29TTW5HMmdURjVmTklRTXUzVEVoc2p3SWRTYmRwck1GbwpVWVdOQXNhbnkyTkJNMERIWUVHY0
+JWYWdMVjVIRVFucklDNzRIbTY2MXRvR2lOVUgveW04U3VndTgwWVFiVGxPCnExVjZzZGlUQWdNQkFBRUNnZ0V
+BVXBjZ1NsV2hGamNWQ3BVVHdmdUhERVB4TmhGSHEwdVRkQitZaVZKTWg3NVAKL2pRRlVqaEJsT3JyMlJlR2F4
+aTEyQXNXby9LU1MrV2Frdzd4d1kzYkFKenRoUG9Zekl3dkVKcGlQa2MvblEwUgpUYVpJUDNqc1k3WGIwQlpn
+MGNTVVAvbW0wbENkWXhNUzk0c21FNXJzWitkdGxPTVlXc2NrU0cxSVB2SlVJV2FZCnl3NC9kaHJ3TWRsREVZS
+2tSbks1aDR1dXR1dzA1Q1VzNkZWN2F5cEJRRStGM3RxVlF3QWxGbWNueXdvZTB5WjQKZW1tWkRvT1dzNUk4cG
+NGbjZCSW1wZjN3UEg5UWhlQXJVaXRqV3YrZmI2cWRVaHJFVDBxMzh4dTZ5M1lJNFNLYQpXME9kUng4L3FTYll
+XdkpzbmxscDR0aUpDWE5IdnV6MVBKSGhxOUprQVFLQmdRRCt2dHlWcVJoaEJZTmd6WWorClFCaDNLcktrNEVqT
+XZaSGhEelhES0pMZ2JEVmJzNExrQkYySWZGOTF0S1k3d09CNVpXcU82Z3FqVVJBVE5hc1YKOExCOGE2TEpXYVJ
+uTklLMnJkd1FwalFYcy92OVBSYnJwc2tTbDRJdUsyZWNBMjBSQkhicW5yNHZ5ZkQ4U3BzaApSdHlTUk5CRGVsaU
+01Z1JDM0JKKzBZbjBVUUtCZ1FEQUVZSUp3Y2xnQloyWmNNTlh1dW1lLzUxdHBHeGppRTJpCjZ3SDNsOHNTVDN1U
+1A4MHdndGdHaVFsUTRsR3BmSThqWkl4N0pwcGw0Qko1ZEtuVnpIS1dqMzA3YXYxcjdpU3QKLzJOVDNobzdaYkNl
+YzlhMHlJU2E3dTNGZGxzZ0VPcE45dURmbG5GQVQ3ZmIrM2d4Sk9DUWp1TkFCZXZaK2pScwpZY0ZhQWhGNW93S0J
+nUUNGUG9HVVNsRDFGblFrWXYwL3QzalVnK0hTK1hrNmxnRkNqYmthTGhPOURQeFB6Ykl0CjM5YW9lQjFhTExZeV
+ZPMVVzZVl0Z0Y4MkUwVnNOc3NZKzc3a0pVeU5NclVhUWs0SWpTR3BGN1h4bS9PMi9vZ0oKbEVCaDJCdUFXTFdsM
+WVqcldNRjJjTGVidVcyeUdMZlJqUVg3LzhCTE95Z3I4bmZTSE5nVHV6Z0VNUUtCZ0JrZgpNUjhObGNWVmRyT25L
+Q1hGY09FM0ZlUk5hVS9yZUJ3akdQTEZpKzR0TDBDRno5VFVpR1R5YjZHQXVLV3VnUnBrCkFHdnJOSzYyakRRT3F
+sZ29rYVJYeUUySlJQUmxCYThzaEZWbjY0NXhVcFNuR2lJelNBVHIwM1hNY1ViVWI1RWIKQlhhNU9yN3FybVc3a3
+BENi9kUnFuQmEzcjQyblNFd1V6VEYwcTh4NUFvR0FIcXdRSyt1R0NTdlNsNENJUGhyRQpDREIvcytDK2NJNXVCe
+FJCMHVlNjc3L2lpdGZPSU9lOUNiTHE3R0tib0w4RVg3eXhKNVRLWjlYQmh5LzNCWmVNCllydEx3M2JicTNTN2hp
+UGFYSmE1dXZma3BWR1RnNEdzTnBJQ3VNTEJUaXJ6M0ZRV25UNFNZbzkrREVoalhEeVQKWlVOMERtUkJVNjNjWjR
+SUlXd2xWUTA9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K
+NODE_ENV=development
+
+saml_federation_metadata=http://localhost.openrpa.dk/issue/FederationMetadata/2007-06/FederationMetadata.xml
+saml_issuer=uri:localhost.openrpa.dk
+# saml_entrypoint=http://localhost.openrpa.dk/issue
+# saml_baseurl=http://localhost.openrpa.dk:1880/
+
+allow_personal_nodered=false
+allow_user_registration=true
+# mongodb_url=mongodb://localhost:27017
+# mongodb_db=openflow
+
+# api_bypass_perm_check=true
+update_acl_based_on_groups=true
+multi_tenant=false
+
+websocket_max_package_count=1048576
+
+api_ws_url=ws://localhost.openrpa.dk
+domain=localhost.openrpa.dk
+protocol=http
+amqp_url=amqp://localhost
+aes_secret=7TXsxf7cn9EkUqm5h4MEWGjzkxkNCk2K
+auto_create_users=true
+auto_create_domains=
+skip_history_collections=audit,jslog
+</pre></div>
+</div>
+<p>If using <strong>Windows 10</strong>, allow Powershell Scripts to run by changing the Execution Policy using the following command in a Powershell Prompt with escalated privileges.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="p">-</span><span class="n">-Force</span>
+</pre></div>
+</div>
+<p>Finally, run <code class="docutils literal notranslate"><span class="pre">OpenFlow</span></code> by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+D</span></code>, selecting <code class="docutils literal notranslate"><span class="pre">OpenFlow</span></code> in the dropdown box and clicking the <strong>Play</strong> button.</p>
+<p>The user may now access <strong>OpenFlow</strong> by using a browser and navigating to the default URL, which is <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk</span></code> if unchanged.</p>
+<p>To properly install and configure <strong>Node-RED</strong>, please refer to the <strong>Installing &amp; First Run</strong> section in the <strong>Node-RED</strong> chapter.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p>Powered by <a href="https://bpatechnologies.com/">BPA Technologies</a></p>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+        <h4>>Powered by BPA Technologies - bpatechnologies.com</h4>
+
+
+</body>
+</html>

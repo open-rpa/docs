@@ -15,7 +15,7 @@ RPA or Robotic Process Automation are software base solutions designed to mimic 
 
 There are many tools available for automating processes using RPA such as UiPath, Automation Anywhere and blueprism. Our stack of tools (``OpenRPA, OpenFlow and NodeRED``¹) has many advantages and is obviously our suggestion for you. The reasoning for this recommendation is revealed in the next chapter, for now we will cover what each of these tools do and their outcome.
 
-¹ - We're going to refer further to the OpenRPA, OpenFlow and NodeRED stack as OON.
+¹ - We're going to refer further to the **OpenRPA**, **OpenFlow** and **Node-RED** stack as OON.
 
 OpenRPA
 =======
@@ -26,14 +26,14 @@ It is also the software you're supposed to use to export all your workflows into
 
 OpenFlow
 ========
-OpenFlow can function as both a centralized and a decentralized platform that exposes a secure database, by enforcing Access Control List on all objects and offering on the fly encryption to those. It can also function as an orchestrator of NodeRED instances when run on Kubernetes and a lightweight orchestrator of robots.
-When an OpenRPA robot is connected to OpenFlow it will store all data (workflows, detectors, credentials, and state) inside OpenFlow. The same also applies when a NodeRED instance is connected to OpenFlow: it will store all data (flows, state, session, and credentials) inside OpenFlow as well.
-Finally, OpenFlow also offers many different ways to add human interaction to the table, either by using the built in Form designer (and calling them via NodeRED workflows) or by remotely invoking OpenRPA workflows directly on the website.
+OpenFlow can function as both a centralized and a decentralized platform that exposes a secure database, by enforcing Access Control List on all objects and offering on the fly encryption to those. It can also function as an orchestrator of **Node-RED** instances when run on Kubernetes and a lightweight orchestrator of robots.
+When an **OpenRPA** robot is connected to OpenFlow it will store all data (workflows, detectors, credentials, and state) inside OpenFlow. The same also applies when a **Node-RED** instance is connected to OpenFlow: it will store all data (flows, state, session, and credentials) inside **OpenFlow** as well.
+Finally, OpenFlow also offers many different ways to add human interaction to the table, either by using the built in Form designer (and calling them via **Node-RED** workflows) or by remotely invoking OpenRPA workflows directly on the website.
 
 Node-RED
 ========
-NodeRED is an event based workflow engine original designed to handle telegram messages in an IoT installation, but the big community around NodeRED has expanded the functionality to also integrate to traditional automation like PLCs, and more than 2500 IT systems and cloud offerings.
-When run as part of OpenFlow, we add easy orchestration, load balancing and enhanced security feature to the platform. NodeRED also functions as the orchestrator of OpenRPA robots via OpenFlow. NodeRED allows robots to interact with all the IT systems supported by NodeRED (hardware devices, APIs, online services, much more!) by simply wiring flows together. Lastly, OpenFlow also makes use of NodeRED as its backend to run flows for the forms created by the Forms designer.
+**Node-RED** is an event based workflow engine original designed to handle telegram messages in an IoT installation, but the big community around **Node-RED** has expanded the functionality to also integrate to traditional automation like PLCs, and more than 2500 IT systems and cloud offerings.
+When run as part of OpenFlow, we add easy orchestration, load balancing and enhanced security feature to the platform. **Node-RED** also functions as the orchestrator of OpenRPA robots via OpenFlow. **Node-RED** allows robots to interact with all the IT systems supported by **Node-RED** (hardware devices, APIs, online services, much more!) by simply wiring flows together. Lastly, OpenFlow also makes use of **Node-RED** as its backend to run flows for the forms created by the Forms designer.
 
 **********************************
  **Why OpenRPA/OpenFlow/NodeRED?** 

@@ -1,0 +1,187 @@
+OpenRPA.Image
+-------------
+.. py:module:: OpenRPA.Image
+      :noindex:
+
+
+Here belong the activities located inside the OpenRPA.Image toolbox.
+
+.. note::
+   
+   Activities that use OCR to recognize text inside images must first have the language which OCR will use first on the **Settings tab**.
+
+..3.5.2.6.1
+.. py:class:: Get Color
+
+ Gets RGBA color at the specified coordinates inside an element provided by **Image.GetElement**.
+
+ **Properties Parameters**
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+   ``Element`` - Element from which the colors will be acquired.
+
+   ``Result`` - Variable to which to save the color.
+    
+   ``X Offset`` - The horizontal offset inside the element from which to capture the color. Units are in pixels. It also allows for negative values.
+
+   ``Y Offset`` - The vertical offset inside the element from which to capture the color. Units are in pixels. It also allows for negative values.
+
+.. figure:: images/openrpa_get_color.png
+   :align: center
+
+   **OpenRPA.Image Get Color.**
+
+.. 3.5.2.6.2
+.. py:class:: Get Element
+ 
+   Locates an image in screen or in a specific application window and creates an **ImageElement** from it. Use the **Select Image** button to select the image you want to capture or use the **Recorder**.
+
+   The **Recorder** at first tries to create Elements from controls in Windows Applications, Java Apps or Web elements. As a last resource, it will then make use of **Image.GetElement** to create Elements by capturing the smallest unique images inside the image you drag while recording.
+
+   Clicking the **Highlight** button will red-highlight the first element that matches the criteria on the **Selector**. It is useful for checking if the **Selector** is properly set up.
+
+   **Properties Parameters**
+
+   ``CompareGray`` - If set to ``True``, compares the image in grayscale to find the desired element. This parameter also saves performance.
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+   ``Elements`` - Element from which the image will be gathered.
+   
+   ``From`` - Allows search only within an Element found within any of the **ImageElement**'s instances.
+   
+   ``Limit`` - Limit the number of Elements.
+   
+   ``LoopAction`` - Loop the selected ``Activity`` until something is found.
+   
+   ``MaxResults`` - Number of maximum results.
+   
+   ``MinResults`` - Number of minimum results. If this value is higher than 0 and this activity fails to find an Element, it throws an exception (``ElementNotFound``). If you want to check whether an image exists or not, set this value to 0 and test for 'item.Length() == 0' inside the sequence. 
+   
+   ``Processname`` - Limits the Element's process to a specific processname.
+   
+   ``Threshold`` - Threshold used to find a matching image.
+   
+   ``Timeout`` - Time until the Activity ceases if not successfully able to find an Element.
+
+.. figure:: images/openrpa_get_element.png
+   :align: center
+
+   **OpenRPA.Image Get Element.**
+
+.. 3.5.2.6.3
+.. py:class:: Get Image
+
+ Gets an image from the screen relative to another image or Element found with **Image.GetElement**. 
+
+ First of all, user must use the Image.Get Element Activity to select the image which this Activity will act upon, then use the **Select Image** button to specify the relative area within the screen you want to capture. That is, the selection **Get Image** does is relative to another image selected with the Image.Get Element Activity.
+
+ Clicking **Highlight** will green-highlight image selected relative to the other one, which will appear blue-highlighted. This is useful for checking if the **Selector** is properly set up.
+
+ For more on Image Handling inside **OpenRPA**, please visit Appendix B - :ref:`Image Handling`.
+
+   **Properties Parameters**
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+   ``Element`` - Element from which the image will be gathered.
+
+   ``Height`` - Height of the image to be captured.
+
+   ``OffsetX`` - The horizontal offset inside the Element from which to capture the image. Units are in pixels. It also allows for negative values.
+
+   ``OffsetY`` - The vertical offset inside the picture from which to capture the image. Units are in pixels. It also allows for negative values.
+
+   ``Result`` - Variable to which the image Element will be saved.
+
+   ``Width`` - Width of the image to be captured.
+
+.. figure:: images/openrpa_get_image.png
+   :align: center
+
+   **OpenRPA.Image Get Image.**
+
+.. 3.5.2.6.4
+.. py:class:: Get Text
+ 
+ Gets text from an image using OCR. It can be limited to a specific word or sentence. It can also be used to split or limit text gathered from other image-related activities.
+
+ The ``Limit to`` or ``WordLimit`` parameter is used to limit the output of the OCR processing. It is useful if you want to limit the output of ``Get Text`` to a given set of words. To access the text created from OCR, simply access the ``item.Value`` variable - or the ``Value`` property of the ``Element`` defined.
+
+ **Properties Parameters**
+ 
+   ``CaseSensitive`` - Differentiate between lowercase and uppercase letters.
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+ 
+   ``Element`` - Element from which the image will be gathered.
+
+   ``Result`` - Variable to which the **ImageElement** gathered will be saved.
+
+   ``WordLimit`` - Maximum numbers of words to gather.
+
+.. figure:: images/openrpa_get_text.png
+   :align: center
+
+   **OpenRPA.Image Get Text.**
+
+.. 3.5.2.6.5
+.. py:class:: Load From File
+
+ Loads an image from a file and returns it as an **ImageElement**. 
+
+ It also uses OCR Image Recognition automatically to capture the text inside the screenshot and saves it inside the result's ``ImageElement.value`` attribute. The extensions allowed are: ``gif, jpg, jpeg`` and ``png``, that is, only image extensions.
+
+ **Properties Parameters**
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+
+   ``Filename`` - Filename of the file that will be used to acquire the image from.
+
+   ``Result`` - Variable to which to save the **ImageElement**.
+
+ .. note::
+
+   Note: OCR Image Recognition is done automatically upon the image. Users may access the resulting text by accessing ``ImageElement.value`` property.
+   
+.. figure:: images/openrpa_load_from_file.png
+   :align: center
+
+   **OpenRPA.Image Load From File.**
+
+.. 3.5.2.6.6
+.. py:class:: Take Screenshot
+ 
+ Takes a screenshot of the whole screen or of a specific Element found by using **Image.GetElement** and returns it as an **ImageElement**.
+ 
+ This Activity has two modes of usage.
+   
+ The first mode of usage is **Selector**-less. In this mode the Activity will take a screenshot of the whole screen if no ``Width``, ``Height`` and offsets are set. To use this mode, all the user needs to do is deleting any value inside the ``Element`` property of the activity  - its default value is ``item`` - and define the ``X`` and ``Y`` offset values, if desired. 
+
+ The second mode of usage is **Selector**-bound. In this mode, after selecting an **Image Element**, the Activity will use the relative values of the **Image Element** to find the ``X`` and ``Y`` offset values. To use this mode, all the user needs to do is drag the **Take Screenshot** activity into the Element selected and define the ``Width``, ``Height`` and ``X``,``Y`` offset values.
+
+ **Properties Parameters**
+
+   ``Displayname`` - Title of the Activity inside the sequence.
+ 
+   ``Element`` - Name of the Element from which the screenshot will be captured.
+
+   ``Height`` - Height of the screenshot.
+
+   ``Result`` - Variable to which to save the screenshot.
+
+   ``Width`` - Width of the screenshot.
+
+   ``X`` - The horizontal offset inside the picture from which to capture the screenshot. Units are in pixels. It also allows for negative values. 
+
+   ``Y`` - The vertical offset inside the picture from which to capture the screenshot. Units are in pixels. It also allows for negative values.
+
+ .. note::
+
+   Note: OCR Image Recognition is done automatically upon the image and you may access the resulting text by accessing the ``value`` property of the resulting ``Image Element``.
+
+.. figure:: images/openrpa_take_screenshot.png
+   :align: center
+
+   **OpenRPA.Image Take Screenshot.**

@@ -1,0 +1,74 @@
+Image Search / OCR
+==================
+In this example, the user can practice OCR on a image loaded from a file and then check the results against a validation standard.
+
+To reduce the scope of the activity, this workflow example's only purpose is to check whether the detected document is a driver's license or not.
+
+The validation procedure is as follows: if the text "DRIVER" is located within tzhe image, OpenRPA will assume this document is indeed a driver's license
+
+.. note::
+   As well known, OCR is **not** guaranteed to work 100% of the time, as text readability and image quality both play a crucial role in its success rate.
+
+Load Image from File
+--------------------
+Drag the **Load From File** activity to the main sequence. 
+
+Click the ``...`` button to select the image to be loaded.
+
+Open the **Properties tab** and assign a variable to the ``Result`` parameter which will carry the ``ImageElement`` created by the activity.
+
+It is useful to remind the user that everything captured from an activity that returns any kind of ``Element`` is automatically mapped to the ``item`` Element.
+
+.. note:: 
+
+   OpenRPA is able to automatically create a new variable with the correct type required for the Activity/property. While creating a new variable in the **Properties box**, after typing the variable name and with the caret still inside the input field, by pressing ``Ctrl+K``.
+
+.. figure:: images/openrpa_workflow_example_image_search_ocr_load_from_file.png
+   :align: center
+
+Get Text
+--------
+Drag **Get Text** activity to the sequence inside the **Load From File** activity.
+
+.. figure:: images/openrpa_workflow_example_image_search_ocr_get_text.png
+   :align: center
+
+Evaluation
+----------
+Drag an **If** activity to the sequence inside the **Get Text** activity. Here the user will implement the whole validation logic.
+
+Inside the ``Condition`` input field, insert ``item.Value.Contains("DRIVER")``. Here it is checked whether any of the text acquired using the **Get Text** activity - ie. inside ``item.Value`` - contains the word ``DRIVER``.
+
+Drag an **Assign** activity to the ``Then`` sequence inside the **If** activity.  Assign the variable ``containsDriverLicense`` to ``True``. This means that if the workflow finds any instances of the values that contains ``DRIVER`` it will automatically change the value of the variable ``containsDriverLicense`` to ``True``. Else, it will keep executing, since there is nothing contained inside the ``Else`` sequence.
+
+.. note::
+
+   The **Assign** activity is used to reference a value to a variable. To do that, enter in the left-hand side of the activity the name, or alias, of the variable which you want to map a value to. If desired, you can press ``Ctrl+K`` to automatically create the variable or create it manually. Use the right-hand side to enter the value which will be assigned to the variable.
+
+.. figure:: images/openrpa_workflow_example_image_search_ocr_if_clause.png
+   :align: center
+
+**Show Notification**
+---------------------
+Now drag a **Show Notification** activity to the end of the main sequence. This will be the way of showing to the user whether the validation has been successful or not.
+
+Inside the ``Message`` input field, in the activity´s dialogue or in the **Properties box**, insert the text ``"Is the document a Driver's License? " + containsDriverLicense.ToString``. 
+
+Here we cast the value of ``containsDriverLicense``, which is a ``bool``, to a ``string`` so it can be printed in the **Show Notification** activity.
+
+.. figure:: images/openrpa_workflow_example_image_search_ocr_show_notif.png
+   :align: center
+
+Workflow Finished
+-----------------
+Here's a preview of how the workflow will look like after running it - the Output window is obviously detached for exhibiting the data.
+
+.. list-table::
+   
+   * - .. figure:: images/openrpa_workflow_example_image_search_ocr_finished_1.png
+
+     - .. figure:: images/openrpa_workflow_example_image_search_ocr_finished_2.png
+
+     - .. figure:: images/openrpa_workflow_example_image_search_ocr_finished_3.png
+
+     - .. figure:: images/openrpa_workflow_example_image_search_ocr_finished_output.png

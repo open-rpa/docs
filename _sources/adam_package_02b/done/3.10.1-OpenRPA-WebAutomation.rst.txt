@@ -1,0 +1,438 @@
+**********************
+ **Workflow Examples**
+**********************
+
+.. 3.10.1
+Web Automation
+==============
+
+In this example, the `RPA Input Forms Challenge <http://www.rpachallenge.com/>`_ (``http://www.rpachallenge.com/``) will be solved. 
+
+As recommended, the Recorder will be used to facilitate the designing process.
+
+The steps are listed below. 
+
+1. Download the ``Excel file``.
+2. Read the ``Excel file``.
+3. Map Start button.
+4. Loop the DataSet rows.
+5. Find the respective handle for each WebElement input field.
+6. Fill all the required fields inside the webpage.
+7. Map Submit button.
+
+**Download the Excel file**
+---------------------------
+To download the ``Excel file``, use the **DownloadFile** activity, found inside the ``OpenRPA.Utilities`` toolbox.
+
+Drag the activity to the main sequence inside the Designer.
+
+Click the ``...`` button in it to select the path of file to which the archive will be saved or assign the ``LocalPath`` parameter inside the Properties tab of the activity.
+
+Paste the URL from the archive which you want to fetch. It is useful to remind that, since the URL will be acquired by OpenRPA as a ``string``, it must be contained within ``"`` quotes.
+
+.. figure:: images/openrpa_rpa_challenge_downloadfile.png
+   :align: center
+
+**Read the Excel file**
+-----------------------
+The ReadExcel activity will read from an ``Excel file`` and save it into a variable.
+
+All the steps here are visibly explained at the **How to read from an ``Excel file``**.
+
+**How to read from an Excel file**
+
+Drag the **ReadExcel** activity, found inside the ``OpenRPA.Utilities`` toolbox, to the main sequence. 
+
+Select the ``Excel file`` which will be read by clicking the ``...`` button and find the filepath in explorer where the sheet you want to read from is found.
+
+Then, by clicking the ``...`` button, the user will be prompted by an explorer window and there select the ``Excel file`` that should be used.
+
+The **ReadExcel** activity will read this ``Excel file`` and save it into a variable.
+
+As this variable does not exist yet, it must first be created. A reminder that variable must be obligatorily set with the type **System.Data.DataSet**. Simply click in the ``DataSet`` input field inside the **Properties tab**, type the name of the variable you want to use and press ``Ctrl+K``.
+
+Now the user may either create the variable inside the **Variables, Arguments & Imports box** or follow the note below.
+
+.. note:: 
+
+   OpenRPA is able to automatically create a new variable with the correct type required for the Activity/property. While creating a new variable in the **Properties box**, after typing the variable name and with the caret still inside the input field, by pressing ``Ctrl+K``.
+
+.. note::
+
+   A ``DataSet object`` corresponds to the whole sheet. Each ``DataTable`` (eg. ``Sheet1``) accordingly corresponds to each sheet inside that ``Excel file``. The ``DataSet`` class is the object temporarily - the in-memory cache - created to store all the data consumed from this ``Excel file``. For more on the ``DataSet`` class, refer to the link to Microsoft's Documentation on the `DataSet Class <https://docs.microsoft.com/en-us/dotnet/api/system.data.dataset?view=netcore-3.1>`_ (``https://docs.microsoft.com/en-us/dotnet/api/system.data.dataset?view=netcore-3.1``).
+
+.. note::
+
+   A ``DataTable object`` corresponds to one table of in-memory data contained in a ``DataSet object`` from the class equally named. When you read an ``Excel file``, it is automatically assigned to a ``DataSet`` class and all the ``Sheets`` are saved into ``DataTable`` classes - numbered from 0 to the quantity of sheets inside the ``Excel file``. Here it is reminded that ``DataTable`` objects are case sensitive.
+
+
+**Map the Start button**
+------------------------
+The challenge starts by clicking the **Start button**. 
+
+To map the process of starting the challenge, simply click the white triangle corresponding to the space below the **Read Excel** activity, start the Recorder and click the **Start** button inside the browser, as shown in the steps below.  
+
+In order to cease recording, simply press the ``ESC`` button.
+
+It is reminded here that ending the recording is obligatory, else it will record all activities you execute endlessly.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_start_button.png
+   :align: center
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_start_button_click.png
+   :align: center
+
+After successfully mapping the **Start** button, your workflow should look like the last image on the next page.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_start_button_final.png
+   :align: center
+
+
+**Loop the DataSet rows**
+-------------------------
+Now it is time to populate the input forms inside the page with the data we've gathered from the ``Excel file``.
+
+Drag the **Foreach DataRow** activity, found inside the ``OpenRPA`` toolbox. Then inside the **Foreach DataRow** activity, drag a **Sequence** activity, from the ``System.Activites`` toolbox.
+
+As stated before, each sheet inside the ``DataSet`` assigned from the **Read Excel** activity is saved in-memory as a collection inside the ``Tables`` attributes.
+
+Each sheet inside the ``Tables`` attribute is acquired accordingly to the sheets inside the ``Excel file``, these sheets are numbered starting from 0. As an example, if you were to add a row to a ``DataTable`` inside that ``Excel file``, you'd first assign it to a ``DataTable class`` object and use the activity to add that row to the table.
+
+You can either acquire each row by assigning a single variable to the one you want to capture, numbered starting from 0, or you can use the **Foreach DataRow** to automatically loop through each row accordingly. Since in our case the ``DataSet`` is assigned to the ``ds`` variable, that is the one which will be used to retrieve the ``Table`` from. Since there is only one sheet, the ``ds.Tables(0)`` is used to assign the ``Table`` from where the **Foreach DataRow** will retrieve the values.
+
+After assigning the ``DataTable`` where the rows are going to be retrieved from, it is noted here that the columns are mapped to attributes inside the variable assigned to the left-hand side of the **Foreach DataRow** activity - in our case ``row`` to return or set the value of a ``DataColumn``.
+
+The **Foreach DataRow** loop basically iterates through every value in the row (``First Name``, ``Last Name``, ``Company Name``, ...) and assign it to the ``XPath`` selector item inside the webpage where each field belongs. This causes the value inside the `RPA Input Forms Challenge <http://www.rpachallenge.com/>`_ (``http://www.rpachallenge.com/``) page to be populated.
+
+.. note::   
+   
+   A ``DataRow object`` refers to each row mapped from the ``DataTable``. By using the ``DataRow`` object and its properties and methods the user is able to retrieve and evaluate; insert, delete and update the values inside the ``DataTable``. The ``DataRowCollection`` also represents the actual ``DataRow`` objects inside the ``DataTable``. Each column mapped from it can be retrieved by using its index as an attribute of the ``DataRow`` class object, if you'd like to retrieve the 1st column inside the row, you'd use ``row(0)``. For more on the ``DataRow`` class, refer to the link to Microsoft's Documentation on the `DataRow Class <https://docs.microsoft.com/en-us/dotnet/api/system.data.datarow?view=netcore-3.1>`_ (``https://docs.microsoft.com/en-us/dotnet/api/system.data.datarow?view=netcore-3.1``).
+
+.. list-table::
+   
+   * - .. figure:: images/openrpa_workflow_example_rpa_challenge_loop_through_each_assign_row.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_excel.png
+
+
+**Find the respective handle for each WebElement input field**
+--------------------------------------------------------------
+By using the Recorder and clicking on each input field found in the `RPA Input Forms Challenge <http://www.rpachallenge.com/>`_ (``http://www.rpachallenge.com/``) page, it is possible to easily find the best handles to each WebElement being clicked. 
+
+As this workflows deals with WebElements manipulation, usually the best handles are Element.ID, Element.Name, Element.ClassName and so on. In our case, the ``ng-reflect-name`` attribute is used along with the ``XPath`` selector to provide a means of capturing a given element.
+
+Once you start recording, click a single input field inside the `RPA Input Forms Challenge <http://www.rpachallenge.com/>`_ (``http://www.rpachallenge.com/``) page. As usual, we recommend capturing the first field - that is - ``First Name`` and then proceeding to the others.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_web_element.png
+   :align: center
+
+After clicking an input field, a prompt window will appear with the title ``InsertText``, simply press ``Enter``.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_web_element_capture_input_field.png
+   :align: center
+
+In order to cease recording of the current input field, simply press the ``ESC`` button.
+
+It is reminded here that ending the recording is obligatory, else it will record all activities you execute endlessly.
+
+Then, a new ``OpenRPA.NM.GetElement`` activity will appear inside the **Foreach DataRow** sequence.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_web_element_sequence_after_capture.png
+   :align: center
+
+It is desirable that the user change the name of each activity to the corresponding input field. As shown in the image below.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_finished_2.png
+
+.. note::
+   To change the name, or  ``DisplayName`` - as set inside the activity's parameters, the user can either click twice in the name of the activity, type the desired name and press ``RETURN`` or set the parameter ``DisplayName`` inside the **Properties box**.
+
+.. It is advisable to check whether the Recorder generated the ``OpenRPA.NM.GetElement`` activity is capturing the correct input field from the ``XPath`` selector - ie. using the ``ng-reflect-name`` attribute. The steps below explain how to do such thing.
+
+.. First the label which the **XPath Selector** will use must be found, use the **Inspect Element** feature available among browsers. To do that, press ``F12``, click the ``Mouse`` button on the top-left part of the developer panel and select the element you want to capture - in our case ``First Name``.
+
+.. .. figure:: images/openrpa_workflow_example_rpa_challenge_map_web_element_get_element_from_source_code.png
+   :align: center
+
+.. Click the **Open Selector** button to verify that the label selected by the **XPath Selector** matches the label of the ``ng-reflect-name`` attribute of the input field inside the `RPA Input Forms Challenge <http://www.rpachallenge.com/>`_ (``http://www.rpachallenge.com/``) page. in our case, the **XPath Selector** should be ``"xpath": "//input[@ng-reflect-name=\"labelFirstName\"]"``.
+
+.. .. figure:: images/openrpa_workflow_example_rpa_challenge_map_web_element_sequence_open_selector.png
+   :align: center
+
+.. .. figure:: images/openrpa_workflow_example_rpa_challenge_map_web_element_select_xpath.png
+   :align: center
+
+
+.. note::
+   When a WebElement is clicked at using the Recorder and OpenRPA determines that the WebElement is capable of receving input values, automatically a prompt will appear where the user can type string texts and then the Recorder will generate the activities as if it were wanted to fill these WebElements with the respective string texts provided. For now, the user may ignore these and fill the prompt with any text, these assigned values will be replaced so they get their values from the DataTable ``ds``. The WebElements are automatically assigned to the ``item`` variable.
+
+
+.. list-table::
+   
+   * - .. figure:: images/openrpa_workflow_example_rpa_challenge_assign_webelement.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_highlight_webelement_handle.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_recorder_insert_text.png
+  
+
+**Fill all the required fields inside the webpage.**
+----------------------------------------------------
+Now that the handles are mapped, assign the values of the rows, columns that were obtained in the Excel sheet.
+
+The first input field is ``First Name``, and the assignment can be done by using the **Assign** activity found in the ``RPA.Utilies`` toolbox.
+
+In the left hand side, use the ``item.Value`` to access the property of the ``WebElement`` and in the righthand side use the desired input value - in the specific case of the ``First Name`` column, ``row(0).ToString``.
+
+``FirstName`` is located in the first column, hence ``index = 0``.
+
+.. list-table::
+   
+   * - .. figure:: images/openrpa_workflow_example_rpa_assign_handle_activity.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_assign_handle_value.png
+
+
+.. note::
+
+   The **Assign** activity is used to reference a value to a variable. To do that, enter in the left-hand side of the activity the name, or alias, of the variable which you want to map a value to. If desired, you can press ``Ctrl+K`` to automatically create the variable or create it manually. Use the right-hand side to enter the value which will be assigned to the variable.
+
+.. note::
+   
+   The value of the respective column inside the row is a ``DataCell`` object, an object temporarily - the in-memory cache - created to store the column value inside the respective row. Furthermore, as the Excel value may be an object of non-string type, it's better to be safe and always cast it to a string. Since the need to cast - ie. change its type - to a ``String`` before assigning it to the ``item.Value``, given that the DOM object returned by the ``Selector`` is of type ``String`` as well. This is done by using the ``ToString`` method.
+
+**Map Submit button**
+---------------------
+Each entry - corresponding to each row - must be entered after being filled by clicking the **Submit** button. 
+
+To map the process of entering each input - ie. clicking the **Submit button** -, simply click the white triangle corresponding to the space below the last **Assign** activity, start the Recorder and click the **Submit** button inside the browser, as shown in the steps below.  
+
+In order to cease recording, simply press the ``ESC`` button. 
+
+It is reminded here that ending the recording is obligatory, else it will record all activities you execute endlessly.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_submit_button.png
+   :align: center
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_submit_button_click.png
+   :align: center
+
+After successfully mapping the **Start** button, your workflow should look like the image below.
+
+.. figure:: images/openrpa_workflow_example_rpa_challenge_map_submit_button_final.png
+   :align: center
+
+
+**Workflow Finished**
+---------------------
+The finished workflow should look like the sequence below.
+
+.. list-table::
+   
+   * - .. figure:: images/openrpa_workflow_example_rpa_challenge_finished_1.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_finished_2.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_finished_3.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_finished_4.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_finished_5.png
+
+     - .. figure:: images/openrpa_workflow_example_rpa_challenge_finished_6.png
+
+**Finished RPA Challenge workflow.**
+
+Windows Automation
+==================
+In this example, **Skype** will be used to exemplify how easy it is to automate Windows applications.
+Our goal is to ask the user for a contact info and then the robot will proceed to Skype and send a ``.PDF file`` to the specified recipient.
+Hence, the **OpenRPA** major features being exposed here are: Detector, Form, Selector and the Recorder. 
+
+This example is divided in 3 steps:
+The first steps refers to ``Detector``, which will be used to check if a new file is created in an specific folder.
+The second step refers to ``Form``, used to prompt the User about the recipient's contact info (``Email``, ``Name`` and ``Username``)
+The final step is ``Windows Automation (Skype app)/Using Selector``, where the user will record the procedure of sending a message and a file to the their Skype's contact.
+
+If your main interest lies on **Windows UI automation**, you may skip directly to the Windows Automation step.
+
+#. Detector
+    * Create Detector in OpenRPA
+    * Configure Detector node in Node-RED
+    * Message Manipulation in Node-RED
+    * Passing a variable from Node-RED to OpenRPA
+#. Form.
+    * OpenRPA Forms   
+#. Windows Automation (Skype app)/Using Selector
+    * Record task
+    * Configure Selectors
+
+Detector
+--------
+
+Detectors are synonyms to event-listeners. Alas, they wait for some specific condition to happen and then fire a message to ``Node-RED`` or even to ``OpenRPA`` itself.
+
+In this section, the user will learn how to create a ``FileWatcher Detector``, which will listen to file changes in a specific directory and will fire an event when a new file is created. For this example, the robot should be firing each time a new ``PDF/.pdf file`` is created.
+
+**Create Detector in OpenRPA**
+
+First, it is needed to configure the ``FileWatcher Detector``.
+
+To do that, the user must first click the ``Settings`` bar inside OpenRPA's ribbon.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_settings.png
+   :align: center
+   :scale: 50%
+   
+Then, click the ``Detectors`` button inside the ribbon.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_detectors.png
+   :align: center
+   :scale: 50%
+   
+After that, all the user needs is to click the desired detector inside the Detectors ribbon.
+
+For this example, the ``Detector`` which will be used is the ``FileWatcherDetectorPlugin``. Set the Detector's ``Name`` - in our case ``Windows Automation`` as well as the ``Path`` which it will listen to - ``C:\Users\viere\Documents\workflow_example_files\windows_automation\input_files``, **no quotes**.
+Then set the ``File Filter`` to ``*.pdf`` - the ``*`` is a wildcard for the filename, that is, any filename will do.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_detector_configured.png
+   :align: center
+   :scale: 50%
+
+.. note::
+   If you can not find a ``Detector``, please make sure it has been installed. In case of doubts, simply run the installer ``.msi`` again and make sure to include it during the installation.
+
+.. note::
+   `Wildcards <https://ryanstutorials.net/linuxtutorial/wildcards.php>`_ (``https://ryanstutorials.net/linuxtutorial/wildcards.php``) are a set of building blocks that allow you to create a pattern defining a set of files or directories. As you would remember, whenever we refer to a file or directory on the command line we are actually referring to a string path. Whenever we refer to a path we may also use wildcards in that path to turn it into a set of files or directories..
+
+**Configure Detector node in Node-RED**
+
+Now the user will configure, in Node-RED, a ``Detector`` node which will be the starting point for ``NodeRED Messages`` when the ``Detector`` is triggered.
+
+Create a new flow inside Node-RED. Our flow is being named ``Windows Automation - Workflow Example``.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_create_new_node_red_flow.png
+   :align: center
+   :scale: 50%
+   
+Now drag a ``detector`` node to the workspace.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_drag_detector_node.png
+   :align: center
+   :scale: 50%
+   
+Double-click the ``detector`` node to set its properties. Select the ``Detector`` in the dropdown field which will appear - in our case, ``Windows Automation``. Additionally, you may also give a name to this node such as ``Filepath Detector``, we recommend doing so to keep flows organized.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_detector_node_properties.png
+   :align: center
+   :scale: 50%
+   
+
+**Message Manipulation in Node-RED**
+
+When the ``FileWatcher Detector`` fires, some information will be passed in the ``NodeRED Message``, such as the ``filepath`` - that is, the name of the file that has been created.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_debug_detector.png
+   :align: center
+   :scale: 50%
+
+It is desired to capture this data and then pass it back to the robot as ``arguments`` for when workflows are invoked.
+Remember that ``arguments`` should be passed to the **Robot** through ``msg.payload`` object.
+As our OpenRPA Workflow does not require any other ``argument``, we can plug in the ``FileWatcher Detector`` node directly to the ``robot`` node.
+
+**Invoking OpenRPA Workflows**
+
+Here lies the logic behind passing the variables to and executing the OpenRPA workflow which will be invoked upon the ``Detector``'s positive signaling.
+
+Drag a ``robot`` node to the workspace. This node enables us to invoke the ``Windows Automation`` workflow.
+
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_connect_function_node_to_robot.png
+   :align: center
+   :scale: 50%
+
+Once again, it is recommended to properly name the nodes, ``Invoke Windows Automation Workflow``.
+Double-click and assign the ``Robot (or agent)`` whom shall will execute the workflow, and obviously, the name of the ``Workflow`` that should be executed (this example, ``Windows Automation``). You may leave the field ``Local Queue`` blank.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_set_robot_node_properties.png
+   :align: center
+   :scale: 50%
+   
+Now, the user must deploy the flow created by clicking the red Deploy button at the top-left side of the screen.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_deploy_button.png
+   :align: center
+   :scale: 50%
+   
+After that, the user should define, inside the OpenRPA workflow, a new argument by clicking ``Create Argument``.
+As you may have seen in the ``debug`` node, the parameter being passed is called ``filepath`` and therefore the ``argument`` should be the exact same. As the ``argument`` is an input, set its ``Direction`` to ``In``.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_define_pathFile_argument.png
+   :align: center
+   :scale: 50%
+   
+
+.. note::
+   If the user wants to avoid using Node-RED completely, an infinite **While loop** activity (condition: true=true) with a **Try Block** is suggested along with the **Detector** activity containing the detector defined previously. The user may also use the **Assign** activity to assign a fixed ``filepath`` for the file which will be sent to the **Skype** contact. By using the loop, every time an iteration finishes, the robot is always back to the start waiting on the ``Detector`` to fire once more and in case anything extraordinary happens, the **Try Block** assures that the **Workflow** will keep running.
+
+Form
+----
+In this section, the user will learn how to create a ``Form`` to capture the ``Email``, ``Skype contact`` and ``Contact name`` which will be used to pass the attachment and template message using the **Skype** application.
+
+**OpenRPA Forms**
+
+Here the user creates a dynamic WPF Form to gather the values mentioned above from the client.
+
+First drag a ``Invoke Formula`` snippet to the main sequence.
+
+Now click ``Open designer`` to open the ``Form Designer``.
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_click_open_designer_button.png 
+   :align: center
+   :scale: 50%
+
+Clear all example code and add the code snippet below to the designer code editor.
+
+.. code-block:: html
+
+   <form>
+      <title>Skype Automation Form</title>
+      <heading>Invoice Details</heading>
+      <input type='string' name='email' 
+            label='Email'
+            tooltip='Enter the email address here.'
+            icon='pencil'>
+         <validate must='NotBeEmpty' message='Email is mandatory' />
+      </input>
+      <input type='string' name='usernameSkype'
+            label='Skype contact' icon='pencil'
+            tooltip='Enter the Skype contact to which the file will be sent here.'>
+         <validate must='NotBeEmpty' message='Skype contact is mandatory' />
+      </input>
+      <input type='string' name='name'
+            label='Contact name' icon='pencil'
+            tooltip='Enter the contact name to which the file will be sent here.'>
+         <validate must='NotBeEmpty' message='Contact name is mandatory' />
+      </input>
+      <action name='submit' content='START SKYPE AUTOMATION' icon='check' validates='true' ClosesDialog='true' />
+   </form>
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_openrpa_forms_filled_designer.png
+   :align: center
+   :scale: 50%
+
+If you’re used to HTML or any other markup language you might understand what’s happening behind the scenes here. If you don’t, do not worry and refer to the **OpenRPA Forms** section.
+
+By pressing the **Build form** button the user is able to build and see a preview of the WPF form in the left‑side panel of the ``Form Designer``.
+
+After that, the user can press the **Create variables** button so all variables defined inside the ``Form Designer`` will be automatically created. Easy-peasy, isn't it?
+
+.. figure:: images/windows_automation_images/openrpa_workflow_examples_windows_automation_openrpa_forms_create_variables.png
+   :align: center
+   :scale: 50%
+
+.. note::
+   If the user wants to avoid using ``OpenRPA Forms``, they can simply use the **Assign** activity to assign values to the variables ``email``, ``usernameSkype`` and ``name``, which will be used further to send the attachment and template message to the desired client.
+
+.. note::
+   The ``Form Designer`` is the place where the user can create his desired WPF forms to gather input from the client. At the right-side of it, a preview of the input form is shown. At the left-side of it, the user enters the code used to design the input form. After adding code to the ``Form Designer``, always press the **Build form** button to save changes and visualize the preview.
