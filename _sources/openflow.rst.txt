@@ -8,13 +8,13 @@
  **What is OpenFlow?** 
 **********************
 
-**OpenFlow** is the heart of the *OON* stack, orchestrating all the activities between the applications. Here lies some of its major features:
+**OpenFlow** is the heart of the *OON* stack, orchestrating all the activities between the applications. Here are some of its main features:
 
 * Managing, invoking and configuring your robots and workflows;
-* Managing users and their permissions levels;
+* Managing users and their permission levels;
 * Creating forms whenever a human must participate in a process and viewing all currently assigned or idle workflows pending to the user;
 * Managing MongoDB collections and entries;
-* A central cloud repository, allowing its content (workflows, forms, files in MongoDB, ...) to be available to the robots, users and other applications with ease. 
+* A central cloud repository, allowing its content (workflows, forms, MongoDB files, ...) to be available to the robots, users and other applications . 
 
 .. 2.2.
 **************************
@@ -40,7 +40,7 @@ Then, the user must run the following command from a command prompt with escalat
    npm install --global windows-built-tools
 
 
-If using any GNU/Linux distro which uses the ``APT`` package manager, the following command replaces the one above.
+If using any GNU/Linux distro that has the ``APT`` package manager, the following command replaces the one above.
 
 .. code-block:: powershell
 
@@ -52,7 +52,7 @@ Then, the user must install the ``openiap`` package.
 
    npm i openiap -g
 
-Then, the user shall create a template configuration file.
+Then, the user needs to create a template configuration file.
 
 .. code-block:: powershell
 
@@ -65,12 +65,12 @@ Now the user can install the service.
 
    openflow-cli --install openflow
 
-In order to access **OpenFlow**, all that is left to do is access the `OpenFlow page <http://localhost.openrpa.dk>`_ (``http://localhost.openrpa.dk``).
+In order to access **OpenFlow**, just go to `OpenFlow page <http://localhost.openrpa.dk>`_ (``http://localhost.openrpa.dk``).
 
 .. 2.2.2.
 Developer Setup
 ===============
-If you have interest in creating a developer setup in order to develop some extra features yourself or to debug, in this section you will find a brief and concise description of how to install **OpenFlow** by cloning `OpenFlow's GitHub Repository <https://github.com/open-rpa/openflow>`_ (``https://github.com/open-rpa/openflow``) and running it in **Visual Studio Code**.
+If you have interest in creating a developer setup in order to develop some extra features yourself or to debug, you will find a brief and concise description of how to install **OpenFlow** by cloning `OpenFlow's GitHub Repository <https://github.com/open-rpa/openflow>`_ (``https://github.com/open-rpa/openflow``) and running it in **Visual Studio Code**.
 
 Obviously, `Visual Studio Code <https://code.visualstudio.com/download>`_ (``https://code.visualstudio.com/download``) is required.
 
@@ -112,7 +112,7 @@ Now the user will open the working folder in VS Code.
 
    code OpenFlow.code-workspace
 
-And create a folder called ``config`` at the top level of the **OpenFlow** folder. Inside it create a file called ``.env`` - be careful, notice that the file's name starts with a dot!
+And create a folder called ``config`` at the top level of the **OpenFlow** folder. Inside it create a file called ``.env`` - be careful, notice that the file name starts with a dot.
 
 Lastly, the user shall add the following content to the ``.env`` file:
 
@@ -208,7 +208,7 @@ If using **Windows 10**, allow Powershell Scripts to run by changing the Executi
 
    Set-ExecutionPolicy Bypass --Force
 
-Finally, run ``OpenFlow`` by pressing ``Ctrl+Shift+D``, selecting ``OpenFlow`` in the dropdown box and clicking the **Play** button.
+Finally, run ``OpenFlow`` by pressing ``Ctrl+Shift+D``, select ``OpenFlow`` in the dropdown box and clicking the **Play** button.
 
 The user may now access **OpenFlow** by using a browser and navigating to the default URL, which is ``http://localhost.openrpa.dk`` if unchanged.
 
@@ -219,14 +219,14 @@ To properly install and configure **Node-RED**, please refer to the **Installing
  **Accessing for the first time**
 *********************************
 
-To access **OpenFlow** webpage, simply go to the URL as specified by your working enviroment (contact your IT responsible, if needed). If running a local version, by default the URL should be ``http://localhost.openrpa.dk``.
+To access **OpenFlow** webpage, simply go to the URL as specified by your working environment (contact your IT responsible, if needed). If running a local version, by default the URL should be ``http://localhost.openrpa.dk``.
 
-If you do not have access to an **OpenFlow** of you own and you are not running a local version, we encourage you to do some experimentation using our own demo enviroment, which can be found at ``https://app.openiap.io``.
+If you do not have access to **OpenFlow** and you are not running a local version, we encourage you to do some experimentation using our own demo environment, which can be found at ``https://app.openiap.io``.
 
-After accessing the page, users are prompted to authenticate themselves. After signing in, the user is redirected to the home page of **OpenFlow**.
+After accessing the page, users are prompted to authenticate themselves. After signing in, the user is redirected to the home page of **OpenFlow** home page.
 
 .. note ::
-   If you are accessing OpenFlow demo enviroment (``https://app.openiap.io``), when prompted for credentials, you may type any username/password combination and your user will be then created automatically with the same credentials. Please keep note of your username/password!
+   If you are accessing OpenFlow demo environment (``https://app.openiap.io``), when prompted for credentials, you may type any username/password combination and your user will be then created automatically with the same credentials. Please keep note of your username/password!
 
 .. figure:: images/openflow_sign_in_page.png
    :scale: 50%
@@ -245,7 +245,7 @@ After accessing the page, users are prompted to authenticate themselves. After s
 ************************
  **Creating a new user**
 ************************
-To create a new user, first click the Admin dropdown and the Users option.
+To create a new user, first click the Admin dropdown and select the Users option.
 
 .. figure:: images/openflow_dropdown_index_page.png
    :scale: 50%
@@ -261,7 +261,7 @@ Now click the navy blue ``Add user`` button.
 
    **Users page.**
 
-Now, fill the ``name``, ``username`` and ``password`` and click **Save**. Notice that the recently created ``user`` does not have any Roles assigned to them and more info about Roles is available in the next section.
+Now, input the ``name``, ``username`` and ``password`` and click **Save**. Notice that the recently created ``user`` does not have any Roles assigned to them. More information about Roles is available in the next section.
 
 .. figure:: images/openflow_userdetail_page.png
    :scale: 25%
@@ -273,30 +273,30 @@ Now, fill the ``name``, ``username`` and ``password`` and click **Save**. Notice
 **********
  **Roles**
 **********
-Here is explained what **Roles** in OpenFlow are and how they interfere with **OpenRPA** and **Node-RED** access privileges.
+Here we will explained what **Roles** in OpenFlow are and how they impact with **OpenRPA** and **Node-RED** access privileges.
 
 What are Roles?
 ===============
-In **OpenFlow**, Roles are an unit or collection of privileges and permissions that can be assigned to one or more users or to a group of users. These Roles serve various purposes, such as granting access to projects/workflows inside **OpenRPA** or granting access to specific flows inside **Node-RED**.
+Roles in **OpenFlow** are a units or collection of privileges and permissions that can be assigned to one or more users or to a group of users. These Roles serve various purposes, such as granting access to projects/workflows inside **OpenRPA** or granting access to specific flows inside **Node-RED**.
 
 Remember that both human users and robots are called ``users`` in **OpenFlow** and Roles work the same way for both.
 
 RPARole (Pool)
 ==============
-Sometimes it may desired to create a Pool of ``users``, e.g. "Buyers", so that many ``users`` (buyer_John, buyer_Maria, buyer_robot1, ...) can be inserted in this Pool. By doing so, it will become easier to manage previleges and accesses when compared to manually adjusting each ``user``'s Roles.
+Sometimes it is desired to create a Pool of ``users``, e.g. "Buyers", so that many ``users`` (buyer_John, buyer_Maria, buyer_robot1, ...) can be inserted in this Pool. By doing so, it will become easier to manage privileges and accesses when compared to manually adjusting each ``user``'s Roles.
 
-RPARole also allows workflows or Node-RED flows to assign a task to the "Buyers" Pool instead of a specific ``user``. This way, when a workflow can be assigned to any ``user`` from a Pool, the framework will automatically assign the task to the first available listening ``user``.
+RPARole also allows workflows or Node-RED flows to assign a task to the "Buyers" Pool instead of a specific ``user``. This way, a workflow can be assigned to any ``user`` from a Pool, the framework will automatically assign the task to the first available listening ``user``.
 
-Therefore, **RPARole** is a parameter set in the Role editting page of a role which enables a Role to become a Pool of users instead.
+Therefore, **RPARole** is a parameter set in the Role's editing page of a role which enables a Role to become a Pool of users instead.
 
-If set, all ``users`` added to the Role start listening to the Role-Queue ``id``, i.e., ``users`` now become consumers to the Queue belonging to this Role. When an ``user`` logs in, they listen natively to their own User-Queue ``id``; Additionaly, for each Role with the parameter RPARole that this user is memberof, the user will also start listening to Role-Queue ``id``. See more at `pool <https://cs.stackexchange.com/q/86372>`_ (``https://cs.stackexchange.com/q/86372``).
+If set, all ``users`` added to the Role start listening to the Role-Queue ``id``. ``Users`` now become consumers of the Queue. When an ``user`` logs in, they listen natively to their own User-Queue ``id``. For each Role with the parameter RPARole that this user is memberof, the user will also start listening to Role-Queue ``id``. See more at `pool <https://cs.stackexchange.com/q/86372>`_ (``https://cs.stackexchange.com/q/86372``).
 
 But what is a consumer?
 -----------------------
 
-   *The term "consumer" means different things in different contexts. In general in messaging a consumer is an application (or application instance) that consumes messages. The same application can also publish messages and thus be a publisher at the same time. In this sense a consumer is a subscription for message delivery that has to be registered before deliveries begin and can be cancelled by the application*.
+   *The term "consumer" means different things in different contexts. Here a consumer is an application (or application instance) that consumes messages. The same application can also publish messages and therefore is a publisher at the same time. In this case a consumer is a subscription for message delivery that has to be registered before deliveries begin and it can also be cancelled by the application*.
 
-   *RabbitMQ is a messaging broker. It accepts messages from publishers, routes them and, if there were queues to route to, stores them for consumption or immediately delivers to consumers, if any. Consumers consume from queues. In order to consume messages there has to be a queue. When a new consumer is added, assuming there are already messages ready in the queue, deliveries will start immediately. The target queue can be empty at the time of consumer registration. In that case first deliveries will happen when new messages are enqueued*.¹
+   *RabbitMQ is a messaging broker. It accepts messages from publishers, routes them. If there were queues to route to, stores them for consumption or immediately delivers to consumers, if any. Consumers consume messages from the queue. In order to consume them there has to be a queue. When a new consumer is added, assuming there are already messages ready in the queue, deliveries will start immediately. The target queue can be empty at the time of consumer registration. In that case first deliveries will happen when new messages are enqueued*.¹
 
 ¹ - `Consumers <https://www.rabbitmq.com/consumers.html>`_ (``https://www.rabbitmq.com/consumers.html``)
 
@@ -313,13 +313,13 @@ Then, the user must click the ``Admin`` dropdown inside **OpenFlow**'s webpage.
    :align: center
    :scale: 50%
 
-All you need to do now is go to the **Roles** page inside OpenFlow's page and click the ``Pencil/Edit`` icon corresponding to the Role which you want to add users to. As an example, we're going to change the ``personal nodered users`` Role.
+All you need to do now is go to the **Roles** page inside OpenFlow's page and click the ``Pencil/Edit`` icon corresponding to the Role that you want to add users to. As an example, we're going to change the ``personal nodered users`` Role.
 
 .. figure:: images/chap_openflow_roles/openflow_roles_edit_personal_nodered_users_role.png
    :align: center
    :scale: 50%
 
-After clicking the ``Pencil/Edit`` icon, the user is redirected to the **Role** page, which contains the ``Name`` of the role, the ``rparole`` checkbox, the ``add`` input field and the ``member`` list, as seen below. To add a new ``user``/``Role`` to that Role, simply insert the name of this ``user``/``Role`` in the ``add`` input field. A dropdown list will then appear and the user chooses which ``user``/``Role`` it is desired to be added to the Role.
+After clicking the ``Pencil/Edit`` icon, the user is redirected to the **Role** page, which contains the ``Name`` of the role, the ``rparole`` checkbox, the ``add`` input field and the ``member`` list, as seen below. To add a new ``user``/``Role`` to that Role, simply insert the name of this ``user``/``Role`` in the ``add`` input field. A dropdown list will then appear and the user chooses which ``user``/``Role`` it is desired to be added to that Role.
 
 .. figure:: images/chap_openflow_roles/openflow_roles_add_user.png
    :align: center

@@ -1,169 +1,149 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
 
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Introduction to RPA &mdash; BPA/OpenIAP Docs 1.0.4 documentation</title>
+  
 
-  <title>1. Introduction to RPA &mdash; BPA/OpenIAP Docs 1.0.2 documentation</title>
-
-
-
-
-
-
-
-
-  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
-
-
-  <script type="text/javascript" id="documentation_options" data-url_root="./"
-    src="static/documentation_options.js"></script>
-  <script src="static/jquery.js"></script>
-  <script src="static/underscore.js"></script>
-  <script src="static/doctools.js"></script>
-  <script src="static/language_data.js"></script>
-
-  <script type="text/javascript" src="static/js/theme.js"></script>
-
-
-
-
+  
   <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="static/styles.css" type="text/css" />
-  <link rel="index" title="Index" href="genindex.html" />
-  <link rel="search" title="Search" href="search.html" />
-  <link rel="next" title="2. OpenFlow" href="openflow.html" />
-  <link rel="prev" title="BPA/OpenIAP Docs - Integrated Framework Documentation" href="index.html" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
+        <script src="static/language_data.js"></script>
+    
+    <script type="text/javascript" src="static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. OpenFlow" href="openflow.html" />
+    <link rel="prev" title="BPA/OpenIAP Docs - Integrated Framework Documentation" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
-
+   
   <div class="wy-grid-for-nav">
-
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
+          
 
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> BPA/OpenIAP Docs
+          
 
-
-          <a href="index.html" class="icon icon-home"> BPA/OpenIAP Docs
-
-
-
+          
           </a>
 
+          
+            
+            
+          
 
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
 
-
-
-
-
-          <div role="search">
-            <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-              <input type="text" name="q" placeholder="Search docs" />
-              <input type="hidden" name="check_keywords" value="yes" />
-              <input type="hidden" name="area" value="default" />
-            </form>
-          </div>
-
-
+          
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. <strong>Introduction to RPA</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-rpa">1.1. <strong>What is RPA?</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools-openrpa-openflow-nodered">1.2. <strong>Tools (OpenRPA/OpenFlow/NodeRED)</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#openrpa">1.2.1. OpenRPA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#openflow">1.2.2. OpenFlow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-red">1.2.3. Node-RED</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#why-openrpa-openflow-nodered">1.3. <strong>Why OpenRPA/OpenFlow/NodeRED?</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#low-code-concept">1.3.1. Low code concept</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time-to-market">1.3.2. Time to market</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#framework-vs-extra-work">1.3.3. Framework vs “extra work”</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#privilege-and-access-management">1.3.3.1. Privilege and Access Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#embedded-mongodb-database">1.3.3.2. Embedded MongoDB Database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#safe-credentials">1.3.3.3. Safe Credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#form">1.3.3.4. Form</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#message-queuing">1.3.3.5. Message Queuing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#built-in-functions">1.3.3.6. Built-in Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#how-the-tools-integrate">1.3.4. How the tools integrate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scalability">1.3.5. Scalability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#security-no-exposed-code">1.3.6. Security/No exposed code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="openflow.html">2. <strong>OpenFlow</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="openrpa.html">3. <strong>OpenRPA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="node_red.html">4. <strong>Node-RED</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">5. <strong>Appendix A</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b.html">6. <strong>Appendix B</strong></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">1. License</a></li>
+</ul>
 
-
-
-
-
-
-          <ul class="current">
-            <li class="toctree-l1 current"><a class="current reference internal" href="#">1. <strong>Introduction to
-                  RPA</strong></a>
-              <ul>
-                <li class="toctree-l2"><a class="reference internal" href="#what-is-rpa">1.1. <strong>What is
-                      RPA?</strong></a></li>
-                <li class="toctree-l2"><a class="reference internal" href="#tools-openrpa-openflow-nodered">1.2.
-                    <strong>Tools (OpenRPA/OpenFlow/NodeRED)</strong></a>
-                  <ul>
-                    <li class="toctree-l3"><a class="reference internal" href="#openrpa">1.2.1. OpenRPA</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#openflow">1.2.2. OpenFlow</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#node-red">1.2.3. Node-RED</a></li>
-                  </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#why-openrpa-openflow-nodered">1.3.
-                    <strong>Why OpenRPA/OpenFlow/NodeRED?</strong></a>
-                  <ul>
-                    <li class="toctree-l3"><a class="reference internal" href="#low-code-concept">1.3.1. Low code
-                        concept</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#time-to-market">1.3.2. Time to
-                        market</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#framework-vs-extra-work">1.3.3.
-                        Framework vs “extra work”</a>
-                      <ul>
-                        <li class="toctree-l4"><a class="reference internal"
-                            href="#privilege-and-access-management">1.3.3.1. Privilege and Access Management</a></li>
-                        <li class="toctree-l4"><a class="reference internal" href="#embedded-mongodb-database">1.3.3.2.
-                            Embedded MongoDB Database</a></li>
-                        <li class="toctree-l4"><a class="reference internal" href="#safe-credentials">1.3.3.3. Safe
-                            Credentials</a></li>
-                        <li class="toctree-l4"><a class="reference internal" href="#form">1.3.3.4. Form</a></li>
-                        <li class="toctree-l4"><a class="reference internal" href="#message-queuing">1.3.3.5. Message
-                            Queuing</a></li>
-                        <li class="toctree-l4"><a class="reference internal" href="#built-in-functions">1.3.3.6.
-                            Built-in Functions</a></li>
-                      </ul>
-                    </li>
-                    <li class="toctree-l3"><a class="reference internal" href="#how-the-tools-integrate">1.3.4. How the
-                        tools integrate</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#scalability">1.3.5. Scalability</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#security-no-exposed-code">1.3.6.
-                        Security/No exposed code</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li class="toctree-l1"><a class="reference internal" href="openflow.html">2. <strong>OpenFlow</strong></a>
-            </li>
-            <li class="toctree-l1"><a class="reference internal" href="openrpa.html">3. <strong>OpenRPA</strong></a>
-            </li>
-            <li class="toctree-l1"><a class="reference internal" href="node_red.html">4. <strong>Node-RED</strong></a>
-            </li>
-            <li class="toctree-l1"><a class="reference internal" href="appendix_a.html">5. <strong>Appendix
-                  A</strong></a></li>
-            <li class="toctree-l1"><a class="reference internal" href="appendix_b.html">6. <strong>Appendix
-                  B</strong></a></li>
-          </ul>
-          <ul>
-            <li class="toctree-l1"><a class="reference internal" href="license.html">1. License</a></li>
-          </ul>
-
-
-
+            
+          
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-
+      
       <nav class="wy-nav-top" aria-label="top navigation">
-
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">BPA/OpenIAP Docs</a>
-
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BPA/OpenIAP Docs</a>
+        
       </nav>
 
 
       <div class="wy-nav-content">
-
+        
         <div class="rst-content">
+        
+          
 
 
 
@@ -179,299 +159,169 @@
 
 
 
+<div role="navigation" aria-label="breadcrumbs navigation">
 
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">1. </span><strong>Introduction to RPA</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
 
-          <div role="navigation" aria-label="breadcrumbs navigation">
-
-            <ul class="wy-breadcrumbs">
-
-              <li><a href="index.html">Docs</a> &raquo;</li>
-
-              <li><span class="section-number">1. </span><strong>Introduction to RPA</strong></li>
-
-
-              <li class="wy-breadcrumbs-aside">
-
-
-
-              </li>
-
-            </ul>
-
-
-            <hr />
-          </div>
+  
+  <hr/>
+</div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div itemprop="articleBody">
-
-              <div class="section" id="introduction-to-rpa">
-                <h1><span class="section-number">1. </span><strong>Introduction to RPA</strong><a class="headerlink"
-                    href="#introduction-to-rpa" title="Permalink to this headline">¶</a></h1>
-                <div class="section" id="what-is-rpa">
-                  <h2><span class="section-number">1.1. </span><strong>What is RPA?</strong><a class="headerlink"
-                      href="#what-is-rpa" title="Permalink to this headline">¶</a></h2>
-                  <p>RPA or Robotic Process Automation are software base solutions designed to mimic the same “manual”
-                    path taken through applications by an end user. It is typically used to automate repetitive tasks
-                    previously performed by a humans as an effective way to cut costs, eliminate keying errors, speed up
-                    processes and easily link applications together. These tasks can be successfully modeled and
-                    converted into a business process and then automated using a combination of (UI) interactions,
-                    connectors to client servers, mainframes, database, web, and others.</p>
-                </div>
-                <div class="section" id="tools-openrpa-openflow-nodered">
-                  <h2><span class="section-number">1.2. </span><strong>Tools (OpenRPA/OpenFlow/NodeRED)</strong><a
-                      class="headerlink" href="#tools-openrpa-openflow-nodered" title="Permalink to this headline">¶</a>
-                  </h2>
-                  <p>There are many tools available for automating processes using RPA such as UiPath, Automation
-                    Anywhere and blueprism. Our stack of tools (<a href="#id1"><span class="problematic"
-                        id="id2">``</span></a>OpenRPA, OpenFlow and NodeRED``¹) has many advantages and is obviously our
-                    suggestion for you. The reasoning for this recommendation is revealed in the next chapter, for now
-                    we will cover what each of these tools do and their outcome.</p>
-                  <p>¹ - We’re going to refer further to the <strong>OpenRPA</strong>, <strong>OpenFlow</strong> and
-                    <strong>Node-RED</strong> stack as OON.</p>
-                  <div class="section" id="openrpa">
-                    <h3><span class="section-number">1.2.1. </span>OpenRPA<a class="headerlink" href="#openrpa"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p>This tool is basically the main environment where the processes are mapped and designed to
-                      fulfill the inherent task at question. Think of it as an <code
-                        class="docutils literal notranslate"><span class="pre">IDE</span> <span class="pre">-</span> <span class="pre">Integrated</span> <span class="pre">Development</span> <span class="pre">Environment</span></code>
-                      for creating workflows. It is where all previously mapped activities will be implemented - such as
-                      clicking a message on a mailbox, typing content into an input form.</p>
-                    <p>It is also the software you’re supposed to use to export all your workflows into a repository
-                      that will manage orchestration and input. The software we’ll use for that is OpenFlow, which comes
-                      next in this discussion.</p>
-                  </div>
-                  <div class="section" id="openflow">
-                    <h3><span class="section-number">1.2.2. </span>OpenFlow<a class="headerlink" href="#openflow"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p>OpenFlow can function as both a centralized and a decentralized platform that exposes a secure
-                      database, by enforcing Access Control List on all objects and offering on the fly encryption to
-                      those. It can also function as an orchestrator of <strong>Node-RED</strong> instances when run on
-                      Kubernetes and a lightweight orchestrator of robots.
-                      When an <strong>OpenRPA</strong> robot is connected to OpenFlow it will store all data (workflows,
-                      detectors, credentials, and state) inside OpenFlow. The same also applies when a
-                      <strong>Node-RED</strong> instance is connected to OpenFlow: it will store all data (flows, state,
-                      session, and credentials) inside <strong>OpenFlow</strong> as well.
-                      Finally, OpenFlow also offers many different ways to add human interaction to the table, either by
-                      using the built in Form designer (and calling them via <strong>Node-RED</strong> workflows) or by
-                      remotely invoking OpenRPA workflows directly on the website.</p>
-                  </div>
-                  <div class="section" id="node-red">
-                    <h3><span class="section-number">1.2.3. </span>Node-RED<a class="headerlink" href="#node-red"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p><strong>Node-RED</strong> is an event based workflow engine original designed to handle telegram
-                      messages in an IoT installation, but the big community around <strong>Node-RED</strong> has
-                      expanded the functionality to also integrate to traditional automation like PLCs, and more than
-                      2500 IT systems and cloud offerings.
-                      When run as part of OpenFlow, we add easy orchestration, load balancing and enhanced security
-                      feature to the platform. <strong>Node-RED</strong> also functions as the orchestrator of OpenRPA
-                      robots via OpenFlow. <strong>Node-RED</strong> allows robots to interact with all the IT systems
-                      supported by <strong>Node-RED</strong> (hardware devices, APIs, online services, much more!) by
-                      simply wiring flows together. Lastly, OpenFlow also makes use of <strong>Node-RED</strong> as its
-                      backend to run flows for the forms created by the Forms designer.</p>
-                  </div>
-                </div>
-                <div class="section" id="why-openrpa-openflow-nodered">
-                  <h2><span class="section-number">1.3. </span><strong>Why OpenRPA/OpenFlow/NodeRED?</strong><a
-                      class="headerlink" href="#why-openrpa-openflow-nodered" title="Permalink to this headline">¶</a>
-                  </h2>
-                  <p>Our reasons for using the OON stack are presented in-depth below.</p>
-                  <div class="section" id="low-code-concept">
-                    <h3><span class="section-number">1.3.1. </span>Low code concept<a class="headerlink"
-                        href="#low-code-concept" title="Permalink to this headline">¶</a></h3>
-                    <p>Low code concept means there is no technical or programing knowledge required to perform a
-                      desired task, i.e. you can simply just drag a box and input a few parameters for it to become
-                      fully functional.</p>
-                    <p>The term <code
-                        class="docutils literal notranslate"><span class="pre">low</span> <span class="pre">code</span></code>
-                      refers to platforms that resort mainly to GUI-focused interfaces which assist users in the
-                      development of a BPM without necessarily requiring basic programming knowledge. These applications
-                      use heavy visual modeling in favor of coding to aid in the process of designing and implementing
-                      processes.</p>
-                    <p>Low code development platforms have a very gentle learning curve and are often designed with
-                      UX-oriented practices in mind. It is a fact that it also helps the user to advance rapidly and
-                      design and deploy working processes with few caveats.</p>
-                    <p>² - From now on, we’re going to refer to low code development platforms as LCDPs.</p>
-                  </div>
-                  <div class="section" id="time-to-market">
-                    <h3><span class="section-number">1.3.2. </span>Time to market<a class="headerlink"
-                        href="#time-to-market" title="Permalink to this headline">¶</a></h3>
-                    <p>The length of time between a product being conceived until it’s completion and deployment is
-                      significantly higher using a common application development process in comparison to LCDP. This
-                      occurs because there are far less steps involved in this cycle when LCDP is used. As an example,
-                      code-related unit tests are not needed, since all the parts of the software used to build the
-                      application are already tested and integrated within the framework.</p>
-                    <p>In our stack, this also means it’s easy to prototype and creating something actually functional -
-                      due to LCDP programming - and the migration from prototype to an actual production product can be
-                      easily achieved. This is provided by the OON stack framework native integration and easiness of
-                      use.</p>
-                  </div>
-                  <div class="section" id="framework-vs-extra-work">
-                    <h3><span class="section-number">1.3.3. </span>Framework vs “extra work”<a class="headerlink"
-                        href="#framework-vs-extra-work" title="Permalink to this headline">¶</a></h3>
-                    <p>The OON stack significantly minimizes the amount of work needed to be done to implement a final
-                      product. This is due to the many features embedded within it, such as privilege and access
-                      management, embedded MongoDB database, safe credentials and form. Which is now discussed.</p>
-                    <div class="section" id="privilege-and-access-management">
-                      <h4><span class="section-number">1.3.3.1. </span>Privilege and Access Management<a
-                          class="headerlink" href="#privilege-and-access-management"
-                          title="Permalink to this headline">¶</a></h4>
-                      <p>OpenFlow provides a readily integrated privilege and access management interface which is
-                        further discussed in the <strong>Roles</strong> chapter in the OpenFlow’s section. It makes
-                        possible for the administrator to create users and assign roles to these users which limit - or
-                        expand - the features they can access. There is no need to configure an user for every workflow
-                        and set the permissions accordingly, you only need to create a role and assign their given
-                        permissions.</p>
-                    </div>
-                    <div class="section" id="embedded-mongodb-database">
-                      <h4><span class="section-number">1.3.3.2. </span>Embedded MongoDB Database<a class="headerlink"
-                          href="#embedded-mongodb-database" title="Permalink to this headline">¶</a></h4>
-                      <p>The OON stack has a single database which they use to feed their data to and from, <a
-                          class="reference external" href="https://www.mongodb.com/what-is-mongodb">MongoDB</a> (<a
-                          class="reference external"
-                          href="https://www.mongodb.com/what-is-mongodb">https://www.mongodb.com/what-is-mongodb</a>).
-                        Integration is easy and the data is persisted in JSON.</p>
-                      <p>The fact that there is a central database to the stack provides an easy way of creating
-                        <strong>KPI - Key Performance Indicators</strong>, reports and dashboards, graphs, and records
-                        of the data processed by the agents. It also measures the effectiveness of robots and their
-                        accuracy but remember you can only manage what can be measured.</p>
-                      <p>You can also save files in the cloud and use them as shared files - such as a form presented in
-                        a Word file. It also has methods for saving files for future usage - as an example, for tasks
-                        that take too long or tasks that are fragmented between many steps/workflows. This provides a
-                        centralized way of handling file management.</p>
-                    </div>
-                    <div class="section" id="safe-credentials">
-                      <h4><span class="section-number">1.3.3.3. </span>Safe Credentials<a class="headerlink"
-                          href="#safe-credentials" title="Permalink to this headline">¶</a></h4>
-                      <p>Our safe credentials management system provides an easy way, to share, insert, update and
-                        delete credentials between systems and robots using the <code
-                          class="docutils literal notranslate"><span class="pre">SecureString</span></code> class¹.
-                        Everything is automatically managed, so if you need to store a specific credential used by a
-                        workflow, you do not need to worry about the security of the storage system.</p>
-                      <p>¹ - <a class="reference external"
-                          href="https://docs.microsoft.com/en-us/dotnet/api/system.security.securestring?view=netcore-3.1">Secure
-                          String class</a> (<a class="reference external"
-                          href="https://docs.microsoft.com/en-us/dotnet/api/system.security.securestring?view=netcore-3.1">https://docs.microsoft.com/en-us/dotnet/api/system.security.securestring?view=netcore-3.1</a>).
-                      </p>
-                    </div>
-                    <div class="section" id="form">
-                      <h4><span class="section-number">1.3.3.4. </span>Form<a class="headerlink" href="#form"
-                          title="Permalink to this headline">¶</a></h4>
-                      <p>OpenFlow also provides forms, a user-friendly way of sending input to a workflow by creating
-                        dynamic webpage. It gathers all the input a user should give so the robot can use it for its
-                        processing and execution. This means you do not need to create a webpage just to gather data
-                        from the robot but you can create a form and make it public - or give its acess only to a few
-                        roles - so the end user can enter the input.</p>
-                    </div>
-                    <div class="section" id="message-queuing">
-                      <h4><span class="section-number">1.3.3.5. </span>Message Queuing<a class="headerlink"
-                          href="#message-queuing" title="Permalink to this headline">¶</a></h4>
-                      <p>Using the AMQP functionality exposed by OpenFlow, NodeRED is able to work with queues and tasks
-                        in the OON stack. This is used for distributing workload among many NodeRED instance and/or many
-                        robots, that needs to run the same workload. This makes the workflow more resilient by giving
-                        higher fault tolerance (removing single points of failure) and more elasticity by making it easy
-                        to add more nodes/robots to help run the workload, all automatically.</p>
-                    </div>
-                    <div class="section" id="built-in-functions">
-                      <h4><span class="section-number">1.3.3.6. </span>Built-in Functions<a class="headerlink"
-                          href="#built-in-functions" title="Permalink to this headline">¶</a></h4>
-                      <p>Many universal RPA activities are already shipped built-in inside OpenRPA - ready to use. For
-                        example, reading an excel file, opening a file, browsing a webpage.</p>
-                    </div>
-                  </div>
-                  <div class="section" id="how-the-tools-integrate">
-                    <h3><span class="section-number">1.3.4. </span>How the tools integrate<a class="headerlink"
-                        href="#how-the-tools-integrate" title="Permalink to this headline">¶</a></h3>
-                    <p>The development process flows through OpenRPA -&gt; OpenFlow -&gt; Node-RED.</p>
-                    <p>In <strong>OpenRPA</strong> you design the workflows which will execute the desired RPA process.
-                    </p>
-                    <p>In <strong>OpenFlow</strong>, you manage them and also create forms for external input for the
-                      user.</p>
-                    <p>In <strong>Node-RED</strong>, you wire both of them together in a way similar to building a
-                      flowchart.</p>
-                    <blockquote>
-                      <div>
-                        <p>Think of it as the <strong>OpenRPA</strong> workflow represent the players in a concert,
-                          <strong>OpenFlow</strong> is the maestro, or conductor, and <strong>Node-RED</strong> is the
-                          sheet music.</p>
-                      </div>
-                    </blockquote>
-                  </div>
-                  <div class="section" id="scalability">
-                    <h3><span class="section-number">1.3.5. </span>Scalability<a class="headerlink" href="#scalability"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p>Scaling products with the OON stack is much easier than usual. Given that orchestration is
-                      directly managed by OpenFlow and assisted by Node-RED. It is also much easier to deploy, verify
-                      and provide maintenance to robots.</p>
-                    <p>When you deploy a new change on any of the three applications (OpenFlow, OpenRPA or Node-RED)
-                      they are instantly applied to the whole environment - online robots will fetch the changes
-                      automatically and offline robots will do it the next time they get online, the same for all
-                      information used by NodeRED (such as workflows, permissions, forms, etc) - worry free. This is due
-                      to the main repository from which the robots &amp; applications gather their data from: OpenFlow.
-                    </p>
-                    <p>OpenFlow can handle a limitless number of robots thanks to RabbitMQ¹. The required technical
-                      specs for the server running OpenFlow/Node-RED it are intensely low.</p>
-                    <p>OpenRPA agents can scale up by installing OpenRPA on different physical or virtual machines, or
-                      by using HDRobots extension where a windows terminal machine can run many users/instances
-                      simultaneously. Now, if a given process requires no GUI - in other words, all processing can be
-                      done without the need of keyboard, mouse or image recognition, a single instance of OpenRPA may
-                      run many workflows in parallel.</p>
-                    <p>¹ - <a class="reference external" href="https://www.rabbitmq.com/">RabbitMQ</a> (<a
-                        class="reference external" href="https://www.rabbitmq.com/">https://www.rabbitmq.com/</a>).</p>
-                  </div>
-                  <div class="section" id="security-no-exposed-code">
-                    <h3><span class="section-number">1.3.6. </span>Security/No exposed code<a class="headerlink"
-                        href="#security-no-exposed-code" title="Permalink to this headline">¶</a></h3>
-                    <p>No code is exposed to the end-user or agents, since there is rarely any code written (thanks to
-                      LCDPs) and viewing of the code itself can be disabled if needed.</p>
-                    <p>For credentials, OpenFlow supports username/password, OAuth and WS-Federation to authenticate
-                      users. NodeRED uses WS-Federation to authenticate users from OpenFlow.
-                      Using OAuth/WS-Federation will usually improve security a lot, since it allows you to better
-                      manage and control the identities of the users in your favorite IDP solution.</p>
-                    <p>There is also no hard limitation on the number of existing of user or agents, hence each robot or
-                      OpenFlow user may have its own username/password credential - as many as you may need.</p>
-                    <p>Credentials may also have differents level of permissions (read/edit/remove) for each object
-                      (workflows, projects, forms, etc) and, last but not least, each password is well encrypted by
-                      using cryptography ciphers, which makes it even harder for someone to attempt an authentication
-                      attack.</p>
-                  </div>
-                </div>
-              </div>
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction-to-rpa">
+<h1><span class="section-number">1. </span><strong>Introduction to RPA</strong><a class="headerlink" href="#introduction-to-rpa" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-rpa">
+<h2><span class="section-number">1.1. </span><strong>What is RPA?</strong><a class="headerlink" href="#what-is-rpa" title="Permalink to this headline">¶</a></h2>
+<p>RPA or Robotic Process Automation are software base solutions designed to mimic the same “manual” path taken through applications by an end user. It is typically used to automate repetitive tasks previously performed by a humans as an effective way to cut costs, eliminate keying errors, speed up processes and easily link applications together. These tasks can be successfully modeled and converted into a business process and then automated using a combination of (UI) interactions, connectors to client servers, mainframes, database, web, and others.</p>
+</div>
+<div class="section" id="tools-openrpa-openflow-nodered">
+<h2><span class="section-number">1.2. </span><strong>Tools (OpenRPA/OpenFlow/NodeRED)</strong><a class="headerlink" href="#tools-openrpa-openflow-nodered" title="Permalink to this headline">¶</a></h2>
+<p>There are many tools available for automating processes using RPA such as UiPath, Automation Anywhere and blueprism. Our stack of tools (<a href="#id1"><span class="problematic" id="id2">``</span></a>OpenRPA, OpenFlow and NodeRED``¹) has many advantages and is obviously our suggestion for you. The reasoning for this recommendation is revealed in the next chapter, for now we will cover what each of these tools do and their outcome.</p>
+<p>¹ - We’re going to refer further to the <strong>OpenRPA</strong>, <strong>OpenFlow</strong> and <strong>Node-RED</strong> stack as OON.</p>
+<div class="section" id="openrpa">
+<h3><span class="section-number">1.2.1. </span>OpenRPA<a class="headerlink" href="#openrpa" title="Permalink to this headline">¶</a></h3>
+<p>This tool is basically the main environment where the processes are mapped and designed to fulfill the inherent task at question. Think of it as an <code class="docutils literal notranslate"><span class="pre">IDE</span> <span class="pre">-</span> <span class="pre">Integrated</span> <span class="pre">Development</span> <span class="pre">Environment</span></code> for creating workflows. It is where all previously mapped activities will be implemented - such as clicking a message on a mailbox, typing content into an input form.</p>
+<p>It is also the software you’re supposed to use to export all your workflows into a repository that will manage orchestration and input. The software we’ll use for that is OpenFlow, which comes next in this discussion.</p>
+</div>
+<div class="section" id="openflow">
+<h3><span class="section-number">1.2.2. </span>OpenFlow<a class="headerlink" href="#openflow" title="Permalink to this headline">¶</a></h3>
+<p>OpenFlow can function as both a centralized and a decentralized platform that exposes a secure database, by enforcing Access Control List on all objects and offering on the fly encryption to those. It can also function as an orchestrator of <strong>Node-RED</strong> instances when run on Kubernetes and a lightweight orchestrator of robots.
+When an <strong>OpenRPA</strong> robot is connected to OpenFlow it will store all data (workflows, detectors, credentials, and state) inside OpenFlow. The same also applies when a <strong>Node-RED</strong> instance is connected to OpenFlow: it will store all data (flows, state, session, and credentials) inside <strong>OpenFlow</strong> as well.
+Finally, OpenFlow also offers many different ways to add human interaction to the table, either by using the built in Form designer (and calling them via <strong>Node-RED</strong> workflows) or by remotely invoking OpenRPA workflows directly on the website.</p>
+</div>
+<div class="section" id="node-red">
+<h3><span class="section-number">1.2.3. </span>Node-RED<a class="headerlink" href="#node-red" title="Permalink to this headline">¶</a></h3>
+<p><strong>Node-RED</strong> is an event based workflow engine original designed to handle telegram messages in an IoT installation, but the big community around <strong>Node-RED</strong> has expanded the functionality to also integrate to traditional automation like PLCs, and more than 2500 IT systems and cloud offerings.
+When run as part of OpenFlow, we add easy orchestration, load balancing and enhanced security feature to the platform. <strong>Node-RED</strong> also functions as the orchestrator of OpenRPA robots via OpenFlow. <strong>Node-RED</strong> allows robots to interact with all the IT systems supported by <strong>Node-RED</strong> (hardware devices, APIs, online services, much more!) by simply wiring flows together. Lastly, OpenFlow also makes use of <strong>Node-RED</strong> as its backend to run flows for the forms created by the Forms designer.</p>
+</div>
+</div>
+<div class="section" id="why-openrpa-openflow-nodered">
+<h2><span class="section-number">1.3. </span><strong>Why OpenRPA/OpenFlow/NodeRED?</strong><a class="headerlink" href="#why-openrpa-openflow-nodered" title="Permalink to this headline">¶</a></h2>
+<p>Our reasons for using the OON stack are presented in-depth below.</p>
+<div class="section" id="low-code-concept">
+<h3><span class="section-number">1.3.1. </span>Low code concept<a class="headerlink" href="#low-code-concept" title="Permalink to this headline">¶</a></h3>
+<p>Low code concept means there is no technical or programing knowledge required to perform a desired task, i.e. you can simply just drag a box and input a few parameters for it to become fully functional.</p>
+<p>The term <code class="docutils literal notranslate"><span class="pre">low</span> <span class="pre">code</span></code> refers to platforms that resort mainly to GUI-focused interfaces which assist users in the development of a BPM without necessarily requiring basic programming knowledge. These applications use heavy visual modeling in favor of coding to aid in the process of designing and implementing processes.</p>
+<p>Low code development platforms have a very gentle learning curve and are often designed with UX-oriented practices in mind. It is a fact that it also helps the user to advance rapidly and design and deploy working processes with few caveats.</p>
+<p>² - From now on, we’re going to refer to low code development platforms as LCDPs.</p>
+</div>
+<div class="section" id="time-to-market">
+<h3><span class="section-number">1.3.2. </span>Time to market<a class="headerlink" href="#time-to-market" title="Permalink to this headline">¶</a></h3>
+<p>The length of time between a product being conceived until it’s completion and deployment is significantly higher using a common application development process in comparison to LCDP. This occurs because there are far less steps involved in this cycle when LCDP is used. As an example, code-related unit tests are not needed, since all the parts of the software used to build the application are already tested and integrated within the framework.</p>
+<p>In our stack, this also means it’s easy to prototype and creating something actually functional - due to LCDP programming - and the migration from prototype to an actual production product can be easily achieved. This is provided by the OON stack framework native integration and easiness of use.</p>
+</div>
+<div class="section" id="framework-vs-extra-work">
+<h3><span class="section-number">1.3.3. </span>Framework vs “extra work”<a class="headerlink" href="#framework-vs-extra-work" title="Permalink to this headline">¶</a></h3>
+<p>The OON stack significantly minimizes the amount of work needed to be done to implement a final product. This is due to the many features embedded within it, such as privilege and access management, embedded MongoDB database, safe credentials and form. Which is now discussed.</p>
+<div class="section" id="privilege-and-access-management">
+<h4><span class="section-number">1.3.3.1. </span>Privilege and Access Management<a class="headerlink" href="#privilege-and-access-management" title="Permalink to this headline">¶</a></h4>
+<p>OpenFlow provides a readily integrated privilege and access management interface which is further discussed in the <strong>Roles</strong> chapter in the OpenFlow’s section. It makes possible for the administrator to create users and assign roles to these users which limit - or expand - the features they can access. There is no need to configure an user for every workflow and set the permissions accordingly, you only need to create a role and assign their given permissions.</p>
+</div>
+<div class="section" id="embedded-mongodb-database">
+<h4><span class="section-number">1.3.3.2. </span>Embedded MongoDB Database<a class="headerlink" href="#embedded-mongodb-database" title="Permalink to this headline">¶</a></h4>
+<p>The OON stack has a single database which they use to feed their data to and from, <a class="reference external" href="https://www.mongodb.com/what-is-mongodb">MongoDB</a> (<a class="reference external" href="https://www.mongodb.com/what-is-mongodb">https://www.mongodb.com/what-is-mongodb</a>). Integration is easy and the data is persisted in JSON.</p>
+<p>The fact that there is a central database to the stack provides an easy way of creating <strong>KPI - Key Performance Indicators</strong>, reports and dashboards, graphs, and records of the data processed by the agents. It also measures the effectiveness of robots and their accuracy but remember you can only manage what can be measured.</p>
+<p>You can also save files in the cloud and use them as shared files - such as a form presented in a Word file. It also has methods for saving files for future usage - as an example, for tasks that take too long or tasks that are fragmented between many steps/workflows. This provides a centralized way of handling file management.</p>
+</div>
+<div class="section" id="safe-credentials">
+<h4><span class="section-number">1.3.3.3. </span>Safe Credentials<a class="headerlink" href="#safe-credentials" title="Permalink to this headline">¶</a></h4>
+<p>Our safe credentials management system provides an easy way, to share, insert, update and delete credentials between systems and robots using the <code class="docutils literal notranslate"><span class="pre">SecureString</span></code> class¹. Everything is automatically managed, so if you need to store a specific credential used by a workflow, you do not need to worry about the security of the storage system.</p>
+<p>¹ - <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.security.securestring?view=netcore-3.1">Secure String class</a> (<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.security.securestring?view=netcore-3.1">https://docs.microsoft.com/en-us/dotnet/api/system.security.securestring?view=netcore-3.1</a>).</p>
+</div>
+<div class="section" id="form">
+<h4><span class="section-number">1.3.3.4. </span>Form<a class="headerlink" href="#form" title="Permalink to this headline">¶</a></h4>
+<p>OpenFlow also provides forms, a user-friendly way of sending input to a workflow by creating dynamic webpage. It gathers all the input a user should give so the robot can use it for its processing and execution. This means you do not need to create a webpage just to gather data from the robot but you can create a form and make it public - or give its acess only to a few roles - so the end user can enter the input.</p>
+</div>
+<div class="section" id="message-queuing">
+<h4><span class="section-number">1.3.3.5. </span>Message Queuing<a class="headerlink" href="#message-queuing" title="Permalink to this headline">¶</a></h4>
+<p>Using the AMQP functionality exposed by OpenFlow, NodeRED is able to work with queues and tasks in the OON stack. This is used for distributing workload among many NodeRED instance and/or many robots, that needs to run the same workload. This makes the workflow more resilient by giving higher fault tolerance (removing single points of failure) and more elasticity by making it easy to add more nodes/robots to help run the workload, all automatically.</p>
+</div>
+<div class="section" id="built-in-functions">
+<h4><span class="section-number">1.3.3.6. </span>Built-in Functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline">¶</a></h4>
+<p>Many universal RPA activities are already shipped built-in inside OpenRPA - ready to use. For example, reading an excel file, opening a file, browsing a webpage.</p>
+</div>
+</div>
+<div class="section" id="how-the-tools-integrate">
+<h3><span class="section-number">1.3.4. </span>How the tools integrate<a class="headerlink" href="#how-the-tools-integrate" title="Permalink to this headline">¶</a></h3>
+<p>The development process flows through OpenRPA -&gt; OpenFlow -&gt; Node-RED.</p>
+<p>In <strong>OpenRPA</strong> you design the workflows which will execute the desired RPA process.</p>
+<p>In <strong>OpenFlow</strong>, you manage them and also create forms for external input for the user.</p>
+<p>In <strong>Node-RED</strong>, you wire both of them together in a way similar to building a flowchart.</p>
+<blockquote>
+<div><p>Think of it as the <strong>OpenRPA</strong> workflow represent the players in a concert, <strong>OpenFlow</strong> is the maestro, or conductor, and <strong>Node-RED</strong> is the sheet music.</p>
+</div></blockquote>
+</div>
+<div class="section" id="scalability">
+<h3><span class="section-number">1.3.5. </span>Scalability<a class="headerlink" href="#scalability" title="Permalink to this headline">¶</a></h3>
+<p>Scaling products with the OON stack is much easier than usual. Given that orchestration is directly managed by OpenFlow and assisted by Node-RED. It is also much easier to deploy, verify and provide maintenance to robots.</p>
+<p>When you deploy a new change on any of the three applications (OpenFlow, OpenRPA or Node-RED) they are instantly applied to the whole environment - online robots will fetch the changes automatically and offline robots will do it the next time they get online, the same for all information used by NodeRED (such as workflows, permissions, forms, etc) - worry free. This is due to the main repository from which the robots &amp; applications gather their data from: OpenFlow.</p>
+<p>OpenFlow can handle a limitless number of robots thanks to RabbitMQ¹. The required technical specs for the server running OpenFlow/Node-RED it are intensely low.</p>
+<p>OpenRPA agents can scale up by installing OpenRPA on different physical or virtual machines, or by using HDRobots extension where a windows terminal machine can run many users/instances simultaneously. Now, if a given process requires no GUI - in other words, all processing can be done without the need of keyboard, mouse or image recognition, a single instance of OpenRPA may run many workflows in parallel.</p>
+<p>¹ - <a class="reference external" href="https://www.rabbitmq.com/">RabbitMQ</a> (<a class="reference external" href="https://www.rabbitmq.com/">https://www.rabbitmq.com/</a>).</p>
+</div>
+<div class="section" id="security-no-exposed-code">
+<h3><span class="section-number">1.3.6. </span>Security/No exposed code<a class="headerlink" href="#security-no-exposed-code" title="Permalink to this headline">¶</a></h3>
+<p>No code is exposed to the end-user or agents, since there is rarely any code written (thanks to LCDPs) and viewing of the code itself can be disabled if needed.</p>
+<p>For credentials, OpenFlow supports username/password, OAuth and WS-Federation to authenticate users. NodeRED uses WS-Federation to authenticate users from OpenFlow.
+Using OAuth/WS-Federation will usually improve security a lot, since it allows you to better manage and control the identities of the users in your favorite IDP solution.</p>
+<p>There is also no hard limitation on the number of existing of user or agents, hence each robot or OpenFlow user may have its own username/password credential - as many as you may need.</p>
+<p>Credentials may also have differents level of permissions (read/edit/remove) for each object (workflows, projects, forms, etc) and, last but not least, each password is well encrypted by using cryptography ciphers, which makes it even harder for someone to attempt an authentication attack.</p>
+</div>
+</div>
+</div>
 
 
-            </div>
-
+           </div>
+           
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="openflow.html" class="btn btn-neutral float-right" title="2. OpenFlow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="BPA/OpenIAP Docs - Integrated Framework Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
-            <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+  <hr/>
 
-              <a href="openflow.html" class="btn btn-neutral float-right" title="2. OpenFlow" accesskey="n"
-                rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
 
-
-              <a href="index.html" class="btn btn-neutral float-left"
-                title="BPA/OpenIAP Docs - Integrated Framework Documentation" accesskey="p" rel="prev"><span
-                  class="fa fa-arrow-circle-left"></span> Previous</a>
-
-            </div>
-
-
-            <hr />
-
-            <div role="contentinfo">
-              <p>
-                &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
-
-              </p>
-            </div>
-            Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a
-              href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a
-              href="https://readthedocs.org">Read the Docs</a>.
-            <p>Powered by <a href="https://bpatechnologies.com/">BPA Technologies</a></p>
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p>Powered by <a href="https://bpatechnologies.com/">BPA Technologies</a></p>
+     
 
 
-
-          </footer>
+</footer>
 
         </div>
       </div>
@@ -479,22 +329,20 @@
     </section>
 
   </div>
-
-
+  
 
   <script type="text/javascript">
-    jQuery(function () {
-      SphinxRtdTheme.Navigation.enable(true);
-    });
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
   </script>
 
-
-
-
-
-  <h4>>Powered by BPA Technologies - bpatechnologies.com</h4>
+  
+  
+    
+  
+        <h4>>Powered by BPA Technologies - bpatechnologies.com</h4>
 
 
 </body>
-
 </html>

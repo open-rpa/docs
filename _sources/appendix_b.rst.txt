@@ -19,7 +19,7 @@ Click Element
 Virtual Click
 ^^^^^^^^^^^^^
 
-A virtual click is different from a physical click in that it simulates a mouse event by using ``User32.dll``. There are several reasons to do this but the main ones are: it consumes less resources and provides a faster way of clicking an element. For more on the ``mouse_event`` function, please refer to `this link<https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-mouse_event>`_ (``https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-mouse_event``).
+A virtual click is different from a physical click in that it simulates a mouse event by using ``User32.dll``. There are several reasons to do this but the main ones are: it consumes less resources and provides a faster way of clicking an element. For more on the ``mouse_event`` function, please refer to `this link <https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-mouse_event>`_ (``https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-mouse_event``).
 
 
 Data Types

@@ -1,168 +1,147 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
 
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. Appendix A &mdash; BPA/OpenIAP Docs 1.0.4 documentation</title>
+  
 
-  <title>5. Appendix A &mdash; BPA/OpenIAP Docs 1.0.2 documentation</title>
-
-
-
-
-
-
-
-
-  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
-
-
-  <script type="text/javascript" id="documentation_options" data-url_root="./"
-    src="static/documentation_options.js"></script>
-  <script src="static/jquery.js"></script>
-  <script src="static/underscore.js"></script>
-  <script src="static/doctools.js"></script>
-  <script src="static/language_data.js"></script>
-
-  <script type="text/javascript" src="static/js/theme.js"></script>
-
-
-
-
+  
   <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="static/styles.css" type="text/css" />
-  <link rel="index" title="Index" href="genindex.html" />
-  <link rel="search" title="Search" href="search.html" />
-  <link rel="next" title="6. Appendix B" href="appendix_b.html" />
-  <link rel="prev" title="4. Node-RED" href="node_red.html" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
+        <script src="static/language_data.js"></script>
+    
+    <script type="text/javascript" src="static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6. Appendix B" href="appendix_b.html" />
+    <link rel="prev" title="4. Node-RED" href="node_red.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
-
+   
   <div class="wy-grid-for-nav">
-
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
+          
 
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> BPA/OpenIAP Docs
+          
 
-
-          <a href="index.html" class="icon icon-home"> BPA/OpenIAP Docs
-
-
-
+          
           </a>
 
+          
+            
+            
+          
 
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
 
-
-
-
-
-          <div role="search">
-            <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-              <input type="text" name="q" placeholder="Search docs" />
-              <input type="hidden" name="check_keywords" value="yes" />
-              <input type="hidden" name="area" value="default" />
-            </form>
-          </div>
-
-
+          
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="rpa.html">1. <strong>Introduction to RPA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="openflow.html">2. <strong>OpenFlow</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="openrpa.html">3. <strong>OpenRPA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="node_red.html">4. <strong>Node-RED</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. <strong>Appendix A</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">5.1. <strong>Introduction</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-hardware">5.1.1. What is hardware?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-software">5.1.2. What is software?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-a-programming-language">5.1.3. What is a programming language?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#variables">5.2. <strong>Variables</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-a-variable">5.2.1. What is a variable?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-do-i-declare-a-variable-inside-openrpa">5.2.2. How do I declare a variable inside OpenRPA?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-types-can-a-variable-assume">5.2.3. What types can a variable assume?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#types">5.3. <strong>Types</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#binary-representation">5.3.1. Binary representation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bit">5.3.1.1. Bit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-decimal-number-system">5.3.1.2. The decimal number system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-binary-number-system">5.3.1.3. The binary number system</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-a-type">5.3.2. What is a type?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b.html">6. <strong>Appendix B</strong></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">1. License</a></li>
+</ul>
 
-
-
-
-
-
-          <ul class="current">
-            <li class="toctree-l1"><a class="reference internal" href="rpa.html">1. <strong>Introduction to
-                  RPA</strong></a></li>
-            <li class="toctree-l1"><a class="reference internal" href="openflow.html">2. <strong>OpenFlow</strong></a>
-            </li>
-            <li class="toctree-l1"><a class="reference internal" href="openrpa.html">3. <strong>OpenRPA</strong></a>
-            </li>
-            <li class="toctree-l1"><a class="reference internal" href="node_red.html">4. <strong>Node-RED</strong></a>
-            </li>
-            <li class="toctree-l1 current"><a class="current reference internal" href="#">5. <strong>Appendix
-                  A</strong></a>
-              <ul>
-                <li class="toctree-l2"><a class="reference internal" href="#introduction">5.1.
-                    <strong>Introduction</strong></a>
-                  <ul>
-                    <li class="toctree-l3"><a class="reference internal" href="#what-is-hardware">5.1.1. What is
-                        hardware?</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#what-is-software">5.1.2. What is
-                        software?</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#what-is-a-programming-language">5.1.3.
-                        What is a programming language?</a></li>
-                  </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#variables">5.2.
-                    <strong>Variables</strong></a>
-                  <ul>
-                    <li class="toctree-l3"><a class="reference internal" href="#what-is-a-variable">5.2.1. What is a
-                        variable?</a></li>
-                    <li class="toctree-l3"><a class="reference internal"
-                        href="#how-do-i-declare-a-variable-inside-openrpa">5.2.2. How do I declare a variable inside
-                        OpenRPA?</a></li>
-                    <li class="toctree-l3"><a class="reference internal" href="#what-types-can-a-variable-assume">5.2.3.
-                        What types can a variable assume?</a></li>
-                  </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#types">5.3. <strong>Types</strong></a>
-                  <ul>
-                    <li class="toctree-l3"><a class="reference internal" href="#binary-representation">5.3.1. Binary
-                        representation</a>
-                      <ul>
-                        <li class="toctree-l4"><a class="reference internal" href="#bit">5.3.1.1. Bit</a></li>
-                        <li class="toctree-l4"><a class="reference internal" href="#the-decimal-number-system">5.3.1.2.
-                            The decimal number system</a></li>
-                        <li class="toctree-l4"><a class="reference internal" href="#the-binary-number-system">5.3.1.3.
-                            The binary number system</a></li>
-                      </ul>
-                    </li>
-                    <li class="toctree-l3"><a class="reference internal" href="#what-is-a-type">5.3.2. What is a
-                        type?</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li class="toctree-l1"><a class="reference internal" href="appendix_b.html">6. <strong>Appendix
-                  B</strong></a></li>
-          </ul>
-          <ul>
-            <li class="toctree-l1"><a class="reference internal" href="license.html">1. License</a></li>
-          </ul>
-
-
-
+            
+          
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-
+      
       <nav class="wy-nav-top" aria-label="top navigation">
-
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">BPA/OpenIAP Docs</a>
-
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BPA/OpenIAP Docs</a>
+        
       </nav>
 
 
       <div class="wy-nav-content">
-
+        
         <div class="rst-content">
+        
+          
 
 
 
@@ -178,194 +157,132 @@
 
 
 
+<div role="navigation" aria-label="breadcrumbs navigation">
 
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">5. </span><strong>Appendix A</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
 
-          <div role="navigation" aria-label="breadcrumbs navigation">
-
-            <ul class="wy-breadcrumbs">
-
-              <li><a href="index.html">Docs</a> &raquo;</li>
-
-              <li><span class="section-number">5. </span><strong>Appendix A</strong></li>
-
-
-              <li class="wy-breadcrumbs-aside">
-
-
-
-              </li>
-
-            </ul>
-
-
-            <hr />
-          </div>
+  
+  <hr/>
+</div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div itemprop="articleBody">
-
-              <div class="section" id="appendix-a">
-                <h1><span class="section-number">5. </span><strong>Appendix A</strong><a class="headerlink"
-                    href="#appendix-a" title="Permalink to this headline">¶</a></h1>
-                <p>This appendix deals with questions concerning programming concepts often needed to understand the OON
-                  stack.</p>
-                <div class="section" id="introduction">
-                  <h2><span class="section-number">5.1. </span><strong>Introduction</strong><a class="headerlink"
-                      href="#introduction" title="Permalink to this headline">¶</a></h2>
-                  <div class="section" id="what-is-hardware">
-                    <h3><span class="section-number">5.1.1. </span>What is hardware?<a class="headerlink"
-                        href="#what-is-hardware" title="Permalink to this headline">¶</a></h3>
-                    <p>By using the term <strong>hardware</strong>, we mean the physical parts that constitute a
-                      computer - the motherboard, CPU, GPU, etc. That is, the <code
-                        class="docutils literal notranslate"><span class="pre">hard</span></code> part of a computer,
-                      which is touchable and immediately visible in the physical realm.</p>
-                  </div>
-                  <div class="section" id="what-is-software">
-                    <h3><span class="section-number">5.1.2. </span>What is software?<a class="headerlink"
-                        href="#what-is-software" title="Permalink to this headline">¶</a></h3>
-                    <p>From <strong>software</strong>, when we refer to it generally, ie. <code
-                        class="docutils literal notranslate"><span class="pre">lato</span> <span class="pre">sensu</span></code>,
-                      we mean the concept of the abstract parts which constitute a computer - the programs which
-                      comprise all the computable abstractions performable by a computer. When we refer to it
-                      specifically, ie. <code
-                        class="docutils literal notranslate"><span class="pre">stricto</span> <span class="pre">sensu</span></code>,
-                      we refer to one of these programs. <strong>OpenRPA, OpenFlow and Node-RED</strong> are software
-                      themselves.</p>
-                  </div>
-                  <div class="section" id="what-is-a-programming-language">
-                    <h3><span class="section-number">5.1.3. </span>What is a programming language?<a class="headerlink"
-                        href="#what-is-a-programming-language" title="Permalink to this headline">¶</a></h3>
-                    <p>A programming language is a set of commands, instructions, and other syntax used to create a
-                      software program. Languages that programmers use to write code are called “high-level languages.”
-                      This code can be compiled into a “low-level language,” which is recognized directly by computer
-                      hardware.¹ <strong>OpenRPA</strong> itself is developed and maintained in a programming language
-                      called <strong>C# - read “see sharp”</strong>.</p>
-                    <p>¹ - <a class="reference external"
-                        href="https://techterms.com/definition/programming_language">TechTerms - Programming Language
-                        Definition</a> (<code
-                        class="docutils literal notranslate"><span class="pre">https://techterms.com/definition/programming_language</span></code>).
-                    </p>
-                    <p>From now on, every concept treated in this appendix will refer strictly to their content with
-                      regards to C#. These concepts may not apply to other programming languages, which are not
-                      concerned in this manual.</p>
-                  </div>
-                </div>
-                <div class="section" id="variables">
-                  <h2><span class="section-number">5.2. </span><strong>Variables</strong><a class="headerlink"
-                      href="#variables" title="Permalink to this headline">¶</a></h2>
-                  <div class="section" id="what-is-a-variable">
-                    <h3><span class="section-number">5.2.1. </span>What is a variable?<a class="headerlink"
-                        href="#what-is-a-variable" title="Permalink to this headline">¶</a></h3>
-                    <p>A variable is simply a value with a mutable state, this means the user can change it before,
-                      during or after the execution of a workflow inside OpenRPA. A variable must also, obligatorily,
-                      have a type assigned to itself.</p>
-                  </div>
-                  <div class="section" id="how-do-i-declare-a-variable-inside-openrpa">
-                    <h3><span class="section-number">5.2.2. </span>How do I declare a variable inside OpenRPA?<a
-                        class="headerlink" href="#how-do-i-declare-a-variable-inside-openrpa"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p>Refer to section <a class="reference internal" href="openrpa.html#using-the-designer"><span
-                          class="std std-ref">Using the Designer</span></a> or section <a class="reference internal"
-                        href="openrpa.html#variables-arguments"><span class="std std-ref">Variables,
-                          Arguments</span></a>.</p>
-                  </div>
-                  <div class="section" id="what-types-can-a-variable-assume">
-                    <h3><span class="section-number">5.2.3. </span>What types can a variable assume?<a
-                        class="headerlink" href="#what-types-can-a-variable-assume"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p>Virtually, any of the types compiled inside the OpenRPA application. If you want to take a peek
-                      into it, simply declare a variable and click <code
-                        class="docutils literal notranslate"><span class="pre">Browse</span> <span class="pre">for</span> <span class="pre">types</span></code>
-                      inside it.</p>
-                  </div>
-                </div>
-                <div class="section" id="types">
-                  <h2><span class="section-number">5.3. </span><strong>Types</strong><a class="headerlink" href="#types"
-                      title="Permalink to this headline">¶</a></h2>
-                  <p>Now that we have properly defined hardware, software, and programming language, we can delve
-                    further into types.</p>
-                  <div class="section" id="binary-representation">
-                    <h3><span class="section-number">5.3.1. </span>Binary representation<a class="headerlink"
-                        href="#binary-representation" title="Permalink to this headline">¶</a></h3>
-                    <div class="section" id="bit">
-                      <h4><span class="section-number">5.3.1.1. </span>Bit<a class="headerlink" href="#bit"
-                          title="Permalink to this headline">¶</a></h4>
-                      <p>A <strong>bit</strong> is the basic unit used to represent memory inside a computer. A bit may
-                        store the values 0 or 1. It is also the smallest possible unit.</p>
-                      <p>At the very end, a bit is represented by using a continuous physical measure - the voltage -
-                        and any operation in a computer can be represented in the <a class="reference external"
-                          href="https://www.electronics-tutorials.ws/logic/logic_1.html">digital logic level</a> by
-                        using <a class="reference external"
-                          href="https://www.electronics-tutorials.ws/logic/logic_1.html">Boolean algebra</a>.</p>
-                      <p>The greatest part is: you do not need to understand all of that to use a computer! That occurs
-                        because those layers of abstraction are hidden from the end-user. Yet, to understand types we’ll
-                        need to use concepts such as the binary number system, which will be discussed further.</p>
-                    </div>
-                    <div class="section" id="the-decimal-number-system">
-                      <h4><span class="section-number">5.3.1.2. </span>The decimal number system<a class="headerlink"
-                          href="#the-decimal-number-system" title="Permalink to this headline">¶</a></h4>
-                      <p>Understanding the decimal number system is very easy, since it is the system we normally use
-                        everywhere in our daily life. The decimal number system works by taking every unit <code
-                          class="docutils literal notranslate"><span class="pre">a</span></code> and multiplying it by
-                        the <code class="docutils literal notranslate"><span class="pre">i-th</span></code> index times
-                        <code class="docutils literal notranslate"><span class="pre">10</span></code>. Therefore, a
-                        hypothetical number ABC could be represented as seen in the image below. Another example is
-                        provided, showing the representation of 356 in the decimal system.</p>
-                      <div class="figure align-center">
-                        <a class="reference internal image-reference" href="images/decimal_representation.png"><img
-                            alt="images/decimal_representation.png" src="images/decimal_representation.png"
-                            style="width: 309.0px; height: 51.0px;" /></a>
-                      </div>
-                    </div>
-                    <div class="section" id="the-binary-number-system">
-                      <h4><span class="section-number">5.3.1.3. </span>The binary number system<a class="headerlink"
-                          href="#the-binary-number-system" title="Permalink to this headline">¶</a></h4>
-                      <p>On the other hand, the binary number system represents numbers using 2 as its base.</p>
-                    </div>
-                  </div>
-                  <div class="section" id="what-is-a-type">
-                    <h3><span class="section-number">5.3.2. </span>What is a type?<a class="headerlink"
-                        href="#what-is-a-type" title="Permalink to this headline">¶</a></h3>
-                    <p>A type is the representation of a variable that a computer acts upon, or, putting it in layman
-                      terms, what the computer “sees”. If we’re thinking in terms of binary digits - ie. bits, the
-                      following types can be explained by their representation in binary digits.</p>
-                  </div>
-                </div>
-              </div>
+           <div itemprop="articleBody">
+            
+  <div class="section" id="appendix-a">
+<h1><span class="section-number">5. </span><strong>Appendix A</strong><a class="headerlink" href="#appendix-a" title="Permalink to this headline">¶</a></h1>
+<p>This appendix deals with questions concerning programming concepts often needed to understand the OON stack.</p>
+<div class="section" id="introduction">
+<h2><span class="section-number">5.1. </span><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-hardware">
+<h3><span class="section-number">5.1.1. </span>What is hardware?<a class="headerlink" href="#what-is-hardware" title="Permalink to this headline">¶</a></h3>
+<p>By using the term <strong>hardware</strong>, we mean the physical parts that constitute a computer - the motherboard, CPU, GPU, etc. That is, the <code class="docutils literal notranslate"><span class="pre">hard</span></code> part of a computer, which is touchable and immediately visible in the physical realm.</p>
+</div>
+<div class="section" id="what-is-software">
+<h3><span class="section-number">5.1.2. </span>What is software?<a class="headerlink" href="#what-is-software" title="Permalink to this headline">¶</a></h3>
+<p>From <strong>software</strong>, when we refer to it generally, ie. <code class="docutils literal notranslate"><span class="pre">lato</span> <span class="pre">sensu</span></code>, we mean the concept of the abstract parts which constitute a computer - the programs which comprise all the computable abstractions performable by a computer. When we refer to it specifically, ie. <code class="docutils literal notranslate"><span class="pre">stricto</span> <span class="pre">sensu</span></code>, we refer to one of these programs. <strong>OpenRPA, OpenFlow and Node-RED</strong> are software themselves.</p>
+</div>
+<div class="section" id="what-is-a-programming-language">
+<h3><span class="section-number">5.1.3. </span>What is a programming language?<a class="headerlink" href="#what-is-a-programming-language" title="Permalink to this headline">¶</a></h3>
+<p>A programming language is a set of commands, instructions, and other syntax used to create a software program. Languages that programmers use to write code are called “high-level languages.” This code can be compiled into a “low-level language,” which is recognized directly by computer hardware.¹ <strong>OpenRPA</strong> itself is developed and maintained in a programming language called <strong>C# - read “see sharp”</strong>.</p>
+<p>¹ - <a class="reference external" href="https://techterms.com/definition/programming_language">TechTerms - Programming Language Definition</a> (<code class="docutils literal notranslate"><span class="pre">https://techterms.com/definition/programming_language</span></code>).</p>
+<p>From now on, every concept treated in this appendix will refer strictly to their content with regards to C#. These concepts may not apply to other programming languages, which are not concerned in this manual.</p>
+</div>
+</div>
+<div class="section" id="variables">
+<h2><span class="section-number">5.2. </span><strong>Variables</strong><a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-a-variable">
+<h3><span class="section-number">5.2.1. </span>What is a variable?<a class="headerlink" href="#what-is-a-variable" title="Permalink to this headline">¶</a></h3>
+<p>A variable is simply a value with a mutable state, this means the user can change it before, during or after the execution of a workflow inside OpenRPA. A variable must also, obligatorily, have a type assigned to itself.</p>
+</div>
+<div class="section" id="how-do-i-declare-a-variable-inside-openrpa">
+<h3><span class="section-number">5.2.2. </span>How do I declare a variable inside OpenRPA?<a class="headerlink" href="#how-do-i-declare-a-variable-inside-openrpa" title="Permalink to this headline">¶</a></h3>
+<p>Refer to section <a class="reference internal" href="openrpa.html#using-the-designer"><span class="std std-ref">Using the Designer</span></a> or section <a class="reference internal" href="openrpa.html#variables-arguments"><span class="std std-ref">Variables, Arguments</span></a>.</p>
+</div>
+<div class="section" id="what-types-can-a-variable-assume">
+<h3><span class="section-number">5.2.3. </span>What types can a variable assume?<a class="headerlink" href="#what-types-can-a-variable-assume" title="Permalink to this headline">¶</a></h3>
+<p>Virtually, any of the types compiled inside the OpenRPA application. If you want to take a peek into it, simply declare a variable and click <code class="docutils literal notranslate"><span class="pre">Browse</span> <span class="pre">for</span> <span class="pre">types</span></code> inside it.</p>
+</div>
+</div>
+<div class="section" id="types">
+<h2><span class="section-number">5.3. </span><strong>Types</strong><a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have properly defined hardware, software, and programming language, we can delve further into types.</p>
+<div class="section" id="binary-representation">
+<h3><span class="section-number">5.3.1. </span>Binary representation<a class="headerlink" href="#binary-representation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="bit">
+<h4><span class="section-number">5.3.1.1. </span>Bit<a class="headerlink" href="#bit" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>bit</strong> is the basic unit used to represent memory inside a computer. A bit may store the values 0 or 1. It is also the smallest possible unit.</p>
+<p>At the very end, a bit is represented by using a continuous physical measure - the voltage - and any operation in a computer can be represented in the <a class="reference external" href="https://www.electronics-tutorials.ws/logic/logic_1.html">digital logic level</a> by using <a class="reference external" href="https://www.electronics-tutorials.ws/logic/logic_1.html">Boolean algebra</a>.</p>
+<p>The greatest part is: you do not need to understand all of that to use a computer! That occurs because those layers of abstraction are hidden from the end-user. Yet, to understand types we’ll need to use concepts such as the binary number system, which will be discussed further.</p>
+</div>
+<div class="section" id="the-decimal-number-system">
+<h4><span class="section-number">5.3.1.2. </span>The decimal number system<a class="headerlink" href="#the-decimal-number-system" title="Permalink to this headline">¶</a></h4>
+<p>Understanding the decimal number system is very easy, since it is the system we normally use everywhere in our daily life. The decimal number system works by taking every unit <code class="docutils literal notranslate"><span class="pre">a</span></code> and multiplying it by the <code class="docutils literal notranslate"><span class="pre">i-th</span></code> index times <code class="docutils literal notranslate"><span class="pre">10</span></code>. Therefore, a hypothetical number ABC could be represented as seen in the image below. Another example is provided, showing the representation of 356 in the decimal system.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/decimal_representation.png"><img alt="images/decimal_representation.png" src="images/decimal_representation.png" style="width: 309.0px; height: 51.0px;" /></a>
+</div>
+</div>
+<div class="section" id="the-binary-number-system">
+<h4><span class="section-number">5.3.1.3. </span>The binary number system<a class="headerlink" href="#the-binary-number-system" title="Permalink to this headline">¶</a></h4>
+<p>On the other hand, the binary number system represents numbers using 2 as its base.</p>
+</div>
+</div>
+<div class="section" id="what-is-a-type">
+<h3><span class="section-number">5.3.2. </span>What is a type?<a class="headerlink" href="#what-is-a-type" title="Permalink to this headline">¶</a></h3>
+<p>A type is the representation of a variable that a computer acts upon, or, putting it in layman terms, what the computer “sees”. If we’re thinking in terms of binary digits - ie. bits, the following types can be explained by their representation in binary digits.</p>
+</div>
+</div>
+</div>
 
 
-            </div>
-
+           </div>
+           
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appendix_b.html" class="btn btn-neutral float-right" title="6. Appendix B" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="node_red.html" class="btn btn-neutral float-left" title="4. Node-RED" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
-            <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+  <hr/>
 
-              <a href="appendix_b.html" class="btn btn-neutral float-right" title="6. Appendix B" accesskey="n"
-                rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
 
-
-              <a href="node_red.html" class="btn btn-neutral float-left" title="4. Node-RED" accesskey="p"
-                rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-
-            </div>
-
-
-            <hr />
-
-            <div role="contentinfo">
-              <p>
-                &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
-
-              </p>
-            </div>
-            Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a
-              href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a
-              href="https://readthedocs.org">Read the Docs</a>.
-            <p>Powered by <a href="https://bpatechnologies.com/">BPA Technologies</a></p>
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p>Powered by <a href="https://bpatechnologies.com/">BPA Technologies</a></p>
+     
 
 
-
-          </footer>
+</footer>
 
         </div>
       </div>
@@ -373,22 +290,20 @@
     </section>
 
   </div>
-
-
+  
 
   <script type="text/javascript">
-    jQuery(function () {
-      SphinxRtdTheme.Navigation.enable(true);
-    });
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
   </script>
 
-
-
-
-
-  <h4>>Powered by BPA Technologies - bpatechnologies.com</h4>
+  
+  
+    
+  
+        <h4>>Powered by BPA Technologies - bpatechnologies.com</h4>
 
 
 </body>
-
 </html>
