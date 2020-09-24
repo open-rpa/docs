@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Forms &mdash; BPA/OpenIAP Docs 1.0.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
+        <script src="static/language_data.js"></script>
+    
+    <script type="text/javascript" src="static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/styles.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> BPA/OpenIAP Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="rpa.html">1. <strong>Introduction to RPA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="openflow.html">2. <strong>OpenFlow</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="openrpa.html">3. <strong>OpenRPA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="node_red.html">4. <strong>Node-RED</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">5. <strong>Appendix A</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b.html">6. <strong>Appendix B</strong></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">1. License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BPA/OpenIAP Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><strong>Forms</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="forms">
+<h1><strong>Forms</strong><a class="headerlink" href="#forms" title="Permalink to this headline">¶</a></h1>
+<p>Forms are an user-friendly way of passing input to a workflow by creating dynamic OpenFlow’s webpages. There are two ways of generating a form, one of them is through OpenFlow’s automatically generated forms which are created upon saving a Workflow into its repository and the other one is manually creating a form and connecting it to a Node-RED workflow.</p>
+<div class="section" id="creating-a-form">
+<h2>Creating a Form<a class="headerlink" href="#creating-a-form" title="Permalink to this headline">¶</a></h2>
+<p>Creating a form is rather easy and simple. Go to the Forms page, where all forms are listed, available under the Admin dropdown or on the <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">Forms page</a> (eg. <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">http://localhost.openrpa.dk/#/Forms</a>) and click the Navy blue <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">form</span></code> button.</p>
+<div class="figure align-center" id="id1">
+<img alt="images/openflow_forms_page.png" src="images/openflow_forms_page.png" />
+<p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms page.</strong></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now at the Forms edit page, there are many basic from which you can choose. For synthetic purposes, we are only going to discuss the most used one here: Text Field Component.</p>
+<p>Drag the Form from the Basic category into the Form workspace. Immediately after, a window containing all the parameters to configure the form will appear.</p>
+<div class="figure align-center" id="id2">
+<img alt="images/openflow_forms_creation_page.png" src="images/openflow_forms_creation_page.png" />
+<p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms creation page.</strong></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id3">
+<img alt="images/openflow_form_starter_config_page.png" src="images/openflow_form_starter_config_page.png" />
+<p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms starter configuration tab.</strong></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="configuring-the-form">
+<h2>Configuring the Form<a class="headerlink" href="#configuring-the-form" title="Permalink to this headline">¶</a></h2>
+<p>Below are the steps needed to properly configure a form, in our case TextField Form.</p>
+<ul>
+<li><p><strong>Changing Form Label</strong></p>
+<blockquote>
+<div><p>To change the Form’s label, ie. the title which will appear for the end-user, simply click the Display tab and change the input form titled <strong>Label</strong>, the changes are shown real-time.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="figure align-center" id="id4">
+<img alt="images/openflow_form_label_config_page.png" src="images/openflow_form_label_config_page.png" />
+<p class="caption"><span class="caption-text"><strong>OpenFlow’s Form Display configuration tab.</strong></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<ul>
+<li><p><strong>Assigning Input Variable</strong></p>
+<blockquote>
+<div><p>To assign the input form to a variable configured inside the OpenRPA workflow you’ve mapped to OpenFlow, simply go to the API tab and insert the name of the variable inside <strong>Property Name</strong> and press save. Now the next time this workflow is called, a new parameter will appear.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="figure align-center" id="id5">
+<img alt="images/openflow_text_field_api_config.png" src="images/openflow_text_field_api_config.png" />
+<p class="caption"><span class="caption-text"><strong>OpenFlow’s Form API configuration tab.</strong></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<ul>
+<li><p><strong>Assigning Form to Node-RED Workflow</strong></p>
+<blockquote>
+<div><p>Now it is required that you assign a Form to a Node-RED workflow. To do that, go to Node-RED and click twice on the <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Out</span></code> node you want to assign the form to. The <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">workflow</span> <span class="pre">out</span> <span class="pre">node</span></code> tab appears and you must select the form you’ve just created in the <code class="docutils literal notranslate"><span class="pre">Userform</span></code> dropdown.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="figure align-default" id="id6">
+<img alt="images/openflow_node_red_configure_form.png" src="images/openflow_node_red_configure_form.png" />
+<p class="caption"><span class="caption-text"><strong>Assigning Form to Node-RED workflow.</strong></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="basic-forms">
+<h2>Basic Forms<a class="headerlink" href="#basic-forms" title="Permalink to this headline">¶</a></h2>
+<p>The Basic forms contain the most basic forms of inputs.</p>
+<div class="section" id="text-field">
+<h3>Text Field<a class="headerlink" href="#text-field" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="text-area">
+<h3>Text Area<a class="headerlink" href="#text-area" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="number">
+<h3>Number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="password">
+<h3>Password<a class="headerlink" href="#password" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="checkbox">
+<h3>Checkbox<a class="headerlink" href="#checkbox" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="select-boxes">
+<h3>Select Boxes<a class="headerlink" href="#select-boxes" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="select">
+<h3>Select<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="radio">
+<h3>Radio<a class="headerlink" href="#radio" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="button">
+<h3>Button<a class="headerlink" href="#button" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+</div>
+<div class="section" id="advanced-forms">
+<h2>Advanced Forms<a class="headerlink" href="#advanced-forms" title="Permalink to this headline">¶</a></h2>
+<p>The Advanced forms contain the most advanced forms of inputs.</p>
+<div class="section" id="email">
+<h3>Email<a class="headerlink" href="#email" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="url">
+<h3>URL<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="phone-number">
+<h3>Phone Number<a class="headerlink" href="#phone-number" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="tags">
+<h3>Tags<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="address">
+<h3>Address<a class="headerlink" href="#address" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="date-time">
+<h3>Date / Time<a class="headerlink" href="#date-time" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="day">
+<h3>Day<a class="headerlink" href="#day" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="time">
+<h3>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="currency">
+<h3>Currency<a class="headerlink" href="#currency" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="survey">
+<h3>Survey<a class="headerlink" href="#survey" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="signature">
+<h3>Signature<a class="headerlink" href="#signature" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+</div>
+<div class="section" id="layout-forms">
+<h2>Layout Forms<a class="headerlink" href="#layout-forms" title="Permalink to this headline">¶</a></h2>
+<p>The Layout forms contain view-related forms of input.</p>
+<div class="section" id="html-element">
+<h3>HTML Element<a class="headerlink" href="#html-element" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="content">
+<h3>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="columns">
+<h3>Columns<a class="headerlink" href="#columns" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="field-set">
+<h3>Field Set<a class="headerlink" href="#field-set" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="panel">
+<h3>Panel<a class="headerlink" href="#panel" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="table">
+<h3>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="tabs">
+<h3>Tabs<a class="headerlink" href="#tabs" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+<div class="section" id="well">
+<h3>Well<a class="headerlink" href="#well" title="Permalink to this headline">¶</a></h3>
+<p>Coming soon - Work in progress</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Thiago Pestitschek, Diego Thijssen, Tiago Bentivoglio, Paulo Veras
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p>Powered by <a href="https://bpatechnologies.com/">BPA Technologies</a></p>
+     
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+        <h4>>Powered by BPA Technologies - bpatechnologies.com</h4>
+
+
+</body>
+</html>

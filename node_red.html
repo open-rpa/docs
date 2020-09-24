@@ -1,19 +1,15 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. Node-RED &mdash; BPA/OpenIAP Docs 1.0.4 documentation</title>
+  <title>4. Node-RED &mdash; BPA/OpenIAP Docs 1.0.5 documentation</title>
   
-
-  
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="static/styles.css" type="text/css" />
 
   
   
@@ -21,9 +17,7 @@
   
 
   
-  <!--[if lt IE 9]>
-    <script src="static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
@@ -35,6 +29,11 @@
     <script type="text/javascript" src="static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/styles.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="5. Appendix A" href="appendix_a.html" />
@@ -52,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> BPA/OpenIAP Docs
+            <a href="index.html" class="icon icon-home"> BPA/OpenIAP Docs
           
 
           
@@ -75,7 +74,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -113,7 +111,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#flow-subflows-nodes-and-messages">4.4. <strong>Flow, Subflows, Nodes and Messages</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#openflow-openrpa-nodes">4.5. <strong>OpenFlow/OpenRPA Nodes</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#openflow-and-openrpa-nodes">4.5. <strong>OpenFlow and OpenRPA Nodes</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#rpa-detector">4.5.1. RPA Detector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rpa-workflow">4.5.2. RPA Workflow</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#smtpserver-in">4.5.3. SMTPServer In</a></li>
@@ -125,8 +123,20 @@
 <li class="toctree-l3"><a class="reference internal" href="#dummy-integration-openrpa-openflow-nodered">4.6.1. Dummy Integration OpenRPA-OpenFlow-NodeRED</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-openflow-forms">4.6.2. Using OpenFlow Forms</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ai-image-recognition">4.6.3. AI Image Recognition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#email-receive-send">4.6.4. Email Receive, Send</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#creating-a-http-endpoint">4.6.5. Creating a HTTP endpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#email-receive-send">4.6.4. Email Receive, Send</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#receive-e-mails">4.6.4.1. Receive e-mails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#redirecting-e-mails">4.6.4.2. Redirecting e-mails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#send-e-mails">4.6.4.3. Send e-mails</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-http-endpoint">4.6.5. Creating a HTTP endpoint</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#api-s-basic-strtucture">4.6.5.1. API’s basic strtucture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-new-database">4.6.5.2. Creating a new database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-new-items-to-database">4.6.5.3. Adding new items to database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deleting-an-item">4.6.5.4. Deleting an item</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-a-full-list-of-items">4.6.5.5. Get a full list of items</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#excel-read">4.6.6. Excel Read</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mongodb-entities">4.6.7. MongoDB Entities</a></li>
 </ul>
@@ -143,7 +153,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -182,7 +191,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
       <li><span class="section-number">4. </span><strong>Node-RED</strong></li>
     
@@ -339,18 +348,38 @@ Access it using your <strong>OpenFlow</strong> credentials. If this is your very
 </div>
 <div class="section" id="flow-subflows-nodes-and-messages">
 <h2><span class="section-number">4.4. </span><strong>Flow, Subflows, Nodes and Messages</strong><a class="headerlink" href="#flow-subflows-nodes-and-messages" title="Permalink to this headline">¶</a></h2>
-<p>Coming soon - Work in progress</p>
+<p>This section is mostly based on <code class="docutils literal notranslate"><span class="pre">Node-RED</span></code>’s documentation. Please refer to <a class="reference external" href="https://nodered.org/docs/user-guide/editor">https://nodered.org/docs/user-guide/editor</a> for further details.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">Flow</span></code> is a working space where <code class="docutils literal notranslate"><span class="pre">Nodes</span></code> are organized. Each <code class="docutils literal notranslate"><span class="pre">Flow</span></code> is represented by a tab with its name; a description is provided in the <em>Information Sidebar</em>. All the <code class="docutils literal notranslate"><span class="pre">Nodes</span></code> within a <code class="docutils literal notranslate"><span class="pre">Flow</span></code> share the same <em>Flowscope Context</em>, that is, they all have access to the same context values.</p>
+<p>New <code class="docutils literal notranslate"><span class="pre">Flows</span></code> are created by clicking the “plus” button in the top bar. In order to edit a <code class="docutils literal notranslate"><span class="pre">Flow</span></code>’s properties, users can double-click on its tab in the top bar. <code class="docutils literal notranslate"><span class="pre">Flows</span></code> can be disabled by clicking the toogle button at the bottom of the dialog box.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Subflows</span></code> are collections of <code class="docutils literal notranslate"><span class="pre">Nodes</span></code> grouped within a single <code class="docutils literal notranslate"><span class="pre">Node</span></code>. The purpose is to reduce visual complexity of the <code class="docutils literal notranslate"><span class="pre">Flow</span></code> or to reuse these collections. The created <code class="docutils literal notranslate"><span class="pre">Subflows</span></code> become a new <code class="docutils literal notranslate"><span class="pre">Node</span></code> in the <em>Pallete</em>.</p>
+<p>To create a blank <code class="docutils literal notranslate"><span class="pre">Subflow</span></code>, the user has to click on ‘Subflow -&gt; Create subflow’ option in the menu. Another option is to create a new <code class="docutils literal notranslate"><span class="pre">Subflow</span></code> out of existing <code class="docutils literal notranslate"><span class="pre">Nodes</span></code>. The user must select the <code class="docutils literal notranslate"><span class="pre">Nodes</span></code> to be converted and click on ‘Subflow -&gt; Selection to Subflow’ option in the menu.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Nodes</span></code> are the visual representation of actions and can be chained together via wires, thus creating a flow. The wires connect to the <code class="docutils literal notranslate"><span class="pre">node</span></code>’s ports, that work as doors. Each <code class="docutils literal notranslate"><span class="pre">node</span></code> can have at most one input port and several output ports.</p>
+<p>There are some icons that must be considered here. When there is a blue circle above a <code class="docutils literal notranslate"><span class="pre">node</span></code>, it means that it has undeployed changes. If there are any errors within a <code class="docutils literal notranslate"><span class="pre">node</span></code>, a red triangle will appear above it. When a <code class="docutils literal notranslate"><span class="pre">node</span></code> has a icon and a status message below it, that shows the runtime status of the <code class="docutils literal notranslate"><span class="pre">node</span></code>.</p>
+<p>By double-clicking on a <code class="docutils literal notranslate"><span class="pre">node</span></code>, the user will have access to its <em>Properties</em>, <em>Description</em> and <em>Appearance</em> - each one will be a tab in the dialog box. Users may also disable a <code class="docutils literal notranslate"><span class="pre">node</span></code> by clicking the button at the bottom of the dialog box.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Messages</span></code> are JavaScript objects and can have any set of properties. <code class="docutils literal notranslate"><span class="pre">Messages</span></code> are the units that pass between <code class="docutils literal notranslate"><span class="pre">Nodes</span></code> when a <code class="docutils literal notranslate"><span class="pre">Flow</span></code> is working.</p>
+<p>The most used property of a <code class="docutils literal notranslate"><span class="pre">Message</span></code> is its <em>payload</em> - represented by <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> inside the workspace. This is the default property to pass data between <code class="docutils literal notranslate"><span class="pre">Nodes</span></code>, but the user is free to create their own properties that most fit their needs. All JavaScript value types are accepted.</p>
+<p>When working with JSON strings, it must be first converted into a JavaScript object before its content can be accessed.</p>
+<p>For further details on <code class="docutils literal notranslate"><span class="pre">Messages</span></code>, please refer to <strong>Node_RED</strong>’s page on the topic: <a class="reference external" href="https://nodered.org/docs/user-guide/messages">https://nodered.org/docs/user-guide/messages</a>.</p>
 </div>
-<div class="section" id="openflow-openrpa-nodes">
-<h2><span class="section-number">4.5. </span><strong>OpenFlow/OpenRPA Nodes</strong><a class="headerlink" href="#openflow-openrpa-nodes" title="Permalink to this headline">¶</a></h2>
-<p>Coming soon - Work in progress</p>
+<div class="section" id="openflow-and-openrpa-nodes">
+<h2><span class="section-number">4.5. </span><strong>OpenFlow and OpenRPA Nodes</strong><a class="headerlink" href="#openflow-and-openrpa-nodes" title="Permalink to this headline">¶</a></h2>
+<p>The following nodes are dedicated to the integration of <strong>Node-RED</strong> to <strong>OpenFlow</strong> and <strong>OpenRPA</strong>.</p>
 <div class="section" id="rpa-detector">
 <h3><span class="section-number">4.5.1. </span>RPA Detector<a class="headerlink" href="#rpa-detector" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>This node is responsible for invoking a <code class="docutils literal notranslate"><span class="pre">Detector</span></code> previously created in <strong>OpenRPA</strong>. Once deployed, the <code class="docutils literal notranslate"><span class="pre">RPA</span> <span class="pre">Detector</span></code> will be active even if the <strong>Node-RED</strong> editor is closed (since the server is still running). Connect the output end of this node to a <strong>RPA Workflow</strong> node to invoke a workflow upon triggering the detector.</p>
+<p>Properties:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Detector</span></code> - the <strong>OpenRPA</strong> Detector that will be deployed in this <code class="docutils literal notranslate"><span class="pre">flow</span></code>. A list of all available <code class="docutils literal notranslate"><span class="pre">Detectors</span></code> will be presented to the user.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Name</span></code> - Display name of the <code class="docutils literal notranslate"><span class="pre">node</span></code>.</p>
 </div>
 <div class="section" id="rpa-workflow">
 <h3><span class="section-number">4.5.2. </span>RPA Workflow<a class="headerlink" href="#rpa-workflow" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>This node is responsible for invoking an <strong>OpenRPA</strong> workflow remotely.</p>
+<p>There are three output ports for this <code class="docutils literal notranslate"><span class="pre">node</span></code>. The first one is named <em>completed</em> and outputs the message from the <strong>OpenRPA</strong> robot if its execution succeeded. The second one is named <em>status</em> and outputs the status of the robot while executing. Finally, the third one is named <em>failed</em> and outputs the error message returned by the robot in case its execution failed.</p>
+<p>Properties:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Robot</span></code> - The robot to which the <code class="docutils literal notranslate"><span class="pre">Workflow</span></code> belongs. It corresponds to <strong>OpenRPA</strong>’s <code class="docutils literal notranslate"><span class="pre">Projects</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Workflow</span></code> - The name of the <code class="docutils literal notranslate"><span class="pre">Worflow</span></code> to be invoked. A list will be presented with all the available <code class="docutils literal notranslate"><span class="pre">workflows</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">queue</span> <span class="pre">name</span></code> - Name of the queue that will be created inside <strong>RabbitMQ</strong> for “robot agents” to consume from.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Name</span></code> - Display name of the <code class="docutils literal notranslate"><span class="pre">node</span></code>.</p>
 </div>
 <div class="section" id="smtpserver-in">
 <h3><span class="section-number">4.5.3. </span>SMTPServer In<a class="headerlink" href="#smtpserver-in" title="Permalink to this headline">¶</a></h3>
@@ -358,11 +387,22 @@ Access it using your <strong>OpenFlow</strong> credentials. If this is your very
 </div>
 <div class="section" id="workflow-in">
 <h3><span class="section-number">4.5.4. </span>Workflow In<a class="headerlink" href="#workflow-in" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>This node creates a new <code class="docutils literal notranslate"><span class="pre">Workflow</span></code> in <strong>OpenFlow</strong> - visible in the <a class="reference external" href="http://demo.openiap.io/#/Workflows">Workflows page</a> (<code class="docutils literal notranslate"><span class="pre">http://demo.openiap.io/#/Workflows</span></code>) or in the “Workflows” page set in your <strong>OpenFlow instance</strong> (usually <code class="docutils literal notranslate"><span class="pre">/#/Workflows</span></code>).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Workflow</span></code> created can have an execution chain that starts with this node. By wiring a <strong>RPA Workflow</strong> node to this one, it is possible to execute <code class="docutils literal notranslate"><span class="pre">RPA</span> <span class="pre">Workflows</span></code>.</p>
+<p>The workflow can also be invoked by clicking the “Invoke” button inside the “Workflows” page or by creating an instance of it by using the <code class="docutils literal notranslate"><span class="pre">Assign</span></code> in Node-RED node or the <strong>Assign OpenFlow</strong> activity inside <strong>OpenRPA</strong>.</p>
+<p>Properties:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">name</span></code> - Name of the <code class="docutils literal notranslate"><span class="pre">workflow</span></code> when accessed via <strong>OpenFlow</strong>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">RPA</span></code> - This option allows the <code class="docutils literal notranslate"><span class="pre">workflow</span></code> to be invoked by a <strong>OpenRPA</strong> robot or not.</p>
+<p><code class="docutils literal notranslate"><span class="pre">WEB</span></code> - This option allows the <code class="docutils literal notranslate"><span class="pre">workflow</span></code> to be invoked via web (that is, via <strong>OpenFlow</strong> server) or not.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Name</span></code> - Display name of the <code class="docutils literal notranslate"><span class="pre">node</span></code>.</p>
 </div>
 <div class="section" id="workflow-out">
 <h3><span class="section-number">4.5.5. </span>Workflow Out<a class="headerlink" href="#workflow-out" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>This <code class="docutils literal notranslate"><span class="pre">node</span></code> represents the output of a <code class="docutils literal notranslate"><span class="pre">Workflow</span></code> created with the <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code> node. It also allows for the user to define a <strong>OpenFlow Form</strong> - more on that in the <span class="xref std std-ref">Forms</span> section - which allows the user to insert input data and can be chained to other <code class="docutils literal notranslate"><span class="pre">Workflows</span></code>.</p>
+<p>Properties:</p>
+<p><code class="docutils literal notranslate"><span class="pre">State</span></code> - There are three options here: <em>idle</em>, <em>completed</em> and <em>failed</em>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Userform</span></code> - Defines a form for gathering user input data.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Name</span></code> - Display name of the <code class="docutils literal notranslate"><span class="pre">node</span></code>.</p>
 </div>
 </div>
 <div class="section" id="flow-examples">
@@ -382,11 +422,82 @@ Access it using your <strong>OpenFlow</strong> credentials. If this is your very
 </div>
 <div class="section" id="email-receive-send">
 <h3><span class="section-number">4.6.4. </span>Email Receive, Send<a class="headerlink" href="#email-receive-send" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>There are two available nodes for working with e-mails, both are named “email”. The difference between them is the presence of output in the first and the presence of input in the second. For clarity purposes, in this example the first node will be called “email watcher” and the second “email sender”.</p>
+<p>In this example, a simple system will be built for receiving and redireting e-mails according to their content.</p>
+<div class="section" id="receive-e-mails">
+<h4><span class="section-number">4.6.4.1. </span>Receive e-mails<a class="headerlink" href="#receive-e-mails" title="Permalink to this headline">¶</a></h4>
+<p>The first step is to set an “email watcher”, that is, the node that will repeatedly search for new e-mails from an IMAP server and forward them as messages. This is why this node only has an output. The configurations of this node are quite intuitive and self-explanatory, but it is important to highlight some of its features.</p>
+<p>The user will have to provide the e-mail ID and password so that the e-mail service can be accessed. It is also important to remark that the “Disposition” parameter, if set to “None”, will cause the node to constantly send messages about the same e-mails, since the it searches for unread e-mails. So, it is recommended to set this parameter to “Mark Read”. For the “Port” parameter, users can use the one that is suggested (993).</p>
+<div class="figure align-center">
+<img alt="images/emailin_node.png" src="images/emailin_node.png" />
+</div>
+<p>It is important to remark that some e-mail services will not provide access to the the e-mail account from this type of application. So, it is necessary to enable less secure apps to access. In this example, a Gmail account was used. In order to grant permission in Gmail, the user will have to click on “Manage your Google Account” by clicking on the avatar on the top left of the screen. A new tab will open and the user will click on “Security”. One of the options will be “Enable less secure apps”. After the user has enabled this type of apps, the <code class="docutils literal notranslate"><span class="pre">Email</span></code> watcher node will be able to access the selected Inbox.</p>
+</div>
+<div class="section" id="redirecting-e-mails">
+<h4><span class="section-number">4.6.4.2. </span>Redirecting e-mails<a class="headerlink" href="#redirecting-e-mails" title="Permalink to this headline">¶</a></h4>
+<p>A “switch” node was employed to filter the messages and multiple properties of the messages could be set as parameter for the filtering. The most common property is <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>, that corresponds to the body of the e-mail. It would be possible to check if it contained certain keywords or not.</p>
+<p>Users could also employ other properties, such as <code class="docutils literal notranslate"><span class="pre">msg.date</span></code> (that returns the date and time the e-mail was sent), <code class="docutils literal notranslate"><span class="pre">msg.from</span></code> (that returns the e-mail address of the sender) and others.</p>
+<p>In this example, the <code class="docutils literal notranslate"><span class="pre">msg.date</span></code> was used to postpone redirecting e-mails sent during the weekend using a <code class="docutils literal notranslate"><span class="pre">Delay</span></code> node, for instance, to the next Monday. The “filters” used are <code class="docutils literal notranslate"><span class="pre">switch</span></code> nodes that actually perform the redirecting.</p>
+<div class="figure align-center">
+<img alt="images/email_complete.png" src="images/email_complete.png" />
+</div>
+</div>
+<div class="section" id="send-e-mails">
+<h4><span class="section-number">4.6.4.3. </span>Send e-mails<a class="headerlink" href="#send-e-mails" title="Permalink to this headline">¶</a></h4>
+<p>In order to send e-mails, users can employ the other <code class="docutils literal notranslate"><span class="pre">Email</span></code> node (the “email sender”). This is the node with the input, that is, it will recieve a message and send it to the selected address.</p>
+<p>It is also necessary to provide an e-mail address and password of the sender, so that the application can send the e-mail from the selected account. In this example, the account as the “e-mail watcher” was used, but another account could be used here. It means that once the new e-mail was found and was sent as message in the flow, there is no necessary relation to the original account - it could be sent via another account.</p>
+<div class="figure align-center">
+<img alt="images/emailout_node.png" src="images/emailout_node.png" />
+</div>
+</div>
 </div>
 <div class="section" id="creating-a-http-endpoint">
 <h3><span class="section-number">4.6.5. </span>Creating a HTTP endpoint<a class="headerlink" href="#creating-a-http-endpoint" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<ol class="arabic simple">
+<li><p>API’s basic strtucture</p></li>
+<li><p>Creating a new database</p></li>
+<li><p>Adding new items</p></li>
+<li><p>Deleting an item</p></li>
+<li><p>Get a full list of items</p></li>
+</ol>
+<div class="section" id="api-s-basic-strtucture">
+<h4><span class="section-number">4.6.5.1. </span>API’s basic strtucture<a class="headerlink" href="#api-s-basic-strtucture" title="Permalink to this headline">¶</a></h4>
+<p>In order to create a new HTTP endpoint in <strong>Node-RED</strong>, only two nodes are required: <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> and <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Request</span></code>. These two nodes must necessarily be connected, and other nodes will be added to this structure so that the API will execute the actions properly.</p>
+<p>The user will, then, drag these two nodes into the <code class="docutils literal notranslate"><span class="pre">Workspace</span></code> and connected them. These two nodes will be required for each endpoint of the API. Let’s assume this first endpoint will display a webpage with all available endpoint within the domain.</p>
+<p>To add a HTML page, the user will add a new <code class="docutils literal notranslate"><span class="pre">Template</span></code> node between the two nodes already created. In this node’s Properties, the user will have to change the field “Syntax Highlight” to HTML. After that, the users can create their own homepage for the API using HTML.</p>
+<p>The first node (<code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code>) must be configured before deploying the flow. In its configurations, users will find three fields: Method, URL and Name. For this homepage, the method used will be “GET” and the URL will be “/homepage”.</p>
+<div class="figure align-center">
+<img alt="images/httpendpoints-1.png" src="images/httpendpoints-1.png" />
+</div>
+</div>
+<div class="section" id="creating-a-new-database">
+<h4><span class="section-number">4.6.5.2. </span>Creating a new database<a class="headerlink" href="#creating-a-new-database" title="Permalink to this headline">¶</a></h4>
+<p>In this example, a MongoDB database will be created to store the information sent to the API. Let’s create a new database and link it to the API. A comprehensive guide to MongoDB can be found in their official website: <a class="reference external" href="https://docs.mongodb.com/manual/core/databases-and-collections/">https://docs.mongodb.com/manual/core/databases-and-collections/</a></p>
+<p>The first step is to open the MongoDB Shell and type the following code: <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">{name</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">new</span> <span class="pre">db}</span></code>. Even if the database does not exist yet, it will be created thus.</p>
+</div>
+<div class="section" id="adding-new-items-to-database">
+<h4><span class="section-number">4.6.5.3. </span>Adding new items to database<a class="headerlink" href="#adding-new-items-to-database" title="Permalink to this headline">¶</a></h4>
+<p>Once the new database is created, the user must return to <strong>Node-RED</strong> and create a new endpoint (that is, a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> and a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Response</span></code> node connected one to the other). Besides these two nodes, it will also be necessary to add a <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">out</span></code> node.</p>
+<p>After that, the user will have to configure the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> node. Since the required action here is to add a new item to the database, the method of this endpoint will be “POST”. It is also necessary to set a URL. In this example, “/newuser”.</p>
+<p>The last step is to configure the <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">out</span></code> node. User will find four fields here: Server, Collection, Operation and Name. The name of the database will be in the Server field (e.g., “<a class="reference external" href="mailto:users&#37;&#52;&#48;localhost">users<span>&#64;</span>localhost</a>”, that is, using the database “users” in the local host). It is also necessary to choose the collection with the database. And, finally, the Operation - in this case, “insert”.</p>
+<p>After deploying the flow, please notice if there is a green box under the <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">out</span></code> node, followed by the word “connected”. It will display the status of the connection to the server.</p>
+<p>To test the API, it is possible to use any API tester. The request must follow the same method as specified in the configuration of the node, that is, “POST”. The body of the request must be in JSON format, since it will be added to the a Mongo database. If the response was “200”, it means that the API is working. A second step in testing the API is to check if the item was in fact added to the databse. In order to do this, the users must return to the MongoDB Shell and type <code class="docutils literal notranslate"><span class="pre">db.newusers.find()</span></code>. It will return a list of all the items of that collection.</p>
+</div>
+<div class="section" id="deleting-an-item">
+<h4><span class="section-number">4.6.5.4. </span>Deleting an item<a class="headerlink" href="#deleting-an-item" title="Permalink to this headline">¶</a></h4>
+<p>In order to delete an item from the database, the steps are almost the same as in the previous topic (“Adding new itens to database”). That is, users must add <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> and <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Endpoint</span></code> nodes and connect them. After that, a <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">out</span></code> node will be added connecting to the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> node.</p>
+<p>The difference lies in the configuration. The <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> node will have the same method (“POST”), but a different URL must be created. In this example, “/deleteuser”. The <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">in</span></code> node must be configured differently as well. In the “Operation” field, users must choose “remove”. The other fields will receive the same parameters as before.</p>
+<p>When testing the API, the users must make the request using the same method as specified in the configuration of the nodes (that is, “POST”). The body of the request can have any of the item’s properties, not necessarily the full item. If this API is adding users to a database, with properties such as “name”, “age” and “email”, any of these can be used to delete items. Please note that if the request only specifies one property, it will delete all items that match that property. To add only one particular item, it is recommended that the request details the item’s properties.</p>
+</div>
+<div class="section" id="get-a-full-list-of-items">
+<h4><span class="section-number">4.6.5.5. </span>Get a full list of items<a class="headerlink" href="#get-a-full-list-of-items" title="Permalink to this headline">¶</a></h4>
+<p>For the last endpoint of this API, a list of all items will be retrieved. The design here is a bit different from the previous two. Here, a <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">in</span></code> node will be used. Please notice that this node has one input and one output - it means that it will be connected to the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> in the input and to the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Response</span></code> in the output.</p>
+<p>The method of the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> node must be set to “GET” in this case. The URL used in the example is “/listusers”.</p>
+<p>After that, the users must configure the <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">in</span></code> node. The only difference from the other endpoints is operation. In this example, “find” will be used. It will find all entries in the seletec collection of the database.</p>
+<div class="figure align-center">
+<img alt="images/httpendpoints-total.png" src="images/httpendpoints-total.png" />
+</div>
+</div>
 </div>
 <div class="section" id="excel-read">
 <h3><span class="section-number">4.6.6. </span>Excel Read<a class="headerlink" href="#excel-read" title="Permalink to this headline">¶</a></h3>
@@ -394,7 +505,6 @@ Access it using your <strong>OpenFlow</strong> credentials. If this is your very
 </div>
 <div class="section" id="mongodb-entities">
 <h3><span class="section-number">4.6.7. </span>MongoDB Entities<a class="headerlink" href="#mongodb-entities" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
 </div>
 </div>
 </div>
@@ -419,19 +529,11 @@ Access it using your <strong>OpenFlow</strong> credentials. If this is your very
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, Paulo Veras, Thiago Pestitschek, Diego Thijssen
+        &copy; Copyright 2020, Thiago Pestitschek, Diego Thijssen, Tiago Bentivoglio, Paulo Veras
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
     <p>Powered by <a href="https://bpatechnologies.com/">BPA Technologies</a></p>
      
 
@@ -445,6 +547,7 @@ Access it using your <strong>OpenFlow</strong> credentials. If this is your very
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {
