@@ -131,10 +131,8 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#creating-a-http-endpoint">4.6.5. Creating a HTTP endpoint</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#api-s-basic-strtucture">4.6.5.1. API’s basic strtucture</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#creating-a-new-database">4.6.5.2. Creating a new database</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#adding-new-items-to-database">4.6.5.3. Adding new items to database</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#deleting-an-item">4.6.5.4. Deleting an item</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#get-a-full-list-of-items">4.6.5.5. Get a full list of items</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-database-and-adding-new-items-to-it">4.6.5.2. Creating a database and adding new items to it</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-a-full-list-of-items">4.6.5.3. Get a full list of items</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#excel-read">4.6.6. Excel Read</a></li>
@@ -398,7 +396,7 @@ Access it using your <strong>OpenFlow</strong> credentials. If this is your very
 </div>
 <div class="section" id="workflow-out">
 <h3><span class="section-number">4.5.5. </span>Workflow Out<a class="headerlink" href="#workflow-out" title="Permalink to this headline">¶</a></h3>
-<p>This <code class="docutils literal notranslate"><span class="pre">node</span></code> represents the output of a <code class="docutils literal notranslate"><span class="pre">Workflow</span></code> created with the <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code> node. It also allows for the user to define a <strong>OpenFlow Form</strong> - more on that in the <span class="xref std std-ref">Forms</span> section - which allows the user to insert input data and can be chained to other <code class="docutils literal notranslate"><span class="pre">Workflows</span></code>.</p>
+<p>This <code class="docutils literal notranslate"><span class="pre">node</span></code> represents the output of a <code class="docutils literal notranslate"><span class="pre">Workflow</span></code> created with the <code class="docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">In</span></code> node. It also allows for the user to define a <strong>OpenFlow Form</strong> - more on that in the <a class="reference internal" href="openflow.html#id7"><span class="std std-ref">forms</span></a> section - which allows the user to insert input data and can be chained to other <code class="docutils literal notranslate"><span class="pre">Workflows</span></code>.</p>
 <p>Properties:</p>
 <p><code class="docutils literal notranslate"><span class="pre">State</span></code> - There are three options here: <em>idle</em>, <em>completed</em> and <em>failed</em>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Userform</span></code> - Defines a form for gathering user input data.</p>
@@ -455,9 +453,7 @@ Access it using your <strong>OpenFlow</strong> credentials. If this is your very
 <h3><span class="section-number">4.6.5. </span>Creating a HTTP endpoint<a class="headerlink" href="#creating-a-http-endpoint" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>API’s basic strtucture</p></li>
-<li><p>Creating a new database</p></li>
-<li><p>Adding new items</p></li>
-<li><p>Deleting an item</p></li>
+<li><p>Creating a database and adding new items to it</p></li>
 <li><p>Get a full list of items</p></li>
 </ol>
 <div class="section" id="api-s-basic-strtucture">
@@ -467,35 +463,26 @@ Access it using your <strong>OpenFlow</strong> credentials. If this is your very
 <p>To add a HTML page, the user will add a new <code class="docutils literal notranslate"><span class="pre">Template</span></code> node between the two nodes already created. In this node’s Properties, the user will have to change the field “Syntax Highlight” to HTML. After that, the users can create their own homepage for the API using HTML.</p>
 <p>The first node (<code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code>) must be configured before deploying the flow. In its configurations, users will find three fields: Method, URL and Name. For this homepage, the method used will be “GET” and the URL will be “/homepage”.</p>
 <div class="figure align-center">
-<img alt="images/httpendpoints-1.png" src="images/httpendpoints-1.png" />
+<img alt="images/httpendpoint-1.png" src="images/httpendpoint-1.png" />
 </div>
 </div>
-<div class="section" id="creating-a-new-database">
-<h4><span class="section-number">4.6.5.2. </span>Creating a new database<a class="headerlink" href="#creating-a-new-database" title="Permalink to this headline">¶</a></h4>
-<p>In this example, a MongoDB database will be created to store the information sent to the API. Let’s create a new database and link it to the API. A comprehensive guide to MongoDB can be found in their official website: <a class="reference external" href="https://docs.mongodb.com/manual/core/databases-and-collections/">https://docs.mongodb.com/manual/core/databases-and-collections/</a></p>
-<p>The first step is to open the MongoDB Shell and type the following code: <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">{name</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">new</span> <span class="pre">db}</span></code>. Even if the database does not exist yet, it will be created thus.</p>
-</div>
-<div class="section" id="adding-new-items-to-database">
-<h4><span class="section-number">4.6.5.3. </span>Adding new items to database<a class="headerlink" href="#adding-new-items-to-database" title="Permalink to this headline">¶</a></h4>
-<p>Once the new database is created, the user must return to <strong>Node-RED</strong> and create a new endpoint (that is, a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> and a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Response</span></code> node connected one to the other). Besides these two nodes, it will also be necessary to add a <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">out</span></code> node.</p>
+<div class="section" id="creating-a-database-and-adding-new-items-to-it">
+<h4><span class="section-number">4.6.5.2. </span>Creating a database and adding new items to it<a class="headerlink" href="#creating-a-database-and-adding-new-items-to-it" title="Permalink to this headline">¶</a></h4>
+<p>The new database will be created once the user adds new items to it. The user, then, will create a new endpoint (that is, a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> and a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Response</span></code> node connected one to the other) that is able to receive information and add it to a database in MongoDB. Besides these two nodes, it will also be necessary to add a <code class="docutils literal notranslate"><span class="pre">add</span></code> node, from the <em>api</em> category in the pallete.</p>
 <p>After that, the user will have to configure the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> node. Since the required action here is to add a new item to the database, the method of this endpoint will be “POST”. It is also necessary to set a URL. In this example, “/newuser”.</p>
-<p>The last step is to configure the <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">out</span></code> node. User will find four fields here: Server, Collection, Operation and Name. The name of the database will be in the Server field (e.g., “<a class="reference external" href="mailto:users&#37;&#52;&#48;localhost">users<span>&#64;</span>localhost</a>”, that is, using the database “users” in the local host). It is also necessary to choose the collection with the database. And, finally, the Operation - in this case, “insert”.</p>
-<p>After deploying the flow, please notice if there is a green box under the <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">out</span></code> node, followed by the word “connected”. It will display the status of the connection to the server.</p>
-<p>To test the API, it is possible to use any API tester. The request must follow the same method as specified in the configuration of the node, that is, “POST”. The body of the request must be in JSON format, since it will be added to the a Mongo database. If the response was “200”, it means that the API is working. A second step in testing the API is to check if the item was in fact added to the databse. In order to do this, the users must return to the MongoDB Shell and type <code class="docutils literal notranslate"><span class="pre">db.newusers.find()</span></code>. It will return a list of all the items of that collection.</p>
+<p>The last step is to configure the <code class="docutils literal notranslate"><span class="pre">add</span></code> node. User will find seven fields here: Type, Collection, Entity from, Result to, Write Concern, Journal, Name. A full description of the nodes in this category will be provided at <a class="reference internal" href="#mongodb-entities"><span class="std std-ref">MongoDB Entities</span></a>. For this example, it will be necessary only to fill in the name of collection (again, if it does not exist yet, it will be created automatically), the correct input (‘Entity from’) and output (‘Result to’).</p>
+<p>To test the API, it is possible to use any API tester. The request must follow the same method as specified in the configuration of the node, that is, “POST”. The body of the request must be in JSON format, since it will be added to the a MongoDB database. If the response was “200”, it means that the API is working.</p>
+<div class="figure align-center">
+<img alt="images/httpendpoint-2.png" src="images/httpendpoint-2.png" />
 </div>
-<div class="section" id="deleting-an-item">
-<h4><span class="section-number">4.6.5.4. </span>Deleting an item<a class="headerlink" href="#deleting-an-item" title="Permalink to this headline">¶</a></h4>
-<p>In order to delete an item from the database, the steps are almost the same as in the previous topic (“Adding new itens to database”). That is, users must add <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> and <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Endpoint</span></code> nodes and connect them. After that, a <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">out</span></code> node will be added connecting to the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> node.</p>
-<p>The difference lies in the configuration. The <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> node will have the same method (“POST”), but a different URL must be created. In this example, “/deleteuser”. The <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">in</span></code> node must be configured differently as well. In the “Operation” field, users must choose “remove”. The other fields will receive the same parameters as before.</p>
-<p>When testing the API, the users must make the request using the same method as specified in the configuration of the nodes (that is, “POST”). The body of the request can have any of the item’s properties, not necessarily the full item. If this API is adding users to a database, with properties such as “name”, “age” and “email”, any of these can be used to delete items. Please note that if the request only specifies one property, it will delete all items that match that property. To add only one particular item, it is recommended that the request details the item’s properties.</p>
 </div>
 <div class="section" id="get-a-full-list-of-items">
-<h4><span class="section-number">4.6.5.5. </span>Get a full list of items<a class="headerlink" href="#get-a-full-list-of-items" title="Permalink to this headline">¶</a></h4>
-<p>For the last endpoint of this API, a list of all items will be retrieved. The design here is a bit different from the previous two. Here, a <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">in</span></code> node will be used. Please notice that this node has one input and one output - it means that it will be connected to the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> in the input and to the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Response</span></code> in the output.</p>
+<h4><span class="section-number">4.6.5.3. </span>Get a full list of items<a class="headerlink" href="#get-a-full-list-of-items" title="Permalink to this headline">¶</a></h4>
+<p>For the last endpoint of this API, a list of all items will be retrieved. The design of the flow will be the same, that is, one <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">in</span></code> node, one <code class="docutils literal notranslate"><span class="pre">get</span></code> (instead of <code class="docutils literal notranslate"><span class="pre">add</span></code>) and one <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">response</span></code> node.</p>
 <p>The method of the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> node must be set to “GET” in this case. The URL used in the example is “/listusers”.</p>
-<p>After that, the users must configure the <code class="docutils literal notranslate"><span class="pre">mongodb</span> <span class="pre">in</span></code> node. The only difference from the other endpoints is operation. In this example, “find” will be used. It will find all entries in the seletec collection of the database.</p>
+<p>After that, the users must configure the <code class="docutils literal notranslate"><span class="pre">get</span></code> node. In order to get a full list of users, the “Query” field must be left blank. If needed, users can specify what information will be retrieved by this endpoint by setting the “Query” field to return the desired information. After that, the user must type the name of the collection.</p>
 <div class="figure align-center">
-<img alt="images/httpendpoints-total.png" src="images/httpendpoints-total.png" />
+<img alt="images/httpendpoint-3.png" src="images/httpendpoint-3.png" />
 </div>
 </div>
 </div>

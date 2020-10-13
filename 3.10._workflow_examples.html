@@ -1076,7 +1076,7 @@ As you may have seen in the <code class="docutils literal notranslate"><span cla
 </div>
 <div class="section" id="soap-service">
 <h2>SOAP Service<a class="headerlink" href="#soap-service" title="Permalink to this headline">¶</a></h2>
-<p>In this  example, the user will create a Workflow that connects to a <strong>SOAP Service</strong> - <a class="reference external" href="https://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl">VIES VAT Validation</a> (<code class="docutils literal notranslate"><span class="pre">https://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl</span></code>) - using <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">Powershell</span></code> and gather data from it using <code class="docutils literal notranslate"><span class="pre">WSDL</span></code> to capture the input data and exhibit the data gathered inside the <strong>Output bar</strong>.</p>
+<p>In this  example, the user will create a Workflow that connects to a <strong>SOAP Service</strong> - <a href="#id16"><span class="problematic" id="id17">`VIES VAT Validation &lt;https://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl)`_</span></a> (<code class="docutils literal notranslate"><span class="pre">https://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl</span></code>) - using <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">Powershell</span></code> and gather data from it using <code class="docutils literal notranslate"><span class="pre">WSDL</span></code> to capture the input data and exhibit the data gathered inside the <strong>Output bar</strong>.</p>
 <ol class="arabic simple">
 <li><p>Visualize how the SOAP Service is defined</p></li>
 <li><p>Define Input and Output Variables</p></li>
@@ -1504,8 +1504,8 @@ Please enter the desired category number inside the input field. The returned jo
 <a class="reference internal image-reference" href="images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_set.png"><img alt="images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_set.png" src="images/openrpa_workflow_example_rest_output_logic_show_balloon_tip_set.png" style="width: 466.5px; height: 266.0px;" /></a>
 </div>
 </div>
-<div class="section" id="id14">
-<h3>Workflow Finished<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3>Workflow Finished<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>A snippet is shown below containing both the output and the end of the workflow. As well as the whole workflow thereafter.</p>
 <div class="figure align-center">
 <img alt="images/openrpa_workflow_example_rest_output.png" src="images/openrpa_workflow_example_rest_output.png" />
@@ -1629,8 +1629,8 @@ Please enter the desired category number inside the input field. The returned jo
 <p>Then, insert the <code class="docutils literal notranslate"><span class="pre">DataTable</span></code>, which was captured into the <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> inside its <strong>Properties box</strong>. In this example, this variable is the <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> defined in the previous section - i.e., <code class="docutils literal notranslate"><span class="pre">invoiceDataTable</span></code>.</p>
 <p>Finally, change the <code class="docutils literal notranslate"><span class="pre">Delimiter</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">&quot;,&quot;</span></code>.</p>
 </div>
-<div class="section" id="id15">
-<h3>Workflow Finished<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h3>Workflow Finished<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">CSV</span> <span class="pre">file</span></code> is generated, which can be opened on <strong>Excel</strong> application or <strong>Notepad</strong>.</p>
 <div class="figure align-center">
 <img alt="images/openrpa_workflow_example_workflow_finished_csv.png" src="images/openrpa_workflow_example_workflow_finished_csv.png" />
@@ -1781,8 +1781,8 @@ Please enter the desired category number inside the input field. The returned jo
 </div>
 <p>That’s it! Now the user is ready to continue.</p>
 </div>
-<div class="section" id="id16">
-<h3>Create DataTable to store results<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h3>Create DataTable to store results<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <p>In this section, the user will create the <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> used to store the results and configure its header.</p>
 <p>First,  drag a <strong>CreateDataTable</strong> activity to the main sequence.</p>
 <div class="figure align-center">

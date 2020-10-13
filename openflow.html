@@ -158,9 +158,21 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#entities-mongodb">2.9. <strong>Entities - MongoDB</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#what-are-entities">2.9.1. What are entities?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-are-entities">2.9.1. What are Entities?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#workflow-instances">2.9.1.1. workflow_instances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#openrpa">2.9.1.2. openrpa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#entities">2.9.1.3. entities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">2.9.1.4. config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#openrpa-instances">2.9.1.5. openrpa_instances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#users">2.9.1.6. users</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#workflow">2.9.1.7. workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">2.9.1.8. forms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nodered">2.9.1.9. nodered</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audit">2.9.1.10. audit</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#usages">2.9.2. Usages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#collections">2.9.3. Collections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">2.9.3. Collections</a></li>
 </ul>
 </li>
 </ul>
@@ -416,31 +428,31 @@ skip_history_collections=audit,jslog
 <p class="admonition-title">Note</p>
 <p>If you are accessing OpenFlow demo environment (<code class="docutils literal notranslate"><span class="pre">https://app.openiap.io</span></code>), when prompted for credentials, you may type any username/password combination and your user will be then created automatically with the same credentials. Please keep note of your username/password!</p>
 </div>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id9">
 <a class="reference internal image-reference" href="images/openflow_sign_in_page.png"><img alt="images/openflow_sign_in_page.png" src="images/openflow_sign_in_page.png" style="width: 250.0px; height: 222.0px;" /></a>
-<p class="caption"><span class="caption-text"><strong>Authentication page.</strong></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>Authentication page.</strong></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id10">
 <a class="reference internal image-reference" href="images/openflow_index_page.png"><img alt="images/openflow_index_page.png" src="images/openflow_index_page.png" style="width: 478.09999999999997px; height: 219.45px;" /></a>
-<p class="caption"><span class="caption-text"><strong>OpenFlow’s home page.</strong></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>OpenFlow’s home page.</strong></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="creating-a-new-user">
 <h2><span class="section-number">2.4. </span><strong>Creating a new user</strong><a class="headerlink" href="#creating-a-new-user" title="Permalink to this headline">¶</a></h2>
 <p>To create a new user, first click the Admin dropdown and select the Users option.</p>
-<div class="figure align-center" id="id7">
+<div class="figure align-center" id="id11">
 <a class="reference internal image-reference" href="images/openflow_dropdown_index_page.png"><img alt="images/openflow_dropdown_index_page.png" src="images/openflow_dropdown_index_page.png" style="width: 386.0px; height: 230.5px;" /></a>
-<p class="caption"><span class="caption-text"><strong>Admin dropdown.</strong></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>Admin dropdown.</strong></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>Now click the navy blue <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">user</span></code> button.</p>
-<div class="figure align-center" id="id8">
+<div class="figure align-center" id="id12">
 <a class="reference internal image-reference" href="images/openflow_users_page.png"><img alt="images/openflow_users_page.png" src="images/openflow_users_page.png" style="width: 479.84999999999997px; height: 219.79999999999998px;" /></a>
-<p class="caption"><span class="caption-text"><strong>Users page.</strong></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>Users page.</strong></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>Now, input the <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code> and click <strong>Save</strong>. Notice that the recently created <code class="docutils literal notranslate"><span class="pre">user</span></code> does not have any Roles assigned to them. More information about Roles is available in the next section.</p>
-<div class="figure align-center" id="id9">
+<div class="figure align-center" id="id13">
 <a class="reference internal image-reference" href="images/openflow_userdetail_page.png"><img alt="images/openflow_userdetail_page.png" src="images/openflow_userdetail_page.png" style="width: 479.75px; height: 215.75px;" /></a>
-<p class="caption"><span class="caption-text"><strong>User creation page.</strong></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>User creation page.</strong></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="roles">
@@ -518,9 +530,9 @@ skip_history_collections=audit,jslog
 <h3><span class="section-number">2.6.1. </span>What is it?<a class="headerlink" href="#what-is-it" title="Permalink to this headline">¶</a></h3>
 <p>Workflows in Node-RED are mainly called ‘<strong>Flows</strong>’. These flows are made to connect different services, applications and logic functions. When grouped together they can be used to process data and output the results to a given service or file.</p>
 <p>At the  <a class="reference external" href="http://localhost.openrpa.dk/#/Workflows">Workflows page</a> (eg. <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk/#/Workflows</span></code>) in OpenFlow, it is possible to remotely invoke these flows.</p>
-<div class="figure align-center" id="id10">
+<div class="figure align-center" id="id14">
 <img alt="images/openflow_node_red_subflow.png" src="images/openflow_node_red_subflow.png" />
-<p class="caption"><span class="caption-text"><strong>Node-RED subflow example.</strong></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>Node-RED subflow example.</strong></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="invoking">
@@ -548,9 +560,9 @@ skip_history_collections=audit,jslog
 <p class="admonition-title">Note</p>
 <p>The user must have the <code class="docutils literal notranslate"><span class="pre">nodered</span> <span class="pre">users</span></code> role enabled in order to able to invoke Node-RED flows from within OpenFlow.</p>
 </div>
-<div class="figure align-center" id="id11">
+<div class="figure align-center" id="id15">
 <img alt="images/openflow_setting_nodered_workflow.png" src="images/openflow_setting_nodered_workflow.png" />
-<p class="caption"><span class="caption-text"><strong>Enabling Node-RED invoking from OpenFlow.</strong></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>Enabling Node-RED invoking from OpenFlow.</strong></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
 <li><p><strong>Invoking a Node-RED workflow in OpenFlow</strong></p>
@@ -559,13 +571,13 @@ skip_history_collections=audit,jslog
 <p>Upon clicking submit on a form, the parameters are sent to the robot for processing and execution of the given workflow.</p>
 </li>
 </ul>
-<div class="figure align-default" id="id12">
+<div class="figure align-default" id="id16">
 <img alt="images/openflow_workflows_page.png" src="images/openflow_workflows_page.png" />
-<p class="caption"><span class="caption-text"><strong>Workflows page.</strong></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>Workflows page.</strong></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure align-default" id="id13">
+<div class="figure align-default" id="id17">
 <img alt="images/openflow_form_example.png" src="images/openflow_form_example.png" />
-<p class="caption"><span class="caption-text"><strong>Form example.</strong></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>Form example.</strong></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -597,9 +609,9 @@ skip_history_collections=audit,jslog
 <p class="admonition-title">Note</p>
 <p>For the user to invoke a workflow using OpenFlow, the user must have the proper permissions. See more at OpenRPA’s chapter Granting permissions to users/roles.</p>
 </div>
-<div class="figure align-center" id="id14">
+<div class="figure align-center" id="id18">
 <img alt="images/openflow_rpa_workflows.png" src="images/openflow_rpa_workflows.png" />
-<p class="caption"><span class="caption-text"><strong>RPA Workflows page.</strong></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>RPA Workflows page.</strong></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -609,19 +621,19 @@ skip_history_collections=audit,jslog
 <div class="section" id="creating-a-form">
 <h3><span class="section-number">2.8.1. </span>Creating a Form<a class="headerlink" href="#creating-a-form" title="Permalink to this headline">¶</a></h3>
 <p>Creating a form is rather easy and simple. Go to the Forms page, where all forms are listed, available under the Admin dropdown or on the <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">Forms page</a> (eg. <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">http://localhost.openrpa.dk/#/Forms</a>) and click the Navy blue <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">form</span></code> button.</p>
-<div class="figure align-center" id="id15">
+<div class="figure align-center" id="id19">
 <img alt="images/openflow_forms_page.png" src="images/openflow_forms_page.png" />
-<p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms page.</strong></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms page.</strong></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p>Now at the Forms edit page, there are many basic from which you can choose. For synthetic purposes, we are only going to discuss the most used one here: Text Field Component.</p>
 <p>Drag the Form from the Basic category into the Form workspace. Immediately after, a window containing all the parameters to configure the form will appear.</p>
-<div class="figure align-center" id="id16">
+<div class="figure align-center" id="id20">
 <img alt="images/openflow_forms_creation_page.png" src="images/openflow_forms_creation_page.png" />
-<p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms creation page.</strong></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms creation page.</strong></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure align-center" id="id17">
+<div class="figure align-center" id="id21">
 <img alt="images/openflow_form_starter_config_page.png" src="images/openflow_form_starter_config_page.png" />
-<p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms starter configuration tab.</strong></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms starter configuration tab.</strong></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="configuring-the-form">
@@ -634,9 +646,9 @@ skip_history_collections=audit,jslog
 </div></blockquote>
 </li>
 </ul>
-<div class="figure align-center" id="id18">
+<div class="figure align-center" id="id22">
 <img alt="images/openflow_form_label_config_page.png" src="images/openflow_form_label_config_page.png" />
-<p class="caption"><span class="caption-text"><strong>OpenFlow’s Form Display configuration tab.</strong></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>OpenFlow’s Form Display configuration tab.</strong></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
 <li><p><strong>Assigning Input Variable</strong></p>
@@ -645,9 +657,9 @@ skip_history_collections=audit,jslog
 </div></blockquote>
 </li>
 </ul>
-<div class="figure align-center" id="id19">
+<div class="figure align-center" id="id23">
 <img alt="images/openflow_text_field_api_config.png" src="images/openflow_text_field_api_config.png" />
-<p class="caption"><span class="caption-text"><strong>OpenFlow’s Form API configuration tab.</strong></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>OpenFlow’s Form API configuration tab.</strong></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
 <li><p><strong>Assigning Form to Node-RED Workflow</strong></p>
@@ -656,9 +668,9 @@ skip_history_collections=audit,jslog
 </div></blockquote>
 </li>
 </ul>
-<div class="figure align-default" id="id20">
+<div class="figure align-default" id="id24">
 <img alt="images/openflow_node_red_configure_form.png" src="images/openflow_node_red_configure_form.png" />
-<p class="caption"><span class="caption-text"><strong>Assigning Form to Node-RED workflow.</strong></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><strong>Assigning Form to Node-RED workflow.</strong></span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="basic-forms">
@@ -789,15 +801,60 @@ skip_history_collections=audit,jslog
 <div class="section" id="entities-mongodb">
 <h2><span class="section-number">2.9. </span><strong>Entities - MongoDB</strong><a class="headerlink" href="#entities-mongodb" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="what-are-entities">
-<h3><span class="section-number">2.9.1. </span>What are entities?<a class="headerlink" href="#what-are-entities" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<h3><span class="section-number">2.9.1. </span>What are Entities?<a class="headerlink" href="#what-are-entities" title="Permalink to this headline">¶</a></h3>
+<p>Entities are groups of data that compose a meaningful object inside OpenFlow - ie. a workflow, a workflow instance, a user, etc. These groups of data are stored as <a class="reference external" href="https://docs.mongodb.com/manual/core/document/">Documents</a> inside <a class="reference external" href="https://docs.mongodb.com/manual/core/databases-and-collections/#collections">Collections</a> in MongoDB. <code class="docutils literal notranslate"><span class="pre">Collections</span></code> are analogous to tables in relational databases. Think of an <code class="docutils literal notranslate"><span class="pre">Entity</span></code> as a row inside a relational table. In layman terms, a <code class="docutils literal notranslate"><span class="pre">Collection</span></code> would correspond to a category inside your phonebook and an <code class="docutils literal notranslate"><span class="pre">Entity</span></code> would correspond to a single entry. Please check below for more on <code class="docutils literal notranslate"><span class="pre">Collections</span></code>, <a class="reference internal" href="#id8"><span class="std std-ref">Collections</span></a>.</p>
+<blockquote>
+<div><p>In OpenFlow, these <code class="docutils literal notranslate"><span class="pre">Collections</span></code> are grouped by their name inside the <a class="reference external" href="http://demo.openiap.io/#/Entities">Entities page</a> (<code class="docutils literal notranslate"><span class="pre">http://demo.openiap.io/#/Entities</span></code>). Currently, there exist 10 groups, listed below.</p>
+</div></blockquote>
+<div class="section" id="workflow-instances">
+<h4><span class="section-number">2.9.1.1. </span>workflow_instances<a class="headerlink" href="#workflow-instances" title="Permalink to this headline">¶</a></h4>
+<p>Here lie all instances of workflows invoked through the <a class="reference external" href="http://demo.openiap.io/#/Workflows">Workflows page</a> (<code class="docutils literal notranslate"><span class="pre">http://demo.openiap.io/#/Workflows</span></code>).</p>
+</div>
+<div class="section" id="openrpa">
+<h4><span class="section-number">2.9.1.2. </span>openrpa<a class="headerlink" href="#openrpa" title="Permalink to this headline">¶</a></h4>
+<p>All objects pertaining to workflows created inside <strong>OpenRPA</strong> are found in this section. By clicking the <strong>Edit button</strong> in one of these objects, the user can see the <code class="docutils literal notranslate"><span class="pre">XAML</span> <span class="pre">code</span></code> which was generated by the OpenRPA workflow.</p>
+</div>
+<div class="section" id="entities">
+<h4><span class="section-number">2.9.1.3. </span>entities<a class="headerlink" href="#entities" title="Permalink to this headline">¶</a></h4>
+<p>This section contains all objects serialized into OpenFlow by using the <strong>OpenRPA.OpenFlowDB</strong> activities.</p>
+</div>
+<div class="section" id="config">
+<h4><span class="section-number">2.9.1.4. </span>config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h4>
+<p>Lists config data for Providers. For more on providers, please refer to <a class="reference external" href="https://github.com/open-rpa/openflow/blob/master/docs/providers.md">Providers</a> (<code class="docutils literal notranslate"><span class="pre">https://github.com/open-rpa/openflow/blob/master/docs/providers.md</span></code>).</p>
+</div>
+<div class="section" id="openrpa-instances">
+<h4><span class="section-number">2.9.1.5. </span>openrpa_instances<a class="headerlink" href="#openrpa-instances" title="Permalink to this headline">¶</a></h4>
+<p>Here lie all instances of workflows invoked either through the <a class="reference external" href="http://demo.openiap.io/#/Workflows">RPA Workflows page</a> (<code class="docutils literal notranslate"><span class="pre">http://demo.openiap.io/#/Workflows</span></code>) or through <strong>OpenRPA</strong> itself.</p>
+</div>
+<div class="section" id="users">
+<h4><span class="section-number">2.9.1.6. </span>users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h4>
+<p>This section contains all users and roles automatically created by Node-RED or through OpenFlow itself.</p>
+</div>
+<div class="section" id="workflow">
+<h4><span class="section-number">2.9.1.7. </span>workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h4>
+<p>This section contains all queues created from Node-RED’s <code class="docutils literal notranslate"><span class="pre">workflow</span> <span class="pre">in</span></code> nodes</p>
+</div>
+<div class="section" id="id7">
+<h4><span class="section-number">2.9.1.8. </span>forms<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>This section holds all Forms created inside OpenFlow.</p>
+</div>
+<div class="section" id="nodered">
+<h4><span class="section-number">2.9.1.9. </span>nodered<a class="headerlink" href="#nodered" title="Permalink to this headline">¶</a></h4>
+<p>Lists config variables for Node-RED.</p>
+</div>
+<div class="section" id="audit">
+<h4><span class="section-number">2.9.1.10. </span>audit<a class="headerlink" href="#audit" title="Permalink to this headline">¶</a></h4>
+<p>This section contains data on all authentication and reauthentication attempts inside OpenFlow.</p>
+</div>
 </div>
 <div class="section" id="usages">
 <h3><span class="section-number">2.9.2. </span>Usages<a class="headerlink" href="#usages" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>The user can make use of the <a class="reference internal" href="openrpa.html#openrpa-openflowdb"><span class="std std-ref">OpenRPA.OpenFlowDB</span></a> activities to query these entities and manipulate them accordingly.</p>
 </div>
-<div class="section" id="collections">
-<h3><span class="section-number">2.9.3. </span>Collections<a class="headerlink" href="#collections" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3><span class="section-number">2.9.3. </span>Collections<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Collections are groups of documents in MongoDB, analogous to tables in relational databases. Collections do not require documents to have the same schema. However, it is possible to enforce that the collection only accepts a certain type of document (document’s properties). This process is called Schema Validation.</p>
+<p>For a comprehensive account on MongDB Collections, please refer to the official <a class="reference external" href="https://docs.mongodb.com/manual/core/databases-and-collections/">MongoDB webpage</a> (<code class="docutils literal notranslate"><span class="pre">https://docs.mongodb.com/manual/core/databases-and-collections/</span></code>).</p>
 </div>
 </div>
 </div>
