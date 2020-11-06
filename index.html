@@ -202,16 +202,21 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="openflow.html#forms">2.8. <strong>Forms</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="openflow.html#creating-a-form">2.8.1. Creating a Form</a></li>
-<li class="toctree-l3"><a class="reference internal" href="openflow.html#configuring-the-form">2.8.2. Configuring the Form</a></li>
-<li class="toctree-l3"><a class="reference internal" href="openflow.html#basic-forms">2.8.3. Basic Forms</a></li>
-<li class="toctree-l3"><a class="reference internal" href="openflow.html#advanced-forms">2.8.4. Advanced Forms</a></li>
-<li class="toctree-l3"><a class="reference internal" href="openflow.html#layout-forms">2.8.5. Layout Forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openflow.html#configuring-the-form-component">2.8.2. Configuring the Form Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openflow.html#general-form-settings">2.8.3. General Form Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openflow.html#basic-form-components">2.8.4. Basic Form Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openflow.html#advanced-form-components">2.8.5. Advanced Form Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openflow.html#layout-form-components">2.8.6. Layout Form Components</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="openflow.html#entities-mongodb">2.9. <strong>Entities - MongoDB</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="openflow.html#what-are-entities">2.9.1. What are Entities?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="openflow.html#usages">2.9.2. Usages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="openflow.html#id8">2.9.3. Collections</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="openflow.html#openflow-faq">2.10. <strong>OpenFlow - FAQ</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="openflow.html#installation-issues">2.10.1. Installation issues</a></li>
 </ul>
 </li>
 </ul>
@@ -245,14 +250,26 @@
 <li class="toctree-l2"><a class="reference internal" href="openrpa.html#recorder-and-selectors">3.6. <strong>Recorder and Selectors</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="openrpa.html#difference-between-technologies-nm-sap-windows">3.6.1. Difference between technologies (NM, SAP, Windows, …)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="openrpa.html#returning-multiple-elements">3.6.2. Returning multiple elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#manually-adjusting-selectors">3.6.3. Manually Adjusting Selectors</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="openrpa.html#detectors">3.7. <strong>Detectors</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="openrpa.html#filewatcher">3.7.1. FileWatcher</a></li>
-<li class="toctree-l3"><a class="reference internal" href="openrpa.html#keyboarddetector">3.7.2. KeyboardDetector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#configuring-detectors">3.7.1. Configuring Detectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#using-detectors">3.7.2. Using Detectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#filewatcher-detector">3.7.3. FileWatcher Detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#keyboard-detector">3.7.4. Keyboard Detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#javaclick-detector">3.7.5. JavaClick Detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#msspeech-detector">3.7.6. MSSpeech Detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#windowsclick-detector">3.7.7. WindowsClick Detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#windowselement-detector">3.7.8. WindowsElement Detector</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="openrpa.html#running-workflows-from-command-line">3.8. <strong>Running Workflows from Command Line</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="openrpa.html#running-workflows-from-command-line">3.8. <strong>Running Workflows from Command Line</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#capturing-the-workflow-id">3.8.1. Capturing the Workflow ID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#running-workflows-locally">3.8.2. Running Workflows Locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#scheduling-workflows-to-run-locally">3.8.3. Scheduling Workflows to run Locally</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="openrpa.html#plugins">3.9. <strong>Plugins</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="openrpa.html#chrome-firefox">3.9.1. Chrome, Firefox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="openrpa.html#avi-recorder">3.9.2. AVI Recorder</a></li>
@@ -271,6 +288,12 @@
 <li class="toctree-l3"><a class="reference internal" href="openrpa.html#openrpa-database-activities-datatable-dataview">3.10.10. OpenRPA.Database Activities, DataTable, DataView</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="openrpa.html#openrpa-faq">3.11. <strong>OpenRPA - FAQ</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#activities">3.11.1. Activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#id51">3.11.2. Variables &amp; Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openrpa.html#selectors">3.11.3. Selectors</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="node_red.html">4. <strong>Node-RED</strong></a><ul>
@@ -278,7 +301,11 @@
 <li class="toctree-l3"><a class="reference internal" href="node_red.html#id1">4.1.1. What is Node-RED?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="node_red.html#accessing-for-the-first-time">4.2. <strong>Accessing for the first time</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="node_red.html#accessing-node-red-for-the-first-time">4.2. <strong>Accessing Node-RED for the first time</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="node_red.html#quickstart-running-node-red-demo-instance">4.2.1. Quickstart Running Node-RED Demo Instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="node_red.html#quickstart-running-openflow-node-red-using-npm">4.2.2. Quickstart Running OpenFlow Node-RED using NPM</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="node_red.html#node-red-editor">4.3. <strong>Node-RED Editor</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="node_red.html#header">4.3.1. Header</a></li>
 <li class="toctree-l3"><a class="reference internal" href="node_red.html#palette">4.3.2. Palette</a></li>
@@ -296,13 +323,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="node_red.html#flow-examples">4.6. <strong>Flow Examples</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="node_red.html#dummy-integration-openrpa-openflow-nodered">4.6.1. Dummy Integration OpenRPA-OpenFlow-NodeRED</a></li>
-<li class="toctree-l3"><a class="reference internal" href="node_red.html#using-openflow-forms">4.6.2. Using OpenFlow Forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="node_red.html#using-openflow-forms">4.6.1. Using OpenFlow Forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="node_red.html#dummy-integration-openrpa-openflow-nodered">4.6.2. Dummy Integration OpenRPA-OpenFlow-NodeRED</a></li>
 <li class="toctree-l3"><a class="reference internal" href="node_red.html#ai-image-recognition">4.6.3. AI Image Recognition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="node_red.html#email-receive-send">4.6.4. Email Receive, Send</a></li>
-<li class="toctree-l3"><a class="reference internal" href="node_red.html#creating-a-http-endpoint">4.6.5. Creating a HTTP endpoint</a></li>
-<li class="toctree-l3"><a class="reference internal" href="node_red.html#excel-read">4.6.6. Excel Read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="node_red.html#creating-an-http-endpoint">4.6.5. Creating an HTTP endpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="node_red.html#excel-detector">4.6.6. Excel Detector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="node_red.html#mongodb-entities">4.6.7. MongoDB Entities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="node_red.html#node-red-faq">4.7. <strong>Node-RED - FAQ</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="node_red.html#interfacing-with-openrpa">4.7.1. Interfacing with OpenRPA</a></li>
 </ul>
 </li>
 </ul>

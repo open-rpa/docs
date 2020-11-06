@@ -153,24 +153,139 @@
             
   <div class="section" id="detectors">
 <h1><strong>Detectors</strong><a class="headerlink" href="#detectors" title="Permalink to this headline">¶</a></h1>
-<p><strong>Detector</strong> is the main <code class="docutils literal notranslate"><span class="pre">Event</span> <span class="pre">Listener</span></code> inside OpenRPA - refer to <a class="reference external" href="https://www.computerhope.com/jargon/e/event-listener.htm">Event listener</a> (<a class="reference external" href="https://www.computerhope.com/jargon/e/event-listener.htm">https://www.computerhope.com/jargon/e/event-listener.htm</a>) if you don’t know what that means. Simply put, it is an activity that waits for something to happen either before the Workflow continues processing and executing its functions.</p>
-<p>To set a <strong>Detector</strong>, you must first define it inside the Detector’s settings (<code class="docutils literal notranslate"><span class="pre">Settings</span> <span class="pre">inside</span> <span class="pre">the</span> <span class="pre">main</span> <span class="pre">Ribbon</span> <span class="pre">-&gt;</span> <span class="pre">Detectors</span> <span class="pre">-&gt;</span> <span class="pre">Add</span> <span class="pre">Detector</span></code>).</p>
-<p>There are also different parameters which can be set for each type of detector which are going to be further discussed.</p>
-<p><strong>Screenshots on How to set up Detectors</strong></p>
-<p>After that, you go back to your sequence, define a <strong>Detector activity</strong> inside it and select the Detector you want to use as your <code class="docutils literal notranslate"><span class="pre">Event</span> <span class="pre">Listener</span></code>. The <code class="docutils literal notranslate"><span class="pre">Detector</span></code> will automatically start the process for which it is defined, if it is inside a <code class="docutils literal notranslate"><span class="pre">State</span> <span class="pre">Machine</span></code> or continue it’s process, if inside a <code class="docutils literal notranslate"><span class="pre">Flowchart</span></code> or <code class="docutils literal notranslate"><span class="pre">Sequence</span></code>.</p>
-<div class="section" id="filewatcher">
-<h2>FileWatcher<a class="headerlink" href="#filewatcher" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">FileWatcher</span></code> detector checks for file changes inside a given path.</p>
-<p>You can set a <code class="docutils literal notranslate"><span class="pre">Name</span></code> for the detector.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Path</span></code> refers to the absolute path the folder in which the files are located.</p>
-<p><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">filter</span></code> is set to filter any files with a specific given filename.</p>
+<p><strong>Detector</strong> is the main <code class="docutils literal notranslate"><span class="pre">Event</span> <span class="pre">Listener</span></code> inside OpenRPA - refer to <a class="reference external" href="https://www.computerhope.com/jargon/e/event-listener.htm">Event listener</a> (<a class="reference external" href="https://www.computerhope.com/jargon/e/event-listener.htm">https://www.computerhope.com/jargon/e/event-listener.htm</a>) if you don’t know what that means. Simply put, it is an activity that waits for something to happen either before the Workflow continues processing and executing its activities.</p>
+<p>It is important to notice that whenever you change a Detector inside OpenRPA, its changes reflect in OpenFlow since, ultimately, the Detector is stored in OpenFlow. Yet, there is no need to reload OpenRPA to update these changes.</p>
+<div class="section" id="configuring-detectors">
+<h2>Configuring Detectors<a class="headerlink" href="#configuring-detectors" title="Permalink to this headline">¶</a></h2>
+<p>To use a <strong>Detector</strong>, you must first define it inside the Detector’s settings. The steps below show how to configure the <code class="docutils literal notranslate"><span class="pre">FileWatcher</span> <span class="pre">Detector</span></code> to check for new <code class="docutils literal notranslate"><span class="pre">PDF</span></code> files.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">FileWatcher</span> <span class="pre">Detector</span></code> plugin is fired when any files are added inside a given <code class="docutils literal notranslate"><span class="pre">Path</span></code>. It also allows for checking <cite>only</cite> for specific file extensions by using the <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">filter</span></code> parameter. As well as checking for specific files, it allows OpenRPA to check for file changes inside subdirectories by checking the <code class="docutils literal notranslate"><span class="pre">Sub</span> <span class="pre">Directories</span></code> checkbox.</p>
+<p>First, click on the <code class="docutils literal notranslate"><span class="pre">Settings</span></code> tab inside the main ribbon.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_click_settings.png" src="images/openrpa_configuring_detector_click_settings.png" />
 </div>
-<div class="section" id="keyboarddetector">
-<h2>KeyboardDetector<a class="headerlink" href="#keyboarddetector" title="Permalink to this headline">¶</a></h2>
+<p>Then, click on the <code class="docutils literal notranslate"><span class="pre">Detectors</span></code> icon.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_click_detectors.png" src="images/openrpa_configuring_detector_click_detectors.png" />
+</div>
+<p>Now click on the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">FileWatcherDetectorPlugin</span></code> button inside the Designer. A new detector will appear named <code class="docutils literal notranslate"><span class="pre">FileWatcher</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_click_add_filewatcher.png" src="images/openrpa_configuring_detector_click_add_filewatcher.png" />
+</div>
+<p>Finally, the users must configure the <code class="docutils literal notranslate"><span class="pre">Name</span></code> of the detector, as well as the <code class="docutils literal notranslate"><span class="pre">Path</span></code> for which the Detector will listen to. The users must also set a <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">filter</span></code>, so the detector will only check for files with a given extension - example <code class="docutils literal notranslate"><span class="pre">*.pdf</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_filewatcher_parameter.png" src="images/openrpa_configuring_detector_filewatcher_parameter.png" />
+</div>
+<p>Proceed to the <a class="reference internal" href="openrpa.html#using-detectors"><span class="std std-ref">Using Detectors</span></a> section to learn how to use Detectors.</p>
+</div>
+<div class="section" id="using-detectors">
+<h2>Using Detectors<a class="headerlink" href="#using-detectors" title="Permalink to this headline">¶</a></h2>
+<p>There are many different ways of using Detectors are provided by OpenRPA. The users can create a detector and consume it using Node-RED to trigger an execution flow. They can also set a workflow to wait with a <span class="xref std std-ref">Detector Activity</span> inside a <span class="xref std std-ref">DoWhile Activity</span> loop. And, finally, users can also make use of a <span class="xref std std-ref">StateMachine Activity</span> to create different <span class="xref std std-ref">State Activity</span> instances that transition when they are triggered by Detectors.</p>
+<div class="section" id="using-detectors-through-node-red">
+<h3>Using Detectors through Node-RED<a class="headerlink" href="#using-detectors-through-node-red" title="Permalink to this headline">¶</a></h3>
+<p>In this section, the users will learn how to set up an <code class="docutils literal notranslate"><span class="pre">rpa</span> <span class="pre">detector</span></code> node and see the message passed when it is fired by using a <code class="docutils literal notranslate"><span class="pre">debug</span></code> node.</p>
+<p>First, navigate to their Node-RED instance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Proceed to <span class="xref std std-ref">Accessing Node-RED for the first time</span> for more information on how to set your own <code class="docutils literal notranslate"><span class="pre">Node-RED</span></code> instance.</p>
+</div>
+<p>Using Detectors through Node-RED is rather easy. First, the user must have previously configured a Detector, as per the <a class="reference internal" href="openrpa.html#configuring-detectors"><span class="std std-ref">Configuring Detectors</span></a> section.</p>
+<p>Drag an <code class="docutils literal notranslate"><span class="pre">rpa</span> <span class="pre">detector</span></code> node to the execution flow.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_drag_rpa_detector.png" src="images/openrpa_configuring_detector_drag_rpa_detector.png" />
+</div>
+<p>Now double-click the <code class="docutils literal notranslate"><span class="pre">rpa</span> <span class="pre">detector</span></code> node to set the Detector which will be used to trigger the execution flow. In our case, it is the <code class="docutils literal notranslate"><span class="pre">Documentation</span> <span class="pre">Detector</span></code> previously set in the <a class="reference internal" href="openrpa.html#configuring-detectors"><span class="std std-ref">Configuring Detectors</span></a> section.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_rpa_detector_configuring_parameter.png" src="images/openrpa_configuring_detector_rpa_detector_configuring_parameter.png" />
+</div>
+<p>Drag a <code class="docutils literal notranslate"><span class="pre">debug</span></code> node to the execution flow.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_drag_debug.png" src="images/openrpa_configuring_detector_drag_debug.png" />
+</div>
+<p>Wire the <code class="docutils literal notranslate"><span class="pre">debug</span></code> node to the previously set <code class="docutils literal notranslate"><span class="pre">rpa</span> <span class="pre">detector</span></code> by pressing the <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> key and clicking the ports of both nodes.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_wire_nodes.png" src="images/openrpa_configuring_detector_wire_nodes.png" />
+</div>
+<p>Finally, click the <code class="docutils literal notranslate"><span class="pre">Deploy</span></code> button to save changes. A status bar displaying <code class="docutils literal notranslate"><span class="pre">Connected</span></code> should appear below the node.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_status_bar.png" src="images/openrpa_configuring_detector_status_bar.png" />
+</div>
+<p>To check whether the Detector is working, the users can insert a file inside the folder and click the <code class="docutils literal notranslate"><span class="pre">Debug</span> <span class="pre">messages</span></code> button or simply press <code class="docutils literal notranslate"><span class="pre">Ctrl-g-d</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_click_debug_button.png" src="images/openrpa_configuring_detector_click_debug_button.png" />
+</div>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_debug_message.png" src="images/openrpa_configuring_detector_debug_message.png" />
+</div>
+</div>
+<div class="section" id="using-detectors-through-a-do-while-loop">
+<h3>Using Detectors Through a Do-While Loop<a class="headerlink" href="#using-detectors-through-a-do-while-loop" title="Permalink to this headline">¶</a></h3>
+<p>In this section, the users will learn how to use a <code class="docutils literal notranslate"><span class="pre">Detector</span></code> which will keep running indefinitely until OpenRPA closes.</p>
+<p>Drag a <strong>Do While</strong> Activity to the main sequence inside OpenRPA. Set its <code class="docutils literal notranslate"><span class="pre">Condition</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_using_detectors_do_while.png" src="images/openrpa_using_detectors_do_while.png" />
+</div>
+<p>Now users must drag a <strong>Sequence</strong> Activity inside the <strong>Do While</strong> activity.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_using_detectors_drag_sequence.png" src="images/openrpa_using_detectors_drag_sequence.png" />
+</div>
+<p>Add a <strong>Detector</strong> Activity to the sequence and select the <code class="docutils literal notranslate"><span class="pre">Detector</span></code> which will be fired. In our case, it is the <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">Detector</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_using_detectors_drag_detector.png" src="images/openrpa_using_detectors_drag_detector.png" />
+</div>
+<p>Now the user can add any Activities or Sequences he wish for OpenRPA to perform and they’ll execute upon the detector firing.</p>
+</div>
+</div>
+<div class="section" id="filewatcher-detector">
+<h2>FileWatcher Detector<a class="headerlink" href="#filewatcher-detector" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">FileWatcher</span></code> detector checks for new files inside a given folder.</p>
+<p><strong>Detector Parameters</strong></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Name</span></code> - Name of the detector inside OpenFlow.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Path</span></code> - Absolute path of the folder in which the files are located.</p>
+<p><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">filter</span></code> is set to filter any files with a specific given filename. This <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">filter</span></code> allows for wildcards as well, so if the user wants to check only for files starting with <code class="docutils literal notranslate"><span class="pre">invoice</span></code>, he would use <code class="docutils literal notranslate"><span class="pre">invoice*.pdf</span></code>. Whereas, for checking for files ending with <code class="docutils literal notranslate"><span class="pre">invoice</span></code>, he would use <code class="docutils literal notranslate"><span class="pre">*invoice.pdf</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Sub</span> <span class="pre">Directories</span></code> - If checked, this <strong>Detector Plugin</strong> will also check recursively for any existing directories inside the root directory specified.</p>
+</div></blockquote>
+</div>
+<div class="section" id="keyboard-detector">
+<h2>Keyboard Detector<a class="headerlink" href="#keyboard-detector" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">KeyboardSequence</span></code> detector listens for a specific - or sequence of - key strokes.</p>
-<p>You can set a <code class="docutils literal notranslate"><span class="pre">Name</span></code> for the detector.</p>
+<p><strong>Detector Parameters</strong></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Name</span></code> - Name of the detector inside OpenFlow.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Process</span> <span class="pre">restriction</span></code> refers to the process upon which this won’t be listened to if their interface is the main screen.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Keys</span></code> are the keys which enable the Detector. To set them, use the button <code class="docutils literal notranslate"><span class="pre">Set</span> <span class="pre">keys</span></code>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="javaclick-detector">
+<h2>JavaClick Detector<a class="headerlink" href="#javaclick-detector" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">JavaClick</span></code> detector listens for a click inside a <code class="docutils literal notranslate"><span class="pre">JavaElement</span></code>.</p>
+<p><strong>Detector Parameters</strong></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Name</span></code> - Name of the detector inside OpenFlow.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Selector</span></code> - Allows user to specify a given element by using the <strong>Select</strong> button - similarly as what happens in the <strong>Recorder Plugin</strong> - or by opening a <code class="docutils literal notranslate"><span class="pre">Selector</span> <span class="pre">Window</span></code> with the <strong>Open Selector</strong> button. Users can also check whether the <code class="docutils literal notranslate"><span class="pre">JavaElement</span></code> was successfully specified by clicking the <strong>Highlight</strong> button.</p>
+</div></blockquote>
+</div>
+<div class="section" id="msspeech-detector">
+<h2>MSSpeech Detector<a class="headerlink" href="#msspeech-detector" title="Permalink to this headline">¶</a></h2>
+<p>Coming soon - work in progress!</p>
+</div>
+<div class="section" id="windowsclick-detector">
+<h2>WindowsClick Detector<a class="headerlink" href="#windowsclick-detector" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">WindowsClick</span></code> detector listens for a click inside a <code class="docutils literal notranslate"><span class="pre">WindowsElement</span></code>.</p>
+<p><strong>Detector Parameters</strong></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Name</span></code> - Name of the detector inside OpenFlow.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Selector</span></code> - Allows user to specify a given element by using the <strong>Select</strong> button - similarly as what happens in the <strong>Recorder Plugin</strong> - or by opening a <code class="docutils literal notranslate"><span class="pre">Selector</span> <span class="pre">Window</span></code> with the <strong>Open Selector</strong> button. Users can also check whether the <code class="docutils literal notranslate"><span class="pre">JavaElement</span></code> was successfully specified by clicking the <strong>Highlight</strong> button.</p>
+</div></blockquote>
+</div>
+<div class="section" id="windowselement-detector">
+<h2>WindowsElement Detector<a class="headerlink" href="#windowselement-detector" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">WindowsElement</span></code> detector listens for the appearance of a <code class="docutils literal notranslate"><span class="pre">WindowsElement</span></code>.</p>
+<p><strong>Detector Parameters</strong></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Name</span></code> - Name of the detector inside OpenFlow.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Selector</span></code> - Allows user to specify a given element by using the <strong>Select</strong> button - similarly as what happens in the <strong>Recorder Plugin</strong> - or by opening a <code class="docutils literal notranslate"><span class="pre">Selector</span> <span class="pre">Window</span></code> with the <strong>Open Selector</strong> button. Users can also check whether the <code class="docutils literal notranslate"><span class="pre">JavaElement</span></code> was successfully specified by clicking the <strong>Highlight</strong> button.</p>
+</div></blockquote>
 </div>
 </div>
 

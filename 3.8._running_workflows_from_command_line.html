@@ -153,7 +153,84 @@
             
   <div class="section" id="running-workflows-from-command-line">
 <h1><strong>Running Workflows from Command Line</strong><a class="headerlink" href="#running-workflows-from-command-line" title="Permalink to this headline">¶</a></h1>
-<p>Coming soon - Work in progress</p>
+<p>Running OpenRPA Workflows from the command line is very easy. In this section users will learn how to do it.</p>
+<div class="section" id="capturing-the-workflow-id">
+<h2>Capturing the Workflow ID<a class="headerlink" href="#capturing-the-workflow-id" title="Permalink to this headline">¶</a></h2>
+<p>Each Workflow in OpenRPA has a <code class="docutils literal notranslate"><span class="pre">workflow</span> <span class="pre">id</span></code> which is assigned upon its creation. To acquire the <code class="docutils literal notranslate"><span class="pre">workflow</span> <span class="pre">id</span> <span class="pre">``</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">workflow</span> <span class="pre">simply</span> <span class="pre">open</span> <span class="pre">OpenRPA,</span> <span class="pre">click</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">right</span> <span class="pre">mouse</span> <span class="pre">button</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">Workflow</span> <span class="pre">title</span> <span class="pre">and</span> <span class="pre">then</span> <span class="pre">click</span> <span class="pre">``Copy</span> <span class="pre">ID</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_running_workflows_copying_workflow_id_openrpa.png" src="images/openrpa_running_workflows_copying_workflow_id_openrpa.png" />
+</div>
+</div>
+<div class="section" id="running-workflows-locally">
+<h2>Running Workflows Locally<a class="headerlink" href="#running-workflows-locally" title="Permalink to this headline">¶</a></h2>
+<p>In this section, users will learn how to run a Workflow locally by using <code class="docutils literal notranslate"><span class="pre">PowerShell</span></code>.</p>
+<p>First, open a <code class="docutils literal notranslate"><span class="pre">PowerShell</span></code> prompt.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_running_workflows_cli_open_powershell.png" src="images/openrpa_running_workflows_cli_open_powershell.png" />
+</div>
+<p>Run the command below. <code class="docutils literal notranslate"><span class="pre">${WORKFLOW_ID}</span></code> is the <code class="docutils literal notranslate"><span class="pre">workflow</span> <span class="pre">id</span></code> of the OpenRPA Workflow you want to run. So, for example, if you want to run the Workflow with <code class="docutils literal notranslate"><span class="pre">id</span></code> equal to <code class="docutils literal notranslate"><span class="pre">5f8dfaf243e8cf24d4c25dcd</span></code>, you would run the command according to the second code block below.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Start-Process</span> <span class="n">-FilePath</span> <span class="s2">&quot;C:\\Program Files\\OpenRPA\\OpenRPA.exe&quot;</span>  <span class="n">-ArgumentList</span> <span class="s2">&quot;-workflowid ${WORKFLOW_ID}&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Start-Process</span> <span class="n">-FilePath</span> <span class="s2">&quot;C:\\Program Files\\OpenRPA\\OpenRPA.exe&quot;</span>  <span class="n">-ArgumentList</span> <span class="s2">&quot;-workflowid 5f8dfaf243e8cf24d4c25dcd&quot;</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="images/openrpa_running_workflows_cli_command_running.png" src="images/openrpa_running_workflows_cli_command_running.png" />
+</div>
+<p>Here, the <a class="reference external" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-process?view=powershell-7">Start-Process</a> (<code class="docutils literal notranslate"><span class="pre">https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-process?view=powershell-7</span></code>) <code class="docutils literal notranslate"><span class="pre">cmdlet´`</span> <span class="pre">is</span> <span class="pre">used.</span> <span class="pre">If</span> <span class="pre">you</span> <span class="pre">do</span> <span class="pre">not</span> <span class="pre">know</span> <span class="pre">what</span> <span class="pre">a</span> <span class="pre">``cmdlet</span></code> is, please refer to the <a class="reference external" href="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7">Cmdlet Overview</a> (<code class="docutils literal notranslate"><span class="pre">https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7</span></code>) page.</p>
+<p>Then, OpenRPA will execute the Workflow as if it had been invoked on OpenFlow or run by simply clicking the <strong>Play</strong> button inside OpenRPA’s ribbon.</p>
+</div>
+<div class="section" id="scheduling-workflows-to-run-locally">
+<h2>Scheduling Workflows to run Locally<a class="headerlink" href="#scheduling-workflows-to-run-locally" title="Permalink to this headline">¶</a></h2>
+<p>In this section, users will learn how to schedule a Workflow which will constantly run in a specified period of time.</p>
+<p>First, users must search for the <code class="docutils literal notranslate"><span class="pre">Task</span> <span class="pre">Scheduler</span></code> inside Windows 10 search bar.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_scheduling_workflows_search_task_scheduler.png" src="images/openrpa_scheduling_workflows_search_task_scheduler.png" />
+</div>
+<p>After opening the <code class="docutils literal notranslate"><span class="pre">Task</span> <span class="pre">Scheduler</span></code>, click on <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Task...</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_scheduling_workflows_click_create_task.png" src="images/openrpa_scheduling_workflows_click_create_task.png" />
+</div>
+<p>Now, users must fill the <code class="docutils literal notranslate"><span class="pre">Name</span></code> desired for the <code class="docutils literal notranslate"><span class="pre">Task</span></code> and its <code class="docutils literal notranslate"><span class="pre">Description</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_scheduling_workflows_fill_task.png" src="images/openrpa_scheduling_workflows_fill_task.png" />
+</div>
+<p>Then users must select the <code class="docutils literal notranslate"><span class="pre">Action</span></code> which will be executed upon triggering the <code class="docutils literal notranslate"><span class="pre">Task</span></code>. Click on the <code class="docutils literal notranslate"><span class="pre">Actions</span></code> tab and then click on the <code class="docutils literal notranslate"><span class="pre">New...</span></code> button.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_scheduling_workflows_click_action_tab.png" src="images/openrpa_scheduling_workflows_click_action_tab.png" />
+</div>
+<p>Now, users must choose the <code class="docutils literal notranslate"><span class="pre">Program</span></code> which will be executed - which is OpenRPA. To do that, click the <code class="docutils literal notranslate"><span class="pre">Browse...</span></code> button, navigate to OpenRPA’s installation folder - default is at <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\OpenRPA</span></code> - and select the <code class="docutils literal notranslate"><span class="pre">OpenRPA.exe</span></code> executable.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_scheduling_workflows_click_browser_button.png" src="images/openrpa_scheduling_workflows_click_browser_button.png" />
+</div>
+<div class="figure align-center">
+<img alt="images/openrpa_scheduling_workflows_select_openrpa_executable.png" src="images/openrpa_scheduling_workflows_select_openrpa_executable.png" />
+</div>
+<p>Then, in the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">arguments</span> <span class="pre">(optional):</span></code> input field, users must insert <code class="docutils literal notranslate"><span class="pre">/workflowid</span> <span class="pre">``</span> <span class="pre">followed</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">``id</span></code> of the Workflow which they desire to run. In our case, this Workflow has id <code class="docutils literal notranslate"><span class="pre">5f9d10719fad3056ccd42714</span></code> so the author inserted <code class="docutils literal notranslate"><span class="pre">/workflowid</span> <span class="pre">5f9d10719fad3056ccd42714</span></code> inside this field - as can be seen in the image below.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_scheduling_workflows_set_argument_parameter.png" src="images/openrpa_scheduling_workflows_set_argument_parameter.png" />
+</div>
+<p>Users must now set the <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">in</span> <span class="pre">(optional):</span></code> parameter to OpenRPA’s installation folder - default is at <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\OpenRPA</span></code>. After setting all three parameters, users can finally click the <strong>OK</strong> button to finish setting up the <code class="docutils literal notranslate"><span class="pre">Action</span></code> which will be executed by the <code class="docutils literal notranslate"><span class="pre">Task</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_scheduling_workflows_set_start_in_parameter.png" src="images/openrpa_scheduling_workflows_set_start_in_parameter.png" />
+</div>
+<p>Finally, the users will set up the <code class="docutils literal notranslate"><span class="pre">Trigger</span></code> which will activate the execution of the <code class="docutils literal notranslate"><span class="pre">Task</span></code>. Simply click the <code class="docutils literal notranslate"><span class="pre">Triggers</span></code> tab and click on the <strong>New…</strong> button.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_scheduling_workflows_click_triggers_tab.png" src="images/openrpa_scheduling_workflows_click_triggers_tab.png" />
+</div>
+<p>Users can now choose the <code class="docutils literal notranslate"><span class="pre">Event</span></code> which will trigger the execution of the <code class="docutils literal notranslate"><span class="pre">Task</span></code>. Here only the <code class="docutils literal notranslate"><span class="pre">On</span> <span class="pre">a</span> <span class="pre">schedule</span></code> event,, which is set by default, will be covered.</p>
+<p>First, select a checkbox to choose whether the Workflow will be run <code class="docutils literal notranslate"><span class="pre">One</span> <span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">Daily</span></code>, <code class="docutils literal notranslate"><span class="pre">Weekly</span></code> or <code class="docutils literal notranslate"><span class="pre">Monthly</span></code>.</p>
+<p>Now, fill the calendar selector to choose the <code class="docutils literal notranslate"><span class="pre">Start</span></code> date and time on which the Workflow will start running.</p>
+<p>Users can also select some <code class="docutils literal notranslate"><span class="pre">Advanced</span> <span class="pre">settings</span></code>. Such as whether to <code class="docutils literal notranslate"><span class="pre">Delay</span></code>, <code class="docutils literal notranslate"><span class="pre">Repeat´`,</span> <span class="pre">``Stop</span></code> or <code class="docutils literal notranslate"><span class="pre">Expire</span></code> the <code class="docutils literal notranslate"><span class="pre">Task</span></code> and also choose to <code class="docutils literal notranslate"><span class="pre">Enable</span></code> or disable it temporarily. After finishing the <code class="docutils literal notranslate"><span class="pre">Trigger</span></code> configuration, the user must click the <strong>Ok</strong> button to save changes and again to finish configuring the <code class="docutils literal notranslate"><span class="pre">Task</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_scheduling_workflows_configure_trigger.png" src="images/openrpa_scheduling_workflows_configure_trigger.png" />
+</div>
+<p>Finally, the <code class="docutils literal notranslate"><span class="pre">Task</span></code> is run and OpenRPA will show a notification warning that it has completed successfully - or failed.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_scheduling_workflows_task_completed.png" src="images/openrpa_scheduling_workflows_task_completed.png" />
+</div>
+</div>
 </div>
 
 

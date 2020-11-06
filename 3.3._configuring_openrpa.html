@@ -153,14 +153,40 @@
             
   <div class="section" id="configuring-openrpa">
 <h1><strong>Configuring OpenRPA</strong><a class="headerlink" href="#configuring-openrpa" title="Permalink to this headline">¶</a></h1>
-<p><strong>OpenRPA</strong> settings are saved locally in a file named <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> and it is always Â¹ located in user’s <code class="docutils literal notranslate"><span class="pre">Documents\OpenRPA</span></code> folder (or full path <code class="docutils literal notranslate"><span class="pre">C:\Users\{YOUR_USER}\Documents\OpenRPA</span></code>). This file contains all configuration parameters for <strong>OpenRPA</strong>, including some which are not accessible through the GUI.</p>
+<p><strong>OpenRPA</strong> settings are saved locally in a file named <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> and it is always¹ located in user’s <code class="docutils literal notranslate"><span class="pre">Documents\OpenRPA</span></code> folder (or full path <code class="docutils literal notranslate"><span class="pre">C:\Users\{YOUR_USER}\Documents\OpenRPA</span></code>). This file contains all configuration parameters for <strong>OpenRPA</strong>, including some which are not accessible through the GUI.</p>
 <p><strong>OpenRPA</strong> GUI layout settings, however, are saved in another file: <code class="docutils literal notranslate"><span class="pre">layout.config</span></code>. Deleting <code class="docutils literal notranslate"><span class="pre">layout.config</span></code> bears no trouble, since it will only lose the user’s layout preferences (panel sizes, order, location etc).</p>
 <p>Editing either file (<code class="docutils literal notranslate"><span class="pre">settings.json</span></code> / <code class="docutils literal notranslate"><span class="pre">layout.config</span></code>) while <strong>OpenRPA</strong> is running will have no effect and, when the application is closed, any value changed will be lost/overwritten. Hence, if you desire to edit any setting, always make sure that <strong>OpenRPA</strong> is not running.</p>
-<p>Further on this section, readers will find documentation for all the parameters from <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> and their possible values.</p>
-<p><em>Â¹ - Currently, it is not possible to specify the directory where OpenRPA local temporary files (workflows, settings) will be saved.</em></p>
-<img alt="images/openrpa_settings_json.png" class="align-center" src="images/openrpa_settings_json.png" />
+<p>Further on this section, readers will find documentation for all the parameters which rule the configuration settings for OpenRPA.</p>
+<p><em>¹ - Currently, it is not possible to specify the directory where OpenRPA local temporary files (workflows, settings) will be saved.</em></p>
+<div class="figure align-center">
+<img alt="images/openrpa_settings_json.png" src="images/openrpa_settings_json.png" />
+</div>
 <div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>These parameters can be set either from <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> or by adding keys inside the <cite>Windows Registry Editor</cite>.</p>
+<div class="section" id="setting-parameters-locally">
+<h3>Setting parameters locally<a class="headerlink" href="#setting-parameters-locally" title="Permalink to this headline">¶</a></h3>
+<p>If the user desires to set parameters for the local user instance of <strong>OpenRPA</strong>, he may navigate to the <code class="docutils literal notranslate"><span class="pre">Computer\HKEY_USERS\{USER_KEY}\SOFTWARE\OpenRPA</span></code> registry key and add an entry for each parameter he wants to change. Here, the name of the key corresponds to the name of the parameter and its value corresponds to the value.</p>
+<p>The process below shows how to set the <code class="docutils literal notranslate"><span class="pre">ocr_language</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">rus</span></code> locally by using the <cite>Windows Registry Editor</cite>.</p>
+<p>First, navigate to the <code class="docutils literal notranslate"><span class="pre">Computer\HKEY_USERS\{USER_KEY}\SOFTWARE\OpenRPA</span></code> registry key.</p>
+<p>Click with the right-mouse button inside the empty area in the <cite>Windows Registry Editor</cite> window.</p>
+<div class="figure align-default">
+<img alt="images/openrpa_new_parameter_ocr_language_set.png" src="images/openrpa_new_parameter_ocr_language_set.png" />
+</div>
+<p>Then, click on <code class="docutils literal notranslate"><span class="pre">New</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">value</span></code> and type <code class="docutils literal notranslate"><span class="pre">ocrlanguage</span></code> and press <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_new_parameter_ocr_language_type_name.png" src="images/openrpa_new_parameter_ocr_language_type_name.png" />
+</div>
+<p>Finally, double click the newly set register entry and intended register value, in our case <code class="docutils literal notranslate"><span class="pre">rus</span></code> - which corresponds to the Russian language.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_new_parameter_ocr_language_type_value.png" src="images/openrpa_new_parameter_ocr_language_type_value.png" />
+</div>
+<p>Now restart OpenRPA to verify the changes were properly made.</p>
+</div>
+<div class="section" id="setting-parameters-globally">
+<h3>Setting parameters globally<a class="headerlink" href="#setting-parameters-globally" title="Permalink to this headline">¶</a></h3>
+<p>The same process above is done but for the <code class="docutils literal notranslate"><span class="pre">Computer\Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenRPA</span></code> registry key to enforce parameters globally in the scope of the machine. This means users can’t override these parameters.</p>
+</div>
 <div class="section" id="wsurl-openrpa-online-offline-local">
 <h3>wsurl (<strong>OpenRPA</strong> online/offline[local])<a class="headerlink" href="#wsurl-openrpa-online-offline-local" title="Permalink to this headline">¶</a></h3>
 <p>This parameter dictates to which <strong>OpenFlow</strong> enviroment <strong>OpenRPA</strong> should connect.</p>
@@ -169,7 +195,7 @@
 <p>If the value is set as blank <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> (empty string), <strong>OpenRPA</strong> will run locally, that is, without being connected to an <strong>OpenFlow</strong> (and consequently, <strong>NodeRED</strong>) and will no longer benefit from the cloud features of the <strong>OON</strong> stack, such as <strong>MongoDB</strong> or <code class="docutils literal notranslate"><span class="pre">Workflows</span></code> remote invoking (as well as many others features).</p>
 <p>Examples of valid websockets URL:</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;wsurl&quot;</span><span class="p">:</span> <span class="s2">&quot;wss://app.openiap.io/&quot;</span><span class="p">,</span>
-<span class="nt">&quot;wsurl&quot;</span><span class="p">:</span> <span class="s2">&quot;ws://localhost.openrpa.dk&quot;</span><span class="p">,</span>
+<span class="nt">&quot;wsurl&quot;</span><span class="p">:</span> <span class="s2">&quot;ws://localhost.openrpa.io&quot;</span><span class="p">,</span>
 <span class="nt">&quot;wsurl&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
 </pre></div>
 </div>
@@ -180,7 +206,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Users are always welcome to use <code class="docutils literal notranslate"><span class="pre">wss://app.openiap.io/</span></code> demo enviroment for experimentation purposes. However, running production processes in this demo enviroment is NOT recommended.</p>
+<p>Users are always welcome to use <code class="docutils literal notranslate"><span class="pre">wss://app.openiap.io/</span></code> as demo and proof-of-concept enviroment for experimentation purposes, without a subscription. However, when running production processes in this environment it its recommended to supplement this with a paid plan for the Node-RED instances.</p>
 </div>
 </div>
 <div class="section" id="username-jwt-password-entropy">
@@ -189,9 +215,9 @@
 <p>Default value for <code class="docutils literal notranslate"><span class="pre">username</span></code> is empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>.</p>
 <p>Default values for <code class="docutils literal notranslate"><span class="pre">jwt</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code> are <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
 <p>Default value for <code class="docutils literal notranslate"><span class="pre">entropy</span></code> is a randomly generated key created by the user’s Windows (example <code class="docutils literal notranslate"><span class="pre">&quot;JungBLhauG+JvQipkQPIp9sLwJw=&quot;</span></code>).</p>
-<p>After an user logs in to <strong>OpenRPA</strong>, the application will automatically generate a JSON Web Token <code class="docutils literal notranslate"><span class="pre">jwt</span></code> from the combination of <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code> Â¹, with a given secret <code class="docutils literal notranslate"><span class="pre">entropy</span></code>. After the user logs out (or the application is closed), this <code class="docutils literal notranslate"><span class="pre">jwt</span></code> is then saved and, from there, the same user may log back in without the need of typing the credentials again.</p>
-<p>Â¹ - <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code> that were typed in the login screen, not from the <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> file.</p>
-<p>If, for any reason, the login is not possible (<code class="docutils literal notranslate"><span class="pre">password</span></code> has been changed, user no longer exists or <code class="docutils literal notranslate"><span class="pre">jwt</span></code> is invalid), <strong>OpenRPA</strong> will erase the values of both <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code> and will prompt the user with the login screen.</p>
+<p>After an user logs in to <strong>OpenRPA</strong>, the application will automatically generate a JSON Web Token <code class="docutils literal notranslate"><span class="pre">jwt</span></code> from the combination of <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">password``¹,</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">given</span> <span class="pre">secret</span> <span class="pre">``entropy</span></code>. After the user logs out (or the application is closed), this <code class="docutils literal notranslate"><span class="pre">jwt</span></code> is then saved and, from there, the same user may log back in without the need of typing the credentials again.</p>
+<p>¹ - <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code> that were typed in the login screen, not from the <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> file.</p>
+<p>If, for any reason, the login is not possible (<code class="docutils literal notranslate"><span class="pre">password</span></code> has been changed, user no longer exists or <code class="docutils literal notranslate"><span class="pre">jwt</span></code> is invalid), <strong>OpenRPA</strong> will prompt the user to login again.</p>
 </div>
 <div class="section" id="isagent">
 <h3>isagent<a class="headerlink" href="#isagent" title="Permalink to this headline">¶</a></h3>
@@ -205,7 +231,7 @@ Expected values are either <code class="docutils literal notranslate"><span clas
 </div>
 <div class="section" id="cancelkey">
 <h3>cancelkey<a class="headerlink" href="#cancelkey" title="Permalink to this headline">¶</a></h3>
-<p>This parameter refers to which key button is responsible for stopping the <code class="docutils literal notranslate"><span class="pre">Recorder</span></code> when the user wants to cease recording.</p>
+<p>This parameter refers to which key button is responsible for stopping execution inside OpenRPA.</p>
 <p>Default value is <code class="docutils literal notranslate"><span class="pre">{ESCAPE}</span></code>.</p>
 </div>
 <div class="section" id="showloadingscreen">
@@ -218,7 +244,7 @@ Expected values are either <code class="docutils literal notranslate"><span clas
 <h3>culture<a class="headerlink" href="#culture" title="Permalink to this headline">¶</a></h3>
 <p>This parameter defines the language used in most elements (tooltips, buttons etc.) in the <strong>OpenRPA</strong> GUI. Notice that the list of all possible values will not be shown here, since this list is still expanding (thanks to our contributors).
 The most intuitive way to set this parameter is by choosing the language through <code class="docutils literal notranslate"><span class="pre">UI</span> <span class="pre">Language</span></code>, on the upper ribbon of the the <strong>OpenRPA</strong> GUI, in the <code class="docutils literal notranslate"><span class="pre">Settings</span> <span class="pre">tab</span></code>.</p>
-<p>Default value is <code class="docutils literal notranslate"><span class="pre">en</span></code> (which stands for “English”).</p>
+<p>Default value is the user’s local input language, if supported by <strong>OpenRPA</strong>. Else, it will default to <code class="docutils literal notranslate"><span class="pre">en</span></code> (which stands for “English”).</p>
 </div>
 <div class="section" id="ocrlanguage">
 <h3>ocrlanguage<a class="headerlink" href="#ocrlanguage" title="Permalink to this headline">¶</a></h3>
@@ -247,7 +273,7 @@ The most intuitive way to set this parameter is by choosing the language through
 <p>This parameter is a set of inherited classes settings. This is a dynamically created list of the add-ons settings that are loaded when <strong>OpenRPA</strong> is executed. In the case of new plugins, their settings can be added to the global settings in this list. Note that the first word of each parameter is the name of the plugin being setted.</p>
 <p>This is an important parameter, since it allows users to configurate their own plugins.</p>
 <p>These settings can also be accessed through <strong>OpenRPA</strong> GUI, in <code class="docutils literal notranslate"><span class="pre">Recorder</span> <span class="pre">plugins</span></code> in the <code class="docutils literal notranslate"><span class="pre">Settings</span></code> tab.</p>
-<p><code class="docutils literal notranslate"><span class="pre">IE_enable_xpath_support</span></code> - It enables experimental XPath support in <strong>IE</strong>. Default value is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">IE_enable_xpath_support</span></code> - It enables experimental XPath support in <strong>IE</strong>. Default value is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">NM_unique_xpath_ids</span></code> - A list of unique IDs for creating XPath selectors.</p>
 <p><code class="docutils literal notranslate"><span class="pre">NM_debug_console_output</span></code> - It writes debug information to browser console. Default value is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">NM_wait_for_tab_after_set_value</span></code> - It waits for tab status to be in ready state after setting a value. Default value is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>

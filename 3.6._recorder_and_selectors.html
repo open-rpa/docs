@@ -183,7 +183,7 @@
 <div class="figure align-center">
 <img alt="images/openrpa_recorder_add_max_results_and_click_open_selector.png" src="images/openrpa_recorder_add_max_results_and_click_open_selector.png" />
 </div>
-<p>Now, the <strong>Selector</strong> criteria must be changed so it returns an array of elements and not a single one. When working with WebElements, that can be done by changing the <code class="docutils literal notranslate"><span class="pre">xpath</span></code> so that it returns broader results.</p>
+<p>Now, the <strong>Selector</strong> criteria must be changed so it returns an array of elements and not a single one. When working with WebElements, that can be done by changing the <code class="docutils literal notranslate"><span class="pre">xpath</span></code> parameter so that it returns broader results.</p>
 <div class="figure align-center">
 <img alt="images/openrpa_recorder_change_selector_2.png" src="images/openrpa_recorder_change_selector_2.png" />
 </div>
@@ -200,6 +200,139 @@
 <img alt="images/openrpa_recorder_elements_highlighted.png" src="images/openrpa_recorder_elements_highlighted.png" />
 </div>
 <p>Now, if further automation is required for each specific entry, add those activities inside the inner <code class="docutils literal notranslate"><span class="pre">GetElement</span></code>.</p>
+</div>
+<div class="section" id="manually-adjusting-selectors">
+<h2>Manually Adjusting Selectors<a class="headerlink" href="#manually-adjusting-selectors" title="Permalink to this headline">¶</a></h2>
+<p>There are many ways users can adjust a <code class="docutils literal notranslate"><span class="pre">Selector</span></code> to fit their needs. In this section the user will learn how to pass variables to a <code class="docutils literal notranslate"><span class="pre">Selector</span></code>, how to loop through elements by using <a class="reference external" href="https://ryanstutorials.net/linuxtutorial/wildcards.php">Wildcards</a> (<code class="docutils literal notranslate"><span class="pre">https://ryanstutorials.net/linuxtutorial/wildcards.php</span></code>) and nest them within a <code class="docutils literal notranslate"><span class="pre">Selector</span></code> and a few other tricks!</p>
+<div class="section" id="passing-variables-to-a-selector">
+<h3>Passing Variables to a <code class="docutils literal notranslate"><span class="pre">Selector</span></code><a class="headerlink" href="#passing-variables-to-a-selector" title="Permalink to this headline">¶</a></h3>
+<p>Passing variables to a <code class="docutils literal notranslate"><span class="pre">Selector</span></code> is rather easy! The users can make use of the  <a class="reference external" href="https://mustache.github.io/mustache.5.html">Mustache</a> (<a class="reference external" href="https://mustache.github.io/mustache.5.html">https://mustache.github.io/mustache.5.html</a>) syntax to append a value to an existing parameter or simply use a custom parameter inside the <code class="docutils literal notranslate"><span class="pre">Selector</span></code>.</p>
+<p>In this example the users will make use of the <strong>Recorder</strong> to capture an element inside a Google Search page and pass a variable to append to an existing <code class="docutils literal notranslate"><span class="pre">Selector</span></code> parameter and further on they will simply use the variable for whole parameter.</p>
+<p>Users can enter any search input they would like to search for in <a class="reference external" href="https://www.google.com/">Google</a> (<code class="docutils literal notranslate"><span class="pre">https://www.google.com/</span></code>) main page. In this case, the author has opted to choose <code class="docutils literal notranslate"><span class="pre">rabbitmq</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_search_rabbitmq.png" src="images/openrpa_recorders_and_selectors_search_rabbitmq.png" />
+</div>
+<p>Now, users must open OpenRPA and create a new workflow. The author has chosen to name his as <code class="docutils literal notranslate"><span class="pre">Manually</span> <span class="pre">Adjusting</span> <span class="pre">Selectors</span></code>.</p>
+<p>Click inside the <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> and click the <strong>Recorder</strong> button inside OpenRPA’s ribbon. Now click inside the element in the page.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_click_element_in_page.png" src="images/openrpa_recorders_and_selectors_click_element_in_page.png" />
+</div>
+<p>If users are using <code class="docutils literal notranslate"><span class="pre">Internet</span> <span class="pre">Explorer</span></code>, a new <strong>OpenRPA.IE.GetElement</strong> Activity will appear. Else, if they are using <code class="docutils literal notranslate"><span class="pre">Edge</span></code>, <code class="docutils literal notranslate"><span class="pre">Chrome</span></code> or <code class="docutils literal notranslate"><span class="pre">Firefox</span></code>, a new <strong>OpenRPA.NM.GetElement</strong> Activity will appear.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_click_open_selector.png" src="images/openrpa_recorders_and_selectors_click_open_selector.png" />
+</div>
+<p>Now, users must click the <strong>Open Selector</strong> button and the <code class="docutils literal notranslate"><span class="pre">Selector</span> <span class="pre">Designer</span></code> will appear.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_selector_window_open.png" src="images/openrpa_recorders_and_selectors_selector_window_open.png" />
+</div>
+<p>Now users will only replace a part of the <code class="docutils literal notranslate"><span class="pre">xpath</span></code> parameter. They shall strip - ie. remove - the <code class="docutils literal notranslate"><span class="pre">div/span/span[2]</span></code> part of the <code class="docutils literal notranslate"><span class="pre">xpath</span></code> parameter and add a <code class="docutils literal notranslate"><span class="pre">Mustache</span> <span class="pre">expression</span></code> containing the name of the variable to which the value which was stripped will be assigned. The author has opted to name that variable as <code class="docutils literal notranslate"><span class="pre">selectorValue</span></code> so the <code class="docutils literal notranslate"><span class="pre">Mustache</span> <span class="pre">expression</span></code> would become <code class="docutils literal notranslate"><span class="pre">{{selectorValue}}</span></code>.</p>
+<p>After doing this users can click the <strong>Ok</strong> button to close the <code class="docutils literal notranslate"><span class="pre">Selector</span> <span class="pre">Designer</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_selector_window_strip_string.png" src="images/openrpa_recorders_and_selectors_selector_window_strip_string.png" />
+</div>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_selector_window_string_stripped.png" src="images/openrpa_recorders_and_selectors_selector_window_string_stripped.png" />
+</div>
+<p>Now users need to assign this variable to a value - the value is the value which was stripped from the <code class="docutils literal notranslate"><span class="pre">xpath</span></code> parameter but it could be anything!</p>
+<p>The possibilities are endless for manipulation. You can even use <code class="docutils literal notranslate"><span class="pre">CSS</span> <span class="pre">Selectors</span></code>! Refer to the <a class="reference internal" href="openrpa.html#using-css-selectors"><span class="std std-ref">Using CSS Selectors</span></a> for more information.</p>
+<p>Drag an <strong>Assign</strong> Activity to the main sequence, just above the <strong>GetElement</strong> activity. Name it as <code class="docutils literal notranslate"><span class="pre">selectorValue</span></code> and assign to it the value which was stripped before - ie. <code class="docutils literal notranslate"><span class="pre">&quot;div/span/span[2]&quot;</span></code>. Press <code class="docutils literal notranslate"><span class="pre">Ctrl+K</span></code> to create the variable.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_assign_selector_value.png" src="images/openrpa_recorders_and_selectors_assign_selector_value.png" />
+</div>
+<p>Now, delete the <strong>Click Element</strong> activity from inside the <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> in the <strong>GetElement</strong> activity and drag an <strong>Assign</strong> activity inside it so we can test whether the value was really captured.</p>
+<p>Name the variable <code class="docutils literal notranslate"><span class="pre">selectorText</span></code> - it is a completely arbitrary value, users can actually name it anything they would want to.</p>
+<p>Assign to this variable the value <code class="docutils literal notranslate"><span class="pre">item.Text</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_assign_selector_text.png" src="images/openrpa_recorders_and_selectors_assign_selector_text.png" />
+</div>
+<p>Finally, drag a <strong>Show Notification</strong> activity to the main sequence and insert <code class="docutils literal notranslate"><span class="pre">selectorText</span></code> in its <code class="docutils literal notranslate"><span class="pre">Message</span></code> input field.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_selector_show_notification.png" src="images/openrpa_recorders_and_selectors_selector_show_notification.png" />
+</div>
+<p>If you run the workflow now a <code class="docutils literal notranslate"><span class="pre">notification</span></code> will show, containing the message which was acquired.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_mustache_notification.png" src="images/openrpa_recorders_and_selectors_mustache_notification.png" />
+</div>
+</div>
+<div class="section" id="using-css-selectors">
+<h3>Using CSS Selectors<a class="headerlink" href="#using-css-selectors" title="Permalink to this headline">¶</a></h3>
+<p>As well as using <a class="reference external" href="https://www.w3schools.com/xml/xpath_syntax.asp">XPath Selectors</a> (<code class="docutils literal notranslate"><span class="pre">https://www.w3schools.com/xml/xpath_syntax.asp</span></code>), users can also make use of <a class="reference external" href="https://www.w3schools.com/cssref/css_selectors.asp">CSS Selectors</a> (<code class="docutils literal notranslate"><span class="pre">https://www.w3schools.com/cssref/css_selectors.asp</span></code>). In this section, users will learn how to use <code class="docutils literal notranslate"><span class="pre">CSS</span> <span class="pre">Selectors</span></code> to select all of the items pertaining to the class of <code class="docutils literal notranslate"><span class="pre">span</span></code> elements selected in the previous section by simply passing the <code class="docutils literal notranslate"><span class="pre">CSS</span></code> Selector belonging to them inside the <code class="docutils literal notranslate"><span class="pre">cssselector</span></code> parameter.</p>
+<p>First, we need to locate the <code class="docutils literal notranslate"><span class="pre">CSS</span> <span class="pre">class</span></code> belonging to the class of <code class="docutils literal notranslate"><span class="pre">span</span></code> elements.</p>
+<p>The users can do this by pressing either <code class="docutils literal notranslate"><span class="pre">F12</span></code> or <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+I</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Console</span></code> window will then appear. Click on the <code class="docutils literal notranslate"><span class="pre">Elements</span></code> tab.</p>
+<p>Now press <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+C</span></code> and select the <code class="docutils literal notranslate"><span class="pre">span</span></code> element.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_css_selector_select_element.png" src="images/openrpa_recorders_and_selectors_css_selector_select_element.png" />
+</div>
+<p>Copy the name of the <code class="docutils literal notranslate"><span class="pre">CSS</span> <span class="pre">class``for</span> <span class="pre">the</span> <span class="pre">first</span> <span class="pre">``div</span></code> from which the element which was selected before inherits. In our case, this one is the <code class="docutils literal notranslate"><span class="pre">.IsZvec</span></code> class. Save the name of this class somewhere, it will be needed further on.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_css_selector_copy_class.png" src="images/openrpa_recorders_and_selectors_css_selector_copy_class.png" />
+</div>
+<p>Now, open OpenRPA and click on the <strong>Recorder</strong> button. Then, click on the element inside the page.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_click_element_in_page.png" src="images/openrpa_recorders_and_selectors_click_element_in_page.png" />
+</div>
+<p>Remove the <strong>Click Element</strong> Activity from the <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> inside the new <strong>GetElement</strong> Activity.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_css_selectors_remove_click_element.png" src="images/openrpa_recorders_and_selectors_css_selectors_remove_click_element.png" />
+</div>
+<p>Now, users must click the <strong>Open Selector</strong> button and the <code class="docutils literal notranslate"><span class="pre">Selector</span> <span class="pre">Designer</span></code> will appear.</p>
+<p>Remove the <code class="docutils literal notranslate"><span class="pre">xpath</span></code> parameter and add a new <code class="docutils literal notranslate"><span class="pre">cssselector</span></code> parameter with value <code class="docutils literal notranslate"><span class="pre">&quot;.IsZvec&quot;</span></code>, as shown in the image below. Finally, click the <strong>Ok</strong> button to save changes.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_css_selectors_selector_designer_before.png" src="images/openrpa_recorders_and_selectors_css_selectors_selector_designer_before.png" />
+</div>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_css_selectors_selector_designer_after.png" src="images/openrpa_recorders_and_selectors_css_selectors_selector_designer_after.png" />
+</div>
+<p>Now users must change the <code class="docutils literal notranslate"><span class="pre">MaxResults</span></code> parameter to a number they find fit. In our case, since Googles Search Engine only shows 10 results per page the author has opted to set <code class="docutils literal notranslate"><span class="pre">MaxResults</span></code> as 10.</p>
+<p>Users must change the <code class="docutils literal notranslate"><span class="pre">MinResults</span></code> to <code class="docutils literal notranslate"><span class="pre">0</span></code> as well in case OpenRPA does not find any elements containing the <code class="docutils literal notranslate"><span class="pre">cssselector</span></code> set previously.</p>
+<p>Finally, it is recommended that users set the <code class="docutils literal notranslate"><span class="pre">Timeout</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">00:00:00</span></code> or <code class="docutils literal notranslate"><span class="pre">TimeSpan.FromSeconds(0)</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_css_selectors_get_element_properties.png" src="images/openrpa_recorders_and_selectors_css_selectors_get_element_properties.png" />
+</div>
+<p>Now, for every Activity put in the <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> inside the <strong>NM/IE.GetElement</strong> Activity, it will be looped over for every element containing the <code class="docutils literal notranslate"><span class="pre">.IsZvec</span></code> class.</p>
+<p>The above can be tested by dragging a <strong>WriteLine</strong> Activity to the end of this <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> and assigning to its <code class="docutils literal notranslate"><span class="pre">Text</span></code> input the <code class="docutils literal notranslate"><span class="pre">item.Text</span></code> value.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_css_selectors_drag_writeline.png" src="images/openrpa_recorders_and_selectors_css_selectors_drag_writeline.png" />
+</div>
+<p>When the Workflow is run now it will show the text for every element containing the class which was set up before.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_css_selectors_finished.png" src="images/openrpa_recorders_and_selectors_css_selectors_finished.png" />
+</div>
+<p>That’s it! Users now know how to successfully set up a <code class="docutils literal notranslate"><span class="pre">CSS</span> <span class="pre">Selector</span></code> inside OpenRPA.</p>
+</div>
+<div class="section" id="using-wildcards">
+<h3>Using Wildcards<a class="headerlink" href="#using-wildcards" title="Permalink to this headline">¶</a></h3>
+<p>In this section users will learn how to capture multiple elements inside a given <a class="reference external" href="https://www.w3schools.com/jsref/dom_obj_all.asp">HTML DOM Element Object</a> (<code class="docutils literal notranslate"><span class="pre">https://www.w3schools.com/jsref/dom_obj_all.asp</span></code>), in a similar way to how <a class="reference internal" href="openrpa.html#using-css-selectors"><span class="std std-ref">Using CSS Selectors</span></a> works, but using <a class="reference external" href="https://www.w3schools.com/xml/xpath_syntax.asp">XPath Selectors</a> (<code class="docutils literal notranslate"><span class="pre">https://www.w3schools.com/xml/xpath_syntax.asp</span></code>)</p>
+<p>Open OpenRPA and click on the <strong>Recorder</strong> button. Then, click on the element inside the page.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_click_element_in_page.png" src="images/openrpa_recorders_and_selectors_click_element_in_page.png" />
+</div>
+<p>Remove the <strong>Click Element</strong> Activity from the <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> inside the new <strong>GetElement</strong> Activity.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_css_selectors_remove_click_element.png" src="images/openrpa_recorders_and_selectors_css_selectors_remove_click_element.png" />
+</div>
+<p>Now, users must click the <strong>Open Selector</strong> button and the <code class="docutils literal notranslate"><span class="pre">Selector</span> <span class="pre">Designer</span></code> will appear.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_selector_window_open.png" src="images/openrpa_recorders_and_selectors_selector_window_open.png" />
+</div>
+<p>Now users will only cut out a part of the <code class="docutils literal notranslate"><span class="pre">xpath</span></code> parameter. They shall replace the <code class="docutils literal notranslate"><span class="pre">div[3]/div/div[2]/div/span</span></code> substring from the <code class="docutils literal notranslate"><span class="pre">xpath</span></code> parameter for <code class="docutils literal notranslate"><span class="pre">div[*]/div/div[2]/div/span</span></code>. This allows OpenRPA to capture all the <code class="docutils literal notranslate"><span class="pre">10</span></code> search elements.</p>
+<p>After doing this, users can click the <strong>Ok</strong> button to close the <code class="docutils literal notranslate"><span class="pre">Selector</span> <span class="pre">Designer</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_nesting_get_elements_selector_window_strip_string.png" src="images/openrpa_recorders_and_selectors_nesting_get_elements_selector_window_strip_string.png" />
+</div>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_nesting_get_elements_selector_window_string_stripped.png" src="images/openrpa_recorders_and_selectors_nesting_get_elements_selector_window_string_stripped.png" />
+</div>
+<p>Now users can test it worked by dragging a <strong>WriteLine</strong> Activity to the <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> inside the <strong>IE/NM.GetElement</strong> Activity generated by the <strong>Recorder</strong> and assigning to its <code class="docutils literal notranslate"><span class="pre">Text</span></code> input field the <code class="docutils literal notranslate"><span class="pre">item.Text</span></code> value.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_nesting_get_elements_drag_write_line.png" src="images/openrpa_recorders_and_selectors_nesting_get_elements_drag_write_line.png" />
+</div>
+<p>After running the Workflow, users will notice that it has successfully captured the 10 <code class="docutils literal notranslate"><span class="pre">span</span></code> elements found.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_recorders_and_selectors_nesting_get_elements_finished.png" src="images/openrpa_recorders_and_selectors_nesting_get_elements_finished.png" />
+</div>
+</div>
 </div>
 </div>
 

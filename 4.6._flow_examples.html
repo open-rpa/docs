@@ -154,35 +154,417 @@
   <div class="section" id="flow-examples">
 <h1><strong>Flow Examples</strong><a class="headerlink" href="#flow-examples" title="Permalink to this headline">¶</a></h1>
 <p>Coming soon - Work in progress</p>
-<div class="section" id="dummy-integration-openrpa-openflow-nodered">
-<h2>Dummy Integration OpenRPA-OpenFlow-NodeRED<a class="headerlink" href="#dummy-integration-openrpa-openflow-nodered" title="Permalink to this headline">¶</a></h2>
-<p>Coming soon - Work in progress</p>
-</div>
 <div class="section" id="using-openflow-forms">
 <h2>Using OpenFlow Forms<a class="headerlink" href="#using-openflow-forms" title="Permalink to this headline">¶</a></h2>
-<p>Coming soon - Work in progress</p>
+<div class="section" id="create-a-form-in-openflow">
+<h3>Create a Form in OpenFlow<a class="headerlink" href="#create-a-form-in-openflow" title="Permalink to this headline">¶</a></h3>
+<p>In this section the users will learn how to create a Form in OpenFlow. If they do not know what a Form is, please refer to the <a class="reference internal" href="openflow.html#id7"><span class="std std-ref">forms</span></a> section.</p>
+<p>The first step is to set up a form which will be used to pass the <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">from</span> <span class="pre">OpenFlow!&quot;</span></code> or any other input inserted by the user to Node-RED.</p>
+<p>Go to the <a class="reference external" href="http://demo.openiap.io/#/Forms">Forms page</a> (default is <code class="docutils literal notranslate"><span class="pre">http://demo.openiap.io/#/Forms</span></code>) and click the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Form</span></code> button.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_click_add_form_button.png" src="images/nodered_openflow_forms_click_add_form_button.png" />
+</div>
+<p>Now drag a <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">Field</span></code> form to the Form designer.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_drag_textfield_form.png" src="images/nodered_openflow_forms_drag_textfield_form.png" />
+</div>
+<p>Change the <code class="docutils literal notranslate"><span class="pre">Label</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">Please</span> <span class="pre">enter</span> <span class="pre">'Hello</span> <span class="pre">from</span> <span class="pre">OpenFlow!'</span> <span class="pre">below</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_change_label_textfield_form.png" src="images/nodered_openflow_forms_change_label_textfield_form.png" />
+</div>
+<p>Click on the <code class="docutils literal notranslate"><span class="pre">API</span></code> tab and change the <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Name</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">hello_from_openflow</span></code>. This is the variable which will be passed to Node-RED.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_openflow_change_property_name.png" src="images/nodered_openflow_forms_openflow_change_property_name.png" />
+</div>
+<p>Finally, click the <code class="docutils literal notranslate"><span class="pre">Save</span></code> button.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_click_save_textfield_form.png" src="images/nodered_openflow_forms_click_save_textfield_form.png" />
+</div>
+<p>Set the Form name as <code class="docutils literal notranslate"><span class="pre">hellofromopenflow</span></code> and click the <code class="docutils literal notranslate"><span class="pre">Save</span></code> button to save it.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_set_name_and_save.png" src="images/nodered_openflow_forms_set_name_and_save.png" />
+</div>
+<p>That’s it! You have successfully configured a <code class="docutils literal notranslate"><span class="pre">Form</span></code> in OpenFlow. Proceed to the next sections to see how to configure it in Node-RED.</p>
+</div>
+<div class="section" id="configure-form-in-node-red">
+<h3>Configure Form in Node-RED<a class="headerlink" href="#configure-form-in-node-red" title="Permalink to this headline">¶</a></h3>
+<p>Now the users will learn how to properly configure the Form in Node-RED.</p>
+<p>Navigate to the Node-RED instance, create a new flow and click twice in its tab to rename it to <code class="docutils literal notranslate"><span class="pre">Forms</span></code>. Then, click in the <code class="docutils literal notranslate"><span class="pre">Done</span></code> button to save it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Proceed to <span class="xref std std-ref">Accessing Node-RED for the first time</span> for more information on how to set your own <code class="docutils literal notranslate"><span class="pre">Node-RED</span></code> instance.</p>
+</div>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_rename_flow.png" src="images/nodered_openflow_forms_rename_flow.png" />
+</div>
+<p>Drag a <code class="docutils literal notranslate"><span class="pre">workflow</span> <span class="pre">in</span></code> node to the workspace. This node will be responsible for starting the execution flow which will run the Form processing logic.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_drag_workflow_in.png" src="images/nodered_openflow_forms_drag_workflow_in.png" />
+</div>
+<p>Cick twice in the <code class="docutils literal notranslate"><span class="pre">workflow</span> <span class="pre">in</span></code> node to open its <strong>Properties tab</strong>. Set the   <code class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">name</span></code>   as   <code class="docutils literal notranslate"><span class="pre">openflowformsexample</span></code>   and check both the <code class="docutils literal notranslate"><span class="pre">RPA</span></code> and <code class="docutils literal notranslate"><span class="pre">WEB</span></code> checkboxes. <code class="docutils literal notranslate"><span class="pre">RPA</span></code> is checked to allow the Form created in the previous section to be invoked from OpenRPA and <code class="docutils literal notranslate"><span class="pre">WEB</span></code> to allow it to be invoked from OpenFlow. Also, change its name to <code class="docutils literal notranslate"><span class="pre">OpenFlow</span> <span class="pre">Forms</span> <span class="pre">Workflow</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The user can also press <code class="docutils literal notranslate"><span class="pre">RETURN</span></code> to edit the node’s properties as long as the node is focused inside the workspace.</p>
+</div>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_configure_workflow_in.png" src="images/nodered_openflow_forms_configure_workflow_in.png" />
+</div>
+<p>Now we’re going to configure the logic for processing the variable returned from the Form.</p>
+<p>Drag a <code class="docutils literal notranslate"><span class="pre">switch</span></code> node to the workspace and wire it to the <code class="docutils literal notranslate"><span class="pre">OpenFlow</span> <span class="pre">Forms</span> <span class="pre">Workflow</span></code> node previously set.</p>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">switch</span></code> node to open its <strong>Properties tab</strong>. Set its <code class="docutils literal notranslate"><span class="pre">Property</span></code> parameter as <code class="docutils literal notranslate"><span class="pre">msg.payload.hello_from_openflow</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_configure_property_switch.png" src="images/nodered_openflow_forms_configure_property_switch.png" />
+</div>
+<p>Then, we can configure the different ports for the different input cases inside the pattern matching box, just below the <code class="docutils literal notranslate"><span class="pre">Property</span></code> parameter.</p>
+<p>First, change the first case (<code class="docutils literal notranslate"><span class="pre">==</span></code>) to <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">empty</span></code>. Then, add a new case by clicking the <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">add</span></code> button just below the pattern matching box and set it to <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">null</span></code>. Add a new case and set it to <code class="docutils literal notranslate"><span class="pre">otherwise</span></code>. Finally, click the <code class="docutils literal notranslate"><span class="pre">Done</span></code> button.</p>
+<p>This is done so when the end-users enters an <code class="docutils literal notranslate"><span class="pre">empty</span></code> or <code class="docutils literal notranslate"><span class="pre">null</span></code> input this execution flow will enter an <code class="docutils literal notranslate"><span class="pre">idle</span></code> state and the Form will still be available at OpenFlow’s home page. Else, if the user enters any input, it will be passed into Node-RED.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_configure_cases_switch.png" src="images/nodered_openflow_forms_configure_cases_switch.png" />
+</div>
+<p>Now drag a <code class="docutils literal notranslate"><span class="pre">workflow</span> <span class="pre">out</span></code> node into the workspace and wire it to the first two ports of the <code class="docutils literal notranslate"><span class="pre">switch</span></code> node. These ports correspond, respectively, to the <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">empty</span></code> and <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">null</span></code> cases set in the previous step. That is, the execution flow will end up here if the user enters either an <code class="docutils literal notranslate"><span class="pre">empty</span></code> or <code class="docutils literal notranslate"><span class="pre">null</span></code> input.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_drag_first_workflow_out.png" src="images/nodered_openflow_forms_drag_first_workflow_out.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">workflow</span> <span class="pre">out</span></code> node to open its <strong>Properties tab</strong>. Change its <code class="docutils literal notranslate"><span class="pre">State</span></code> to <code class="docutils literal notranslate"><span class="pre">idle</span></code>. Also change the <code class="docutils literal notranslate"><span class="pre">Userform</span></code> to <code class="docutils literal notranslate"><span class="pre">hellofromopenflow</span></code>, which is the form we have defined in the previous section. Then click the <code class="docutils literal notranslate"><span class="pre">Done</span></code> button to save the changes.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_configure_first_workflow_out.png" src="images/nodered_openflow_forms_configure_first_workflow_out.png" />
+</div>
+<p>Drag another <code class="docutils literal notranslate"><span class="pre">workflow</span> <span class="pre">out</span></code> node into the workspace and wire it to the third - or ending - port of the <code class="docutils literal notranslate"><span class="pre">switch</span></code> node. This port corresponds to the <code class="docutils literal notranslate"><span class="pre">otherwise</span></code> case set up before.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_drag_second_workflow_out.png" src="images/nodered_openflow_forms_drag_second_workflow_out.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">workflow</span> <span class="pre">out</span></code> node to open its <strong>Properties tab</strong>. Change its <code class="docutils literal notranslate"><span class="pre">State</span></code> to <code class="docutils literal notranslate"><span class="pre">completed</span></code>. Also change the <code class="docutils literal notranslate"><span class="pre">Userform</span></code> to <code class="docutils literal notranslate"><span class="pre">hellofromopenflow</span></code>. Then click the <code class="docutils literal notranslate"><span class="pre">Done</span></code> button to save the changes.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_configure_second_workflow_out.png" src="images/nodered_openflow_forms_configure_second_workflow_out.png" />
+</div>
+<p>Now drag a <code class="docutils literal notranslate"><span class="pre">debug</span></code> node to the workspace and wire it to the second <code class="docutils literal notranslate"><span class="pre">workflow</span> <span class="pre">out</span></code> node. This node will be used so the users are able to see the message which will be passed into the Form.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_drag_debug_node.png" src="images/nodered_openflow_forms_drag_debug_node.png" />
+</div>
+<p>Finally, click the <strong>Deploy</strong> button to finish the Form configuration and update the current Flow. The Flow should now look like the image below.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_flow_configuration_finished.png" src="images/nodered_openflow_forms_flow_configuration_finished.png" />
+</div>
+</div>
+<div class="section" id="invoking-the-form">
+<h3>Invoking the Form<a class="headerlink" href="#invoking-the-form" title="Permalink to this headline">¶</a></h3>
+<p>In this section the users will learn how to invoke the Form just created by using Node-RED.</p>
+<p>First, drag an <code class="docutils literal notranslate"><span class="pre">inject</span></code> node to the workspace.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_drag_inject_node.png" src="images/nodered_openflow_forms_drag_inject_node.png" />
+</div>
+<p>Now, drag an <code class="docutils literal notranslate"><span class="pre">assign</span></code> node to the workspace and wire it to the previously set <a href="#id1"><span class="problematic" id="id2">``</span></a>inject´` node.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_drag_assign_node.png" src="images/nodered_openflow_forms_drag_assign_node.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">assign</span></code> node to open its <strong>Properties tab</strong>. Assign its Workflow to the <code class="docutils literal notranslate"><span class="pre">openflowformsexample</span></code> workflow set up in the previous section. It is useful to remind the users here that the Workflow set up here corresponds to the <code class="docutils literal notranslate"><span class="pre">Queue</span> <span class="pre">name</span></code> of the Workflow defined in the <code class="docutils literal notranslate"><span class="pre">workflow</span> <span class="pre">in</span></code> node.</p>
+<p>Now the users can either assign the <code class="docutils literal notranslate"><span class="pre">Target</span></code> which will execute the Workflow to a <span class="xref std std-ref">Role</span> or to a particular user. In our case, select <code class="docutils literal notranslate"><span class="pre">users</span></code>, so any user inside the <code class="docutils literal notranslate"><span class="pre">user</span></code> role will be able to invoke it from OpenFlow.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_configure_assign_node.png" src="images/nodered_openflow_forms_configure_assign_node.png" />
+</div>
+<p>Now, click the <strong>Deploy</strong> button once again to update the Flow.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_click_deploy_button_invoke.png" src="images/nodered_openflow_forms_click_deploy_button_invoke.png" />
+</div>
+<p>Then click the button inside the <code class="docutils literal notranslate"><span class="pre">inject</span></code> node to assign an instance of the Workflow previously created to the role <code class="docutils literal notranslate"><span class="pre">users</span></code>.</p>
+<p>Open a new tab and navigate to OpenFlow’s home page. The instance of the Workflow we just assigned appears.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_homepage.png" src="images/nodered_openflow_forms_homepage.png" />
+</div>
+<p>The users can now click the <strong>Open</strong> button to test the Form we have just created. Enter <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">from</span> <span class="pre">OpenFlow!</span></code> in the text field and then click the <strong>Submit</strong> button. A debug message will appear in Node-RED.</p>
+<div class="figure align-center">
+<img alt="images/nodered_openflow_forms_debug_message.png" src="images/nodered_openflow_forms_debug_message.png" />
+</div>
+</div>
+</div>
+<div class="section" id="dummy-integration-openrpa-openflow-nodered">
+<h2>Dummy Integration OpenRPA-OpenFlow-NodeRED<a class="headerlink" href="#dummy-integration-openrpa-openflow-nodered" title="Permalink to this headline">¶</a></h2>
+<p>In this example, users will learn how to use OpenRPA, OpenFlow and Node-RED for message passing.</p>
 </div>
 <div class="section" id="ai-image-recognition">
 <h2>AI Image Recognition<a class="headerlink" href="#ai-image-recognition" title="Permalink to this headline">¶</a></h2>
-<p>Coming soon - Work in progress</p>
+<p>In this example, the users will learn how to create a page in Node-RED containing a <a class="reference external" href="https://www.dropzonejs.com/">Dropzone - Copyright (c) 2012 Matias Meno</a> (<code class="docutils literal notranslate"><span class="pre">https://www.dropzonejs.com/</span></code>) which connects to the <a class="reference external" href="https://cloud.google.com/vision">Google Cloud Vision API</a> (<code class="docutils literal notranslate"><span class="pre">https://cloud.google.com/vision</span></code>) to identify image contents. The final result of this example is shown below. It is interesting to remind that the users must first have properly set up an API key, as seen <a class="reference external" href="https://cloud.google.com/vision/docs/setup">here</a> (<code class="docutils literal notranslate"><span class="pre">https://cloud.google.com/vision/docs/setup</span></code>).</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/image_recognition_final_result.png"><img alt="images/image_recognition_final_result.png" src="images/image_recognition_final_result.png" style="width: 674.5px; height: 312.0px;" /></a>
+</div>
+<p>Navigate to the Node-RED instance, create a new Flow and click twice in its tab to rename it to <code class="docutils literal notranslate"><span class="pre">AI</span> <span class="pre">Image</span> <span class="pre">Recognition</span></code>. Then, click in the <code class="docutils literal notranslate"><span class="pre">Done</span></code> button to save it.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_rename_flow.png" src="images/image_recognition_rename_flow.png" />
+</div>
+<p>Now that the Flow is created, users can proceed to creating an HTTP endpoint which will serve the page. Remember to click the <strong>Deploy</strong> button to save the changes.</p>
+<div class="section" id="serving-the-page-through-templates-and-http-endpoint">
+<h3>Serving the page through Templates and HTTP Endpoint<a class="headerlink" href="#serving-the-page-through-templates-and-http-endpoint" title="Permalink to this headline">¶</a></h3>
+<p>In this section, the users will learn how to create a page which will serve as the entrypoint for the end-users. The end-users will be able to drop or select images from a <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">File</span> <span class="pre">Dialog</span></code> in the page which will be created.</p>
+<p>Drag an <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">in</span></code> node to the workspace.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_drag_http_in_node.png" src="images/image_recognition_drag_http_in_node.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">in</span></code> node to open its <strong>Properties tab</strong>.</p>
+<p>The users can set its <code class="docutils literal notranslate"><span class="pre">URL</span></code> to any sub location they’d like, for simplicity purposes ours will be set as <code class="docutils literal notranslate"><span class="pre">/google-vision-complex</span></code>. This means any end-users with propers permissions will be able to access the page at the <code class="docutils literal notranslate"><span class="pre">URL</span></code> of your Node-RED instance + the sub location cited above - ie. <code class="docutils literal notranslate"><span class="pre">paulo.app.openiap.io/google-vision-complex</span></code>. Refer to <span class="xref std std-ref">Accessing Node-RED for the first time</span> to figure out how to set up a Node-RED instance, if they don’t know what this means.</p>
+<p>Save this sub location somewhere because the users will set up a <code class="docutils literal notranslate"><span class="pre">websocket</span></code> pointing to it in the next section!</p>
+<p>After setting its <code class="docutils literal notranslate"><span class="pre">URL</span></code>, the users may click the <code class="docutils literal notranslate"><span class="pre">Done</span></code> button to finish the node’s configuration.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_configure_http_in_node.png" src="images/image_recognition_configure_http_in_node.png" />
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The user can also press <code class="docutils literal notranslate"><span class="pre">RETURN</span></code> to edit the node’s properties as long as the node is focused inside the workspace.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Proceed to <span class="xref std std-ref">Accessing Node-RED for the first time</span> for more information on how to set your own <code class="docutils literal notranslate"><span class="pre">Node-RED</span></code> instance.</p>
+</div>
+<p>Drag a <code class="docutils literal notranslate"><span class="pre">template</span></code> node to the workspace and wire it to the <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">in</span></code> node.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_drag_dropzone_template_node.png" src="images/image_recognition_drag_dropzone_template_node.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">template</span></code> node to open its <strong>Properties tab</strong>.</p>
+<p>First, rename the node to <code class="docutils literal notranslate"><span class="pre">dropzone.js</span></code>.</p>
+<p>Then change its <code class="docutils literal notranslate"><span class="pre">Property</span></code> to <code class="docutils literal notranslate"><span class="pre">msg.dropzonejs</span></code> and its <code class="docutils literal notranslate"><span class="pre">Syntax</span> <span class="pre">highlighting</span></code> to <code class="docutils literal notranslate"><span class="pre">Javascript</span></code>.</p>
+<p>Finally, paste the raw code contained in <a class="reference external" href="https://gist.github.com/syrilae/945838275bf729fb568d91dd63147706">DropzoneJS for AI Image Recognition</a> (<code class="docutils literal notranslate"><span class="pre">https://gist.github.com/syrilae/945838275bf729fb568d91dd63147706</span></code>) into the <strong>Template box</strong>. This code is responsible for the logic behind the image processing and uploading to the API when the image gets dropped inside the <code class="docutils literal notranslate"><span class="pre">Dropbox</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_configure_dropzone_template_node.png" src="images/image_recognition_configure_dropzone_template_node.png" />
+</div>
+<p>Now drag another <code class="docutils literal notranslate"><span class="pre">template</span></code> node into the workspace and wire it to the <code class="docutils literal notranslate"><span class="pre">dropzone.js</span></code> node that was just created above. This one is responsible for styling the <code class="docutils literal notranslate"><span class="pre">Dropbox</span></code> with a custom <code class="docutils literal notranslate"><span class="pre">CSS</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_drag_css_template_node.png" src="images/image_recognition_drag_css_template_node.png" />
+</div>
+<p>Click twice on the newly added <code class="docutils literal notranslate"><span class="pre">template</span></code> node to open its <strong>Properties tab</strong>.</p>
+<p>Rename the node to <code class="docutils literal notranslate"><span class="pre">css</span></code>.</p>
+<p>Change its <code class="docutils literal notranslate"><span class="pre">Property</span></code> to <code class="docutils literal notranslate"><span class="pre">msg.css</span></code> and its <code class="docutils literal notranslate"><span class="pre">Syntax</span> <span class="pre">highlighting</span></code> to <code class="docutils literal notranslate"><span class="pre">CSS</span></code>.</p>
+<p>Now paste the raw code contained in <a class="reference external" href="https://gist.github.com/syrilae/dde9fcbbdcfe6a4ff4750a2359963d7f">DropzoneJS CSS for AI Image Recognition</a> (<code class="docutils literal notranslate"><span class="pre">https://gist.github.com/syrilae/dde9fcbbdcfe6a4ff4750a2359963d7f</span></code>) into the <strong>Template box</strong>. This code is responsible for the styling of the <code class="docutils literal notranslate"><span class="pre">Dropbox</span></code> page.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_configure_css_template_node.png" src="images/image_recognition_configure_css_template_node.png" />
+</div>
+<p>Drag another <code class="docutils literal notranslate"><span class="pre">template</span></code> node into the workspace and wire it to the previously set <code class="docutils literal notranslate"><span class="pre">css`</span></code> node that was just created above. The responsibility of this node will be the <code class="docutils literal notranslate"><span class="pre">HTML</span></code> code behind the page. Basically, structuring everything that was added so far.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_drag_html_template_node.png" src="images/image_recognition_drag_html_template_node.png" />
+</div>
+<p>Click twice on this <code class="docutils literal notranslate"><span class="pre">template</span></code> node to open its <strong>Properties tab</strong>.</p>
+<p>Rename the node to <code class="docutils literal notranslate"><span class="pre">html</span></code>.</p>
+<p>Paste the code below inside the <strong>Template box</strong>.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>&lt;script&gt;
+   {{{dropzonejs}}}
+&lt;/script&gt;
+&lt;style&gt;
+   {{{css}}}
+&lt;/style&gt;
+
+&lt;script&gt;
+   // &quot;myAwesomeDropzone&quot; is the camelized version of the HTML element&#39;s ID
+   Dropzone.options.myDropzone = {
+      paramName: &quot;myFile&quot;, // The name that will be used to transfer the file
+      maxFilesize: 2, // MB
+      accept: function(file, done) {
+      if (file.name == &quot;justinbieber.jpg&quot;) {
+         done(&quot;Naha, you don&#39;t.&quot;);
+      }
+      else { done(); }
+      }
+   };
+&lt;/script&gt;
+
+&lt;h1&gt;Google Vision API - Upload a file here:&lt;/h1&gt;
+
+&lt;body onload=&quot;wsConnect();&quot; onunload=&quot;ws.disconnect();&quot;&gt;
+   &lt;form action=&quot;/uploadpretty&quot; class=&quot;dropzone&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot; id=&quot;my-dropzone&quot;&gt;
+   &lt;div class=&quot;fallback&quot;&gt;
+   &lt;input name=&quot;myFile&quot; type=&quot;file&quot; /&gt;
+   &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+   &lt;/div&gt;
+   &lt;/form&gt;
+
+   &lt;font face=&quot;Arial&quot;&gt;
+   &lt;pre id=&quot;messages&quot;&gt;&lt;/pre&gt;
+   &lt;hr/&gt;
+   &lt;/font&gt;
+   &lt;img src=&#39;https://bpatechnologies.com/images/logo_footer.png&#39;&gt;
+&lt;/body&gt;
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="images/image_recognition_configure_html_template_node.png" src="images/image_recognition_configure_html_template_node.png" />
+</div>
+<p>The first <a class="reference external" href="https://mustache.github.io/mustache.5.html">Mustache</a> (<a class="reference external" href="https://mustache.github.io/mustache.5.html">https://mustache.github.io/mustache.5.html</a>), namely <code class="docutils literal notranslate"><span class="pre">{{{dropzonejs}}}</span></code> is responsible for adding the execution logic of the <code class="docutils literal notranslate"><span class="pre">dropzone.js</span></code> node to the page which will be passed to the endpoint created by the <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">in</span></code> node.</p>
+<p>The second <code class="docutils literal notranslate"><span class="pre">Mustache</span></code> is responsible for adding the CSS styling to this same page. A pun - or easter egg - is also added where the user will not be allowed to upload any files named <code class="docutils literal notranslate"><span class="pre">justinbieber.jpg</span></code> - you can remove this part of the code if you want to.</p>
+<p>The remaining code shows a <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> label containing <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Vision</span> <span class="pre">API</span> <span class="pre">-</span> <span class="pre">Upload</span> <span class="pre">a</span> <span class="pre">file</span> <span class="pre">here</span></code> and sets the logic for connection to the <code class="docutils literal notranslate"><span class="pre">webservice</span></code> and <code class="docutils literal notranslate"><span class="pre">fallback</span> <span class="pre">execution</span></code>.</p>
+<p>Drag an <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">response</span></code> node into the workspace and wire it to the previously created <code class="docutils literal notranslate"><span class="pre">template</span></code> node.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_drag_http_response_node.png" src="images/image_recognition_drag_http_response_node.png" />
+</div>
+<p>Finally, as a last step. The users will learn how to comment their Flow in Node-RED.</p>
+<p>Drag a <code class="docutils literal notranslate"><span class="pre">comment</span></code> node to the workspace and insert it right above the <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">in</span></code> node.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_drag_comment_node.png" src="images/image_recognition_drag_comment_node.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">comment</span></code> node to open its <strong>Properties tab</strong>.</p>
+<p>Rename the node to <code class="docutils literal notranslate"><span class="pre">Dropbox</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_configure_comment_node.png" src="images/image_recognition_configure_comment_node.png" />
+</div>
+<p>Finally, click the <strong>Deploy</strong> button to commit the changes.</p>
+<p>That’s it! You have finished the first part of this Flow example. Your Flow should look like the image below.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_first_step_finished.png" src="images/image_recognition_first_step_finished.png" />
+</div>
+<p>Now that the users have finished configuring the <code class="docutils literal notranslate"><span class="pre">Dropbox</span></code> page, they can proceed to implementing the processing logic responsible for uploading the file to the <a class="reference external" href="https://cloud.google.com/vision">Google Cloud Vision API</a> (<code class="docutils literal notranslate"><span class="pre">https://cloud.google.com/vision</span></code>). Just follow the steps below.</p>
+</div>
+<div class="section" id="google-cloud-vision-processing-logic">
+<h3>Google Cloud Vision Processing logic<a class="headerlink" href="#google-cloud-vision-processing-logic" title="Permalink to this headline">¶</a></h3>
+<p>In this section, the users will learn how to implement the logic for uploading the images which will be acquired from the end-users to the <a class="reference external" href="https://cloud.google.com/vision">Google Cloud Vision API</a> (<code class="docutils literal notranslate"><span class="pre">https://cloud.google.com/vision</span></code>) and receive back the data.</p>
+<p>First, drag an <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">in</span></code> node to the Flow.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_drag_http_in_node.png" src="images/image_recognition_second_step_drag_http_in_node.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">in</span></code> node to open its <strong>Properties tab</strong>.</p>
+<p>Set its <code class="docutils literal notranslate"><span class="pre">Method</span></code> property as <code class="docutils literal notranslate"><span class="pre">POST</span></code>.</p>
+<p>Now the user must set its <code class="docutils literal notranslate"><span class="pre">URL</span></code> to <code class="docutils literal notranslate"><span class="pre">/uploadpretty</span></code>, since our <code class="docutils literal notranslate"><span class="pre">form</span></code>, defined in the <code class="docutils literal notranslate"><span class="pre">html</span></code> in the previous section, set its <code class="docutils literal notranslate"><span class="pre">action</span></code> property to this sub location.</p>
+<p>Also check the <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">file</span> <span class="pre">uploads?</span></code> checkbox, else we won’t be able to upload any files to the <code class="docutils literal notranslate"><span class="pre">websocket</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_configure_http_in_node.png" src="images/image_recognition_second_step_configure_http_in_node.png" />
+</div>
+<p>Drag a <code class="docutils literal notranslate"><span class="pre">function</span></code> node to the workspace and wire it to the <code class="docutils literal notranslate"><span class="pre">[post]</span> <span class="pre">/uploadpretty</span></code> node. This node will be responsible to convert the image uploaded to <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Glossary/Base64">Base64</a> (<code class="docutils literal notranslate"><span class="pre">https://developer.mozilla.org/en-US/docs/Glossary/Base64</span></code>) so that we can upload it to the <a class="reference external" href="https://cloud.google.com/vision">Google Cloud Vision API</a> (<code class="docutils literal notranslate"><span class="pre">https://cloud.google.com/vision</span></code>).</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_drag_function_node.png" src="images/image_recognition_second_step_drag_function_node.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">function</span></code> node to open its <strong>Properties tab</strong>.</p>
+<p>Rename it to <code class="docutils literal notranslate"><span class="pre">toBase64</span></code>.</p>
+<p>Paste the following code into the <strong>Function box</strong>.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">req</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">buffer</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">);</span>
+
+<span class="k">return</span> <span class="nx">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The code is responsible for gathering the first image uploaded and buffering it into an encoded <code class="docutils literal notranslate"><span class="pre">base64</span></code> string.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_configure_first_function_node.png" src="images/image_recognition_second_step_configure_first_function_node.png" />
+</div>
+<p>Now the execution flow will be splitted into 3 different branches.</p>
+<p>The first branch will be responsible to returning a <code class="docutils literal notranslate"><span class="pre">status</span> <span class="pre">message</span></code> to the end-user’s client, indicating whether the <code class="docutils literal notranslate"><span class="pre">submit</span></code> action has succeeded or not.</p>
+<p>The second branch will format the payload, upload the image to the <a class="reference external" href="https://cloud.google.com/vision">Google Cloud Vision API</a> (<code class="docutils literal notranslate"><span class="pre">https://cloud.google.com/vision</span></code>) and update the page created in the previous section. The latter part will be done by creating a <code class="docutils literal notranslate"><span class="pre">websocket</span> <span class="pre">out</span></code> node.</p>
+<p>The third branch will listen on any requests passed to the endpoint and turn them into debug messages.</p>
+<p>Note that all these branches will be executed when the end-user uploads an image to the website.</p>
+<p>First, drag an <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">response</span></code> node to the workspace and wire it to the <code class="docutils literal notranslate"><span class="pre">toBase64</span></code> node.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_drag_first_http_response_node.png" src="images/image_recognition_second_step_drag_first_http_response_node.png" />
+</div>
+<p>Now, drag a <code class="docutils literal notranslate"><span class="pre">function</span></code> node to the workspace and wire it to the <code class="docutils literal notranslate"><span class="pre">toBase64</span></code> node as well.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_drag_second_function_node.png" src="images/image_recognition_second_step_drag_second_function_node.png" />
+</div>
+<p>Rename it to <code class="docutils literal notranslate"><span class="pre">format</span> <span class="pre">payload</span></code>.</p>
+<p>Paste the following code into the <strong>Function box</strong>.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">msg</span><span class="p">.</span><span class="nx">image64</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
+
+<span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="nx">requests</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+            <span class="nx">image</span><span class="o">:</span> <span class="p">{</span>
+               <span class="nx">content</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span>
+            <span class="p">},</span>
+            <span class="nx">features</span><span class="o">:</span> <span class="p">[</span>
+               <span class="p">{</span>
+                  <span class="nx">maxResults</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+                  <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;LABEL_DETECTION&quot;</span>
+               <span class="p">}</span>
+            <span class="p">]</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+
+
+<span class="k">return</span> <span class="nx">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This code is responsible for passing the image to the <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> variable and limiting the number of <a class="reference external" href="https://cloud.google.com/vision/docs/labels">LABEL_DETECTION features</a> (<code class="docutils literal notranslate"><span class="pre">https://cloud.google.com/vision/docs/labels</span></code>) detected to <code class="docutils literal notranslate"><span class="pre">5</span></code> results.</p>
+<p>Drag an <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">request</span></code> node to the workspace and wire it to the <code class="docutils literal notranslate"><span class="pre">format</span> <span class="pre">payload</span></code> node. This node will be responsible for connecting and sending the payload to the <a class="reference external" href="https://cloud.google.com/vision">Google Cloud Vision API</a> (<code class="docutils literal notranslate"><span class="pre">https://cloud.google.com/vision</span></code>) and then returning the <code class="docutils literal notranslate"><span class="pre">JSON</span> <span class="pre">object</span></code> responsible for the data which was acquired from the <code class="docutils literal notranslate"><span class="pre">API</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_drag_http_request_node.png" src="images/image_recognition_second_step_drag_http_request_node.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">request</span></code> node to open its <strong>Properties tab</strong>.</p>
+<p>Set its <code class="docutils literal notranslate"><span class="pre">Method</span></code> as <code class="docutils literal notranslate"><span class="pre">POST</span></code>.</p>
+<p>Set its <code class="docutils literal notranslate"><span class="pre">URL</span></code> as <code class="docutils literal notranslate"><span class="pre">https://vision.googleapis.com/v1/images:annotate?key={KEY}</span></code>, where <code class="docutils literal notranslate"><span class="pre">{KEY}</span></code> corresponds to your <a class="reference external" href="https://cloud.google.com/vision/docs/setup">Google Cloud Vision API Key</a> (<code class="docutils literal notranslate"><span class="pre">https://cloud.google.com/vision/docs/setup</span></code>).</p>
+<p>Change <code class="docutils literal notranslate"><span class="pre">Return</span></code> to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">parsed</span> <span class="pre">JSON</span> <span class="pre">object</span></code>.</p>
+<p>Rename it as <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">API</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_configure_http_request_node.png" src="images/image_recognition_second_step_configure_http_request_node.png" />
+</div>
+<p>Drag another <code class="docutils literal notranslate"><span class="pre">function</span></code> node to the workspace and wire it to the <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">API</span></code> node. This node will be responsible for passing the data returned from the <a class="reference external" href="https://cloud.google.com/vision">Google Cloud Vision API</a> (<code class="docutils literal notranslate"><span class="pre">https://cloud.google.com/vision</span></code>) into a return array and converting it to <code class="docutils literal notranslate"><span class="pre">serialized</span> <span class="pre">JSON</span> <span class="pre">string</span></code> so it can be passed to the <code class="docutils literal notranslate"><span class="pre">websocket</span> <span class="pre">out</span></code> node. This will, in turn, make the page upload itself automatically upon the user uploading an image to it.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_drag_third_function_node.png" src="images/image_recognition_second_step_drag_third_function_node.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">function</span></code> node to open its <strong>Properties tab</strong>.</p>
+<p>Rename the node to <code class="docutils literal notranslate"><span class="pre">Trim</span> <span class="pre">Response</span></code>.</p>
+<p>Paste the following code into the <strong>Function box</strong>.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">retArray</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span><span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">responses</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">labelAnnotations</span> <span class="p">){</span>
+   <span class="kd">let</span> <span class="nx">desc</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">responses</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">labelAnnotations</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">description</span>
+   <span class="kd">let</span> <span class="nx">score</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">responses</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">labelAnnotations</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">score</span>
+   <span class="kd">let</span> <span class="nx">thisObj</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">desc</span><span class="o">:</span> <span class="nx">desc</span><span class="p">,</span>
+      <span class="nx">score</span><span class="o">:</span> <span class="nx">score</span>
+   <span class="p">}</span>
+   <span class="nx">retArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">thisObj</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="nx">result</span><span class="o">:</span> <span class="nx">retArray</span><span class="p">,</span>
+   <span class="nx">resultJSON</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">retArray</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s1">&#39;\t&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">resultJSON</span>
+
+<span class="k">return</span> <span class="nx">msg</span>
+</pre></div>
+</div>
+<p>Drag a <code class="docutils literal notranslate"><span class="pre">websocket</span> <span class="pre">out</span></code> node to the workspace and wire it to the <code class="docutils literal notranslate"><span class="pre">Trim</span> <span class="pre">Response</span></code> node. This node will be responsible for setting the event listener which will listen to</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_drag_websocket_out_node.png" src="images/image_recognition_second_step_drag_websocket_out_node.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">websocket</span> <span class="pre">out</span></code> node to open its <strong>Properties tab</strong>.</p>
+<p>Click on the <strong>Edit</strong> button, right besides the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">new</span> <span class="pre">websocket-listener...</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_configure_websocket_out_node.png" src="images/image_recognition_second_step_configure_websocket_out_node.png" />
+</div>
+<p>Set the <code class="docutils literal notranslate"><span class="pre">websocket</span></code> path as <code class="docutils literal notranslate"><span class="pre">/ws/google-vision-complex</span></code>.</p>
+<p>Set the Flow which will be able to use this <code class="docutils literal notranslate"><span class="pre">websocket</span></code> to the <code class="docutils literal notranslate"><span class="pre">AI</span> <span class="pre">Image</span> <span class="pre">Recognition</span></code> Flow only.</p>
+<p>Click on the <strong>Add</strong> button to save changes. Then click on the <strong>Done</strong> button to finish this node’s configuration.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_websocket_out_node.png" src="images/image_recognition_second_step_websocket_out_node.png" />
+</div>
+<p>Finally, add a <code class="docutils literal notranslate"><span class="pre">debug</span></code> node to the workspace and wire it to the <code class="docutils literal notranslate"><span class="pre">toBase64</span></code> node.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_drag_debug_node.png" src="images/image_recognition_second_step_drag_debug_node.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">debug</span></code> node to open its <strong>Properties tab</strong>.</p>
+<p>Set its output as <code class="docutils literal notranslate"><span class="pre">complete</span> <span class="pre">msg</span> <span class="pre">object</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_second_step_configure_debug_node.png" src="images/image_recognition_second_step_configure_debug_node.png" />
+</div>
+<p>Finally, click the <strong>Deploy</strong> button to commit the changes.  Your workflow should look like the image below.</p>
+<div class="figure align-center">
+<img alt="images/image_recognition_finished_flow_example.png" src="images/image_recognition_finished_flow_example.png" />
+</div>
+<p>That’s it! This is the end of this Flow example. You can now proceed to the sub location defined for your own Node-RED instance to test it! In my case, it is <code class="docutils literal notranslate"><span class="pre">https://paulo.app.openiap.io/google-vision-complex</span></code>. Try it out!</p>
+</div>
 </div>
 <div class="section" id="email-receive-send">
 <h2>Email Receive, Send<a class="headerlink" href="#email-receive-send" title="Permalink to this headline">¶</a></h2>
-<p>There are two available nodes for working with e-mails, both are named “email”. The difference between them is the presence of output in the first and the presence of input in the second. For clarity purposes, in this example the first node will be called “email watcher” and the second “email sender”.</p>
-<p>In this example, a simple system will be built for receiving and redireting e-mails according to their content.</p>
+<p>There are two available nodes for working with e-mails, both are named “email”. The difference between them is the presence of output in the first and the presence of input in the second. For clarity purposes, in this example, the first node will be called “email watcher” and the second “email sender”.</p>
+<p>In this example, a simple system will be built for receiving and redirecting e-mails according to their content.</p>
 <div class="section" id="receive-e-mails">
 <h3>Receive e-mails<a class="headerlink" href="#receive-e-mails" title="Permalink to this headline">¶</a></h3>
 <p>The first step is to set an “email watcher”, that is, the node that will repeatedly search for new e-mails from an IMAP server and forward them as messages. This is why this node only has an output. The configurations of this node are quite intuitive and self-explanatory, but it is important to highlight some of its features.</p>
-<p>The user will have to provide the e-mail ID and password so that the e-mail service can be accessed. It is also important to remark that the “Disposition” parameter, if set to “None”, will cause the node to constantly send messages about the same e-mails, since the it searches for unread e-mails. So, it is recommended to set this parameter to “Mark Read”. For the “Port” parameter, users can use the one that is suggested (993).</p>
+<p>The user will have to provide the e-mail ID and password so that the e-mail service can be accessed. It is also important to remark that the “Disposition” parameter, if set to “None”, will cause the node to constantly send messages about the same e-mails, since it searches for unread e-mails. So, it is recommended to set this parameter to “Mark Read”. For the “Port” parameter, users can use the one that is suggested (993).</p>
 <div class="figure align-center">
 <img alt="images/emailin_node.png" src="images/emailin_node.png" />
 </div>
-<p>It is important to remark that some e-mail services will not provide access to the the e-mail account from this type of application. So, it is necessary to enable less secure apps to access. In this example, a Gmail account was used. In order to grant permission in Gmail, the user will have to click on “Manage your Google Account” by clicking on the avatar on the top left of the screen. A new tab will open and the user will click on “Security”. One of the options will be “Enable less secure apps”. After the user has enabled this type of apps, the <code class="docutils literal notranslate"><span class="pre">Email</span></code> watcher node will be able to access the selected Inbox.</p>
+<p>It is important to remark that some e-mail services will not provide access to the e-mail account from this type of application. So, it is necessary to enable less secure apps to access. In this example, a Gmail account was used. To grant permission in Gmail, the user will have to click on “Manage your Google Account” by clicking on the avatar on the top left of the screen. A new tab will open and the user will click on “Security”. One of the options will be to “Enable less secure apps”. After the user has enabled this type of apps, the <code class="docutils literal notranslate"><span class="pre">Email</span></code> watcher node will be able to access the selected Inbox.</p>
 </div>
 <div class="section" id="redirecting-e-mails">
 <h3>Redirecting e-mails<a class="headerlink" href="#redirecting-e-mails" title="Permalink to this headline">¶</a></h3>
-<p>A “switch” node was employed to filter the messages and multiple properties of the messages could be set as parameter for the filtering. The most common property is <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>, that corresponds to the body of the e-mail. It would be possible to check if it contained certain keywords or not.</p>
-<p>Users could also employ other properties, such as <code class="docutils literal notranslate"><span class="pre">msg.date</span></code> (that returns the date and time the e-mail was sent), <code class="docutils literal notranslate"><span class="pre">msg.from</span></code> (that returns the e-mail address of the sender) and others.</p>
+<p>A “switch” node was employed to filter the messages and multiple properties of the messages could be set as parameters for the filtering. The most common property is <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code>, which corresponds to the body of the e-mail. It would be possible to check if it contained certain keywords or not.</p>
+<p>Users could also employ other properties, such as <code class="docutils literal notranslate"><span class="pre">msg.date</span></code> (that returns the date and time the e-mail was sent), <code class="docutils literal notranslate"><span class="pre">msg.from</span></code> (that returns the e-mail address of the sender), and others.</p>
 <p>In this example, the <code class="docutils literal notranslate"><span class="pre">msg.date</span></code> was used to postpone redirecting e-mails sent during the weekend using a <code class="docutils literal notranslate"><span class="pre">Delay</span></code> node, for instance, to the next Monday. The “filters” used are <code class="docutils literal notranslate"><span class="pre">switch</span></code> nodes that actually perform the redirecting.</p>
 <div class="figure align-center">
 <img alt="images/email_complete.png" src="images/email_complete.png" />
@@ -190,25 +572,25 @@
 </div>
 <div class="section" id="send-e-mails">
 <h3>Send e-mails<a class="headerlink" href="#send-e-mails" title="Permalink to this headline">¶</a></h3>
-<p>In order to send e-mails, users can employ the other <code class="docutils literal notranslate"><span class="pre">Email</span></code> node (the “email sender”). This is the node with the input, that is, it will recieve a message and send it to the selected address.</p>
+<p>To send e-mails, users can employ the other <code class="docutils literal notranslate"><span class="pre">Email</span></code> node (the “email sender”). This is the node with the input, that is, it will receive a message and send it to the selected address.</p>
 <p>It is also necessary to provide an e-mail address and password of the sender, so that the application can send the e-mail from the selected account. In this example, the account as the “e-mail watcher” was used, but another account could be used here. It means that once the new e-mail was found and was sent as message in the flow, there is no necessary relation to the original account - it could be sent via another account.</p>
 <div class="figure align-center">
 <img alt="images/emailout_node.png" src="images/emailout_node.png" />
 </div>
 </div>
 </div>
-<div class="section" id="creating-a-http-endpoint">
-<h2>Creating a HTTP endpoint<a class="headerlink" href="#creating-a-http-endpoint" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-an-http-endpoint">
+<h2>Creating an HTTP endpoint<a class="headerlink" href="#creating-an-http-endpoint" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>API’s basic strtucture</p></li>
+<li><p>API’s basic structure</p></li>
 <li><p>Creating a database and adding new items to it</p></li>
 <li><p>Get a full list of items</p></li>
 </ol>
-<div class="section" id="api-s-basic-strtucture">
-<h3>API’s basic strtucture<a class="headerlink" href="#api-s-basic-strtucture" title="Permalink to this headline">¶</a></h3>
-<p>In order to create a new HTTP endpoint in <strong>Node-RED</strong>, only two nodes are required: <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> and <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Request</span></code>. These two nodes must necessarily be connected, and other nodes will be added to this structure so that the API will execute the actions properly.</p>
-<p>The user will, then, drag these two nodes into the <code class="docutils literal notranslate"><span class="pre">Workspace</span></code> and connected them. These two nodes will be required for each endpoint of the API. Let’s assume this first endpoint will display a webpage with all available endpoint within the domain.</p>
-<p>To add a HTML page, the user will add a new <code class="docutils literal notranslate"><span class="pre">Template</span></code> node between the two nodes already created. In this node’s Properties, the user will have to change the field “Syntax Highlight” to HTML. After that, the users can create their own homepage for the API using HTML.</p>
+<div class="section" id="api-s-basic-structure">
+<h3>API’s basic structure<a class="headerlink" href="#api-s-basic-structure" title="Permalink to this headline">¶</a></h3>
+<p>To create a new HTTP endpoint in <strong>Node-RED</strong>, only two nodes are required: <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> and <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Response</span></code>. These two nodes must necessarily be connected, and other nodes will be added to this structure so that the API will execute the actions properly.</p>
+<p>The user will, then, drag these two nodes into the <code class="docutils literal notranslate"><span class="pre">Workspace</span></code> and connect them. These two nodes will be required for each endpoint of the API. Let’s assume this first endpoint will display a webpage with all available endpoints within the domain.</p>
+<p>To add an HTML page, the user will add a new <code class="docutils literal notranslate"><span class="pre">Template</span></code> node between the two nodes already created. In this node’s Properties, the user will have to change the field “Syntax Highlight” to HTML. After that, the users can create their homepage for the API using HTML.</p>
 <p>The first node (<code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code>) must be configured before deploying the flow. In its configurations, users will find three fields: Method, URL and Name. For this homepage, the method used will be “GET” and the URL will be “/homepage”.</p>
 <div class="figure align-center">
 <img alt="images/httpendpoint-1.png" src="images/httpendpoint-1.png" />
@@ -216,30 +598,103 @@
 </div>
 <div class="section" id="creating-a-database-and-adding-new-items-to-it">
 <h3>Creating a database and adding new items to it<a class="headerlink" href="#creating-a-database-and-adding-new-items-to-it" title="Permalink to this headline">¶</a></h3>
-<p>The new database will be created once the user adds new items to it. The user, then, will create a new endpoint (that is, a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> and a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Response</span></code> node connected one to the other) that is able to receive information and add it to a database in MongoDB. Besides these two nodes, it will also be necessary to add a <code class="docutils literal notranslate"><span class="pre">add</span></code> node, from the <em>api</em> category in the pallete.</p>
+<p>The new database will be created once the user adds new items to it. The user, then, will create a new endpoint (that is, a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> and a <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Response</span></code> node connected one to the other) that can receive information and add it to a database in MongoDB. Besides these two nodes, it will also be necessary to add a <code class="docutils literal notranslate"><span class="pre">Add</span></code> node, from the <em>API</em> category in the palette.</p>
 <p>After that, the user will have to configure the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> node. Since the required action here is to add a new item to the database, the method of this endpoint will be “POST”. It is also necessary to set a URL. In this example, “/newuser”.</p>
-<p>The last step is to configure the <code class="docutils literal notranslate"><span class="pre">add</span></code> node. User will find seven fields here: Type, Collection, Entity from, Result to, Write Concern, Journal, Name. A full description of the nodes in this category will be provided at <a class="reference internal" href="node_red.html#mongodb-entities"><span class="std std-ref">MongoDB Entities</span></a>. For this example, it will be necessary only to fill in the name of collection (again, if it does not exist yet, it will be created automatically), the correct input (‘Entity from’) and output (‘Result to’).</p>
-<p>To test the API, it is possible to use any API tester. The request must follow the same method as specified in the configuration of the node, that is, “POST”. The body of the request must be in JSON format, since it will be added to the a MongoDB database. If the response was “200”, it means that the API is working.</p>
+<p>The last step is to configure the <code class="docutils literal notranslate"><span class="pre">add</span></code> node. Users will find seven fields here: <code class="docutils literal notranslate"><span class="pre">Type</span></code>, <code class="docutils literal notranslate"><span class="pre">Collection</span></code>, <code class="docutils literal notranslate"><span class="pre">Entity</span> <span class="pre">from</span></code>, <code class="docutils literal notranslate"><span class="pre">Result</span> <span class="pre">to</span></code>, <code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">Concern</span></code>, <code class="docutils literal notranslate"><span class="pre">Journal</span></code>, <code class="docutils literal notranslate"><span class="pre">Name</span></code>. A full description of the nodes in this category will be provided at <a class="reference internal" href="node_red.html#mongodb-entities"><span class="std std-ref">MongoDB Entities</span></a>. For this example, it will be necessary only to fill in the name of the collection (again, if it does not exist yet, it will be created automatically), the correct input (‘Entity from’) and output (‘Result to’).</p>
+<p>To test the API, it is possible to use any API tester. The request must follow the same method as specified in the configuration of the node, that is, “POST”. The body of the request must be in JSON format, since it will be added to the MongoDB database. If the response was “200”, it means that the API is working.</p>
 <div class="figure align-center">
 <img alt="images/httpendpoint-2.png" src="images/httpendpoint-2.png" />
 </div>
 </div>
 <div class="section" id="get-a-full-list-of-items">
 <h3>Get a full list of items<a class="headerlink" href="#get-a-full-list-of-items" title="Permalink to this headline">¶</a></h3>
-<p>For the last endpoint of this API, a list of all items will be retrieved. The design of the flow will be the same, that is, one <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">in</span></code> node, one <code class="docutils literal notranslate"><span class="pre">get</span></code> (instead of <code class="docutils literal notranslate"><span class="pre">add</span></code>) and one <code class="docutils literal notranslate"><span class="pre">http</span> <span class="pre">response</span></code> node.</p>
+<p>For the last endpoint of this API, a list of all items will be retrieved. The design of the flow will be the same, that is, one <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> node, one <code class="docutils literal notranslate"><span class="pre">Get</span></code> (instead of <code class="docutils literal notranslate"><span class="pre">Add</span></code>) and one <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Response</span></code> node.</p>
 <p>The method of the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">In</span></code> node must be set to “GET” in this case. The URL used in the example is “/listusers”.</p>
-<p>After that, the users must configure the <code class="docutils literal notranslate"><span class="pre">get</span></code> node. In order to get a full list of users, the “Query” field must be left blank. If needed, users can specify what information will be retrieved by this endpoint by setting the “Query” field to return the desired information. After that, the user must type the name of the collection.</p>
+<p>After that, the users must configure the <code class="docutils literal notranslate"><span class="pre">get</span></code> node. To get a full list of users, the “Query” field must be left blank. If needed, users can specify what information will be retrieved by this endpoint by setting the “Query” field to return the desired information. After that, the user must type the name of the collection.</p>
 <div class="figure align-center">
 <img alt="images/httpendpoint-3.png" src="images/httpendpoint-3.png" />
 </div>
 </div>
 </div>
-<div class="section" id="excel-read">
-<h2>Excel Read<a class="headerlink" href="#excel-read" title="Permalink to this headline">¶</a></h2>
-<p>Coming soon - Work in progress</p>
+<div class="section" id="excel-detector">
+<h2>Excel Detector<a class="headerlink" href="#excel-detector" title="Permalink to this headline">¶</a></h2>
+<p>In this example, users will learn how to set up a detector which will automatically execute the Workflow created by us inside the <a class="reference internal" href="openrpa.html#excel-read"><span class="std std-ref">Excel Read</span></a> Workflow Example.</p>
+<div class="section" id="setting-up-the-detector-inside-openrpa">
+<h3>Setting up the Detector inside OpenRPA<a class="headerlink" href="#setting-up-the-detector-inside-openrpa" title="Permalink to this headline">¶</a></h3>
+<p>To use a <strong>Detector</strong>, you must first define it inside the Detector’s settings. The steps below show how to configure the <code class="docutils literal notranslate"><span class="pre">FileWatcher</span> <span class="pre">Detector</span></code> to check for new Microsoft Excel files.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">FileWatcher</span> <span class="pre">Detector</span></code> plugin is fired when any files are added inside a given <code class="docutils literal notranslate"><span class="pre">Path</span></code>. It also allows for checking <cite>only</cite> for specific file extensions by using the <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">filter</span></code> parameter. As well as checking for specific files, it allows OpenRPA to check for file changes inside subdirectories by checking the <code class="docutils literal notranslate"><span class="pre">Sub</span> <span class="pre">Directories</span></code> checkbox.</p>
+<p>First, click on the <code class="docutils literal notranslate"><span class="pre">Settings</span></code> tab inside the main ribbon.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_click_settings.png" src="images/openrpa_configuring_detector_click_settings.png" />
+</div>
+<p>Then, click on the <code class="docutils literal notranslate"><span class="pre">Detectors</span></code> icon.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_click_detectors.png" src="images/openrpa_configuring_detector_click_detectors.png" />
+</div>
+<p>Now click on the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">FileWatcherDetectorPlugin</span></code> button inside the Designer. A new detector will appear named <code class="docutils literal notranslate"><span class="pre">FileWatcher</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_configuring_detector_click_add_filewatcher.png" src="images/openrpa_configuring_detector_click_add_filewatcher.png" />
+</div>
+<p>Finally, the users must configure the <code class="docutils literal notranslate"><span class="pre">Name</span></code> of the detector - which in our case is <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">Detector</span></code>. Users must also configure as the <code class="docutils literal notranslate"><span class="pre">Path</span></code> for which the Detector will listen to. The users must also set a <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">filter</span></code>, so the detector will only check for files with a given extension - which in our case will be <code class="docutils literal notranslate"><span class="pre">*.xlsx</span></code>.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_excel_detector_configure_parameter.png" src="images/openrpa_excel_detector_configure_parameter.png" />
+</div>
+<p>That’s it! You have properly set the Detector inside OpenRPA. Now proceed to the next section to learn how to set the detector inside Node-RED and invoke the workflow.</p>
+</div>
+<div class="section" id="configuring-detector-and-invoking-workflow-inside-node-red">
+<h3>Configuring Detector and Invoking Workflow inside Node-RED<a class="headerlink" href="#configuring-detector-and-invoking-workflow-inside-node-red" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to the Node-RED instance, create a new flow and click twice in its tab to rename it to <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">Detector</span></code>. Then, click in the <code class="docutils literal notranslate"><span class="pre">Done</span></code> button to save it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Proceed to <span class="xref std std-ref">Accessing Node-RED for the first time</span> for more information on how to set your own <code class="docutils literal notranslate"><span class="pre">Node-RED</span></code> instance.</p>
+</div>
+<div class="figure align-center">
+<img alt="images/openrpa_excel_detector_configure_flow.png" src="images/openrpa_excel_detector_configure_flow.png" />
+</div>
+<p>Now, drag a <code class="docutils literal notranslate"><span class="pre">rpa</span> <span class="pre">detector</span></code> node to the workspace.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_excel_detector_drag_rpa_detector_node.png" src="images/openrpa_excel_detector_drag_rpa_detector_node.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">rpa</span> <span class="pre">detector</span></code> node to open its <strong>Properties tab</strong>.</p>
+<p>Change its name to <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">Detector</span></code> and select the <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">Detector</span></code> in the <code class="docutils literal notranslate"><span class="pre">Detector</span></code> dropdown. Finally, click the <strong>Done</strong> button to finish configuring the node.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_excel_detector_configure_rpa_detector_node.png" src="images/openrpa_excel_detector_configure_rpa_detector_node.png" />
+</div>
+<p>Now, drag a <code class="docutils literal notranslate"><span class="pre">robot</span></code> node to the workspace and wire it to the <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">Detector</span></code> node.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_excel_detector_drag_robot_node.png" src="images/openrpa_excel_detector_drag_robot_node.png" />
+</div>
+<p>Click twice on the <code class="docutils literal notranslate"><span class="pre">rpa</span> <span class="pre">workflow</span></code> node to open its <strong>Properties tab</strong>.</p>
+<p>Select the OpenRPA client which will execute the Workflow in the <code class="docutils literal notranslate"><span class="pre">Robot</span></code> dropdown upon the detector firing. In our case, this is the <code class="docutils literal notranslate"><span class="pre">paulo</span></code> user.</p>
+<p>Select the OpenRPA Workflow which will be executed upon the detector firing. In our case, this is the workflow created by us inside the <a class="reference internal" href="openrpa.html#excel-read"><span class="std std-ref">Excel Read</span></a> Workflow Example.</p>
+<p>Finally, change the <code class="docutils literal notranslate"><span class="pre">Name</span></code> to <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">Workflow</span></code> so we can make the workspace a little more user-friendly.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_excel_detector_configure_robot_node.png" src="images/openrpa_excel_detector_configure_robot_node.png" />
+</div>
+<p>Click the <strong>Deploy</strong> button to save changes.</p>
+</div>
+<div class="section" id="add-debug-nodes-and-test-the-flow">
+<h3>Add Debug nodes and test the Flow<a class="headerlink" href="#add-debug-nodes-and-test-the-flow" title="Permalink to this headline">¶</a></h3>
+<p>In this section, the user will learn how to add <code class="docutils literal notranslate"><span class="pre">debug</span></code> nodes to see the output of the flow execution.</p>
+<p>Drag three <code class="docutils literal notranslate"><span class="pre">debug</span></code> nodes to the workspace and wire them to the <code class="docutils literal notranslate"><span class="pre">Excel</span> <span class="pre">Workflow</span></code> node.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_excel_detector_drag_debug_nodes.png" src="images/openrpa_excel_detector_drag_debug_nodes.png" />
+</div>
+<p>Now, the users can test the Flow by dropping a file inside the folder defined in the <code class="docutils literal notranslate"><span class="pre">Detector</span></code> settings tab inside OpenRPA.</p>
+<p>After the execution of the OpenRPA workflow, users are able to see that it has executed and finished properly.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_excel_detector_workflow_finished.png" src="images/openrpa_excel_detector_workflow_finished.png" />
+</div>
+<p>The debug output message is shown in Node-RED as well, specifying that a file was successfully detected.</p>
+<div class="figure align-center">
+<img alt="images/openrpa_excel_detector_debug_node_output.png" src="images/openrpa_excel_detector_debug_node_output.png" />
+</div>
+<p>This is the end of this workflow example!</p>
+</div>
 </div>
 <div class="section" id="mongodb-entities">
 <h2>MongoDB Entities<a class="headerlink" href="#mongodb-entities" title="Permalink to this headline">¶</a></h2>
+<p>Coming soon - work in progress!</p>
 </div>
 </div>
 

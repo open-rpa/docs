@@ -153,32 +153,33 @@
             
   <div class="section" id="forms">
 <h1><strong>Forms</strong><a class="headerlink" href="#forms" title="Permalink to this headline">¶</a></h1>
-<p>Forms are an user-friendly way of passing input to a workflow by creating dynamic OpenFlow’s webpages. There are two ways of generating a form, one of them is through OpenFlow’s automatically generated forms which are created upon saving a Workflow into its repository and the other one is manually creating a form and connecting it to a Node-RED workflow.</p>
+<p>Forms are an user-friendly way of passing input to a workflow by creating dynamic OpenFlow’s webpages. There are two ways of generating a Form: one of them is through OpenFlow’s automatically generated Forms which are created upon saving a Workflow into its repository and the other one is manually creating a Form and connecting it to a Node-RED workflow.</p>
+<p>For thorough information on how to use Forms, please refer to <a class="reference external" href="https://help.form.io/userguide/introduction/">form.io Intro</a> (<code class="docutils literal notranslate"><span class="pre">https://help.form.io/userguide/introduction/</span></code>). Most of this chapter is based on this guide.</p>
 <div class="section" id="creating-a-form">
 <h2>Creating a Form<a class="headerlink" href="#creating-a-form" title="Permalink to this headline">¶</a></h2>
-<p>Creating a form is rather easy and simple. Go to the Forms page, where all forms are listed, available under the Admin dropdown or on the <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">Forms page</a> (eg. <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">http://localhost.openrpa.dk/#/Forms</a>) and click the Navy blue <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">form</span></code> button.</p>
+<p>Creating a form is rather easy and simple. Go to the Forms page, where all Forms are listed, available under the Admin dropdown or in the <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">Forms page</a> (eg. <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">http://localhost.openrpa.dk/#/Forms</a>) and click the Navy blue <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">form</span></code> button.</p>
 <div class="figure align-center" id="id1">
 <img alt="images/openflow_forms_page.png" src="images/openflow_forms_page.png" />
 <p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms page.</strong></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Now at the Forms edit page, there are many basic from which you can choose. For synthetic purposes, we are only going to discuss the most used one here: Text Field Component.</p>
-<p>Drag the Form from the Basic category into the Form workspace. Immediately after, a window containing all the parameters to configure the form will appear.</p>
+<p>Now at the Forms edit page, there are many Form components from which you can choose. For general purposes, we are only going to discuss the most used one here: Text Field Component. The other ones will be discussed further on in their specific sections.</p>
 <div class="figure align-center" id="id2">
 <img alt="images/openflow_forms_creation_page.png" src="images/openflow_forms_creation_page.png" />
 <p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms creation page.</strong></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
+<p>Drag the Text Field Component Form from the Basic category into the Form workspace. Immediately after, a window containing all the parameters to configure the Form Component will appear.</p>
 <div class="figure align-center" id="id3">
 <img alt="images/openflow_form_starter_config_page.png" src="images/openflow_form_starter_config_page.png" />
 <p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms starter configuration tab.</strong></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="configuring-the-form">
-<h2>Configuring the Form<a class="headerlink" href="#configuring-the-form" title="Permalink to this headline">¶</a></h2>
-<p>Below are the steps needed to properly configure a form, in our case TextField Form.</p>
+<div class="section" id="configuring-the-form-component">
+<h2>Configuring the Form Component<a class="headerlink" href="#configuring-the-form-component" title="Permalink to this headline">¶</a></h2>
+<p>Below are the steps needed to properly configure a Form Component, a TextField in our example.</p>
 <ul>
 <li><p><strong>Changing Form Label</strong></p>
 <blockquote>
-<div><p>To change the Form’s label, ie. the title which will appear for the end-user, simply click the Display tab and change the input form titled <strong>Label</strong>, the changes are shown real-time.</p>
+<div><p>To change the Form’s label, i.e., the title which will appear for the end-user, simply click the Display tab and change the input form titled <strong>Label</strong>. The changes are shown real-time.</p>
 </div></blockquote>
 </li>
 </ul>
@@ -208,129 +209,884 @@
 <img alt="images/openflow_node_red_configure_form.png" src="images/openflow_node_red_configure_form.png" />
 <p class="caption"><span class="caption-text"><strong>Assigning Form to Node-RED workflow.</strong></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
+<p>For more information on how to configure the Form Component, please refer to the <span class="xref std std-ref">OpenFlow Forms</span> section.</p>
 </div>
-<div class="section" id="basic-forms">
-<h2>Basic Forms<a class="headerlink" href="#basic-forms" title="Permalink to this headline">¶</a></h2>
-<p>The Basic forms contain the most basic forms of inputs.</p>
+<div class="section" id="general-form-settings">
+<h2>General Form Settings<a class="headerlink" href="#general-form-settings" title="Permalink to this headline">¶</a></h2>
+<p>In this section, users will see a list of general settings that are offered for the majority of our components. In the later sections, only the specific settings for the given Forms will be shown.</p>
+<p><strong>Display</strong></p>
+<blockquote>
+<div><p>Here belong the general properties related to the display methods and usage of this Form Component.</p>
+<p><strong>Label</strong></p>
+<blockquote>
+<div><p>The name or title for this component.</p>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="images/general_label_property.png"><img alt="images/general_label_property.png" src="images/general_label_property.png" style="width: 247.5px; height: 41.0px;" /></a>
+<p class="caption"><span class="caption-text"><strong>Label Property</strong></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="images/label_property_set.png"><img alt="images/label_property_set.png" src="images/label_property_set.png" style="width: 248.0px; height: 46.5px;" /></a>
+<p class="caption"><span class="caption-text"><strong>Demo of Label Property set</strong></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p><strong>Label Position</strong></p>
+<blockquote>
+<div><p>Position for the label for this field. Selecting <strong>Top</strong> shows the label above the input field, whereas <strong>Bottom</strong> shows the label below the input field.</p>
+<div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="images/general_label_position_property.png"><img alt="images/general_label_position_property.png" src="images/general_label_position_property.png" style="width: 235.5px; height: 95.5px;" /></a>
+<p class="caption"><span class="caption-text"><strong>Label Position Property</strong></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id10">
+<a class="reference internal image-reference" href="images/label_position_property_set_to_bottom.png"><img alt="images/label_position_property_set_to_bottom.png" src="images/label_position_property_set_to_bottom.png" style="width: 241.5px; height: 35.0px;" /></a>
+<p class="caption"><span class="caption-text"><strong>Demo of Label Position Property set to Bottom</strong></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p><strong>Placeholder</strong></p>
+<blockquote>
+<div><p>This property sets the placeholder text that will appear when the field is empty.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/general_placeholder_property.png"><img alt="images/general_placeholder_property.png" src="images/general_placeholder_property.png" style="width: 239.0px; height: 38.5px;" /></a>
+</div>
+<p><strong>Placeholder Property</strong></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/placeholder_property_set.png"><img alt="images/placeholder_property_set.png" src="images/placeholder_property_set.png" style="width: 244.0px; height: 26.0px;" /></a>
+</div>
+<p><strong>Placeholder Property set</strong></p>
+</div></blockquote>
+<p><strong>Description</strong></p>
+<blockquote>
+<div><p>This property sets a description which will appear below the input field.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/general_description_property.png"><img alt="images/general_description_property.png" src="images/general_description_property.png" style="width: 246.0px; height: 45.0px;" /></a>
+</div>
+<p><strong>Description Property</strong></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/description_property_set.png"><img alt="images/description_property_set.png" src="images/description_property_set.png" style="width: 244.5px; height: 64.0px;" /></a>
+</div>
+<p><strong>Description Property set</strong></p>
+</div></blockquote>
+<p><strong>Prefix</strong></p>
+<blockquote>
+<div><p>This property sets a prefix text which will be passed along with the text inserted in the input field.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/general_prefix_property.png"><img alt="images/general_prefix_property.png" src="images/general_prefix_property.png" style="width: 245.0px; height: 39.0px;" /></a>
+</div>
+<p><strong>Prefix Property</strong></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/prefix_property_set.png"><img alt="images/prefix_property_set.png" src="images/prefix_property_set.png" style="width: 240.5px; height: 24.5px;" /></a>
+</div>
+<p><strong>Prefix Property set</strong></p>
+</div></blockquote>
+<p><strong>Suffix</strong></p>
+<blockquote>
+<div><p>This property sets a suffix text which will be passed along with the text inserted in the input field.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/general_suffix_property.png"><img alt="images/general_suffix_property.png" src="images/general_suffix_property.png" style="width: 243.0px; height: 39.0px;" /></a>
+</div>
+<p><strong>Suffix Property</strong></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/suffix_property_set.png"><img alt="images/suffix_property_set.png" src="images/suffix_property_set.png" style="width: 241.0px; height: 25.0px;" /></a>
+</div>
+<p><strong>Suffix Property set</strong></p>
+</div></blockquote>
+<p><strong>Widget</strong></p>
+<blockquote>
+<div><p>This property allows the user to choose between an <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">field</span></code> and a <code class="docutils literal notranslate"><span class="pre">calendar</span> <span class="pre">picker</span></code>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/general_widget_property.png"><img alt="images/general_widget_property.png" src="images/general_widget_property.png" style="width: 236.0px; height: 99.0px;" /></a>
+</div>
+<p><strong>Widget Property</strong></p>
+</div></blockquote>
+<p><strong>Input Mask</strong></p>
+<blockquote>
+<div><p>This property allows the user to insert one or more input masks to verify the input data. If you do no know what this means or want special customization, please refer to <a class="reference external" href="https://github.com/RobinHerbots/Inputmask">Inputmask</a> (<code class="docutils literal notranslate"><span class="pre">https://github.com/RobinHerbots/Inputmask</span></code>).</p>
+<p>If you activate this option with either <cite>Show Character Count</cite> or <cite>Show Word Count</cite>, none of the latter will work properly.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/general_input_mask_property.png"><img alt="images/general_input_mask_property.png" src="images/general_input_mask_property.png" style="width: 245.0px; height: 60.5px;" /></a>
+</div>
+<p><strong>Input Mask Property</strong></p>
+<p>The users can also allow for multiple masks. Checking this option will generate a prefix dropdown in the input field where he can select from which mask he desires to choose input fors.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/general_multiple_masks_property.png"><img alt="images/general_multiple_masks_property.png" src="images/general_multiple_masks_property.png" style="width: 240.0px; height: 135.5px;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/multiple_masks_set.png"><img alt="images/multiple_masks_set.png" src="images/multiple_masks_set.png" style="width: 239.0px; height: 25.0px;" /></a>
+</div>
+<p><strong>Settings multiple masks</strong></p>
+</div></blockquote>
+<p><strong>Custom CSS Class</strong></p>
+<blockquote>
+<div><p>This property allows the users to make use of one of the custom CSS classes for Bootstrap’s input text fields as defined in <a class="reference external" href="https://getbootstrap.com/docs/4.0/components/input-group/">Input group</a> (<code class="docutils literal notranslate"><span class="pre">https://getbootstrap.com/docs/4.0/components/input-group/</span></code>).</p>
+<div class="figure align-center" id="id11">
+<a class="reference internal image-reference" href="images/general_custom_css_property.png"><img alt="images/general_custom_css_property.png" src="images/general_custom_css_property.png" style="width: 241.0px; height: 38.5px;" /></a>
+<p class="caption"><span class="caption-text"><strong>Custom CSS Property</strong></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p><strong>Tab Index</strong></p>
+<blockquote>
+<div><p>If set to <code class="docutils literal notranslate"><span class="pre">0</span></code>, this property allows the users to use the <code class="docutils literal notranslate"><span class="pre">{TAB}</span></code> key to navigate through the input fields. Else, if set to <code class="docutils literal notranslate"><span class="pre">1</span></code> it makes the input field unnavigable by using the <code class="docutils literal notranslate"><span class="pre">{TAB}</span></code> key. If this property is not very clear, users can find more information about it on <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">MSDN - tabindex</a> (<code class="docutils literal notranslate"><span class="pre">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex</span></code>).</p>
+<div class="figure align-center" id="id12">
+<a class="reference internal image-reference" href="images/general_tab_index_property.png"><img alt="images/general_tab_index_property.png" src="images/general_tab_index_property.png" style="width: 245.0px; height: 39.5px;" /></a>
+<p class="caption"><span class="caption-text"><strong>Tab Index Property</strong></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p><strong>Hidden</strong></p>
+<blockquote>
+<div><p>If checked, this property allows the users to hide the form when it is invoked. The component will still be part of the form.</p>
+</div></blockquote>
+<p><strong>Hide Label</strong></p>
+<blockquote>
+<div><p>This option allows users to hide the label of this component when the form is rendered. It will still be visible in the form builder.</p>
+</div></blockquote>
+<p><strong>Show Word counter</strong></p>
+<blockquote>
+<div><p>If checked, this property shows a live of number of words in the component.</p>
+</div></blockquote>
+<p><strong>Show Character Counter</strong></p>
+<blockquote>
+<div><p>If checked, this property shows a live of number of characters in the component.</p>
+</div></blockquote>
+<p><strong>Hide Input</strong></p>
+<blockquote>
+<div><p>This option hides the input in the browser. However, it does not encrypt the input in the server, so it should not be used with passwords.</p>
+</div></blockquote>
+<p><strong>Initial Focus</strong></p>
+<blockquote>
+<div><p>This option makes the component the initially focused in the form.</p>
+</div></blockquote>
+<p><strong>Allow Spellcheck</strong></p>
+<blockquote>
+<div><p>This option enables the spellcheck for this component.</p>
+</div></blockquote>
+<p><strong>Disabled</strong></p>
+<blockquote>
+<div><p>This option disabled the component in the form.</p>
+</div></blockquote>
+<p><strong>Always Enabled</strong></p>
+<blockquote>
+<div><p>This option makes the component always enabled, even if the form itself is disabled.</p>
+</div></blockquote>
+<p><strong>Table View</strong></p>
+<blockquote>
+<div><p>If checked, this option shows the input value within the table view of the submissions.</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Data</strong></p>
+<blockquote>
+<div><p><strong>Multiple Values</strong></p>
+<blockquote>
+<div><p>This option allows multiple values to be entered for this field.</p>
+</div></blockquote>
+<p><strong>Default Value</strong></p>
+<blockquote>
+<div><p>If checked, there will be an default value for this field before user interaction. This value will override placeholder text.</p>
+</div></blockquote>
+<p><strong>Persistent</strong></p>
+<blockquote>
+<div><p>This option stored a persistent field in the database when the form is submitted. The available option are: None, Server and Client. These correspond to where the information will be stored, if checked.</p>
+</div></blockquote>
+<p><strong>Input Format</strong></p>
+<blockquote>
+<div><p>This option forces the output of this field to be sanitized in a specific format. The available options are: Plain, HTML and Raw. Please note that the last option (“Raw”) is considered insecure.</p>
+</div></blockquote>
+<p><strong>Protected</strong></p>
+<blockquote>
+<div><p>If checked, this field will not be returned when queried via API.</p>
+</div></blockquote>
+<p><strong>Database Index</strong></p>
+<blockquote>
+<div><p>This option sets this field as the index within the database. It increases performance for submission queries.</p>
+</div></blockquote>
+<p><strong>Text Case</strong></p>
+<blockquote>
+<div><p>With this option, user may control the case of the text in the field. There are the possibilities here: Mixed (allows upper and lower cases in the text), Uppercase and Lowercase. These two last options make the whole text to be in the specific case.</p>
+</div></blockquote>
+<p><strong>Encrypted (Enterprise Only)</strong></p>
+<blockquote>
+<div><p>This option encrpyt the input of the field in the server. Please note that it is not recommended for passwords, since it is two way encryption.</p>
+</div></blockquote>
+<p><strong>Redraw On</strong></p>
+<blockquote>
+<div><p>This option redraws this component if another component changes. It may be useful when interpolating parts of the component, as the label.</p>
+</div></blockquote>
+<p><strong>Clear Value When Hidden</strong></p>
+<blockquote>
+<div><p>When the field is hidden, it clears its value.</p>
+</div></blockquote>
+<p><strong>Custom Default Value</strong></p>
+<blockquote>
+<div><p>This option opens a JavaScript text field for the user to customize the default value. All available variables are listed for the user to handle them. As shown in the example, information within the system can be used to fill in the field for the end user as a suggestion.</p>
+</div></blockquote>
+<p><strong>Calculated Value</strong></p>
+<blockquote>
+<div><p>Similar to <strong>Custom Default Value</strong>, that is, the end user may be provided with an already calculated value for this field. A JavaScript text field will be opened for the user to treat the information as desired. Again, all available variables are listed.</p>
+</div></blockquote>
+<p><strong>Allow Manual Override of Calculated Value</strong></p>
+<blockquote>
+<div><p>If checked, this option allows end users to manually override the calculated value.</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Validation</strong></p>
+<blockquote>
+<div><p><strong>Validate On</strong></p>
+<blockquote>
+<div><p>This option determines when this component should trigger frond-end validation. The available option are Change and Blur.</p>
+</div></blockquote>
+<p><strong>Required</strong></p>
+<blockquote>
+<div><p>If checked, the form can not be submitted if this field is empty.</p>
+</div></blockquote>
+<p><strong>Unique</strong></p>
+<blockquote>
+<div><p>This option makes the input of this field unique, that is, one end user can not submit the form if the text in this field is the same as another end user.</p>
+</div></blockquote>
+<p><strong>Minimum Length</strong></p>
+<blockquote>
+<div><p>The minimum length required for the input. It must be an integer represent the number of characters.</p>
+</div></blockquote>
+<p><strong>Maximum Length</strong></p>
+<blockquote>
+<div><p>The maximum length required for the input. It must be an integer represent the number of characters.</p>
+</div></blockquote>
+<p><strong>Minimum Word Length</strong></p>
+<blockquote>
+<div><p>The minimum number of words that can be entered in this field.</p>
+</div></blockquote>
+<p><strong>Maximum Word Length</strong></p>
+<blockquote>
+<div><p>The maximum number of words that can be entered in this field.</p>
+</div></blockquote>
+<p><strong>Regular Expression Pattern</strong></p>
+<blockquote>
+<div><p>The Regular Expression Pattern against which the input of this field must be tested before the form can be submitted.</p>
+</div></blockquote>
+<p><strong>Error Label</strong></p>
+<blockquote>
+<div><p>The label for this field when an error occurs.</p>
+</div></blockquote>
+<p><strong>Custom Error Message</strong></p>
+<blockquote>
+<div><p>An error message to be displayed if an error occurs.</p>
+</div></blockquote>
+<p><strong>Custom Validation</strong></p>
+<blockquote>
+<div><p>Customizable validation based in JavaScript syntax. All available variables are shown. A <strong>Secret Validation</strong> option is provided for those who wish to perform valition only in the server side. It keeps validation logic private and secret.</p>
+</div></blockquote>
+<p><strong>JSONLogic Validation</strong></p>
+<blockquote>
+<div><p>This option allows users to enter validation using JSONLogic syntax.</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>API</strong></p>
+<blockquote>
+<div><p><strong>Property Name</strong></p>
+<blockquote>
+<div><p>The name of this field in the API endpoint.</p>
+</div></blockquote>
+<p><strong>Field Tags</strong></p>
+<blockquote>
+<div><p>Tags of field to be used in custom logic.</p>
+</div></blockquote>
+<p><strong>Custom Properties</strong></p>
+<blockquote>
+<div><p>This option allows users to configure any custom properties for this field.</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Conditional</strong></p>
+<blockquote>
+<div><p>Any form component can use conditional logic to determine when to hide or display itself. The settings for a conditional field are configured on the component itself and can be found by viewing the Conditional tab within the components settings. Please note that the conditional component requires an API key to be configured to function correctly.</p>
+<p><strong>Advanced</strong></p>
+<blockquote>
+<div><p>In addition to Simple Conditional logic, you can also use Advanced Conditional logic, which uses actual JavaScript for any combination of conditions. JavaScript conditional logic requires you to set the value of show to either true or false. You have access to the current value of any form component via the data object and the components API key. Advanced Conditional logic will only work if Simple Conditional logic isn’t already defined.</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Logic</strong></p>
+<blockquote>
+<div><p>This option allows users to set conditional actions in the form based on triggers. The difference between this Logic and the previous tab (“Conditional”) is that here the user is presented with more Actions other than showing the component or not. For instance, based on this logic, the user can set the Value of the field, a Property (such as Label, Title, Placeholder etc.) or even Validation.</p>
+</div></blockquote>
+<p><strong>Layout</strong></p>
+<blockquote>
+<div><p><strong>HTML Attributes</strong></p>
+<blockquote>
+<div><p>This options provides a map of HTML attributes for component’s input element. Please note that the attributes provided by other component settings or other attributes generated by form.io take precedence over attributes in this option.</p>
+</div></blockquote>
+<p><strong>PDF Overlay</strong></p>
+<blockquote>
+<div><p>Options for rendering this component in PDF.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="basic-form-components">
+<h2>Basic Form Components<a class="headerlink" href="#basic-form-components" title="Permalink to this headline">¶</a></h2>
+<p>The Basic Form Components contain the most basic input types.</p>
 <div class="section" id="text-field">
 <h3>Text Field<a class="headerlink" href="#text-field" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>The Text Field Component allows the user to insert text inside an inline input field.</p>
+<p>To use this Form Component, simply drag the <strong>Text Field</strong> component to the form you’re building.</p>
+<div class="figure align-center">
+<img alt="images/drag_text_field_component.png" src="images/drag_text_field_component.png" />
+</div>
+<p>After dragging it to the Form Designer, a new window will appear - the configuration window for this specific Form Component. It is divided by sections: <code class="docutils literal notranslate"><span class="pre">Display</span></code>, <code class="docutils literal notranslate"><span class="pre">Data</span></code>, <code class="docutils literal notranslate"><span class="pre">Validation</span></code>, <code class="docutils literal notranslate"><span class="pre">API</span></code>, <code class="docutils literal notranslate"><span class="pre">Conditionals</span></code>, <code class="docutils literal notranslate"><span class="pre">Logic</span></code> and <code class="docutils literal notranslate"><span class="pre">Layout</span></code>. These sections and their properties are discussed further below.</p>
+<div class="figure align-center">
+<img alt="images/text_field_general_config_page.png" src="images/text_field_general_config_page.png" />
+</div>
 </div>
 <div class="section" id="text-area">
 <h3>Text Area<a class="headerlink" href="#text-area" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>A Text Area has the same options as the textfield form component. The difference is that it will be a multi-line input field that allows for longer text. The Text Area can also be utilized as a CK Editor WYSIWYG for the end user which is configured within the component settings.</p>
+<p><strong>Display</strong></p>
+<blockquote>
+<div><p><strong>Rows</strong></p>
+<blockquote>
+<div><p>This allows control over how many rows are visible in the text area.</p>
+<div class="figure align-center" id="id13">
+<a class="reference internal image-reference" href="images/rows_textarea.png"><img alt="images/rows_textarea.png" src="images/rows_textarea.png" style="width: 244.0px; height: 39.5px;" /></a>
+<p class="caption"><span class="caption-text"><strong>Rows</strong></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p><strong>Editor</strong></p>
+<blockquote>
+<div><p>Options for selecting the type of WYSIWYG editor to use for this text area.</p>
+<div class="figure align-center" id="id14">
+<a class="reference internal image-reference" href="images/editor_textarea.png"><img alt="images/editor_textarea.png" src="images/editor_textarea.png" style="width: 246.0px; height: 122.5px;" /></a>
+<p class="caption"><span class="caption-text"><strong>Editor</strong></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p><strong>Auto Expand</strong></p>
+<blockquote>
+<div><p>This will make the Text Area auto expand its height as the user is typing into the area.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="number">
 <h3>Number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>Number fields should be used whenever a field should be limited to a type of number value.</p>
+<p><strong>Data</strong></p>
+<blockquote>
+<div><p><strong>Use Thousands Separator</strong></p>
+<blockquote>
+<div><p>This option separes thousands by local delimiter.</p>
+</div></blockquote>
+<p><strong>Decimal Places</strong></p>
+<blockquote>
+<div><p>The maximum number of decimal places for the values in this field.</p>
+</div></blockquote>
+<p><strong>Require Decimals</strong></p>
+<blockquote>
+<div><p>Always show decimals for this field, even if trailing zeros.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="password">
 <h3>Password<a class="headerlink" href="#password" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>The password field has the same options as a text field component. It differs from a text field in that its html &lt;input&gt; type will be password instead of text. This will cause the field to display asterisks instead of the value entered.</p>
 </div>
 <div class="section" id="checkbox">
 <h3>Checkbox<a class="headerlink" href="#checkbox" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>A check box is a boolean value input field. It will either be on or off.</p>
+<p><strong>Validation</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><strong>Required</strong></dt><dd><p>If checked, the field will be required to be checked. If it is required, you may not need to persist the value as it can be assumed to be checked when a form was submitted or it will not submit.</p>
+</dd>
+</dl>
+</div></blockquote>
 </div>
 <div class="section" id="select-boxes">
 <h3>Select Boxes<a class="headerlink" href="#select-boxes" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>The Check Boxes form component works like the Radio component, but allows the user to check multiple values.</p>
+<p><strong>Display</strong></p>
+<blockquote>
+<div><p><strong>Inline Layout</strong></p>
+<blockquote>
+<div><p>If checked, this field will layout the checkboxes horizontally instead of vertically.</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Validation</strong></p>
+<blockquote>
+<div><p><strong>Required</strong></p>
+<blockquote>
+<div><p>If checked, the field will be required to have at least one box checked. If it is required, you may not need to persist the value as it can be assumed to be checked when a form was submitted or it will not submit.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="select">
 <h3>Select<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>A select field will display a list of values in a drop down list to users. Users can select one of the values.</p>
+<p><strong>Display</strong></p>
+<blockquote>
+<div><p><strong>Widget Type</strong></p>
+<blockquote>
+<div><p>This option allows the user to select the type of widget to be used. The available options are ChoicesJS and HTML 5.</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Data</strong></p>
+<blockquote>
+<div><p><strong>Data Source Type</strong></p>
+<blockquote>
+<div><p>Select the type of data the options will be pulled from.</p>
+<p><strong>Values</strong></p>
+<blockquote>
+<div><p>These are the values that will be selected on this field. The Value column is what will be stored in the database and the Label is what is shown to the users.</p>
+<p><strong>Storage Type</strong></p>
+<blockquote>
+<div><p>The type to store the data. It is suggested to choose “autotype”, which means it will use the type of the data from URL.</p>
+</div></blockquote>
+<p><strong>Item Template</strong></p>
+<blockquote>
+<div><p>The HTML template for the result data items.</p>
+</div></blockquote>
+<p><strong>Enable Static Search</strong></p>
+<blockquote>
+<div><p>When checked, the Select dropdown will allow for searching within the static list of items provided.</p>
+</div></blockquote>
+<p><strong>Search Threshold</strong></p>
+<blockquote>
+<div><p>A number from 0 to 1 representing the point that the matching algorithm gives up. A threshold of 0.0 required a perfect match, while a threshold of 1.0 will match anything.</p>
+</div></blockquote>
+<p><strong>Read Only Value</strong></p>
+<blockquote>
+<div><p>If checked, it will show just the value when in Read Only mode.</p>
+</div></blockquote>
+<p><strong>Choices.js options</strong></p>
+<blockquote>
+<div><p>A raw JSON object to use as options for the Select component.</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Raw JSON</strong></p>
+<blockquote>
+<div><p>Enter a JSON Array to use. It should be formatted as an array of objects with named properties.</p>
+</div></blockquote>
+<p><strong>URL</strong></p>
+<blockquote>
+<div><p>Enter a url with a data source in JSON Array format. This can be used to populate a Select list with external JSON values.</p>
+<p><strong>Lazy Load Data</strong></p>
+<blockquote>
+<div><p>When set, this option will not fire off the request to the URL until this control is within focus. It can improve performance in case of many Select dropdowns in the form.</p>
+</div></blockquote>
+<p><strong>Request Headers</strong></p>
+<blockquote>
+<div><p>The headers that should be sent along with the request to the URL. It can useful for authentication.</p>
+</div></blockquote>
+<p><strong>Data Path</strong></p>
+<blockquote>
+<div><p>The property within the source data, if the items are iterable.</p>
+</div></blockquote>
+<p><strong>Disable limiting response</strong></p>
+<blockquote>
+<div><p>When enabled the request will not include the limit and skip options in the query string.</p>
+</div></blockquote>
+<p><strong>Search Query Name</strong></p>
+<blockquote>
+<div><p>The name of the search querystring parameter used when sending a request to filter the results with. The server at the URL must handle this query parameter.</p>
+</div></blockquote>
+<p><strong>Filter Query</strong></p>
+<blockquote>
+<div><p>This filter is used to provide additional filtering when using query parameters.</p>
+</div></blockquote>
+<p><strong>Sort Query</strong></p>
+<blockquote>
+<div><p>This option is used to provide sorting when using query parameters.</p>
+</div></blockquote>
+<p><strong>Limit</strong></p>
+<blockquote>
+<div><p>This option is used to limit the number of items to request or view.</p>
+</div></blockquote>
+<p><strong>Refresh Options On</strong></p>
+<blockquote>
+<div><p>If checked, it will refresh data when another field changes.</p>
+</div></blockquote>
+<p><strong>Clear Value On Refresh Options</strong></p>
+<blockquote>
+<div><p>When <strong>Refresh Options On</strong> is on, the component will have its value cleared.</p>
+</div></blockquote>
+<p><strong>Formio Authenticate</strong></p>
+<blockquote>
+<div><p>The user must check this option if Formio Authentication is desired with the request.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="radio">
 <h3>Radio<a class="headerlink" href="#radio" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>Radio form components should be used when presenting a list of options from which one should be chosen.</p>
 </div>
 <div class="section" id="button">
 <h3>Button<a class="headerlink" href="#button" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>Buttons can be added to perform various actions within the form.</p>
+<p><strong>Display</strong></p>
+<blockquote>
+<div><p><strong>Action</strong></p>
+<blockquote>
+<div><p>The action to be performed by the button.</p>
+<p><strong>Submit</strong></p>
+<blockquote>
+<div><p>A submit action submits the form to either the form.io server or a custom callback url that has been priorly set up.</p>
+</div></blockquote>
+<p><strong>Save in state</strong></p>
+<blockquote>
+<div><p>The state the user wishes to save the submission under when this button is pressed.</p>
+</div></blockquote>
+<p><strong>Event</strong></p>
+<blockquote>
+<div><p>An event to be fired when the button is clicked. The user must enter the name of the event.</p>
+<p><strong>Show Validation</strong></p>
+<blockquote>
+<div><p>When the button is pressed, it will show any validation errors on the form.</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Custom</strong></p>
+<blockquote>
+<div><p>A custom logic to evaluate when the button is clicked.</p>
+</div></blockquote>
+<p><strong>Reset</strong></p>
+<blockquote>
+<div><p>Reset the form fields back to their original state.</p>
+</div></blockquote>
+<p><strong>OAuth</strong></p>
+<blockquote>
+<div><p>Perform OAuth authentication.</p>
+</div></blockquote>
+<p><strong>POST to URL</strong></p>
+<blockquote>
+<div><p>The URL where the submission will be sent.</p>
+<p><strong>Headers</strong></p>
+<blockquote>
+<div><p>Headers properties and values for the request.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Theme</strong></p>
+<blockquote>
+<div><p>The color theme of the button.</p>
+</div></blockquote>
+<p><strong>Size</strong></p>
+<blockquote>
+<div><p>The size of the button.</p>
+</div></blockquote>
+<p><strong>Block Button</strong></p>
+<blockquote>
+<div><p>This control should span the full width of the bounding container.</p>
+</div></blockquote>
+<p><strong>Left Icon</strong></p>
+<blockquote>
+<div><p>The full icon class string to show the icon.</p>
+</div></blockquote>
+<p><strong>Right Icon</strong></p>
+<blockquote>
+<div><p>The full icon class string to show the icon.</p>
+</div></blockquote>
+<p><strong>Shortcut</strong></p>
+<blockquote>
+<div><p>The shortcut for this component.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
-<div class="section" id="advanced-forms">
-<h2>Advanced Forms<a class="headerlink" href="#advanced-forms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="advanced-form-components">
+<h2>Advanced Form Components<a class="headerlink" href="#advanced-form-components" title="Permalink to this headline">¶</a></h2>
 <p>The Advanced forms contain the most advanced forms of inputs.</p>
 <div class="section" id="email">
 <h3>Email<a class="headerlink" href="#email" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>The email component is nearly identical to the text field component. The Email component has a custom validation setting that, if set up correctly, can ensure the value entered is a valid email address. The email component can also more easily be integrate into a form’s email action. Use this component when you want an email address field for your form.</p>
 </div>
 <div class="section" id="url">
 <h3>URL<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>The URL component is nearly identical to the text field component, except that it does not accept simple text.</p>
 </div>
 <div class="section" id="phone-number">
 <h3>Phone Number<a class="headerlink" href="#phone-number" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>The phone number form component can be used to enter phone numbers in a form. A textfield can be used for general text input that is shorter than a sentence. There are options to define input masks and validations so information can be molded into desired formats.</p>
 </div>
 <div class="section" id="tags">
 <h3>Tags<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>The Tags component is very similar to text field, but is used to add tags to the form.</p>
+<p><strong>Data</strong></p>
+<blockquote>
+<div><p><strong>Delimiter</strong></p>
+<blockquote>
+<div><p>The delimiter to be used to separate the tags.</p>
+</div></blockquote>
+<p><strong>Max Tags</strong></p>
+<blockquote>
+<div><p>The maximum amount of tags that can be added. If set to 0, there will be no limit.</p>
+</div></blockquote>
+<p><strong>Store As</strong></p>
+<blockquote>
+<div><p>The data type in which the tags will be stored. There are two options: string (CSV) or array of tags.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="address">
 <h3>Address<a class="headerlink" href="#address" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>The address form component is a special component that does lookups for addresses entered. It can be entered in free form and will save the address as well as geolocation and other information.</p>
+<p><strong>Display</strong></p>
+<blockquote>
+<div><p><strong>Region Bias</strong></p>
+<blockquote>
+<div><p>The region bias to use for this search.</p>
+</div></blockquote>
+<p><strong>Google Maps API Key</strong></p>
+<blockquote>
+<div><p>The API kay for Google Maps. A full account on how to get an Google Maps API key, please visit <a class="reference external" href="https://developers.google.com/maps/documentation/geocoding/get-api-key">Google’s Developers site on the theme</a> (<a class="reference external" href="https://developers.google.com/maps/documentation/geocoding/get-api-key">https://developers.google.com/maps/documentation/geocoding/get-api-key</a>).</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="date-time">
 <h3>Date / Time<a class="headerlink" href="#date-time" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>Date/Time form components can be used to input dates, times or both.</p>
+<p><strong>Display</strong></p>
+<blockquote>
+<div><p><strong>Display in Timezone</strong></p>
+<blockquote>
+<div><p>This will display the captured date time in the selected timezone. The user can selected between datime of: the Viewer, Submission, Location or UTC. In case of “Location”, the user will have to choose the location in the dropdown menu.</p>
+</div></blockquote>
+<p><strong>Use Locale Settings</strong></p>
+<blockquote>
+<div><p>Use locale settings to display date and time.</p>
+</div></blockquote>
+<p><strong>Format</strong></p>
+<blockquote>
+<div><p>The date format for displaying the datetime value. For a complete list of accepted formats, please visit <a class="reference external" href="https://github.com/angular-ui/bootstrap/tree/master/src/dateparser/docs#uibdateparsers-format-codes">this site</a> (<a class="reference external" href="https://github.com/angular-ui/bootstrap/tree/master/src/dateparser/docs#uibdateparsers-format-codes">https://github.com/angular-ui/bootstrap/tree/master/src/dateparser/docs#uibdateparsers-format-codes</a>).</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Date</strong></p>
+<blockquote>
+<div><p><strong>Enable Date Input</strong></p>
+<blockquote>
+<div><p>This option enables date input for this field.</p>
+</div></blockquote>
+<p><strong>Minimum Date</strong></p>
+<blockquote>
+<div><p>The minimum date that can be picked.</p>
+</div></blockquote>
+<p><strong>Maximum Date</strong></p>
+<blockquote>
+<div><p>The maximum date that can be picked.</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Time</strong></p>
+<blockquote>
+<div><p><strong>Enable Time Input</strong></p>
+<blockquote>
+<div><p>This option enables time input for this field.</p>
+</div></blockquote>
+<p><strong>Hour Step Size</strong></p>
+<blockquote>
+<div><p>The number of hours to increment/decrement in the time picker.</p>
+</div></blockquote>
+<p><strong>Minute Step Size</strong></p>
+<blockquote>
+<div><p>The number of minutes to increment/decrement in the time picker.</p>
+</div></blockquote>
+<p><strong>12 Hour Time (AM/PM)</strong></p>
+<blockquote>
+<div><p>This option enables 12 hour time with AM/PM.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="day">
 <h3>Day<a class="headerlink" href="#day" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>Component to input dates.</p>
+<p><strong>Day</strong></p>
+<blockquote>
+<div><p><strong>Select</strong></p>
+<blockquote>
+<div><p>In this option, users can choose between “Number” and “Select”. It means that the end user will be presented with an empty field for typing the number of the Day or with a dropdown menu with all available Days.</p>
+</div></blockquote>
+<p><strong>Day first</strong></p>
+<blockquote>
+<div><p>Display the Day field before Month field.</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Month</strong></p>
+<blockquote>
+<div><p><strong>Select</strong></p>
+<blockquote>
+<div><p>In this option, users can choose between “Number” and “Select”. It means that the end user will be presented with an empty field for typing the name of the Month or with a dropdown menu with all available Months.</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Year</strong></p>
+<blockquote>
+<div><p><strong>Select</strong></p>
+<p>In this option, users can choose between “Number” and “Select”. It means that the end user will be presented with an empty field for typing the number of the Year or with a dropdown menu with all available Years.</p>
+<p><strong>Minimum Year</strong></p>
+<blockquote>
+<div><p>The minimum year that can be entered.</p>
+</div></blockquote>
+<p><strong>Maximum Year</strong></p>
+<blockquote>
+<div><p>The maximum year that can be entered.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="time">
 <h3>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>Component to input time.</p>
+<p><strong>Display</strong></p>
+<blockquote>
+<div><p><strong>Input Type</strong></p>
+<blockquote>
+<div><p>The type of widget to use. There are two options: HTML 5 Time Input and Text Input with Mask.</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Data</strong></p>
+<blockquote>
+<div><p><strong>Data Format</strong></p>
+<blockquote>
+<div><p>The moment.js format for saving the value of this field.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="currency">
 <h3>Currency<a class="headerlink" href="#currency" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>The Currency component should be used when a field should display currency amounts on a form. This component holds a numeric input mask that allows two decimal values and automatically adds commas as a user inputs a currency amount.</p>
+<p><strong>Data</strong></p>
+<blockquote>
+<div><p><strong>Currency</strong></p>
+<blockquote>
+<div><p>The currency to use in the currency formatting. Possible values are currency codes (ISO-4217).</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="survey">
 <h3>Survey<a class="headerlink" href="#survey" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>The Survey component works similar to the radio. Instead of one question, users are able to select a value for multiple questions which are configured within the component settings. Survey is a great component to utilize when asking multiple questions with the same context of answers or values.</p>
+<p><strong>Data</strong></p>
+<blockquote>
+<div><p><strong>Questions</strong></p>
+<blockquote>
+<div><p>The questions users want to ask in the survey.</p>
+</div></blockquote>
+<p><strong>Values</strong></p>
+<blockquote>
+<div><p>The values that can be selected per question.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="signature">
 <h3>Signature<a class="headerlink" href="#signature" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>A signature field is a special field that allows someone to sign the field with either their finger on a touch enabled device or with the mouse pointer. This signature will be converted into an image and stored with the form submission.</p>
+<p><strong>Display</strong></p>
+<blockquote>
+<div><p><strong>Footer Label</strong></p>
+<blockquote>
+<div><p>The footer text that appears below the signature area.</p>
+</div></blockquote>
+<p><strong>Width</strong></p>
+<blockquote>
+<div><p>The width of the signature area. This can be in pixels or percents.</p>
+</div></blockquote>
+<p><strong>Height</strong></p>
+<blockquote>
+<div><p>The height of the signature area. This can be in pixels or percents.</p>
+</div></blockquote>
+<p><strong>Background Color</strong></p>
+<blockquote>
+<div><p>The background color of the signature area. This can be an RGB value in RGB(255,255,255) format, a hex value like #000000 or the name of a color.</p>
+</div></blockquote>
+<p><strong>Pen Color</strong></p>
+<blockquote>
+<div><p>The ink color of the signature area. This can be an RGB value in RGB(255,255,255) format, a hex value like #000000 or the name of a color.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 </div>
-<div class="section" id="layout-forms">
-<h2>Layout Forms<a class="headerlink" href="#layout-forms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="layout-form-components">
+<h2>Layout Form Components<a class="headerlink" href="#layout-form-components" title="Permalink to this headline">¶</a></h2>
 <p>The Layout forms contain view-related forms of input.</p>
 <div class="section" id="html-element">
 <h3>HTML Element<a class="headerlink" href="#html-element" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>This component adds an HTML element to the form page.</p>
+<p><strong>Display</strong></p>
+<blockquote>
+<div><p><strong>HTML Tag</strong></p>
+<blockquote>
+<div><p>The tag of this HTML element.</p>
+</div></blockquote>
+<p><strong>Attributes</strong></p>
+<blockquote>
+<div><p>The attributes of this HTML element. Only safe attributes are allowed, such as src, href and title.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="content">
 <h3>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>This component adds text or other types of content (such as images, lists, tables and media) to the form page. The users may edit this content in the editor that will pop up.</p>
 </div>
 <div class="section" id="columns">
 <h3>Columns<a class="headerlink" href="#columns" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>The Column layout component can be used to split any area into two columns. Simply drag and drop the Column button onto the form and the area you drop it on will be split in two.</p>
 </div>
 <div class="section" id="field-set">
 <h3>Field Set<a class="headerlink" href="#field-set" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>A fieldset can be used to create a title of an area of the form. This is useful to put inside Layout components or in between lots of related fields. This form component is display only and will not be saved to the API.</p>
+<p><strong>Display</strong></p>
+<blockquote>
+<div><p><strong>Legend</strong></p>
+<blockquote>
+<div><p>The legend for this Fieldset.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="panel">
 <h3>Panel<a class="headerlink" href="#panel" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>Panels are used to wrap groups of fields with a title and styling. These currently map to Bootstrap Panels.</p>
+<p><strong>Display</strong></p>
+<blockquote>
+<div><p><strong>Title</strong></p>
+<blockquote>
+<div><p>The title text that appears in the header of this panel.</p>
+</div></blockquote>
+<p><strong>Theme</strong></p>
+<blockquote>
+<div><p>The theming of the panel. Select one of the options to have the class added to the wrapper div.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="table">
 <h3>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>The table component allows creating a table with columns and rows that allow adding additional components within it.</p>
+<p><strong>Display</strong></p>
+<blockquote>
+<div><p><strong>Number of Rows</strong></p>
+<blockquote>
+<div><p>The number of rows on the table. This can be adjusted at any time.</p>
+</div></blockquote>
+<p><strong>Number of Columns</strong></p>
+<blockquote>
+<div><p>The number of columns on the table. This can be adjusted at any time.</p>
+</div></blockquote>
+<p><strong>Cell Alignment</strong></p>
+<blockquote>
+<div><p>Horizontal alignment of the cells of the table.</p>
+</div></blockquote>
+<p><strong>Stripped</strong></p>
+<blockquote>
+<div><p>This will stripe the table if checked. Whether or not the table is striped for odd and even rows.</p>
+</div></blockquote>
+<p><strong>Bordered</strong></p>
+<blockquote>
+<div><p>This will border the table if checked. Whether or not the table has a border set on it (this can be changed by your own CSS as well).</p>
+</div></blockquote>
+<p><strong>Hover</strong></p>
+<blockquote>
+<div><p>Highlight a row on hover. Whether or not to add a hover class on rows when the mouse hovers over them.</p>
+</div></blockquote>
+<p><strong>Condensed</strong></p>
+<blockquote>
+<div><p>Condense the size of the table by removing padding.</p>
+</div></blockquote>
+</div></blockquote>
 </div>
 <div class="section" id="tabs">
 <h3>Tabs<a class="headerlink" href="#tabs" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>This component adds tabs to the form’s page.</p>
 </div>
 <div class="section" id="well">
 <h3>Well<a class="headerlink" href="#well" title="Permalink to this headline">¶</a></h3>
-<p>Coming soon - Work in progress</p>
+<p>Wells are wrapped in a div with a class. These currently map to Bootstrap Wells.</p>
 </div>
 </div>
 </div>
