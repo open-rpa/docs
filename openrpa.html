@@ -1200,7 +1200,7 @@ Repetitive sequential usage of this Activity, however, is not recommended, as it
 <dl class="py class">
 <dt>
 <code class="sig-name descname">Invoke OpenFlow</code></dt>
-<dd><p><strong>Invoke OpenFlow</strong> allows the user to invoke <code class="docutils literal notranslate"><span class="pre">Workflows</span></code> which have been configured with <strong>OpenFlow</strong>/<strong>Node-RED</strong>, i.e., available at the <a class="reference external" href="http://localhost.openrpa.dk/#/Workflows">Workflows page</a> (e.g. <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk/#/Workflows</span></code>).</p>
+<dd><p><strong>Invoke OpenFlow</strong> allows the user to invoke <code class="docutils literal notranslate"><span class="pre">Workflows</span></code> which have been configured with <strong>OpenFlow</strong>/<strong>Node-RED</strong>, i.e., available at the <a class="reference external" href="http://localhost.openiap.io/#/Workflows">Workflows page</a> (e.g. <code class="docutils literal notranslate"><span class="pre">http://localhost.openiap.io/#/Workflows</span></code>).</p>
 <p><strong>Properties Parameters</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">Displayname</span></code> - Title of the Activity inside the sequence.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Wait</span> <span class="pre">until</span> <span class="pre">Completed</span></code> - If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, <strong>OpenRPA</strong> waits until the <code class="docutils literal notranslate"><span class="pre">Workflow</span></code> invoke call is finished - either success or error. If successful, the message containing the data (as designed in the flow at <strong>Node-RED</strong>) is returned to the <strong>OpenRPA</strong> robot.</p>
@@ -1219,7 +1219,7 @@ Repetitive sequential usage of this Activity, however, is not recommended, as it
 <dl class="py class">
 <dt>
 <code class="sig-name descname">Invoke OpenRPA</code></dt>
-<dd><p><strong>Invoke OpenRPA</strong> allows the user to invoke <strong>OpenRPA</strong> <code class="docutils literal notranslate"><span class="pre">Workflows</span></code> saved in <strong>OpenFlow</strong>’s repository - those available at the <a class="reference external" href="http://localhost.openrpa.dk/#/RPAWorkflows">RPA Workflows page</a> (eg. <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk/#/RPAWorkflows</span></code>).</p>
+<dd><p><strong>Invoke OpenRPA</strong> allows the user to invoke <strong>OpenRPA</strong> <code class="docutils literal notranslate"><span class="pre">Workflows</span></code> saved in <strong>OpenFlow</strong>’s repository - those available at the <a class="reference external" href="http://localhost.openiap.io/#/RPAWorkflows">RPA Workflows page</a> (eg. <code class="docutils literal notranslate"><span class="pre">http://localhost.openiap.io/#/RPAWorkflows</span></code>).</p>
 <p>The <strong>Map Variables</strong> button allows the currently set variables and arguments to be passed to the <code class="docutils literal notranslate"><span class="pre">Workflow</span></code> invoke call. In order to do that, after choosing your <code class="docutils literal notranslate"><span class="pre">Workflow</span></code> from the dropdown, create the arguments in the <strong>Variables, Arguments &amp; Imports box</strong> and click the <strong>Map Variables</strong> button in the activity.</p>
 <p><strong>Properties Parameters</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">Displayname</span></code> - Title of the Activity inside the sequence.</p>
@@ -1342,7 +1342,7 @@ Repetitive sequential usage of this Activity, however, is not recommended, as it
 <img alt="images/openrpa_type_text.png" src="images/openrpa_type_text.png" />
 <p class="caption"><span class="caption-text"><strong>OpenRPA Type Text.</strong></span><a class="headerlink" href="#id75" title="Permalink to this image">¶</a></p>
 </div>
-<p><em>¹ - `Overview of TypeText Activity &lt;https://openrpa.openrpa.dk/pages/typetext-syntax&gt;`_ (``https://openrpa.openrpa.dk/pages/typetext-syntax``)</em></p>
+<p><em>¹ - `Overview of TypeText Activity &lt;https://openrpa.openiap.io/pages/typetext-syntax&gt;`_ (``https://openrpa.openiap.io/pages/typetext-syntax``)</em></p>
 </div>
 <div class="section" id="openrpa-avirecorder">
 <h4><span class="section-number">3.5.4.2. </span>OpenRPA.AviRecorder<a class="headerlink" href="#openrpa-avirecorder" title="Permalink to this headline">¶</a></h4>
@@ -5157,7 +5157,7 @@ Please enter the desired category number inside the input field. The returned jo
 </div>
 <p>Set the properties for the <code class="docutils literal notranslate"><span class="pre">email</span></code> node.</p>
 <p><code class="docutils literal notranslate"><span class="pre">To</span></code> refers to the e-mail address from the receiver.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Userid</span></code> is the  UserId from the account, which will send the e-mail. (ie. e-mail without a domain - if the e-mail is <code class="docutils literal notranslate"><span class="pre">admin&#64;openrpa.dk</span></code>, then your UserId is <code class="docutils literal notranslate"><span class="pre">admin</span></code>)</p>
+<p><code class="docutils literal notranslate"><span class="pre">Userid</span></code> is the  UserId from the account, which will send the e-mail. (ie. e-mail without a domain - if the e-mail is <code class="docutils literal notranslate"><span class="pre">admin&#64;openiap.io</span></code>, then your UserId is <code class="docutils literal notranslate"><span class="pre">admin</span></code>)</p>
 <p><code class="docutils literal notranslate"><span class="pre">Password</span></code> - the password for the email account from the sender.</p>
 <p>In our case, a dummy e-mail is set - as <code class="docutils literal notranslate"><span class="pre">admin&#64;gmail.com</span></code>, which will be used to send and receive the message. It is noted here that the user must change the e-mail, or else the workflow obviously won’t work.</p>
 <div class="figure align-center">

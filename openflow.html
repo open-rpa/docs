@@ -300,7 +300,7 @@
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">openflow-cli</span> <span class="p">-</span><span class="n">-install</span> <span class="n">openflow</span>
 </pre></div>
 </div>
-<p>In order to access <strong>OpenFlow</strong>, just go to <a class="reference external" href="http://localhost.openrpa.dk">OpenFlow page</a> (<code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk</span></code>).</p>
+<p>In order to access <strong>OpenFlow</strong>, just go to <a class="reference external" href="http://localhost.openiap.io">OpenFlow page</a> (<code class="docutils literal notranslate"><span class="pre">http://localhost.openiap.io</span></code>).</p>
 <p>Proceed to <a class="reference internal" href="node_red.html#quickstart-running-openflow-node-red-using-npm"><span class="std std-ref">Quickstart Running OpenFlow Node-RED using NPM</span></a> to install <strong>Node-RED</strong>.</p>
 </div>
 <div class="section" id="developer-setup">
@@ -339,7 +339,7 @@
 nodered_sa=nodered1
 port=80
 nodered_port=1880
-nodered_domain_schema=$nodered_id$.localhost.openrpa.dk
+nodered_domain_schema=$nodered_id$.localhost.openiap.io
 tls_crt=
 tls_key=
 tls_ca=
@@ -394,10 +394,10 @@ UGFYSmE1dXZma3BWR1RnNEdzTnBJQ3VNTEJUaXJ6M0ZRV25UNFNZbzkrREVoalhEeVQKWlVOMERtUkJV
 SUlXd2xWUTA9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K
 NODE_ENV=development
 
-saml_federation_metadata=http://localhost.openrpa.dk/issue/FederationMetadata/2007-06/FederationMetadata.xml
-saml_issuer=uri:localhost.openrpa.dk
-# saml_entrypoint=http://localhost.openrpa.dk/issue
-# saml_baseurl=http://localhost.openrpa.dk:1880/
+saml_federation_metadata=http://localhost.openiap.io/issue/FederationMetadata/2007-06/FederationMetadata.xml
+saml_issuer=uri:localhost.openiap.io
+# saml_entrypoint=http://localhost.openiap.io/issue
+# saml_baseurl=http://localhost.openiap.io:1880/
 
 allow_personal_nodered=false
 allow_user_registration=true
@@ -410,8 +410,8 @@ multi_tenant=false
 
 websocket_max_package_count=1048576
 
-api_ws_url=ws://localhost.openrpa.dk
-domain=localhost.openrpa.dk
+api_ws_url=ws://localhost.openiap.io
+domain=localhost.openiap.io
 protocol=http
 amqp_url=amqp://localhost
 aes_secret=7TXsxf7cn9EkUqm5h4MEWGjzkxkNCk2K
@@ -425,13 +425,13 @@ skip_history_collections=audit,jslog
 </pre></div>
 </div>
 <p>Finally, run <code class="docutils literal notranslate"><span class="pre">OpenFlow</span></code> by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+D</span></code>, select <code class="docutils literal notranslate"><span class="pre">OpenFlow</span></code> in the dropdown box and clicking the <strong>Play</strong> button.</p>
-<p>The user may now access <strong>OpenFlow</strong> by using a browser and navigating to the default URL, which is <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk</span></code> if unchanged.</p>
+<p>The user may now access <strong>OpenFlow</strong> by using a browser and navigating to the default URL, which is <code class="docutils literal notranslate"><span class="pre">http://localhost.openiap.io</span></code> if unchanged.</p>
 <p>To properly install and configure <strong>Node-RED</strong>, please refer to the <strong>Installing &amp; First Run</strong> section in the <strong>Node-RED</strong> chapter.</p>
 </div>
 </div>
 <div class="section" id="accessing-for-the-first-time">
 <h2><span class="section-number">2.3. </span><strong>Accessing for the first time</strong><a class="headerlink" href="#accessing-for-the-first-time" title="Permalink to this headline">¶</a></h2>
-<p>To access <strong>OpenFlow</strong> webpage, simply go to the URL as specified by your working environment (contact your IT responsible, if needed). If running a local version, by default the URL should be <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk</span></code>.</p>
+<p>To access <strong>OpenFlow</strong> webpage, simply go to the URL as specified by your working environment (contact your IT responsible, if needed). If running a local version, by default the URL should be <code class="docutils literal notranslate"><span class="pre">http://localhost.openiap.io</span></code>.</p>
 <p>If you do not have access to <strong>OpenFlow</strong> and you are not running a local version, we encourage you to do some experimentation using our own demo environment, which can be found at <code class="docutils literal notranslate"><span class="pre">https://app.openiap.io</span></code>.</p>
 <p>After accessing the page, users are prompted to authenticate themselves. After signing in, the user is redirected to the home page of <strong>OpenFlow</strong> home page.</p>
 <div class="admonition note">
@@ -539,7 +539,7 @@ skip_history_collections=audit,jslog
 <div class="section" id="what-is-it">
 <h3><span class="section-number">2.6.1. </span>What is it?<a class="headerlink" href="#what-is-it" title="Permalink to this headline">¶</a></h3>
 <p>Workflows in Node-RED are mainly called ‘<strong>Flows</strong>’. These flows are made to connect different services, applications and logic functions. When grouped together they can be used to process data and output the results to a given service or file.</p>
-<p>At the  <a class="reference external" href="http://localhost.openrpa.dk/#/Workflows">Workflows page</a> (eg. <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk/#/Workflows</span></code>) in OpenFlow, it is possible to remotely invoke these flows.</p>
+<p>At the  <a class="reference external" href="http://localhost.openiap.io/#/Workflows">Workflows page</a> (eg. <code class="docutils literal notranslate"><span class="pre">http://localhost.openiap.io/#/Workflows</span></code>) in OpenFlow, it is possible to remotely invoke these flows.</p>
 <div class="figure align-center" id="id14">
 <img alt="images/openflow_node_red_subflow.png" src="images/openflow_node_red_subflow.png" />
 <p class="caption"><span class="caption-text"><strong>Node-RED subflow example.</strong></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
@@ -576,8 +576,8 @@ skip_history_collections=audit,jslog
 </div>
 <ul>
 <li><p><strong>Invoking a Node-RED workflow in OpenFlow</strong></p>
-<p>After the steps above are complete, go to the <a class="reference external" href="http://localhost.openrpa.dk/#/Workflows">Workflows page</a> (eg. <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk/#/Workflows</span></code>) and directly invoke the desired workflow. A form page will then open to choose the input parameters, if any.</p>
-<p>The forms are either automatically generated by OpenRPA, according to the variables preset - more on that on OpenRPA’s Variables section - or manually generated by the user on the <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">Forms page</a> (eg. <code class="docutils literal notranslate"><span class="pre">http://localhost.openrpa.dk/#/Forms</span></code>).</p>
+<p>After the steps above are complete, go to the <a class="reference external" href="http://localhost.openiap.io/#/Workflows">Workflows page</a> (eg. <code class="docutils literal notranslate"><span class="pre">http://localhost.openiap.io/#/Workflows</span></code>) and directly invoke the desired workflow. A form page will then open to choose the input parameters, if any.</p>
+<p>The forms are either automatically generated by OpenRPA, according to the variables preset - more on that on OpenRPA’s Variables section - or manually generated by the user on the <a class="reference external" href="http://localhost.openiap.io/#/Forms">Forms page</a> (eg. <code class="docutils literal notranslate"><span class="pre">http://localhost.openiap.io/#/Forms</span></code>).</p>
 <p>Upon clicking submit on a form, the parameters are sent to the robot for processing and execution of the given workflow.</p>
 </li>
 </ul>
@@ -610,7 +610,7 @@ skip_history_collections=audit,jslog
 </li>
 <li><p><strong>Invoking through OpenFlow’s RPA Workflows Page</strong></p>
 <blockquote>
-<div><p>To invoke a workflow through OpenFlow, simply go to <a class="reference external" href="http://localhost.openrpa.dk/#/RPAWorkflows">RPA Workflows page</a> (eg. <a class="reference external" href="http://localhost.openrpa.dk/#/Workflows">http://localhost.openrpa.dk/#/Workflows</a>) and click Invoke, another page for the specific workflow will be opened where all the forms needed to be filled are going to be presented. Simply fill them and click Invoke again. The input data is then sent to the chosen robot/agent and it will start processing the workflow.</p>
+<div><p>To invoke a workflow through OpenFlow, simply go to <a class="reference external" href="http://localhost.openiap.io/#/RPAWorkflows">RPA Workflows page</a> (eg. <a class="reference external" href="http://localhost.openiap.io/#/Workflows">http://localhost.openiap.io/#/Workflows</a>) and click Invoke, another page for the specific workflow will be opened where all the forms needed to be filled are going to be presented. Simply fill them and click Invoke again. The input data is then sent to the chosen robot/agent and it will start processing the workflow.</p>
 <p>Data processing is bi-directional: input parameters are sent to a robot/agent and the workflow output will also be returned. That means that you can make many workflows calling different applications. Think of it as a message, messages are sent, read and replied to. Nothing prevents that message from being sent, read or replied to multiple times.</p>
 </div></blockquote>
 </li>
@@ -631,7 +631,7 @@ skip_history_collections=audit,jslog
 <p>For thorough information on how to use Forms, please refer to <a class="reference external" href="https://help.form.io/userguide/introduction/">form.io Intro</a> (<code class="docutils literal notranslate"><span class="pre">https://help.form.io/userguide/introduction/</span></code>). Most of this chapter is based on this guide.</p>
 <div class="section" id="creating-a-form">
 <h3><span class="section-number">2.8.1. </span>Creating a Form<a class="headerlink" href="#creating-a-form" title="Permalink to this headline">¶</a></h3>
-<p>Creating a form is rather easy and simple. Go to the Forms page, where all Forms are listed, available under the Admin dropdown or in the <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">Forms page</a> (eg. <a class="reference external" href="http://localhost.openrpa.dk/#/Forms">http://localhost.openrpa.dk/#/Forms</a>) and click the Navy blue <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">form</span></code> button.</p>
+<p>Creating a form is rather easy and simple. Go to the Forms page, where all Forms are listed, available under the Admin dropdown or in the <a class="reference external" href="http://localhost.openiap.io/#/Forms">Forms page</a> (eg. <a class="reference external" href="http://localhost.openiap.io/#/Forms">http://localhost.openiap.io/#/Forms</a>) and click the Navy blue <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">form</span></code> button.</p>
 <div class="figure align-center" id="id19">
 <img alt="images/openflow_forms_page.png" src="images/openflow_forms_page.png" />
 <p class="caption"><span class="caption-text"><strong>OpenFlow’s Forms page.</strong></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>

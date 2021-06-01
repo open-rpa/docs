@@ -1,7 +1,7 @@
 *****************************
  **About this Documentation**
 *****************************
-This documentation is an effort of `BPA Technologies <https://bpatechnologies.com/>`_ (``https://bpatechnologies.com/``) , a RPA company based in São Paulo, it is currently being mantained by the former. Thanks to **Allan Zimmermann**, creator, mantainer and founder of `**OpenRPA** <http://openrpa.dk>`_  (``http://openrpa.dk``), and his cooperation in providing the necessary resources we were able to make this manual happen. We'd also like to thank **Thiago Pestitschek** for his cheerful and promising ideas for the documentation as well as assisting in proof-reading and writing this manual and **Paulo Veras** for helping to write and mantain this documentation.
+This documentation is an effort of `BPA Technologies <https://bpatechnologies.com/>`_ (``https://bpatechnologies.com/``) , a RPA company based in São Paulo, it is currently being mantained by the former. Thanks to **Allan Zimmermann**, creator, mantainer and founder of `**OpenRPA** <http://openiap.io>`_  (``http://openiap.io``), and his cooperation in providing the necessary resources we were able to make this manual happen. We'd also like to thank **Thiago Pestitschek** for his cheerful and promising ideas for the documentation as well as assisting in proof-reading and writing this manual and **Paulo Veras** for helping to write and mantain this documentation.
 
 Here the reader will find useful information on how to use OpenRPA, OpenFlow and Node-RED in order to develop useful RPA workflows which accomplish the execution of business processes. Although not strictly needed, the user should have some previous experience with RPA concepts and usage.
 
