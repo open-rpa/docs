@@ -17,23 +17,23 @@
   
 
   
-  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-        <script src="static/jquery.js"></script>
-        <script src="static/underscore.js"></script>
-        <script src="static/doctools.js"></script>
-        <script src="static/language_data.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
-    <script type="text/javascript" src="static/js/theme.js"></script>
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
 
   
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="static/styles.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/styles.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
 </head>
@@ -167,18 +167,18 @@
 </div>
 <p>Once there, look for the NodeRED tab on the upper menu and click it. Then, proceed by clicking the button <code class="docutils literal notranslate"><span class="pre">Created</span> <span class="pre">NodeRED</span></code>.</p>
 <div class="figure align-center">
-<img alt="images/nodered_create_nodered_instance.png" src="images/nodered_create_nodered_instance.png" />
+<img alt="_images/nodered_create_nodered_instance.png" src="_images/nodered_create_nodered_instance.png" />
 </div>
 <p>If everything goes right, a similar output as from the next image will be shown. Your demo enviroment is ready to use and is accessible at <code class="docutils literal notranslate"><span class="pre">https://{YOUR-OPENFLOW-USERNAME}.app.openiap.io/</span></code>. In the image example next, the username was <code class="docutils literal notranslate"><span class="pre">doc-johnny</span></code>.</p>
 <div class="figure align-center">
-<img alt="images/nodered_create_nodered_instance_success.png" src="images/nodered_create_nodered_instance_success.png" />
+<img alt="_images/nodered_create_nodered_instance_success.png" src="_images/nodered_create_nodered_instance_success.png" />
 </div>
 </div>
 <div class="section" id="logging-in-to-node-red">
 <h3>Logging in to Node-RED<a class="headerlink" href="#logging-in-to-node-red" title="Permalink to this headline">¶</a></h3>
 <p>Access the desired <strong>Node-RED</strong> URL. Once there, a button is shown with the text <code class="docutils literal notranslate"><span class="pre">Sign</span> <span class="pre">in</span> <span class="pre">with</span> <span class="pre">SAML</span></code>. When you click the button, Node-RED attempts to gather your currently (or cached) logged in <strong>OpenFlow</strong> authentication data and then logs in, to <strong>Node-RED</strong>, with the same user.</p>
 <div class="figure align-center" id="id1">
-<img alt="images/nodered_sign_in_page.png" src="images/nodered_sign_in_page.png" />
+<img alt="_images/nodered_sign_in_page.png" src="_images/nodered_sign_in_page.png" />
 <p class="caption"><span class="caption-text">Node-RED Sign In page.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -186,12 +186,24 @@
 <div class="section" id="quickstart-running-openflow-node-red-using-npm">
 <h2>Quickstart Running OpenFlow Node-RED using NPM<a class="headerlink" href="#quickstart-running-openflow-node-red-using-npm" title="Permalink to this headline">¶</a></h2>
 <p>Here the users will learn how to set up a local Node-RED instance using <code class="docutils literal notranslate"><span class="pre">npm</span></code>. It is useful to remind the users that this section assumes you have already done the steps in the <a class="reference internal" href="openflow.html#quickstart-running-openflow-using-npm"><span class="std std-ref">Quickstart Running OpenFlow using NPM</span></a> section.</p>
+<p>This require you to have openflow installed somewhere, or you can use our public openflow at [app.openiap.io](<a class="reference external" href="https://app.openiap.io">https://app.openiap.io</a>) (noderedremote.env)</p>
+<p>Create a user for the nodered in openflow, you will need the username and password for this user in the last step</p>
 <p>If on Windows 10, the users must run the following command from a command prompt with escalated privileges (“Run as administrator”) in Windows 10.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">i</span> <span class="n">openflow-nodered</span> <span class="n">-g</span>
+<p>First make sure we have NodeJS installed</p>
+<p>Then install openflow-nodered command line</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">i</span> <span class="nv">@openiap</span><span class="p">/</span><span class="n">nodered</span> <span class="n">-g</span>
 </pre></div>
 </div>
-<p>If using any Linux distribution, the users must execute the following command.</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">npm</span> <span class="n">i</span> <span class="n">openflow-nodered</span> <span class="n">-g</span>
+<p>Go to the folder where you want to keep your config files,</p>
+<p>install pm2 as a global package, and then install [pm2-windows-service](<a class="reference external" href="https://www.npmjs.com/package/pm2-windows-service">https://www.npmjs.com/package/pm2-windows-service</a>)
+<strong>Important</strong>: Say no to startup scripts PM2_SERVICE_SCRIPTS</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">i</span> <span class="n">-g</span> <span class="n">pm2</span>
+<span class="n">npm</span> <span class="n">i</span> <span class="n">-g</span> <span class="n">pm2-windows-service</span>
+<span class="n">pm2-service-install</span>
+<span class="c"># Perform environment setup: answer yes</span>
+<span class="c"># Set PM2_HOME: answer yes and the type the path to the folder you intent on saving the openflow/nodered config files into ( like c:\openflow )</span>
+<span class="c"># PM2_SERVICE_SCRIPTS: answer no</span>
+<span class="c"># PM2_SERVICE_PM2_DIR: answer yes, and then accept the default path</span>
 </pre></div>
 </div>
 <p>Then the users must create a template configuration file by executing the command:</p>
@@ -206,11 +218,7 @@
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">openflow-nodered-cli</span> <span class="p">-</span><span class="n">-install</span> <span class="n">noderedlocal</span>
 </pre></div>
 </div>
-<p>If using any Linux distribution, run the following command:</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">openflow-nodered-cli</span> <span class="p">-</span><span class="n">-install</span> <span class="n">noderedlocal</span>
-</pre></div>
-</div>
-<p>This will prompt for a pre-created username and password, and then install a local service with the name <code class="docutils literal notranslate"><span class="pre">noderedlocal</span></code> and start it.</p>
+<p>This will prompt for the pre-created username and password, and then install a local service with the name <code class="docutils literal notranslate"><span class="pre">noderedlocal</span></code> and start it.</p>
 <p>Finally, users can open a browser and visit localhost.openrpa.dk:1880 to check that the service is running and log in with their OpenFlow credentials.</p>
 </div>
 <div class="section" id="installing-remote-node-red-service">
@@ -218,10 +226,6 @@
 <p>First, properly set the configuration file available at the newly generated <code class="docutils literal notranslate"><span class="pre">noderedremote.env</span></code> file by setting the <code class="docutils literal notranslate"><span class="pre">logpath</span></code> to the folder which you want to log Node-RED’s execution logfiles.</p>
 <p>If using Windows 10, run the following command after having properly set your configuration file (<code class="docutils literal notranslate"><span class="pre">noderedremote.env</span></code>):</p>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">openflow-nodered-cli</span> <span class="p">-</span><span class="n">-install</span> <span class="n">noderedremote</span>
-</pre></div>
-</div>
-<p>If using any Linux distribution, run the following command:</p>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">openflow-nodered-cli</span> <span class="p">-</span><span class="n">-install</span> <span class="n">noderedremote</span>
 </pre></div>
 </div>
 <p>This will prompt for a pre-created username and password, and then install a local service with the name <code class="docutils literal notranslate"><span class="pre">noderedremote</span></code> and start it.</p>
