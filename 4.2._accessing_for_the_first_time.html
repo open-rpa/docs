@@ -229,99 +229,10 @@
                   <h2>Quickstart Running OpenFlow Node-RED using NPM<a class="headerlink"
                       href="#quickstart-running-openflow-node-red-using-npm" title="Permalink to this headline">¶</a>
                   </h2>
-                  <p>Here the users will learn how to set up a local Node-RED instance using <code
-                      class="docutils literal notranslate"><span class="pre">npm</span></code>. It is useful to remind
-                    the users that this section assumes you have already done the steps in the <a
-                      class="reference internal" href="openflow.html#quickstart-running-openflow-using-npm"><span
-                        class="std std-ref">Quickstart Running OpenFlow using NPM</span></a> section.</p>
-                  <p>This require you to have openflow installed somewhere, or you can use our public openflow at
-                    [app.openiap.io](<a class="reference external"
-                      href="https://app.openiap.io">https://app.openiap.io</a>) (noderedremote.env)</p>
-                  <p>Create a user for the nodered in openflow, you will need the username and password for this user in
-                    the last step</p>
-                  <p>If on Windows 10, the users must run the following command from a command prompt with escalated
-                    privileges (“Run as administrator”) in Windows 10.</p>
-                  <p>First make sure we have NodeJS installed</p>
-                  <p>Then install openflow-nodered command line</p>
-                  <div class="highlight-powershell notranslate">
-                    <div class="highlight">
-                      <pre><span></span><span class="n">npm</span> <span class="n">i</span> <span class="nv">@openiap</span><span class="p">/</span><span class="n">nodered</span> <span class="n">-g</span>
-</pre>
-                    </div>
-                  </div>
-                  <p>Go to the folder where you want to keep your config files,</p>
-                  <p>install pm2 as a global package, and then install [pm2-windows-service](<a
-                      class="reference external"
-                      href="https://www.npmjs.com/package/pm2-windows-service">https://www.npmjs.com/package/pm2-windows-service</a>)
-                    <strong>Important</strong>: Say no to startup scripts PM2_SERVICE_SCRIPTS
-                  </p>
-                  <div class="highlight-powershell notranslate">
-                    <div class="highlight">
-                      <pre><span></span><span class="n">npm</span> <span class="n">i</span> <span class="n">-g</span> <span class="n">pm2</span>
-<span class="n">npm</span> <span class="n">i</span> <span class="n">-g</span> <span class="n">pm2-windows-service</span>
-<span class="n">pm2-service-install</span>
-<span class="c"># Perform environment setup: answer yes</span>
-<span class="c"># Set PM2_HOME: answer yes and the type the path to the folder you intent on saving the openflow/nodered config files into ( like c:\openflow )</span>
-<span class="c"># PM2_SERVICE_SCRIPTS: answer no</span>
-<span class="c"># PM2_SERVICE_PM2_DIR: answer yes, and then accept the default path</span>
-</pre>
-                    </div>
-                  </div>
-                  <p>Then the users must create a template configuration file by executing the command:</p>
-                  <div class="highlight-powershell notranslate">
-                    <div class="highlight">
-                      <pre><span></span><span class="n">openflow-nodered-cli</span> <span class="p">-</span><span class="n">-init</span>
-</pre>
-                    </div>
-                  </div>
-                  <p>This will create 2 environment files with an example of how to connect to a locally installed
-                    OpenFlow or how to run a remote instance connected to the <a class="reference external"
-                      href="https://app.openiap.io">Demo OpenIAP OpenFlow Environment</a> (<code
-                      class="docutils literal notranslate"><span class="pre">https://app.openiap.io</span></code>). Both
-                    methods are presented below.</p>
-                  <div class="section" id="installing-local-node-red-service">
-                    <h3>Installing Local Node-RED Service<a class="headerlink" href="#installing-local-node-red-service"
-                        title="Permalink to this headline">¶</a></h3>
-                    <p>First, properly set the configuration file available at the newly generated <code
-                        class="docutils literal notranslate"><span class="pre">noderedlocal.env</span></code> file by
-                      setting the <code class="docutils literal notranslate"><span class="pre">logpath</span></code> to
-                      the folder which you want to log Node-RED’s execution logfiles.</p>
-                    <p>If using Windows 10, run the following command after having properly set your configuration file
-                      (<code class="docutils literal notranslate"><span class="pre">noderedlocal.env</span></code>):</p>
-                    <div class="highlight-powershell notranslate">
-                      <div class="highlight">
-                        <pre><span></span><span class="n">openflow-nodered-cli</span> <span class="p">-</span><span class="n">-install</span> <span class="n">noderedlocal</span>
-</pre>
-                      </div>
-                    </div>
-                    <p>This will prompt for the pre-created username and password, and then install a local service with
-                      the name <code class="docutils literal notranslate"><span class="pre">noderedlocal</span></code>
-                      and start it.</p>
-                    <p>Finally, users can open a browser and visit localhost.openiap.io:1880 to check that the service
-                      is running and log in with their OpenFlow credentials.</p>
-                  </div>
-                  <div class="section" id="installing-remote-node-red-service">
-                    <h3>Installing Remote Node-RED Service<a class="headerlink"
-                        href="#installing-remote-node-red-service" title="Permalink to this headline">¶</a></h3>
-                    <p>First, properly set the configuration file available at the newly generated <code
-                        class="docutils literal notranslate"><span class="pre">noderedremote.env</span></code> file by
-                      setting the <code class="docutils literal notranslate"><span class="pre">logpath</span></code> to
-                      the folder which you want to log Node-RED’s execution logfiles.</p>
-                    <p>If using Windows 10, run the following command after having properly set your configuration file
-                      (<code class="docutils literal notranslate"><span class="pre">noderedremote.env</span></code>):
-                    </p>
-                    <div class="highlight-powershell notranslate">
-                      <div class="highlight">
-                        <pre><span></span><span class="n">openflow-nodered-cli</span> <span class="p">-</span><span class="n">-install</span> <span class="n">noderedremote</span>
-</pre>
-                      </div>
-                    </div>
-                    <p>This will prompt for a pre-created username and password, and then install a local service with
-                      the name <code class="docutils literal notranslate"><span class="pre">noderedremote</span></code>
-                      and start it.</p>
-                    <p>Finally, users can open a browser and visit localhost.openiap.io:1880 to check that the service
-                      is running and log in with their OpenFlow credentials.</p>
-                  </div>
+                  <p>Please use guide provided at <a class="reference external"
+                      href="https://openflow.openiap.io">Install guides</a>
+                    Using docker is the preferred and recommended way <a class="reference external"
+                      href="https://openflow.openiap.io/dockercompose">Install using docker</a></p>
                 </div>
               </div>
 
