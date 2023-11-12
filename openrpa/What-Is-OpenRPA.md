@@ -3,6 +3,7 @@ layout: default
 title: What Is OpenRPA
 parent: Home
 nav_order: 6
+has_children: true
 ---
 Here is a short description of different parts of the robot
 
