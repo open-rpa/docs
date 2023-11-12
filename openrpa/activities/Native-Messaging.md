@@ -1,4 +1,9 @@
-{% include _layout.md %}
+---
+layout: default
+title: Native Messaging
+parent: OpenRPA Activities
+nav_order: 2
+---
 # Get tab
 ![Get Tab](Get-Tab.png)
 

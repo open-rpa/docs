@@ -1,4 +1,9 @@
-{% include _layout.md %}
+---
+layout: default
+title: Basic Activities
+parent: OpenRPA Activities
+nav_order: 1
+---
 # Continue
 ![Continue](Continue.png)
 

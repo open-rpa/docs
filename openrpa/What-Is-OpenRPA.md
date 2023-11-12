@@ -1,4 +1,9 @@
-{% include _layout.md %}
+---
+layout: default
+title: What Is OpenRPA
+parent: Home
+nav_order: 6
+---
 Here is a short description of different parts of the robot
 
 Working with [Workitems](https://github.com/open-rpa/openrpa/wiki/Workitems)
