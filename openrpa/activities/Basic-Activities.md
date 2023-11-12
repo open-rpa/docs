@@ -2,6 +2,7 @@
 layout: default
 title: Basic Activities
 parent: OpenRPA Activities
+has_children: true
 nav_order: 1
 ---
 # Continue

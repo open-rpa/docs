@@ -1,4 +1,9 @@
-{% include _layout.md %}
+---
+layout: default
+title: Building from source
+parent: What Is OpenRPA
+nav_order: 3
+---
 First create a Fork of the source code ( if you intend to modify it in any way )
 Then clone the repository you created ( you need git installed, for windows you can get that [here](https://git-scm.com/download/win) )
 ```
