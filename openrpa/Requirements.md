@@ -1,3 +1,4 @@
+{% include _layout.md %}
 The HD robot solution, if using FreeRDP requires [2013 C++ Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=40784) to be installed.
 
 A "base robot" will use between 200 and 350 mb RAM depending on the amount of workflows, detectors etc. your current user has access too.

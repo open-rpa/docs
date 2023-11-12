@@ -1,3 +1,4 @@
+{% include _layout.md %}
 SAP recording is in beta, and only tested on version 7500.2.4.1141 of the sap client with the default theme.
 
 Child Sessions have issues under certain types of VDI

@@ -1,3 +1,4 @@
+{% include _layout.md %}
 # Continue
 ![Continue](Continue.png)
 

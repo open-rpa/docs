@@ -1,3 +1,4 @@
+{% include _layout.md %}
 # Get tab
 ![Get Tab](Get-Tab.png)
 
