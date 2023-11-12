@@ -1,5 +1,7 @@
-{% include _layout.md %}
-
+---
+title: Home
+layout: home
+---
 **OpenIAP Flow** is a versatile framework designed to simplify the creation, deployment, and management of distributed code. At its core, OpenIAP Flow excels in orchestrating a variety of agents and workflows. Let's explore some of its standout features:
 
 - **Managing, invoking, and configuring your robots and workflows**: Seamlessly control and customize your automation processes.
