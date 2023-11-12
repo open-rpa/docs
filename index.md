@@ -1,5 +1,5 @@
 ---
-title: Home
+title: OpenIAP Documentation
 layout: home
 has_children: true
 ---

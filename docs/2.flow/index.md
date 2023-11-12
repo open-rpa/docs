@@ -1,7 +1,6 @@
 ---
 layout: default
 title: What Is OpenIAP Flow
-parent: Home
 nav_order: 2
 has_children: true
 ---

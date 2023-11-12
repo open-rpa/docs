@@ -1,7 +1,6 @@
 ---
 layout: default
 title: What Is OpenRPA
-parent: Home
 nav_order: 6
 has_children: true
 ---
