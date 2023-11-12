@@ -2,7 +2,6 @@
 title: OpenIAP Documentation
 layout: home
 nav_order: 1
-nav_exclude: true
 ---
 **OpenIAP Flow** is a versatile framework designed to simplify the creation, deployment, and management of distributed code. At its core, OpenIAP Flow excels in orchestrating a variety of agents and workflows. Let's explore some of its standout features:
 
