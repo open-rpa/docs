@@ -8,6 +8,7 @@ search_enabled: true
 aux_links:
   Home: https://docs.openiap.io
   Login: https://app.openiap.io
+  Premium: https://openiap.io
 
 
 # Footer "Edit this page on GitHub" link text
