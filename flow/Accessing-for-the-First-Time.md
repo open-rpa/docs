@@ -1,3 +1,10 @@
+---
+layout: default
+title: Accessing for the First Time
+parent: Home
+nav_order: 1
+---
+
 ## Getting Started
 
 To begin, navigate to [OpenFlow](https://app.openiap.io), where you'll encounter a login page like this:
