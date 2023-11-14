@@ -12,3 +12,9 @@ nav_order: 1
 - **Managing data**: Access data effortlessly through the API or web interface. Features like on-the-fly encryption, built-in version control, and a centralized backup point enhance data security and management.
 
 Isn't this exciting? With OpenFlow, streamlining and enhancing your business processes becomes a breeze!
+
+## **community help**
+Join the 🤷💻🤦 [community forum](https://discourse.openiap.io/)
+
+## **Commercial Support**
+Click here for💲🤷 [Commercial Support](https://openiap.io/)
