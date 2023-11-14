@@ -7,11 +7,11 @@ nav_order: 7
 ---
 The main idea is to make an extensible robot. By giving other developers access to easily create the functionality that is needed, hopefully the whole community can benefit (if published as open source too, you don't need to) and increase the use cases for the robot. There are currently 4 different ways you can extend the functionality of the robot
 
-## New Script Activities
+## Creating Script Activities
 
 Please go to: [script-activities](plugin-of-script-activities)
 
-## New activities
+## Creating Code Activities
 
 You can extend the toolbar in the robot to include new activities besides those that came with the robot
 
@@ -25,7 +25,7 @@ You can also find community developed general purpose activities.
 
 When you found or developed one, just place the dll inside the directory with the robot binaries, (or install the dll in the Global Assembly Cache (GAC)) and the robot will automatically load them, doing startup
 
-## New Detectors
+## Creating Detector plugin
 
 If you want the ability to activity a workflow by some external trigger, you can create a new detector. An example could be a detector that monitors an SQL server for new records and raises an event, or you could create a tool that checks for new orders in your ERP system and raises an event when that happens.
 
@@ -39,7 +39,7 @@ Create a new class and implement the IDetectorPlugin interface.
 - Stop gets called when you need to stop monitoring/sending events
 - editor must return a WPF UserControl where you can define how users can configure your detector. Please implement INotifyPropertyChanged on this user control, since the robot uses this to detect changes that needs to be saved.
 
-## Recording plugin
+## Creating Recorder plugin
 
 When the robot starts, it will create an instance of all the classes it can find that implements IRecordingPlugin. When the user clicks Record, every time he/she does a mouse click the robot first finds the AutomationElement that was clicked, it then create an GetElement activity and a WindowsSelector for locating this Element. Next it loop though all the recording plugins and call parseUserAction with the information. Each addon can then "claim" the event and decide to use its own activities and selectors for getting the element. How you decided if an element is yours is up to you, but a common pattern would be to check the name of the process or check the ClassName.
 

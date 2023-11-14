@@ -5,6 +5,18 @@ description: Overview of debugging tools
 parent: What Is OpenRPA
 nav_order: 5
 ---
+
+## Relevant video
+
+For troubleshooting tips for selectors
+
+[![For troubleshooting tips](https://img.youtube.com/vi/JCBeeJPzppA/0.jpg)](https://www.youtube.com/watch?v=JCBeeJPzppA)  
+
+Collecting console output from OpenRPA
+
+[![For troubleshooting tips](https://img.youtube.com/vi/Of_X_k4h3hY/0.jpg)](https://www.youtube.com/watch?v=Of_X_k4h3hY)  
+
+
 ## WriteLine
 
 A common way of debugging is printing out the content of different variable with information about where in the workflow this happened

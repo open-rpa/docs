@@ -9,7 +9,7 @@ nav_order: 3
 
 For troubleshooting tips for selectors
 
-[![For troubleshooting tips](https://img.youtube.com/vi/HB-uHepC3xE/0.jpg)](https://www.youtube.com/watch?v=HB-uHepC3xE)  
+[![For troubleshooting tips](https://img.youtube.com/vi/JCBeeJPzppA/0.jpg)](https://www.youtube.com/watch?v=JCBeeJPzppA)  
 
 Recording with Image recognition
 
