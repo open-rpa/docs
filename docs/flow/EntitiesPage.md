@@ -32,7 +32,8 @@ This collection contains data on all authentication and orchestration actions at
 config
 ------
 Contains all configuration objects releated to openflow.
-This includes [Federation Providers](FederationProviders), [Client Authentication Providers](ClientAuthPage)
+This includes, but is not limited to [Federation Providers](FederationProviders), [Client Authentication Providers](ClientAuthPage) and 
+[Resource Broker](ResourcePage) and the [Base Configuration](ConfigurationValues)
 
 openrpa
 -------
