@@ -2,7 +2,7 @@
 layout: default
 title: Architecture
 parent: What Is OpenIAP Flow
-nav_order: 2
+nav_order: 5
 ---
 ## Architecture
 
