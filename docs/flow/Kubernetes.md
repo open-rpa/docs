@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Details about network protocol
-parent: Add Sign in Providers
+parent: What Is OpenIAP Flow
 nav_order: 10
 ---
 # Kubernetes

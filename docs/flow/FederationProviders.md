@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Requirements
-parent: Add Sign in Providers
+title: Manage Sign in Providers
+parent: What Is OpenIAP Flow
 nav_order: 8
 ---
 # Providers
