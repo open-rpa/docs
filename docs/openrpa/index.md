@@ -4,32 +4,17 @@ title: What Is OpenRPA
 nav_order: 6
 has_children: true
 ---
-Here is a short description of different parts of the robot
 
-Working with [Workitems](https://github.com/open-rpa/openrpa/wiki/Workitems)
+# What is RPA?
+RPA or Robotic Process Automation are software base solutions designed to mimic the same "manual" path taken through applications by an end user. It is typically used to automate repetitive tasks previously performed by a humans as an effective way to cut costs, eliminate keying errors, speed up processes and easily link applications together. These tasks can be successfully modeled and converted into a business process and then automated using a combination of (UI) interactions, connectors to client servers, mainframes, database, web, and others.
 
-[Recording](https://openrpa.openrpa.dk/pages/recording) with the robot
+# OpenRPA
+This tool is basically the main environment where the processes are mapped and designed to fulfill the inherent task at question. Think of it as an `IDE - Integrated Development Environment` for creating workflows. It is where all previously mapped activities will be implemented - such as clicking a message on a mailbox, typing content into an input form.
 
-Basic [debugging](https://openrpa.openrpa.dk/pages/debugging) in robot workflows
+# LowCode
+Low code concept means there is no technical or programing knowledge required to perform a desired task, i.e. you can simply just drag a box and input a few parameters for it to become fully functional.
 
-Working with the [selector window](https://openrpa.openrpa.dk/pages/selector-window)
+The term `low code` refers to platforms that resort mainly to GUI-focused interfaces which assist users in the development of a BPM without necessarily requiring basic programming knowledge. These applications use heavy visual modeling in favor of coding to aid in the process of designing and implementing processes.
 
-Demystifying the [type text activity](https://openrpa.openrpa.dk/pages/typetext-syntax) syntax 
-
-All most complete list of [basic activities](https://openrpa.openrpa.dk/pages/activities) in [Japanese](https://openrpa.openrpa.dk/pages/activities.jp) (thank you Hammock Corporation)
-
-Working with [detectors](https://openrpa.openrpa.dk/pages/detectors)
-
-How to connect the robot with [Chrome and Firefox](https://openrpa.openrpa.dk/pages/nativemessaging)
-
-The basics behind the [plugin model](https://openrpa.openrpa.dk/pages/plugin-model) used by the robot
-
-
-Configure the robot to work ["offline"](https://openrpa.openrpa.dk/pages/offline) by not being connected to an OpenFlow instance.
-
-[Known-Issues](https://github.com/open-rpa/openrpa/wiki/Known-Issues)
-
-[Requirements](https://github.com/open-rpa/openrpa/wiki/Requirements)
-
-[Building from source](https://github.com/open-rpa/openrpa/wiki/Building-from-source-notes)
+Low code development platforms have a very gentle learning curve and are often designed with UX-oriented practices in mind. It is a fact that it also helps the user to advance rapidly and design and deploy working processes with few caveats.
 
