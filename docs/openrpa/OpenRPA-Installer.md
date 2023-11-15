@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Building from source
+title: Installing OpenRPA
+description: Go though the installation steps and settings
 parent: What Is OpenRPA
 ---
 # Installing, First Run
