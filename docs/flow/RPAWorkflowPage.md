@@ -25,7 +25,7 @@ Invoking
 
 - **Invoking through OpenFlow's RPA Workflows Page**
 
-  To invoke a workflow through OpenFlow, simply go to [RPA Workflows page](https://demo.openiap.io/#/RPAWorkflows) and click Invoke. Another page for the specific workflow will be opened, where all the forms needed to be filled are going to be presented. Simply fill them and click Invoke again. The input data is then sent to the chosen robot/agent, and it will start processing the workflow.
+  To invoke a workflow through OpenFlow, simply go to [RPA Workflows page](https://app.openiap.io/#/RPAWorkflows) and click Invoke. Another page for the specific workflow will be opened, where all the forms needed to be filled are going to be presented. Simply fill them and click Invoke again. The input data is then sent to the chosen robot/agent, and it will start processing the workflow.
 
   Data processing is bi-directional: input parameters are sent to a robot/agent, and the workflow output will also be returned. That means that you can make many workflows calling different applications. Think of it as a message; messages are sent, read, and replied to. Nothing prevents that message from being sent, read, or replied to multiple times.
 

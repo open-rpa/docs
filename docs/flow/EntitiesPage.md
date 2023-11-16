@@ -59,7 +59,7 @@ This collection contains all queues created from Node-RED's `workflow in` nodes.
 
 workflow_instances
 ------------------
-Here lie all instances of workflows invoked through the [Workflows page](http://demo.openiap.io/#/Workflows) (`http://demo.openiap.io/#/Workflows`).
+Here lie all instances of workflows invoked through the [Workflows page](http://app.openiap.io/#/Workflows) (`http://app.openiap.io/#/Workflows`).
 
 forms
 -----
