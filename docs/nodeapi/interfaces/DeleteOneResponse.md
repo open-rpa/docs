@@ -1,6 +1,7 @@
 ---
 layout: page
 title: DeleteOneResponse
+nav_exclude: true
 parent: NodeJS Api
 ---
 [@openiap/nodeapi](../README.html) / [Exports](../modules.html) / DeleteOneResponse

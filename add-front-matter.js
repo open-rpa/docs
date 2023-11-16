@@ -25,14 +25,26 @@ has_children: true
             }
         } else if (fullPath.endsWith('.md') && path.basename(fullPath) !== 'README.md') {
             const content = fs.readFileSync(fullPath, 'utf8');
-            const frontMatter = `---
+            const frontMatterExclude = `---
+layout: page
+title: ${path.basename(fullPath, '.md')}
+nav_exclude: true
+parent: NodeJS Api
+---
+`;
+const frontMatter = `---
 layout: page
 title: ${path.basename(fullPath, '.md')}
 parent: NodeJS Api
 ---
 `;
+
             if(!content.startsWith('---')) {
-                fs.writeFileSync(fullPath, frontMatter + content.replace(/\.md/g, ".html"));
+                if(fullPath.indexOf('interfaces') > -1) {
+                    fs.writeFileSync(fullPath, frontMatterExclude + content.replace(/\.md/g, ".html"));
+                } else {
+                    fs.writeFileSync(fullPath, frontMatter + content.replace(/\.md/g, ".html"));
+                }
             } else {
                 fs.writeFileSync(fullPath, content.replace(/\.md/g, ".html"));
             }
