@@ -3,7 +3,7 @@ layout: page
 title: WorkItemQueue
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / WorkItemQueue
+[@openiap/nodeapi](../README) / [Exports](../modules) / WorkItemQueue
 
 # Interface: WorkItemQueue
 
@@ -11,29 +11,29 @@ parent: NodeJS Api
 
 ### Properties
 
-- [\_acl](WorkItemQueue.html##_acl)
-- [\_created](WorkItemQueue.html##_created)
-- [\_createdby](WorkItemQueue.html##_createdby)
-- [\_createdbyid](WorkItemQueue.html##_createdbyid)
-- [\_id](WorkItemQueue.html##_id)
-- [\_modified](WorkItemQueue.html##_modified)
-- [\_modifiedby](WorkItemQueue.html##_modifiedby)
-- [\_modifiedbyid](WorkItemQueue.html##_modifiedbyid)
-- [\_version](WorkItemQueue.html##_version)
-- [amqpqueue](WorkItemQueue.html##amqpqueue)
-- [failed\_wiq](WorkItemQueue.html##failed_wiq)
-- [failed\_wiqid](WorkItemQueue.html##failed_wiqid)
-- [initialdelay](WorkItemQueue.html##initialdelay)
-- [maxretries](WorkItemQueue.html##maxretries)
-- [name](WorkItemQueue.html##name)
-- [packageid](WorkItemQueue.html##packageid)
-- [projectid](WorkItemQueue.html##projectid)
-- [retrydelay](WorkItemQueue.html##retrydelay)
-- [robotqueue](WorkItemQueue.html##robotqueue)
-- [success\_wiq](WorkItemQueue.html##success_wiq)
-- [success\_wiqid](WorkItemQueue.html##success_wiqid)
-- [usersrole](WorkItemQueue.html##usersrole)
-- [workflowid](WorkItemQueue.html##workflowid)
+- [\_acl](WorkItemQueue#_acl)
+- [\_created](WorkItemQueue#_created)
+- [\_createdby](WorkItemQueue#_createdby)
+- [\_createdbyid](WorkItemQueue#_createdbyid)
+- [\_id](WorkItemQueue#_id)
+- [\_modified](WorkItemQueue#_modified)
+- [\_modifiedby](WorkItemQueue#_modifiedby)
+- [\_modifiedbyid](WorkItemQueue#_modifiedbyid)
+- [\_version](WorkItemQueue#_version)
+- [amqpqueue](WorkItemQueue#amqpqueue)
+- [failed\_wiq](WorkItemQueue#failed_wiq)
+- [failed\_wiqid](WorkItemQueue#failed_wiqid)
+- [initialdelay](WorkItemQueue#initialdelay)
+- [maxretries](WorkItemQueue#maxretries)
+- [name](WorkItemQueue#name)
+- [packageid](WorkItemQueue#packageid)
+- [projectid](WorkItemQueue#projectid)
+- [retrydelay](WorkItemQueue#retrydelay)
+- [robotqueue](WorkItemQueue#robotqueue)
+- [success\_wiq](WorkItemQueue#success_wiq)
+- [success\_wiqid](WorkItemQueue#success_wiqid)
+- [usersrole](WorkItemQueue#usersrole)
+- [workflowid](WorkItemQueue#workflowid)
 
 ## Properties
 

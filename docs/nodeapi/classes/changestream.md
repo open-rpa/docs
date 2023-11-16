@@ -3,7 +3,7 @@ layout: page
 title: changestream
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / changestream
+[@openiap/nodeapi](../README) / [Exports](../modules) / changestream
 
 # Class: changestream
 
@@ -11,15 +11,15 @@ parent: NodeJS Api
 
 ### Constructors
 
-- [constructor](changestream.html##constructor)
+- [constructor](changestream#constructor)
 
 ### Properties
 
-- [aggregates](changestream.html##aggregates)
-- [callback](changestream.html##callback)
-- [collectionname](changestream.html##collectionname)
-- [id](changestream.html##id)
-- [stream](changestream.html##stream)
+- [aggregates](changestream#aggregates)
+- [callback](changestream#callback)
+- [collectionname](changestream#collectionname)
+- [id](changestream#id)
+- [stream](changestream#stream)
 
 ## Constructors
 

@@ -3,7 +3,7 @@ layout: page
 title: WatchRequest
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / WatchRequest
+[@openiap/nodeapi](../README) / [Exports](../modules) / WatchRequest
 
 # Interface: WatchRequest
 
@@ -11,8 +11,8 @@ parent: NodeJS Api
 
 ### Properties
 
-- [collectionname](WatchRequest.html##collectionname)
-- [paths](WatchRequest.html##paths)
+- [collectionname](WatchRequest#collectionname)
+- [paths](WatchRequest#paths)
 
 ## Properties
 

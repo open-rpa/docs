@@ -3,7 +3,7 @@ layout: page
 title: DeleteManyRequest
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / DeleteManyRequest
+[@openiap/nodeapi](../README) / [Exports](../modules) / DeleteManyRequest
 
 # Interface: DeleteManyRequest
 
@@ -11,10 +11,10 @@ parent: NodeJS Api
 
 ### Properties
 
-- [collectionname](DeleteManyRequest.html##collectionname)
-- [ids](DeleteManyRequest.html##ids)
-- [query](DeleteManyRequest.html##query)
-- [recursive](DeleteManyRequest.html##recursive)
+- [collectionname](DeleteManyRequest#collectionname)
+- [ids](DeleteManyRequest#ids)
+- [query](DeleteManyRequest#query)
+- [recursive](DeleteManyRequest#recursive)
 
 ## Properties
 

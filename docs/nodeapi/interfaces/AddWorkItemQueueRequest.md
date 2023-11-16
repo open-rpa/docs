@@ -3,7 +3,7 @@ layout: page
 title: AddWorkItemQueueRequest
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / AddWorkItemQueueRequest
+[@openiap/nodeapi](../README) / [Exports](../modules) / AddWorkItemQueueRequest
 
 # Interface: AddWorkItemQueueRequest
 
@@ -11,8 +11,8 @@ parent: NodeJS Api
 
 ### Properties
 
-- [skiprole](AddWorkItemQueueRequest.html##skiprole)
-- [workitemqueue](AddWorkItemQueueRequest.html##workitemqueue)
+- [skiprole](AddWorkItemQueueRequest#skiprole)
+- [workitemqueue](AddWorkItemQueueRequest#workitemqueue)
 
 ## Properties
 
@@ -28,7 +28,7 @@ ___
 
 ### workitemqueue
 
-• **workitemqueue**: [`WorkItemQueue`](../modules.html##workitemqueue)
+• **workitemqueue**: [`WorkItemQueue`](../modules#workitemqueue)
 
 #### Defined in
 

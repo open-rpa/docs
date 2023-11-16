@@ -3,7 +3,7 @@ layout: page
 title: QueueEvent
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / QueueEvent
+[@openiap/nodeapi](../README) / [Exports](../modules) / QueueEvent
 
 # Interface: QueueEvent
 
@@ -11,12 +11,12 @@ parent: NodeJS Api
 
 ### Properties
 
-- [correlationId](QueueEvent.html##correlationid)
-- [data](QueueEvent.html##data)
-- [exchangename](QueueEvent.html##exchangename)
-- [queuename](QueueEvent.html##queuename)
-- [replyto](QueueEvent.html##replyto)
-- [routingkey](QueueEvent.html##routingkey)
+- [correlationId](QueueEvent#correlationid)
+- [data](QueueEvent#data)
+- [exchangename](QueueEvent#exchangename)
+- [queuename](QueueEvent#queuename)
+- [replyto](QueueEvent#replyto)
+- [routingkey](QueueEvent#routingkey)
 
 ## Properties
 

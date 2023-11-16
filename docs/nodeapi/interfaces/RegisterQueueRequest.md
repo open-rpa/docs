@@ -3,7 +3,7 @@ layout: page
 title: RegisterQueueRequest
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / RegisterQueueRequest
+[@openiap/nodeapi](../README) / [Exports](../modules) / RegisterQueueRequest
 
 # Interface: RegisterQueueRequest
 
@@ -11,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [queuename](RegisterQueueRequest.html##queuename)
+- [queuename](RegisterQueueRequest#queuename)
 
 ## Properties
 

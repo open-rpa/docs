@@ -3,6 +3,6 @@ layout: page
 title: EndStream
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / EndStream
+[@openiap/nodeapi](../README) / [Exports](../modules) / EndStream
 
 # Interface: EndStream

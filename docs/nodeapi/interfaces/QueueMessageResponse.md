@@ -3,7 +3,7 @@ layout: page
 title: QueueMessageResponse
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / QueueMessageResponse
+[@openiap/nodeapi](../README) / [Exports](../modules) / QueueMessageResponse
 
 # Interface: QueueMessageResponse
 
@@ -11,12 +11,12 @@ parent: NodeJS Api
 
 ### Properties
 
-- [correlationId](QueueMessageResponse.html##correlationid)
-- [data](QueueMessageResponse.html##data)
-- [exchangename](QueueMessageResponse.html##exchangename)
-- [queuename](QueueMessageResponse.html##queuename)
-- [replyto](QueueMessageResponse.html##replyto)
-- [routingkey](QueueMessageResponse.html##routingkey)
+- [correlationId](QueueMessageResponse#correlationid)
+- [data](QueueMessageResponse#data)
+- [exchangename](QueueMessageResponse#exchangename)
+- [queuename](QueueMessageResponse#queuename)
+- [replyto](QueueMessageResponse#replyto)
+- [routingkey](QueueMessageResponse#routingkey)
 
 ## Properties
 

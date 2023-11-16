@@ -3,7 +3,7 @@ layout: page
 title: InsertOrUpdateManyRequest
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / InsertOrUpdateManyRequest
+[@openiap/nodeapi](../README) / [Exports](../modules) / InsertOrUpdateManyRequest
 
 # Interface: InsertOrUpdateManyRequest
 
@@ -11,12 +11,12 @@ parent: NodeJS Api
 
 ### Properties
 
-- [collectionname](InsertOrUpdateManyRequest.html##collectionname)
-- [items](InsertOrUpdateManyRequest.html##items)
-- [j](InsertOrUpdateManyRequest.html##j)
-- [skipresults](InsertOrUpdateManyRequest.html##skipresults)
-- [uniqeness](InsertOrUpdateManyRequest.html##uniqeness)
-- [w](InsertOrUpdateManyRequest.html##w)
+- [collectionname](InsertOrUpdateManyRequest#collectionname)
+- [items](InsertOrUpdateManyRequest#items)
+- [j](InsertOrUpdateManyRequest#j)
+- [skipresults](InsertOrUpdateManyRequest#skipresults)
+- [uniqeness](InsertOrUpdateManyRequest#uniqeness)
+- [w](InsertOrUpdateManyRequest#w)
 
 ## Properties
 

@@ -3,7 +3,7 @@ layout: page
 title: Ace
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / Ace
+[@openiap/nodeapi](../README) / [Exports](../modules) / Ace
 
 # Class: Ace
 
@@ -11,27 +11,27 @@ parent: NodeJS Api
 
 ### Constructors
 
-- [constructor](Ace.html##constructor)
+- [constructor](Ace#constructor)
 
 ### Properties
 
-- [\_id](Ace.html##_id)
-- [deny](Ace.html##deny)
-- [name](Ace.html##name)
-- [rights](Ace.html##rights)
-- [ace\_right\_bits](Ace.html##ace_right_bits)
-- [full\_control](Ace.html##full_control)
+- [\_id](Ace#_id)
+- [deny](Ace#deny)
+- [name](Ace#name)
+- [rights](Ace#rights)
+- [ace\_right\_bits](Ace#ace_right_bits)
+- [full\_control](Ace#full_control)
 
 ### Methods
 
-- [\_arrayBufferToBase64](Ace.html##_arraybuffertobase64)
-- [\_base64ToArrayBuffer](Ace.html##_base64toarraybuffer)
-- [isBitSet](Ace.html##isbitset)
-- [resetfullcontrol](Ace.html##resetfullcontrol)
-- [resetnone](Ace.html##resetnone)
-- [setBit](Ace.html##setbit)
-- [toogleBit](Ace.html##tooglebit)
-- [unsetBit](Ace.html##unsetbit)
+- [\_arrayBufferToBase64](Ace#_arraybuffertobase64)
+- [\_base64ToArrayBuffer](Ace#_base64toarraybuffer)
+- [isBitSet](Ace#isbitset)
+- [resetfullcontrol](Ace#resetfullcontrol)
+- [resetnone](Ace#resetnone)
+- [setBit](Ace#setbit)
+- [toogleBit](Ace#tooglebit)
+- [unsetBit](Ace#unsetbit)
 
 ## Constructors
 
@@ -153,7 +153,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `item` | [`Ace`](Ace.html#) |
+| `item` | [`Ace`](Ace) |
 | `bit` | `number` |
 
 #### Returns
@@ -174,7 +174,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `item` | [`Ace`](Ace.html#) |
+| `item` | [`Ace`](Ace) |
 
 #### Returns
 
@@ -194,7 +194,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `item` | [`Ace`](Ace.html#) |
+| `item` | [`Ace`](Ace) |
 
 #### Returns
 
@@ -214,7 +214,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `item` | [`Ace`](Ace.html#) |
+| `item` | [`Ace`](Ace) |
 | `bit` | `number` |
 
 #### Returns
@@ -235,7 +235,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `item` | [`Ace`](Ace.html#) |
+| `item` | [`Ace`](Ace) |
 | `bit` | `number` |
 
 #### Returns
@@ -256,7 +256,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `item` | [`Ace`](Ace.html#) |
+| `item` | [`Ace`](Ace) |
 | `bit` | `number` |
 
 #### Returns

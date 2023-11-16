@@ -3,7 +3,7 @@ layout: page
 title: Rights
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / Rights
+[@openiap/nodeapi](../README) / [Exports](../modules) / Rights
 
 # Class: Rights
 
@@ -11,16 +11,16 @@ parent: NodeJS Api
 
 ### Constructors
 
-- [constructor](Rights.html##constructor)
+- [constructor](Rights#constructor)
 
 ### Properties
 
-- [create](Rights.html##create)
-- [delete](Rights.html##delete)
-- [full\_control](Rights.html##full_control)
-- [invoke](Rights.html##invoke)
-- [read](Rights.html##read)
-- [update](Rights.html##update)
+- [create](Rights#create)
+- [delete](Rights#delete)
+- [full\_control](Rights#full_control)
+- [invoke](Rights#invoke)
+- [read](Rights#read)
+- [update](Rights#update)
 
 ## Constructors
 

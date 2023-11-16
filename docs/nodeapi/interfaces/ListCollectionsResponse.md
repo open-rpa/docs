@@ -3,7 +3,7 @@ layout: page
 title: ListCollectionsResponse
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / ListCollectionsResponse
+[@openiap/nodeapi](../README) / [Exports](../modules) / ListCollectionsResponse
 
 # Interface: ListCollectionsResponse
 
@@ -11,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [results](ListCollectionsResponse.html##results)
+- [results](ListCollectionsResponse#results)
 
 ## Properties
 

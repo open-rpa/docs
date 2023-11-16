@@ -3,64 +3,64 @@ layout: page
 title: iclient
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / iclient
+[@openiap/nodeapi](../README) / [Exports](../modules) / iclient
 
 # Interface: iclient
 
 ## Implemented by
 
-- [`client`](../classes/client.html#)
+- [`client`](../classes/client)
 
 ## Table of contents
 
 ### Properties
 
-- [agent](iclient.html##agent)
-- [call](iclient.html##call)
-- [connected](iclient.html##connected)
-- [connecting](iclient.html##connecting)
-- [created](iclient.html##created)
-- [doping](iclient.html##doping)
-- [exchanges](iclient.html##exchanges)
-- [grpc](iclient.html##grpc)
-- [grpcStream](iclient.html##grpcstream)
-- [id](iclient.html##id)
-- [jwt](iclient.html##jwt)
-- [lastheartbeat](iclient.html##lastheartbeat)
-- [lastheartbeatsec](iclient.html##lastheartbeatsec)
-- [lastheartbeatstr](iclient.html##lastheartbeatstr)
-- [protocol](iclient.html##protocol)
-- [queues](iclient.html##queues)
-- [remoteip](iclient.html##remoteip)
-- [replies](iclient.html##replies)
-- [seq](iclient.html##seq)
-- [signedin](iclient.html##signedin)
-- [stream](iclient.html##stream)
-- [streams](iclient.html##streams)
-- [url](iclient.html##url)
-- [user](iclient.html##user)
-- [version](iclient.html##version)
-- [watches](iclient.html##watches)
-- [ws](iclient.html##ws)
+- [agent](iclient#agent)
+- [call](iclient#call)
+- [connected](iclient#connected)
+- [connecting](iclient#connecting)
+- [created](iclient#created)
+- [doping](iclient#doping)
+- [exchanges](iclient#exchanges)
+- [grpc](iclient#grpc)
+- [grpcStream](iclient#grpcstream)
+- [id](iclient#id)
+- [jwt](iclient#jwt)
+- [lastheartbeat](iclient#lastheartbeat)
+- [lastheartbeatsec](iclient#lastheartbeatsec)
+- [lastheartbeatstr](iclient#lastheartbeatstr)
+- [protocol](iclient#protocol)
+- [queues](iclient#queues)
+- [remoteip](iclient#remoteip)
+- [replies](iclient#replies)
+- [seq](iclient#seq)
+- [signedin](iclient#signedin)
+- [stream](iclient#stream)
+- [streams](iclient#streams)
+- [url](iclient#url)
+- [user](iclient#user)
+- [version](iclient#version)
+- [watches](iclient#watches)
+- [ws](iclient#ws)
 
 ### Methods
 
-- [Close](iclient.html##close)
-- [Initialize](iclient.html##initialize)
-- [SendWatch](iclient.html##sendwatch)
-- [UnWatch](iclient.html##unwatch)
-- [Watch](iclient.html##watch)
-- [onConnected](iclient.html##onconnected)
-- [onDisconnected](iclient.html##ondisconnected)
-- [onMessage](iclient.html##onmessage)
-- [ping](iclient.html##ping)
-- [queuecount](iclient.html##queuecount)
+- [Close](iclient#close)
+- [Initialize](iclient#initialize)
+- [SendWatch](iclient#sendwatch)
+- [UnWatch](iclient#unwatch)
+- [Watch](iclient#watch)
+- [onConnected](iclient#onconnected)
+- [onDisconnected](iclient#ondisconnected)
+- [onMessage](iclient#onmessage)
+- [ping](iclient#ping)
+- [queuecount](iclient#queuecount)
 
 ## Properties
 
 ### agent
 
-• **agent**: [`clientAgent`](../modules.html##clientagent)
+• **agent**: [`clientAgent`](../modules#clientagent)
 
 #### Defined in
 
@@ -200,7 +200,7 @@ ___
 
 ### protocol
 
-• **protocol**: [`clientType`](../modules.html##clienttype)
+• **protocol**: [`clientType`](../modules#clienttype)
 
 #### Defined in
 
@@ -310,7 +310,7 @@ ___
 
 ### watches
 
-• **watches**: [`changestream`](../classes/changestream.html#)[]
+• **watches**: [`changestream`](../classes/changestream)[]
 
 #### Defined in
 
@@ -438,7 +438,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](../classes/client.html#) |
+| `client` | [`client`](../classes/client) |
 
 #### Returns
 
@@ -458,7 +458,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](../classes/client.html#) |
+| `client` | [`client`](../classes/client) |
 | `error` | `Error` |
 
 #### Returns
@@ -473,18 +473,18 @@ ___
 
 ### onMessage
 
-▸ **onMessage**(`client`, `message`): `Promise`<[`Envelope`](../modules.html##envelope)\>
+▸ **onMessage**(`client`, `message`): `Promise`<[`Envelope`](../modules#envelope)\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](../classes/client.html#) |
+| `client` | [`client`](../classes/client) |
 | `message` | `any` |
 
 #### Returns
 
-`Promise`<[`Envelope`](../modules.html##envelope)\>
+`Promise`<[`Envelope`](../modules#envelope)\>
 
 #### Defined in
 

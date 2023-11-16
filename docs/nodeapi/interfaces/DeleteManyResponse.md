@@ -3,7 +3,7 @@ layout: page
 title: DeleteManyResponse
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / DeleteManyResponse
+[@openiap/nodeapi](../README) / [Exports](../modules) / DeleteManyResponse
 
 # Interface: DeleteManyResponse
 
@@ -11,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [affectedrows](DeleteManyResponse.html##affectedrows)
+- [affectedrows](DeleteManyResponse#affectedrows)
 
 ## Properties
 

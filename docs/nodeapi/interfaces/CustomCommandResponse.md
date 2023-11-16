@@ -3,7 +3,7 @@ layout: page
 title: CustomCommandResponse
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / CustomCommandResponse
+[@openiap/nodeapi](../README) / [Exports](../modules) / CustomCommandResponse
 
 # Interface: CustomCommandResponse
 
@@ -11,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [result](CustomCommandResponse.html##result)
+- [result](CustomCommandResponse#result)
 
 ## Properties
 

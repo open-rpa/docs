@@ -3,7 +3,7 @@ layout: page
 title: Stream
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / Stream
+[@openiap/nodeapi](../README) / [Exports](../modules) / Stream
 
 # Interface: Stream
 
@@ -11,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [data](Stream.html##data)
+- [data](Stream#data)
 
 ## Properties
 

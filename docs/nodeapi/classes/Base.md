@@ -3,7 +3,7 @@ layout: page
 title: Base
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / Base
+[@openiap/nodeapi](../README) / [Exports](../modules) / Base
 
 # Class: Base
 
@@ -11,32 +11,32 @@ parent: NodeJS Api
 
 ### Constructors
 
-- [constructor](Base.html##constructor)
+- [constructor](Base#constructor)
 
 ### Properties
 
-- [\_acl](Base.html##_acl)
-- [\_created](Base.html##_created)
-- [\_createdby](Base.html##_createdby)
-- [\_createdbyid](Base.html##_createdbyid)
-- [\_encrypt](Base.html##_encrypt)
-- [\_id](Base.html##_id)
-- [\_modified](Base.html##_modified)
-- [\_modifiedby](Base.html##_modifiedby)
-- [\_modifiedbyid](Base.html##_modifiedbyid)
-- [\_name](Base.html##_name)
-- [\_type](Base.html##_type)
-- [\_version](Base.html##_version)
-- [name](Base.html##name)
+- [\_acl](Base#_acl)
+- [\_created](Base#_created)
+- [\_createdby](Base#_createdby)
+- [\_createdbyid](Base#_createdbyid)
+- [\_encrypt](Base#_encrypt)
+- [\_id](Base#_id)
+- [\_modified](Base#_modified)
+- [\_modifiedby](Base#_modifiedby)
+- [\_modifiedbyid](Base#_modifiedbyid)
+- [\_name](Base#_name)
+- [\_type](Base#_type)
+- [\_version](Base#_version)
+- [name](Base#name)
 
 ### Methods
 
-- [addRight](Base.html##addright)
-- [assign](Base.html##assign)
-- [getRight](Base.html##getright)
-- [hasRight](Base.html##hasright)
-- [removeRight](Base.html##removeright)
-- [setRight](Base.html##setright)
+- [addRight](Base#addright)
+- [assign](Base#assign)
+- [getRight](Base#getright)
+- [hasRight](Base#hasright)
+- [removeRight](Base#removeright)
+- [setRight](Base#setright)
 
 ## Constructors
 
@@ -52,7 +52,7 @@ parent: NodeJS Api
 
 ### \_acl
 
-• **\_acl**: [`Ace`](Ace.html#)[] = `[]`
+• **\_acl**: [`Ace`](Ace)[] = `[]`
 
 #### Defined in
 
@@ -190,7 +190,7 @@ Add/update right for user/role
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `item` | [`Base`](Base.html#) | `undefined` | - |
+| `item` | [`Base`](Base) | `undefined` | - |
 | `_id` | `string` | `undefined` | user/role id |
 | `name` | `string` | `undefined` | Displayname for user/role |
 | `rights` | `number`[] | `undefined` | Right to set |
@@ -240,7 +240,7 @@ ___
 
 ### getRight
 
-▸ `Static` **getRight**(`item`, `_id`, `deny?`): [`Ace`](Ace.html#)
+▸ `Static` **getRight**(`item`, `_id`, `deny?`): [`Ace`](Ace)
 
 Enumerate ACL for specefic ID
 
@@ -248,13 +248,13 @@ Enumerate ACL for specefic ID
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `item` | [`Base`](Base.html#) | `undefined` | - |
+| `item` | [`Base`](Base) | `undefined` | - |
 | `_id` | `string` | `undefined` | Id to search for |
 | `deny` | `boolean` | `false` | look for deny or allow permission |
 
 #### Returns
 
-[`Ace`](Ace.html#)
+[`Ace`](Ace)
 
 Ace Ace if found, else null
 
@@ -272,7 +272,7 @@ ___
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| `item` | [`Base`](Base.html#) | `undefined` |
+| `item` | [`Base`](Base) | `undefined` |
 | `_id` | `string` | `undefined` |
 | `bit` | `number` | `undefined` |
 | `deny` | `boolean` | `false` |
@@ -297,7 +297,7 @@ Remove a right from user/role
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `item` | [`Base`](Base.html#) | `undefined` | - |
+| `item` | [`Base`](Base) | `undefined` | - |
 | `_id` | `string` | `undefined` | user/role id |
 | `rights` | `number`[] | `null` | Right to revoke |
 | `deny` | `boolean` | `false` | Deny right |
@@ -324,8 +324,8 @@ Set right for specefic id, if exists
 
 | Name | Type |
 | :------ | :------ |
-| `item` | [`Base`](Base.html#) |
-| `x` | [`Ace`](Ace.html#) |
+| `item` | [`Base`](Base) |
+| `x` | [`Ace`](Ace) |
 
 #### Returns
 

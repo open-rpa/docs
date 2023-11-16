@@ -3,7 +3,7 @@ layout: page
 title: WorkitemFile
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / WorkitemFile
+[@openiap/nodeapi](../README) / [Exports](../modules) / WorkitemFile
 
 # Interface: WorkitemFile
 
@@ -11,10 +11,10 @@ parent: NodeJS Api
 
 ### Properties
 
-- [\_id](WorkitemFile.html##_id)
-- [compressed](WorkitemFile.html##compressed)
-- [file](WorkitemFile.html##file)
-- [filename](WorkitemFile.html##filename)
+- [\_id](WorkitemFile#_id)
+- [compressed](WorkitemFile#compressed)
+- [file](WorkitemFile#file)
+- [filename](WorkitemFile#filename)
 
 ## Properties
 

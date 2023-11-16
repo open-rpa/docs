@@ -3,7 +3,7 @@ layout: page
 title: PopWorkitemRequest
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / PopWorkitemRequest
+[@openiap/nodeapi](../README) / [Exports](../modules) / PopWorkitemRequest
 
 # Interface: PopWorkitemRequest
 
@@ -11,10 +11,10 @@ parent: NodeJS Api
 
 ### Properties
 
-- [compressed](PopWorkitemRequest.html##compressed)
-- [includefiles](PopWorkitemRequest.html##includefiles)
-- [wiq](PopWorkitemRequest.html##wiq)
-- [wiqid](PopWorkitemRequest.html##wiqid)
+- [compressed](PopWorkitemRequest#compressed)
+- [includefiles](PopWorkitemRequest#includefiles)
+- [wiq](PopWorkitemRequest#wiq)
+- [wiqid](PopWorkitemRequest#wiqid)
 
 ## Properties
 

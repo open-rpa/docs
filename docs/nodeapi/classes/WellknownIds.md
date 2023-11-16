@@ -3,7 +3,7 @@ layout: page
 title: WellknownIds
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / WellknownIds
+[@openiap/nodeapi](../README) / [Exports](../modules) / WellknownIds
 
 # Class: WellknownIds
 
@@ -11,25 +11,25 @@ parent: NodeJS Api
 
 ### Constructors
 
-- [constructor](WellknownIds.html##constructor)
+- [constructor](WellknownIds#constructor)
 
 ### Properties
 
-- [admins](WellknownIds.html##admins)
-- [customer\_admins](WellknownIds.html##customer_admins)
-- [filestore\_admins](WellknownIds.html##filestore_admins)
-- [filestore\_users](WellknownIds.html##filestore_users)
-- [nodered\_admins](WellknownIds.html##nodered_admins)
-- [nodered\_api\_users](WellknownIds.html##nodered_api_users)
-- [nodered\_users](WellknownIds.html##nodered_users)
-- [personal\_nodered\_users](WellknownIds.html##personal_nodered_users)
-- [resellers](WellknownIds.html##resellers)
-- [robot\_admins](WellknownIds.html##robot_admins)
-- [robot\_agent\_users](WellknownIds.html##robot_agent_users)
-- [robot\_users](WellknownIds.html##robot_users)
-- [robots](WellknownIds.html##robots)
-- [root](WellknownIds.html##root)
-- [users](WellknownIds.html##users)
+- [admins](WellknownIds#admins)
+- [customer\_admins](WellknownIds#customer_admins)
+- [filestore\_admins](WellknownIds#filestore_admins)
+- [filestore\_users](WellknownIds#filestore_users)
+- [nodered\_admins](WellknownIds#nodered_admins)
+- [nodered\_api\_users](WellknownIds#nodered_api_users)
+- [nodered\_users](WellknownIds#nodered_users)
+- [personal\_nodered\_users](WellknownIds#personal_nodered_users)
+- [resellers](WellknownIds#resellers)
+- [robot\_admins](WellknownIds#robot_admins)
+- [robot\_agent\_users](WellknownIds#robot_agent_users)
+- [robot\_users](WellknownIds#robot_users)
+- [robots](WellknownIds#robots)
+- [root](WellknownIds#root)
+- [users](WellknownIds#users)
 
 ## Constructors
 

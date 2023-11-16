@@ -3,62 +3,62 @@ layout: page
 title: client
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / client
+[@openiap/nodeapi](../README) / [Exports](../modules) / client
 
 # Class: client
 
 ## Implements
 
-- [`iclient`](../interfaces/iclient.html#)
+- [`iclient`](../interfaces/iclient)
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](client.html##constructor)
+- [constructor](client#constructor)
 
 ### Properties
 
-- [agent](client.html##agent)
-- [call](client.html##call)
-- [connected](client.html##connected)
-- [connecting](client.html##connecting)
-- [created](client.html##created)
-- [doping](client.html##doping)
-- [exchanges](client.html##exchanges)
-- [grpc](client.html##grpc)
-- [grpcStream](client.html##grpcstream)
-- [id](client.html##id)
-- [jwt](client.html##jwt)
-- [lastheartbeat](client.html##lastheartbeat)
-- [lastheartbeatsec](client.html##lastheartbeatsec)
-- [lastheartbeatstr](client.html##lastheartbeatstr)
-- [protocol](client.html##protocol)
-- [queues](client.html##queues)
-- [remoteip](client.html##remoteip)
-- [replies](client.html##replies)
-- [seq](client.html##seq)
-- [signedin](client.html##signedin)
-- [stream](client.html##stream)
-- [streams](client.html##streams)
-- [url](client.html##url)
-- [user](client.html##user)
-- [version](client.html##version)
-- [watches](client.html##watches)
-- [ws](client.html##ws)
+- [agent](client#agent)
+- [call](client#call)
+- [connected](client#connected)
+- [connecting](client#connecting)
+- [created](client#created)
+- [doping](client#doping)
+- [exchanges](client#exchanges)
+- [grpc](client#grpc)
+- [grpcStream](client#grpcstream)
+- [id](client#id)
+- [jwt](client#jwt)
+- [lastheartbeat](client#lastheartbeat)
+- [lastheartbeatsec](client#lastheartbeatsec)
+- [lastheartbeatstr](client#lastheartbeatstr)
+- [protocol](client#protocol)
+- [queues](client#queues)
+- [remoteip](client#remoteip)
+- [replies](client#replies)
+- [seq](client#seq)
+- [signedin](client#signedin)
+- [stream](client#stream)
+- [streams](client#streams)
+- [url](client#url)
+- [user](client#user)
+- [version](client#version)
+- [watches](client#watches)
+- [ws](client#ws)
 
 ### Methods
 
-- [Close](client.html##close)
-- [Initialize](client.html##initialize)
-- [SendWatch](client.html##sendwatch)
-- [UnWatch](client.html##unwatch)
-- [Watch](client.html##watch)
-- [onConnected](client.html##onconnected)
-- [onDisconnected](client.html##ondisconnected)
-- [onMessage](client.html##onmessage)
-- [ping](client.html##ping)
-- [queuecount](client.html##queuecount)
+- [Close](client#close)
+- [Initialize](client#initialize)
+- [SendWatch](client#sendwatch)
+- [UnWatch](client#unwatch)
+- [Watch](client#watch)
+- [onConnected](client#onconnected)
+- [onDisconnected](client#ondisconnected)
+- [onMessage](client#onmessage)
+- [ping](client#ping)
+- [queuecount](client#queuecount)
 
 ## Constructors
 
@@ -70,11 +70,11 @@ parent: NodeJS Api
 
 ### agent
 
-• **agent**: [`clientAgent`](../modules.html##clientagent)
+• **agent**: [`clientAgent`](../modules#clientagent)
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[agent](../interfaces/iclient.html##agent)
+[iclient](../interfaces/iclient).[agent](../interfaces/iclient#agent)
 
 #### Defined in
 
@@ -88,7 +88,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[call](../interfaces/iclient.html##call)
+[iclient](../interfaces/iclient).[call](../interfaces/iclient#call)
 
 #### Defined in
 
@@ -102,7 +102,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[connected](../interfaces/iclient.html##connected)
+[iclient](../interfaces/iclient).[connected](../interfaces/iclient#connected)
 
 #### Defined in
 
@@ -116,7 +116,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[connecting](../interfaces/iclient.html##connecting)
+[iclient](../interfaces/iclient).[connecting](../interfaces/iclient#connecting)
 
 #### Defined in
 
@@ -130,7 +130,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[created](../interfaces/iclient.html##created)
+[iclient](../interfaces/iclient).[created](../interfaces/iclient#created)
 
 #### Defined in
 
@@ -144,7 +144,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[doping](../interfaces/iclient.html##doping)
+[iclient](../interfaces/iclient).[doping](../interfaces/iclient#doping)
 
 #### Defined in
 
@@ -158,7 +158,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[exchanges](../interfaces/iclient.html##exchanges)
+[iclient](../interfaces/iclient).[exchanges](../interfaces/iclient#exchanges)
 
 #### Defined in
 
@@ -172,7 +172,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[grpc](../interfaces/iclient.html##grpc)
+[iclient](../interfaces/iclient).[grpc](../interfaces/iclient#grpc)
 
 #### Defined in
 
@@ -186,7 +186,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[grpcStream](../interfaces/iclient.html##grpcstream)
+[iclient](../interfaces/iclient).[grpcStream](../interfaces/iclient#grpcstream)
 
 #### Defined in
 
@@ -200,7 +200,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[id](../interfaces/iclient.html##id)
+[iclient](../interfaces/iclient).[id](../interfaces/iclient#id)
 
 #### Defined in
 
@@ -214,7 +214,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[jwt](../interfaces/iclient.html##jwt)
+[iclient](../interfaces/iclient).[jwt](../interfaces/iclient#jwt)
 
 #### Defined in
 
@@ -228,7 +228,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[lastheartbeat](../interfaces/iclient.html##lastheartbeat)
+[iclient](../interfaces/iclient).[lastheartbeat](../interfaces/iclient#lastheartbeat)
 
 #### Defined in
 
@@ -242,7 +242,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[lastheartbeatsec](../interfaces/iclient.html##lastheartbeatsec)
+[iclient](../interfaces/iclient).[lastheartbeatsec](../interfaces/iclient#lastheartbeatsec)
 
 #### Defined in
 
@@ -256,7 +256,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[lastheartbeatstr](../interfaces/iclient.html##lastheartbeatstr)
+[iclient](../interfaces/iclient).[lastheartbeatstr](../interfaces/iclient#lastheartbeatstr)
 
 #### Defined in
 
@@ -266,11 +266,11 @@ ___
 
 ### protocol
 
-• **protocol**: [`clientType`](../modules.html##clienttype)
+• **protocol**: [`clientType`](../modules#clienttype)
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[protocol](../interfaces/iclient.html##protocol)
+[iclient](../interfaces/iclient).[protocol](../interfaces/iclient#protocol)
 
 #### Defined in
 
@@ -284,7 +284,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[queues](../interfaces/iclient.html##queues)
+[iclient](../interfaces/iclient).[queues](../interfaces/iclient#queues)
 
 #### Defined in
 
@@ -298,7 +298,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[remoteip](../interfaces/iclient.html##remoteip)
+[iclient](../interfaces/iclient).[remoteip](../interfaces/iclient#remoteip)
 
 #### Defined in
 
@@ -312,7 +312,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[replies](../interfaces/iclient.html##replies)
+[iclient](../interfaces/iclient).[replies](../interfaces/iclient#replies)
 
 #### Defined in
 
@@ -326,7 +326,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[seq](../interfaces/iclient.html##seq)
+[iclient](../interfaces/iclient).[seq](../interfaces/iclient#seq)
 
 #### Defined in
 
@@ -340,7 +340,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[signedin](../interfaces/iclient.html##signedin)
+[iclient](../interfaces/iclient).[signedin](../interfaces/iclient#signedin)
 
 #### Defined in
 
@@ -354,7 +354,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[stream](../interfaces/iclient.html##stream)
+[iclient](../interfaces/iclient).[stream](../interfaces/iclient#stream)
 
 #### Defined in
 
@@ -368,7 +368,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[streams](../interfaces/iclient.html##streams)
+[iclient](../interfaces/iclient).[streams](../interfaces/iclient#streams)
 
 #### Defined in
 
@@ -382,7 +382,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[url](../interfaces/iclient.html##url)
+[iclient](../interfaces/iclient).[url](../interfaces/iclient#url)
 
 #### Defined in
 
@@ -396,7 +396,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[user](../interfaces/iclient.html##user)
+[iclient](../interfaces/iclient).[user](../interfaces/iclient#user)
 
 #### Defined in
 
@@ -410,7 +410,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[version](../interfaces/iclient.html##version)
+[iclient](../interfaces/iclient).[version](../interfaces/iclient#version)
 
 #### Defined in
 
@@ -420,11 +420,11 @@ ___
 
 ### watches
 
-• **watches**: [`changestream`](changestream.html#)[] = `[]`
+• **watches**: [`changestream`](changestream)[] = `[]`
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[watches](../interfaces/iclient.html##watches)
+[iclient](../interfaces/iclient).[watches](../interfaces/iclient#watches)
 
 #### Defined in
 
@@ -438,7 +438,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[ws](../interfaces/iclient.html##ws)
+[iclient](../interfaces/iclient).[ws](../interfaces/iclient#ws)
 
 #### Defined in
 
@@ -456,7 +456,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[Close](../interfaces/iclient.html##close)
+[iclient](../interfaces/iclient).[Close](../interfaces/iclient#close)
 
 #### Defined in
 
@@ -483,7 +483,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[Initialize](../interfaces/iclient.html##initialize)
+[iclient](../interfaces/iclient).[Initialize](../interfaces/iclient#initialize)
 
 #### Defined in
 
@@ -509,7 +509,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[SendWatch](../interfaces/iclient.html##sendwatch)
+[iclient](../interfaces/iclient).[SendWatch](../interfaces/iclient#sendwatch)
 
 #### Defined in
 
@@ -534,7 +534,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[UnWatch](../interfaces/iclient.html##unwatch)
+[iclient](../interfaces/iclient).[UnWatch](../interfaces/iclient#unwatch)
 
 #### Defined in
 
@@ -560,7 +560,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[Watch](../interfaces/iclient.html##watch)
+[iclient](../interfaces/iclient).[Watch](../interfaces/iclient#watch)
 
 #### Defined in
 
@@ -576,7 +576,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
+| `client` | [`client`](client) |
 
 #### Returns
 
@@ -584,7 +584,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[onConnected](../interfaces/iclient.html##onconnected)
+[iclient](../interfaces/iclient).[onConnected](../interfaces/iclient#onconnected)
 
 #### Defined in
 
@@ -600,7 +600,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
+| `client` | [`client`](client) |
 | `error` | `Error` |
 
 #### Returns
@@ -609,7 +609,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[onDisconnected](../interfaces/iclient.html##ondisconnected)
+[iclient](../interfaces/iclient).[onDisconnected](../interfaces/iclient#ondisconnected)
 
 #### Defined in
 
@@ -619,22 +619,22 @@ ___
 
 ### onMessage
 
-▸ **onMessage**(`client`, `message`): `Promise`<[`Envelope`](../modules.html##envelope)\>
+▸ **onMessage**(`client`, `message`): `Promise`<[`Envelope`](../modules#envelope)\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
+| `client` | [`client`](client) |
 | `message` | `any` |
 
 #### Returns
 
-`Promise`<[`Envelope`](../modules.html##envelope)\>
+`Promise`<[`Envelope`](../modules#envelope)\>
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[onMessage](../interfaces/iclient.html##onmessage)
+[iclient](../interfaces/iclient).[onMessage](../interfaces/iclient#onmessage)
 
 #### Defined in
 
@@ -658,7 +658,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[ping](../interfaces/iclient.html##ping)
+[iclient](../interfaces/iclient).[ping](../interfaces/iclient#ping)
 
 #### Defined in
 
@@ -676,7 +676,7 @@ ___
 
 #### Implementation of
 
-[iclient](../interfaces/iclient.html#).[queuecount](../interfaces/iclient.html##queuecount)
+[iclient](../interfaces/iclient).[queuecount](../interfaces/iclient#queuecount)
 
 #### Defined in
 

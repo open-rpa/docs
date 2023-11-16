@@ -18,9 +18,10 @@ has_children: true
 ---
 `;
             if(!content.startsWith('---')) {
-                fs.writeFileSync(fullPath, frontMatter + content.replace(/\.md/g, ".html#"));
+                // fs.writeFileSync(fullPath, frontMatter + content.replace(/\.md#/g, ".html#"));
+                fs.writeFileSync(fullPath, frontMatter + content.replace(/\.md/g, ""));
             } else {
-                fs.writeFileSync(fullPath, content.replace(/\.md/g, ".html#"));
+                fs.writeFileSync(fullPath, content.replace(/\.md/g, ""));
             }
         } else if (fullPath.endsWith('.md') && path.basename(fullPath) !== 'README.md') {
             const content = fs.readFileSync(fullPath, 'utf8');
@@ -31,9 +32,9 @@ parent: NodeJS Api
 ---
 `;
             if(!content.startsWith('---')) {
-                fs.writeFileSync(fullPath, frontMatter + content.replace(/\.md/g, ".html#"));
+                fs.writeFileSync(fullPath, frontMatter + content.replace(/\.md/g, ""));
             } else {
-                fs.writeFileSync(fullPath, content.replace(/\.md/g, ".html#"));
+                fs.writeFileSync(fullPath, content.replace(/\.md/g, ""));
             }
 
             

@@ -3,7 +3,7 @@ layout: page
 title: config
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / config
+[@openiap/nodeapi](../README) / [Exports](../modules) / config
 
 # Class: config
 
@@ -11,49 +11,49 @@ parent: NodeJS Api
 
 ### Constructors
 
-- [constructor](config.html##constructor)
+- [constructor](config#constructor)
 
 ### Properties
 
-- [BeginstreamDelay](config.html##beginstreamdelay)
-- [ChecksumCheckFiles](config.html##checksumcheckfiles)
-- [ChecksumCheckPackages](config.html##checksumcheckpackages)
-- [DoDumpToConsole](config.html##dodumptoconsole)
-- [DoPing](config.html##doping)
-- [EndstreamDelay](config.html##endstreamdelay)
-- [SendFileHighWaterMark](config.html##sendfilehighwatermark)
-- [ThrottlerMS](config.html##throttlerms)
-- [color](config.html##color)
-- [defaultgrpcport](config.html##defaultgrpcport)
-- [defaultsocketport](config.html##defaultsocketport)
-- [defaultwebport](config.html##defaultwebport)
-- [doDumpMessageHexBytesPerLine](config.html##dodumpmessagehexbytesperline)
-- [doDumpMessageHexLines](config.html##dodumpmessagehexlines)
-- [doDumpMesssageStreams](config.html##dodumpmesssagestreams)
-- [doDumpMesssages](config.html##dodumpmesssages)
-- [doDumpMesssagesIds](config.html##dodumpmesssagesids)
-- [doDumpMesssagesSeq](config.html##dodumpmesssagesseq)
-- [doDumpRPCTraceIds](config.html##dodumprpctraceids)
-- [doDumpStack](config.html##dodumpstack)
-- [doDumpTimestamp](config.html##dodumptimestamp)
-- [doDumpToFile](config.html##dodumptofile)
-- [filecounter](config.html##filecounter)
-- [filedata](config.html##filedata)
-- [role](config.html##role)
+- [BeginstreamDelay](config#beginstreamdelay)
+- [ChecksumCheckFiles](config#checksumcheckfiles)
+- [ChecksumCheckPackages](config#checksumcheckpackages)
+- [DoDumpToConsole](config#dodumptoconsole)
+- [DoPing](config#doping)
+- [EndstreamDelay](config#endstreamdelay)
+- [SendFileHighWaterMark](config#sendfilehighwatermark)
+- [ThrottlerMS](config#throttlerms)
+- [color](config#color)
+- [defaultgrpcport](config#defaultgrpcport)
+- [defaultsocketport](config#defaultsocketport)
+- [defaultwebport](config#defaultwebport)
+- [doDumpMessageHexBytesPerLine](config#dodumpmessagehexbytesperline)
+- [doDumpMessageHexLines](config#dodumpmessagehexlines)
+- [doDumpMesssageStreams](config#dodumpmesssagestreams)
+- [doDumpMesssages](config#dodumpmesssages)
+- [doDumpMesssagesIds](config#dodumpmesssagesids)
+- [doDumpMesssagesSeq](config#dodumpmesssagesseq)
+- [doDumpRPCTraceIds](config#dodumprpctraceids)
+- [doDumpStack](config#dodumpstack)
+- [doDumpTimestamp](config#dodumptimestamp)
+- [doDumpToFile](config#dodumptofile)
+- [filecounter](config#filecounter)
+- [filedata](config#filedata)
+- [role](config#role)
 
 ### Methods
 
-- [col](config.html##col)
-- [colrole](config.html##colrole)
-- [dumpdata](config.html##dumpdata)
-- [dumpmessage](config.html##dumpmessage)
-- [err](config.html##err)
-- [hex](config.html##hex)
-- [info](config.html##info)
-- [maxnumberlen](config.html##maxnumberlen)
-- [seq](config.html##seq)
-- [ts](config.html##ts)
-- [warn](config.html##warn)
+- [col](config#col)
+- [colrole](config#colrole)
+- [dumpdata](config#dumpdata)
+- [dumpmessage](config#dumpmessage)
+- [err](config#err)
+- [hex](config#hex)
+- [info](config#info)
+- [maxnumberlen](config#maxnumberlen)
+- [seq](config#seq)
+- [ts](config#ts)
+- [warn](config#warn)
 
 ## Constructors
 

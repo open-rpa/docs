@@ -3,7 +3,7 @@ layout: page
 title: Stat
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / Stat
+[@openiap/nodeapi](../README) / [Exports](../modules) / Stat
 
 # Interface: Stat
 
@@ -11,21 +11,21 @@ parent: NodeJS Api
 
 ### Properties
 
-- [birthtimeMs](Stat.html##birthtimems)
-- [blksize](Stat.html##blksize)
-- [blocks](Stat.html##blocks)
-- [ctime](Stat.html##ctime)
-- [ctimeMs](Stat.html##ctimems)
-- [dev](Stat.html##dev)
-- [gid](Stat.html##gid)
-- [ino](Stat.html##ino)
-- [mode](Stat.html##mode)
-- [mtime](Stat.html##mtime)
-- [mtimeMs](Stat.html##mtimems)
-- [nlink](Stat.html##nlink)
-- [rdev](Stat.html##rdev)
-- [size](Stat.html##size)
-- [uid](Stat.html##uid)
+- [birthtimeMs](Stat#birthtimems)
+- [blksize](Stat#blksize)
+- [blocks](Stat#blocks)
+- [ctime](Stat#ctime)
+- [ctimeMs](Stat#ctimems)
+- [dev](Stat#dev)
+- [gid](Stat#gid)
+- [ino](Stat#ino)
+- [mode](Stat#mode)
+- [mtime](Stat#mtime)
+- [mtimeMs](Stat#mtimems)
+- [nlink](Stat#nlink)
+- [rdev](Stat#rdev)
+- [size](Stat#size)
+- [uid](Stat#uid)
 
 ## Properties
 

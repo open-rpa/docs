@@ -3,7 +3,7 @@ layout: page
 title: UploadRequest
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / UploadRequest
+[@openiap/nodeapi](../README) / [Exports](../modules) / UploadRequest
 
 # Interface: UploadRequest
 
@@ -11,8 +11,8 @@ parent: NodeJS Api
 
 ### Properties
 
-- [filename](UploadRequest.html##filename)
-- [mimetype](UploadRequest.html##mimetype)
+- [filename](UploadRequest#filename)
+- [mimetype](UploadRequest#mimetype)
 
 ## Properties
 

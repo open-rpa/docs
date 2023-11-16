@@ -3,7 +3,7 @@ layout: page
 title: UpdateWorkitemResponse
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / UpdateWorkitemResponse
+[@openiap/nodeapi](../README) / [Exports](../modules) / UpdateWorkitemResponse
 
 # Interface: UpdateWorkitemResponse
 
@@ -11,13 +11,13 @@ parent: NodeJS Api
 
 ### Properties
 
-- [workitem](UpdateWorkitemResponse.html##workitem)
+- [workitem](UpdateWorkitemResponse#workitem)
 
 ## Properties
 
 ### workitem
 
-• **workitem**: [`Workitem`](../modules.html##workitem)
+• **workitem**: [`Workitem`](../modules#workitem)
 
 #### Defined in
 

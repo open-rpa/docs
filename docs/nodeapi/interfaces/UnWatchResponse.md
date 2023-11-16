@@ -3,6 +3,6 @@ layout: page
 title: UnWatchResponse
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / UnWatchResponse
+[@openiap/nodeapi](../README) / [Exports](../modules) / UnWatchResponse
 
 # Interface: UnWatchResponse

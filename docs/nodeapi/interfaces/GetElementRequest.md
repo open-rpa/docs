@@ -3,7 +3,7 @@ layout: page
 title: GetElementRequest
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / GetElementRequest
+[@openiap/nodeapi](../README) / [Exports](../modules) / GetElementRequest
 
 # Interface: GetElementRequest
 
@@ -11,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [xpath](GetElementRequest.html##xpath)
+- [xpath](GetElementRequest#xpath)
 
 ## Properties
 

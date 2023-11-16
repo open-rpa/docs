@@ -3,7 +3,7 @@ layout: page
 title: DeleteWorkitemRequest
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / DeleteWorkitemRequest
+[@openiap/nodeapi](../README) / [Exports](../modules) / DeleteWorkitemRequest
 
 # Interface: DeleteWorkitemRequest
 
@@ -11,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [\_id](DeleteWorkitemRequest.html##_id)
+- [\_id](DeleteWorkitemRequest#_id)
 
 ## Properties
 

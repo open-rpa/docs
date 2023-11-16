@@ -3,7 +3,7 @@ layout: page
 title: GetDocumentVersionRequest
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / GetDocumentVersionRequest
+[@openiap/nodeapi](../README) / [Exports](../modules) / GetDocumentVersionRequest
 
 # Interface: GetDocumentVersionRequest
 
@@ -11,10 +11,10 @@ parent: NodeJS Api
 
 ### Properties
 
-- [collectionname](GetDocumentVersionRequest.html##collectionname)
-- [decrypt](GetDocumentVersionRequest.html##decrypt)
-- [id](GetDocumentVersionRequest.html##id)
-- [version](GetDocumentVersionRequest.html##version)
+- [collectionname](GetDocumentVersionRequest#collectionname)
+- [decrypt](GetDocumentVersionRequest#decrypt)
+- [id](GetDocumentVersionRequest#id)
+- [version](GetDocumentVersionRequest#version)
 
 ## Properties
 

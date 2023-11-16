@@ -3,7 +3,7 @@ layout: page
 title: InsertManyResponse
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / InsertManyResponse
+[@openiap/nodeapi](../README) / [Exports](../modules) / InsertManyResponse
 
 # Interface: InsertManyResponse
 
@@ -11,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [results](InsertManyResponse.html##results)
+- [results](InsertManyResponse#results)
 
 ## Properties
 

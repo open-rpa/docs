@@ -3,7 +3,7 @@ layout: page
 title: Role
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / Role
+[@openiap/nodeapi](../README) / [Exports](../modules) / Role
 
 # Interface: Role
 
@@ -11,8 +11,8 @@ parent: NodeJS Api
 
 ### Properties
 
-- [\_id](Role.html##_id)
-- [name](Role.html##name)
+- [\_id](Role#_id)
+- [name](Role#name)
 
 ## Properties
 

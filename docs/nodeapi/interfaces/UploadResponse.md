@@ -3,7 +3,7 @@ layout: page
 title: UploadResponse
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / UploadResponse
+[@openiap/nodeapi](../README) / [Exports](../modules) / UploadResponse
 
 # Interface: UploadResponse
 
@@ -11,13 +11,13 @@ parent: NodeJS Api
 
 ### Properties
 
-- [bytes](UploadResponse.html##bytes)
-- [chunks](UploadResponse.html##chunks)
-- [elapsedTime](UploadResponse.html##elapsedtime)
-- [filename](UploadResponse.html##filename)
-- [id](UploadResponse.html##id)
-- [mb](UploadResponse.html##mb)
-- [mbps](UploadResponse.html##mbps)
+- [bytes](UploadResponse#bytes)
+- [chunks](UploadResponse#chunks)
+- [elapsedTime](UploadResponse#elapsedtime)
+- [filename](UploadResponse#filename)
+- [id](UploadResponse#id)
+- [mb](UploadResponse#mb)
+- [mbps](UploadResponse#mbps)
 
 ## Properties
 

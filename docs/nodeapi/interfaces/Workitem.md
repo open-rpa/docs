@@ -3,7 +3,7 @@ layout: page
 title: Workitem
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / Workitem
+[@openiap/nodeapi](../README) / [Exports](../modules) / Workitem
 
 # Interface: Workitem
 
@@ -11,25 +11,25 @@ parent: NodeJS Api
 
 ### Properties
 
-- [\_id](Workitem.html##_id)
-- [errormessage](Workitem.html##errormessage)
-- [errorsource](Workitem.html##errorsource)
-- [errortype](Workitem.html##errortype)
-- [failed\_wiq](Workitem.html##failed_wiq)
-- [failed\_wiqid](Workitem.html##failed_wiqid)
-- [files](Workitem.html##files)
-- [lastrun](Workitem.html##lastrun)
-- [name](Workitem.html##name)
-- [nextrun](Workitem.html##nextrun)
-- [payload](Workitem.html##payload)
-- [priority](Workitem.html##priority)
-- [retries](Workitem.html##retries)
-- [state](Workitem.html##state)
-- [success\_wiq](Workitem.html##success_wiq)
-- [success\_wiqid](Workitem.html##success_wiqid)
-- [username](Workitem.html##username)
-- [wiq](Workitem.html##wiq)
-- [wiqid](Workitem.html##wiqid)
+- [\_id](Workitem#_id)
+- [errormessage](Workitem#errormessage)
+- [errorsource](Workitem#errorsource)
+- [errortype](Workitem#errortype)
+- [failed\_wiq](Workitem#failed_wiq)
+- [failed\_wiqid](Workitem#failed_wiqid)
+- [files](Workitem#files)
+- [lastrun](Workitem#lastrun)
+- [name](Workitem#name)
+- [nextrun](Workitem#nextrun)
+- [payload](Workitem#payload)
+- [priority](Workitem#priority)
+- [retries](Workitem#retries)
+- [state](Workitem#state)
+- [success\_wiq](Workitem#success_wiq)
+- [success\_wiqid](Workitem#success_wiqid)
+- [username](Workitem#username)
+- [wiq](Workitem#wiq)
+- [wiqid](Workitem#wiqid)
 
 ## Properties
 
@@ -95,7 +95,7 @@ ___
 
 ### files
 
-• **files**: [`WorkitemFile`](../modules.html##workitemfile)[]
+• **files**: [`WorkitemFile`](../modules#workitemfile)[]
 
 #### Defined in
 

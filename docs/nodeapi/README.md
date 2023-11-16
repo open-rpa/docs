@@ -4,7 +4,7 @@ title: NodeJS Api
 nav_order: 9
 has_children: true
 ---
-@openiap/nodeapi / [Exports](modules.html#)
+@openiap/nodeapi / [Exports](modules)
 
 # OpenIAP nodejs API
 

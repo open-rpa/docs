@@ -3,7 +3,7 @@ layout: page
 title: InsertOneResponse
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / InsertOneResponse
+[@openiap/nodeapi](../README) / [Exports](../modules) / InsertOneResponse
 
 # Interface: InsertOneResponse
 
@@ -11,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [result](InsertOneResponse.html##result)
+- [result](InsertOneResponse#result)
 
 ## Properties
 

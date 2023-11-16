@@ -3,7 +3,7 @@ layout: page
 title: protowrap
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / protowrap
+[@openiap/nodeapi](../README) / [Exports](../modules) / protowrap
 
 # Class: protowrap
 
@@ -11,38 +11,38 @@ parent: NodeJS Api
 
 ### Constructors
 
-- [constructor](protowrap.html##constructor)
+- [constructor](protowrap#constructor)
 
 ### Properties
 
-- [defaultprotocol](protowrap.html##defaultprotocol)
-- [grpc\_server\_options](protowrap.html##grpc_server_options)
-- [openiap\_proto](protowrap.html##openiap_proto)
-- [protoRoot](protowrap.html##protoroot)
+- [defaultprotocol](protowrap#defaultprotocol)
+- [grpc\_server\_options](protowrap#grpc_server_options)
+- [openiap\_proto](protowrap#openiap_proto)
+- [protoRoot](protowrap#protoroot)
 
 ### Methods
 
-- [ClientCleanup](protowrap.html##clientcleanup)
-- [CommandToProto](protowrap.html##commandtoproto)
-- [CreateStream](protowrap.html##createstream)
-- [DownloadFile](protowrap.html##downloadfile)
-- [IsPendingReply](protowrap.html##ispendingreply)
-- [RPC](protowrap.html##rpc)
-- [ReceiveFileContent](protowrap.html##receivefilecontent)
-- [SetStream](protowrap.html##setstream)
-- [UploadFile](protowrap.html##uploadfile)
-- [\_RPC](protowrap.html##_rpc)
-- [connect](protowrap.html##connect)
-- [get](protowrap.html##get)
-- [getChecksum](protowrap.html##getchecksum)
-- [getFileChecksum](protowrap.html##getfilechecksum)
-- [init](protowrap.html##init)
-- [pack](protowrap.html##pack)
-- [post](protowrap.html##post)
-- [sendFileContent](protowrap.html##sendfilecontent)
-- [sendMesssag](protowrap.html##sendmesssag)
-- [serve](protowrap.html##serve)
-- [unpack](protowrap.html##unpack)
+- [ClientCleanup](protowrap#clientcleanup)
+- [CommandToProto](protowrap#commandtoproto)
+- [CreateStream](protowrap#createstream)
+- [DownloadFile](protowrap#downloadfile)
+- [IsPendingReply](protowrap#ispendingreply)
+- [RPC](protowrap#rpc)
+- [ReceiveFileContent](protowrap#receivefilecontent)
+- [SetStream](protowrap#setstream)
+- [UploadFile](protowrap#uploadfile)
+- [\_RPC](protowrap#_rpc)
+- [connect](protowrap#connect)
+- [get](protowrap#get)
+- [getChecksum](protowrap#getchecksum)
+- [getFileChecksum](protowrap#getfilechecksum)
+- [init](protowrap#init)
+- [pack](protowrap#pack)
+- [post](protowrap#post)
+- [sendFileContent](protowrap#sendfilecontent)
+- [sendMesssag](protowrap#sendmesssag)
+- [serve](protowrap#serve)
+- [unpack](protowrap#unpack)
 
 ## Constructors
 
@@ -54,7 +54,7 @@ parent: NodeJS Api
 
 ### defaultprotocol
 
-▪ `Static` **defaultprotocol**: [`clientType`](../modules.html##clienttype) = `"pipe"`
+▪ `Static` **defaultprotocol**: [`clientType`](../modules#clienttype) = `"pipe"`
 
 #### Defined in
 
@@ -100,7 +100,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
+| `client` | [`client`](client) |
 | `onClientDisconnected` | `any` |
 | `error` | `string` \| `Error` |
 
@@ -142,7 +142,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
+| `client` | [`client`](client) |
 | `stream` | `any` |
 | `payload` | `any` |
 
@@ -158,13 +158,13 @@ ___
 
 ### DownloadFile
 
-▸ `Static` **DownloadFile**(`client`, `id`, `filename`, `folder`, `highWaterMark`): `Promise`<[`DownloadResponse`](../modules.html##downloadresponse)\>
+▸ `Static` **DownloadFile**(`client`, `id`, `filename`, `folder`, `highWaterMark`): `Promise`<[`DownloadResponse`](../modules#downloadresponse)\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
+| `client` | [`client`](client) |
 | `id` | `string` |
 | `filename` | `string` |
 | `folder` | `string` |
@@ -172,7 +172,7 @@ ___
 
 #### Returns
 
-`Promise`<[`DownloadResponse`](../modules.html##downloadresponse)\>
+`Promise`<[`DownloadResponse`](../modules#downloadresponse)\>
 
 #### Defined in
 
@@ -188,8 +188,8 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
-| `payload` | [`Envelope`](../modules.html##envelope) |
+| `client` | [`client`](client) |
+| `payload` | [`Envelope`](../modules#envelope) |
 
 #### Returns
 
@@ -203,18 +203,18 @@ ___
 
 ### RPC
 
-▸ `Static` **RPC**(`client`, `payload`): `Promise`<[`Envelope`](../modules.html##envelope)\>
+▸ `Static` **RPC**(`client`, `payload`): `Promise`<[`Envelope`](../modules#envelope)\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
+| `client` | [`client`](client) |
 | `payload` | `any` |
 
 #### Returns
 
-`Promise`<[`Envelope`](../modules.html##envelope)\>
+`Promise`<[`Envelope`](../modules#envelope)\>
 
 #### Defined in
 
@@ -230,7 +230,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
+| `client` | [`client`](client) |
 | `rid` | `string` |
 | `filename` | `string` |
 | `highWaterMark` | `number` |
@@ -253,7 +253,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
+| `client` | [`client`](client) |
 | `stream` | `any` |
 | `rid` | `string` |
 
@@ -269,19 +269,19 @@ ___
 
 ### UploadFile
 
-▸ `Static` **UploadFile**(`client`, `filename`, `jwt`): `Promise`<[`UploadResponse`](../modules.html##uploadresponse)\>
+▸ `Static` **UploadFile**(`client`, `filename`, `jwt`): `Promise`<[`UploadResponse`](../modules#uploadresponse)\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
+| `client` | [`client`](client) |
 | `filename` | `string` |
 | `jwt` | `string` |
 
 #### Returns
 
-`Promise`<[`UploadResponse`](../modules.html##uploadresponse)\>
+`Promise`<[`UploadResponse`](../modules#uploadresponse)\>
 
 #### Defined in
 
@@ -297,7 +297,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
+| `client` | [`client`](client) |
 | `payload` | `any` |
 
 #### Returns
@@ -312,18 +312,18 @@ ___
 
 ### connect
 
-▸ `Static` **connect**(`apiurl`, `clientConstructor?`): [`client`](client.html#)
+▸ `Static` **connect**(`apiurl`, `clientConstructor?`): [`client`](client)
 
 #### Parameters
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
 | `apiurl` | `string` | `undefined` |
-| `clientConstructor` | () => [`iclient`](../interfaces/iclient.html#) | `client` |
+| `clientConstructor` | () => [`iclient`](../interfaces/iclient) | `client` |
 
 #### Returns
 
-[`client`](client.html#)
+[`client`](client)
 
 #### Defined in
 
@@ -462,7 +462,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
+| `client` | [`client`](client) |
 | `rid` | `any` |
 | `filename` | `any` |
 | `highWaterMark` | `any` |
@@ -485,7 +485,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](client.html#) |
+| `client` | [`client`](client) |
 | `payload` | `any` |
 | `id` | `string` |
 | `dumpmsg` | `boolean` |
@@ -508,14 +508,14 @@ ___
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| `protocol` | [`clientType`](../modules.html##clienttype) | `undefined` |
+| `protocol` | [`clientType`](../modules#clienttype) | `undefined` |
 | `onClientConnected` | `any` | `undefined` |
 | `port` | `any` | `undefined` |
 | `path` | `any` | `undefined` |
 | `wss` | `any` | `undefined` |
 | `app` | `any` | `undefined` |
 | `http` | `any` | `undefined` |
-| `clientConstructor` | () => [`iclient`](../interfaces/iclient.html#) | `client` |
+| `clientConstructor` | () => [`iclient`](../interfaces/iclient) | `client` |
 
 #### Returns
 
@@ -531,7 +531,7 @@ ___
 | `id` | `string` |
 | `pending` | {} |
 | `port` | `any` |
-| `protocol` | [`clientType`](../modules.html##clienttype) |
+| `protocol` | [`clientType`](../modules#clienttype) |
 | `ws` | `any` |
 | `wss` | `any` |
 

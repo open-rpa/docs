@@ -3,7 +3,7 @@ layout: page
 title: UpdateOneResponse
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / UpdateOneResponse
+[@openiap/nodeapi](../README) / [Exports](../modules) / UpdateOneResponse
 
 # Interface: UpdateOneResponse
 
@@ -11,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [result](UpdateOneResponse.html##result)
+- [result](UpdateOneResponse#result)
 
 ## Properties
 

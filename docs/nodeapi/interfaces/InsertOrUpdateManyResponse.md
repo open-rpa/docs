@@ -3,7 +3,7 @@ layout: page
 title: InsertOrUpdateManyResponse
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / InsertOrUpdateManyResponse
+[@openiap/nodeapi](../README) / [Exports](../modules) / InsertOrUpdateManyResponse
 
 # Interface: InsertOrUpdateManyResponse
 
@@ -11,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [results](InsertOrUpdateManyResponse.html##results)
+- [results](InsertOrUpdateManyResponse#results)
 
 ## Properties
 

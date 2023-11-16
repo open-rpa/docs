@@ -3,7 +3,7 @@ layout: page
 title: PushWorkitemsRequest
 parent: NodeJS Api
 ---
-[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / PushWorkitemsRequest
+[@openiap/nodeapi](../README) / [Exports](../modules) / PushWorkitemsRequest
 
 # Interface: PushWorkitemsRequest
 
@@ -11,15 +11,15 @@ parent: NodeJS Api
 
 ### Properties
 
-- [failed\_wiq](PushWorkitemsRequest.html##failed_wiq)
-- [failed\_wiqid](PushWorkitemsRequest.html##failed_wiqid)
-- [items](PushWorkitemsRequest.html##items)
-- [nextrun](PushWorkitemsRequest.html##nextrun)
-- [priority](PushWorkitemsRequest.html##priority)
-- [success\_wiq](PushWorkitemsRequest.html##success_wiq)
-- [success\_wiqid](PushWorkitemsRequest.html##success_wiqid)
-- [wiq](PushWorkitemsRequest.html##wiq)
-- [wiqid](PushWorkitemsRequest.html##wiqid)
+- [failed\_wiq](PushWorkitemsRequest#failed_wiq)
+- [failed\_wiqid](PushWorkitemsRequest#failed_wiqid)
+- [items](PushWorkitemsRequest#items)
+- [nextrun](PushWorkitemsRequest#nextrun)
+- [priority](PushWorkitemsRequest#priority)
+- [success\_wiq](PushWorkitemsRequest#success_wiq)
+- [success\_wiqid](PushWorkitemsRequest#success_wiqid)
+- [wiq](PushWorkitemsRequest#wiq)
+- [wiqid](PushWorkitemsRequest#wiqid)
 
 ## Properties
 
@@ -45,7 +45,7 @@ ___
 
 ### items
 
-• **items**: [`Workitem`](../modules.html##workitem)[]
+• **items**: [`Workitem`](../modules#workitem)[]
 
 #### Defined in
 
