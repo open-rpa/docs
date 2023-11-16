@@ -4,11 +4,6 @@ layout: page
 title: Exports
 parent: NodeJS Api
 ---
----
-layout: page
-title: Exports
-parent: NodeJS Api
----
 [@openiap/nodeapi](README.md) / Exports
 
 # @openiap/nodeapi
