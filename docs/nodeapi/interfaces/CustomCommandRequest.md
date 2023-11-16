@@ -3,6 +3,11 @@ layout: page
 title: CustomCommandRequest
 parent: NodeJS Api
 ---
+---
+layout: page
+title: CustomCommandRequest
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / CustomCommandRequest
 
 # Interface: CustomCommandRequest
@@ -11,10 +16,10 @@ parent: NodeJS Api
 
 ### Properties
 
-- [command](CustomCommandRequest.md#command)
-- [data](CustomCommandRequest.md#data)
-- [id](CustomCommandRequest.md#id)
-- [name](CustomCommandRequest.md#name)
+- [command](CustomCommandRequest.html#command)
+- [data](CustomCommandRequest.html#data)
+- [id](CustomCommandRequest.html#id)
+- [name](CustomCommandRequest.html#name)
 
 ## Properties
 

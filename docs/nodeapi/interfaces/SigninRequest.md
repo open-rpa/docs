@@ -3,6 +3,11 @@ layout: page
 title: SigninRequest
 parent: NodeJS Api
 ---
+---
+layout: page
+title: SigninRequest
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / SigninRequest
 
 # Interface: SigninRequest
@@ -11,14 +16,14 @@ parent: NodeJS Api
 
 ### Properties
 
-- [agent](SigninRequest.md#agent)
-- [jwt](SigninRequest.md#jwt)
-- [longtoken](SigninRequest.md#longtoken)
-- [password](SigninRequest.md#password)
-- [ping](SigninRequest.md#ping)
-- [username](SigninRequest.md#username)
-- [validateonly](SigninRequest.md#validateonly)
-- [version](SigninRequest.md#version)
+- [agent](SigninRequest.html#agent)
+- [jwt](SigninRequest.html#jwt)
+- [longtoken](SigninRequest.html#longtoken)
+- [password](SigninRequest.html#password)
+- [ping](SigninRequest.html#ping)
+- [username](SigninRequest.html#username)
+- [validateonly](SigninRequest.html#validateonly)
+- [version](SigninRequest.html#version)
 
 ## Properties
 

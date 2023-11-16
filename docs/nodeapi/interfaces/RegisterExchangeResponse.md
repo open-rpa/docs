@@ -3,6 +3,11 @@ layout: page
 title: RegisterExchangeResponse
 parent: NodeJS Api
 ---
+---
+layout: page
+title: RegisterExchangeResponse
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / RegisterExchangeResponse
 
 # Interface: RegisterExchangeResponse
@@ -11,7 +16,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [queuename](RegisterExchangeResponse.md#queuename)
+- [queuename](RegisterExchangeResponse.html#queuename)
 
 ## Properties
 

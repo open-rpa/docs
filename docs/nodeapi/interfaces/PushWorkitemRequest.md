@@ -3,6 +3,11 @@ layout: page
 title: PushWorkitemRequest
 parent: NodeJS Api
 ---
+---
+layout: page
+title: PushWorkitemRequest
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / PushWorkitemRequest
 
 # Interface: PushWorkitemRequest
@@ -11,17 +16,17 @@ parent: NodeJS Api
 
 ### Properties
 
-- [failed\_wiq](PushWorkitemRequest.md#failed_wiq)
-- [failed\_wiqid](PushWorkitemRequest.md#failed_wiqid)
-- [files](PushWorkitemRequest.md#files)
-- [name](PushWorkitemRequest.md#name)
-- [nextrun](PushWorkitemRequest.md#nextrun)
-- [payload](PushWorkitemRequest.md#payload)
-- [priority](PushWorkitemRequest.md#priority)
-- [success\_wiq](PushWorkitemRequest.md#success_wiq)
-- [success\_wiqid](PushWorkitemRequest.md#success_wiqid)
-- [wiq](PushWorkitemRequest.md#wiq)
-- [wiqid](PushWorkitemRequest.md#wiqid)
+- [failed\_wiq](PushWorkitemRequest.html#failed_wiq)
+- [failed\_wiqid](PushWorkitemRequest.html#failed_wiqid)
+- [files](PushWorkitemRequest.html#files)
+- [name](PushWorkitemRequest.html#name)
+- [nextrun](PushWorkitemRequest.html#nextrun)
+- [payload](PushWorkitemRequest.html#payload)
+- [priority](PushWorkitemRequest.html#priority)
+- [success\_wiq](PushWorkitemRequest.html#success_wiq)
+- [success\_wiqid](PushWorkitemRequest.html#success_wiqid)
+- [wiq](PushWorkitemRequest.html#wiq)
+- [wiqid](PushWorkitemRequest.html#wiqid)
 
 ## Properties
 
@@ -47,7 +52,7 @@ ___
 
 ### files
 
-• **files**: [`WorkitemFile`](../modules.md#workitemfile)[]
+• **files**: [`WorkitemFile`](../modules.html#workitemfile)[]
 
 #### Defined in
 

@@ -3,6 +3,11 @@ layout: page
 title: InsertManyRequest
 parent: NodeJS Api
 ---
+---
+layout: page
+title: InsertManyRequest
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / InsertManyRequest
 
 # Interface: InsertManyRequest
@@ -11,11 +16,11 @@ parent: NodeJS Api
 
 ### Properties
 
-- [collectionname](InsertManyRequest.md#collectionname)
-- [items](InsertManyRequest.md#items)
-- [j](InsertManyRequest.md#j)
-- [skipresults](InsertManyRequest.md#skipresults)
-- [w](InsertManyRequest.md#w)
+- [collectionname](InsertManyRequest.html#collectionname)
+- [items](InsertManyRequest.html#items)
+- [j](InsertManyRequest.html#j)
+- [skipresults](InsertManyRequest.html#skipresults)
+- [w](InsertManyRequest.html#w)
 
 ## Properties
 

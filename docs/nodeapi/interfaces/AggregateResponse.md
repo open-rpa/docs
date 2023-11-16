@@ -3,6 +3,11 @@ layout: page
 title: AggregateResponse
 parent: NodeJS Api
 ---
+---
+layout: page
+title: AggregateResponse
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / AggregateResponse
 
 # Interface: AggregateResponse
@@ -11,7 +16,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [results](AggregateResponse.md#results)
+- [results](AggregateResponse.html#results)
 
 ## Properties
 

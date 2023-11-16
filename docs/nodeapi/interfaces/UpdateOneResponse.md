@@ -3,6 +3,11 @@ layout: page
 title: UpdateOneResponse
 parent: NodeJS Api
 ---
+---
+layout: page
+title: UpdateOneResponse
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / UpdateOneResponse
 
 # Interface: UpdateOneResponse
@@ -11,7 +16,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [result](UpdateOneResponse.md#result)
+- [result](UpdateOneResponse.html#result)
 
 ## Properties
 

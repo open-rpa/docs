@@ -3,6 +3,11 @@ layout: page
 title: Base
 parent: NodeJS Api
 ---
+---
+layout: page
+title: Base
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / Base
 
 # Class: Base
@@ -11,32 +16,32 @@ parent: NodeJS Api
 
 ### Constructors
 
-- [constructor](Base.md#constructor)
+- [constructor](Base.html#constructor)
 
 ### Properties
 
-- [\_acl](Base.md#_acl)
-- [\_created](Base.md#_created)
-- [\_createdby](Base.md#_createdby)
-- [\_createdbyid](Base.md#_createdbyid)
-- [\_encrypt](Base.md#_encrypt)
-- [\_id](Base.md#_id)
-- [\_modified](Base.md#_modified)
-- [\_modifiedby](Base.md#_modifiedby)
-- [\_modifiedbyid](Base.md#_modifiedbyid)
-- [\_name](Base.md#_name)
-- [\_type](Base.md#_type)
-- [\_version](Base.md#_version)
-- [name](Base.md#name)
+- [\_acl](Base.html#_acl)
+- [\_created](Base.html#_created)
+- [\_createdby](Base.html#_createdby)
+- [\_createdbyid](Base.html#_createdbyid)
+- [\_encrypt](Base.html#_encrypt)
+- [\_id](Base.html#_id)
+- [\_modified](Base.html#_modified)
+- [\_modifiedby](Base.html#_modifiedby)
+- [\_modifiedbyid](Base.html#_modifiedbyid)
+- [\_name](Base.html#_name)
+- [\_type](Base.html#_type)
+- [\_version](Base.html#_version)
+- [name](Base.html#name)
 
 ### Methods
 
-- [addRight](Base.md#addright)
-- [assign](Base.md#assign)
-- [getRight](Base.md#getright)
-- [hasRight](Base.md#hasright)
-- [removeRight](Base.md#removeright)
-- [setRight](Base.md#setright)
+- [addRight](Base.html#addright)
+- [assign](Base.html#assign)
+- [getRight](Base.html#getright)
+- [hasRight](Base.html#hasright)
+- [removeRight](Base.html#removeright)
+- [setRight](Base.html#setright)
 
 ## Constructors
 

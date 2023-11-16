@@ -3,6 +3,11 @@ layout: page
 title: UpdateDocumentResponse
 parent: NodeJS Api
 ---
+---
+layout: page
+title: UpdateDocumentResponse
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / UpdateDocumentResponse
 
 # Interface: UpdateDocumentResponse
@@ -11,13 +16,13 @@ parent: NodeJS Api
 
 ### Properties
 
-- [opresult](UpdateDocumentResponse.md#opresult)
+- [opresult](UpdateDocumentResponse.html#opresult)
 
 ## Properties
 
 ### opresult
 
-• **opresult**: [`UpdateResult`](../modules.md#updateresult)
+• **opresult**: [`UpdateResult`](../modules.html#updateresult)
 
 #### Defined in
 

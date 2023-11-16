@@ -3,6 +3,11 @@ layout: page
 title: openiap
 parent: NodeJS Api
 ---
+---
+layout: page
+title: openiap
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / openiap
 
 # Class: openiap
@@ -19,105 +24,105 @@ OpenIAP
 
 ### Constructors
 
-- [constructor](openiap.md#constructor)
+- [constructor](openiap.html#constructor)
 
 ### Properties
 
-- [agent](openiap.md#agent)
-- [allowconnectgiveup](openiap.md#allowconnectgiveup)
-- [client](openiap.md#client)
-- [connected](openiap.md#connected)
-- [connecting](openiap.md#connecting)
-- [defaltqueue](openiap.md#defaltqueue)
-- [flowconfig](openiap.md#flowconfig)
-- [jwt](openiap.md#jwt)
-- [loginreject](openiap.md#loginreject)
-- [loginresolve](openiap.md#loginresolve)
-- [pingerhandle](openiap.md#pingerhandle)
-- [queuecallbacks](openiap.md#queuecallbacks)
-- [queues](openiap.md#queues)
-- [reconnectms](openiap.md#reconnectms)
-- [signedin](openiap.md#signedin)
-- [url](openiap.md#url)
-- [version](openiap.md#version)
-- [watchids](openiap.md#watchids)
-- [captureRejectionSymbol](openiap.md#capturerejectionsymbol)
-- [captureRejections](openiap.md#capturerejections)
-- [defaultMaxListeners](openiap.md#defaultmaxlisteners)
-- [errorMonitor](openiap.md#errormonitor)
+- [agent](openiap.html#agent)
+- [allowconnectgiveup](openiap.html#allowconnectgiveup)
+- [client](openiap.html#client)
+- [connected](openiap.html#connected)
+- [connecting](openiap.html#connecting)
+- [defaltqueue](openiap.html#defaltqueue)
+- [flowconfig](openiap.html#flowconfig)
+- [jwt](openiap.html#jwt)
+- [loginreject](openiap.html#loginreject)
+- [loginresolve](openiap.html#loginresolve)
+- [pingerhandle](openiap.html#pingerhandle)
+- [queuecallbacks](openiap.html#queuecallbacks)
+- [queues](openiap.html#queues)
+- [reconnectms](openiap.html#reconnectms)
+- [signedin](openiap.html#signedin)
+- [url](openiap.html#url)
+- [version](openiap.html#version)
+- [watchids](openiap.html#watchids)
+- [captureRejectionSymbol](openiap.html#capturerejectionsymbol)
+- [captureRejections](openiap.html#capturerejections)
+- [defaultMaxListeners](openiap.html#defaultmaxlisteners)
+- [errorMonitor](openiap.html#errormonitor)
 
 ### Methods
 
-- [AddWorkItemQueue](openiap.md#addworkitemqueue)
-- [Aggregate](openiap.md#aggregate)
-- [Close](openiap.md#close)
-- [Count](openiap.md#count)
-- [CreateCollection](openiap.md#createcollection)
-- [CreateWorkflowInstance](openiap.md#createworkflowinstance)
-- [CustomCommand](openiap.md#customcommand)
-- [DeleteMany](openiap.md#deletemany)
-- [DeleteOne](openiap.md#deleteone)
-- [DeleteWorkItemQueue](openiap.md#deleteworkitemqueue)
-- [DeleteWorkitem](openiap.md#deleteworkitem)
-- [Distinct](openiap.md#distinct)
-- [DownloadFile](openiap.md#downloadfile)
-- [DropCollection](openiap.md#dropcollection)
-- [EnsureCustomer](openiap.md#ensurecustomer)
-- [FindOne](openiap.md#findone)
-- [GetDocumentVersion](openiap.md#getdocumentversion)
-- [GetElement](openiap.md#getelement)
-- [InsertMany](openiap.md#insertmany)
-- [InsertOne](openiap.md#insertone)
-- [InsertOrUpdateMany](openiap.md#insertorupdatemany)
-- [InsertOrUpdateOne](openiap.md#insertorupdateone)
-- [ListCollections](openiap.md#listcollections)
-- [Ping](openiap.md#ping)
-- [PopWorkitem](openiap.md#popworkitem)
-- [PushWorkitem](openiap.md#pushworkitem)
-- [PushWorkitems](openiap.md#pushworkitems)
-- [Query](openiap.md#query)
-- [QueueMessage](openiap.md#queuemessage)
-- [RegisterExchange](openiap.md#registerexchange)
-- [RegisterQueue](openiap.md#registerqueue)
-- [Signin](openiap.md#signin)
-- [UnRegisterQueue](openiap.md#unregisterqueue)
-- [UnWatch](openiap.md#unwatch)
-- [UpdateDocument](openiap.md#updatedocument)
-- [UpdateOne](openiap.md#updateone)
-- [UpdateWorkItemQueue](openiap.md#updateworkitemqueue)
-- [UpdateWorkitem](openiap.md#updateworkitem)
-- [UploadFile](openiap.md#uploadfile)
-- [Watch](openiap.md#watch)
-- [\_\_server\_pinger](openiap.md#__server_pinger)
-- [addListener](openiap.md#addlistener)
-- [cliOnConnected](openiap.md#clionconnected)
-- [cliOnDisconnected](openiap.md#cliondisconnected)
-- [cliOnMessage](openiap.md#clionmessage)
-- [connect](openiap.md#connect)
-- [emit](openiap.md#emit)
-- [eventNames](openiap.md#eventnames)
-- [getMaxListeners](openiap.md#getmaxlisteners)
-- [listenerCount](openiap.md#listenercount)
-- [listeners](openiap.md#listeners)
-- [off](openiap.md#off)
-- [on](openiap.md#on)
-- [onConnectGaveUp](openiap.md#onconnectgaveup)
-- [onConnected](openiap.md#onconnected)
-- [onDisconnected](openiap.md#ondisconnected)
-- [once](openiap.md#once)
-- [prependListener](openiap.md#prependlistener)
-- [prependOnceListener](openiap.md#prependoncelistener)
-- [rawListeners](openiap.md#rawlisteners)
-- [removeAllListeners](openiap.md#removealllisteners)
-- [removeListener](openiap.md#removelistener)
-- [setMaxListeners](openiap.md#setmaxlisteners)
-- [stringify](openiap.md#stringify)
-- [GetUniqueIdentifier](openiap.md#getuniqueidentifier)
-- [getEventListeners](openiap.md#geteventlisteners)
-- [listenerCount](openiap.md#listenercount-1)
-- [on](openiap.md#on-1)
-- [once](openiap.md#once-1)
-- [setMaxListeners](openiap.md#setmaxlisteners-1)
+- [AddWorkItemQueue](openiap.html#addworkitemqueue)
+- [Aggregate](openiap.html#aggregate)
+- [Close](openiap.html#close)
+- [Count](openiap.html#count)
+- [CreateCollection](openiap.html#createcollection)
+- [CreateWorkflowInstance](openiap.html#createworkflowinstance)
+- [CustomCommand](openiap.html#customcommand)
+- [DeleteMany](openiap.html#deletemany)
+- [DeleteOne](openiap.html#deleteone)
+- [DeleteWorkItemQueue](openiap.html#deleteworkitemqueue)
+- [DeleteWorkitem](openiap.html#deleteworkitem)
+- [Distinct](openiap.html#distinct)
+- [DownloadFile](openiap.html#downloadfile)
+- [DropCollection](openiap.html#dropcollection)
+- [EnsureCustomer](openiap.html#ensurecustomer)
+- [FindOne](openiap.html#findone)
+- [GetDocumentVersion](openiap.html#getdocumentversion)
+- [GetElement](openiap.html#getelement)
+- [InsertMany](openiap.html#insertmany)
+- [InsertOne](openiap.html#insertone)
+- [InsertOrUpdateMany](openiap.html#insertorupdatemany)
+- [InsertOrUpdateOne](openiap.html#insertorupdateone)
+- [ListCollections](openiap.html#listcollections)
+- [Ping](openiap.html#ping)
+- [PopWorkitem](openiap.html#popworkitem)
+- [PushWorkitem](openiap.html#pushworkitem)
+- [PushWorkitems](openiap.html#pushworkitems)
+- [Query](openiap.html#query)
+- [QueueMessage](openiap.html#queuemessage)
+- [RegisterExchange](openiap.html#registerexchange)
+- [RegisterQueue](openiap.html#registerqueue)
+- [Signin](openiap.html#signin)
+- [UnRegisterQueue](openiap.html#unregisterqueue)
+- [UnWatch](openiap.html#unwatch)
+- [UpdateDocument](openiap.html#updatedocument)
+- [UpdateOne](openiap.html#updateone)
+- [UpdateWorkItemQueue](openiap.html#updateworkitemqueue)
+- [UpdateWorkitem](openiap.html#updateworkitem)
+- [UploadFile](openiap.html#uploadfile)
+- [Watch](openiap.html#watch)
+- [\_\_server\_pinger](openiap.html#__server_pinger)
+- [addListener](openiap.html#addlistener)
+- [cliOnConnected](openiap.html#clionconnected)
+- [cliOnDisconnected](openiap.html#cliondisconnected)
+- [cliOnMessage](openiap.html#clionmessage)
+- [connect](openiap.html#connect)
+- [emit](openiap.html#emit)
+- [eventNames](openiap.html#eventnames)
+- [getMaxListeners](openiap.html#getmaxlisteners)
+- [listenerCount](openiap.html#listenercount)
+- [listeners](openiap.html#listeners)
+- [off](openiap.html#off)
+- [on](openiap.html#on)
+- [onConnectGaveUp](openiap.html#onconnectgaveup)
+- [onConnected](openiap.html#onconnected)
+- [onDisconnected](openiap.html#ondisconnected)
+- [once](openiap.html#once)
+- [prependListener](openiap.html#prependlistener)
+- [prependOnceListener](openiap.html#prependoncelistener)
+- [rawListeners](openiap.html#rawlisteners)
+- [removeAllListeners](openiap.html#removealllisteners)
+- [removeListener](openiap.html#removelistener)
+- [setMaxListeners](openiap.html#setmaxlisteners)
+- [stringify](openiap.html#stringify)
+- [GetUniqueIdentifier](openiap.html#getuniqueidentifier)
+- [getEventListeners](openiap.html#geteventlisteners)
+- [listenerCount](openiap.html#listenercount-1)
+- [on](openiap.html#on-1)
+- [once](openiap.html#once-1)
+- [setMaxListeners](openiap.html#setmaxlisteners-1)
 
 ## Constructors
 
@@ -201,7 +206,7 @@ EventEmitter.constructor
 
 ### agent
 
-• **agent**: [`clientAgent`](../modules.md#clientagent) = `"node"`
+• **agent**: [`clientAgent`](../modules.html#clientagent) = `"node"`
 
 Define client type when authenticating toward the server
 
@@ -399,7 +404,7 @@ ___
 
 ### captureRejectionSymbol
 
-▪ `Static` `Readonly` **captureRejectionSymbol**: typeof [`captureRejectionSymbol`](openiap.md#capturerejectionsymbol)
+▪ `Static` `Readonly` **captureRejectionSymbol**: typeof [`captureRejectionSymbol`](openiap.html#capturerejectionsymbol)
 
 #### Inherited from
 
@@ -443,7 +448,7 @@ ___
 
 ### errorMonitor
 
-▪ `Static` `Readonly` **errorMonitor**: typeof [`errorMonitor`](openiap.md#errormonitor)
+▪ `Static` `Readonly` **errorMonitor**: typeof [`errorMonitor`](openiap.html#errormonitor)
 
 This symbol shall be used to install a listener for only monitoring `'error'`
 events. Listeners installed using this symbol are called before the regular
@@ -465,7 +470,7 @@ node_modules/@types/node/events.d.ts:327
 
 ### AddWorkItemQueue
 
-▸ **AddWorkItemQueue**(`options`, `priority?`): `Promise`<[`WorkItemQueue`](../modules.md#workitemqueue)\>
+▸ **AddWorkItemQueue**(`options`, `priority?`): `Promise`<[`WorkItemQueue`](../modules.html#workitemqueue)\>
 
 Create a new workitem queue. Workitem queues are registered in the wiq collection.
 
@@ -478,7 +483,7 @@ Create a new workitem queue. Workitem queues are registered in the wiq collectio
 
 #### Returns
 
-`Promise`<[`WorkItemQueue`](../modules.md#workitemqueue)\>
+`Promise`<[`WorkItemQueue`](../modules.html#workitemqueue)\>
 
 #### Defined in
 
@@ -514,7 +519,7 @@ const result = await client.Aggregate({ collectionname: "entities", aggregates: 
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`AggregateOptions`](../modules.md#aggregateoptions) | `undefined` | [AggregateOptions](../modules.md#aggregateoptions) |
+| `options` | [`AggregateOptions`](../modules.html#aggregateoptions) | `undefined` | [AggregateOptions](../modules.html#aggregateoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -570,7 +575,7 @@ const result = await client.Count({ collectionname: "entities" });
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`CountOptions`](../modules.md#countoptions) | `undefined` | [CountOptions](../modules.md#countoptions) |
+| `options` | [`CountOptions`](../modules.html#countoptions) | `undefined` | [CountOptions](../modules.html#countoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -618,7 +623,7 @@ Old command used by nodered "Workflow in" and "assign" nodes for creating a new 
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`CreateWorkflowInstanceOptions`](../modules.md#createworkflowinstanceoptions) | `undefined` |  |
+| `options` | [`CreateWorkflowInstanceOptions`](../modules.html#createworkflowinstanceoptions) | `undefined` |  |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -648,7 +653,7 @@ This is how new functioanlly is added and tested, before it is finally added to 
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`CustomCommandOptions`](../modules.md#customcommandoptions) | `undefined` |  |
+| `options` | [`CustomCommandOptions`](../modules.html#customcommandoptions) | `undefined` |  |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -687,7 +692,7 @@ console.log("Deleted " + result + " documents");
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`DeleteManyOptions`](../modules.md#deletemanyoptions) | `undefined` | [DeleteManyOptions](../modules.md#deletemanyoptions) |
+| `options` | [`DeleteManyOptions`](../modules.html#deletemanyoptions) | `undefined` | [DeleteManyOptions](../modules.html#deletemanyoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -723,7 +728,7 @@ console.log("Deleted " + result + " documents");
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`DeleteOneOptions`](../modules.md#deleteoneoptions) | `undefined` | [DeleteOneOptions](../modules.md#deleteoneoptions) |
+| `options` | [`DeleteOneOptions`](../modules.html#deleteoneoptions) | `undefined` | [DeleteOneOptions](../modules.html#deleteoneoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -778,7 +783,7 @@ client.DeleteWorkitem({ id: "64366f12cffb7419a89d5e10" });
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`DeleteWorkitemOptions`](../modules.md#deleteworkitemoptions) | `undefined` |  |
+| `options` | [`DeleteWorkitemOptions`](../modules.html#deleteworkitemoptions) | `undefined` |  |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -832,7 +837,7 @@ ___
 
 ### DownloadFile
 
-▸ **DownloadFile**(`options`): `Promise`<[`DownloadResponse`](../modules.md#downloadresponse)\>
+▸ **DownloadFile**(`options`): `Promise`<[`DownloadResponse`](../modules.html#downloadresponse)\>
 
 Download a file from OpenIAP flow database, using the file id or file name. 
 This uses streams to download file content, and is therefore not supported using REST interface.
@@ -841,11 +846,11 @@ This uses streams to download file content, and is therefore not supported using
 
 | Name | Type |
 | :------ | :------ |
-| `options` | [`DownloadFileOptions`](../modules.md#downloadfileoptions) |
+| `options` | [`DownloadFileOptions`](../modules.html#downloadfileoptions) |
 
 #### Returns
 
-`Promise`<[`DownloadResponse`](../modules.md#downloadresponse)\>
+`Promise`<[`DownloadResponse`](../modules.html#downloadresponse)\>
 
 #### Defined in
 
@@ -863,7 +868,7 @@ Drop a collection removing all data from the collection. Only users with admin r
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`DropCollectionOptions`](../modules.md#dropcollectionoptions) | `undefined` | [DropCollectionOptions](../modules.md#dropcollectionoptions) |
+| `options` | [`DropCollectionOptions`](../modules.html#dropcollectionoptions) | `undefined` | [DropCollectionOptions](../modules.html#dropcollectionoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -936,7 +941,7 @@ const result = await client.FindOne({ collectionname: "entities", query: { "_typ
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`FindOneOptions`](../modules.md#findoneoptions) | `undefined` | [FindOneOptions](../modules.md#findoneoptions) |
+| `options` | [`FindOneOptions`](../modules.html#findoneoptions) | `undefined` | [FindOneOptions](../modules.html#findoneoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -976,7 +981,7 @@ const result = await client.GetDocumentVersion({ id: "643917fb153b7c2c1466fb21",
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`GetDocumentVersionOptions`](../modules.md#getdocumentversionoptions) | `undefined` | [GetDocumentVersionOptions](../modules.md#getdocumentversionoptions) |
+| `options` | [`GetDocumentVersionOptions`](../modules.html#getdocumentversionoptions) | `undefined` | [GetDocumentVersionOptions](../modules.html#getdocumentversionoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -1038,7 +1043,7 @@ const result = await client.InsertMany({ collectionname: "entities", items: [{ "
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`InsertManyOptions`](../modules.md#insertmanyoptions) | `undefined` | [InsertManyOptions](../modules.md#insertmanyoptions) |
+| `options` | [`InsertManyOptions`](../modules.html#insertmanyoptions) | `undefined` | [InsertManyOptions](../modules.html#insertmanyoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -1076,7 +1081,7 @@ const result = await client.InsertOne({ collectionname: "entities", item: { "_ty
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`InsertOneOptions`](../modules.md#insertoneoptions) | `undefined` | [InsertOneOptions](../modules.md#insertoneoptions) |
+| `options` | [`InsertOneOptions`](../modules.html#insertoneoptions) | `undefined` | [InsertOneOptions](../modules.html#insertoneoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -1124,7 +1129,7 @@ console.log("Updated document with id: " + updated[1]._id + " and new name: " + 
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`InsertOrUpdateManyOptions`](../modules.md#insertorupdatemanyoptions) | `undefined` | [InsertOrUpdateManyOptions](../modules.md#insertorupdatemanyoptions) |
+| `options` | [`InsertOrUpdateManyOptions`](../modules.html#insertorupdatemanyoptions) | `undefined` | [InsertOrUpdateManyOptions](../modules.html#insertorupdatemanyoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -1168,7 +1173,7 @@ console.log("Updated document with id: " + updated._id + " and new name: " + upd
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`InsertOrUpdateOneOptions`](../modules.md#insertorupdateoneoptions) | `undefined` | [InsertOrUpdateOneOptions](../modules.md#insertorupdateoneoptions) |
+| `options` | [`InsertOrUpdateOneOptions`](../modules.html#insertorupdateoneoptions) | `undefined` | [InsertOrUpdateOneOptions](../modules.html#insertorupdateoneoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -1193,7 +1198,7 @@ Returns a list of all known collections. By default filtering out history collec
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`ListCollectionsOptions`](../modules.md#listcollectionsoptions) | `{}` | [ListCollectionsOptions](../modules.md#listcollectionsoptions) |
+| `options` | [`ListCollectionsOptions`](../modules.html#listcollectionsoptions) | `{}` | [ListCollectionsOptions](../modules.html#listcollectionsoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -1211,7 +1216,7 @@ ___
 ▸ **Ping**(): `Promise`<`void`\>
 
 Used internally to send a ping message to server, to keep the connection alive.
-Only used if server require pings, or if the client is configured to send pings using [DoPing](config.md#doping)
+Only used if server require pings, or if the client is configured to send pings using [DoPing](config.html#doping)
 
 #### Returns
 
@@ -1225,7 +1230,7 @@ ___
 
 ### PopWorkitem
 
-▸ **PopWorkitem**(`options`, `priority?`): `Promise`<[`Workitem`](../modules.md#workitem)\>
+▸ **PopWorkitem**(`options`, `priority?`): `Promise`<[`Workitem`](../modules.html#workitem)\>
 
 Pop an item of a workitem queue. An items aviailable in the queue will be determined by it's status, retry time and runat time steamp.
 If multiple items are available, the items will be fatched based on each wrkitem's priority field.
@@ -1234,12 +1239,12 @@ If multiple items are available, the items will be fatched based on each wrkitem
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`PopWorkitemOptions`](../modules.md#popworkitemoptions) | `undefined` |  |
+| `options` | [`PopWorkitemOptions`](../modules.html#popworkitemoptions) | `undefined` |  |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
 
-`Promise`<[`Workitem`](../modules.md#workitem)\>
+`Promise`<[`Workitem`](../modules.html#workitem)\>
 
 If no workitem is available, this will return null.
 
@@ -1251,14 +1256,14 @@ ___
 
 ### PushWorkitem
 
-▸ **PushWorkitem**(`options`, `priority?`): `Promise`<[`Workitem`](../modules.md#workitem)\>
+▸ **PushWorkitem**(`options`, `priority?`): `Promise`<[`Workitem`](../modules.html#workitem)\>
 
-Push a workitem to a workqueue. Workitem can be processed by a worker after calling [PopWorkitem](openiap.md#popworkitem)
+Push a workitem to a workqueue. Workitem can be processed by a worker after calling [PopWorkitem](openiap.html#popworkitem)
 
 **`See`**
 
- - [PopWorkitem](openiap.md#popworkitem)
- - [PushWorkitems](openiap.md#pushworkitems)
+ - [PopWorkitem](openiap.html#popworkitem)
+ - [PushWorkitems](openiap.html#pushworkitems)
 
 **`Example`**
 
@@ -1287,12 +1292,12 @@ console.log("Pushed workitem with id " + workitem._id);
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`PushWorkitemOptions`](../modules.md#pushworkitemoptions) | `undefined` |  |
+| `options` | [`PushWorkitemOptions`](../modules.html#pushworkitemoptions) | `undefined` |  |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
 
-`Promise`<[`Workitem`](../modules.md#workitem)\>
+`Promise`<[`Workitem`](../modules.html#workitem)\>
 
 Returns the workitem that was pushed, including the workitem id
 
@@ -1304,20 +1309,20 @@ ___
 
 ### PushWorkitems
 
-▸ **PushWorkitems**(`options`, `priority?`): `Promise`<[`Workitem`](../modules.md#workitem)[]\>
+▸ **PushWorkitems**(`options`, `priority?`): `Promise`<[`Workitem`](../modules.html#workitem)[]\>
 
-Push multiple workitems to a workqueue. Workitems can be processed by a worker after calling [PopWorkitem](openiap.md#popworkitem)
+Push multiple workitems to a workqueue. Workitems can be processed by a worker after calling [PopWorkitem](openiap.html#popworkitem)
 
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`PushWorkitemsOptions`](../modules.md#pushworkitemsoptions) | `undefined` |  |
+| `options` | [`PushWorkitemsOptions`](../modules.html#pushworkitemsoptions) | `undefined` |  |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
 
-`Promise`<[`Workitem`](../modules.md#workitem)[]\>
+`Promise`<[`Workitem`](../modules.html#workitem)[]\>
 
 an array of workitems that was pushed, including the workitem id's
 
@@ -1364,7 +1369,7 @@ const result = await client.Query({ collectionname: "entities", query: { "_type"
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`QueryOptions`](../modules.md#queryoptions) | `undefined` | [QueryOptions](../modules.md#queryoptions) |
+| `options` | [`QueryOptions`](../modules.html#queryoptions) | `undefined` | [QueryOptions](../modules.html#queryoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -1388,8 +1393,8 @@ Be aware, right now there is no timeout on the wait, so if recevier never sends 
 
 **`See`**
 
- - [RegisterQueue](openiap.md#registerqueue)
- - [RegisterExchange](openiap.md#registerexchange)
+ - [RegisterQueue](openiap.html#registerqueue)
+ - [RegisterExchange](openiap.html#registerexchange)
 
 **`Example`**
 
@@ -1410,7 +1415,7 @@ await client.QueueMessage({ exchangename: "myexchange", data: { "hello": "world"
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`QueueMessageOptions`](../modules.md#queuemessageoptions) | `undefined` |  |
+| `options` | [`QueueMessageOptions`](../modules.html#queuemessageoptions) | `undefined` |  |
 | `rpc` | `boolean` | `false` |  |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
@@ -1435,8 +1440,8 @@ This uses streams to notify client about messages, and is therefore not supporte
 
 **`See`**
 
- - [QueueMessage](openiap.md#queuemessage)
- - [UnRegisterQueue](openiap.md#unregisterqueue)
+ - [QueueMessage](openiap.html#queuemessage)
+ - [UnRegisterQueue](openiap.html#unregisterqueue)
 
 **`Example`**
 
@@ -1451,15 +1456,15 @@ console.log("registered exchange myexchange and is consuming it using queue " + 
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`RegisterExchangeOptions`](../modules.md#registerexchangeoptions) | `undefined` |  |
-| `callback` | (`msg`: [`QueueEvent`](../modules.md#queueevent), `payload`: `any`, `user`: `any`, `jwt`: `string`) => `any` | `undefined` |  |
+| `options` | [`RegisterExchangeOptions`](../modules.html#registerexchangeoptions) | `undefined` |  |
+| `callback` | (`msg`: [`QueueEvent`](../modules.html#queueevent), `payload`: `any`, `user`: `any`, `jwt`: `string`) => `any` | `undefined` |  |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
 
 `Promise`<`string`\>
 
-Returns the queue name, used to consume the exchange. Use this when unregistering the exchange with [UnRegisterQueue](openiap.md#unregisterqueue)
+Returns the queue name, used to consume the exchange. Use this when unregistering the exchange with [UnRegisterQueue](openiap.html#unregisterqueue)
 
 #### Defined in
 
@@ -1477,8 +1482,8 @@ This uses streams to notify client about messages, and is therefore not supporte
 
 **`See`**
 
- - [QueueMessage](openiap.md#queuemessage)
- - [UnRegisterQueue](openiap.md#unregisterqueue)
+ - [QueueMessage](openiap.html#queuemessage)
+ - [UnRegisterQueue](openiap.html#unregisterqueue)
 
 **`Example`**
 
@@ -1497,15 +1502,15 @@ console.log("registered queue " + queuename);
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| `options` | [`RegisterQueueOptions`](../modules.md#registerqueueoptions) | `undefined` |
-| `callback` | (`msg`: [`QueueEvent`](../modules.md#queueevent), `payload`: `any`, `user`: `any`, `jwt`: `string`) => `any` | `undefined` |
+| `options` | [`RegisterQueueOptions`](../modules.html#registerqueueoptions) | `undefined` |
+| `callback` | (`msg`: [`QueueEvent`](../modules.html#queueevent), `payload`: `any`, `user`: `any`, `jwt`: `string`) => `any` | `undefined` |
 | `priority` | `number` | `2` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-Returns the queue name. Use this name to send messages to the queue. Also use this to unregister the queue with [UnRegisterQueue](openiap.md#unregisterqueue)
+Returns the queue name. Use this name to send messages to the queue. Also use this to unregister the queue with [UnRegisterQueue](openiap.html#unregisterqueue)
 
 #### Defined in
 
@@ -1515,22 +1520,22 @@ ___
 
 ### Signin
 
-▸ **Signin**(`options`): `Promise`<[`SigninResponse`](../modules.md#signinresponse)\>
+▸ **Signin**(`options`): `Promise`<[`SigninResponse`](../modules.html#signinresponse)\>
 
 By default we use crendetials from the connection string or from jwt environment variable.
 But you can also call Signin to login with a username and password or with a jwt token.
 This function can also be used to validate credentials without changing the current credentials by setting 
-[validateonly](../modules.md#validateonly) to true.
+[validateonly](../modules.html#validateonly) to true.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options` | [`SigninOptions`](../modules.md#signinoptions) | [SigninOptions](../modules.md#signinoptions) |
+| `options` | [`SigninOptions`](../modules.html#signinoptions) | [SigninOptions](../modules.html#signinoptions) |
 
 #### Returns
 
-`Promise`<[`SigninResponse`](../modules.md#signinresponse)\>
+`Promise`<[`SigninResponse`](../modules.html#signinresponse)\>
 
 #### Defined in
 
@@ -1546,8 +1551,8 @@ Tell server to close queue and stop receving message from the queue ( or queue c
 
 **`See`**
 
- - [RegisterQueue](openiap.md#registerqueue)
- - [RegisterExchange](openiap.md#registerexchange)
+ - [RegisterQueue](openiap.html#registerqueue)
+ - [RegisterExchange](openiap.html#registerexchange)
 
 **`Example`**
 
@@ -1564,7 +1569,7 @@ console.log("registered exchange myexchange and is consuming it using queue " + 
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`UnRegisterQueueOptions`](../modules.md#unregisterqueueoptions) | `undefined` |  |
+| `options` | [`UnRegisterQueueOptions`](../modules.html#unregisterqueueoptions) | `undefined` |  |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -1581,13 +1586,13 @@ ___
 
 ▸ **UnWatch**(`options`, `priority?`): `Promise`<`void`\>
 
-Unregister a change stream ( watch ) created with [Watch](openiap.md#watch) to stop receiving notifications from the watch.
+Unregister a change stream ( watch ) created with [Watch](openiap.html#watch) to stop receiving notifications from the watch.
 
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`UnWatchOptions`](../modules.md#unwatchoptions) | `undefined` |  |
+| `options` | [`UnWatchOptions`](../modules.html#unwatchoptions) | `undefined` |  |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -1602,7 +1607,7 @@ ___
 
 ### UpdateDocument
 
-▸ **UpdateDocument**(`options`, `priority?`): `Promise`<[`UpdateResult`](../modules.md#updateresult)\>
+▸ **UpdateDocument**(`options`, `priority?`): `Promise`<[`UpdateResult`](../modules.html#updateresult)\>
 
 Run an update command on a collection, to update one or more documents matching a query.
 See https://docs.mongodb.com/manual/reference/operator/update/ for more information on the update operators.
@@ -1623,12 +1628,12 @@ console.log("Updated " + result.matchedCount + " documents");
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`UpdateDocumentOptions`](../modules.md#updatedocumentoptions) | `undefined` | [UpdateDocumentOptions](../modules.md#updatedocumentoptions) |
+| `options` | [`UpdateDocumentOptions`](../modules.html#updatedocumentoptions) | `undefined` | [UpdateDocumentOptions](../modules.html#updatedocumentoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
 
-`Promise`<[`UpdateResult`](../modules.md#updateresult)\>
+`Promise`<[`UpdateResult`](../modules.html#updateresult)\>
 
 An object with update statistics see [UpdateResult](../interfaces/UpdateResult.md)
 
@@ -1667,7 +1672,7 @@ console.log("Updated document with id: " + updated._id + " and name: " + updated
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`UpdateOneOptions`](../modules.md#updateoneoptions) | `undefined` | [UpdateOneOptions](../modules.md#updateoneoptions) |
+| `options` | [`UpdateOneOptions`](../modules.html#updateoneoptions) | `undefined` | [UpdateOneOptions](../modules.html#updateoneoptions) |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
@@ -1684,7 +1689,7 @@ ___
 
 ### UpdateWorkItemQueue
 
-▸ **UpdateWorkItemQueue**(`options`, `priority?`): `Promise`<[`WorkItemQueue`](../modules.md#workitemqueue)\>
+▸ **UpdateWorkItemQueue**(`options`, `priority?`): `Promise`<[`WorkItemQueue`](../modules.html#workitemqueue)\>
 
 Create a new workitem queue. Workitem queues are registered in the wiq collection. To delete all items from qyueue, set purge to true.
 
@@ -1697,7 +1702,7 @@ Create a new workitem queue. Workitem queues are registered in the wiq collectio
 
 #### Returns
 
-`Promise`<[`WorkItemQueue`](../modules.md#workitemqueue)\>
+`Promise`<[`WorkItemQueue`](../modules.html#workitemqueue)\>
 
 #### Defined in
 
@@ -1707,14 +1712,14 @@ ___
 
 ### UpdateWorkitem
 
-▸ **UpdateWorkitem**(`options`, `priority?`): `Promise`<[`Workitem`](../modules.md#workitem)\>
+▸ **UpdateWorkitem**(`options`, `priority?`): `Promise`<[`Workitem`](../modules.html#workitem)\>
 
-Update an existing workitem. Workitem can be fetched using [PopWorkitem](openiap.md#popworkitem). Use this to update the status of a workitem.
+Update an existing workitem. Workitem can be fetched using [PopWorkitem](openiap.html#popworkitem). Use this to update the status of a workitem.
 You can also update the payload, and update or add files to the workitem.
 
 **`See`**
 
-[PopWorkitem](openiap.md#popworkitem)
+[PopWorkitem](openiap.html#popworkitem)
 
 **`Example`**
 
@@ -1734,12 +1739,12 @@ console.log("Updated workitem with id " + workitem._id);
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`UpdateWorkitemOptions`](../modules.md#updateworkitemoptions) | `undefined` |  |
+| `options` | [`UpdateWorkitemOptions`](../modules.html#updateworkitemoptions) | `undefined` |  |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
 #### Returns
 
-`Promise`<[`Workitem`](../modules.md#workitem)\>
+`Promise`<[`Workitem`](../modules.html#workitem)\>
 
 Returns the updated workitem
 
@@ -1751,7 +1756,7 @@ ___
 
 ### UploadFile
 
-▸ **UploadFile**(`options`): `Promise`<[`UploadResponse`](../modules.md#uploadresponse)\>
+▸ **UploadFile**(`options`): `Promise`<[`UploadResponse`](../modules.html#uploadresponse)\>
 
 Upload a file to OpenIAP flow database.
 This uses streams to download file content, and is therefore not supported using REST interface.
@@ -1759,7 +1764,7 @@ This uses streams to download file content, and is therefore not supported using
 **`See`**
 
  - [UploadResponse](../interfaces/UploadResponse.md)
- - [UploadFileOptions](../modules.md#uploadfileoptions)
+ - [UploadFileOptions](../modules.html#uploadfileoptions)
 
 **`Example`**
 
@@ -1773,11 +1778,11 @@ console.log("file upladed with id " + res.id);
 
 | Name | Type |
 | :------ | :------ |
-| `options` | [`UploadFileOptions`](../modules.md#uploadfileoptions) |
+| `options` | [`UploadFileOptions`](../modules.html#uploadfileoptions) |
 
 #### Returns
 
-`Promise`<[`UploadResponse`](../modules.md#uploadresponse)\>
+`Promise`<[`UploadResponse`](../modules.html#uploadresponse)\>
 
 Server response, including the file id
 
@@ -1807,7 +1812,7 @@ const watchid = await db.Watch({ collectionname: "entities", paths: ["$.[?(@._ty
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `options` | [`WatchOptions`](../modules.md#watchoptions) | `undefined` |  |
+| `options` | [`WatchOptions`](../modules.html#watchoptions) | `undefined` |  |
 | `callback` | (`operation`: `string`, `document`: `any`) => `void` | `undefined` |  |
 | `priority` | `number` | `2` | Message priority, the higher the number the higher the priority. Default is 2, 3 or higher requeires updates to server configuration |
 
@@ -1815,7 +1820,7 @@ const watchid = await db.Watch({ collectionname: "entities", paths: ["$.[?(@._ty
 
 `Promise`<`string`\>
 
-server id assigned to the watch. Used with [UnWatch](openiap.md#unwatch) to stop receiving notifications from the watch.
+server id assigned to the watch. Used with [UnWatch](openiap.html#unwatch) to stop receiving notifications from the watch.
 
 #### Defined in
 
@@ -1922,7 +1927,7 @@ Using EventMitter is also possible .on("message", (client, command, message) => 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `client` | [`client`](client.md) | Return client instance that received the message |
-| `message` | [`Envelope`](../modules.md#envelope) | The message that was received |
+| `message` | [`Envelope`](../modules.html#envelope) | The message that was received |
 
 #### Returns
 
@@ -1936,7 +1941,7 @@ ___
 
 ### connect
 
-▸ **connect**(`first?`): `Promise`<[`User`](../modules.md#user)\>
+▸ **connect**(`first?`): `Promise`<[`User`](../modules.html#user)\>
 
 **`Example`**
 
@@ -1956,7 +1961,7 @@ client.connect().then(async (user) => {
 
 #### Returns
 
-`Promise`<[`User`](../modules.md#user)\>
+`Promise`<[`User`](../modules.html#user)\>
 
 Returns the [User](../interfaces/User.md) object if login was successful, otherwise throws an error
 
@@ -2076,7 +2081,7 @@ ___
 ▸ **getMaxListeners**(): `number`
 
 Returns the current max listener value for the `EventEmitter` which is either
-set by `emitter.setMaxListeners(n)` or defaults to [defaultMaxListeners](openiap.md#defaultmaxlisteners).
+set by `emitter.setMaxListeners(n)` or defaults to [defaultMaxListeners](openiap.html#defaultmaxlisteners).
 
 **`Since`**
 

@@ -3,6 +3,11 @@ layout: page
 title: UpdateResult
 parent: NodeJS Api
 ---
+---
+layout: page
+title: UpdateResult
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / UpdateResult
 
 # Interface: UpdateResult
@@ -11,11 +16,11 @@ parent: NodeJS Api
 
 ### Properties
 
-- [acknowledged](UpdateResult.md#acknowledged)
-- [matchedCount](UpdateResult.md#matchedcount)
-- [modifiedCount](UpdateResult.md#modifiedcount)
-- [upsertedCount](UpdateResult.md#upsertedcount)
-- [upsertedId](UpdateResult.md#upsertedid)
+- [acknowledged](UpdateResult.html#acknowledged)
+- [matchedCount](UpdateResult.html#matchedcount)
+- [modifiedCount](UpdateResult.html#modifiedcount)
+- [upsertedCount](UpdateResult.html#upsertedcount)
+- [upsertedId](UpdateResult.html#upsertedid)
 
 ## Properties
 

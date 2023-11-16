@@ -3,6 +3,11 @@ layout: page
 title: QueryResponse
 parent: NodeJS Api
 ---
+---
+layout: page
+title: QueryResponse
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / QueryResponse
 
 # Interface: QueryResponse
@@ -11,7 +16,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [results](QueryResponse.md#results)
+- [results](QueryResponse.html#results)
 
 ## Properties
 

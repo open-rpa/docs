@@ -3,6 +3,11 @@ layout: page
 title: InsertOrUpdateOneResponse
 parent: NodeJS Api
 ---
+---
+layout: page
+title: InsertOrUpdateOneResponse
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / InsertOrUpdateOneResponse
 
 # Interface: InsertOrUpdateOneResponse
@@ -11,7 +16,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [result](InsertOrUpdateOneResponse.md#result)
+- [result](InsertOrUpdateOneResponse.html#result)
 
 ## Properties
 

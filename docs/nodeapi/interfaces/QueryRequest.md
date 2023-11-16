@@ -3,6 +3,11 @@ layout: page
 title: QueryRequest
 parent: NodeJS Api
 ---
+---
+layout: page
+title: QueryRequest
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / QueryRequest
 
 # Interface: QueryRequest
@@ -11,13 +16,13 @@ parent: NodeJS Api
 
 ### Properties
 
-- [collectionname](QueryRequest.md#collectionname)
-- [orderby](QueryRequest.md#orderby)
-- [projection](QueryRequest.md#projection)
-- [query](QueryRequest.md#query)
-- [queryas](QueryRequest.md#queryas)
-- [skip](QueryRequest.md#skip)
-- [top](QueryRequest.md#top)
+- [collectionname](QueryRequest.html#collectionname)
+- [orderby](QueryRequest.html#orderby)
+- [projection](QueryRequest.html#projection)
+- [query](QueryRequest.html#query)
+- [queryas](QueryRequest.html#queryas)
+- [skip](QueryRequest.html#skip)
+- [top](QueryRequest.html#top)
 
 ## Properties
 

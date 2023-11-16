@@ -26,7 +26,13 @@ title: ${path.basename(fullPath, '.md')}
 parent: NodeJS Api
 ---
 `;
-            fs.writeFileSync(fullPath, frontMatter + content);
+            if(!content.startsWith('---')) {
+                fs.writeFileSync(fullPath, frontMatter + content.replace(/\.md#/g, ".html#"));
+            } else {
+                fs.writeFileSync(fullPath, frontMatter + content.replace(/\.md#/g, ".html#"));
+            }
+
+            
         }
     });
 }

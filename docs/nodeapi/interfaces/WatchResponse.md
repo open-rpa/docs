@@ -3,6 +3,11 @@ layout: page
 title: WatchResponse
 parent: NodeJS Api
 ---
+---
+layout: page
+title: WatchResponse
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / WatchResponse
 
 # Interface: WatchResponse
@@ -11,7 +16,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [id](WatchResponse.md#id)
+- [id](WatchResponse.html#id)
 
 ## Properties
 

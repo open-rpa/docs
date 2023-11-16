@@ -3,6 +3,11 @@ layout: page
 title: RegisterExchangeRequest
 parent: NodeJS Api
 ---
+---
+layout: page
+title: RegisterExchangeRequest
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / RegisterExchangeRequest
 
 # Interface: RegisterExchangeRequest
@@ -11,10 +16,10 @@ parent: NodeJS Api
 
 ### Properties
 
-- [addqueue](RegisterExchangeRequest.md#addqueue)
-- [algorithm](RegisterExchangeRequest.md#algorithm)
-- [exchangename](RegisterExchangeRequest.md#exchangename)
-- [routingkey](RegisterExchangeRequest.md#routingkey)
+- [addqueue](RegisterExchangeRequest.html#addqueue)
+- [algorithm](RegisterExchangeRequest.html#algorithm)
+- [exchangename](RegisterExchangeRequest.html#exchangename)
+- [routingkey](RegisterExchangeRequest.html#routingkey)
 
 ## Properties
 

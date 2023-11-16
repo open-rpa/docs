@@ -3,6 +3,11 @@ layout: page
 title: ErrorResponse
 parent: NodeJS Api
 ---
+---
+layout: page
+title: ErrorResponse
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / ErrorResponse
 
 # Interface: ErrorResponse
@@ -11,9 +16,9 @@ parent: NodeJS Api
 
 ### Properties
 
-- [code](ErrorResponse.md#code)
-- [message](ErrorResponse.md#message)
-- [stack](ErrorResponse.md#stack)
+- [code](ErrorResponse.html#code)
+- [message](ErrorResponse.html#message)
+- [stack](ErrorResponse.html#stack)
 
 ## Properties
 

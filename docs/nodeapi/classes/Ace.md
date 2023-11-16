@@ -3,6 +3,11 @@ layout: page
 title: Ace
 parent: NodeJS Api
 ---
+---
+layout: page
+title: Ace
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / Ace
 
 # Class: Ace
@@ -11,27 +16,27 @@ parent: NodeJS Api
 
 ### Constructors
 
-- [constructor](Ace.md#constructor)
+- [constructor](Ace.html#constructor)
 
 ### Properties
 
-- [\_id](Ace.md#_id)
-- [deny](Ace.md#deny)
-- [name](Ace.md#name)
-- [rights](Ace.md#rights)
-- [ace\_right\_bits](Ace.md#ace_right_bits)
-- [full\_control](Ace.md#full_control)
+- [\_id](Ace.html#_id)
+- [deny](Ace.html#deny)
+- [name](Ace.html#name)
+- [rights](Ace.html#rights)
+- [ace\_right\_bits](Ace.html#ace_right_bits)
+- [full\_control](Ace.html#full_control)
 
 ### Methods
 
-- [\_arrayBufferToBase64](Ace.md#_arraybuffertobase64)
-- [\_base64ToArrayBuffer](Ace.md#_base64toarraybuffer)
-- [isBitSet](Ace.md#isbitset)
-- [resetfullcontrol](Ace.md#resetfullcontrol)
-- [resetnone](Ace.md#resetnone)
-- [setBit](Ace.md#setbit)
-- [toogleBit](Ace.md#tooglebit)
-- [unsetBit](Ace.md#unsetbit)
+- [\_arrayBufferToBase64](Ace.html#_arraybuffertobase64)
+- [\_base64ToArrayBuffer](Ace.html#_base64toarraybuffer)
+- [isBitSet](Ace.html#isbitset)
+- [resetfullcontrol](Ace.html#resetfullcontrol)
+- [resetnone](Ace.html#resetnone)
+- [setBit](Ace.html#setbit)
+- [toogleBit](Ace.html#tooglebit)
+- [unsetBit](Ace.html#unsetbit)
 
 ## Constructors
 

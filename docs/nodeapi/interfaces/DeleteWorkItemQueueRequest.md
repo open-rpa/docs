@@ -3,6 +3,11 @@ layout: page
 title: DeleteWorkItemQueueRequest
 parent: NodeJS Api
 ---
+---
+layout: page
+title: DeleteWorkItemQueueRequest
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / DeleteWorkItemQueueRequest
 
 # Interface: DeleteWorkItemQueueRequest
@@ -11,9 +16,9 @@ parent: NodeJS Api
 
 ### Properties
 
-- [purge](DeleteWorkItemQueueRequest.md#purge)
-- [wiq](DeleteWorkItemQueueRequest.md#wiq)
-- [wiqid](DeleteWorkItemQueueRequest.md#wiqid)
+- [purge](DeleteWorkItemQueueRequest.html#purge)
+- [wiq](DeleteWorkItemQueueRequest.html#wiq)
+- [wiqid](DeleteWorkItemQueueRequest.html#wiqid)
 
 ## Properties
 

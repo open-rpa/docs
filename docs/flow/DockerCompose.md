@@ -4,7 +4,7 @@ title: Install using docker-compose
 parent: What Is OpenIAP Flow
 nav_order: 4
 ---
-### Getting started
+## Getting started
 
 To quickly get started with your own installation you can use one of these docker compose files.
 
@@ -39,11 +39,11 @@ For more complex setups where you don't have public IP or just need access to wi
 In this video the whole process is showed on ubuntu 18 
 [![Ubuntu 18 npm install](https://img.youtube.com/vi/YdH3h3iAu-Y/1.jpg)](https://youtu.be/YdH3h3iAu-Y)
 
-### Different version
+## Different version
 
 You cannot run multiple of these at the same time, with out a lot of reconfiguration, that is beyond the scope of this document.
 
-#### Normal version
+### Normal version
 
 [docker-compose.yml](https://github.com/open-rpa/docker/blob/master/docker-compose.yml) is the "plain" version, with only open source features, running on your localhost using http://localhost.openiap.io 
 
@@ -64,7 +64,7 @@ You can delete all data, by first running `./normal-down.sh` and then `./remove-
 You can access RabbitMQ Admin Interface at http://mq.localhost.openiap.io
 Each agent started inside openflow, will be listening at username.localhost.openiap.io
 
-#### Premium demo version
+### Premium demo version
 
 [docker-compose-ee.yml](https://github.com/open-rpa/docker/blob/master/docker-compose-ee.yml) is a demo of the premium features. running on your localhost using http://localhost.openiap.io 
 This version cannot run with other domains, without a valid license
@@ -91,7 +91,7 @@ If enabled in the yml file, you can also access
 2. Access RabbitMQ Admin Interface at http://mq.localhost.openiap.io
 3. Each agent started inside openflow, will be listening at username.localhost.openiap.io
 
-#### Openflow with SSL using lets enrypt
+### Openflow with SSL using lets enrypt
 
 [docker-compose-letsencrypt.yml](https://github.com/open-rpa/docker/blob/master/docker-compose-letsencrypt.yml) is the "plain" version, but with traefik configured to request certificates using lets encrypt. 
 
@@ -107,10 +107,10 @@ If enabled in the yml file, you can also access
 2. Access RabbitMQ Admin Interface at http://mq.localhost.openiap.io
 3. Each agent started inside openflow, will be listening at username.localhost.openiap.io
 
-#### Using custom port
+### Using custom port
 This setup does not support using a custom port. Only port 80 or 443 is supported.
 
-#### Using custom domain names
+### Using custom domain names
 
 All examples use localhost.openiap.io for domain. This domain points to your localhost ( 127.0.0.1 ) and there for only works on your local machine. To allow other clients to connect, or if you did this on a hosting/cloud server somewhere, you need to use your own DNS to access your instance.
 
@@ -132,7 +132,7 @@ Next add an wildcard * record for all the services exposed from that instance, a
 
 ( a few DNS providers does not allow create wildcard records using CNAME, and that case use an A record pointing to the same IP )
 
-#### Troubleshooting tips
+### Troubleshooting tips
 
 special note for people using MacOS, you need to update the volume for traefik.  
 If you are gettig error 404 in the browser when trying to connect, and the log/console of traefik is showing errors connecting to the docker pipe,  

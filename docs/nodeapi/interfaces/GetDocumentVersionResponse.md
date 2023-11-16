@@ -3,6 +3,11 @@ layout: page
 title: GetDocumentVersionResponse
 parent: NodeJS Api
 ---
+---
+layout: page
+title: GetDocumentVersionResponse
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / GetDocumentVersionResponse
 
 # Interface: GetDocumentVersionResponse
@@ -11,7 +16,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [result](GetDocumentVersionResponse.md#result)
+- [result](GetDocumentVersionResponse.html#result)
 
 ## Properties
 

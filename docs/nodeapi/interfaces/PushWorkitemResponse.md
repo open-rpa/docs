@@ -3,6 +3,11 @@ layout: page
 title: PushWorkitemResponse
 parent: NodeJS Api
 ---
+---
+layout: page
+title: PushWorkitemResponse
+parent: NodeJS Api
+---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / PushWorkitemResponse
 
 # Interface: PushWorkitemResponse
@@ -11,13 +16,13 @@ parent: NodeJS Api
 
 ### Properties
 
-- [workitem](PushWorkitemResponse.md#workitem)
+- [workitem](PushWorkitemResponse.html#workitem)
 
 ## Properties
 
 ### workitem
 
-• **workitem**: [`Workitem`](../modules.md#workitem)
+• **workitem**: [`Workitem`](../modules.html#workitem)
 
 #### Defined in
 
