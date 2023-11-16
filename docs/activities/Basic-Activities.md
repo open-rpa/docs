@@ -4,9 +4,10 @@ title: Basic Activities
 parent: OpenRPA Activities
 nav_order: 1
 ---
+
 # OpenApplication
 
-![1558717936148](../img/1558717936148.png)
+![1558717936148](activities/open-application.png)
 
 **What:** The basic idea behind this activity, is to make it easy to check for a running application, and launch it, if it is not. At the time of writing this, the activity supports Windows components, Internet Explorer and NativeMessaging (chrome/Firefox)
 
@@ -17,7 +18,7 @@ Clicking "Select element" will try and find the position of the window, and save
 
 # CloseApplication
 
-![1561190659342](activities/1561190659342.png)
+![1561190659342](activities/close-application.png)
 
 **What:** Close an application or webpage
 
@@ -27,7 +28,7 @@ Clicking "Select element" will try and find the position of the window, and save
 
 # HighlightElement
 
-![1558718230861](../img/1558718230861.png)
+![1558718230861](activities/highlight-element.png)
 
 **What:** Highlights a found element.
 
@@ -37,7 +38,7 @@ Clicking "Select element" will try and find the position of the window, and save
 
 # TypeText
 
-![1558718403772](../img/1558718403772.png)
+![1558718403772](activities/type-text.png)
 
 **What:** To assign a value you generally should use the Value property on item's, but if you need to send a Key combination to an application, this is your friend. 
 
@@ -47,7 +48,7 @@ Clicking "Select element" will try and find the position of the window, and save
 
 # ClickElement
 
-![1558720283840](../img/1558720283840.png)
+![1558720283840](activities/click-element.png)
 
 **What:** Represents a mouse click, the default is using virtual clicks. This means different things depending on the object type and provider, but generally you can think if it as a click without moving the mouse. Set VirtualClick to False, to do a real Mouse Click and then use OffsetX/OffsetY to make the click hit within the element (0,0 will be the top left corner of the element)
 
@@ -57,7 +58,7 @@ Clicking "Select element" will try and find the position of the window, and save
 
 # GetElement
 
-![1558720872448](../img/1558720872448.png)
+![1558720872448](activities/get-element.png)
 
 **What:** The primary tool of the robot, used for locating items in the environment. Depending on the provider the settings may differ, but generally this can be used to locate one or many elements based on a selector. Use Open Selector to fine tune what you want. Per default, we will only find 1 item, and throw an error if we find less than one object. Use MaxResults and MinResults to change this behaviour. 
 For instance if you want to loop though a DataSet you could select the DataRow and set MaxResults to 100. Then within the GetElement you add new GetElement to "pick" different elements per DataRow.
@@ -69,7 +70,7 @@ Setting MinResults to 0, effectively means your only checking if an object exist
 
 # ForEachDataRow
 
-![image-20200116100128462](../img/image-20200116100128462.png)
+![image-20200116100128462](activities/ForEachDataRow.png)
 
 **What:** Many activities return a data table or dataset, and looping though that, can be a little bit of a hazel, since it does not have an easy accessible enumerator. Here, you 
 
@@ -79,9 +80,7 @@ Setting MinResults to 0, effectively means your only checking if an object exist
 
 # GetImage
 
-![1563281185707](activities/1563281185707.png)
-
-![1563281220892](activities/1563281220892.png)
+![1563281220892](activities/GetImage.png)
 
 **What:** Get an image relative to another element.
 
@@ -101,7 +100,7 @@ Setting MinResults to 0, effectively means your only checking if an object exist
 
 # LoadFromFile
 
-![image-20200116102833662](../img/image-20200116102833662.png)
+![image-20200116102833662](activities/LoadFromFile.png)
 
 **What:** Load an image file, and returns an ImageElement
 
@@ -145,6 +144,15 @@ To Comment out multiple activites: Mark the activities and choose "Comment out" 
 **What:** Insert a text string into the users clipboard
 
 **How:** Just drop it in and set the text in Text
+
+**Alternative: ** Use Invokce code, choose AutoHotKey and use
+
+``` ahk
+Clipboard := variable1 
+Timeout := 3
+WaitForAnyData := 1
+ClipWait, % Timeout, % WaitForAnyData
+```
 
 # MoveMouse
 
@@ -529,3 +537,5 @@ Creates a loop that executes other activities dropped in it at least once and re
 ![While](While.png)
 
 This Activity creates a loop that executes other Activities dropped in it while the condition is True. Once condition no longer evaluates to True, the loop ceases and moves to the next Activity. 
+
+
