@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Details about network protocol
+title: OpenIAP network protocol
 parent: What Is OpenIAP Flow
 nav_order: 9
 ---
