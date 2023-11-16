@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: NodeJS Api
@@ -13,7 +12,7 @@ This is the client (and server) side api needed to connect and consume an OpenIA
 
 This version is for nodejs only, for browser implementation please see the [jsapi](https://github.com/openiap/jsapi) version
 
-See [documentation](https://openiap.github.io/nodeapi/) for more information and examples
+See [documentation](openiap) for more information and examples
 
 ## Table of Contents
 
@@ -97,7 +96,7 @@ async function main() {
 main();
 ```
 
-Please see [openiap constructor](https://openiap.github.io/nodeapi/classes/openiap.html#constructor) for more information about connecting strings
+Please see [openiap constructor](https://docs.openiap.io/docs/nodeapi/classes/openiap.html#constructor) for more information about connecting strings
 
 ## api-documentation
 

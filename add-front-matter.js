@@ -10,8 +10,7 @@ function addFrontMatterToFiles(dir) {
             addFrontMatterToFiles(fullPath); // Recurse into subdirectories
         } else if (fullPath.endsWith('.md') && path.basename(fullPath) === 'README.md') {
             const content = fs.readFileSync(fullPath, 'utf8');
-            const frontMatter = `
----
+            const frontMatter = `---
 layout: default
 title: NodeJS Api
 nav_order: 9
@@ -21,8 +20,7 @@ has_children: true
             fs.writeFileSync(fullPath, frontMatter + content);
         } else if (fullPath.endsWith('.md') && path.basename(fullPath) !== 'README.md') {
             const content = fs.readFileSync(fullPath, 'utf8');
-            const frontMatter = `
----
+            const frontMatter = `---
 layout: page
 title: ${path.basename(fullPath, '.md')}
 parent: NodeJS Api
