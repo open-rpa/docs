@@ -1,7 +1,7 @@
 
 ---
 layout: page
-title: Exports
+title: SigninResponse
 parent: NodeJS Api
 ---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / SigninResponse

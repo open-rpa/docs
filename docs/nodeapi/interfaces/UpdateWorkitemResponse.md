@@ -1,7 +1,7 @@
 
 ---
 layout: page
-title: Exports
+title: UpdateWorkitemResponse
 parent: NodeJS Api
 ---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / UpdateWorkitemResponse

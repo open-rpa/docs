@@ -1,7 +1,7 @@
 
 ---
 layout: page
-title: Exports
+title: EndStream
 parent: NodeJS Api
 ---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / EndStream

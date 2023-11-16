@@ -1,7 +1,7 @@
 
 ---
 layout: page
-title: Exports
+title: AggregateRequest
 parent: NodeJS Api
 ---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / AggregateRequest

@@ -1,7 +1,7 @@
 
 ---
 layout: page
-title: Exports
+title: User
 parent: NodeJS Api
 ---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / User

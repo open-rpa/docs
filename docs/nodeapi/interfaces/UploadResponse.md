@@ -1,7 +1,7 @@
 
 ---
 layout: page
-title: Exports
+title: UploadResponse
 parent: NodeJS Api
 ---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / UploadResponse

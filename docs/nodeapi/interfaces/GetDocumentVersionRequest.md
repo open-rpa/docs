@@ -1,7 +1,7 @@
 
 ---
 layout: page
-title: Exports
+title: GetDocumentVersionRequest
 parent: NodeJS Api
 ---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / GetDocumentVersionRequest

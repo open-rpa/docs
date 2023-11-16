@@ -24,7 +24,7 @@ has_children: true
             const frontMatter = `
 ---
 layout: page
-title: Exports
+title: ${path.basename(fullPath, '.md')}
 parent: NodeJS Api
 ---
 `;

@@ -1,7 +1,7 @@
 
 ---
 layout: page
-title: Exports
+title: GetElementResponse
 parent: NodeJS Api
 ---
 [@openiap/nodeapi](../README.md) / [Exports](../modules.md) / GetElementResponse
