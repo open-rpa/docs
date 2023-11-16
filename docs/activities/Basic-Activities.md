@@ -110,7 +110,7 @@ Setting MinResults to 0, effectively means your only checking if an object exist
 
 # TakeScreenshot
 
-![image-20200116103206663](../img/image-20200116103206663.png)
+![image-20200116103206663](activities/TakeScreenshot.png)
 
 **What:** Takes a picture of either the whole screen, and element or a specific area of the screen.
 
@@ -156,7 +156,7 @@ ClipWait, % Timeout, % WaitForAnyData
 
 # MoveMouse
 
-![image-20200116101756696](../img/image-20200116101756696.png)
+![image-20200116101756696](activities/MoveMouse.png)
 
 **What:** Move the mouse to a specific location
 
@@ -166,7 +166,7 @@ ClipWait, % Timeout, % WaitForAnyData
 
 # Detector
 
-![1558723009540](../img/1558723009540.png)
+![1558723009540](activities/DetectorNode.png)
 
 **What:** Make workflow wait for an detector to be triggered
 
@@ -177,13 +177,13 @@ ClipWait, % Timeout, % WaitForAnyData
 Note, as soon as an activity has been created, all actions will also be sent to OpenFlow.
 You can use OpenFlow to trigger other robots based on a trigger ( or interact with one of the more than 2000 different systems supported )
 
-![1558723403613](../img/1558723403613.png)
+![1558723403613](activities/DetectorNode.png)
 
 # InvokeOpenFlow
 
-![1561191035011](activities/1561191035011.png)
+![1561191035011](activities/InvokeOpenFlow.png)
 
-![1561191004924](activities/1561191004924.png)
+![1561191004924](activities/InvokeOpenFlowNode.png)
 
 **What:** Call a workflow inside OpenFlow
 
@@ -193,7 +193,7 @@ You can use OpenFlow to trigger other robots based on a trigger ( or interact wi
 
 # InvokeOpenRPA
 
-![1561191739107](activities/1561191739107.png)
+![1561191739107](activities/InvokeOpenRPA.png)
 
 **What:** Call other workflow in OpenRPA
 
@@ -203,7 +203,7 @@ You can use OpenFlow to trigger other robots based on a trigger ( or interact wi
 
 # InvokeRemoteOpenRPA
 
-![image-20200116101235702](../img/image-20200116101235702.png)
+![image-20200116101235702](activities/InvokeRemoteOpenRPA.png)
 
 **What:** Call a workflow on a remote robot, or group of robots.
 
@@ -274,7 +274,7 @@ Using Uniqueness you can define a custom unique constraint when inserting or upd
 
 # SaveFile
 
-![image-20200116103439150](../img/image-20200116103439150.png)
+![image-20200116103439150](activities/SaveFile.png)
 
 **What:** Upload a file to [GridFS](https://docs.mongodb.com/manual/core/gridfs/) in the database in OpenFlow.
 
@@ -284,7 +284,7 @@ Using Uniqueness you can define a custom unique constraint when inserting or upd
 
 # GetFile
 
-![image-20200116103517686](../img/image-20200116103517686.png)
+![image-20200116103517686](activities/GetFile.png)
 
 **What:** Download a file from [GridFS](https://docs.mongodb.com/manual/core/gridfs/) stored in the database in OpenFlow.
 
@@ -294,7 +294,7 @@ Using Uniqueness you can define a custom unique constraint when inserting or upd
 
 # SetCredentials
 
-![image-20200116103840559](../img/image-20200116103840559.png)
+![image-20200116103840559](activities/SetCredentials.png)
 
 **What:** Save a username and password with a name.
 
@@ -304,7 +304,7 @@ Using Uniqueness you can define a custom unique constraint when inserting or upd
 
 GetCredentials
 
-![image-20200116104028045](../img/image-20200116104028045.png)
+![image-20200116104028045](activities/GetCredentials.png)
 
 **What:** Gets credentials by name from OpenFlow
 
@@ -314,7 +314,7 @@ GetCredentials
 
 # SetAutoLogin
 
-![image-20200116112256387](../img/image-20200116112256387.png)
+![image-20200116112256387](activities/SetAutoLogin.png)
 
 **What:** Set auto login information for current computer.
 
@@ -324,7 +324,7 @@ GetCredentials
 
 # ReadCell
 
-![1561199876085](activities/1561199876085.png)
+![1561199876085](activities/ReadCell.png)
 
 **What:** Read a single cell in an excel spreadsheet. Type of data is selected in the ArgumentType dropdown list.
 
@@ -334,9 +334,9 @@ GetCredentials
 
 # WriteCell
 
-![1561200369356](activities/1561200369356.png)
+![1561200369356](activities/WriteCellType.png)
 
-![1561200410099](activities/1561200410099.png)
+![1561200410099](activities/WriteCell.png)
 
 **What:** Write a value into an excel spreadsheet. Type of data is selected in the ArgumentType dropdown list.
 
@@ -346,7 +346,7 @@ GetCredentials
 
 # ReadRange
 
-![1561200631996](activities/1561200631996.png)
+![1561200631996](activities/ReadRange.png)
 
 **What:** Read several cell or a whole sheet into a DataTable. Can also be used to easily find next empty cell using LastUsedColumn and LastUsedRow
 
@@ -376,7 +376,7 @@ GetCredentials
 
 # NewEmailItem
 
-![1564855645249](C:\code\openrpa\docs\pages\activities\NewEmailItem.png)
+![1564855645249](activities/NewEmailItem.png)
 
 **What:** Open and send a new email using Outlook.
 
@@ -386,7 +386,7 @@ GetCredentials
 
 # CommentOut
 
-![1563280195202](activities/1563280195202.png)
+![1563280195202](activities/commentout.png)
 
 **What: **Comment out, lets you easily remove parts of a workflow. Anything you place inside CommentOut will not be executed.
 
@@ -396,7 +396,7 @@ GetCredentials
 
 # CopyClipboard
 
-![1563280773451](activities/1563280773451.png)
+![1563280773451](activities/CopyClipboard.png)
 
 **What:** Copy what ever is in the clipboard, set SendCtrlC to true, to grab what ever is selected right now
 
@@ -406,7 +406,7 @@ GetCredentials
 
 # InsertClipboard
 
-![1563280813755](activities/1563280813755.png)
+![1563280813755](activities/InsertClipboard.png)
 
 **What:** Adds text to the clipboard, ready to be pasted.
 
@@ -416,7 +416,7 @@ GetCredentials
 
 # OpenURL
 
-![1558722430092](../img/1558722430092.png)
+![1558722430092](activities/openurl.png)
 
 **What:** It is pretty much the same as OpenApplication, except it only supports Internet Explorer. 
 
@@ -448,9 +448,9 @@ GetCredentials
 
 # InvokeCode
 
-![image-20200116104451646](../img/image-20200116104451646.png)
+![image-20200116104451646](activities/invoke-code.png)
 
-![image-20200116104547448](../img/image-20200116104547448.png)
+![image-20200116104547448](activities/invoke-code-editor.png)
 
 **What:** Allows you to write code in a couple of different languages. 
 
@@ -460,7 +460,7 @@ GetCredentials
 
 # DownloadFile
 
-![image-20200116110114662](../img/image-20200116110114662.png)
+![image-20200116110114662](activities/download-file.png)
 
 **What:** Download a file to the local machine.
 
@@ -468,7 +468,7 @@ GetCredentials
 
 # ReadExcel
 
-![image-20200116110712492](../img/image-20200116110712492.png)
+![image-20200116110712492](activities/read-excel.png)
 
 **What:** Reads an excel or CSV file, and returns a dataset while all the data. 
 
@@ -479,7 +479,7 @@ You can use ForEachDataRow to loop though the data using .table(0) if you have m
 
 # WriteExcel
 
-![image-20200116112110212](../img/image-20200116112110212.png)
+![image-20200116112110212](activities/write-excel.png)
 
 **What:** Write a data table or data set to a new excel file
 
@@ -489,7 +489,7 @@ You can use ForEachDataRow to loop though the data using .table(0) if you have m
 
 # ReadJSON
 
-![image-20200116110852261](../img/image-20200116110852261.png)
+![image-20200116110852261](activities/read-json.png)
 
 **What:** Read a simple JSON structure or array, into a data table for easy parsing.
 
@@ -499,7 +499,7 @@ You can use ForEachDataRow to loop though the data using .table(0) if you have m
 
 # ReadPDF
 
-![image-20200116111306492](../img/image-20200116111306492.png)
+![image-20200116111306492](activities/readpdf.png)
 
 **What:** Read a PDF file
 
@@ -510,7 +510,7 @@ You can use ForEachDataRow to loop though the data using .table(0) if you have m
 
 ## Continue
 
-![image-20220415152133880](Continue.png)
+![image-20220415152133880](activities/continue.png)
 
 **What:** Skip rest of sequence and move to next item.
 
@@ -520,7 +520,7 @@ You can use ForEachDataRow to loop though the data using .table(0) if you have m
 
 ## Break
 
-![image-20220415153414144](Break.png)
+![image-20220415153414144](activities/break.png)
 
 **What:** Allows stop processing more items and continue with the workflow
 
@@ -529,12 +529,12 @@ You can use ForEachDataRow to loop though the data using .table(0) if you have m
 **Why:** If you know you do not need to process more items, breaking out is more efficient that using continue
 
 # Do While
-![Do While](Do-While.png)
+![Do While](activities/do-while.png)
 
 Creates a loop that executes other activities dropped in it at least once and repeatedly until the looping condition no longer evaluates to True.
 
 # While
-![While](While.png)
+![While](activities/while.png)
 
 This Activity creates a loop that executes other Activities dropped in it while the condition is True. Once condition no longer evaluates to True, the loop ceases and moves to the next Activity. 
 
