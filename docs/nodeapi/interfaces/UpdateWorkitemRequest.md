@@ -3,12 +3,7 @@ layout: page
 title: UpdateWorkitemRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: UpdateWorkitemRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / UpdateWorkitemRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / UpdateWorkitemRequest
 
 # Interface: UpdateWorkitemRequest
 
@@ -16,15 +11,15 @@ parent: NodeJS Api
 
 ### Properties
 
-- [files](UpdateWorkitemRequest.html#files)
-- [ignoremaxretries](UpdateWorkitemRequest.html#ignoremaxretries)
-- [workitem](UpdateWorkitemRequest.html#workitem)
+- [files](UpdateWorkitemRequest.html##files)
+- [ignoremaxretries](UpdateWorkitemRequest.html##ignoremaxretries)
+- [workitem](UpdateWorkitemRequest.html##workitem)
 
 ## Properties
 
 ### files
 
-• **files**: [`WorkitemFile`](../modules.html#workitemfile)[]
+• **files**: [`WorkitemFile`](../modules.html##workitemfile)[]
 
 #### Defined in
 
@@ -44,7 +39,7 @@ ___
 
 ### workitem
 
-• **workitem**: [`Workitem`](../modules.html#workitem)
+• **workitem**: [`Workitem`](../modules.html##workitem)
 
 #### Defined in
 

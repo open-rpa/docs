@@ -3,12 +3,7 @@ layout: page
 title: WatchEvent
 parent: NodeJS Api
 ---
----
-layout: page
-title: WatchEvent
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / WatchEvent
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / WatchEvent
 
 # Interface: WatchEvent
 
@@ -16,9 +11,9 @@ parent: NodeJS Api
 
 ### Properties
 
-- [document](WatchEvent.html#document)
-- [id](WatchEvent.html#id)
-- [operation](WatchEvent.html#operation)
+- [document](WatchEvent.html##document)
+- [id](WatchEvent.html##id)
+- [operation](WatchEvent.html##operation)
 
 ## Properties
 

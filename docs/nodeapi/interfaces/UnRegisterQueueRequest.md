@@ -3,12 +3,7 @@ layout: page
 title: UnRegisterQueueRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: UnRegisterQueueRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / UnRegisterQueueRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / UnRegisterQueueRequest
 
 # Interface: UnRegisterQueueRequest
 
@@ -16,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [queuename](UnRegisterQueueRequest.html#queuename)
+- [queuename](UnRegisterQueueRequest.html##queuename)
 
 ## Properties
 

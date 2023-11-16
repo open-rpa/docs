@@ -3,12 +3,7 @@ layout: page
 title: InsertOneRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: InsertOneRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / InsertOneRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / InsertOneRequest
 
 # Interface: InsertOneRequest
 
@@ -16,10 +11,10 @@ parent: NodeJS Api
 
 ### Properties
 
-- [collectionname](InsertOneRequest.html#collectionname)
-- [item](InsertOneRequest.html#item)
-- [j](InsertOneRequest.html#j)
-- [w](InsertOneRequest.html#w)
+- [collectionname](InsertOneRequest.html##collectionname)
+- [item](InsertOneRequest.html##item)
+- [j](InsertOneRequest.html##j)
+- [w](InsertOneRequest.html##w)
 
 ## Properties
 

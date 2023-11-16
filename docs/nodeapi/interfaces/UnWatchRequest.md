@@ -3,12 +3,7 @@ layout: page
 title: UnWatchRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: UnWatchRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / UnWatchRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / UnWatchRequest
 
 # Interface: UnWatchRequest
 
@@ -16,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [id](UnWatchRequest.html#id)
+- [id](UnWatchRequest.html##id)
 
 ## Properties
 

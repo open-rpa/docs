@@ -3,12 +3,7 @@ layout: page
 title: DeleteOneRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: DeleteOneRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / DeleteOneRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / DeleteOneRequest
 
 # Interface: DeleteOneRequest
 
@@ -16,9 +11,9 @@ parent: NodeJS Api
 
 ### Properties
 
-- [collectionname](DeleteOneRequest.html#collectionname)
-- [id](DeleteOneRequest.html#id)
-- [recursive](DeleteOneRequest.html#recursive)
+- [collectionname](DeleteOneRequest.html##collectionname)
+- [id](DeleteOneRequest.html##id)
+- [recursive](DeleteOneRequest.html##recursive)
 
 ## Properties
 

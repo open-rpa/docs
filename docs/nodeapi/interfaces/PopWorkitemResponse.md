@@ -3,12 +3,7 @@ layout: page
 title: PopWorkitemResponse
 parent: NodeJS Api
 ---
----
-layout: page
-title: PopWorkitemResponse
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / PopWorkitemResponse
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / PopWorkitemResponse
 
 # Interface: PopWorkitemResponse
 
@@ -16,13 +11,13 @@ parent: NodeJS Api
 
 ### Properties
 
-- [workitem](PopWorkitemResponse.html#workitem)
+- [workitem](PopWorkitemResponse.html##workitem)
 
 ## Properties
 
 ### workitem
 
-• **workitem**: [`Workitem`](../modules.html#workitem)
+• **workitem**: [`Workitem`](../modules.html##workitem)
 
 #### Defined in
 

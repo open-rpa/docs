@@ -3,12 +3,7 @@ layout: page
 title: UpdateWorkItemQueueResponse
 parent: NodeJS Api
 ---
----
-layout: page
-title: UpdateWorkItemQueueResponse
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / UpdateWorkItemQueueResponse
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / UpdateWorkItemQueueResponse
 
 # Interface: UpdateWorkItemQueueResponse
 
@@ -16,13 +11,13 @@ parent: NodeJS Api
 
 ### Properties
 
-- [workitemqueue](UpdateWorkItemQueueResponse.html#workitemqueue)
+- [workitemqueue](UpdateWorkItemQueueResponse.html##workitemqueue)
 
 ## Properties
 
 ### workitemqueue
 
-• **workitemqueue**: [`WorkItemQueue`](../modules.html#workitemqueue)
+• **workitemqueue**: [`WorkItemQueue`](../modules.html##workitemqueue)
 
 #### Defined in
 

@@ -3,12 +3,7 @@ layout: page
 title: CountRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: CountRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / CountRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / CountRequest
 
 # Interface: CountRequest
 
@@ -16,9 +11,9 @@ parent: NodeJS Api
 
 ### Properties
 
-- [collectionname](CountRequest.html#collectionname)
-- [query](CountRequest.html#query)
-- [queryas](CountRequest.html#queryas)
+- [collectionname](CountRequest.html##collectionname)
+- [query](CountRequest.html##query)
+- [queryas](CountRequest.html##queryas)
 
 ## Properties
 

@@ -3,12 +3,7 @@ layout: page
 title: Envelope
 parent: NodeJS Api
 ---
----
-layout: page
-title: Envelope
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / Envelope
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / Envelope
 
 # Interface: Envelope
 
@@ -16,15 +11,15 @@ parent: NodeJS Api
 
 ### Properties
 
-- [command](Envelope.html#command)
-- [data](Envelope.html#data)
-- [id](Envelope.html#id)
-- [jwt](Envelope.html#jwt)
-- [priority](Envelope.html#priority)
-- [rid](Envelope.html#rid)
-- [seq](Envelope.html#seq)
-- [spanid](Envelope.html#spanid)
-- [traceid](Envelope.html#traceid)
+- [command](Envelope.html##command)
+- [data](Envelope.html##data)
+- [id](Envelope.html##id)
+- [jwt](Envelope.html##jwt)
+- [priority](Envelope.html##priority)
+- [rid](Envelope.html##rid)
+- [seq](Envelope.html##seq)
+- [spanid](Envelope.html##spanid)
+- [traceid](Envelope.html##traceid)
 
 ## Properties
 

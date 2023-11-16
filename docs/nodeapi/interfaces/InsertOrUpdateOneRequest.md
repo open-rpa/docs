@@ -3,12 +3,7 @@ layout: page
 title: InsertOrUpdateOneRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: InsertOrUpdateOneRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / InsertOrUpdateOneRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / InsertOrUpdateOneRequest
 
 # Interface: InsertOrUpdateOneRequest
 
@@ -16,11 +11,11 @@ parent: NodeJS Api
 
 ### Properties
 
-- [collectionname](InsertOrUpdateOneRequest.html#collectionname)
-- [item](InsertOrUpdateOneRequest.html#item)
-- [j](InsertOrUpdateOneRequest.html#j)
-- [uniqeness](InsertOrUpdateOneRequest.html#uniqeness)
-- [w](InsertOrUpdateOneRequest.html#w)
+- [collectionname](InsertOrUpdateOneRequest.html##collectionname)
+- [item](InsertOrUpdateOneRequest.html##item)
+- [j](InsertOrUpdateOneRequest.html##j)
+- [uniqeness](InsertOrUpdateOneRequest.html##uniqeness)
+- [w](InsertOrUpdateOneRequest.html##w)
 
 ## Properties
 

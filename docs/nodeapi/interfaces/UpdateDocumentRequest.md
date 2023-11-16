@@ -3,12 +3,7 @@ layout: page
 title: UpdateDocumentRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: UpdateDocumentRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / UpdateDocumentRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / UpdateDocumentRequest
 
 # Interface: UpdateDocumentRequest
 
@@ -16,11 +11,11 @@ parent: NodeJS Api
 
 ### Properties
 
-- [collectionname](UpdateDocumentRequest.html#collectionname)
-- [document](UpdateDocumentRequest.html#document)
-- [j](UpdateDocumentRequest.html#j)
-- [query](UpdateDocumentRequest.html#query)
-- [w](UpdateDocumentRequest.html#w)
+- [collectionname](UpdateDocumentRequest.html##collectionname)
+- [document](UpdateDocumentRequest.html##document)
+- [j](UpdateDocumentRequest.html##j)
+- [query](UpdateDocumentRequest.html##query)
+- [w](UpdateDocumentRequest.html##w)
 
 ## Properties
 

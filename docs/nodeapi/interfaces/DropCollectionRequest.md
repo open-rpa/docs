@@ -3,12 +3,7 @@ layout: page
 title: DropCollectionRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: DropCollectionRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / DropCollectionRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / DropCollectionRequest
 
 # Interface: DropCollectionRequest
 
@@ -16,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [collectionname](DropCollectionRequest.html#collectionname)
+- [collectionname](DropCollectionRequest.html##collectionname)
 
 ## Properties
 

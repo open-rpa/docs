@@ -3,12 +3,7 @@ layout: page
 title: SigninResponse
 parent: NodeJS Api
 ---
----
-layout: page
-title: SigninResponse
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / SigninResponse
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / SigninResponse
 
 # Interface: SigninResponse
 
@@ -16,9 +11,9 @@ parent: NodeJS Api
 
 ### Properties
 
-- [config](SigninResponse.html#config)
-- [jwt](SigninResponse.html#jwt)
-- [user](SigninResponse.html#user)
+- [config](SigninResponse.html##config)
+- [jwt](SigninResponse.html##jwt)
+- [user](SigninResponse.html##user)
 
 ## Properties
 
@@ -44,7 +39,7 @@ ___
 
 ### user
 
-• **user**: [`User`](../modules.html#user)
+• **user**: [`User`](../modules.html##user)
 
 #### Defined in
 

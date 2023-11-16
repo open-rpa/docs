@@ -3,12 +3,7 @@ layout: page
 title: BeginStream
 parent: NodeJS Api
 ---
----
-layout: page
-title: BeginStream
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / BeginStream
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / BeginStream
 
 # Interface: BeginStream
 
@@ -16,8 +11,8 @@ parent: NodeJS Api
 
 ### Properties
 
-- [checksum](BeginStream.html#checksum)
-- [stat](BeginStream.html#stat)
+- [checksum](BeginStream.html##checksum)
+- [stat](BeginStream.html##stat)
 
 ## Properties
 
@@ -33,7 +28,7 @@ ___
 
 ### stat
 
-• **stat**: [`Stat`](../modules.html#stat)
+• **stat**: [`Stat`](../modules.html##stat)
 
 #### Defined in
 

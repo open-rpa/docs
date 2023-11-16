@@ -3,12 +3,7 @@ layout: page
 title: QueueMessageRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: QueueMessageRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / QueueMessageRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / QueueMessageRequest
 
 # Interface: QueueMessageRequest
 
@@ -16,14 +11,14 @@ parent: NodeJS Api
 
 ### Properties
 
-- [correlationId](QueueMessageRequest.html#correlationid)
-- [data](QueueMessageRequest.html#data)
-- [exchangename](QueueMessageRequest.html#exchangename)
-- [expiration](QueueMessageRequest.html#expiration)
-- [queuename](QueueMessageRequest.html#queuename)
-- [replyto](QueueMessageRequest.html#replyto)
-- [routingkey](QueueMessageRequest.html#routingkey)
-- [striptoken](QueueMessageRequest.html#striptoken)
+- [correlationId](QueueMessageRequest.html##correlationid)
+- [data](QueueMessageRequest.html##data)
+- [exchangename](QueueMessageRequest.html##exchangename)
+- [expiration](QueueMessageRequest.html##expiration)
+- [queuename](QueueMessageRequest.html##queuename)
+- [replyto](QueueMessageRequest.html##replyto)
+- [routingkey](QueueMessageRequest.html##routingkey)
+- [striptoken](QueueMessageRequest.html##striptoken)
 
 ## Properties
 

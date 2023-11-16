@@ -3,12 +3,7 @@ layout: page
 title: DeleteOneResponse
 parent: NodeJS Api
 ---
----
-layout: page
-title: DeleteOneResponse
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / DeleteOneResponse
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / DeleteOneResponse
 
 # Interface: DeleteOneResponse
 
@@ -16,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [affectedrows](DeleteOneResponse.html#affectedrows)
+- [affectedrows](DeleteOneResponse.html##affectedrows)
 
 ## Properties
 

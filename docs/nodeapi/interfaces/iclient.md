@@ -3,69 +3,64 @@ layout: page
 title: iclient
 parent: NodeJS Api
 ---
----
-layout: page
-title: iclient
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / iclient
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / iclient
 
 # Interface: iclient
 
 ## Implemented by
 
-- [`client`](../classes/client.md)
+- [`client`](../classes/client.html#)
 
 ## Table of contents
 
 ### Properties
 
-- [agent](iclient.html#agent)
-- [call](iclient.html#call)
-- [connected](iclient.html#connected)
-- [connecting](iclient.html#connecting)
-- [created](iclient.html#created)
-- [doping](iclient.html#doping)
-- [exchanges](iclient.html#exchanges)
-- [grpc](iclient.html#grpc)
-- [grpcStream](iclient.html#grpcstream)
-- [id](iclient.html#id)
-- [jwt](iclient.html#jwt)
-- [lastheartbeat](iclient.html#lastheartbeat)
-- [lastheartbeatsec](iclient.html#lastheartbeatsec)
-- [lastheartbeatstr](iclient.html#lastheartbeatstr)
-- [protocol](iclient.html#protocol)
-- [queues](iclient.html#queues)
-- [remoteip](iclient.html#remoteip)
-- [replies](iclient.html#replies)
-- [seq](iclient.html#seq)
-- [signedin](iclient.html#signedin)
-- [stream](iclient.html#stream)
-- [streams](iclient.html#streams)
-- [url](iclient.html#url)
-- [user](iclient.html#user)
-- [version](iclient.html#version)
-- [watches](iclient.html#watches)
-- [ws](iclient.html#ws)
+- [agent](iclient.html##agent)
+- [call](iclient.html##call)
+- [connected](iclient.html##connected)
+- [connecting](iclient.html##connecting)
+- [created](iclient.html##created)
+- [doping](iclient.html##doping)
+- [exchanges](iclient.html##exchanges)
+- [grpc](iclient.html##grpc)
+- [grpcStream](iclient.html##grpcstream)
+- [id](iclient.html##id)
+- [jwt](iclient.html##jwt)
+- [lastheartbeat](iclient.html##lastheartbeat)
+- [lastheartbeatsec](iclient.html##lastheartbeatsec)
+- [lastheartbeatstr](iclient.html##lastheartbeatstr)
+- [protocol](iclient.html##protocol)
+- [queues](iclient.html##queues)
+- [remoteip](iclient.html##remoteip)
+- [replies](iclient.html##replies)
+- [seq](iclient.html##seq)
+- [signedin](iclient.html##signedin)
+- [stream](iclient.html##stream)
+- [streams](iclient.html##streams)
+- [url](iclient.html##url)
+- [user](iclient.html##user)
+- [version](iclient.html##version)
+- [watches](iclient.html##watches)
+- [ws](iclient.html##ws)
 
 ### Methods
 
-- [Close](iclient.html#close)
-- [Initialize](iclient.html#initialize)
-- [SendWatch](iclient.html#sendwatch)
-- [UnWatch](iclient.html#unwatch)
-- [Watch](iclient.html#watch)
-- [onConnected](iclient.html#onconnected)
-- [onDisconnected](iclient.html#ondisconnected)
-- [onMessage](iclient.html#onmessage)
-- [ping](iclient.html#ping)
-- [queuecount](iclient.html#queuecount)
+- [Close](iclient.html##close)
+- [Initialize](iclient.html##initialize)
+- [SendWatch](iclient.html##sendwatch)
+- [UnWatch](iclient.html##unwatch)
+- [Watch](iclient.html##watch)
+- [onConnected](iclient.html##onconnected)
+- [onDisconnected](iclient.html##ondisconnected)
+- [onMessage](iclient.html##onmessage)
+- [ping](iclient.html##ping)
+- [queuecount](iclient.html##queuecount)
 
 ## Properties
 
 ### agent
 
-• **agent**: [`clientAgent`](../modules.html#clientagent)
+• **agent**: [`clientAgent`](../modules.html##clientagent)
 
 #### Defined in
 
@@ -205,7 +200,7 @@ ___
 
 ### protocol
 
-• **protocol**: [`clientType`](../modules.html#clienttype)
+• **protocol**: [`clientType`](../modules.html##clienttype)
 
 #### Defined in
 
@@ -315,7 +310,7 @@ ___
 
 ### watches
 
-• **watches**: [`changestream`](../classes/changestream.md)[]
+• **watches**: [`changestream`](../classes/changestream.html#)[]
 
 #### Defined in
 
@@ -443,7 +438,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](../classes/client.md) |
+| `client` | [`client`](../classes/client.html#) |
 
 #### Returns
 
@@ -463,7 +458,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](../classes/client.md) |
+| `client` | [`client`](../classes/client.html#) |
 | `error` | `Error` |
 
 #### Returns
@@ -478,18 +473,18 @@ ___
 
 ### onMessage
 
-▸ **onMessage**(`client`, `message`): `Promise`<[`Envelope`](../modules.html#envelope)\>
+▸ **onMessage**(`client`, `message`): `Promise`<[`Envelope`](../modules.html##envelope)\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `client` | [`client`](../classes/client.md) |
+| `client` | [`client`](../classes/client.html#) |
 | `message` | `any` |
 
 #### Returns
 
-`Promise`<[`Envelope`](../modules.html#envelope)\>
+`Promise`<[`Envelope`](../modules.html##envelope)\>
 
 #### Defined in
 

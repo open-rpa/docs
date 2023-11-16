@@ -3,12 +3,7 @@ layout: page
 title: apiinstrumentation
 parent: NodeJS Api
 ---
----
-layout: page
-title: apiinstrumentation
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / apiinstrumentation
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / apiinstrumentation
 
 # Class: apiinstrumentation
 
@@ -16,12 +11,12 @@ parent: NodeJS Api
 
 ### Constructors
 
-- [constructor](apiinstrumentation.html#constructor)
+- [constructor](apiinstrumentation.html##constructor)
 
 ### Methods
 
-- [With](apiinstrumentation.html#with)
-- [setparent](apiinstrumentation.html#setparent)
+- [With](apiinstrumentation.html##with)
+- [setparent](apiinstrumentation.html##setparent)
 
 ## Constructors
 

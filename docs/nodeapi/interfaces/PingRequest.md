@@ -3,11 +3,6 @@ layout: page
 title: PingRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: PingRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / PingRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / PingRequest
 
 # Interface: PingRequest

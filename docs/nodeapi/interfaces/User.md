@@ -3,12 +3,7 @@ layout: page
 title: User
 parent: NodeJS Api
 ---
----
-layout: page
-title: User
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / User
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / User
 
 # Interface: User
 
@@ -16,11 +11,11 @@ parent: NodeJS Api
 
 ### Properties
 
-- [\_id](User.html#_id)
-- [email](User.html#email)
-- [name](User.html#name)
-- [roles](User.html#roles)
-- [username](User.html#username)
+- [\_id](User.html##_id)
+- [email](User.html##email)
+- [name](User.html##name)
+- [roles](User.html##roles)
+- [username](User.html##username)
 
 ## Properties
 
@@ -56,7 +51,7 @@ ___
 
 ### roles
 
-• **roles**: [`Role`](../modules.html#role)[]
+• **roles**: [`Role`](../modules.html##role)[]
 
 #### Defined in
 

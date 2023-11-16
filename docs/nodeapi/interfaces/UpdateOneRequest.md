@@ -3,12 +3,7 @@ layout: page
 title: UpdateOneRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: UpdateOneRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / UpdateOneRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / UpdateOneRequest
 
 # Interface: UpdateOneRequest
 
@@ -16,10 +11,10 @@ parent: NodeJS Api
 
 ### Properties
 
-- [collectionname](UpdateOneRequest.html#collectionname)
-- [item](UpdateOneRequest.html#item)
-- [j](UpdateOneRequest.html#j)
-- [w](UpdateOneRequest.html#w)
+- [collectionname](UpdateOneRequest.html##collectionname)
+- [item](UpdateOneRequest.html##item)
+- [j](UpdateOneRequest.html##j)
+- [w](UpdateOneRequest.html##w)
 
 ## Properties
 

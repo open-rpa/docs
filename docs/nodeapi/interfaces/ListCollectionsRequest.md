@@ -3,12 +3,7 @@ layout: page
 title: ListCollectionsRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: ListCollectionsRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / ListCollectionsRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / ListCollectionsRequest
 
 # Interface: ListCollectionsRequest
 
@@ -16,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [includehist](ListCollectionsRequest.html#includehist)
+- [includehist](ListCollectionsRequest.html##includehist)
 
 ## Properties
 

@@ -3,12 +3,7 @@ layout: page
 title: RefreshToken
 parent: NodeJS Api
 ---
----
-layout: page
-title: RefreshToken
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / RefreshToken
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / RefreshToken
 
 # Interface: RefreshToken
 
@@ -16,9 +11,9 @@ parent: NodeJS Api
 
 ### Properties
 
-- [jwt](RefreshToken.html#jwt)
-- [user](RefreshToken.html#user)
-- [username](RefreshToken.html#username)
+- [jwt](RefreshToken.html##jwt)
+- [user](RefreshToken.html##user)
+- [username](RefreshToken.html##username)
 
 ## Properties
 
@@ -34,7 +29,7 @@ ___
 
 ### user
 
-• **user**: [`User`](../modules.html#user)
+• **user**: [`User`](../modules.html##user)
 
 #### Defined in
 

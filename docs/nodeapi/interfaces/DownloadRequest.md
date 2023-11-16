@@ -3,12 +3,7 @@ layout: page
 title: DownloadRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: DownloadRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / DownloadRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / DownloadRequest
 
 # Interface: DownloadRequest
 
@@ -16,8 +11,8 @@ parent: NodeJS Api
 
 ### Properties
 
-- [filename](DownloadRequest.html#filename)
-- [id](DownloadRequest.html#id)
+- [filename](DownloadRequest.html##filename)
+- [id](DownloadRequest.html##id)
 
 ## Properties
 

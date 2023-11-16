@@ -13,7 +13,7 @@ Click `Work item Queues` in the main menu, then click `+` button to add a new qu
 - **Project**: To group OpenRPA workflows together with a Workitem Queue, you can link the queue to a specefic project inside OpenRPA. If you do this, you should update the permissions on the queue to match the permission on the project.
 - **Robot/Role**: Notify this Robot or Role when new items are waiting in the queue. 
 - **Workflow**: The OpenRPA workflow to run, when new items are waiting in the queue. 
-Both `Robot/Role` and `Workflow` must have a value before this will work. You can use [RPA roles](flow/Managing-Roles.md) to spread the workload between multiple robots.
+Both `Robot/Role` and `Workflow` must have a value before this will work. You can use [RPA roles](flow/Managing-Roles) to spread the workload between multiple robots.
 
 # Agent and NodeRED specefic settings
 - **amqpqueue**: OpenIAP flow will periodicly send an empty message to this queue, when there are new items ready to be processed in the queue. This is how we can allow a NodeRED workflow or an deamon agent package wait for items without having to "test" pull at certain intervals. This is always the prefere way of implementing this.

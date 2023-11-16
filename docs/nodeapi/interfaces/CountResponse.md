@@ -3,12 +3,7 @@ layout: page
 title: CountResponse
 parent: NodeJS Api
 ---
----
-layout: page
-title: CountResponse
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / CountResponse
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / CountResponse
 
 # Interface: CountResponse
 
@@ -16,7 +11,7 @@ parent: NodeJS Api
 
 ### Properties
 
-- [result](CountResponse.html#result)
+- [result](CountResponse.html##result)
 
 ## Properties
 

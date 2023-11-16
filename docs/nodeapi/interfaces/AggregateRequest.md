@@ -3,12 +3,7 @@ layout: page
 title: AggregateRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: AggregateRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / AggregateRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / AggregateRequest
 
 # Interface: AggregateRequest
 
@@ -16,10 +11,10 @@ parent: NodeJS Api
 
 ### Properties
 
-- [aggregates](AggregateRequest.html#aggregates)
-- [collectionname](AggregateRequest.html#collectionname)
-- [hint](AggregateRequest.html#hint)
-- [queryas](AggregateRequest.html#queryas)
+- [aggregates](AggregateRequest.html##aggregates)
+- [collectionname](AggregateRequest.html##collectionname)
+- [hint](AggregateRequest.html##hint)
+- [queryas](AggregateRequest.html##queryas)
 
 ## Properties
 

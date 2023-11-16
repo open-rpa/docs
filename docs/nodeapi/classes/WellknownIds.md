@@ -3,12 +3,7 @@ layout: page
 title: WellknownIds
 parent: NodeJS Api
 ---
----
-layout: page
-title: WellknownIds
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / WellknownIds
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / WellknownIds
 
 # Class: WellknownIds
 
@@ -16,25 +11,25 @@ parent: NodeJS Api
 
 ### Constructors
 
-- [constructor](WellknownIds.html#constructor)
+- [constructor](WellknownIds.html##constructor)
 
 ### Properties
 
-- [admins](WellknownIds.html#admins)
-- [customer\_admins](WellknownIds.html#customer_admins)
-- [filestore\_admins](WellknownIds.html#filestore_admins)
-- [filestore\_users](WellknownIds.html#filestore_users)
-- [nodered\_admins](WellknownIds.html#nodered_admins)
-- [nodered\_api\_users](WellknownIds.html#nodered_api_users)
-- [nodered\_users](WellknownIds.html#nodered_users)
-- [personal\_nodered\_users](WellknownIds.html#personal_nodered_users)
-- [resellers](WellknownIds.html#resellers)
-- [robot\_admins](WellknownIds.html#robot_admins)
-- [robot\_agent\_users](WellknownIds.html#robot_agent_users)
-- [robot\_users](WellknownIds.html#robot_users)
-- [robots](WellknownIds.html#robots)
-- [root](WellknownIds.html#root)
-- [users](WellknownIds.html#users)
+- [admins](WellknownIds.html##admins)
+- [customer\_admins](WellknownIds.html##customer_admins)
+- [filestore\_admins](WellknownIds.html##filestore_admins)
+- [filestore\_users](WellknownIds.html##filestore_users)
+- [nodered\_admins](WellknownIds.html##nodered_admins)
+- [nodered\_api\_users](WellknownIds.html##nodered_api_users)
+- [nodered\_users](WellknownIds.html##nodered_users)
+- [personal\_nodered\_users](WellknownIds.html##personal_nodered_users)
+- [resellers](WellknownIds.html##resellers)
+- [robot\_admins](WellknownIds.html##robot_admins)
+- [robot\_agent\_users](WellknownIds.html##robot_agent_users)
+- [robot\_users](WellknownIds.html##robot_users)
+- [robots](WellknownIds.html##robots)
+- [root](WellknownIds.html##root)
+- [users](WellknownIds.html##users)
 
 ## Constructors
 

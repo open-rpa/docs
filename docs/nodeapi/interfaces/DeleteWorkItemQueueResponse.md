@@ -3,11 +3,6 @@ layout: page
 title: DeleteWorkItemQueueResponse
 parent: NodeJS Api
 ---
----
-layout: page
-title: DeleteWorkItemQueueResponse
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / DeleteWorkItemQueueResponse
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / DeleteWorkItemQueueResponse
 
 # Interface: DeleteWorkItemQueueResponse

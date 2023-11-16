@@ -3,12 +3,7 @@ layout: page
 title: UpdateWorkItemQueueRequest
 parent: NodeJS Api
 ---
----
-layout: page
-title: UpdateWorkItemQueueRequest
-parent: NodeJS Api
----
-[@openiap/nodeapi](../README.md) / [Exports](../modules.md) / UpdateWorkItemQueueRequest
+[@openiap/nodeapi](../README.html#) / [Exports](../modules.html#) / UpdateWorkItemQueueRequest
 
 # Interface: UpdateWorkItemQueueRequest
 
@@ -16,9 +11,9 @@ parent: NodeJS Api
 
 ### Properties
 
-- [purge](UpdateWorkItemQueueRequest.html#purge)
-- [skiprole](UpdateWorkItemQueueRequest.html#skiprole)
-- [workitemqueue](UpdateWorkItemQueueRequest.html#workitemqueue)
+- [purge](UpdateWorkItemQueueRequest.html##purge)
+- [skiprole](UpdateWorkItemQueueRequest.html##skiprole)
+- [workitemqueue](UpdateWorkItemQueueRequest.html##workitemqueue)
 
 ## Properties
 
@@ -44,7 +39,7 @@ ___
 
 ### workitemqueue
 
-• **workitemqueue**: [`WorkItemQueue`](../modules.html#workitemqueue)
+• **workitemqueue**: [`WorkItemQueue`](../modules.html##workitemqueue)
 
 #### Defined in
 
