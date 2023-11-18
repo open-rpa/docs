@@ -6,7 +6,7 @@ nav_order: 10
 
 Install using
 ```bash
-python3 -m pip -i openiap
+python3 -m pip install openiap
 ```
 
 Please see [Getting Started](Agent-Getting-Started) on how to set up and run example code.
@@ -33,21 +33,69 @@ In a folder called .vscode, add `launch.json`.
 
 Next, add `main.py` to the root folder.
 ```python
-import openiap, asyncio
+import asyncio
 from openiap import Client
 async def main():
     client = openiap.Client()
     client.Signin()
     result = await client.Query(collectionname="entities", projection={"_created": 1, "name": 1, "_type": 1})
     print(result)
+    client.Close()
 asyncio.run(main())
-
 ```
 
 Now press `F5` or click `Run`, to run the example.
 We **HIGHLY** discourage the use of username and password.
 Please see [Getting Started](Agent-Getting-Started) on how to
 generate JWT tokens and to easily swap between multiple users and OpenFlow instances.
+
+## RegisterQueue
+To register and consume a message queue:
+```python
+import json
+import asyncio
+from openiap import Client
+
+async def main():
+    client = Client()
+    await client.Signin()
+    queuename = await client.RegisterQueue(queuename="myqueue", callback=callback_function)
+    print(f"Consuming queue {queuename}")
+    while True:
+        await asyncio.sleep(1)
+
+async def callback_function(cli:Client, message, payload):
+    print(json.dumps(payload, indent=2))
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+This will give issues if we disconnect from the server. When the client reconnects, we will no longer be consuming the queue, so let's update the logic to handle registering the queue after reconnection.
+
+```python
+import openiap, asyncio
+from openiap import Client
+import json
+async def callback_function(cli:Client, message, payload):
+    print(json.dumps(payload, indent=2))
+async def onconnected(cli:Client):
+    try:
+        await cli.Signin()
+        print("Connected to OpenIAP") 
+        queuename = await cli.RegisterQueue("myqueue", callback_function)
+        print(f"Consuming queue {queuename}")
+    except Exception as e:
+        print(e)
+async def main():
+    client = openiap.Client()
+    client.onconnected = onconnected
+    while True:
+        await asyncio.sleep(1)
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+This way, we sign in and re-consume the queue every time the client reconnects to the server.
 
 # openiap module
 Classes
