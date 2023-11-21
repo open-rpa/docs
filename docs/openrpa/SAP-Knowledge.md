@@ -74,3 +74,6 @@ Running OpenFlow offline and some MQTT stuff
 [![Recording in SAP with OpenRPA](https://img.youtube.com/vi/4VJ2Q4mPWnk/0.jpg)](https://www.youtube.com/watch?v=4VJ2Q4mPWnk)  
 
 
+# note
+
+SAP GUI Scripting is only available for those users that have the authorization for the Execute(16) action of the authorization object S_SCR in class BC_A.
