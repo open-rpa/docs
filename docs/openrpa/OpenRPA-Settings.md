@@ -54,7 +54,8 @@ Below is some of the common settings explained
 - **remote_allowed:** Disable to never allow OpenFlow to remotely run workflows on this robot.
 - **remote_allow_multiple_running:** If allowed, do we allow running more than one workflow at the time ? Since RPA is about automating the UI we cannot allow multiple workfows to try and control the desktop. It is highly recommend to keep this set to false. You can still allow more than workflow to run by marking certain workflows as "background" workflows, do this for workfows that will never interact with the UI. This way, those workflows will not "count" as running,
 - **remote_allow_multiple_running:** If multiple allowed, how many ?
-- **remote_allowed_killing_self** Do we allow OpenFlow to tell the robot to kill **any** workflow running or just the same workflow as it's requesting us to run.
+- **remote_allowed_killing_self** Do we allow OpenFlow to tell the robot to kill any running instances of the workflow it's trying to run (kill if running)
+- **remote_allowed_killing_any** Do we allow OpenFlow to tell the robot to kill **any** workflow running or just the same workflow as it's requesting us to run.
 - **recording_add_to_designer:** By default, when you are recording, OpenRPA will add every single activity to the workflow right away. On low end hardware this can have a big performance inpact, there for you can allow OpenRPA to collect each action and first add them to the workflow at the end. When using this be very carefull to not work to fast, or OpenRPA cannot keep up and will "miss" certain actions.
 - **querypagesize** When OpenRPA is requestiong data from OpenFlow how many items does it get at a time ? 
 - **ocrlanguage** If image recognition extension has been installed, what are the langauge we want to use for doing OCR on he screen.
