@@ -40,8 +40,8 @@ version=
 log_with_colors= # Default: true - Use colors in the console output, can be an issue for certain types of log collectors
 
 protocol= # Default: http - used by agents and baseurl()
-port= # Default: 80 - This must stay as 80 on docker and kubernetes
-domain= # Default: localhost - sent to website and used in baseurl()
+port= # Default: 3000 - This must stay as 80 on docker and kubernetes
+domain= # Default: localhost.openiap.io - sent to website and used in baseurl()
 cookie_secret= # Used to protect cookies
 max_ace_count= # Default: 128 - Discard overflow ace's if an _acl has more than 128 entries
 
