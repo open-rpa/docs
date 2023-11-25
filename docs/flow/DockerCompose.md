@@ -132,6 +132,10 @@ Next add an wildcard * record for all the services exposed from that instance, a
 
 ( a few DNS providers does not allow create wildcard records using CNAME, and that case use an A record pointing to the same IP )
 
+Once complete, open the docker compose file
+- add an environment with the name `domain` and the value of domain you chose ( in the above example `openflow.mydomain.com`) 
+- Do a search and replace for `localhost.openiap.io` and replace it with the domain you choise ( in the above example `openflow.mydomain.com`) 
+
 ### Troubleshooting tips
 
 special note for people using MacOS, you need to update the volume for traefik.  
