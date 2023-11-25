@@ -32,10 +32,10 @@ Now you manually add one of more of the below values to the object, to emeiadtly
 
 ```bash
 license_key=
-enable_openai= # Default: false
-enable_openapi= # Default: true
-enable_openaiauth= # Default: true
-openai_token= # Used to authenticate the version one ChatGPT extension's
+enable_openai= # Default: false - Enable chat gpt 4, openapi endpoint, and expose plugin endpoint at .well-known/ai-plugin.json
+enable_openapi= # Default: true - Enable generic OpenAPI endpoint, same as enable_openai but without .well-known/ai-plugin.json 
+enable_openapiauth= # Default: true - Force user authentication to use openai plugin ( without will allows ADMIN access to the database, for tesing ONLY !!!! )
+openai_token= # Set token to use when authrorizing to openai plugin ( you get this the first time you add the plugin inside chat gpt 4 )
 version=
 log_with_colors= # Default: true - Use colors in the console output, can be an issue for certain types of log collectors
 
@@ -81,6 +81,7 @@ log_housekeeping= # Default: false - Should be set using Web Console
 log_otel= # Default: false - Should be set using Web Console
 log_blocked_ips=true # Default: true - Should be set using Web Console
 log_information=true # Default: true - Should be set using Web Console
+debug= # Default: - Set value for the DEBUG environment variable, used for some modules to control loggin, for instance oidc-provider:*
 log_debug= # Default: false - Log debug messages for ALL types of logs
 log_verbose= # Default: false - Log debug and verbose messages for ALL types of logs
 log_silly= # Default: false - is Normaly disabled in code, but doing troubleshooting this can be enabled in code and then here
@@ -142,18 +143,18 @@ auto_create_personal_noderedapi_group= # Default: false - Backwward compability 
 force_add_admins= # Default: true - Force adding admins role with full control to all objects in the database.
 
 # Default: false - Allow non-federated user to get an reset password link sent.
-forgot_pass_emails=
+forgot_pass_emails= 
 # Default: false - Validate non-federated users, but sending a validatoin token by email to them.
 # This will require a user form, and email settings to be specefied as well
 validate_emails= 
  
-smtp_service=
-smtp_from=
-smtp_user=
-smtp_pass=
-smtp_url=
+smtp_service= # Node mailer, service type
+smtp_from= # When sending service mails, sent from this email
+smtp_user= # Username when sending ( smtp service=gmail for everything else, use smtp_url )
+smtp_pass= # password when sending ( smtp service=gmail for everything else, use smtp_url )
+smtp_url= # Use smtp url for configuration  ( see https://nodemailer.com/smtp/ or https://www.npmjs.com/package/nodemailer/v/2.2.0-beta.0 ) 
 # Check new user's email toward debounc database and reject users with temptorary email addresses
-debounce_lookup= # Default: false
+debounce_lookup= # Default: false - when validating email, check if disposable email by looking for name in the domains collection for _type disposable
 # Check new user's email toward local disposable domain collection and reject users with temptorary email addresses
 validate_emails_disposable= # Default: false
 
@@ -172,14 +173,14 @@ oidc_session_ttl= # Default: 20160 (14 days in seconds)
 oidc_cookie_key= 
 
 # Limit the amount of api ( web, not websocket ) requests by ip address. If using kubernetes, works best with sessionAffinity set to ClientIP
-api_rate_limit= # Default: true
-api_rate_limit_points= # Default: 20
-api_rate_limit_duration= # Default: 1
+api_rate_limit= # Default: true - to disable rate limits on all http requests, set this to false
+api_rate_limit_points= # Default: 20 - to change the amount of points a hit consume
+api_rate_limit_duration= # Default: 1 - to change how long it takes for a point to expire in seconds
 # Limit the amount of packages a client can send over a websocket/namepipe/tcp/grpc connection
-socket_rate_limit= # Default: true
-socket_rate_limit_points= # Default: 30
-socket_rate_limit_points_disconnect= # Default: 100
-socket_rate_limit_duration= # Default: 1
+socket_rate_limit= # Default: true - to disable rate limits on socket messages
+socket_rate_limit_points= # Default: 30 - to change the amount of points a hit consume
+socket_rate_limit_points_disconnect= # Default: 100 - If client builds up this amount of points, disconnect the client
+socket_rate_limit_duration= # Default: 1 - to change how long it takes for a point to expire in seconds
 socket_error_rate_limit_points= # Default: 30
 socket_error_rate_limit_duration= # Default: 1
 
@@ -197,24 +198,25 @@ multi_tenant=
 cleanup_on_delete_customer= # Default: false - Try and auto delete all associated data and user/roles when deleting a customer. Be ware !!!!
 cleanup_on_delete_user= # Default: false - Try and auto delete all associated data and user/roles when deleting a customer. Be ware !!!! ( force hard delete )
 api_bypass_perm_check= # Default: false - Completly disable **ALL** permission checks, allowing anyone to see and do everything
+disable_db_config= # Default: false - Stop loading config from the database. Usefull when openflow will not start due to bad config in database
 force_audit_ts= # Default: false - Force audit collection as a timeseries collection, if one exists will rename it 
 force_dbusage_ts= # Default: false - Force dbusage collection as a timeseries collection, if one exists will rename it
 migrate_audit_to_ts= # Default: true - If an old version of audit exists, migrate old data to the new and then delete it. This can take a LOOOONGGG time.
 
 # OpenFlow version 1 settings, only relevant for old angularjs webinterface and OpenRPA clients
 websocket_package_size= # Default: 25000
-websocket_max_package_count= # Default: 25000
+websocket_max_package_count= # Default: 1048576
 websocket_message_callback_timeout= # Default: 3600
-websocket_disconnect_out_of_sync= # Default: false
+websocket_disconnect_out_of_sync= # Default: false - close connection for clients that send double packages, default false
 
 
 amqp_reply_expiration= # Default: 60000 (1 min)
-amqp_force_queue_prefix= # Default: false
-amqp_force_exchange_prefix= # Default: false
-amqp_force_sender_has_read= # Default: true
-amqp_force_sender_has_invoke= # Default: false
-amqp_force_consumer_has_update= # Default: false
-amqp_enabled_exchange= # Default: false
+amqp_force_queue_prefix= # Default: false - to avoid users registering the same message queue names, force all messages queues to be prefixed with username, this disables load balancing of multiple nodereds !
+amqp_force_exchange_prefix= # Default: false - to avoid users registering the same message exchange names, force all messages exchanges to be prefixed with username, this disables load balancing of multiple nodereds !
+amqp_force_sender_has_read= # Default: true - If queue is a mongodb id, check user is member of the role or has read permission on the object it represents
+amqp_force_sender_has_invoke= # Default: false - Force user to have invoke permission on the mq or user object in order to send to it
+amqp_force_consumer_has_update= # Default: false - Force user has update permission on the mq or user object in order to consume the queue ( else needs read if amqp_force_sender_has_read is true
+amqp_enabled_exchange= # Default: false - enabled the amp exchange node in nodered, and enabled Register Exchange command in API
 amqp_url= # Default: amqp://localhost
 amqp_username= # Default: guest
 amqp_password= # Default: guest
@@ -240,7 +242,6 @@ longtoken_expires_in= # Default: 365d
 downloadtoken_expires_in= # Default: 15m
 personalnoderedtoken_expires_in= # Default: 365d
 
-nodered_images= # An array of JSON objects representing Nodered images
 agent_images= # An array of JSON objects representing Agent images
 agent_domain_schema= # Schema for Agent
 agent_node_selector= # Node selector for Agent
@@ -255,21 +256,14 @@ agent_oidc_authorization_endpoint= # OIDC authorization endpoint for Agent
 agent_oidc_token_endpoint= # OIDC token endpoint for Agent
 
 saml_federation_metadata= # SAML federation metadata
-api_ws_url= # API WebSocket URL
-nodered_ws_url= # Nodered WebSocket URL
-nodered_saml_entrypoint= # SAML entrypoint for Nodered
+api_ws_url= # API WebSocket URL  / force browser to use this url to access the api
 
 agent_docker_entrypoints= # Docker entrypoints for Agent
 agent_docker_use_project= # Default: false
-agent_docker_certresolver=
+agent_docker_certresolver= # Tell name of traefik certificate resolver to be used for generating certificates
 
-namespace= # Namespace
-nodered_domain_schema= # Nodered domain schema
-nodered_initial_liveness_delay= # Default: 60
+namespace= # Kubernetes namespace used to manage for agents inside
 nodered_allow_nodeselector= # Default: false
-nodered_liveness_failurethreshold= # Default: 5
-nodered_liveness_timeoutseconds= # Default: 5
-noderedcatalogues=
 
 otel_measure_nodeid= # Default: false
 otel_measure_queued_messages= # Default: false
@@ -280,32 +274,32 @@ enable_detailed_analytic= # Default: false
 otel_debug_log= # Default: false
 otel_warn_log= # Default: false
 otel_err_log= # Default: false
-otel_trace_url=
-otel_metric_url=
+otel_trace_url= # Custom Open Telemetry exporter trace URL
+otel_metric_url= # CUstom Open Telemetry exporter metric URL
 otel_trace_interval= # Default: 5000
 otel_metric_interval= # Default: 5000
-otel_trace_pingclients= # Default: false
-otel_trace_dashboardauth= # Default: false
-otel_trace_include_query= # Default: false
-otel_trace_connection_ips= # Default: false
-otel_trace_mongodb_per_users= # Default: false
-otel_trace_mongodb_query_per_users= # Default: false
-otel_trace_mongodb_count_per_users= # Default: false
-otel_trace_mongodb_aggregate_per_users= # Default: false
-otel_trace_mongodb_insert_per_users= # Default: false
-otel_trace_mongodb_update_per_users= # Default: false
-otel_trace_mongodb_delete_per_users= # Default: false
+otel_trace_pingclients= # Default: false - add trace for each ping clients in openflow
+otel_trace_dashboardauth= # Default: false - add trace for dashboardauth events
+otel_trace_include_query= # Default: false - include query in spans
+otel_trace_connection_ips= # Default: false - track connection requests per ip address
+otel_trace_mongodb_per_users= # Default: false - track all mongo actions per user
+otel_trace_mongodb_query_per_users= # Default: false - track queries per user
+otel_trace_mongodb_count_per_users= # Default: false - track counts per user
+otel_trace_mongodb_aggregate_per_users= # Default: false - track aggregates per user
+otel_trace_mongodb_insert_per_users= # Default: false - track inserts per user
+otel_trace_mongodb_update_per_users= # Default: false - track updates per user
+otel_trace_mongodb_delete_per_users= # Default: false - track deletes per user
 
-grpc_keepalive_time_ms= # gRPC keepalive time in milliseconds
-grpc_keepalive_timeout_ms= # gRPC keepalive timeout in milliseconds
-grpc_http2_min_ping_interval_without_data_ms= # gRPC HTTP2 minimum ping interval without data in milliseconds
-grpc_max_connection_idle_ms= # gRPC maximum connection idle time in milliseconds
-grpc_max_connection_age_ms= # gRPC maximum connection age in milliseconds
-grpc_max_connection_age_grace_ms= # gRPC maximum connection age grace in milliseconds
-grpc_http2_max_pings_without_data= # gRPC HTTP2 maximum pings without data
-grpc_keepalive_permit_without_calls= # gRPC keepalive permit without calls
-grpc_max_receive_message_length= # gRPC maximum receive message length
-grpc_max_send_message_length= # gRPC maximum send message length
+grpc_keepalive_time_ms= # default: 20000 * 1000 - gRPC keepalive time in milliseconds
+grpc_keepalive_timeout_ms= # default: 1000 - gRPC keepalive timeout in milliseconds
+grpc_http2_min_ping_interval_without_data_ms= # default: 5000 - gRPC HTTP2 minimum ping interval without data in milliseconds
+grpc_max_connection_idle_ms= # default: 71992547 - gRPC maximum connection idle time in milliseconds
+grpc_max_connection_age_ms= # default: 71992547 - gRPC maximum connection age in milliseconds
+grpc_max_connection_age_grace_ms= # default: 71992547 - gRPC maximum connection age grace in milliseconds
+grpc_http2_max_pings_without_data= # default: 71992547 - gRPC HTTP2 maximum pings without data
+grpc_keepalive_permit_without_calls= # default: 1 - gRPC keepalive permit without calls
+grpc_max_receive_message_length= # default: 1024 * 1024 * 1024 - gRPC maximum receive message length
+grpc_max_send_message_length= # default: 1024 * 1024 * 1024 - gRPC maximum send message length
 
 validate_user_form= # User form validation configuration
 
