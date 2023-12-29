@@ -27,25 +27,23 @@ install packages for openflow api/web
 `npm i`
 
 Now open in VS code
-`code OpenFlow.code-workspace`
+`code .`
 at the top level create a folder called config and inside create a file called .env ( notice it starting with a dot)
 and add this content to the file
 
 ```bash
 auto_create_users=true
 aes_secret=7TXsxf7cn9EkUqm5h4MEWGjzkxkNCk2K
+port=80
 ```
 Next you need to allow powershell scripts to run, i don't know what is the recommended setting, i normally just go with bypass
 `Set-ExecutionPolicy Bypass -Force`
 
 Now you can run this by going to run ( Ctrl+Shit+D) and selecting OpenFlow in the dropdown box and press play button.
 This will serve an empty webpage, so we need to build the stylesheets and copy the compiled files to the dist folder, so go to the Terminal tab and add a new shell, then type
-`gulp sass`
+`npm run sass`
 
 Lastly we can bundle and minify the asserts to the dist folder, by typing
-`gulp`
-
-doing developerment, you can run the bundle without the minifyer by typing
 `gulp watch`
 
 You can now access openflow web on [http://localhost.openiap.io](http://localhost.openiap.io) 
