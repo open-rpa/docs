@@ -65,5 +65,6 @@ Below is some of the common settings explained
 - **max_trace_lines** Limit the amount of lines in the loggin window. The more lines that is allowed the bigger the performance impact on OpenRPA. Keep this as low as possible
 - **max_output_lines** Limit the amount of lines in the output window. The more lines that is allowed the bigger the performance impact on OpenRPA. Keep this as low as possible
 - **enable_analytics** Allow OpenIAP to collect anonymous usage data.
+- **log_to_file** If set to true, will log all tracing information to a file. This will add **alot** of overhead to OpenRPA, only use for troubleshooting.
 - **properties** This object will contain all extension settings
 
