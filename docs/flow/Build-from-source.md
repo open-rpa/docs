@@ -45,11 +45,15 @@ You can now access openflow web on [http://localhost.openiap.io](http://localhos
 
 #### Building docker image
 From version 1.5 the docker images is now using build images, so simply run
-`npm run compose`
+```bash
+npm run compose
+```
 to compile an image with :version and :edge tag
 This will also try to publish to docker hub, if you don't have an account, just ignore the error
 To compile with :latest and :version tag use
-`npm run latest`
+```bash
+npm run latest`
+```
 
 ### Support
 
