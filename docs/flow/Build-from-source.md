@@ -5,11 +5,6 @@ parent: What Is OpenIAP Flow
 nav_order: 12
 ---
 
-#### Building docker images
-docker images can now be build completely inside docker, simply run
-`npm run build`
-this will start a local registry, build the images, push them to the local registry and start them. This way you can run and test all locally.
-
 #### Developer setup
 
 Install [VSCode](https://code.visualstudio.com/download), [NodeJS 16](https://nodejs.org/en/download/), [mongoDB](https://www.mongodb.com/download-center/community) and [RabbitMQ](https://www.rabbitmq.com/download.html)
@@ -48,4 +43,15 @@ Lastly we can bundle and minify the asserts to the dist folder, by typing
 
 You can now access openflow web on [http://localhost.openiap.io](http://localhost.openiap.io) 
 
-For further help or education contact [OpenIAP](https://openiap.io/) for a support agreement
+#### Building docker image
+From version 1.5 the docker images is now using build images, so simply run
+`npm run compose`
+to compile an image with :version and :edge tag
+This will also try to publish to docker hub, if you don't have an account, just ignore the error
+To compile with :latest and :version tag use
+`npm run latest`
+
+### Support
+
+For further help or education reach out on the forum, or contact [OpenIAP](https://openiap.io/) for a consulting
+
