@@ -72,7 +72,7 @@ For NodeJS, this means running `npm install` in the project folder.
 ### Python
 Currently, this can run in two modes, but the latter will be retired at some point, in favor of using virtual environments for everything.
 When `language` in package.json has been set to Python and "main" points to a Python file, you can add a conda.yaml (or environment.yaml) file next to the package.json file.
-Whenever a package is downloaded or updated, the agent will then search for Conda or MicroMamba and use that to create/update a Python environment. This way, you can define both the version of Python you want and whatever packages are needed for your Python project. You must include a `name:` in the file, but this name will be changed by the agent during install/update, so do not depend on a specific name.
+Whenever a package is downloaded or updated, the agent will then search for Conda or MicroMamba and use that to create/update a Python environment. This way, you can define both the version of Python you want and whatever packages are needed for your Python project. Can include a `name:` in the file, but this name will be changed by the agent during install/update, so do not depend on a specific name.
 Older project examples did not use an environment.yaml. If the agent does not find one but sees a requirements.txt file instead, it will call `pip install -r requirements.txt` in the project folder. Please do not depend on this system, as this is deprecated; it's just documented here while all example projects are being updated.
 
 ### JupyterLab
