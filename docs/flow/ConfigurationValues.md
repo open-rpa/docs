@@ -31,10 +31,6 @@ Manully create an object inside the config collection of type "_type": "config" 
 Now you manually add one of more of the below values to the object, to emeiadtly override that value. Be aware, this means if you make an mistake you will manully have to find a way to update the database to remove/change it, if you make a mistake that will make openflow unable to start/reload.
 
 ```bash
-license_key=
-enable_openapi= # Default: true - Enable generic OpenAPI endpoint
-enable_grafanaapi= # Default: true - Enable grafana endpoint used by the openaip flow data source in grafana. Requires a valid license
-version=
 log_with_colors= # Default: true - Use colors in the console output, can be an issue for certain types of log collectors
 
 protocol= # Default: http - used by agents and baseurl()
@@ -75,6 +71,7 @@ log_database_queries= # Default: false - Should be set using Web Console
 log_database_queries_ms= # Default: 0 - Should be set using Web Console
 
 log_grafana= # Default: false - Should be set using Web Console
+log_gitserver= # Default: false - Should be set using Web Console
 log_housekeeping= # Default: false - Should be set using Web Console
 log_otel= # Default: false - Should be set using Web Console
 log_blocked_ips=true # Default: true - Should be set using Web Console
@@ -95,7 +92,6 @@ amqp_prefetch= # Default: 25 - when enable_openflow_amqp is true, Max number of 
 enable_entity_restriction= # Default: false - Use policies to control who can create items, default valyes, entity format and encryption
 enable_web_tours= # Default: true - Enable webtour for users without the webtour completed cookie
 enable_nodered_tours= # Default: true - Set to false, to disable the default tour in NodeRED. If enabled will force reloads when toggled.
-grafana_url= # Enable a grafana link in the openflow web interface that link's to this URL. 
 
 auto_hourly_housekeeping= # Default: true - Once an hour runs a job that check collections, indexs, runing agents and other hygiene
 housekeeping_skip_collections= # When calculating database usage exclude these collections, seperated multiple with comma ,
@@ -301,9 +297,12 @@ grpc_max_send_message_length= # default: 1024 * 1024 * 1024 - gRPC maximum send 
 
 validate_user_form= # User form validation configuration
 
-enable_gitserver= # Default: false - Enable git server at /git
+license_key=
+enable_openapi= # Default: true - Enable generic OpenAPI endpoint. Requires a valid license
+enable_grafanaapi= # Default: true - Enable grafana endpoint used by the openaip flow data source in grafana. Requires a valid license
+grafana_url= # Enable a grafana link in the openflow web interface that link's to this URL. 
+enable_gitserver= # Default: false - Enable git server at /git. Requires a valid license
 enable_gitserver_guest= # Default: false - Enable guest access to git server at /git ( you can add guests to repos and allow the to read and or update them )
 enable_gitserver_guest_create= # Default: false - Enable guest access to git server at /git ( allow guests to push new repositories )
-
 
 ```
