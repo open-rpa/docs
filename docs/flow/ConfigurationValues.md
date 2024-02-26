@@ -32,10 +32,8 @@ Now you manually add one of more of the below values to the object, to emeiadtly
 
 ```bash
 license_key=
-enable_openai= # Default: false - Enable chat gpt 4, openapi endpoint, and expose plugin endpoint at .well-known/ai-plugin.json
-enable_openapi= # Default: true - Enable generic OpenAPI endpoint, same as enable_openai but without .well-known/ai-plugin.json 
-enable_openapiauth= # Default: true - Force user authentication to use openai plugin ( without will allows ADMIN access to the database, for tesing ONLY !!!! )
-openai_token= # Set token to use when authrorizing to openai plugin ( you get this the first time you add the plugin inside chat gpt 4 )
+enable_openapi= # Default: true - Enable generic OpenAPI endpoint
+enable_grafanaapi= # Default: true - Enable grafana endpoint used by the openaip flow data source in grafana. Requires a valid license
 version=
 log_with_colors= # Default: true - Use colors in the console output, can be an issue for certain types of log collectors
 
@@ -302,5 +300,10 @@ grpc_max_receive_message_length= # default: 1024 * 1024 * 1024 - gRPC maximum re
 grpc_max_send_message_length= # default: 1024 * 1024 * 1024 - gRPC maximum send message length
 
 validate_user_form= # User form validation configuration
+
+enable_gitserver= # Default: false - Enable git server at /git
+enable_gitserver_guest= # Default: false - Enable guest access to git server at /git ( you can add guests to repos and allow the to read and or update them )
+enable_gitserver_guest_create= # Default: false - Enable guest access to git server at /git ( allow guests to push new repositories )
+
 
 ```
