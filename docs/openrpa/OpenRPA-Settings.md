@@ -8,15 +8,16 @@ parent: What Is OpenRPA
 
 **OpenRPA** settings are saved locally in a file named `settings.json` and it is located in user's `Documents\OpenRPA` folder (or full path `C:\Users\{YOUR_USER}\Documents\OpenRPA`). This file contains all configuration parameters for **OpenRPA**, including some which are not accessible through the GUI.
 
-`settings.json` will contain all "bases" settings, used by OpenRPA and a collection of all settings for each extension installed in OpenRPA, for this reason, the file will contain a different amount of valyes depending on what extensions have been installed. 
+`settings.json` will contain all "base" settings, used by OpenRPA, and a collection of all settings for each extension installed in OpenRPA. For this reason, the file will contain a different amount of values depending on what extensions have been installed or configured. 
 
-If you are in a coreprate envoriment using [roaming profiles](https://learn.microsoft.com/en-us/windows-server/storage/folder-redirection/deploy-roaming-user-profiles) and/or [folder redirection](https://www.cs.washington.edu/lab/windows/profiles) it's recommend that you move the OpenRPA folder and settings.json file into the user's AppData folder, and remove the corrosponding folder in the Documents folder.
+If you are in a corporate environmnet using [roaming profiles](https://learn.microsoft.com/en-us/windows-server/storage/folder-redirection/deploy-roaming-user-profiles) and/or [folder redirection](https://www.cs.washington.edu/lab/windows/profiles) it is recommended that you move the OpenRPA folder and settings.json file into the user's AppData folder (`%appdata%`). It is recommended to remove the corresponding folder in the Documents folder, as it will not be used anymore (AppData takes precedence) and it can be confusing if both are present.
 
 When you start **OpenRPA** it will load `layout.config`. This will store the user's layout preferences (panel sizes, order, location etc). This file is updated when you exit OpenRPA. To reset all UI elements to the defaults, simple cose OpenRPA and delete this file.
 
-Unless you are running [in offile mode](Offline) OpenRPA will Create/Open a .db file stores in the users OpenRPA folder. The name of the file will match the domain name of the OpenFlow it's connected to. This way, OpenRPA does not hve to redownload all data, when ever you are switching between different OpenFlow installations.
-If somethings goes wrong, you can always close OpenRPA and delete this file, then OpenRPA will re-create it and download all workflows it has access to next time you start it.
+OpenRPA will Create/Open a .db file store in the users OpenRPA folder. The name of the file will match the domain name of the OpenFlow it's connected to (or `offline` when running [in offline mode](Offline)). This way, OpenRPA does not hve to redownload all data whenever you are switching between different OpenFlow installations, or switching between online and offline modes.
+If something goes wrong, you can always close OpenRPA and delete this file, then OpenRPA will re-create it and download all workflows it has access to next time you start it.
 > important note: do NOT delete this file, if you are in offline mode. This is where all data is stored. Often make backup's of this file, if you are in Offline mode. For users connection to OpenFlow, version control and backups are handling using OpenFlow.
+> If you are having frequent issues with the .db file, consider switching from .db local storage to file based local storage. See [further in the document](#local-storage-settings) for details.
 
 Editing either file (`settings.json` / `layout.config`) while **OpenRPA** is running will have no effect and, when the application is closed, any value changed will be lost/overwritten. Hence, if you desire to edit any setting, always make sure that **OpenRPA** is not running.
 
@@ -68,3 +69,18 @@ Below is some of the common settings explained
 - **log_to_file** If set to true, will log all tracing information to a file. This will add **alot** of overhead to OpenRPA, only use for troubleshooting.
 - **properties** This object will contain all extension settings
 
+## Local storage settings
+**OpenRPA** from version 1.4.57.1 allows for an alternative to .db local storage in form of file based storage, with .db storage being the default. Using file based storage instead of .db can alleviate some desynchronization and/or .db corruption issues that sometimes can occur with certain virtualization setups that also apply redirection for `%appdata%`.
+
+![Alt text](StorageFileSystem1.png)
+
+Before changing these settings, take note that:
+- Only one storage option should be enabled at the same time. Keeping more than one enabled is not supported and may lead to unexpected desynchronizations of saved data.
+- Storage systems **do not** automatically synchronize with each other, but all of them do synchronize with OpenFlow if connected. Therefore, if you're working in online mode, your work will synchronize automatically, but if working in offline mode you need to export/import accordingly when switching.
+
+When using `StorageLiteDB` **OpenRPA** will behave the same as with previous versions.
+
+When using `StorageFileSystem` **OpenRPA** will create subfolders in your OpenRPA folder, named after OpenFlow instances you connect to (or offline), and further subfolders for used elements (projects, workflows and so on).
+`StorageFileSystem_strict` is recommended to be left enabled. It will make **OpenRPA** validate certain operations (update, delete etc.) and display errors if storage state is unexpected, for example if you're trying to update a workflow that isn't in the storage.
+If you are using `StorageFileSystem`, take note that:
+- Running from `Documents/OpenRPA` and having OneDrive or similar synchronization software enabled may result in synchronization loops on `openrpa_instances` subfolder (which keeps track of all started and completed workflows). If that is an issue for you, consider moving to `%appdata%` instead
