@@ -94,7 +94,11 @@ enable_web_tours= # Default: true - Enable webtour for users without the webtour
 enable_nodered_tours= # Default: true - Set to false, to disable the default tour in NodeRED. If enabled will force reloads when toggled.
 
 auto_hourly_housekeeping= # Default: true - Once an hour runs a job that check collections, indexs, runing agents and other hygiene
+housekeeping_skip_calculate_size: # Default: false - Skip calculating size for all objects in the databases
+housekeeping_skip_update_user_size= # Default: false - Skip updating dbusage field on all users and customers.
 housekeeping_skip_collections= # When calculating database usage exclude these collections, seperated multiple with comma ,
+housekeeping_remove_unvalidated_user_days= # Default: 0 - if above 0, remove unvalidated users after x days
+housekeeping_cleanup_openrpa_instances= # Default: false - If true will set all idle and running openrpa instances to completed and remove workflow state after 24 hours
 workitem_queue_monitoring_enabled= # Default: true - Monitor all workitemqueues and notify connected clients if there are new items
 workitem_queue_monitoring_interval= # Default: 10000 (10 sec) - Check database and notify conneted clients at this interval
 
@@ -122,7 +126,8 @@ text_index_name_fields= # Default: name,_names - Set fields that YOU included in
 auto_create_users= # Default: false - Users can create them self, but trying to login
 auto_create_domains= # Default: false - Only allow creating new users, if domain is in this comma seperated list.
 auto_create_user_from_jwt= # Default: false - If someone tries to login with a valid token, but an unknow userid, auto create it ?
-persist_user_impersonation= # Default: true - Save on user impersonator when impersinating a user (persist when reloading), else only saved in current token
+allow_signin_with_expired_jwt= # Default: false - Allow users to login with a JWT token that has expired
+persist_user_impersonation= # Default: false - Save on user impersonator when impersinating a user (persist when reloading), else only saved in current token
 ignore_expiration= # Default: false - Allow users to signin with JWT tokens that has expired. 
 ping_clients_interval= # Default: 10000 (10 seconds) - Send Ping command to every connected client at this interval
 client_heartbeat_timeout= # Default: 60 - Disconnect clients if they have nnt responded to ping (ping_clients_interval) after this many seconds.
@@ -164,7 +169,7 @@ oidc_authorization_code_ttl= # Default: 480 (8 hours)
 oidc_client_credentials_ttl= # Default: 480 (8 hours)
 oidc_refresh_token_ttl= # Default: 20160 (14 days in seconds)
 oidc_session_ttl= # Default: 20160 (14 days in seconds)
-oidc_cookie_key= 
+oidc_cookie_key= # Default: random - Signing key used for cookie signing to prevent tampering
 
 # Limit the amount of api ( web, not websocket ) requests by ip address. If using kubernetes, works best with sessionAffinity set to ClientIP
 api_rate_limit= # Default: true - to disable rate limits on all http requests, set this to false
@@ -189,6 +194,11 @@ allow_merge_acl= # Default: false - merge acls by combining bits for all aces wi
 # Default: false - If set to true, will chage default permissions on buildin roles, most significantly, members of the users role, cannot see the users role.
 # This allow isolating users from other users and/or groupeing the in customers with dedicated roles.
 multi_tenant= 
+enable_guest= # Default: false - Allow issuing guest tokens. The guest user is not a member of users and can be used by applications for anonymous access
+
+enable_gitserver= # Default: false - Enable git api, to allow using openflow as a git server from /git endpoint
+enable_gitserver_guest= # Default: false - Allow anonymous access to /git, and allows using guest as part of the ACL on branches
+enable_gitserver_guest_create= # Default: false - Allow anonymous users to create new git repositories ( there will then allow anyone to update them )
 cleanup_on_delete_customer= # Default: false - Try and auto delete all associated data and user/roles when deleting a customer. Be ware !!!!
 cleanup_on_delete_user= # Default: false - Try and auto delete all associated data and user/roles when deleting a customer. Be ware !!!! ( force hard delete )
 api_bypass_perm_check= # Default: false - Completly disable **ALL** permission checks, allowing anyone to see and do everything
