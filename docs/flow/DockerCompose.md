@@ -130,7 +130,7 @@ Next add an wildcard * record for all the services exposed from that instance, a
 *			CNAME	openflow.mydomain.com.
 ```
 
-( a few DNS providers does not allow create wildcard records using CNAME, and that case use an A record pointing to the same IP )
+( a few DNS providers does not allow to create wildcard records using CNAME, in that case use an A record pointing to the same IP )
 
 Once complete, open the docker compose file
 - add an environment with the name `domain` and the value of domain you chose ( in the above example `openflow.mydomain.com`) 
