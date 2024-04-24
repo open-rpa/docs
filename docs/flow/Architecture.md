@@ -11,7 +11,7 @@ A stateless [RabbitMQ](https://www.rabbitmq.com/) (Can be run with durable queue
 If deployed in docker, you can spin up multiple NodeRED instances using the API or the web interface.
 Different types of clients, [custom web](https://github.com/open-rpa/openflow-web-angular11-template) interfaces, [OpenRPA](https://github.com/open-rpa/openrpa) robots, PowerShell modules and remotely installed NodeRED's can then connect to the OpenFlow API using web sockets and receive events and data. Clients will use the API to register/publish queues and exchanges in order to add an extra layer of authentication and to simply for network requirements. All database access is exposed as natively close to the MongoDB driver, but with an added layer of security though the API.
 
-If installed the basic [docker-compose](https://github.com/open-rpa/openflow/blob/master/docker-compose.yml) file that would make something like this.
+If installed the basic [docker-compose](DockerCompose.md) file that would make something like this.
 
 ![openflow_traefik](architecture/openflow_with_traefik.png)
 
