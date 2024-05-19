@@ -50,7 +50,7 @@ wapid_pub=
 wapid_key=
 
 # Define type of and configure caching
-cache_store_type= # Default: memory - memory or redis
+cache_store_type= # Default: memory - memory or redis or mongodb (mongodb is experimental)
 cache_store_max= # Default: 1000 - Max number of objects in store
 cache_store_ttl_seconds= # Default: 300 - Expire cache items after this amount of seconds
 cache_store_redis_host= # set redis host when type is redis
