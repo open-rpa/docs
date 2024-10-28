@@ -2,6 +2,7 @@
 layout: default
 title: SDKs
 nav_order: 11
+has_children: true
 ---
 
 # Connecting to OpenIAP from your application
