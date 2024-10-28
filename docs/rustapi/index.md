@@ -41,27 +41,64 @@ setup default credentials
 export OPENIAP_USERNAME=username
 export OPENIAP_PASSWORD=password
 ```
-
-rust
-```bash
-cargo run
-cargo test
+when running inside vs code, add a .env file in the root of the project with the following contents
+```
+OPENIAP_USERNAME=username
+OPENIAP_PASSWORD=password
 ```
 
-nodejs
+
+### First tabs
+
+{% tabs run %}
+
+{% tab run rust %}
+```bash
+cargo run
+```
+{% endtab %}
+
+{% tab run js %}
 ```bash
 cd node
 node test.js
 ```
+{% endtab %}
 
-python
+{% tab run python %}
 ```bash
 cd python
-pip uninstall openiap -y && pip install dist/openiap-0.1.1-py3-none-any.whl && python test.py
-
+pip uninstall openiap_edge -y && pip install dist/openiap_edge-0.0.13.tar.gz && python test.py
 ```
-dotnet
+{% endtab %}
+
+{% tab run dotnet %}
 ```bash
 cd dotnet
 dotnet run
 ```
+{% endtab %}
+
+{% endtabs %}
+
+### Second tabs
+
+{% tabs data-struct %}
+
+{% tab data-struct yaml %}
+```yaml
+hello:
+  - 'whatsup'
+  - 'hi'
+```
+{% endtab %}
+
+{% tab data-struct json %}
+```json
+{
+    "hello": ["whatsup", "hi"]
+}
+```
+{% endtab %}
+
+{% endtabs %}
