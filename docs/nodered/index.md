@@ -7,7 +7,7 @@ has_children: true
 
 # What Is NodeRED
 
-In OpenIAP flow you can start an agent with Node-RED preloaded with a lot of OpenIAP flow specefic nodes. Node-RED is a visual programming tool used to automate Software API's and hardware devices (IoT). Its an Open Source and much more advanced version, of closed source platforms like zapier or n8n.
+In OpenIAP flow you can start an agent with Node-RED preloaded with a lot of OpenIAP flow specific nodes. Node-RED is a visual programming tool used to automate Software API's and hardware devices (IoT). Its an Open Source and much more advanced version, of closed source platforms like zapier or n8n.
 
 It provides an in-browser editor where you can connect flows using any nodes available. Each node represents a step that when wired together forms a meaningful task. It also follows a common pattern: input, processing and output. It is important to note that Node-RED functions like a middleware to an information processing system. It simply connects the inputs to the workflows and allows them to process it. 
 
