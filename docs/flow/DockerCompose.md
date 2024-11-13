@@ -114,7 +114,7 @@ This setup does not support using a custom port. Only port 80 or 443 is supporte
 
 All examples use localhost.openiap.io for domain. This domain points to your localhost ( 127.0.0.1 ) and there for only works on your local machine. To allow other clients to connect, or if you did this on a hosting/cloud server somewhere, you need to use your own DNS to access your instance.
 
-First find the IP if your machine. If used on the local network only, use the IP of the machine with docker, if you are in the cloud, us the public IP given to that machine.
+First find the IP if your machine. If used on the local network only, use the IP of the machine with docker, if you are in the cloud, use the public IP given to that machine.
 
 You need to add 2 DNS record at your DNS provider, one for OpenFlow it self, and and for all the services under that OpenFlow ( MQ, agent's, etc. )
 
@@ -139,7 +139,7 @@ Once complete, open the docker compose file
 ### Troubleshooting tips
 
 special note for people using MacOS, you need to update the volume for traefik.  
-If you are gettig error 404 in the browser when trying to connect, and the log/console of traefik is showing errors connecting to the docker pipe,  
+If you are getting error 404 in the browser when trying to connect, and the log/console of traefik is showing errors connecting to the docker pipe,  
 then open `docker-compose.yml` find the two lines that say ( under traefic and under api )
 ```
 - "//var/run/docker.sock:/var/run/docker.sock:ro"
