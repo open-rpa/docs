@@ -1,6 +1,6 @@
 ---
 layout: default
 title: Managing Client Authenication
-parent: What Is OpenIAP Flow
+parent: What Is OpenCore
 nav_order: 8
 ---

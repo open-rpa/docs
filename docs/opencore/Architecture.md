@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Architecture
-parent: What Is OpenIAP Flow
+parent: What Is OpenCore
 nav_order: 5
 ---
 ## Architecture

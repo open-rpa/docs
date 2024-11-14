@@ -3,7 +3,7 @@ title: OpenIAP Documentation
 layout: home
 nav_order: 1
 ---
-**OpenIAP Flow** is a versatile framework designed to simplify the creation, deployment, and management of distributed code. At its core, OpenIAP Flow excels in orchestrating a variety of agents and workflows. Let's explore some of its standout features:
+**OpenCore** is a versatile framework designed to simplify the creation, deployment, and management of distributed code. At its core, OpenCore excels in orchestrating a variety of agents and workflows. Let's explore some of its standout features:
 
 - **Managing, invoking, and configuring your robots and workflows**: Seamlessly control and customize your automation processes.
 - **Managing users and their permission levels**: Keep your system secure by managing user access efficiently.

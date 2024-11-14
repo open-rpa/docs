@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Configuration Values
-parent: What Is OpenIAP Flow
+parent: What Is OpenCore
 nav_order: 14
 ---
 # Configuration settings
 
-This document outlines the configuration options available for OpenIAP flow.
+This document outlines the configuration options available for OpenCore.
 These settings are set either though environments variables.
 - **Docker**: set in your docker-compose file when using [docker](DockerCompose) instalations.
 - **Kubernetes**: set in your values fle when unding [helm chart}(Kubernetes).

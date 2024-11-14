@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Manage Sign in Providers
-parent: What Is OpenIAP Flow
+parent: What Is OpenCore
 nav_order: 8
 ---
 # Providers

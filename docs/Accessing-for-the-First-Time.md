@@ -28,4 +28,4 @@ Check your email for a validation code. If you don't see it within a minute, rem
 
 Congratulations, you have now created your first user account!
 
-![OpenIAP Flow frontpage](Accessing-for-the-First-Time/OpenIAP-Flow-frontpage.png)
+![OpenCore frontpage](Accessing-for-the-First-Time/OpenIAP-Flow-frontpage.png)

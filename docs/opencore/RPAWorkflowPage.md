@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Invoke OpenRPA Workflows page
-parent: What Is OpenIAP Flow
+parent: What Is OpenCore
 nav_order: 13
 ---
 # Invoke OpenRPA Workflows page

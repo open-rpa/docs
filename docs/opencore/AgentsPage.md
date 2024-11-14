@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Agents Page
-parent: What Is OpenIAP Flow
+parent: What Is OpenCore
 nav_order: 14
 ---
 # Agents Page

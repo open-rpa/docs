@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Requirements
-parent: What Is OpenIAP Flow
+parent: What Is OpenCore
 nav_order: 7
 ---
 # Size recommendations for OpenFlow
