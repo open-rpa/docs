@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Entities Page
-parent: What Is OpenCore
+parent: What Is OpenIAP Flow
 nav_order: 14
 ---
 # Entities Page

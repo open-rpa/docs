@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Enable Multi-Tenancy
-parent: What Is OpenCore
+parent: What Is OpenIAP Flow
 nav_order: 3
 ---
 ## Enable Multi-Tenancy

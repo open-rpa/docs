@@ -1,10 +1,10 @@
 ---
 layout: default
 title: OpenIAP network protocol
-parent: What Is OpenCore
+parent: What Is OpenIAP Flow
 nav_order: 9
 ---
-# Details about the Network Protocol used by OpenCore
+# Details about the Network Protocol used by OpenIAP Flow
 
 #### Intro
 
@@ -12,8 +12,8 @@ Before 1.5 OpenAIP flow only supported websockets ( and way way back rest+OData 
 Moving forward it will support the old wbebsocket protocol and the new protocol as described below.
 This is to keep supporting older versions of OpenRPA and NodeRED. At some point the old version might be removed, but for now it's the plan to keep it for backward compatability.
 
-Moving forward we will now use protobuf as the base protocol. This allows us to ensure the same look and feel undependenly of the programming language used for communicating with OpenCore. OpenCore it self uses the [nodeapi](https://github.com/openiap/nodeapi) implementation, that functions as both a server and client package. 
-All proto3 files can be found at this [github](https://github.com/openiap/proto) repository. All api implementations uses this repository for generating and parsing the messages to and from OpenCore.
+Moving forward we will now use protobuf as the base protocol. This allows us to ensure the same look and feel undependenly of the programming language used for communicating with OpenIAP flow. OpenIAP Flow it self uses the [nodeapi](https://github.com/openiap/nodeapi) implementation, that functions as both a server and client package. 
+All proto3 files can be found at this [github](https://github.com/openiap/proto) repository. All api implementations uses this repository for generating and parsing the messages to and from OpenIAP flow.
 These message can then be send over multiple different base protocols. 
 Currently those are
 - [GRPC](https://grpc.io/)
@@ -45,9 +45,9 @@ message Envelope {
 - `traceid`/`spanid` used for collecting spans across applications with [OpenTelemetry](https://opentelemetry.io/)
 - `data` the message you want to sent
 When packing the Any message type_url MUST math the `command` ( for instance if sending a signin message, command must be `signin` and type_url must be `type.googleapis.com/openiap.SigninRequest` )
-- `priority` when OpenCore has enable_openflow_amqp enabled, this sets the priority on the message. 
+- `priority` when OpenIAP flow has enable_openflow_amqp enabled, this sets the priority on the message. 
 We recomend using priority 2 for UI messages, and priority 1 for everything else. This way the UI will always be responsive even under heavy load. For all non essential things like batch processing use priority 0. By default priority 0 to 3 is enabled in rabbitmq
 
 Certain commands will setup a stream to receive multiple message on the same request. For instance download/upload file will create a stream for sending the file content.
-If you send DownloadRequest in Envelop with id 5 then OpenCore will send multiple message with envelop rid 4. First you receive a a BeginStream, then X number of Stream messges with the file centet and then a EndStream message. Finally you will receive a DownloadResponse containing detailed informaiton about the file and folwdown proces.
+If you send DownloadRequest in Envelop with id 5 then OpenIAP flow will send multiple message with envelop rid 4. First you receive a a BeginStream, then X number of Stream messges with the file centet and then a EndStream message. Finally you will receive a DownloadResponse containing detailed informaiton about the file and folwdown proces.
 

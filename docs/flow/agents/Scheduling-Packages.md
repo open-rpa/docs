@@ -1,6 +1,6 @@
 ## Editing an Agent: Adding Schedules
 
-When editing an agent in OpenCore, you'll find the "Add schedule" section at the bottom of the agent's configuration page.
+When editing an agent in OpenIAP Flow, you'll find the "Add schedule" section at the bottom of the agent's configuration page.
 
 ![Add Schedule](Add-Schedule.png)
 

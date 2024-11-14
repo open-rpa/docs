@@ -7,7 +7,7 @@ has_children: true
 
 # What Is NodeRED
 
-In OpenCore you can start an agent with Node-RED preloaded with a lot of OpenCore specific nodes. Node-RED is a visual programming tool used to automate Software API's and hardware devices (IoT). Its an Open Source and much more advanced version, of closed source platforms like zapier or n8n.
+In OpenIAP flow you can start an agent with Node-RED preloaded with a lot of OpenIAP flow specific nodes. Node-RED is a visual programming tool used to automate Software API's and hardware devices (IoT). Its an Open Source and much more advanced version, of closed source platforms like zapier or n8n.
 
 It provides an in-browser editor where you can connect flows using any nodes available. Each node represents a step that when wired together forms a meaningful task. It also follows a common pattern: input, processing and output. It is important to note that Node-RED functions like a middleware to an information processing system. It simply connects the inputs to the workflows and allows them to process it. 
 
@@ -31,7 +31,7 @@ Now Click `Save` and OpenFlow will save and then start your new NodeRED instance
 If this is the first time you start a NodeRED and you are on a local installation this might take a little time, while it download the NodeRED docker image. But after a while it will say `Status` Running
 
 ![Nodered Status](nodered-status.png)
-> Note: you can see CPU and Memory usage here too. If you are using the cloud based version of OpenCore, and these numbers get to high, it might be time to purche a bigger instance.
+> Note: you can see CPU and Memory usage here too. If you are using the cloud based version of OpenIAP Flow, and these numbers get to high, it might be time to purche a bigger instance.
 
 Now click the last button here, to open a new tab with you NodeRED
 

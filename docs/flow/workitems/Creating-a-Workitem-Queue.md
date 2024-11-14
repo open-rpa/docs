@@ -1,4 +1,4 @@
-From OpenCore's web interface you can start by adding a new workitem queue.
+From OpenIAP Flow's web interface you can start by adding a new workitem queue.
 Click `Work item Queues` in the main menu, then click `+` button to add a new queue.
 
 ![Alt text](plusbutton.png)
@@ -16,7 +16,7 @@ Click `Work item Queues` in the main menu, then click `+` button to add a new qu
 Both `Robot/Role` and `Workflow` must have a value before this will work. You can use [RPA roles](flow/Managing-Roles) to spread the workload between multiple robots.
 
 # Agent and NodeRED specefic settings
-- **amqpqueue**: OpenCore will periodicly send an empty message to this queue, when there are new items ready to be processed in the queue. This is how we can allow a NodeRED workflow or an deamon agent package wait for items without having to "test" pull at certain intervals. This is always the prefere way of implementing this.
+- **amqpqueue**: OpenIAP flow will periodicly send an empty message to this queue, when there are new items ready to be processed in the queue. This is how we can allow a NodeRED workflow or an deamon agent package wait for items without having to "test" pull at certain intervals. This is always the prefere way of implementing this.
 
 # Agent specefic settings
 - **amqpqueue**: What agent to notify about specefic workiems ready to be processed.

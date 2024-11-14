@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Running on Kubernetes
-parent: What Is OpenCore
+parent: What Is OpenIAP Flow
 nav_order: 10
 ---
 # Kubernetes
@@ -10,7 +10,7 @@ OpenFlow was designed to run on [kubernetes](https://kubernetes.io). You can sti
 
 We use helm to deploy different deployments to kubernetes, so first install [helm](https://github.com/helm/helm/releases) simply drop this some where and add it to the path, so you can reference it from cmd/powershell. Also, make sure you have [kubectl](https://kubernetes.io/docs/tasks/tools/) installed and configured to access your kubernetes cluster.
 
-> note: OpenCore requires a premium license to run on Kubernetes. [Read mere here](https://openiap.io/pricing)
+> note: OpenIAP flow requires a premium license to run on Kubernetes. [Read mere here](https://openiap.io/pricing)
 
 OpenFlow depends on [traefik](https://doc.traefik.io/traefik/v1.7/user-guide/kubernetes/) as ingress controller. It's beyond the scope of this guide on how to install this in non-clouded environments, but if you are using GKE, aWS, Azure, Alibaba or some of the other cloud providers that has out of the box external loadbalencers, you can simpy deploy trafik with the service with type: LoadBalancer, and from here on everything "just works".
 

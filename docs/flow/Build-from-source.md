@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Build from source
-parent: What Is OpenCore
+parent: What Is OpenIAP Flow
 nav_order: 12
 ---
 

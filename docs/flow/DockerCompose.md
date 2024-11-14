@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Install using docker-compose
-parent: What Is OpenCore
+parent: What Is OpenIAP Flow
 nav_order: 4
 ---
 ## Getting started

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Creating a New User
-parent: What Is OpenCore
+parent: What Is OpenIAP Flow
 nav_order: 1
 ---
 # Creating a New User
