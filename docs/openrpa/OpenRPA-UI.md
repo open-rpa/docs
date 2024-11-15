@@ -71,7 +71,7 @@ This bar has three sections: `Logging`, `Output`, and `Workflow Instances`.
 
 ### Connection Bar
 
-- Shows the connection status with the **OpenFlow** web service and the status of `NM` and `SAP` plugins.
+- Shows the connection status with the **OpenCore** web service and the status of `NM` and `SAP` plugins.
 
 ![OpenRPA Connection Bar](../../images/openrpa_connection_bar.png)
 

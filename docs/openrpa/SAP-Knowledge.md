@@ -69,7 +69,7 @@ Get a good start with SAP in OpenRPA
 
 [![Get a good start with SAP in OpenRPA](https://img.youtube.com/vi/nDLKHrX3SxE/0.jpg)](https://www.youtube.com/watch?v=nDLKHrX3SxE)  
 
-Running OpenFlow offline and some MQTT stuff
+Running OpenCore offline and some MQTT stuff
 
 [![Recording in SAP with OpenRPA](https://img.youtube.com/vi/4VJ2Q4mPWnk/0.jpg)](https://www.youtube.com/watch?v=4VJ2Q4mPWnk)  
 

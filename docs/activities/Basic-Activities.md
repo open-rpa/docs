@@ -174,8 +174,8 @@ ClipWait, % Timeout, % WaitForAnyData
 
 **Why:** This is an excellent way to make a workflow react to things in the environment. You could make a workflow that helps filling in information into a form when the user presses a specific keyboard combination, or you would show a helpful dialog, when ever a user opens a Timesheet, or maybe you want to add extra actions to an existing button. 
 
-Note, as soon as an activity has been created, all actions will also be sent to OpenFlow.
-You can use OpenFlow to trigger other robots based on a trigger ( or interact with one of the more than 2000 different systems supported )
+Note, as soon as an activity has been created, all actions will also be sent to OpenCore.
+You can use OpenCore to trigger other robots based on a trigger ( or interact with one of the more than 2000 different systems supported )
 
 ![1558723403613](activities/DetectorNode.png)
 
@@ -185,9 +185,9 @@ You can use OpenFlow to trigger other robots based on a trigger ( or interact wi
 
 ![1561191004924](activities/InvokeOpenFlowNode.png)
 
-**What:** Call a workflow inside OpenFlow
+**What:** Call a workflow inside OpenCore
 
-**How:** Insert a workflow node inside OpenFlow, check RPA to make it visible to robots and click deploy. Now you can select this workflow inside the InvokeOpenFlow activity inside OpenRPA. All variables in the workflow will be sent to the workflow in msg.payload, and any data in msg.payload will be sent back to the robot once completed, if a corresponding variable exists.
+**How:** Insert a workflow node inside OpenCore, check RPA to make it visible to robots and click deploy. Now you can select this workflow inside the InvokeOpenFlow activity inside OpenRPA. All variables in the workflow will be sent to the workflow in msg.payload, and any data in msg.payload will be sent back to the robot once completed, if a corresponding variable exists.
 
 **Why:** Greatly improves to possibilities in RPA workflow, by giving access to other robors and more than 2000 other systems, using an easy to use drag and drop workflow engine.
 
@@ -199,7 +199,7 @@ You can use OpenFlow to trigger other robots based on a trigger ( or interact wi
 
 **How:** Drag in InvokeOpenRPA and select the workflow you would like to call. Any arguments in the targeted workflow will be mapped to local variables of the same name, to support transferring parameters between the two workflows. Click "Add variable" to have all the in and out arguments in the targeted workflow created locally in the current scope/sequence.
 
-**Why:** More complex workflows is easier to manage if split up to smaller "chucks" that call each other. Having multiple smaller workflows also give easy access to run statistics on each part of the workflow using OpenFlow.
+**Why:** More complex workflows is easier to manage if split up to smaller "chucks" that call each other. Having multiple smaller workflows also give easy access to run statistics on each part of the workflow using OpenCore.
 
 # InvokeRemoteOpenRPA
 
@@ -209,13 +209,13 @@ You can use OpenFlow to trigger other robots based on a trigger ( or interact wi
 
 **How:** Just select the robot or role you want to send the request to, and the list of workflows will limit it self to what ever that robot or role have access too. If the workflow takes or returns arguments clicking "Add variables" will add a variable for each for those to the current sequence.
 
-**Why:** Easier than having to add an OpenFlow workflow to handle calling the robot. It's always more secure to use OpenFlow to handle multiple robots, but sometimes its nice to have a fast easy way, to get something done on multiple machines.
+**Why:** Easier than having to add an OpenCore workflow to handle calling the robot. It's always more secure to use OpenCore to handle multiple robots, but sometimes its nice to have a fast easy way, to get something done on multiple machines.
 
 # InsertOne
 
 ![1564847314516](activities/InsertOne.png)
 
-**What:** Take any object and convert it to a Json document and saves it in the database if connected to an OpenFlow instance.
+**What:** Take any object and convert it to a Json document and saves it in the database if connected to an OpenCore instance.
 
 **How:** Set object to save in Item, override document type using the Type field, use Encrypt Fields to define what elements of the document to encrypt with EAS 256bit encryption. Result contains the result of the insert.
 
@@ -225,7 +225,7 @@ You can use OpenFlow to trigger other robots based on a trigger ( or interact wi
 
 ![1564847604412](activities/InsertOrUpdateOne.png)
 
-**What:** Take any object and convert it to a Json document and saves it in the database if connected to an OpenFlow instance. 
+**What:** Take any object and convert it to a Json document and saves it in the database if connected to an OpenCore instance. 
 
 **How:** Works just like InsertOne. 
 Using Uniqueness you can define a custom unique constraint when inserting or updating. Say you have an object with an property "department" and you know all departments have an unique name. instead of manually testing if the object already exists you can use InsertOrUpdate and set type to "department" and Uniqueness to "department,_type" ( type is saved as _type in the database). If Uniqueness is not supplied the default constrain of using _id is used.
@@ -236,7 +236,7 @@ Using Uniqueness you can define a custom unique constraint when inserting or upd
 
 ![1564847997708](activities/DeleteOne.png)
 
-**What:** Delete an document from the database in OpenFlow
+**What:** Delete an document from the database in OpenCore
 
 **How:** Either supply the object in item or the ID in _id
 
@@ -246,7 +246,7 @@ Using Uniqueness you can define a custom unique constraint when inserting or upd
 
 ![1564848147347](activities/query.png)
 
-**What:** Search the database in OpenFlow.
+**What:** Search the database in OpenCore.
 
 **How:** Supply an [MongoDB query](https://docs.mongodb.com/manual/tutorial/query-documents/) in QueryString and get result as a array of [JObjects](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm) in result
 
@@ -276,9 +276,9 @@ Using Uniqueness you can define a custom unique constraint when inserting or upd
 
 ![image-20200116103439150](activities/SaveFile.png)
 
-**What:** Upload a file to [GridFS](https://docs.mongodb.com/manual/core/gridfs/) in the database in OpenFlow.
+**What:** Upload a file to [GridFS](https://docs.mongodb.com/manual/core/gridfs/) in the database in OpenCore.
 
-**How:** Uploads a file to OpenFlow, can be downloaded again using GetFile, updated using InsertOrUpdateOne and  deleted using RemoveOne 
+**How:** Uploads a file to OpenCore, can be downloaded again using GetFile, updated using InsertOrUpdateOne and  deleted using RemoveOne 
 
 **Why:** Easy way to save and work with data across domains/multiple robots or use it as a convenient database.
 
@@ -286,7 +286,7 @@ Using Uniqueness you can define a custom unique constraint when inserting or upd
 
 ![image-20200116103517686](activities/GetFile.png)
 
-**What:** Download a file from [GridFS](https://docs.mongodb.com/manual/core/gridfs/) stored in the database in OpenFlow.
+**What:** Download a file from [GridFS](https://docs.mongodb.com/manual/core/gridfs/) stored in the database in OpenCore.
 
 **How:** Download a file again using either _id or get the latest version based on the filename, if user has access.
 
@@ -306,11 +306,11 @@ GetCredentials
 
 ![image-20200116104028045](activities/GetCredentials.png)
 
-**What:** Gets credentials by name from OpenFlow
+**What:** Gets credentials by name from OpenCore
 
 **How:** Set name, and save username and password in variables, if you cannot use SecureString use UnsecurePassword to save the password in a string variable instead.
 
-**Why:** It's not good practice to keep username and passwords in a workflow, so is more safe to save the them inside OpenFlow where username and password will be encrypted.
+**Why:** It's not good practice to keep username and passwords in a workflow, so is more safe to save the them inside OpenCore where username and password will be encrypted.
 
 # SetAutoLogin
 

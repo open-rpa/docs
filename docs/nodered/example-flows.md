@@ -4,11 +4,11 @@ title: Example Workflows
 parent: What Is NodeRED
 ---
 
-# Using OpenFlow Forms
+# Using OpenCore Forms
 
-## Create a Form in OpenFlow
+## Create a Form in OpenCore
 
-In this section, users will learn how to create a Form in OpenFlow. Refer to the Forms section for more information.
+In this section, users will learn how to create a Form in OpenCore. Refer to the Forms section for more information.
 
 1. Navigate to the [Forms page](http://app.openiap.io/#/Forms) and click the `Add Form` button.
    ![Add Form Button](../../images/nodered_openflow_forms_click_add_form_button.png)
@@ -16,7 +16,7 @@ In this section, users will learn how to create a Form in OpenFlow. Refer to the
 2. Drag a `Text Field` form to the Form designer.
    ![Drag Text Field](../../images/nodered_openflow_forms_drag_textfield_form.png)
 
-3. Change the `Label` parameter to `Please enter 'Hello from OpenFlow!' below`.
+3. Change the `Label` parameter to `Please enter 'Hello from OpenCore!' below`.
    ![Change Label](../../images/nodered_openflow_forms_change_label_textfield_form.png)
 
 4. Click on the `API` tab and change the `Property Name` to `hello_from_openflow`.
@@ -25,7 +25,7 @@ In this section, users will learn how to create a Form in OpenFlow. Refer to the
 5. Click the `Save` button, set the Form name as `hellofromopenflow`, and save it.
    ![Save Form](../../images/nodered_openflow_forms_set_name_and_save.png)
 
-Congratulations! You have successfully configured a Form in OpenFlow.
+Congratulations! You have successfully configured a Form in OpenCore.
 
 ## Configure Form in Node-RED
 
@@ -76,10 +76,10 @@ In this section, users will learn how to invoke the Form just created using Node
 
 5. Click the button inside the `inject` node to assign an instance of the Workflow to the `users` role.
 
-6. Navigate to OpenFlow's home page to see the instance of the Workflow.
-   ![OpenFlow Homepage](../../images/nodered_openflow_forms_homepage.png)
+6. Navigate to OpenCore's home page to see the instance of the Workflow.
+   ![OpenCore Homepage](../../images/nodered_openflow_forms_homepage.png)
 
-7. Test the Form by entering `Hello from OpenFlow!` in the text field and clicking the **Submit** button. A debug message will appear in Node-RED.
+7. Test the Form by entering `Hello from OpenCore!` in the text field and clicking the **Submit** button. A debug message will appear in Node-RED.
    ![Debug Message](../../images/nodered_openflow_forms_debug_message.png)
 
 This completes the process of invoking the Form using Node-RED. Users can now test and interact with the Form they have created.

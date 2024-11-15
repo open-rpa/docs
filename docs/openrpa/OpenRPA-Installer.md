@@ -27,8 +27,8 @@ Next you need to select if you need more than the default OpenRPA extenstions
 ![Custom Setup 3](OpenRPA-Installer/Custom-Setup-3.png)
 
 - **OpenRPA Core**: . Is mandatory and contains OpenRPA it self.
-- **Openflow Specific**: Activties for working with OpenFlow database.
-- **PowerShel module**: Allow working with OpenRP and OpenFlow database from PowerShell
+- **OpenCore Specific**: Activties for working with OpenCore database.
+- **PowerShel module**: Allow working with OpenRP and OpenCore database from PowerShell
 - **Microsoft Office**: This will be hidden if installer did not detect a supported version of Microsoft Office (2010+). Add ability to record, and activities to work with Microsoft Office directly.
 - **Forge Forms**: Add activities for doing user interaction using forms from inside OpenRPA workflows.
 - **Internet Explrer**: Add ability to record, and activities for working with Internet Explorer.
@@ -43,7 +43,7 @@ Next you need to select if you need more than the default OpenRPA extenstions
 - **File Watcher**: Add the file watcher derector. This allows the Robot to wait on Windows File System Notofication on specific folder/files.
 - **AviRecorder**: Add abilities to OpenRPA for doing automatic screen redordings, and adds activities for working manually with screen recordings.
 - **Invoice scanning with Rosum**: Add abilities to OpenRPA for doing integrating with rosum ai for invoice processing.
-- **High Density Robots**: Add tools and extensions to OpenRPA that allows installing a Windows Server on the machine to login in one or more RDP session on the local machine and keep OpenRPA running inside those. This requires OpenRPA to be installed for all users, it requires OpenRPA is talking to OpenFlow.
+- **High Density Robots**: Add tools and extensions to OpenRPA that allows installing a Windows Server on the machine to login in one or more RDP session on the local machine and keep OpenRPA running inside those. This requires OpenRPA to be installed for all users, it requires OpenRPA is talking to OpenCore.
 
 After completion, you can find OpenRPA in the start menu.
 

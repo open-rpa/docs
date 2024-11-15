@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Creating a New User
-parent: What Is OpenIAP Flow
+parent: What Is OpenCore
 nav_order: 1
 ---
 # Creating a New User
 
-To add a new user to your OpenFlow environment, start by selecting `Users` from the main menu. Then, click on the `Add User` button located in the top right corner of the screen.
+To add a new user to your OpenCore environment, start by selecting `Users` from the main menu. Then, click on the `Add User` button located in the top right corner of the screen.
 
 ![Add User Button](Add-User-Button.png)
 
