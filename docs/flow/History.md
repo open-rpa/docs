@@ -1,12 +1,12 @@
 ---
 layout: default
 title: History/versioning
-parent: What Is OpenIAP Flow
+parent: What Is OpenCore
 nav_order: 6
 ---
 ## Versioning
 
-OpenFlow has a simple versioning system built in. Using [jsondiff](https://github.com/benjamine/jsondiffpatch) and/or full copy of object you can always go back in time and see who changed what, and when and easily revert back and forth to different versions.
+OpenCore has a simple versioning system built in. Using [jsondiff](https://github.com/benjamine/jsondiffpatch) and/or full copy of object you can always go back in time and see who changed what, and when and easily revert back and forth to different versions.
 
 Go to the object page, select the collection you are interested in and click the history icon, you will then be presented for a list of changes to that object.
 

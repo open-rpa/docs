@@ -6,7 +6,7 @@ nav_order: 2
 
 ## Getting Started
 
-To begin, navigate to [OpenFlow](https://app.openiap.io), where you'll encounter a login page like this:
+To begin, navigate to [OpenCore](https://app.openiap.io), where you'll encounter a login page like this:
 
 ![Authentication page](Accessing-for-the-First-Time/Authentication-page.png)
 
@@ -24,8 +24,8 @@ Check your email for a validation code. If you don't see it within a minute, rem
 ![Validation Code](Accessing-for-the-First-Time/Validation-Code.png)
 
 > **Note:** 
-> If you are using a locally hosted OpenFlow, or signed in using federation, you will not be asked for a validation code.
+> If you are using a locally hosted OpenCore, or signed in using federation, you will not be asked for a validation code.
 
 Congratulations, you have now created your first user account!
 
-![OpenIAP Flow frontpage](Accessing-for-the-First-Time/OpenIAP-Flow-frontpage.png)
+![OpenCore frontpage](Accessing-for-the-First-Time/OpenIAP-Flow-frontpage.png)

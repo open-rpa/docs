@@ -14,9 +14,9 @@ If a workflow goes though a list of something, consider using work items and wor
 
 If you enable a click or element detector the robot will be monitoring every mouse click on the computer, and on very low-end computers this can give a few milliseconds delay on clicks and show a little CPU usage on the robot. But most pc this is a non-issue.
 
-The robot, if not configured on offline mode, will require a working network connection to start. Once in sync with [OpenFlow](https://github.com/open-rpa/openflow) it will function even if the network goes a wait for a short periods of time.
-The robot uses WebSocket's to connect with [OpenFlow](https://github.com/open-rpa/openflow), if using a firewall that does layer 4 inspection or if you are using a proxy server, be sure to check this supports WebSocket's. 
+The robot, if not configured on offline mode, will require a working network connection to start. Once in sync with [OpenCore](https://github.com/open-rpa/openflow) it will function even if the network goes a wait for a short periods of time.
+The robot uses WebSocket's to connect with [OpenCore](https://github.com/open-rpa/openflow), if using a firewall that does layer 4 inspection or if you are using a proxy server, be sure to check this supports WebSocket's. 
 
 If you are using [app.openiap.io](https://app.openiap.io) be aware that this is running in Google Cloud, so for people in certain countries, this can be an issue. 
 
-If you are hit by any of the last two issues, either use the robot in offline mode, or create your own installation of [OpenFlow](https://github.com/open-rpa/openflow), in another network or On-premise. The are a guides on how to create demo setups on [OpenFlow](https://github.com/open-rpa/openflow)'s GitHub page
+If you are hit by any of the last two issues, either use the robot in offline mode, or create your own installation of [OpenCore](https://github.com/open-rpa/openflow), in another network or On-premise. The are a guides on how to create demo setups on [OpenCore](https://github.com/open-rpa/openflow)'s GitHub page

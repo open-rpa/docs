@@ -28,7 +28,7 @@ You'll encounter two main sections: agent configuration and settings.
 - **Timezone**: Sets the global timezone for the agent.
 - **Run as**: Determines the user identity for running the agent and its packages.
 
-Once you run the agent, OpenIAP Flow will download the Docker image and start it based on your specifications.
+Once you run the agent, OpenCore will download the Docker image and start it based on your specifications.
 
 ![Agent Pending](Agent-Pending.png)
 

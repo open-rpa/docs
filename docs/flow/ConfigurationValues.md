@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Configuration Values
-parent: What Is OpenIAP Flow
+parent: What Is OpenCore
 nav_order: 14
 ---
 # Configuration settings
 
-This document outlines the configuration options available for OpenIAP flow.
+This document outlines the configuration options available for OpenCore.
 These settings are set either though environments variables.
 - **Docker**: set in your docker-compose file when using [docker](DockerCompose) instalations.
 - **Kubernetes**: set in your values fle when unding [helm chart}(Kubernetes).
@@ -19,7 +19,7 @@ Open the docker-compose file you are using, find the `api` service, usaly places
 under `environment:` you fill fine the most common settings, but when relevant you can add some of those listed beloc. 
 
 # Kubernetes
-If you followed the guide on the [helm chart}(Kubernetes) you should have a values file, you use then updating openflow.
+If you followed the guide on the [helm chart}(Kubernetes) you should have a values file, you use then updating OpenCore.
 Kubernetes uses the same values but are defined different, so please refere to this file for details [document here](https://github.com/open-rpa/helm-charts/blob/main/charts/openflow/values.yaml).
 
 # .env file
@@ -28,7 +28,7 @@ If you follow the building from [source code}(Build-from-source) guide, you will
 # Database base config object.
 To enforce values set using any of the above methods require restarting the api nodes. Almost all variables can also be overriden using an object in the database.
 Manully create an object inside the config collection of type "_type": "config" or open the [Console page](https://app.openiap.io/#/Console) and check "enabled streaming".
-Now you manually add one of more of the below values to the object, to emeiadtly override that value. Be aware, this means if you make an mistake you will manully have to find a way to update the database to remove/change it, if you make a mistake that will make openflow unable to start/reload.
+Now you manually add one of more of the below values to the object, to emeiadtly override that value. Be aware, this means if you make an mistake you will manully have to find a way to update the database to remove/change it, if you make a mistake that will make OpenCore unable to start/reload.
 
 ```bash
 log_with_colors= # Default: true - Use colors in the console output, can be an issue for certain types of log collectors
@@ -39,12 +39,12 @@ domain= # Default: localhost.openiap.io - sent to website and used in baseurl()
 cookie_secret= # Used to protect cookies
 max_ace_count= # Default: 128 - Discard overflow ace's if an _acl has more than 128 entries
 
-saml_issuer= # Default: the-issuer - Normal set to uri:api-domain of openflow
+saml_issuer= # Default: the-issuer - Normal set to uri:api-domain of OpenCore
 aes_secret= # encryption key used for user passwords and encryptiong data specefied in _encrypt
-# Signing certificate used for SAML token issued by openflow
+# Signing certificate used for SAML token issued by OpenCore
 signing_crt= 
 singing_key=
-# WAP token and email used for OpenFlow's WebPush service
+# WAP token and email used for OpenCore's WebPush service
 wapid_mail=
 wapid_pub=
 wapid_key=
@@ -110,9 +110,9 @@ NODE_ENV= # Default: development - development or production. Optimize and less 
 HTTP_PROXY= # OS specefic, use to set PROXY settings for the api node
 HTTPS_PROXY= # OS specefic, use to set PROXY settings for the api node
 NO_PROXY= # OS specefic, use to set PROXY settings for the api node
-agent_HTTP_PROXY= # Set HTTP_PROXY for all agent's started using openflow
-agent_HTTPS_PROXY= # Set HTTPS_PROXY for all agent's started using openflow
-agent_NO_PROXY= # Set NO_PROXY for all agent's started using openflow
+agent_HTTP_PROXY= # Set HTTP_PROXY for all agent's started using OpenCore
+agent_HTTPS_PROXY= # Set HTTPS_PROXY for all agent's started using OpenCore
+agent_NO_PROXY= # Set NO_PROXY for all agent's started using OpenCore
 
 stripe_api_key= # If resource broker has been configured and you have a stripe account, set this and stripe_api_secret to enable online payments
 stripe_api_secret= # If resource broker has been configured and you have a stripe account, set this and stripe_api_key to enable online payments
@@ -137,8 +137,8 @@ client_disconnect_signin_error= # Default: false - Send error to client when dis
 use_ingress_beta1_syntax= # Default: false - For old kubernetes installation, use beta1 syntax ?
 use_openshift_routes= # Default: false - on openshift we use routes and not traefik as ingress controller
 agent_image_pull_secrets= # If using custom image repository that requeires authentiction, like habor, set secret here
-auto_create_personal_nodered_group= # Default: false - Backwward compability with 1.4, allow openflow to autocrete nodered admin roles for all new users
-auto_create_personal_noderedapi_group= # Default: false - Backwward compability with 1.4, allow openflow to autocrete nodered api roles for all new users, require auto_create_personal_nodered_group to be true as well
+auto_create_personal_nodered_group= # Default: false - Backwward compability with 1.4, allow OpenCore to autocrete nodered admin roles for all new users
+auto_create_personal_noderedapi_group= # Default: false - Backwward compability with 1.4, allow OpenCore to autocrete nodered api roles for all new users, require auto_create_personal_nodered_group to be true as well
 force_add_admins= # Default: true - Force adding admins role with full control to all objects in the database.
 
 # Default: false - Allow non-federated user to get an reset password link sent.
@@ -196,18 +196,18 @@ allow_merge_acl= # Default: false - merge acls by combining bits for all aces wi
 multi_tenant= 
 enable_guest= # Default: false - Allow issuing guest tokens. The guest user is not a member of users and can be used by applications for anonymous access
 
-enable_gitserver= # Default: false - Enable git api, to allow using openflow as a git server from /git endpoint
+enable_gitserver= # Default: false - Enable git api, to allow using OpenCore as a git server from /git endpoint
 enable_gitserver_guest= # Default: false - Allow anonymous access to /git, and allows using guest as part of the ACL on branches
 enable_gitserver_guest_create= # Default: false - Allow anonymous users to create new git repositories ( there will then allow anyone to update them )
 cleanup_on_delete_customer= # Default: false - Try and auto delete all associated data and user/roles when deleting a customer. Be ware !!!!
 cleanup_on_delete_user= # Default: false - Try and auto delete all associated data and user/roles when deleting a customer. Be ware !!!! ( force hard delete )
 api_bypass_perm_check= # Default: false - Completly disable **ALL** permission checks, allowing anyone to see and do everything
-disable_db_config= # Default: false - Stop loading config from the database. Usefull when openflow will not start due to bad config in database
+disable_db_config= # Default: false - Stop loading config from the database. Usefull when OpenCore will not start due to bad config in database
 force_audit_ts= # Default: false - Force audit collection as a timeseries collection, if one exists will rename it 
 force_dbusage_ts= # Default: false - Force dbusage collection as a timeseries collection, if one exists will rename it
 migrate_audit_to_ts= # Default: true - If an old version of audit exists, migrate old data to the new and then delete it. This can take a LOOOONGGG time.
 
-# OpenFlow version 1 settings, only relevant for old angularjs webinterface and OpenRPA clients
+# OpenCore version 1 settings, only relevant for old angularjs webinterface and OpenRPA clients
 websocket_package_size= # Default: 25000
 websocket_max_package_count= # Default: 1048576
 websocket_message_callback_timeout= # Default: 3600
@@ -228,10 +228,10 @@ amqp_check_for_consumer= # Default: true
 amqp_check_for_consumer_count= # Default: false
 amqp_default_expiration= # Default: 60000 (1 min)
 amqp_requeue_time= # Default: 1000 (1 second)
-amqp_dlx= # Default: openflow-dlx
+amqp_dlx= # Default: OpenCore-dlx
 
 mongodb_url= # Default: mongodb://localhost:27017
-mongodb_db= # Default: openflow
+mongodb_db= # Default: OpenCore
 mongodb_minpoolsize= # Default: 25
 mongodb_maxpoolsize= # Default: 25
 
@@ -282,7 +282,7 @@ otel_trace_url= # Custom Open Telemetry exporter trace URL
 otel_metric_url= # CUstom Open Telemetry exporter metric URL
 otel_trace_interval= # Default: 5000
 otel_metric_interval= # Default: 5000
-otel_trace_pingclients= # Default: false - add trace for each ping clients in openflow
+otel_trace_pingclients= # Default: false - add trace for each ping clients in OpenCore
 otel_trace_dashboardauth= # Default: false - add trace for dashboardauth events
 otel_trace_include_query= # Default: false - include query in spans
 otel_trace_connection_ips= # Default: false - track connection requests per ip address
@@ -310,7 +310,7 @@ validate_user_form= # User form validation configuration
 license_key=
 enable_openapi= # Default: true - Enable generic OpenAPI endpoint. Requires a valid license
 enable_grafanaapi= # Default: true - Enable grafana endpoint used by the openaip flow data source in grafana. Requires a valid license
-grafana_url= # Enable a grafana link in the openflow web interface that link's to this URL. 
+grafana_url= # Enable a grafana link in the OpenCore web interface that link's to this URL. 
 enable_gitserver= # Default: false - Enable git server at /git. Requires a valid license
 enable_gitserver_guest= # Default: false - Enable guest access to git server at /git ( you can add guests to repos and allow the to read and or update them )
 enable_gitserver_guest_create= # Default: false - Enable guest access to git server at /git ( allow guests to push new repositories )

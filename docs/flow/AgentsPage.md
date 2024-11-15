@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Agents Page
-parent: What Is OpenIAP Flow
+parent: What Is OpenCore
 nav_order: 14
 ---
 # Agents Page
 
 ## Term Definition
 An agent is the name for a machine or desktop that is running the [agent runtime](https://github.com/openiap/nodeagent).
-A package is some code and a project.json file uploaded as a .tgz file to OpenFlow. These files are then downloaded and executed by agents.
+A package is some code and a project.json file uploaded as a .tgz file to OpenCore. These files are then downloaded and executed by agents.
 Assistant is a cross-platform Electron app that a user can run to allow running packages on demand in the user's context. 
 
 ## Agent Capabilities
@@ -20,18 +20,18 @@ Most examples on the [OpenIAP GitHub repo](https://github.com/openiap/) will sho
 
 ## Agent Runtimes
 ### Docker/Kubernetes/OpenShift
-Agents can be started inside Docker/Kubernetes/OpenShift using OpenFlow.
-When we do that, you can decide if any packages that will be running on the agent need to expose a web interface. If so, it will create an ingress route to the agent using the slug name. For instance, if you create an agent and it gets assigned the slug name `dawn-cloud-223c` and you are accessing an OpenFlow instance running at `app.openiap.io`. Once a package starts exposing a website/API, you can access that on https://dawn-cloud-223c.app.openiap.io.
-Agents in Kubernetes/OpenShift can also be configured to auto-assign one or more persistent storage volumes. This is handy when running services or code that needs to persist data that may not be suitable to be stored inside the OpenFlow database. Be careful to back up this data.
+Agents can be started inside Docker/Kubernetes/OpenShift using OpenCore.
+When we do that, you can decide if any packages that will be running on the agent need to expose a web interface. If so, it will create an ingress route to the agent using the slug name. For instance, if you create an agent and it gets assigned the slug name `dawn-cloud-223c` and you are accessing an OpenCore instance running at `app.openiap.io`. Once a package starts exposing a website/API, you can access that on https://dawn-cloud-223c.app.openiap.io.
+Agents in Kubernetes/OpenShift can also be configured to auto-assign one or more persistent storage volumes. This is handy when running services or code that needs to persist data that may not be suitable to be stored inside the OpenCore database. Be careful to back up this data.
 All packages started on an agent will share the same credentials, so it is vital to always run agents with a user that does not have access to any sensitive data.
-All packages will be configured to talk to the same OpenFlow instances, i.e., you cannot have multiple packages that are connected to different OpenFlow instances. (Well, you can, but it's not supported and not recommended.)
+All packages will be configured to talk to the same OpenCore instances, i.e., you cannot have multiple packages that are connected to different OpenCore instances. (Well, you can, but it's not supported and not recommended.)
 OpenIAP offers images with and without Chromium installed, for web automation inside agents. But you are free to create your own images if you have special demands. For instance, if it takes a long time to install all dependencies and you need fast startup times, it can be very handy to have a separate image with all those pre-installed. This is what OpenIAP does with the Node-RED image. Node-RED is simply a package referencing the Node-RED npm module, and is deployed as a package. But the Node-RED image has the package pre-loaded for faster startup.
 ### NodeAgent / Daemon
 Agents can be installed as a daemon on Windows, MacOS, and Linux (even Raspberry Pi OS).
 The agent requires NodeJS 14 or higher (18 or 20 recommended right now) to be pre-installed. Once installed, you can install the agent using the NPX command-line tool. The agent will run as a local system on Windows, and root on MacOS and Linux. You are free to change this to an unprivileged user, with access to its own profile data, and the network.
 The agent will store all configuration and packages inside the .openiap folder in the profile/home folder.
-Running an agent as a daemon is a handy way to run agents/packages that need access outside Docker/Kubernetes. If you are running OpenFlow in the cloud and need to run code on-premise, or if OpenFlow is running on a separate VLAN, you can install an agent on a machine where a package needs access to data not all packages need access to.
-Another use could be access to special or more powerful hardware. Most things in OpenFlow require almost no resources, so it can be beneficial to offload heavy workloads to hardware you have already purchased, to save on cloud costs. Or maybe you need to run heavy Machine Learning or LLM training/inference, and decided to rent GPUs at a different cloud provider like RunPod, or need access to Google TPUs for TensorFlow workloads, but want to keep your Kubernetes cluster somewhere else or in a different region.
+Running an agent as a daemon is a handy way to run agents/packages that need access outside Docker/Kubernetes. If you are running OpenCore in the cloud and need to run code on-premise, or if OpenCore is running on a separate VLAN, you can install an agent on a machine where a package needs access to data not all packages need access to.
+Another use could be access to special or more powerful hardware. Most things in OpenCore require almost no resources, so it can be beneficial to offload heavy workloads to hardware you have already purchased, to save on cloud costs. Or maybe you need to run heavy Machine Learning or LLM training/inference, and decided to rent GPUs at a different cloud provider like RunPod, or need access to Google TPUs for TensorFlow workloads, but want to keep your Kubernetes cluster somewhere else or in a different region.
 ### Assistant
 The assistant application is designed to run on a user's desktop. This way, the user can run any package you have given them access to. The package will then run inside the assistant in the user's context, and has access to any files or application the user has. This can be handy for doing assisted RPA (Robotic Process Automation), but anything is possible in code. Common use cases would be loading/processing files, generating reports, or simply creating a library of handy scripts that can help the users be more productive. As in all other cases, you can easily share, update, monitor, and control each agent and packages.
 Though not the main use cases, you can also do both ad hoc runs, schedule, and start daemons remotely on an agent running inside an assistant, but be aware, the user is always able to close/kill the assistant or stop any running job.
@@ -56,8 +56,8 @@ The package.json is used as a normal package.json for NodeJS/TypeScript packages
 - `main - The file to execute. This can be Python, PowerShell, or any other supported language and will also define how the agent prepares the environment before executing the main file.
 - `language` - Tells the agent which runtime to use when executing the code.
 - `typescript` - Not used at the moment, but is intended to be used when TypeScript has not been compiled and is run using ts-node.
-- `daemon` - Is used by the agent and OpenFlow to determine if this is a never-ending process (like something listening on a port, or waiting on events).
-- `chromium` - Used by OpenFlow to control which packages to show for an agent. Will only allow this package to run on agents that have a Chrome or Chromium browser.
+- `daemon` - Is used by the agent and OpenCore to determine if this is a never-ending process (like something listening on a port, or waiting on events).
+- `chromium` - Used by OpenCore to control which packages to show for an agent. Will only allow this package to run on agents that have a Chrome or Chromium browser.
 - `ports` - Define any ports this package might be listening on.
     - `If port is left empty, a random free port will be used.
     If the port is already in use, a new free port number will be used, and injected as an environment variable into the host using the portname.
@@ -78,7 +78,7 @@ Older project examples did not use an environment.yaml. If the agent does not fi
 ### JupyterLab
 This is still in early beta.
 A special package has been created that allows provisioning multiple JupyterLab instances, each with its own separated Python environment, and automatically syncs any data inside the lab.
-This is intended for data scientists and AI/LLM developers that need a well-known environment that also allows easy scaling and more easy access to data stored in OpenFlow.
+This is intended for data scientists and AI/LLM developers that need a well-known environment that also allows easy scaling and more easy access to data stored in OpenCore.
 Once matured more, this will most likely be migrated into the main node agent package, so it will become a standard feature of agents running anywhere in any environment.
 
 ### PowerShell
@@ -94,6 +94,6 @@ Since Node-RED is such an important part of the solution, it deserves to be ment
 
 If all you want is to run Node-RED inside Docker/Kubernetes/OpenShift, you can simply select it from the dropdown list of images when creating an agent. This image is essentially a normal NodeAgent with the Node-RED package preloaded for faster startup times.
 
-If you want to run what we previously referred to as "remote Node-REDs," you will now use NodeAgent instead of PM2. Simply fork or clone the [Node-RED agent](https://github.com/openiap/noderedagent) package and deploy it into your OpenFlow. You can now schedule that on any agent.
+If you want to run what we previously referred to as "remote Node-REDs," you will now use NodeAgent instead of PM2. Simply fork or clone the [Node-RED agent](https://github.com/openiap/noderedagent) package and deploy it into your OpenCore. You can now schedule that on any agent.
 
 The old approach would set up PM2 to keep Node-RED running, but we can accomplish this using NodeAgent now. This also allows for better remote management and monitoring, centralized updating, remote debugging using port forwarding, and much more. So, the functionality is still there, just deployed a little differently.

@@ -158,5 +158,5 @@ Output Argument of the dynamic activity, the recommended output argument include
 - process activities[].requires
 - validate rpa_args
 - show usage of each script activity
-- `optional` load from remote (eg. OpenFlow)
+- `optional` load from remote (eg. OpenCore)
 - `optional` manage script activities
