@@ -228,10 +228,10 @@ amqp_check_for_consumer= # Default: true
 amqp_check_for_consumer_count= # Default: false
 amqp_default_expiration= # Default: 60000 (1 min)
 amqp_requeue_time= # Default: 1000 (1 second)
-amqp_dlx= # Default: OpenCore-dlx
+amqp_dlx= # Default: openflow-dlx
 
 mongodb_url= # Default: mongodb://localhost:27017
-mongodb_db= # Default: OpenCore
+mongodb_db= # Default: openflow
 mongodb_minpoolsize= # Default: 25
 mongodb_maxpoolsize= # Default: 25
 
