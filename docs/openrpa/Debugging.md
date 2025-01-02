@@ -45,7 +45,7 @@ Now test contains "hi mom" and the yellow border has moved to the next activity.
 
 You do not need to single step over every activity, by pressing F5 ( or the Play button ) the workflow will continue as normal, and/or stop next time it hits a breakpoint. You can add and remove breakpoints even when the workflow is running or is idle.
 
-Breakpoints also work, when workflows have been started remotely from OpenFlow, making debugging parameters from OpenFlow very easy.
+Breakpoints also work, when workflows have been started remotely from OpenCore, making debugging parameters from OpenCore very easy.
 
 ![1559999293327](debugging/1559999293327.png)
 

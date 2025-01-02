@@ -7,13 +7,13 @@ has_children: true
 
 # What Is NodeRED
 
-In OpenIAP flow you can start an agent with Node-RED preloaded with a lot of OpenIAP flow specefic nodes. Node-RED is a visual programming tool used to automate Software API's and hardware devices (IoT). Its an Open Source and much more advanced version, of closed source platforms like zapier or n8n.
+In OpenCore you can start an agent with Node-RED preloaded with a lot of OpenCore specific nodes. Node-RED is a visual programming tool used to automate Software API's and hardware devices (IoT). Its an Open Source and much more advanced version, of closed source platforms like zapier or n8n.
 
 It provides an in-browser editor where you can connect flows using any nodes available. Each node represents a step that when wired together forms a meaningful task. It also follows a common pattern: input, processing and output. It is important to note that Node-RED functions like a middleware to an information processing system. It simply connects the inputs to the workflows and allows them to process it. 
 
 # Getting started
 
-To get started, login to Openflow and then click Agents in the menu.
+To get started, login to OpenCore and then click Agents in the menu.
 Then click `Add agent`
 
 ![Add Agent](add-agent.png)
@@ -22,16 +22,16 @@ Change the name if you like, then select NodeRED in the `image` dropdown menu.
 
 ![NodeRED image](nodered-image.png)
 
-This will auto fill out the required envoriment variables for your new NodeRED instance. This is how we configure NodeRED for instance `nodered_id` tell NodeRED were to store your workflows and other information inside openflow. You can find these later in the `nodered` Collection under `Entities`
+This will auto fill out the required envoriment variables for your new NodeRED instance. This is how we configure NodeRED for instance `nodered_id` tell NodeRED were to store your workflows and other information inside OpenCore. You can find these later in the `nodered` Collection under `Entities`
 
-Now Click `Save` and OpenFlow will save and then start your new NodeRED instance.
+Now Click `Save` and OpenCore will save and then start your new NodeRED instance.
 
 ![Save](save.png)
 
 If this is the first time you start a NodeRED and you are on a local installation this might take a little time, while it download the NodeRED docker image. But after a while it will say `Status` Running
 
 ![Nodered Status](nodered-status.png)
-> Note: you can see CPU and Memory usage here too. If you are using the cloud based version of OpenIAP Flow, and these numbers get to high, it might be time to purche a bigger instance.
+> Note: you can see CPU and Memory usage here too. If you are using the cloud based version of OpenCore, and these numbers get to high, it might be time to purche a bigger instance.
 
 Now click the last button here, to open a new tab with you NodeRED
 

@@ -38,7 +38,7 @@ OpenRPA.exe /workflowid "dev\add_to_notepad.xaml" -text "Hi mom"
 ```
 
 ### Running using PowerShell
-Using the PowerShell module you can also run openrpa and openflow workflow. You can pipe an object or hash table to the command to fill out workflow arguments and Invoke-OpenRPA will per default with for the workflow to complete and return an object with all out arguments. This allows for for much better control since you can now parse the result.
+Using the PowerShell module you can also run openrpa and opencore workflow. You can pipe an object or hash table to the command to fill out workflow arguments and Invoke-OpenRPA will per default with for the workflow to complete and return an object with all out arguments. This allows for for much better control since you can now parse the result.
 
 ![PowerShell1](commandline/PowerShell1.png)
 

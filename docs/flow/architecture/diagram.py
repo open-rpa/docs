@@ -13,7 +13,7 @@ from diagrams.custom import Custom
 from diagrams.onprem.tracing import Jaeger
 from diagrams.onprem.database import Cassandra
 
-with Diagram("OpenFlow Basic"):
+with Diagram("OpenCore Basic"):
     with Cluster("Backend"):
         b = [Mongodb("MongoDB"), Rabbitmq("RabbitMQ")]
     with Cluster("Remote Clients"):
@@ -25,7 +25,7 @@ with Diagram("OpenFlow Basic"):
     b << api
     api << rc
 
-with Diagram("OpenFlow with Traefik"):
+with Diagram("OpenCore with Traefik"):
 
     with Cluster("Backend"):
         b = [Mongodb("MongoDB"), Rabbitmq("RabbitMQ")]
@@ -46,7 +46,7 @@ with Diagram("OpenFlow with Traefik"):
     t << rc
 
 
-with Diagram("OpenFlow with Monitoring"):
+with Diagram("OpenCore with Monitoring"):
 
     with Cluster("Backend"):
         b = [Mongodb("MongoDB"), Rabbitmq("RabbitMQ")]

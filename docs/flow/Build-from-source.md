@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Build from source
-parent: What Is OpenIAP Flow
+parent: What Is OpenCore
 nav_order: 12
 ---
 
@@ -118,10 +118,10 @@ Install gulp and typescript globally
 Clone this repo into a folder, in a shell type
 `git clone https://github.com/open-rpa/openflow.git`
 
-go to the folder with openflow
+go to the folder with OpenCore
 `cd openflow`
 
-install packages for openflow api/web
+install packages for OpenCore api/web
 `npm i`
 
 Now open in VS code
@@ -137,14 +137,14 @@ port=80
 Next you need to allow powershell scripts to run, i don't know what is the recommended setting, i normally just go with bypass
 `Set-ExecutionPolicy Bypass -Force`
 
-Now you can run this by going to run ( Ctrl+Shit+D) and selecting OpenFlow in the dropdown box and press play button.
+Now you can run this by going to run ( Ctrl+Shit+D) and selecting OpenCore in the dropdown box and press play button.
 This will serve an empty webpage, so we need to build the stylesheets and copy the compiled files to the dist folder, so go to the Terminal tab and add a new shell, then type
 `npm run sass`
 
 Lastly we can bundle and minify the asserts to the dist folder, by typing
 `gulp watch`
 
-You can now access openflow web on [http://localhost.openiap.io](http://localhost.openiap.io) 
+You can now access OpenCore web on [http://localhost.openiap.io](http://localhost.openiap.io) 
 
 #### Building docker image
 From version 1.5 the docker images is now using build images, so simply run
