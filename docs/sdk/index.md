@@ -41,7 +41,7 @@ async fn main() -> Result<(), OpenIAPError> {
 
 {% tab run nodejs %}
 ```javascript
-const { Client, ClientError } = require('openiap');
+const { Client } = require('openiap');
 const client = new Client();
 client.connect();
 const query_result = client.query({ collectionname: 'entities', query: '{}', projection: '{"name":1}' });
