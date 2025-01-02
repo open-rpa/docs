@@ -4,38 +4,35 @@ title: Usage Patterns
 parent: SDKs
 ---
 
-
 ## Execution Models
 
 The SDK supports two distinct execution models, designed to accommodate different types of applications and use cases.
 
 1. **Persistent Connections**  
-   In this model, the code runs indefinitely. It is ideal for scenarios where the application needs to maintain a constant connection or listen for incoming events. Examples include:
+   In this model, the code runs indefinitely, making it ideal for scenarios where the application needs to maintain a constant connection or listen for incoming events. Examples include:
 
    - **Listening on a Port**: The code opens a port and waits for incoming connections or data, such as a server continuously handling client requests.
-   - **Message Queue Listening**: The code stays connected to a message queue, waiting to process messages as they arrive, without terminating after a single task.
+   - **Message Queue Listening**: The code stays connected to a message queue, processing messages as they arrive without terminating after a single task.
 
-   This approach is useful for long-running tasks where the application is expected to remain active and responsive to new inputs continuously.
-   When using the persistent connection model, you hook into the SDK's event loop to receive notifications when the client has signed in. This allows you to perform additional operations, such as subscribing to channels or listening for incoming messages. So in the event the client looses connection to OpenIAP servers, the client will auto reconnect, and then you can re-subscribe to channels or re-listen for incoming messages.
+   This approach is useful for long-running tasks where the application is expected to remain active and continuously responsive to new inputs. When using the persistent connection model, you hook into the SDK's event loop to receive notifications when the client signs in, allowing you to perform additional operations, such as subscribing to channels or listening for incoming messages. In the event that the client loses connection to OpenIAP servers, it will automatically reconnect, and you can then re-subscribe to channels or re-listen for incoming messages.
 
 2. **Transient Connections**  
-   This model is intended for tasks where the code connects to a service, performs a specific action, and then disconnects or exits. This type of connection is short-lived and allows for efficient resource usage, especially for operations that do not require a persistent connection. Examples include:
+   This model is intended for tasks where the code connects to a service, performs a specific action, and then disconnects or exits. This type of connection is short-lived, allowing for efficient resource usage, especially for operations that do not require a persistent connection. Examples include:
 
    - **Fetching Data**: The code connects to an API, retrieves the necessary data, and then disconnects.
    - **Sending a Single Message**: The code establishes a connection to a messaging service, sends a message, and closes the connection.
 
-   This approach is suitable for discrete, one-time operations where maintaining a constant connection would be unnecessary. In this model, the connection is established, the operation is performed, and then the connection is closed. The SDK handles the connection lifecycle, ensuring that resources are managed efficiently. But we dont need to handle reconnection logic.
+   This approach is suitable for discrete, one-time operations where maintaining a constant connection would be unnecessary. In this model, the connection is established, the operation is performed, and then the connection is closed. The SDK handles the connection lifecycle, ensuring efficient resource management. In this case, there is no need to handle reconnection logic.
 
 By offering both persistent and transient connection models, the SDK enables flexibility, allowing developers to choose the model that best fits their application's requirements.
 
-For this reason, the first call to connect() will fail if the connection failed, but once the client is connected, it will auto reconnect in the event of a disconnection. Use the event loop to listen for connection events, such as when the client has signed in, to perform additional operations.
+> **Note:** The initial call to `connect()` will fail if the connection is unsuccessful. However, once the client is connected, it will automatically attempt to reconnect in the event of a disconnection. Use the event loop to listen for connection events, such as when the client has signed in, to perform additional operations.
 
+# Transient Connections
 
-# Persistent Connections Example
+{% tabs Transient %}
 
-{% tabs Persistent %}
-
-{% tab Persistent rust %}
+{% tab Transient rust %}
 ```rust
 use openiap_client::{enable_tracing, Client, OpenIAPError, RegisterQueueRequest};
 use std::sync::Arc;
@@ -82,9 +79,9 @@ async fn main() -> Result<(), OpenIAPError> {
 ```
 {% endtab %}
 
-{% tab Persistent nodejs %}
+{% tab Transient nodejs %}
 ```javascript
-const { Client, ClientError } = require('openiap');
+const { Client } = require('openiap');
 const client = new Client();
 client.connect();
 client.on_client_event((event) => {
@@ -96,6 +93,70 @@ client.on_client_event((event) => {
         console.log("Registered queue as", queuename);
     }
 });
+```
+{% endtab %}
+
+{% tab Transient python %}
+```python
+from openiap import Client
+client = Client()
+client.connect()
+query_result = client.query(collectionname="entities", query="{}", projection="{\"name\": 1}")
+print("result", query_result)
+client.free()
+```
+{% endtab %}
+
+{% tab Transient dotnet %}
+```csharp
+static void Main(string[] args) {
+    MainAsync(args).GetAwaiter().GetResult();
+}
+static async Task MainAsync(string[] args) {
+    Client client = new Client();
+    await client.connect();
+    string results = await client.Query<string>("entities", "{}", "{\"name\": 1}");
+    Console.WriteLine("result: " + results);    
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+# Persistent Connections Example
+
+{% tabs Persistent %}
+
+{% tab Persistent rust %}
+```rust
+use openiap_client::{OpenIAPError, Client, QueryRequest};
+#[tokio::main]
+async fn main() -> Result<(), OpenIAPError> {
+    let client = Client::new_connect("").await?;
+    let q = client.query( QueryRequest::with_projection(
+        "entities",
+        "{}",
+        "{\"name\":1}"
+    )).await?;
+    let items: serde_json::Value = serde_json::from_str(&q.results).unwrap();
+    let items: &Vec<serde_json::Value> = items.as_array().unwrap();
+    for item in items {
+        println!("Item: {:?}", item);
+    }
+    Ok(())
+}
+
+```
+{% endtab %}
+
+{% tab Persistent nodejs %}
+```javascript
+const { Client } = require('openiap');
+const client = new Client();
+client.connect();
+const query_result = client.query({ collectionname: 'entities', query: '{}', projection: '{"name":1}' });
+console.log("result", query_result);
+client.free();
 ```
 {% endtab %}
 
@@ -153,3 +214,8 @@ static async Task MainAsync(string[] args) {
 
 {% endtabs %}
 
+# Event Loop
+
+The SDK provides an event loop that allows you to listen for various events, such as connection status changes, incoming messages, and errors. By registering event handlers, you can respond to these events and take appropriate actions within your application. This approach is also used for registering a queue consumer with the `register_queue` method or subscribing to database changes with the `watch` method.
+
+It's generally a good idea to register event handlers instead of creating loops that poll for work items or run regular database queries to check for new items. This way, you achieve faster response times and reduce resource usage on the server.
