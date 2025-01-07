@@ -3,7 +3,7 @@
 layout: default
 title: Requirements
 parent: What Is OpenCore
-nav_order: 7
+nav_order: 8
 ---
 # Size recommendations for OpenCore
 

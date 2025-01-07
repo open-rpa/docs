@@ -2,7 +2,7 @@
 layout: default
 title: Manage Sign in Providers
 parent: What Is OpenCore
-nav_order: 8
+nav_order: 19
 ---
 # Providers
 

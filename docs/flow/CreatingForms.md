@@ -3,7 +3,7 @@
 layout: default
 title: Creating Web Forms
 parent: What Is OpenCore
-nav_order: 14
+nav_order: 17
 ---
 # Creating Web Forms
 Forms are a user-friendly way of passing input to a workflow by creating dynamic OpenCore's webpages. There are two ways of generating a Form: one of them is through OpenCore's automatically generated Forms which are created upon saving a Workflow into its repository and the other one is manually creating a Form and connecting it to a Node-RED workflow.

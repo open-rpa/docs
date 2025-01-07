@@ -2,7 +2,7 @@
 layout: default
 title: Configuration Values
 parent: What Is OpenCore
-nav_order: 14
+nav_order: 15
 ---
 # Configuration settings
 

@@ -2,7 +2,7 @@
 layout: default
 title: Requirements
 parent: Notes for no-Internet or proxy server
-nav_order: 8
+nav_order: 20
 ---
 ###### Used offline
 

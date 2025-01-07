@@ -2,5 +2,5 @@
 layout: default
 title: Managing Client Authenication
 parent: What Is OpenCore
-nav_order: 8
+nav_order: 16
 ---

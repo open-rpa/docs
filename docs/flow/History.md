@@ -2,7 +2,7 @@
 layout: default
 title: History/versioning
 parent: What Is OpenCore
-nav_order: 6
+nav_order: 7
 ---
 ## Versioning
 
