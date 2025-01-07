@@ -23,8 +23,8 @@ If recording on a computer with multiple screens, try and only use the primary m
 Recording with windows display settings where Scale and layout is not set to 100% will not work.
 ( you can change this back to a non 100% value after recording, if all clicks are virtual )
 
-![right click desktop and select display settings](https://github.com/open-rpa/openrpa/raw/master/docs/img/dpi1.png)
-![Set scale to 100%](https://github.com/open-rpa/openrpa/raw/master/docs/img/dpi2.png)
+![right click desktop and select display settings](Known-Issues/image.png)
+![Set scale to 100%](Known-Issues/image-1.png)
 
 Disabling the embedded python and using the locally installed version will not work with anaconda python. 
 A normal python install should work with version 3.5 and up to 3.7 ( needed if you want to use tkinter )
