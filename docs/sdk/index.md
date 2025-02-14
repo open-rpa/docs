@@ -14,6 +14,7 @@ We provide SDK's for the following languages:
 - Rust / [crates.io](https://crates.io/crates/openiap-client) / [example](https://github.com/openiap/rustapi/tree/main/crates/cli)
 - Php / [packagist](https://packagist.org/packages/openiap/client) / [example](https://github.com/skadefro/phptest)
 - Java / [maven central](https://central.sonatype.com/artifact/io.openiap/client) / [example](https://github.com/skadefro/javatest)
+- C/C++ / [headers](https://raw.githubusercontent.com/openiap/rustapi/refs/heads/main/crates/clib/clib_openiap.h)
 
 We recommend using vs.code ( or any other editor based of vscode ) for development, with our [openiap-vscode](https://marketplace.visualstudio.com/items?itemName=openiap.openiap-assistant) extension, to manage your .env files. To manually generated a jwt token, login to OpenIAP's web interface [app.openiap.io](https://app.openiap.io) and then go to [/jwtlong](https://app.openiap.io/jwtlong) and copy the jwt field.
 
