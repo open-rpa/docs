@@ -11,7 +11,7 @@ We provide SDK's for the following languages:
 - browser / [esm](https://github.com/openiap/jsapi/tree/esm) / [js](https://github.com/openiap/jsapi) / [example](https://github.com/openiap/core-web/tree/v3) / [documentation](https://docs.openiap.io/docs/sdk/nodesdk/classes/openiap.html#constructor)
 - Python / [pypi](https://pypi.org/project/openiap-edge/) / [example](https://github.com/openiap/pythontest)
 - dotnet / [nuget](https://www.nuget.org/packages/OpenIAP/) / [example](https://github.com/skadefro/dotnettest)
-- Rust / [crates.io](https://crates.io/crates/openiap-client) / [example](https://github.com/openiap/rustapi/tree/main/crates/cli)
+- Rust / [crates.io](https://crates.io/crates/openiap-client) / [example](https://github.com/openiap/rustapi/tree/main/crates/cli) / [documentation](https://docs.rs/openiap-client/0.0.19/openiap_client/)
 - Php / [packagist](https://packagist.org/packages/openiap/client) / [example](https://github.com/skadefro/phptest)
 - Java / [maven central](https://central.sonatype.com/artifact/io.openiap/client) / [example](https://github.com/skadefro/javatest)
 - C/C++ / [headers](https://raw.githubusercontent.com/openiap/rustapi/refs/heads/main/crates/clib/clib_openiap.h)
