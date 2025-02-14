@@ -48,7 +48,8 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
-
+        with:
+          path: _site
   # Deployment job
   deploy:
     environment:
