@@ -8,8 +8,7 @@ has_children: true
 # Connecting to OpenIAP from your application
 We provide SDK's for the following languages:
 - NodeJS / [npm](https://www.npmjs.com/package/openiap) / [example](https://github.com/skadefro/nodetest)
-- BrowserModule / [esm](https://github.com/openiap/jsapi/tree/esm) / [js](https://github.com/openiap/jsapi) / [documentation](https://docs.openiap.io/docs/sdk/nodesdk/classes/openiap.html#constructor)
-- browser / [github](https://github.com/openiap/jsapi) / [example](https://github.com/openiap/core-web/tree/v3)
+- browser / [esm](https://github.com/openiap/jsapi/tree/esm) / [js](https://github.com/openiap/jsapi) / [example](https://github.com/openiap/core-web/tree/v3) / [documentation](https://docs.openiap.io/docs/sdk/nodesdk/classes/openiap.html#constructor)
 - Python / [pypi](https://pypi.org/project/openiap-edge/) / [example](https://github.com/openiap/pythontest)
 - dotnet / [nuget](https://www.nuget.org/packages/OpenIAP/) / [example](https://github.com/skadefro/dotnettest)
 - Rust / [crates.io](https://crates.io/crates/openiap-client) / [example](https://github.com/openiap/rustapi/tree/main/crates/cli)
