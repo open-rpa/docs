@@ -42,7 +42,7 @@ Clicking "Select element" will try and find the position of the window, and save
 
 **What:** To assign a value you generally should use the Value property on item's, but if you need to send a Key combination to an application, this is your friend. 
 
-**How:** I strongly recommend using the Record function to use this, but in case your interested in understanding the syntax, you can [read more here](typetext-syntax).
+**How:** I strongly recommend using the Record function to use this, but in case your interested in understanding the syntax, you can [read more here](Typetext-Syntax).
 
 **Why:** Sometimes its just easier/faster to use a short cut key, or if the element will not receive the input properly.
 
