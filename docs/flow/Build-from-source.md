@@ -93,7 +93,11 @@ and add this content to the file
 auto_create_users=true
 aes_secret=7TXsxf7cn9EkUqm5h4MEWGjzkxkNCk2K
 port=80
+mongodb_url=mongodb://localhost:27017/openflow?replicaSet=rs0
 ```
+
+Re-run the mongosetup-1 container (either from Docker Desktop or terminal), to ensure mongodb replica set is initialized.
+
 Next you need to allow powershell scripts to run, i don't know what is the recommended setting, i normally just go with bypass
 `Set-ExecutionPolicy Bypass -Force`
 
@@ -135,6 +139,9 @@ aes_secret=7TXsxf7cn9EkUqm5h4MEWGjzkxkNCk2K
 port=80
 mongodb_url=mongodb://localhost:27017/openflow?replicaSet=rs0
 ```
+
+Re-run the mongosetup-1 container (either from Docker Desktop or terminal), to ensure mongodb replica set is initialized.
+
 Next you need to allow powershell scripts to run, i don't know what is the recommended setting, i normally just go with bypass
 `Set-ExecutionPolicy Bypass -Force`
 
