@@ -60,7 +60,7 @@ services:
       "members" : [
         {
           "_id" : 0,
-          "host" : "mongodb:27017"
+          "host" : "host.docker.internal:27017"
         }
       ]
       };
@@ -133,6 +133,7 @@ and add this content to the file
 auto_create_users=true
 aes_secret=7TXsxf7cn9EkUqm5h4MEWGjzkxkNCk2K
 port=80
+mongodb_url=mongodb://localhost:27017/openflow?replicaSet=rs0
 ```
 Next you need to allow powershell scripts to run, i don't know what is the recommended setting, i normally just go with bypass
 `Set-ExecutionPolicy Bypass -Force`
