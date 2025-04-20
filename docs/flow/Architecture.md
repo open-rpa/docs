@@ -13,11 +13,11 @@ Different types of clients, [custom web](https://github.com/open-rpa/openflow-we
 
 If installed the basic [docker-compose](DockerCompose) file that would make something like this.
 
-![openflow_traefik](architecture/openflow_with_traefik.png)
+![opencore_traefik](architecture/opencore_with_traefik.png)
 
 For bigger installations we recommend using kubernetes, we supply an easy to get started with [helm chart](https://github.com/open-rpa/helm-charts/), that also supports very complex demands. Besides adding easy access for running geo distributed installation ( multiple data centers ) of a single OpenCore install, it also adds more layers of security and much needed fault tolerance and scalability. This is usually also when we want to add better monitoring of the core components and support for designing graphs and dashboard based on data in OpenCore.
 
-![openflow_with_otel](architecture/openflow_with_monitoring.png)
+![opencore_with_otel](architecture/opencore_with_monitoring.png)
 
 When running in high secured network, where you need to control the direction and priority the flow of data and events, OpenCore can be deployed in mesh topologies. 
 This can also be useful if working in distributed networks where network outage can last for very long periods of time, and the local storage of a remote NodeRED is not enough, or you need access to the web interface and reports even when the network is down.
