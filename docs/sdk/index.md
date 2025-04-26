@@ -7,14 +7,15 @@ has_children: true
 
 # Connecting to OpenIAP from your application
 We provide SDK's for the following languages:
+- Rust / [crates.io](https://crates.io/crates/openiap-client) / [example](https://github.com/openiap/rustapi/tree/main/crates/cli) / [documentation](https://docs.rs/openiap-client/0.0.19/openiap_client/)
+- browser / [esm](https://github.com/openiap/jsapi/tree/esm) / [js](https://github.com/openiap/jsapi) / [example](https://github.com/openiap/core-web) / [documentation](https://docs.openiap.io/docs/sdk/nodesdk/classes/openiap.html#constructor)
 - NodeJS / [npm](https://www.npmjs.com/package/openiap) / [example](https://github.com/skadefro/nodetest)
-- browser / [esm](https://github.com/openiap/jsapi/tree/esm) / [js](https://github.com/openiap/jsapi) / [example](https://github.com/openiap/core-web/tree/v3) / [documentation](https://docs.openiap.io/docs/sdk/nodesdk/classes/openiap.html#constructor)
 - Python / [pypi](https://pypi.org/project/openiap-edge/) / [example](https://github.com/openiap/pythontest)
 - dotnet / [nuget](https://www.nuget.org/packages/OpenIAP/) / [example](https://github.com/skadefro/dotnettest)
-- Rust / [crates.io](https://crates.io/crates/openiap-client) / [example](https://github.com/openiap/rustapi/tree/main/crates/cli) / [documentation](https://docs.rs/openiap-client/0.0.19/openiap_client/)
 - Php / [packagist](https://packagist.org/packages/openiap/client) / [example](https://github.com/skadefro/phptest)
 - Java / [maven central](https://central.sonatype.com/artifact/io.openiap/client) / [example](https://github.com/skadefro/javatest)
-- C/C++ / [headers](https://raw.githubusercontent.com/openiap/rustapi/refs/heads/main/crates/clib/clib_openiap.h)
+- C/C++ /  [conan](https://conan.io/center/recipes/openiap) / [example project](https://github.com/skadefro/ctest)
+- pwsh / [PowerShell Gallery](https://www.powershellgallery.com/packages/openiap) / [example project](https://github.com/openiap/pwshtest)
 
 We recommend using vs.code ( or any other editor based of vscode ) for development, with our [openiap-vscode](https://marketplace.visualstudio.com/items?itemName=openiap.openiap-assistant) extension, to manage your .env files. To manually generated a jwt token, login to OpenIAP's web interface [app.openiap.io](https://app.openiap.io) and then go to [/jwtlong](https://app.openiap.io/jwtlong) and copy the jwt field.
 
