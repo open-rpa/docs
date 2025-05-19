@@ -125,11 +125,11 @@ OpenCore provides comprehensive audit capabilities to meet regulatory and compli
 Staying up to date with security fixes is critical.
 
 - **GitHub Security Advisories**  
-  Subscribe to the OpenCore repository’s security feed to receive CVE and patch notifications.  
+  Subscribe to the OpenCore repository if you want to be update on security and bug fixes. 
 - **Dependabot & Automated Scans**  
-  We publish a `dependabot.yml` to automatically open PRs for vulnerable dependencies.  
+  We use dependabot and github automated Security and code scanning. And we prefere people use github's "Private vulnerability reporting" feature to report vulnerabilities.
 - **Disclosure Policy**  
-  Report vulnerabilities responsibly via security at openiap.io. Our team typically responds within 48 hours and publishes a public advisory once a fix is available. We do not offer bounty programs at this time.
+  Alernatively, you can report vulnerabilities via security at openiap.io. Our team typically responds within 48 hours, if the report has a real security vulnerabilities and will send out public advisory for paying customers in case for seriuse issues, that need patching. We do not offer bounty programs at this time.
 
 ---
 
