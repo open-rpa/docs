@@ -25,11 +25,10 @@ OpenCore includes several built-in roles, each with specific permissions:
 - **workitem queue users**: Members can create new workitem queues
 - **filestore users**: Can upload and download files in OpenCore.
 - **filestore admins**: Have full control over all files uploaded in OpenCore.
+
+## List of deprecated roles
 - **nodered admins**: Allows members to log into Node-RED instances.
 - **nodered api users**: Allows members to access any http endpoint exposed from all Node-RED workflows.
-
-
-
 - **robot admins**: legacy role, not in use anymore
 - **robot users**:  legacy role, not in use anymore
 - **robot agent users**:  legacy role, not in use anymore
